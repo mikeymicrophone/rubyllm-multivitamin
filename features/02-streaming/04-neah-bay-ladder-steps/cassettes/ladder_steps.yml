@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the mate on the pilot boat off Neah Bay.\nCall the four ladder checks
+        in the order given, one short sentence each.\nUse only the inspection card.\nKeep
+        the four names in that order: side ropes, wooden steps, spreaders, manropes."},{"role":"user","content":"Pilot
+        ladder inspection for Wednesday 14 October 2026, boarding off Neah Bay.\nPilots:
+        https://www.pspilots.org/\n1. Side ropes are manila, both sides, and the eyes
+        are seized.\n2. Wooden steps are sound, with no cracked step in the lower
+        four.\n3. Spreaders are fitted on the fifth step and stand square.\n4. Manropes
+        run the full length and the pilot can hold them.\nCall the four checks in
+        that order."}],"stream":true,"temperature":0.2,"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:43:24 GMT
+      Content-Type:
+      - text/event-stream
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Generation-Id:
+      - gen-1791974604-NbCoOkkdmBs1Xaj0WIeG
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5fb9b7dbd69d4-PDX
+    body:
+      encoding: UTF-8
+      string: |+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"Side","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" ropes are","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" manila, both","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" sides, and the","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" eyes are seized.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"  \nWooden","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" steps are sound,","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" with no cracked step","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" in the lower four","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":".  \nSpread","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"ers are fitted on","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" the fifth step and","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" stand square.  ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"\nManropes","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" run the full length","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" and the pilot can","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" hold them.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+
+        data: {"id":"gen-1791974604-NbCoOkkdmBs1Xaj0WIeG","object":"chat.completion.chunk","created":1791974604,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":178,"completion_tokens":63,"total_tokens":241,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+
+        data: [DONE]
+
+  recorded_at: Wed, 14 Oct 2026 10:43:24 GMT
+recorded_with: VCR 6.4.0
+...

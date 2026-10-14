@@ -14,31 +14,37 @@ class BlastLogTest < Minitest::Test
       result = CapeDisappointmentBlastLog::BlastLog.conduct(horn_log)
     end
 
-    first, second = result.passes
-    assert_equal 2, result.passes.size
-    assert_includes first.speech, "2"
-    assert_includes first.speech, "18"
-    assert_operator first.pieces.size, :>, 1
-    assert_equal first.speech, first.pieces.join
-    assert_equal first.pieces, second.pieces
-    assert_equal first.speech, second.speech
-    assert_equal 0, first.thinking_chunks
-    assert_equal 0, second.thinking_chunks
-    assert_equal first.speech + second.speech, horn_log.string
+    assert_includes result.speech, "2"
+    assert_includes result.speech, "18"
+    assert_operator result.pieces.size, :>, 1
+    assert_equal result.speech, result.pieces.join
+    assert_equal 0, result.thinking_chunks
+    assert_equal result.speech, horn_log.string
 
-    bodies = stream_bodies
-    assert_equal 2, bodies.size
-    bodies.each do |body|
-      assert_includes body, "data:"
-      assert_includes body, "data: [DONE]"
-      assert_equal first.pieces, spoken_deltas(body)
+    body = stream_bodies.fetch(0)
+    assert_includes body, "data:"
+    assert_includes body, "data: [DONE]"
+    assert_equal result.pieces, spoken_deltas(body)
+
+    # A second play reads the same SSE body. The live model is not asked again:
+    # two recordings of this card were not the same words.
+    return if ENV["LIVE"] == "1"
+
+    replay_log = StringIO.new
+    replay = nil
+    Multivitamin::Cassettes.play(__dir__, "blast_log") do
+      replay = CapeDisappointmentBlastLog::BlastLog.conduct(replay_log)
     end
+
+    assert_equal result.pieces, replay.pieces
+    assert_equal result.speech, replay.speech
   end
 
   def test_the_cassette_records_an_sse_stream
     cassette = YAML.load_file(File.expand_path("cassettes/blast_log.yml", __dir__))
     interactions = cassette.fetch("http_interactions")
 
+    assert_equal 1, interactions.size
     interactions.each do |interaction|
       request = interaction.dig("request", "body", "string")
       assert_includes request, '"stream":true'

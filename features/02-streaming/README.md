@@ -10,7 +10,7 @@ Official reference: [Streaming](https://rubyllm.com/streaming/).
 
 Same free chat model as chat basics, `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `google/gemma-4-31b-it:free`. OpenRouter streams Chat Completions as server-sent events for these slugs. Checked 14 October 2026.
 
-## Examples (13 of 13 bottled)
+## Examples (12 of 13 bottled)
 
 01. [Point Wilson tide dictation](01-point-wilson-tide-dictation/) — available
 02. [Cape Disappointment blast log](02-cape-disappointment-blast-log/) — available
@@ -22,7 +22,7 @@ Same free chat model as chat basics, `nvidia/nemotron-3-super-120b-a12b:free`. F
 08. [Dungeness sounding halt](08-dungeness-sounding-halt/) — available
 09. [Admiralty Inlet storm warning](09-admiralty-inlet-storm-warning/) — available
 10. [Anacortes cannery lot code](10-anacortes-cannery-lot-code/) — available
-11. [Point Wilson spoken handover](11-point-wilson-spoken-handover/) — available
+11. [Point Wilson spoken handover](11-point-wilson-spoken-handover/) — script ready; cassette not recorded
 12. [Port Townsend watch broadcast](12-port-townsend-watch-broadcast/) — available
 13. [Cape Disappointment horn relief](13-cape-disappointment-relief/) — available
 

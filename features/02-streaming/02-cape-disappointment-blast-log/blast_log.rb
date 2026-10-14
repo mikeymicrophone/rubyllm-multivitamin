@@ -5,7 +5,7 @@
 # Teaches:
 # - Write each spoken chunk to a terminal as it arrives.
 # - with_thinking(false) keeps the log to the spoken card.
-# - The cassette stores the SSE body, and a second pass replays the same pieces.
+# - The cassette stores the SSE body, and a replay yields the same pieces.
 
 require "logger"
 require "ruby_llm"
@@ -14,7 +14,7 @@ require_relative "../../../support/models"
 
 module CapeDisappointmentBlastLog
   # The horn watch at Cape Disappointment calls the posted card into the
-  # log as the chunks arrive. Two passes of the same card must match.
+  # log as the chunks arrive. A replay of the cassette calls the same pieces.
   class BlastLog
     INSTRUCTIONS = <<~TEXT.strip
       You are the foghorn watch at Cape Disappointment Light.
@@ -32,15 +32,11 @@ module CapeDisappointmentBlastLog
       Call the card into the log.
     TEXT
 
-    Result = Struct.new(:passes, keyword_init: true)
-
-    Pass = Struct.new(:speech, :pieces, :thinking_chunks, keyword_init: true)
+    Result = Struct.new(:speech, :pieces, :thinking_chunks, keyword_init: true)
 
     def self.conduct(horn_log)
       configure
-
-      passes = Array.new(2) { call_card(horn_log) }
-      Result.new(passes: passes)
+      call_card(horn_log)
     end
 
     def self.call_card(horn_log)
@@ -63,7 +59,7 @@ module CapeDisappointmentBlastLog
         horn_log.flush if horn_log.respond_to?(:flush)
       end
 
-      Pass.new(speech: message.content, pieces: pieces, thinking_chunks: thinking_chunks)
+      Result.new(speech: message.content, pieces: pieces, thinking_chunks: thinking_chunks)
     end
 
     def self.open_chat

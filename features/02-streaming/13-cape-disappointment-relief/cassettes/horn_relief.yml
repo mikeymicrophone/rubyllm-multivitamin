@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the outgoing foghorn watch at Cape Disappointment Light.\nCall the posted
+        horn card tool for the station in the question.\nThen speak one short sentence
+        for the relief that includes the blast and the compressor."},{"role":"user","content":"The
+        relief is taking the horn watch at Cape Disappointment on Wednesday 14 October
+        2026.\nStation notes: https://www.nps.gov/places/cape-disappointment-lighthouse.htm\nRead
+        the posted horn card for Cape Disappointment and start the spoken relief."}],"stream":true,"temperature":0.2,"tools":[{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","description":"Reads
+        the foghorn card posted at Cape Disappointment","parameters":{"type":"object","properties":{"station":{"type":"string"}},"required":["station"],"additionalProperties":false,"strict":true}}}],"tool_choice":{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card"}},"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:43:31 GMT
+      Content-Type:
+      - text/event-stream
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Generation-Id:
+      - gen-1791974610-3kEzV68W7LSdbey06rbb
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5fbc60b9acb73-PDX
+    body:
+      encoding: UTF-8
+      string: |+
+        : OPENROUTER PROCESSING
+
+        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":null,"role":"assistant","tool_calls":[{"index":0,"id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c","type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","arguments":""}}]},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":null,"role":"assistant","tool_calls":[{"index":0,"function":{"arguments":"{\"station\":\"Cape Disappointment\"}"}}]},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"tool_calls","native_finish_reason":"tool_calls"}]}
+
+        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"tool_calls","native_finish_reason":"tool_calls"}],"usage":{"prompt_tokens":394,"completion_tokens":34,"total_tokens":428,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+
+        data: [DONE]
+
+  recorded_at: Wed, 14 Oct 2026 10:43:31 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the outgoing foghorn watch at Cape Disappointment Light.\nCall the posted
+        horn card tool for the station in the question.\nThen speak one short sentence
+        for the relief that includes the blast and the compressor."},{"role":"user","content":"The
+        relief is taking the horn watch at Cape Disappointment on Wednesday 14 October
+        2026.\nStation notes: https://www.nps.gov/places/cape-disappointment-lighthouse.htm\nRead
+        the posted horn card for Cape Disappointment and start the spoken relief."},{"role":"assistant","content":"","tool_calls":[{"id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c","type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","arguments":"{\"station\":\"Cape
+        Disappointment\"}"}}]},{"role":"tool","content":"Cape Disappointment horn
+        card for Cape Disappointment. Blast 2.5 seconds, silent 17.5 seconds. Compressor
+        92 psi.","tool_call_id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c"}],"stream":true,"temperature":0.2,"tools":[{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","description":"Reads
+        the foghorn card posted at Cape Disappointment","parameters":{"type":"object","properties":{"station":{"type":"string"}},"required":["station"],"additionalProperties":false,"strict":true}}}],"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:43:31 GMT
+      Content-Type:
+      - text/event-stream
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Generation-Id:
+      - gen-1791974611-mWV8don3MYyRGt96ldv8
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5fbca8e736e09-PDX
+    body:
+      encoding: UTF-8
+      string: |+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"Rel","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"ief: Cape Dis","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"appointment horn","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" watch, blast","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 2.5","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" seconds, silent ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"17.5","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" seconds, compressor ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"92 psi.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+
+        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":481,"completion_tokens":31,"total_tokens":512,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+
+        data: [DONE]
+
+  recorded_at: Wed, 14 Oct 2026 10:43:32 GMT
+recorded_with: VCR 6.4.0
+...

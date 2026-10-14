@@ -20,7 +20,7 @@ class LotCodeTest < Minitest::Test
 
     start = result.speech.index(CODE)
     assert_equal CODE, result.pieces.join[start, CODE.length]
-    refute result.pieces.all? { |piece| piece.include?(CODE) }
+    refute result.pieces.any? { |piece| piece.include?(CODE) }
   end
 
   def test_cassette_does_not_carry_a_live_key

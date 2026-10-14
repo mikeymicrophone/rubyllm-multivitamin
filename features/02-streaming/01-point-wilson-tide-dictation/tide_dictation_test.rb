@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "yaml"
 require_relative "tide_dictation"
 
 class TideDictationTest < Minitest::Test
@@ -12,6 +13,10 @@ class TideDictationTest < Minitest::Test
 
     assert_includes result.speech, "Alden"
     assert_includes result.speech, "10:46"
+    assert_includes result.speech, "0.4\u202fft"
+    assert_includes result.speech, "8.1\u202fft"
+    refute_match(/0\.4\sft/, result.speech)
+    assert_match(/0\.4[[:space:]]ft/, result.speech)
     assert_match(/10:46/, result.speech)
     assert result.notes.all?(&:chunk)
     assert_operator result.notes.size, :>, 1
@@ -41,9 +46,25 @@ class TideDictationTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    cassette = File.read(File.expand_path("cassettes/tide_dictation.yml", __dir__))
+    cassette = File.binread(File.expand_path("cassettes/tide_dictation.yml", __dir__))
 
     refute_match(/sk-or-/, cassette)
     assert_includes cassette, "<OPENROUTER_API_KEY>"
+  end
+
+  def test_the_narrow_space_sse_body_is_stored_as_binary_yaml
+    raw = File.binread(File.expand_path("cassettes/tide_dictation.yml", __dir__))
+
+    assert_includes raw, "!binary"
+    refute_includes raw, "data:"
+
+    loaded = YAML.load_file(File.expand_path("cassettes/tide_dictation.yml", __dir__))
+    body = loaded.dig("http_interactions", 0, "response", "body", "string").dup.force_encoding("UTF-8")
+
+    assert_includes body, "data:"
+    assert_includes body, "data: [DONE]"
+    assert_includes body, "0.4\u202f"
+    assert_includes body, "\u202fft"
+    refute_includes body, "0.4\u202fft"
   end
 end

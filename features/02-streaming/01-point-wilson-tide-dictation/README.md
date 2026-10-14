@@ -17,6 +17,12 @@ piece of that dictation.
   `thinking.text` reproduces `message.thinking.text`.
 - Token counts stay nil until the trailing usage chunk. That chunk repeats
   `finish_reason`, and its counts match `message.tokens`.
+- The dictated heights use U+202F between the numeral and `ft`. The joined
+  speech contains `0.4\u202fft`. A regexp `\s` does not match that character.
+  `[[:space:]]` does. In this cassette the narrow space is the end of one
+  delta and `ft` starts the next, so the contiguous height is the join.
+- VCR stores that SSE body as YAML `!binary`. `YAML.load_file` returns the
+  `data:` lines. A raw read of the file does not contain them.
 
 **Files**
 

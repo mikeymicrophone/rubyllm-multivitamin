@@ -7,9 +7,11 @@ flush in the middle of that code. The label is the joined chunks.
 **What it teaches**
 
 - A lot code is read from the joined `content`, which equals the message
-  `ask` returns. A single chunk may hold only `ANC-2026` or `1014`.
-- `basket 3` may be separated by U+202F, a narrow no-break space. A regexp
-  `\s` does not match that character. `[[:space:]]` does.
+  `ask` returns. This recording splits `ANC-2026-1014-R2-B3` so no piece
+  holds the whole code.
+- `Basket 3` in this cassette uses a normal space. The assertion still
+  uses `[[:space:]]`, because the same model puts U+202F beside a number
+  on other boards. That character is in the Point Wilson tide dictation.
 
 **Files**
 
