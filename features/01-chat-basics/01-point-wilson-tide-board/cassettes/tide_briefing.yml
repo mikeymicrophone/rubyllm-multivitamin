@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nBrief
+        the incoming watch in short sentences.\nUse only the tide board in the question.\nName
+        the boats Alden and Retort.\nDo not invent tide heights."},{"role":"user","content":"Tide
+        board posted for Wednesday 14 October 2026 at Point Wilson.\nLow water 06:42,
+        0.4 ft above MLLW.\nHigh water 12:18, 8.1 ft.\nLow water 18:55, 2.6 ft.\nThe
+        foghorn tender Alden needs 6.0 ft at the float to clear the kelp ledge.\nThe
+        cannery tender Retort, up from the Anacortes cannery, can use the float at
+        3.5 ft.\nThe Fresnel lens crew is in the lens cabinet until 09:30 and must
+        not be hailed while the lamp is open.\nWhen can Alden leave the float this
+        morning, and when can Retort?"}],"stream":false,"temperature":0.2}'
+    headers: &1
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      HTTP-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-OpenRouter-Title:
+      - RubyLLM Multivitamin
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"gen-point-wilson-opening","object":"chat.completion","created":1760409600,"model":"nvidia/nemotron-3-super-120b-a12b:free","choices":[{"index":0,"message":{"role":"assistant","content":"Alden
+        needs 6.0 ft at the float. The morning low is 0.4 ft at 06:42 and high water
+        is 8.1 ft at 12:18, so Alden waits for the flood to pass 6.0 ft, after mid-morning
+        and before 12:18. Retort needs 3.5 ft, so Retort can leave earlier on that
+        same flood, after 06:42 and before Alden."},"finish_reason":"stop"}],"usage":{"prompt_tokens":210,"completion_tokens":72,"total_tokens":282,"cost":0}}'
+    http_version: '1.1'
+  recorded_at: Wed, 14 Oct 2026 01:40:00 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nBrief
+        the incoming watch in short sentences.\nUse only the tide board in the question.\nName
+        the boats Alden and Retort.\nDo not invent tide heights."},{"role":"user","content":"Tide
+        board posted for Wednesday 14 October 2026 at Point Wilson.\nLow water 06:42,
+        0.4 ft above MLLW.\nHigh water 12:18, 8.1 ft.\nLow water 18:55, 2.6 ft.\nThe
+        foghorn tender Alden needs 6.0 ft at the float to clear the kelp ledge.\nThe
+        cannery tender Retort, up from the Anacortes cannery, can use the float at
+        3.5 ft.\nThe Fresnel lens crew is in the lens cabinet until 09:30 and must
+        not be hailed while the lamp is open.\nWhen can Alden leave the float this
+        morning, and when can Retort?"},{"role":"assistant","content":"Alden needs
+        6.0 ft at the float. The morning low is 0.4 ft at 06:42 and high water is
+        8.1 ft at 12:18, so Alden waits for the flood to pass 6.0 ft, after mid-morning
+        and before 12:18. Retort needs 3.5 ft, so Retort can leave earlier on that
+        same flood, after 06:42 and before Alden."},{"role":"user","content":"The
+        lens cabinet stays open until 09:30. Should the watch hail the lens crew before
+        Alden sails?"}],"stream":false,"temperature":0.2}'
+    headers: *1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"gen-point-wilson-follow-up","object":"chat.completion","created":1760409612,"model":"nvidia/nemotron-3-super-120b-a12b:free","choices":[{"index":0,"message":{"role":"assistant","content":"No.
+        The lens crew is in the cabinet until 09:30 and must not be hailed while the
+        lamp is open. Hail them after 09:30. That is still before Alden needs the
+        float."},"finish_reason":"stop"}],"usage":{"prompt_tokens":310,"completion_tokens":38,"total_tokens":348,"cost":0}}'
+    http_version: '1.1'
+  recorded_at: Wed, 14 Oct 2026 01:40:01 GMT
+recorded_with: VCR 6.4.0

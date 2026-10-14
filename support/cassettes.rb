@@ -1,0 +1,108 @@
+# frozen_string_literal: true
+
+require "fileutils"
+require "vcr"
+require "webmock"
+
+module Multivitamin
+  # Plays a scenario's cassette from that scenario's own cassettes/ directory.
+  # LIVE=1 records a fresh cassette against the network. Anything else replays
+  # and refuses a request the cassette does not already answer.
+  module Cassettes
+    PLACEHOLDER_KEY = "cassette-placeholder-not-a-real-key"
+    FILTERED_KEY = "<OPENROUTER_API_KEY>"
+
+    KEY_ENV_VARS = %w[
+      OPENROUTER_API_KEY
+      OPENAI_API_KEY
+      ANTHROPIC_API_KEY
+      GEMINI_API_KEY
+      XAI_API_KEY
+      MISTRAL_API_KEY
+      COHERE_API_KEY
+      DEEPSEEK_API_KEY
+      PERPLEXITY_API_KEY
+    ].freeze
+
+    module_function
+
+    def live?
+      ENV["LIVE"] == "1"
+    end
+
+    def play(directory, name)
+      prepare_key!
+      configure!
+      library = File.join(directory, "cassettes")
+      FileUtils.mkdir_p(library)
+
+      previous = VCR.configuration.cassette_library_dir
+      VCR.configure { |config| config.cassette_library_dir = library }
+      VCR.use_cassette(
+        name,
+        record: live? ? :all : :none,
+        match_requests_on: %i[method uri body]
+      ) { yield }
+    ensure
+      VCR.configure { |config| config.cassette_library_dir = previous } if previous
+    end
+
+    def prepare_key!
+      if live?
+        return unless ENV["OPENROUTER_API_KEY"].to_s.empty?
+
+        abort "LIVE=1 needs OPENROUTER_API_KEY in the environment. Never commit it."
+      end
+
+      ENV["OPENROUTER_API_KEY"] ||= PLACEHOLDER_KEY
+    end
+
+    def configure!
+      return if @configured
+
+      VCR.configure do |config|
+        config.hook_into :webmock
+        config.allow_http_connections_when_no_cassette = false
+        config.default_cassette_options = { record: :none }
+
+        KEY_ENV_VARS.each do |name|
+          config.filter_sensitive_data("<#{name}>") { ENV[name] }
+        end
+
+        config.before_record do |interaction|
+          scrub_interaction(interaction)
+        end
+      end
+
+      @configured = true
+    end
+
+    def scrub_interaction(interaction)
+      scrub_headers(interaction.request.headers)
+      scrub_headers(interaction.response.headers)
+      interaction.request.body = scrub_text(interaction.request.body)
+      interaction.response.body = scrub_text(interaction.response.body)
+    end
+
+    def scrub_headers(headers)
+      return unless headers
+
+      headers.delete_if { |name, _| name.to_s.downcase == "set-cookie" }
+      authorization = headers.keys.find { |name| name.to_s.downcase == "authorization" }
+      headers[authorization] = ["Bearer #{FILTERED_KEY}"] if authorization
+    end
+
+    def scrub_text(text)
+      return text unless text.is_a?(String)
+
+      scrubbed = text.gsub(/sk-or-v1-[A-Za-z0-9_\-]+/, FILTERED_KEY)
+      KEY_ENV_VARS.each do |name|
+        value = ENV[name]
+        next if value.nil? || value.empty? || value == PLACEHOLDER_KEY
+
+        scrubbed = scrubbed.gsub(value, "<#{name}>")
+      end
+      scrubbed
+    end
+  end
+end
