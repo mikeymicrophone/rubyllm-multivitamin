@@ -48,6 +48,11 @@ module Multivitamin
     # protocol raises UnsupportedAttachmentError.
     OPENAI_CHAT = "gpt-4.1-mini"
 
+    # Second OpenAI chat id for a mid-conversation with_model switch.
+    # Distinct from OPENAI_CHAT so the cassette shows the new id.
+    # Cheaper than gpt-4.1-mini. Confirmed on the same models list.
+    OPENAI_CHAT_SWITCH = "gpt-4o-mini"
+
     # OpenAI Decisions model. RubyLLM::Judge with provider: :openai posts
     # this id to https://api.openai.com/v1/decisions. Confirmed against
     # RubyLLM 2.1.1 (Protocols::OpenAI::Decisions) and OpenAI's Decisions

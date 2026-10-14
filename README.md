@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 91 |
+| Bottled | 104 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,17 +29,21 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 91 of 169 bottled.
+The bottle is not full yet: 13 features, 13 scenarios each, 104 of 169 bottled.
 Chat basics, streaming, tools, structured output, multimodal attachments,
-embeddings, and image generation are full. Tools, the Point Wilson spoken
-handover, the schema turns, and the attachment scenarios were recorded on
-OpenAI `gpt-4.1-mini`. Decisions calls in the structured-output feature were
-recorded on OpenAI `gpt-6-luna`. Audio attachments were recorded on OpenAI
-`gpt-audio-mini`. Embedding text cassettes were recorded on OpenAI
-`text-embedding-3-small`. The Smith Island barometer card was recorded on
-OpenRouter `google/gemini-embedding-2`. Image generation was recorded on
-OpenAI `gpt-image-1-mini`. The other bottled cassettes are OpenRouter.
-The remaining features are titled and waiting.
+embeddings, image generation, and models and providers are full. Tools, the
+Point Wilson spoken handover, the schema turns, and the attachment scenarios
+were recorded on OpenAI `gpt-4.1-mini`. Decisions calls in the
+structured-output feature were recorded on OpenAI `gpt-6-luna`. Audio
+attachments were recorded on OpenAI `gpt-audio-mini`. Embedding text
+cassettes were recorded on OpenAI `text-embedding-3-small`. The Smith Island
+barometer card was recorded on OpenRouter `google/gemini-embedding-2`. Image
+generation was recorded on OpenAI `gpt-image-1-mini`. Models-and-providers
+chats were recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini` for the
+mid-chat switch) after the free OpenRouter slugs hit the daily cap. The
+registry `refresh` cassette is the published catalog on rubyllm.com. The
+other bottled cassettes are OpenRouter. The remaining features are titled
+and waiting.
 
 ## Run the examples
 
@@ -167,7 +171,7 @@ hold the cassette player and the model slugs, not the story.
 5. [Multimodal attachments](features/05-multimodal-attachments/) — 13 of 13 bottled
 6. [Embeddings](features/06-embeddings/) — 13 of 13 bottled
 7. [Image generation](features/07-image-generation/) — 13 of 13 bottled
-8. [Models and providers](features/08-models-and-providers/) — 0 of 13 bottled
+8. [Models and providers](features/08-models-and-providers/) — 13 of 13 bottled
 9. [Configuration and contexts](features/09-configuration-and-contexts/) — 0 of 13 bottled
 10. [Rails integration](features/10-rails-integration/) — 0 of 13 bottled
 11. [Instructions and history](features/11-instructions-and-history/) — 0 of 13 bottled
