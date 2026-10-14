@@ -1,0 +1,176 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"What
+        does the glass read now, what did it read at 04:00, and what is the wind?"},{"type":"input_image","image_url":"data:image/png;base64,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"},{"type":"input_text","text":"<file
+        name=''weather-round.txt'' mime_type=''text/plain''>Smith Island weather round,
+        Wednesday 14 October 2026, 06:00.\nWind southwest at 18 knots.\nThe glass
+        at 04:00 read 29.91 inches.\nThe photograph is the glass at 06:00.\n</file>"}]}],"instructions":"You
+        are the weather watch at Smith Island.\nUse both attachments.\nThe photograph
+        is the glass at 06:00. The text file is the written round.\nAnswer in one
+        sentence.\nInclude the 06:00 reading, the 04:00 reading, and the wind.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:27:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a84b145a30aee3-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '642'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_19dbb281f5dd42b185206f58f7a10e0e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0cd27e5b2d098073016acfbb6ed91887d088aa0f6311799cbf",
+          "object": "response",
+          "created_at": 1791998830,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791998831,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the weather watch at Smith Island.\nUse both attachments.\nThe photograph is the glass at 06:00. The text file is the written round.\nAnswer in one sentence.\nInclude the 06:00 reading, the 04:00 reading, and the wind.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0cd27e5b2d098073016acfbb6f28b887d098a1f46760b960be",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The glass reads 29.84 inches at 06:00, it read 29.91 inches at 04:00, and the wind is southwest at 18 knots."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 385,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 423
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:27:11 GMT
+recorded_with: VCR 6.4.0

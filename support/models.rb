@@ -32,6 +32,8 @@ module Multivitamin
     # https://api.openai.com/v1/models on 14 October 2026. gpt-4.1-nano is
     # cheaper and is scheduled to shut down on 2026-10-23. gpt-5-nano is
     # cheaper, does not take temperature, and is a reasoning model.
+    # Also reads images and PDFs on the Responses API. Audio on that
+    # protocol raises UnsupportedAttachmentError.
     OPENAI_CHAT = "gpt-4.1-mini"
 
     # OpenAI Decisions model. RubyLLM::Judge with provider: :openai posts
@@ -40,6 +42,10 @@ module Multivitamin
     # guide. LIVE_PROVIDER does not retarget it: the free OpenRouter slug
     # does not speak that endpoint. gpt-4.1-mini does not list judgment.
     OPENAI_JUDGMENT = "gpt-6-luna"
+
+    # Chat Completions audio model, confirmed on the same models list.
+    # The free OpenRouter audio slugs were past the daily cap that afternoon.
+    OPENAI_AUDIO = "gpt-audio-mini"
 
     module_function
 

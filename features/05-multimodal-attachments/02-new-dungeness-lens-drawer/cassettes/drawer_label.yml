@@ -1,0 +1,172 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"What
+        drawer is this, and what focal length is printed for the bullseye prism?"},{"type":"input_image","image_url":"data:image/png;base64,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","detail":"high"}]}],"instructions":"You
+        are the lens keeper at New Dungeness Light.\nAnswer in one sentence from the
+        label only.\nInclude the drawer number and the focal length in millimetres.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:26:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a84ac23d095ec8-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '985'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_237ca215913944dd85857559986cf80b
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08234f5d3184742c016acfbb61b50c87d0a3a9daf07c85c230",
+          "object": "response",
+          "created_at": 1791998817,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791998818,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lens keeper at New Dungeness Light.\nAnswer in one sentence from the label only.\nInclude the drawer number and the focal length in millimetres.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_08234f5d3184742c016acfbb626e2887d0a2d6ff4db1a6b096",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "This is drawer 4, and the focal length printed for the bullseye prism is 375 mm."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 291,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 23,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 314
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:26:58 GMT
+recorded_with: VCR 6.4.0
