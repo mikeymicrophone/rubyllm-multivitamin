@@ -122,12 +122,15 @@ scenario self-contained:
   request body by running the script's encoder and write a response in the
   provider's real JSON shape. Say so in the scenario README, and say that
   `LIVE=1` should re-record it.
-- Live runs default to the provider in the scenario script. Tools and the
-  spoken handover use OpenAI `gpt-4.1-mini`. The other bottled examples use
-  the free OpenRouter slug in `support/models.rb`. `LIVE_PROVIDER=openai` or
-  `LIVE_PROVIDER=openrouter` overrides that choice while `LIVE=1` is
-  recording, for scripts that call `Multivitamin::Models.chat`. If a slug is
-  gone, use the documented fallback and update both places in the same commit.
+- Live runs default to the provider in the scenario script. Tools, the
+  spoken handover, and structured-output schema turns use OpenAI
+  `gpt-4.1-mini`. Decisions calls use OpenAI `gpt-6-luna` through
+  `RubyLLM::Judge` and are not retargeted by `LIVE_PROVIDER`. The other
+  bottled examples use the free OpenRouter slug in `support/models.rb`.
+  `LIVE_PROVIDER=openai` or `LIVE_PROVIDER=openrouter` overrides the chat
+  provider while `LIVE=1` is recording, for scripts that call
+  `Multivitamin::Models.chat`. If a slug is gone, use the documented
+  fallback and update both places in the same commit.
 
 ## Rails scenarios
 

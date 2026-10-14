@@ -28,11 +28,18 @@ module Multivitamin
     IMAGE = "google/gemini-2.5-flash-image"
 
     # Cheap OpenAI chat model that advertises function calling, tool_choice,
-    # parallel tool calls, and temperature. Confirmed on
+    # parallel tool calls, temperature, and structured output. Confirmed on
     # https://api.openai.com/v1/models on 14 October 2026. gpt-4.1-nano is
     # cheaper and is scheduled to shut down on 2026-10-23. gpt-5-nano is
     # cheaper, does not take temperature, and is a reasoning model.
     OPENAI_CHAT = "gpt-4.1-mini"
+
+    # OpenAI Decisions model. RubyLLM::Judge with provider: :openai posts
+    # this id to https://api.openai.com/v1/decisions. Confirmed against
+    # RubyLLM 2.1.1 (Protocols::OpenAI::Decisions) and OpenAI's Decisions
+    # guide. LIVE_PROVIDER does not retarget it: the free OpenRouter slug
+    # does not speak that endpoint. gpt-4.1-mini does not list judgment.
+    OPENAI_JUDGMENT = "gpt-6-luna"
 
     module_function
 

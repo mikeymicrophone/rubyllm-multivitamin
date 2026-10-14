@@ -1,0 +1,259 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Anacortes
+        cannery, Wednesday 14 October 2026, morning cook.\nThe tender ties at https://www.portofanacortes.com/.\nBasket
+        3, sockeye, 90 minutes.\nVessel: Retort No. 2, in the north house.\nCome-up
+        230 F. Process 250 F."}],"instructions":"You are the cannery clerk at Anacortes.\nFill
+        cook_card from the card. Nest cook, vessel, and temperatures.\nCopy the numbers
+        as integers.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"cook_card","schema":{"description":"Morning
+        cook for the Anacortes cannery retort","type":"object","properties":{"cook":{"type":"object","properties":{"basket":{"type":"string","description":"Basket
+        number as written"},"product":{"type":"string","description":"What is in the
+        basket"},"minutes":{"type":"integer","description":"Process minutes"}},"required":["basket","product","minutes"],"additionalProperties":false,"description":"The
+        basket in the retort"},"vessel":{"type":"object","properties":{"name":{"type":"string","description":"Retort
+        name"},"house":{"type":"string","description":"Cannery house"}},"required":["name","house"],"additionalProperties":false,"description":"Which
+        retort is firing"},"temperatures":{"type":"object","properties":{"come_up_f":{"type":"integer","description":"Come-up
+        temperature in Fahrenheit"},"process_f":{"type":"integer","description":"Process
+        temperature in Fahrenheit"}},"required":["come_up_f","process_f"],"additionalProperties":false,"description":"Come-up
+        and process, degrees Fahrenheit"}},"required":["cook","vessel","temperatures"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:02:52 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827740f3c3973-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '824'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999686'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 9ms
+      X-Request-Id:
+      - req_54cf9019efd54021830dd4d38cd6497f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0eac15671e4de0d3016acfb5bb9b7087d2929e9e25ea3210ef",
+          "object": "response",
+          "created_at": 1791997371,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997372,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the cannery clerk at Anacortes.\nFill cook_card from the card. Nest cook, vessel, and temperatures.\nCopy the numbers as integers.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0eac15671e4de0d3016acfb5bbef4487d2ba3b0d08373fb59e",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"cook\":{\"basket\":\"3\",\"product\":\"sockeye\",\"minutes\":90},\"vessel\":{\"name\":\"Retort No. 2\",\"house\":\"north house\"},\"temperatures\":{\"come_up_f\":230,\"process_f\":250}}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "cook_card",
+              "schema": {
+                "description": "Morning cook for the Anacortes cannery retort",
+                "type": "object",
+                "properties": {
+                  "cook": {
+                    "type": "object",
+                    "properties": {
+                      "basket": {
+                        "type": "string",
+                        "description": "Basket number as written"
+                      },
+                      "product": {
+                        "type": "string",
+                        "description": "What is in the basket"
+                      },
+                      "minutes": {
+                        "type": "integer",
+                        "description": "Process minutes"
+                      }
+                    },
+                    "required": [
+                      "basket",
+                      "product",
+                      "minutes"
+                    ],
+                    "additionalProperties": false,
+                    "description": "The basket in the retort"
+                  },
+                  "vessel": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Retort name"
+                      },
+                      "house": {
+                        "type": "string",
+                        "description": "Cannery house"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "house"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Which retort is firing"
+                  },
+                  "temperatures": {
+                    "type": "object",
+                    "properties": {
+                      "come_up_f": {
+                        "type": "integer",
+                        "description": "Come-up temperature in Fahrenheit"
+                      },
+                      "process_f": {
+                        "type": "integer",
+                        "description": "Process temperature in Fahrenheit"
+                      }
+                    },
+                    "required": [
+                      "come_up_f",
+                      "process_f"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Come-up and process, degrees Fahrenheit"
+                  }
+                },
+                "required": [
+                  "cook",
+                  "vessel",
+                  "temperatures"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 295,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 49,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 344
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:02:52 GMT
+recorded_with: VCR 6.4.0

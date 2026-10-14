@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 39 |
+| Bottled | 52 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,10 +29,12 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 39 of 169 bottled.
-Chat basics, streaming, and tools are full. Tools and the Point Wilson spoken
-handover were recorded on OpenAI `gpt-4.1-mini`. The other bottled cassettes
-are OpenRouter. The remaining features are titled and waiting.
+The bottle is not full yet: 13 features, 13 scenarios each, 52 of 169 bottled.
+Chat basics, streaming, tools, and structured output are full. Tools, the
+Point Wilson spoken handover, and the schema turns were recorded on OpenAI
+`gpt-4.1-mini`. Decisions calls in the structured-output feature were
+recorded on OpenAI `gpt-6-luna`. The other bottled cassettes are OpenRouter.
+The remaining features are titled and waiting.
 
 ## Run the examples
 
@@ -82,8 +84,9 @@ while `LIVE=1` is recording, for examples that call `Multivitamin::Models.chat`.
 Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics and the earlier streaming cassettes are live OpenRouter
-recordings. Tools and the spoken handover are live OpenAI recordings.
-`usage.cost` is the number the provider reported. See each scenario's README.
+recordings. Tools, the spoken handover, and structured output are live
+OpenAI recordings. `usage.cost` is the number the provider reported. See
+each scenario's README.
 
 ## Free models
 
@@ -97,7 +100,8 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Chat, streaming, history, tokens, errors | `nvidia/nemotron-3-super-120b-a12b:free` | `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free` |
 | Tools (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Spoken handover (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | same free chat model via `LIVE_PROVIDER=openrouter` |
-| Structured output | `nvidia/nemotron-3-super-120b-a12b:free` (`structured_outputs`) | `liquid/lfm-2.5-2.6b:free`, then `dots-studio/dots-3-note-preview:free` |
+| Structured output (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
+| Decisions inside structured output (recorded) | `gpt-6-luna` on OpenAI Decisions (`RubyLLM::Judge`, `POST /v1/decisions`) | none. `LIVE_PROVIDER` does not retarget a Judge. There is no separate Luna key |
 | Images in, and video in | `google/gemma-4-31b-it:free` | `google/gemma-4-26b-a4b-it:free`, then `dots-studio/dots-3-note-preview:free` (image, no video) |
 | Audio in | `thinkingmachines/inkling:free` | `thinkingmachines/inkling-small:free`, then `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` |
 | PDF in | none of the `:free` chat models advertised `file` input | a paid PDF-capable model such as `claude-sonnet-5` or a Gemini model the [attachments guide](https://rubyllm.com/attachments/) names |
@@ -112,7 +116,11 @@ stay on a model that lists `structured_outputs`.
 `gpt-4.1-mini` was confirmed on `https://api.openai.com/v1/models` on
 14 October 2026. `gpt-4.1-nano` is cheaper and shuts down on 2026-10-23.
 `gpt-5-nano` is cheaper, does not take temperature, and is a reasoning model.
-The tools cassettes and the spoken handover use `gpt-4.1-mini` for that reason.
+The tools cassettes, the spoken handover, and the schema turns use
+`gpt-4.1-mini` for that reason. Decisions turns use `gpt-6-luna` because
+that is the model OpenAI's Decisions API accepts. RubyLLM reaches it with
+`RubyLLM::Judge` and `OPENAI_API_KEY`. See
+[Structured output](features/04-structured-output/).
 
 Each feature README repeats the row that belongs to it.
 
@@ -143,7 +151,7 @@ hold the cassette player and the model slugs, not the story.
 1. [Chat basics](features/01-chat-basics/) — 13 of 13 bottled
 2. [Streaming](features/02-streaming/) — 13 of 13 bottled
 3. [Tools](features/03-tools/) — 13 of 13 bottled
-4. [Structured output](features/04-structured-output/) — 0 of 13 bottled
+4. [Structured output](features/04-structured-output/) — 13 of 13 bottled
 5. [Multimodal attachments](features/05-multimodal-attachments/) — 0 of 13 bottled
 6. [Embeddings](features/06-embeddings/) — 0 of 13 bottled
 7. [Image generation](features/07-image-generation/) — 0 of 13 bottled

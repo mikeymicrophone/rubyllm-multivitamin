@@ -1,0 +1,218 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"New Dungeness
+        lens cabinet, Wednesday 14 October 2026.\nStation notes: https://newdungenesslighthouse.com/\nDrawer
+        A: bull''s-eye panel, 2 spares.\nDrawer B: catadioptric prism, 1 spare.\nDrawer
+        C: clockwork wick, 6 spares."}],"instructions":"You are the lens keeper at
+        New Dungeness Light.\nFill lens_cabinet with one object per drawer on the
+        card.\nCopy the contents and the spare counts. Keep the drawer letters.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"lens_cabinet","schema":{"description":"Drawer
+        inventory for the fourth-order lens at New Dungeness","type":"object","properties":{"drawers":{"type":"array","description":"One
+        entry for each drawer named on the card","items":{"type":"object","properties":{"drawer":{"type":"string","description":"Drawer
+        letter on the cabinet"},"contents":{"type":"string","description":"What the
+        card says is in that drawer"},"spares":{"type":"integer","description":"Spare
+        count written on the card"}},"required":["drawer","contents","spares"],"additionalProperties":false}}},"required":["drawers"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:02:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a8275269e78c55-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1677'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999699'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 9ms
+      X-Request-Id:
+      - req_b1d65e4fac23413fb7805d2768075fdc
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_09597b98aa2daf5e016acfb5b6521887d29db2b38111089d81",
+          "object": "response",
+          "created_at": 1791997366,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997367,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lens keeper at New Dungeness Light.\nFill lens_cabinet with one object per drawer on the card.\nCopy the contents and the spare counts. Keep the drawer letters.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_09597b98aa2daf5e016acfb5b773b887d29198e3d357efa1fc",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"drawers\":[{\"drawer\":\"A\",\"contents\":\"bull's-eye panel\",\"spares\":2},{\"drawer\":\"B\",\"contents\":\"catadioptric prism\",\"spares\":1},{\"drawer\":\"C\",\"contents\":\"clockwork wick\",\"spares\":6}]}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "lens_cabinet",
+              "schema": {
+                "description": "Drawer inventory for the fourth-order lens at New Dungeness",
+                "type": "object",
+                "properties": {
+                  "drawers": {
+                    "type": "array",
+                    "description": "One entry for each drawer named on the card",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "drawer": {
+                          "type": "string",
+                          "description": "Drawer letter on the cabinet"
+                        },
+                        "contents": {
+                          "type": "string",
+                          "description": "What the card says is in that drawer"
+                        },
+                        "spares": {
+                          "type": "integer",
+                          "description": "Spare count written on the card"
+                        }
+                      },
+                      "required": [
+                        "drawer",
+                        "contents",
+                        "spares"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "drawers"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 228,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 55,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 283
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:02:47 GMT
+recorded_with: VCR 6.4.0

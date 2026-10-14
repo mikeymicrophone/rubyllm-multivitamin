@@ -1,0 +1,155 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Port Townsend
+        ferry slip, Wednesday 14 October 2026, 07:40.\nTerminal page: https://wsdot.wa.gov/ferries\nWind
+        southwest at 18 knots, gusts 24."}],"instructions":"You are the slip watch
+        at the Port Townsend ferry terminal.\nFill wind_report from the board. Copy
+        the numbers as integers.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"wind_report","schema":{"description":"Wind
+        at the Port Townsend ferry slip","type":"object","properties":{"direction":{"type":"string","description":"Wind
+        direction word from the board"},"knots":{"type":"integer","description":"Sustained
+        wind in knots"},"gusts":{"type":"integer","description":"Gust speed in knots"}},"required":["direction","knots","gusts"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:05 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827c69f837b59-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1016'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999525'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 14ms
+      X-Request-Id:
+      - req_3bc3bf8558374ab3a9fd7c94df81e31e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_0fe7b34d78ab2100016acfb5c8dc0087d2b05b6e44f925e0fe","object":"response","created_at":1791997384,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the slip watch at the Port Townsend ferry terminal.\nFill wind_report from the board. Copy the numbers as integers.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"json_schema","description":null,"name":"wind_report","schema":{"description":"Wind at the Port Townsend ferry slip","type":"object","properties":{"direction":{"type":"string","description":"Wind direction word from the board"},"knots":{"type":"integer","description":"Sustained wind in knots"},"gusts":{"type":"integer","description":"Gust speed in knots"}},"required":["direction","knots","gusts"],"additionalProperties":false},"strict":true},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_0fe7b34d78ab2100016acfb5c8dc0087d2b05b6e44f925e0fe","object":"response","created_at":1791997384,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the slip watch at the Port Townsend ferry terminal.\nFill wind_report from the board. Copy the numbers as integers.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"json_schema","description":null,"name":"wind_report","schema":{"description":"Wind at the Port Townsend ferry slip","type":"object","properties":{"direction":{"type":"string","description":"Wind direction word from the board"},"knots":{"type":"integer","description":"Sustained wind in knots"},"gusts":{"type":"integer","description":"Gust speed in knots"}},"required":["direction","knots","gusts"],"additionalProperties":false},"strict":true},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"{\"","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"acPWYwDeRYHLL2","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"direction","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"89Rb5aU","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"\":\"","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"VaMHpShwHZk9I","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"south","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"JiaNfhbna1E","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"west","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"iikPw742DOVs","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"\",\"","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"HnztVTRFnyDCo","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"kn","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"wP7zO2FIPmXMva","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ots","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"V9wMZ3Wsmj5cP","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"\":","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"Ls0VSX07HVRAzu","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"18","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"CR4c2eMRdbDRGz","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",\"","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"DCN48VaAIFDCYq","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"gust","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"NgAyCKrjNRg8","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"s","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"xThSi0ESskEUDcC","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"\":","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"T2T5rwW9oDYZVN","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"24","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"d59Auuh2HDAw1Q","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"}","item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"obfuscation":"d3zLevcDaJ5tw8e","output_index":0,"sequence_number":19}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","logprobs":[],"output_index":0,"sequence_number":20,"text":"{\"direction\":\"southwest\",\"knots\":18,\"gusts\":24}"}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"{\"direction\":\"southwest\",\"knots\":18,\"gusts\":24}"},"sequence_number":21}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"{\"direction\":\"southwest\",\"knots\":18,\"gusts\":24}"}],"role":"assistant"},"output_index":0,"sequence_number":22}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_0fe7b34d78ab2100016acfb5c8dc0087d2b05b6e44f925e0fe","object":"response","created_at":1791997384,"status":"completed","access_programs":null,"background":false,"completed_at":1791997386,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the slip watch at the Port Townsend ferry terminal.\nFill wind_report from the board. Copy the numbers as integers.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_0fe7b34d78ab2100016acfb5c9dba887d2b169c085e5b25a7d","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"{\"direction\":\"southwest\",\"knots\":18,\"gusts\":24}"}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"json_schema","description":null,"name":"wind_report","schema":{"description":"Wind at the Port Townsend ferry slip","type":"object","properties":{"direction":{"type":"string","description":"Wind direction word from the board"},"knots":{"type":"integer","description":"Sustained wind in knots"},"gusts":{"type":"integer","description":"Gust speed in knots"}},"required":["direction","knots","gusts"],"additionalProperties":false},"strict":true},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":154,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":17,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":171},"user":null,"metadata":{}},"sequence_number":23}
+
+  recorded_at: Wed, 14 Oct 2026 17:03:06 GMT
+recorded_with: VCR 6.4.0
+...
