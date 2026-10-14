@@ -10,3 +10,8 @@ gem "minitest", "~> 5.25"
 gem "rake", "~> 13.2"
 gem "vcr", "~> 6.3"
 gem "webmock", "~> 3.24"
+
+# Rails integration scenarios boot an in-memory SQLite schema. Not a
+# full Rails application. See features/10-rails-integration/.
+gem "activerecord", "~> 8.0"
+gem "sqlite3", "~> 2.6"
