@@ -428,7 +428,45 @@ Shown in [Sucia Island sonnet family](features/08-models-and-providers/12-sucia-
 
 ## Configuration and contexts
 
-No entries yet.
+### Provider headers win over with_headers
+
+**What happens.** `with_headers("HTTP-Referer" => "https://www.portoftacoma.com/", "X-Point-Wilson-Watch" => "overnight-kelp-ledge")` stores both on `chat.headers`. The cassette request still sends the configured `openrouter_app_url` as `HTTP-Referer` (`https://www.nps.gov/places/point-wilson-lighthouse.htm`). `X-Point-Wilson-Watch` is on the wire. Faraday merges chat headers first, then `OpenRouter#headers`, so `Authorization`, `HTTP-Referer`, and `X-OpenRouter-Title` cannot be replaced.
+
+**Why it matters.** A tenant that tries to swap the attribution URL from the chat object never changes what OpenRouter records.
+
+**What to do.** Set `openrouter_app_url` and `openrouter_app_name` on the context or global config. Use `with_headers` only for names the provider does not already send.
+
+Shown in [Point Wilson attribution headers](features/09-configuration-and-contexts/01-point-wilson-attribution/).
+
+### Chat has with_provider_options, not with_params
+
+**What happens.** `chat.respond_to?(:with_params)` is false. `chat.respond_to?(:with_provider_options)` is true. `with_provider_options(top_p: 0.2)` merges `"top_p":0.2` onto the Chat Completions body. A second chat that never calls it omits `top_p` and `temperature`.
+
+**Why it matters.** Code copied from older RubyLLM guides that call `with_params` raises `NoMethodError` on 2.1.1.
+
+**What to do.** Call `with_provider_options` for extra request fields. Call `with_temperature` for sampling.
+
+Shown in [Port Townsend sampling and params](features/09-configuration-and-contexts/09-port-townsend-sampling/).
+
+### RubyLLM.logger is memoized from the first Logger it builds
+
+**What happens.** `RubyLLM.logger` is `@logger ||= config.logger || Logger.new(config.log_file, ...)`. After that memo is filled, assigning `config.logger` to a new `StringIO` Logger does not change `RubyLLM.logger`. Faraday's connection cache keys on that memoized object, so request logs keep going to the first Logger. Clearing `RubyLLM.instance_variable_set(:@logger, nil)` makes the next read pick up `config.logger`. Connection settings also include the Logger, so a new Logger gets a new Faraday connection.
+
+**Why it matters.** A station desk that reconfigures `logger` mid-process, or a test that sets a `StringIO` after an earlier example already chatted, never sees those lines.
+
+**What to do.** Set `config.logger` before the first request. If a later block needs a different IO, clear the memo. Restore `File::NULL` and clear the memo when a test finishes so later examples are not flooded.
+
+Shown in [Smith Island logger](features/09-configuration-and-contexts/06-smith-island-logger/).
+
+### ConfigurationError is not a RubyLLM::Error
+
+**What happens.** Clearing `openrouter_api_key` on a context makes `ctx.chat` raise `RubyLLM::ConfigurationError` before any HTTP call. That class inherits `StandardError` directly. `error.is_a?(RubyLLM::Error)` is false. The cassette holds only the working radio's request.
+
+**Why it matters.** `rescue RubyLLM::Error` around `chat.ask` does not catch a missing key. The spare radio looks like a network failure and is not.
+
+**What to do.** Rescue `RubyLLM::ConfigurationError` on its own. Treat it as a local setup miss, not a provider response.
+
+Shown in [Bell buoy empty context](features/09-configuration-and-contexts/12-bell-buoy-empty-context/).
 
 ## Rails integration
 
