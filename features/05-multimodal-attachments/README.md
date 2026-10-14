@@ -8,23 +8,25 @@ Official reference: [Attachments](https://rubyllm.com/attachments/).
 
 ## Free models
 
-Images and video in: `google/gemma-4-31b-it:free` (image, text, video). Fallback `google/gemma-4-26b-a4b-it:free`, then `dots-studio/dots-3-note-preview:free` for still images only. Audio in: `thinkingmachines/inkling:free`, then `thinkingmachines/inkling-small:free`, then `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` (audio, image, and video). PDF: no `:free` chat model advertised `file` input on 14 October 2026. Use a paid model the attachments guide names (`claude-sonnet-5`, or a Gemini model) and record a cassette. Text files ride along with any chat model.
+Images and video in: `google/gemma-4-31b-it:free` (image, text, video). Fallback `google/gemma-4-26b-a4b-it:free`, then `dots-studio/dots-3-note-preview:free` for still images only. Audio in: `thinkingmachines/inkling:free`, then `thinkingmachines/inkling-small:free`, then `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` (audio, image, and video). PDF: no `:free` chat model advertised `file` input on 14 October 2026.
 
-## Examples (0 of 13 bottled)
+On that afternoon the free slugs answered `Rate limit exceeded: free-models-per-day` before any completion. The bottled cassettes use OpenAI instead. Images, PDFs, and mixed image-and-PDF questions use `gpt-4.1-mini`. Audio uses `gpt-audio-mini`, because `gpt-4.1-mini` on the Responses API raises `UnsupportedAttachmentError` for audio. Re-record a vision or audio scenario on the free slug with `LIVE=1 LIVE_PROVIDER=openrouter` only after changing that scenario's model id. These scripts pin the OpenAI id they were bottled with.
 
-01. Photograph of the Point Wilson tide board — planned
-02. Lens cabinet drawer label — planned
-03. Audio of a foghorn timing call — planned
-04. PDF of a retort cook procedure — planned
-05. Friday Harbor berth map — planned
-06. Pilot ladder against the ship's side — planned
-07. Buoy tender check-in recording — planned
-08. Barometer photograph from the weather round — planned
-09. Dry dock sill marks — planned
-10. Port Townsend wind board — planned
-11. Twine invoice PDF — planned
-12. Chart snippet with a correction — planned
-13. Tide board photo plus the cook procedure PDF — planned
+## Examples (13 of 13 bottled)
+
+01. [Point Wilson tide board](01-point-wilson-tide-board/) — available
+02. [New Dungeness lens drawer](02-new-dungeness-lens-drawer/) — available
+03. [Cape Disappointment foghorn call](03-cape-disappointment-foghorn-call/) — available
+04. [Anacortes retort cook procedure](04-anacortes-retort-procedure/) — available
+05. [Friday Harbor berth sheet](05-friday-harbor-berth-sheet/) — available
+06. [Neah Bay pilot ladder](06-neah-bay-pilot-ladder/) — available
+07. [Ediz Hook buoy check-in](07-ediz-hook-buoy-check-in/) — available
+08. [Smith Island barometer round](08-smith-island-barometer/) — available
+09. [Bremerton sill refusal](09-bremerton-sill-refusal/) — available
+10. [Port Townsend slip wind](10-port-townsend-slip-wind/) — available
+11. [Port Angeles twine invoice](11-port-angeles-twine-invoice/) — available
+12. [Juan de Fuca margin correction](12-juan-de-fuca-margin-correction/) — available
+13. [Admiralty Inlet cook and tide](13-admiralty-inlet-cook-and-tide/) — available
 
 ## What each scenario adds
 
@@ -32,17 +34,17 @@ Images and video in: `google/gemma-4-31b-it:free` (image, text, video). Fallback
 | --- | --- |
 | 01 | One local image path and a question about the chalked heights |
 | 02 | `resolution: :high` on a small label |
-| 03 | One audio file; the model is an audio free slug |
-| 04 | A PDF on a paid model, cassette recorded, free-model gap noted in the README |
-| 05 | A URL the scenario trusts, not a user-supplied path |
+| 03 | One audio file on `gpt-audio-mini` |
+| 04 | A PDF on `gpt-4.1-mini`, kept inline under the 50 MiB limit |
+| 05 | A URL the scenario trusts, forwarded as that URL |
 | 06 | Two images in one `with:` array |
-| 07 | A follow-up ask with no new file, history still describing the recording |
+| 07 | A follow-up ask with no new file; the recording is still on the wire |
 | 08 | A text file of the round beside the photograph |
-| 09 | Unsupported type rescued as `UnsupportedAttachmentError` |
+| 09 | A spreadsheet raises `UnsupportedAttachmentError`; audio on Chat Completions is HTTP 400, and the converter does not run |
 | 10 | A converter that turns a spreadsheet into a text attachment |
-| 11 | The same PDF asked twice, to show the attachment stays on the user message |
-| 12 | Image of a chart; the reply names the correction in the margin |
-| 13 | Capstone: image and PDF together, two modalities, two models only if one slug cannot take both |
+| 11 | The same PDF asked twice, so the attachment stays on the first user message and `file_data` is sent again |
+| 12 | An extensionless PNG, sniffed as `image/png`; the reply names the margin correction |
+| 13 | Capstone: image and PDF together on one model |
 
 Planned titles are proposals, not commitments. See
 [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
