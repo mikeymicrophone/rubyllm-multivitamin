@@ -1,16 +1,16 @@
 # Embeddings · 12 · Juan de Fuca chart blurbs
 
 The mate correcting NOAA chart 18465 clusters two near-duplicate notes about
-lighted bell buoy DH moving 300 yards northwest, and keeps a third blurb
-that shares the buoy name but talks about the fog signal.
+lighted bell buoy DH moving 300 yards northwest, and keeps a cannery cook
+card that borrowed the same tokens (`DH`, `18465`, `300`, `northwest`).
 
 **What it teaches**
 
 - Greedy clustering on cosine, with a floor of 0.8, groups the two move
   notes as duplicates.
-- Shared words (`chart 18465`, `buoy DH`) are not enough. The horn blurb
-  stays in its own cluster.
-- One batch embeds all three blurbs.
+- Shared tokens are not enough. The cook card stays in its own cluster and
+  ranks below either move note against a “where did DH move” query.
+- One batch embeds the query and the three blurbs.
 
 **Files**
 

@@ -4,7 +4,8 @@
 #
 # Teaches:
 # - Near-duplicate chart corrections cluster together.
-# - A blurb that shares a buoy name but not the move stays out of that cluster.
+# - A cook card that borrows the same tokens (DH, 18465, 300, northwest)
+#   stays out of that cluster and ranks below a true match.
 
 require "logger"
 require "ruby_llm"
@@ -12,10 +13,11 @@ require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
 module JuanDeFucaChartBlurbs
-  # The mate correcting NOAA chart 18465 clusters three blurbs about buoy DH
-  # and keeps a same-words fog signal note in its own cluster.
+  # The mate correcting NOAA chart 18465 clusters two blurbs about buoy DH
+  # moving 300 yards, and keeps a cannery cook card that reused those tokens.
   class ChartBlurbs
     CLUSTER_FLOOR = 0.8
+    QUERY = "Where did lighted bell buoy DH move on chart 18465?"
 
     Note = Struct.new(:title, :body, keyword_init: true)
 
@@ -26,28 +28,48 @@ module JuanDeFucaChartBlurbs
       ),
       Note.new(
         title: "DH shifted 300 yards",
-        body: "Chart 18465, Strait of Juan de Fuca. Lighted bell buoy DH has been shifted 300 yards to the northwest. The printed position is stale."
+        body: "Chart 18465 correction: lighted bell buoy DH off Dungeness Spit moved 300 yards northwest. The printed symbol is stale. Do not fix on it."
       ),
       Note.new(
-        title: "DH fog signal still 2 seconds",
-        body: "NOAA chart 18465. Dungeness Spit lighted bell buoy DH fog signal remains one 2-second blast every 20 seconds. The horn house ashore is not the buoy."
+        title: "Cook card DH-18465",
+        body: "Anacortes retort cook card DH-18465: basket 3 held 300 seconds after the steam valve. Do not use the old symbol on the pink-salmon cook. Northwest kettle is idle."
       )
     ].freeze
 
     Cluster = Struct.new(:title, :members, keyword_init: true)
-    Result = Struct.new(:clusters, :duplicate_titles, :horn_cluster, :model_id, :input_tokens, :cost, keyword_init: true)
+    Ranked = Struct.new(:title, :score, keyword_init: true)
+    Result = Struct.new(
+      :clusters,
+      :duplicate_titles,
+      :cook_cluster,
+      :winner,
+      :cook_score,
+      :model_id,
+      :input_tokens,
+      :cost,
+      keyword_init: true
+    )
 
     def self.conduct
       configure
-      embedding = RubyLLM.embed(NOTES.map(&:body), **Multivitamin::Models.embed(provider: :openai))
-      groups = cluster(NOTES, embedding.vectors)
+      bodies = [QUERY, *NOTES.map(&:body)]
+      embedding = RubyLLM.embed(bodies, **Multivitamin::Models.embed(provider: :openai))
+      query_vector = embedding.vectors.fetch(0)
+      note_vectors = embedding.vectors.drop(1)
+      groups = cluster(NOTES, note_vectors)
       duplicate = groups.find { |group| group.members.length > 1 }
-      horn = groups.find { |group| group.members.include?("DH fog signal still 2 seconds") }
+      cook = groups.find { |group| group.members.include?("Cook card DH-18465") }
+      ranking = NOTES.each_with_index.map do |note, index|
+        Ranked.new(title: note.title, score: cosine(query_vector, note_vectors.fetch(index)))
+      end.sort_by { |row| -row.score }
+      cook_row = ranking.find { |row| row.title == "Cook card DH-18465" }
 
       Result.new(
         clusters: groups,
         duplicate_titles: duplicate&.members || [],
-        horn_cluster: horn&.members || [],
+        cook_cluster: cook&.members || [],
+        winner: ranking.fetch(0).title,
+        cook_score: cook_row.score,
         model_id: embedding.model,
         input_tokens: embedding.tokens.input,
         cost: embedding.cost.total
@@ -104,5 +126,6 @@ if $PROGRAM_NAME == __FILE__
     result = JuanDeFucaChartBlurbs::ChartBlurbs.conduct
   end
 
-  result.clusters.each { |group| puts "#{group.members.join(' / ')}" }
+  puts result.winner
+  result.clusters.each { |group| puts group.members.join(" / ") }
 end
