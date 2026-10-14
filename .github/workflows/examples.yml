@@ -1,0 +1,17 @@
+name: examples
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cassettes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+      - name: Run bottled examples against cassettes
+        run: bundle exec rake test

@@ -1,0 +1,10 @@
+/.bundle/
+/vendor/
+/tmp/
+/log/
+.env
+.env.*
+!.env.example
+*.gem
+.ruby-lsp/
+coverage/
