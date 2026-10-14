@@ -41,7 +41,7 @@ The `:free` OpenRouter chat slugs answered `Rate limit exceeded: free-models-per
 | 07 | `max_retries` is 0 on the cassette context and the default elsewhere |
 | 08 | `openrouter_api_base` on the cassette URI; `http_proxy` nil; registry path inside the scenario `tmp/` |
 | 09 | `with_temperature` and `with_provider_options` on one chat; the other omits both |
-| 10 | Each tenant's `default_model` is a different free slug |
+| 10 | Each tenant's `default_model` is a different OpenRouter slug (mini vs nano) |
 | 11 | `ctx.embed` Authorization comes from the context; `RubyLLM.embed` uses the global key |
 | 12 | Rescue `ConfigurationError` from the empty context only |
 | 13 | Capstone: a router vends a context per tenant; `with_headers` and `with_context` |
