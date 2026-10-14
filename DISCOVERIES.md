@@ -470,7 +470,35 @@ Shown in [Bell buoy empty context](features/09-configuration-and-contexts/12-bel
 
 ## Rails integration
 
-No entries yet.
+### acts_as_tool_call and acts_as_model are not application macros
+
+**What happens.** After `ActiveRecord::Base.include RubyLLM::ActiveRecord::ActsAs`, `respond_to?(:acts_as_tool_call)` and `respond_to?(:acts_as_model)` are false. Tool requests persist as `RubyLLM::ActiveRecord::ToolCall` rows in `ruby_llm_tool_calls`. The chat's `model` association is `RubyLLM::ActiveRecord::Model` in `ruby_llm_models`. `assume_model_exists: true` with `provider: :openrouter` still inserts that model row for `nvidia/nemotron-3-super-120b-a12b:free`, a slug the bundled JSON catalog does not list.
+
+**Why it matters.** The older Rails guide, and `main` of the gem, still show application `ToolCall` and `Model` classes with those macros. Copying that setup into 2.1.1 raises `NoMethodError`.
+
+**What to do.** Declare `acts_as_chat` and `acts_as_message` only. Read tool calls from `message.tool_calls` and the registry row from `chat.model`.
+
+Shown in [Friday Harbor berth tool](features/10-rails-integration/05-friday-harbor-berth-tool/) and [Neah Bay pilot slug](features/10-rails-integration/09-neah-bay-pilot-slug/).
+
+### A streamed ask inserts an empty assistant row before the first chunk
+
+**What happens.** `before_message` on the underlying chat, registered after `to_llm`, runs once `persist_new_message` has already created the assistant. That row's `content` is `""`. After the stream, the same row holds the joined speech.
+
+**Why it matters.** A presence validation on `content` raises `ActiveRecord::RecordInvalid` before any token arrives. A watch that reads the assistant mid-stream sees a blank note that later becomes the brief.
+
+**What to do.** Leave content optional. Read the filled row after `ask` returns.
+
+Shown in [Cape Disappointment blast stream](features/10-rails-integration/04-cape-disappointment-blast-stream/) and [Bremerton empty gate](features/10-rails-integration/10-bremerton-empty-gate/).
+
+### cancel on a persisted log destroys the blank assistant
+
+**What happens.** `chat.cancel` during a streamed `ask` sets `cancelled?` true on the record and raises `RubyLLM::CancelledError` (`StandardError`, not `RubyLLM::Error`). After the rescue, `messages` is `[:system, :user]`. The assistant row created for the stream is gone.
+
+**Why it matters.** A rescue of `RubyLLM::Error` misses the halt. A query that expects a partial assistant note will not find one.
+
+**What to do.** Rescue `RubyLLM::CancelledError` on its own. Treat the cancelled assistant turn as absent.
+
+Shown in [Juan de Fuca cancel log](features/10-rails-integration/12-juan-de-fuca-cancel-log/). See also [Dungeness sounding halt](features/02-streaming/08-dungeness-sounding-halt/).
 
 ## Instructions and history
 

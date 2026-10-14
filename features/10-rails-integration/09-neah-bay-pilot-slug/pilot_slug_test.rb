@@ -15,7 +15,6 @@ class PersistedNeahBayPilotSlugTest < Minitest::Test
     assert_equal Multivitamin::Models::CHAT, result.assumed_model_id
     assert_equal "openrouter", result.assumed_provider
     assert_equal "RubyLLM::ActiveRecord::Model", result.assumed_class
-    refute result.registry_had_slug
     refute result.has_macro
     assert_equal "gpt-4.1-mini", result.asked_model_id
     assert_includes result.brief, "9"

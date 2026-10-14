@@ -20,11 +20,25 @@ unless ActiveRecord::Base.included_modules.include?(RubyLLM::ActiveRecord::ActsA
   ActiveRecord::Base.include RubyLLM::ActiveRecord::ActsAs
 end
 
+# Including ActsAs points the global registry at the gem's AR tables.
+# Clear that until a scenario's prepare! so other features keep the
+# bundled JSON catalog.
+RubyLLM.config.model_registry_store = nil
+RubyLLM.config.batch_store = nil
+
 module Multivitamin
   # Boots an in-memory SQLite schema for a Rails-integration scenario.
   # Table names come from the caller. This file must not mention a
   # station, a boat, or a cabinet.
   module ActiveRecordBoot
+    # Snapshot library config before any scenario mutates it. Feature 09
+    # leaves default_model and model_registry_file on the global config;
+    # tenant examples assert the library default is still gpt-5.6.
+    LIBRARY_CONFIG = {
+      default_model: RubyLLM.config.default_model,
+      model_registry_file: RubyLLM.config.model_registry_file
+    }.freeze
+
     module_function
 
     def prepare!(chat_table:, message_table:, message_foreign_key:)
@@ -147,7 +161,7 @@ module Multivitamin
         create_table message_table do |t|
           t.references chat_table.to_s.singularize, null: false,
                        foreign_key: { to_table: chat_table },
-                       index: { name: "index_#{message_table}_on_#{message_foreign_key}" }
+                       index: { name: "idx_#{message_table}_chat" }
           t.string :role, null: false
           t.text :content
           t.boolean :cache_until_here, null: false, default: false
@@ -164,9 +178,23 @@ module Multivitamin
       end
     end
 
+    def restore_globals!
+      RubyLLM.config.model_registry_store = nil
+      RubyLLM.config.batch_store = nil
+      RubyLLM.config.mcp_credential_store = nil if RubyLLM.config.respond_to?(:mcp_credential_store=)
+      RubyLLM.config.default_model = LIBRARY_CONFIG.fetch(:default_model)
+      RubyLLM.config.model_registry_file = LIBRARY_CONFIG.fetch(:model_registry_file)
+      RubyLLM::Accounting::Usage.ledger = nil
+      return unless RubyLLM::Models.instance_variable_defined?(:@instance)
+
+      RubyLLM::Models.remove_instance_variable(:@instance)
+    end
+
     def wire_ruby_llm!
-      RubyLLM.config.mcp_credential_store ||= RubyLLM::ActiveRecord::MCPCredential
-      RubyLLM::Accounting::Usage.ledger ||= RubyLLM::ActiveRecord::Usage
+      RubyLLM.config.model_registry_store = RubyLLM::ActiveRecord::Model
+      RubyLLM.config.batch_store = RubyLLM::ActiveRecord::Batch
+      RubyLLM.config.mcp_credential_store = RubyLLM::ActiveRecord::MCPCredential
+      RubyLLM::Accounting::Usage.ledger = RubyLLM::ActiveRecord::Usage
 
       ActiveRecord::Base.descendants.each do |klass|
         next if klass.abstract_class?
@@ -187,4 +215,13 @@ module Multivitamin
       end
     end
   end
+end
+
+if defined?(Minitest::Test)
+  Minitest::Test.prepend(Module.new do
+    def teardown
+      Multivitamin::ActiveRecordBoot.restore_globals!
+      super
+    end
+  end)
 end

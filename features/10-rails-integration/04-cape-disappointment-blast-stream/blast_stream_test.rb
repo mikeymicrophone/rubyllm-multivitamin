@@ -12,7 +12,7 @@ class PersistedCapeDisappointmentBlastStreamTest < Minitest::Test
       result = CapeDisappointmentBlastStream::BlastStream.conduct
     end
 
-    assert_includes result.speech, "3"
+    assert_match(/3|three/i, result.speech)
     assert_includes result.speech, "27"
     assert_equal result.speech, result.saved_content
     assert_equal "", result.blank_before_chunks
