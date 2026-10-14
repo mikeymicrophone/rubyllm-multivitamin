@@ -12,6 +12,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module PortTownsendSampling
   # The slip clerk at Port Townsend posts the wind twice: once with
@@ -76,8 +77,9 @@ module PortTownsendSampling
     end
 
     def self.open_chat
-      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(
+        RubyLLM.chat(**ConfigurationPaidOpenrouter.chat_args)
+      )
     end
 
     def self.configure

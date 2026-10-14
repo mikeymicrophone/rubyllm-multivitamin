@@ -6,6 +6,17 @@ require_relative "weather_logger"
 class SmithIslandLoggerTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/weather_logger.yml", __dir__)
 
+  def test_ruby_llm_logger_stays_memoized_until_cleared
+    first = RubyLLM.logger
+    other = Logger.new(File::NULL)
+    RubyLLM.configure { |config| config.logger = other }
+    assert_same first, RubyLLM.logger
+    RubyLLM.instance_variable_set(:@logger, nil)
+    refute_same first, RubyLLM.logger
+  ensure
+    RubyLLM.instance_variable_set(:@logger, nil)
+  end
+
   def test_the_station_logger_receives_the_horn_round_request
     result = nil
     Multivitamin::Cassettes.play(__dir__, "weather_logger") do

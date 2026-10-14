@@ -11,6 +11,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module EdizHookTenantModels
   # The buoy tender off Ediz Hook and the loft clerk at Port Angeles each
@@ -93,19 +94,15 @@ module EdizHookTenantModels
     end
 
     def self.hook_args
-      Multivitamin::Models.chat(provider: :openrouter)
+      ConfigurationPaidOpenrouter.chat_args
     end
 
     def self.loft_args
-      args = hook_args
-      return args.merge(model: "gpt-4.1-nano") if args.fetch(:provider) == :openai
-
-      args.merge(model: Multivitamin::Models::CHAT_FALLBACK)
+      ConfigurationPaidOpenrouter.spare_args
     end
 
     def self.open_chat(context, args)
-      chat = context.chat(**args)
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(context.chat(**args))
     end
 
     def self.configure

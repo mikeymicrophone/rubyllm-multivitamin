@@ -11,6 +11,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module CanneryAndStationTenants
   # The Anacortes cannery and Point Wilson Light Station each get an
@@ -65,7 +66,7 @@ module CanneryAndStationTenants
 
     def self.conduct
       configure
-      args = Multivitamin::Models.chat(provider: :openrouter)
+      args = ConfigurationPaidOpenrouter.chat_args
 
       station = RubyLLM.context do |config|
         config.openrouter_app_name = STATION_TITLE
@@ -96,8 +97,7 @@ module CanneryAndStationTenants
     end
 
     def self.open_chat(context, args)
-      chat = context.chat(**args)
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(context.chat(**args))
     end
 
     def self.configure

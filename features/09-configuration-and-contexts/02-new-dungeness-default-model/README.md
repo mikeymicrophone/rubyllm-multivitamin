@@ -39,5 +39,6 @@ LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/09-configuration-and-con
 
 **Model**
 
-Default: `nvidia/nemotron-3-super-120b-a12b:free`. Named spare:
-`liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+Default: `openai/gpt-4.1-mini` on OpenRouter. Named spare:
+`openai/gpt-4.1-nano`. The `:free` slugs were past the daily cap.
+Checked 14 October 2026.

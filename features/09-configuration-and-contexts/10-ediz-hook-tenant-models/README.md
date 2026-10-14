@@ -8,7 +8,7 @@ The cassette bodies still carry two different ids.
 
 - `default_model` on a context is the id `ctx.chat` uses when `model:` is
   omitted.
-- Two tenants can pin two different free slugs.
+- Two tenants can pin two different slugs.
 - `RubyLLM.config.default_model` stays the library default (`gpt-5.6`)
   after both chats.
 
@@ -39,5 +39,6 @@ LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/09-configuration-and-con
 
 **Model**
 
-Ediz Hook: `nvidia/nemotron-3-super-120b-a12b:free`. Port Angeles loft:
-`liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+Ediz Hook: `openai/gpt-4.1-mini` on OpenRouter. Port Angeles loft:
+`openai/gpt-4.1-nano`. The `:free` slugs were past the daily cap.
+Checked 14 October 2026.

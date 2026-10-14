@@ -12,6 +12,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module AdmiraltyInletTenantRouter
   Tenant = Struct.new(:slug, :title, :url, :instructions, :question, keyword_init: true)
@@ -79,7 +80,7 @@ module AdmiraltyInletTenantRouter
 
     def self.conduct
       configure
-      args = Multivitamin::Models.chat(provider: :openrouter)
+      args = ConfigurationPaidOpenrouter.chat_args
       router = new
 
       station_ctx = router.context_for(STATION.slug)
@@ -108,7 +109,7 @@ module AdmiraltyInletTenantRouter
     end
 
     def self.open_chat(chat)
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(chat)
     end
 
     def self.configure

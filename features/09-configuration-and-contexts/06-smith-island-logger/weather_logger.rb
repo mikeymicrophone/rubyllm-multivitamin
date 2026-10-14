@@ -13,6 +13,7 @@ require "stringio"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module SmithIslandLogger
   # The keeper at Smith Island Light writes the weather round through a
@@ -71,8 +72,9 @@ module SmithIslandLogger
     end
 
     def self.open_chat
-      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(
+        RubyLLM.chat(**ConfigurationPaidOpenrouter.chat_args)
+      )
     end
 
     def self.configure(station_logger)

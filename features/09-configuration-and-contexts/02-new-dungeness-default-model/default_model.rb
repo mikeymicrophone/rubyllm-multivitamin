@@ -11,6 +11,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module NewDungenessDefaultModel
   # The relief keeper at New Dungeness asks the spare bull's-eye question
@@ -69,19 +70,15 @@ module NewDungenessDefaultModel
     end
 
     def self.chat_args
-      Multivitamin::Models.chat(provider: :openrouter)
+      ConfigurationPaidOpenrouter.chat_args
     end
 
     def self.named_chat_args
-      args = chat_args
-      return args.merge(model: "gpt-4.1-nano") if args.fetch(:provider) == :openai
-
-      args.merge(model: Multivitamin::Models::CHAT_FALLBACK)
+      ConfigurationPaidOpenrouter.spare_args
     end
 
     def self.open_chat(args)
-      chat = RubyLLM.chat(**args)
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(RubyLLM.chat(**args))
     end
 
     def self.configure

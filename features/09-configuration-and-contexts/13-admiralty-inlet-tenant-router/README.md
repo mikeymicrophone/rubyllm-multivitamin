@@ -41,5 +41,7 @@ LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/09-configuration-and-con
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback:
-`liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+Recorded on `openai/gpt-4.1-mini` with `provider: :openrouter` because the
+`:free` chat slugs were past the daily cap. A 512-token output cap is set
+so the request fits this workspace's OpenRouter credits. Fallback:
+`LIVE_PROVIDER=openai` records native `gpt-4.1-mini`. Checked 14 October 2026.

@@ -12,6 +12,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module BellBuoyEmptyContext
   # The spare radio on the Ediz Hook buoy tender has no OpenRouter key.
@@ -44,7 +45,7 @@ module BellBuoyEmptyContext
 
     def self.conduct
       configure
-      args = Multivitamin::Models.chat(provider: :openrouter)
+      args = ConfigurationPaidOpenrouter.chat_args
       empty = RubyLLM.context do |config|
         config.openrouter_api_key = nil
         config.openai_api_key = nil
@@ -75,8 +76,9 @@ module BellBuoyEmptyContext
     end
 
     def self.open_chat
-      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(
+        RubyLLM.chat(**ConfigurationPaidOpenrouter.chat_args)
+      )
     end
 
     def self.configure

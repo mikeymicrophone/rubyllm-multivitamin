@@ -8,9 +8,9 @@ Per-chat overrides (`with_temperature`, `with_provider_options`, `with_headers`,
 
 Official reference: [Configuration](https://rubyllm.com/configuration/), [connection, logging, and contexts](https://rubyllm.com/configuration-connection/), and [advanced request control](https://rubyllm.com/chat-request-control/).
 
-## Free models
+## Models
 
-Chat uses `nvidia/nemotron-3-super-120b-a12b:free`. Fallback: `liquid/lfm-2.5-2.6b:free`. The Juan de Fuca context embed uses `nvidia/nemotron-3-embed-1b:free` on OpenRouter and `text-embedding-3-small` on OpenAI for the global call. Checked 14 October 2026.
+The `:free` OpenRouter chat slugs answered `Rate limit exceeded: free-models-per-day` while this feature was bottled (14 October 2026, before the 8 PM ET reset). Chat examples therefore record `openai/gpt-4.1-mini` on OpenRouter, still `provider: :openrouter`, so `HTTP-Referer` and `X-OpenRouter-Title` stay on the wire. The second tenant slug is `openai/gpt-4.1-nano`. A 512-token output cap is set because this workspace's OpenRouter key could not afford the default 65536 `max_tokens`. The Juan de Fuca context embed uses `openai/text-embedding-3-small` on OpenRouter and the same id on OpenAI for the global call. Fallback: `LIVE_PROVIDER=openai` records native OpenAI `gpt-4.1-mini`. Checked 14 October 2026.
 
 ## Examples (13 of 13 bottled)
 

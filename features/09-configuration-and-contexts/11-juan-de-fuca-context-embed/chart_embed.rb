@@ -12,6 +12,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module JuanDeFucaContextEmbed
   # The mate correcting NOAA chart 18465 embeds the Dungeness Spit notice
@@ -41,15 +42,10 @@ module JuanDeFucaContextEmbed
         Multivitamin::Models.configure(config, provider: :openrouter)
         config.openrouter_app_name = "Juan de Fuca chart desk"
         config.openrouter_app_url = "https://www.nauticalcharts.noaa.gov/"
-        config.default_embedding_model = Multivitamin::Models::EMBEDDING_TEXT
+        config.default_embedding_model = ConfigurationPaidOpenrouter.embed_args.fetch(:model)
       end
 
-      context_embedding = strait.embed(
-        NOTICE,
-        model: Multivitamin::Models::EMBEDDING_TEXT,
-        provider: :openrouter,
-        assume_model_exists: true
-      )
+      context_embedding = strait.embed(NOTICE, **ConfigurationPaidOpenrouter.embed_args)
       global_embedding = RubyLLM.embed(
         NOTICE,
         model: Multivitamin::Models::OPENAI_EMBEDDING,

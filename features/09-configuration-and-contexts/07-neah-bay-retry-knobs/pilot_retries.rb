@@ -11,6 +11,7 @@ require "logger"
 require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
+require_relative "../paid_openrouter"
 
 module NeahBayRetryKnobs
   # The mate on the pilot boat Alden, boarding off Neah Bay, turns retries
@@ -73,8 +74,9 @@ module NeahBayRetryKnobs
     end
 
     def self.open_chat(context)
-      chat = context.chat(**Multivitamin::Models.chat(provider: :openrouter))
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      ConfigurationPaidOpenrouter.prepare(
+        context.chat(**ConfigurationPaidOpenrouter.chat_args)
+      )
     end
 
     def self.configure
