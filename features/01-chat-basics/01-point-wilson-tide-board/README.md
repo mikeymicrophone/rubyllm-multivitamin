@@ -41,12 +41,10 @@ bundle exec ruby features/01-chat-basics/01-point-wilson-tide-board/tide_briefin
 Both commands replay the cassette. No API key is required. `rake test` runs
 the same test with the rest of the bottled examples.
 
-The cassette was hand-authored. The request bodies are the JSON RubyLLM
-2.1.1's OpenRouter Chat Completions encoder produced for this script. The
-response bodies follow OpenRouter's chat completion shape, including
-`usage.cost`, and the wording was written to satisfy the clerk's
-instructions. It is not a recording of a live model. Re-record it before
-treating the sentences as something a model actually said:
+The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`.
+The opening brief sends Alden at about 10:46 and Retort at about 08:57. The
+follow-up uses that 10:46 and tells the watch not to hail the lens crew
+before Alden sails. Re-record it with:
 
 ```sh
 LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/01-point-wilson-tide-board/tide_briefing.rb

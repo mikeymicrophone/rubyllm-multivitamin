@@ -117,10 +117,9 @@ scenario self-contained:
   live key pattern, the way the tide board test does.
 - Never commit `.env` or a raw key. `.env.example` stays empty.
 - A hand-authored cassette is allowed when no key is available. Build the
-  request body by running the script's encoder (the tide board cassette was
-  captured from RubyLLM's OpenRouter Chat Completions payload) and write a
-  response in the provider's real JSON shape. Say so in the scenario README,
-  and say that `LIVE=1` should re-record it.
+  request body by running the script's encoder and write a response in the
+  provider's real JSON shape. Say so in the scenario README, and say that
+  `LIVE=1` should re-record it.
 - Live runs default to the free OpenRouter slug in `support/models.rb` and
   the feature README. If that slug is gone, use the documented fallback and
   update both places in the same commit.

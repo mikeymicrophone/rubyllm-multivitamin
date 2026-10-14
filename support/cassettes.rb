@@ -38,10 +38,13 @@ module Multivitamin
 
       previous = VCR.configuration.cassette_library_dir
       VCR.configure { |config| config.cassette_library_dir = library }
+      # drop_unused_requests makes a live run replace the cassette. Without it,
+      # VCR keeps an old interaction whose request body no longer matches.
       VCR.use_cassette(
         name,
         record: live? ? :all : :none,
-        match_requests_on: %i[method uri body]
+        match_requests_on: %i[method uri body],
+        drop_unused_requests: live?
       ) { yield }
     ensure
       VCR.configure { |config| config.cassette_library_dir = previous } if previous

@@ -74,10 +74,8 @@ Live runs still need a key in the process, because RubyLLM raises
 unconfigured. Cassette runs set a placeholder when `OPENROUTER_API_KEY` is
 absent. That placeholder is not a credential.
 
-The bottled tide-board cassette was hand-authored to the request shape
-RubyLLM 2.1.1 sends OpenRouter. The response follows OpenRouter's chat
-completion JSON, including `usage.cost`. Re-record it with `LIVE=1` before
-treating the sentences as something a model said. See that scenario's README.
+The bottled tide-board cassette is a live OpenRouter recording. `usage.cost`
+is the number the provider reported. See that scenario's README.
 
 ## Free models
 

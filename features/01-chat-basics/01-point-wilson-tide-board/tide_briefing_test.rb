@@ -13,11 +13,15 @@ class TideBriefingTest < Minitest::Test
     assert_includes result.opening, "Alden"
     assert_includes result.opening, "Retort"
     assert_match(/\b6(\.0)?\b/, result.opening)
-    assert_includes result.opening, "12:18"
+    assert_includes result.opening, "3.5"
+    assert_includes result.opening, "10:46"
+    assert_includes result.opening, "08:57"
 
     assert_includes result.follow_up, "Alden"
+    assert_includes result.follow_up, "10:46"
     assert_match(/09:30|9:30/, result.follow_up)
     assert_match(/lens/i, result.follow_up)
+    assert_match(/\ANo\b/, result.follow_up)
 
     assert_equal %i[system user assistant user assistant], result.roles
     assert_equal :stop, result.opening_finish
