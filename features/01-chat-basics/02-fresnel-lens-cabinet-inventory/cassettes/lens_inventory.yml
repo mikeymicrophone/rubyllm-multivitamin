@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the lens keeper at New Dungeness Light Station on the Dungeness Spit.\nAnswer
+        in two short sentences.\nUse only the cabinet list in the question.\nQuote
+        catalog marks exactly as printed.\nDo not invent drawers, prisms, or chimneys."},{"role":"user","content":"Cabinet
+        list posted in the lens room at New Dungeness Light.\nThe station log is kept
+        for https://newdungenesslighthouse.com/ and the\nsector this fourth-order
+        lens marks is drawn on https://www.nauticalcharts.noaa.gov/.\nDrawer A: fourth-order
+        center prism, cracked, catalog NP-4, do not issue.\nDrawer B: spare bull''s-eye,
+        catalog NB-17.\nDrawer C: six lamp chimneys, catalog LC-6.\nDrawer D: clockwork
+        weight chain, catalog CW-2, seized and waiting on a pin.\nWhich drawer holds
+        the spare bull''s-eye, and how many chimneys are in drawer C?\nQuote both
+        catalog marks."}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:02:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972155-tpxYhD0AydCEFJZa5O6g
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5bfd35dbe6289-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n{\"id\":\"gen-1791972155-tpxYhD0AydCEFJZa5O6g\",\"object\":\"chat.completion\",\"created\":1791972155,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Drawer
+        B holds the spare bull's-eye, catalog NB-17.  \\nDrawer C contains six lamp
+        chimneys, catalog LC-6.\",\"refusal\":null,\"reasoning\":\"We need to answer
+        in two short sentences. Use only the cabinet list in the question. Quote catalog
+        marks exactly as printed. So we need to say which drawer holds the spare bull's-eye,
+        and how many chimneys are in drawer C. Also quote both catalog marks: the
+        spare bull's-eye catalog NB-17, and the chimneys catalog LC-6. Must not invent
+        drawers, prisms, or chimneys. So answer: Drawer B holds the spare bull's-eye
+        (catalog NB-17). Drawer C contains six lamp chimneys (catalog LC-6). Two sentences.
+        Ensure we quote catalog marks exactly: NB-17 and LC-6. Provide answer.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in two short sentences. Use only the cabinet list in the question.
+        Quote catalog marks exactly as printed. So we need to say which drawer holds
+        the spare bull's-eye, and how many chimneys are in drawer C. Also quote both
+        catalog marks: the spare bull's-eye catalog NB-17, and the chimneys catalog
+        LC-6. Must not invent drawers, prisms, or chimneys. So answer: Drawer B holds
+        the spare bull's-eye (catalog NB-17). Drawer C contains six lamp chimneys
+        (catalog LC-6). Two sentences. Ensure we quote catalog marks exactly: NB-17
+        and LC-6. Provide answer.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":217,\"completion_tokens\":176,\"total_tokens\":393,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":143,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:02:41 GMT
+recorded_with: VCR 6.4.0

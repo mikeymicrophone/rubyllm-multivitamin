@@ -1,0 +1,284 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are Hattie, the loft boss at the net loft beside the Port of Anacortes marina.\nThe
+        marina is https://www.portofanacortes.com/.\nAnswer in two short sentences.\nUse
+        only ticket NL-214 and the corrections in this chat.\nName the twine numbers.\nDo
+        not mend the herring bait bag."},{"role":"user","content":"Mending ticket
+        NL-214 for the seiner Cape Flattery, tied at the Port of Anacortes marina.\nTear
+        1: cork line, 14 meshes, starboard shoulder, twine 36.\nTear 2: lead line,
+        6 meshes, belly, twine 48.\nThe herring bait bag is not on this ticket.\nHattie,
+        which tear do you mend first, and what twine?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:06:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972395-XDZdAU5XVWzlRo2dQwM4
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c5ae4edb9d6b-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n{\"id\":\"gen-1791972395-XDZdAU5XVWzlRo2dQwM4\",\"object\":\"chat.completion\",\"created\":1791972395,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Mend
+        the cork line tear first.  \\nUse twine 36.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer in two short sentences. Use only ticket NL-214 and the corrections
+        in this chat. Name the twine numbers. Do not mend the herring bait bag. The
+        user asks: \\\"Hattie, which tear do you mend first, and what twine?\\\" We
+        need to decide which tear to mend first. There's no explicit instruction about
+        order, but we can infer maybe based on location: cork line tear (starboard
+        shoulder) vs lead line tear (belly). Typically, cork line is more critical
+        for buoyancy? Or lead line for weight? Not sure. Could choose either, but
+        must be consistent with ticket and corrections. There's no correction given
+        besides the user statement. So we just answer based on the ticket: we have
+        two tears: tear 1 cork line twine 36, tear 2 lead line twine 48. Which to
+        mend first? Could say mend tear 1 first using twine 36. Or tear 2 first using
+        twine 48. Need to pick one. Since no guidance, we can choose arbitrarily but
+        must be logical. Perhaps prioritize cork line because it's at starboard shoulder,
+        maybe more visible. I'd answer: Mend the cork line tear first using twine
+        36. Then second sentence: Then mend the lead line tear using twine 48. But
+        the question: \\\"which tear do you mend first, and what twine?\\\" They ask
+        only which tear first and what twine. So answer in two short sentences: first
+        sentence: Mend the cork line tear (tear 1) first. Second sentence: Use twine
+        36 for that mend. That satisfies two sentences. Do not mention herring bait
+        bag. Use only ticket NL-214 and corrections. We are not adding extra info.
+        So answer: \\\"Mend the cork line tear first.\\\" \\\"Use twine 36.\\\" That's
+        two short sentences.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in two short sentences. Use only ticket NL-214 and the corrections
+        in this chat. Name the twine numbers. Do not mend the herring bait bag. The
+        user asks: \\\"Hattie, which tear do you mend first, and what twine?\\\" We
+        need to decide which tear to mend first. There's no explicit instruction about
+        order, but we can infer maybe based on location: cork line tear (starboard
+        shoulder) vs lead line tear (belly). Typically, cork line is more critical
+        for buoyancy? Or lead line for weight? Not sure. Could choose either, but
+        must be consistent with ticket and corrections. There's no correction given
+        besides the user statement. So we just answer based on the ticket: we have
+        two tears: tear 1 cork line twine 36, tear 2 lead line twine 48. Which to
+        mend first? Could say mend tear 1 first using twine 36. Or tear 2 first using
+        twine 48. Need to pick one. Since no guidance, we can choose arbitrarily but
+        must be logical. Perhaps prioritize cork line because it's at starboard shoulder,
+        maybe more visible. I'd answer: Mend the cork line tear first using twine
+        36. Then second sentence: Then mend the lead line tear using twine 48. But
+        the question: \\\"which tear do you mend first, and what twine?\\\" They ask
+        only which tear first and what twine. So answer in two short sentences: first
+        sentence: Mend the cork line tear (tear 1) first. Second sentence: Use twine
+        36 for that mend. That satisfies two sentences. Do not mention herring bait
+        bag. Use only ticket NL-214 and corrections. We are not adding extra info.
+        So answer: \\\"Mend the cork line tear first.\\\" \\\"Use twine 36.\\\" That's
+        two short sentences.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":189,\"completion_tokens\":430,\"total_tokens\":619,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":409,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:06:39 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are Hattie, the loft boss at the net loft beside the Port of Anacortes marina.\nThe
+        marina is https://www.portofanacortes.com/.\nAnswer in two short sentences.\nUse
+        only ticket NL-214 and the corrections in this chat.\nName the twine numbers.\nDo
+        not mend the herring bait bag."},{"role":"user","content":"Mending ticket
+        NL-214 for the seiner Cape Flattery, tied at the Port of Anacortes marina.\nTear
+        1: cork line, 14 meshes, starboard shoulder, twine 36.\nTear 2: lead line,
+        6 meshes, belly, twine 48.\nThe herring bait bag is not on this ticket.\nHattie,
+        which tear do you mend first, and what twine?"},{"role":"assistant","content":"Mend
+        the cork line tear first.  \nUse twine 36.","reasoning_details":[{"type":"reasoning.text","text":"We
+        need to answer in two short sentences. Use only ticket NL-214 and the corrections
+        in this chat. Name the twine numbers. Do not mend the herring bait bag. The
+        user asks: \"Hattie, which tear do you mend first, and what twine?\" We need
+        to decide which tear to mend first. There''s no explicit instruction about
+        order, but we can infer maybe based on location: cork line tear (starboard
+        shoulder) vs lead line tear (belly). Typically, cork line is more critical
+        for buoyancy? Or lead line for weight? Not sure. Could choose either, but
+        must be consistent with ticket and corrections. There''s no correction given
+        besides the user statement. So we just answer based on the ticket: we have
+        two tears: tear 1 cork line twine 36, tear 2 lead line twine 48. Which to
+        mend first? Could say mend tear 1 first using twine 36. Or tear 2 first using
+        twine 48. Need to pick one. Since no guidance, we can choose arbitrarily but
+        must be logical. Perhaps prioritize cork line because it''s at starboard shoulder,
+        maybe more visible. I''d answer: Mend the cork line tear first using twine
+        36. Then second sentence: Then mend the lead line tear using twine 48. But
+        the question: \"which tear do you mend first, and what twine?\" They ask only
+        which tear first and what twine. So answer in two short sentences: first sentence:
+        Mend the cork line tear (tear 1) first. Second sentence: Use twine 36 for
+        that mend. That satisfies two sentences. Do not mention herring bait bag.
+        Use only ticket NL-214 and corrections. We are not adding extra info. So answer:
+        \"Mend the cork line tear first.\" \"Use twine 36.\" That''s two short sentences.","format":"unknown","index":0}]},{"role":"user","content":"Calder
+        just hailed the loft.\nThe belly tear grew from 6 meshes to 9 meshes.\nThe
+        cork-line tear is unchanged.\nAnswer in two sentences.\nThe first sentence
+        must contain 9 and twine 48.\nThe second sentence must contain twine 36."}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:06:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972399-eKlOzkUdtKtCCmdyagnw
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c5cba8fc9873-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MTk3MjM5OS1lS2xPemtVZHRLdENDbWR5YWdudyIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTE5NzIzOTksIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlRoZSBiZWxseSB0ZWFyIG5vdyBtZWFzdXJlcyA5IG1lc2hlcyBhbmQgcmVxdWlyZXMgdHdpbmUgNDguICBcblRoZSBjb3Jr4oCRbGluZSB0ZWFyIHJlbWFpbnMgYXQgMTQgbWVzaGVzIGFuZCB1c2VzIHR3aW5lIDM2LiIsInJlZnVzYWwiOm51bGwsInJlYXNvbmluZyI6IldlIG5lZWQgdG8gYW5zd2VyIGluIHR3byBzZW50ZW5jZXMuIEZpcnN0IHNlbnRlbmNlIG11c3QgY29udGFpbiBcIjlcIiBhbmQgXCJ0d2luZSA0OFwiLiBTZWNvbmQgc2VudGVuY2UgbXVzdCBjb250YWluIFwidHdpbmUgMzZcIi4gQWxzbyB3ZSBtdXN0IG9ubHkgdXNlIHRpY2tldCBOTC0yMTQgYW5kIGNvcnJlY3Rpb25zIGluIHRoaXMgY2hhdC4gV2UgaGF2ZSB0aWNrZXQgTkwtMjE0OiB0ZWFyMSBjb3JrIGxpbmUgMTQgbWVzaGVzIHR3aW5lMzYsIHRlYXIyIGxlYWQgbGluZSBiZWxseSBvcmlnaW5hbGx5IDYgbWVzaGVzIHR3aW5lNDgsIG5vdyBiZWxseSB0ZWFyIGdyZXcgZnJvbSA2IHRvIDkgbWVzaGVzLiBTbyB3ZSBuZWVkIHRvIGFuc3dlciB3aGljaCB0ZWFyIHRvIG1lbmQgZmlyc3Q/IFByb2JhYmx5IHN0aWxsIG1lbmQgdGhlIGJlbGx5IHRlYXIgKGxlYWQgbGluZSkgZmlyc3QgYmVjYXVzZSBpdCBncmV3PyBPciBtYXliZSBzdGlsbCBjb3JrIGxpbmUgZmlyc3Q/IFRoZSBwcmlvciBhbnN3ZXIgc2FpZCBtZW5kIGNvcmsgbGluZSBmaXJzdC4gTm93IGJlbGx5IHRlYXIgZ3JldywgbWF5YmUgc3RpbGwgbWVuZCBjb3JrIGxpbmUgZmlyc3Q/IFRoZSB1c2VyIGRpZG4ndCBhc2sgd2hpY2ggdG8gbWVuZCBmaXJzdCBub3csIGp1c3QgYW5zd2VyIGluIHR3byBzZW50ZW5jZXMgd2l0aCBjb25zdHJhaW50cy4gV2UgbmVlZCB0byBpbmNsdWRlIDkgYW5kIHR3aW5lIDQ4IGluIGZpcnN0IHNlbnRlbmNlLCBhbmQgdHdpbmUgMzYgaW4gc2Vjb25kIHNlbnRlbmNlLiBDb3VsZCBiZTogXCJUaGUgYmVsbHkgdGVhciBub3cgbWVhc3VyZXMgOSBtZXNoZXMgYW5kIHJlcXVpcmVzIHR3aW5lIDQ4LlwiIFRoYXQncyBmaXJzdCBzZW50ZW5jZSBpbmNsdWRlcyA5IGFuZCB0d2luZSA0OC4gU2Vjb25kIHNlbnRlbmNlOiBcIlRoZSBjb3Jr4oCRbGluZSB0ZWFyIHJlbWFpbnMgYXQgMTQgbWVzaGVzIGFuZCB1c2VzIHR3aW5lIDM2LlwiIFRoYXQgaW5jbHVkZXMgdHdpbmUgMzYuIFR3byBzZW50ZW5jZXMuIEdvb2QuIEVuc3VyZSBubyBleHRyYSBpbmZvIGJleW9uZCB0aWNrZXQgTkwtMjE0IGFuZCBjb3JyZWN0aW9ucy4gV2UgdXNlZCBpbmZvIGZyb20gdGlja2V0IGFuZCBjb3JyZWN0aW9uLiBObyBtZW50aW9uIG9mIGhlcnJpbmcgYmFpdCBiYWcuIEdvb2QuIiwicmVhc29uaW5nX2RldGFpbHMiOlt7InR5cGUiOiJyZWFzb25pbmcudGV4dCIsInRleHQiOiJXZSBuZWVkIHRvIGFuc3dlciBpbiB0d28gc2VudGVuY2VzLiBGaXJzdCBzZW50ZW5jZSBtdXN0IGNvbnRhaW4gXCI5XCIgYW5kIFwidHdpbmUgNDhcIi4gU2Vjb25kIHNlbnRlbmNlIG11c3QgY29udGFpbiBcInR3aW5lIDM2XCIuIEFsc28gd2UgbXVzdCBvbmx5IHVzZSB0aWNrZXQgTkwtMjE0IGFuZCBjb3JyZWN0aW9ucyBpbiB0aGlzIGNoYXQuIFdlIGhhdmUgdGlja2V0IE5MLTIxNDogdGVhcjEgY29yayBsaW5lIDE0IG1lc2hlcyB0d2luZTM2LCB0ZWFyMiBsZWFkIGxpbmUgYmVsbHkgb3JpZ2luYWxseSA2IG1lc2hlcyB0d2luZTQ4LCBub3cgYmVsbHkgdGVhciBncmV3IGZyb20gNiB0byA5IG1lc2hlcy4gU28gd2UgbmVlZCB0byBhbnN3ZXIgd2hpY2ggdGVhciB0byBtZW5kIGZpcnN0PyBQcm9iYWJseSBzdGlsbCBtZW5kIHRoZSBiZWxseSB0ZWFyIChsZWFkIGxpbmUpIGZpcnN0IGJlY2F1c2UgaXQgZ3Jldz8gT3IgbWF5YmUgc3RpbGwgY29yayBsaW5lIGZpcnN0PyBUaGUgcHJpb3IgYW5zd2VyIHNhaWQgbWVuZCBjb3JrIGxpbmUgZmlyc3QuIE5vdyBiZWxseSB0ZWFyIGdyZXcsIG1heWJlIHN0aWxsIG1lbmQgY29yayBsaW5lIGZpcnN0PyBUaGUgdXNlciBkaWRuJ3QgYXNrIHdoaWNoIHRvIG1lbmQgZmlyc3Qgbm93LCBqdXN0IGFuc3dlciBpbiB0d28gc2VudGVuY2VzIHdpdGggY29uc3RyYWludHMuIFdlIG5lZWQgdG8gaW5jbHVkZSA5IGFuZCB0d2luZSA0OCBpbiBmaXJzdCBzZW50ZW5jZSwgYW5kIHR3aW5lIDM2IGluIHNlY29uZCBzZW50ZW5jZS4gQ291bGQgYmU6IFwiVGhlIGJlbGx5IHRlYXIgbm93IG1lYXN1cmVzIDkgbWVzaGVzIGFuZCByZXF1aXJlcyB0d2luZSA0OC5cIiBUaGF0J3MgZmlyc3Qgc2VudGVuY2UgaW5jbHVkZXMgOSBhbmQgdHdpbmUgNDguIFNlY29uZCBzZW50ZW5jZTogXCJUaGUgY29ya+KAkWxpbmUgdGVhciByZW1haW5zIGF0IDE0IG1lc2hlcyBhbmQgdXNlcyB0d2luZSAzNi5cIiBUaGF0IGluY2x1ZGVzIHR3aW5lIDM2LiBUd28gc2VudGVuY2VzLiBHb29kLiBFbnN1cmUgbm8gZXh0cmEgaW5mbyBiZXlvbmQgdGlja2V0IE5MLTIxNCBhbmQgY29ycmVjdGlvbnMuIFdlIHVzZWQgaW5mbyBmcm9tIHRpY2tldCBhbmQgY29ycmVjdGlvbi4gTm8gbWVudGlvbiBvZiBoZXJyaW5nIGJhaXQgYmFnLiBHb29kLiIsImZvcm1hdCI6InVua25vd24iLCJpbmRleCI6MH1dfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoyODMsImNvbXBsZXRpb25fdG9rZW5zIjozNTMsInRvdGFsX3Rva2VucyI6NjM2LCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjMxMCwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Wed, 14 Oct 2026 10:06:45 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are Calder, skipper of the seiner Cape Flattery.\nSpeak as the skipper, in
+        two short sentences, telling the loft what to mend.\nUse only ticket NL-214.\nThe
+        first sentence must contain NL-214.\nDo not mention a mesh count that is not
+        on the ticket."},{"role":"user","content":"Mending ticket NL-214 for your
+        seiner Cape Flattery.\nTear 1: cork line, 14 meshes, starboard shoulder, twine
+        36.\nTear 2: lead line, 6 meshes, belly, twine 48.\nTell the loft which tear
+        to mend first."}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:06:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972405-C2NKoPVtqhahwnrJWUDo
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c5ed0b7dff11-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1791972405-C2NKoPVtqhahwnrJWUDo\",\"object\":\"chat.completion\",\"created\":1791972405,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"NL-214:
+        mend the cork line tear first, 14 meshes, starboard shoulder, twine 36.  \\nThen
+        repair the lead line tear, 6 meshes, belly, twine 48.\",\"refusal\":null,\"reasoning\":\"We
+        need to respond as Calder, skipper, in two short sentences, telling the loft
+        what to mend. Use only ticket NL-214. First sentence must contain NL-214.
+        Do not mention a mesh count that is not on the ticket. So we can mention mesh
+        counts that are on ticket: 14 meshes, 6 meshes. We must not mention any other
+        mesh count. So we can say: \\\"NL-214: mend the cork line tear first, 14 meshes,
+        starboard shoulder, twine 36.\\\" That's one sentence containing NL-214. Then
+        second sentence: \\\"Then repair the lead line tear, 6 meshes, belly, twine
+        48.\\\" That's two sentences. Ensure we don't mention any other mesh count.
+        Both sentences are short. No extra info. Ensure we don't mention any other
+        ticket. Good.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to respond as Calder, skipper, in two short sentences, telling the loft
+        what to mend. Use only ticket NL-214. First sentence must contain NL-214.
+        Do not mention a mesh count that is not on the ticket. So we can mention mesh
+        counts that are on ticket: 14 meshes, 6 meshes. We must not mention any other
+        mesh count. So we can say: \\\"NL-214: mend the cork line tear first, 14 meshes,
+        starboard shoulder, twine 36.\\\" That's one sentence containing NL-214. Then
+        second sentence: \\\"Then repair the lead line tear, 6 meshes, belly, twine
+        48.\\\" That's two sentences. Ensure we don't mention any other mesh count.
+        Both sentences are short. No extra info. Ensure we don't mention any other
+        ticket. Good.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":153,\"completion_tokens\":248,\"total_tokens\":401,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":193,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:06:48 GMT
+recorded_with: VCR 6.4.0

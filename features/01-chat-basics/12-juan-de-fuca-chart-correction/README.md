@@ -4,7 +4,7 @@ The mate has correction slip JC-18465 for chart 18465: Dungeness Spit buoy DH mo
 
 **What it teaches**
 
-- `with_max_output_tokens` caps the next reply. A short or empty `content` is still a message.
+- `with_max_output_tokens` caps the next reply. A short or empty `content` is still a message. On this recording the cap was spent entirely on reasoning, `content` is nil, and the draft is on `thinking`.
 - `max_tokens?` is true when the finish reason is the cap. `content.to_s.strip` is how you see that the note is too short to pencil onto the chart.
 - `response.raw` is the `Faraday::Response`. `raw.status` is the HTTP status beside the parsed message.
 - Clearing the cap with `with_max_output_tokens(nil)` and asking again posts the full correction on the same chat.
@@ -28,7 +28,7 @@ bundle exec ruby features/01-chat-basics/12-juan-de-fuca-chart-correction/chart_
 
 Both commands replay the cassette. No API key is required. `rake test` runs the same test with the rest of the bottled examples.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`. The posted note names chart 18465, buoy DH, and the 300 yard move. Re-record it with:
+The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`. The capped ask returned HTTP 200 with `content` nil and `finish_reason` `:max_tokens`. All 64 completion tokens were reasoning tokens, and the draft of the note sat on `thinking` instead of `content`. The second ask, with the cap cleared, posted the correction: chart 18465, buoy DH, 300 yards northwest. Re-record it with:
 
 ```sh
 LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/12-juan-de-fuca-chart-correction/chart_notice.rb

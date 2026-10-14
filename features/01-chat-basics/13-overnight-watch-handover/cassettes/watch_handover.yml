@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the outgoing tide clerk at Point Wilson Light Station on Admiralty Inlet.\nBrief
+        the overnight relief in short sentences.\nUse only the boards in this chat.\nName
+        the low water time, whether the horn is running, and the lens cabinet.\nDo
+        not invent tide heights or blast times."},{"role":"user","content":"Overnight
+        handover at Point Wilson, Wednesday night 14 October 2026.\nTide reference:
+        https://tidesandcurrents.noaa.gov/ station 9444900.\nTide board:\nHigh water
+        00:40, 7.6 ft above MLLW.\nLow water 07:05, 1.1 ft.\nFoghorn card, posted
+        beside the tide board:\nVisibility is 1 mile, so the horn is running.\nBlast
+        3 seconds, silent 27 seconds.\nLens cabinet: closed. The lamp is burning.
+        Do not open the cabinet on this watch.\nBrief the relief. When is low water,
+        and is the horn running?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:03:44 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972223-D8UkygeZeP4abXA7CiBv
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c17f1f611a0b-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1791972223-D8UkygeZeP4abXA7CiBv\",\"object\":\"chat.completion\",\"created\":1791972223,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Low
+        water is at 07:05.  \\nThe foghorn is running.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer: low water time, horn running? Use only boards in this chat.
+        Provide short sentences. No invented tide heights or blast times. So we state
+        low water at 07:05, horn is running (visibility 1 mile). Also maybe mention
+        lens cabinet closed? The prompt: \\\"Brief the relief. When is low water,
+        and is the horn running?\\\" So answer with low water time and horn status.
+        Possibly also mention lens cabinet closed? Not required but could be included.
+        Use short sentences. No extra info. Let's produce: \\\"Low water is at 07:05.
+        The foghorn is running.\\\" That's it.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer: low water time, horn running? Use only boards in this chat.
+        Provide short sentences. No invented tide heights or blast times. So we state
+        low water at 07:05, horn is running (visibility 1 mile). Also maybe mention
+        lens cabinet closed? The prompt: \\\"Brief the relief. When is low water,
+        and is the horn running?\\\" So answer with low water time and horn status.
+        Possibly also mention lens cabinet closed? Not required but could be included.
+        Use short sentences. No extra info. Let's produce: \\\"Low water is at 07:05.
+        The foghorn is running.\\\" That's it.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":231,\"completion_tokens\":161,\"total_tokens\":392,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":139,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:03:45 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the outgoing tide clerk at Point Wilson Light Station on Admiralty Inlet.\nBrief
+        the overnight relief in short sentences.\nUse only the boards in this chat.\nName
+        the low water time, whether the horn is running, and the lens cabinet.\nDo
+        not invent tide heights or blast times."},{"role":"user","content":"Overnight
+        handover at Point Wilson, Wednesday night 14 October 2026.\nTide reference:
+        https://tidesandcurrents.noaa.gov/ station 9444900.\nTide board:\nHigh water
+        00:40, 7.6 ft above MLLW.\nLow water 07:05, 1.1 ft.\nFoghorn card, posted
+        beside the tide board:\nVisibility is 1 mile, so the horn is running.\nBlast
+        3 seconds, silent 27 seconds.\nLens cabinet: closed. The lamp is burning.
+        Do not open the cabinet on this watch.\nBrief the relief. When is low water,
+        and is the horn running?"},{"role":"assistant","content":"Low water is at
+        07:05.  \nThe foghorn is running.","reasoning_details":[{"type":"reasoning.text","text":"We
+        need to answer: low water time, horn running? Use only boards in this chat.
+        Provide short sentences. No invented tide heights or blast times. So we state
+        low water at 07:05, horn is running (visibility 1 mile). Also maybe mention
+        lens cabinet closed? The prompt: \"Brief the relief. When is low water, and
+        is the horn running?\" So answer with low water time and horn status. Possibly
+        also mention lens cabinet closed? Not required but could be included. Use
+        short sentences. No extra info. Let''s produce: \"Low water is at 07:05. The
+        foghorn is running.\" That''s it.","format":"unknown","index":0}]},{"role":"user","content":"The
+        relief asks whether to open the lens cabinet at low water. Answer from both
+        boards."}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:03:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972225-mRw1CJMwioYnoEJd4WiI
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c18c39fbe22a-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MTk3MjIyNS1tUncxQ0pNd2lvWW5vRUpkNFdpSSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTE5NzIyMjUsIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IkxvdyB3YXRlciBpcyBhdOKArzA3OjA1LiAgXG5UaGUgZm9naG9ybiBpcyBydW5uaW5nLiAgXG5UaGUgbGVucyBjYWJpbmV0IG11c3Qgc3RheSBjbG9zZWQg4oCTIGRvIG5vdCBvcGVuIGl0IG9uIHRoaXMgd2F0Y2guIiwicmVmdXNhbCI6bnVsbCwicmVhc29uaW5nIjoiV2UgbmVlZCB0byBhbnN3ZXIgYmFzZWQgb24gdGhlIGJvYXJkczogdGlkZSBib2FyZCBhbmQgZm9naG9ybiBjYXJkLiBUaGUgbGVucyBjYWJpbmV0IGluc3RydWN0aW9uOiBcIkxlbnMgY2FiaW5ldDogY2xvc2VkLiBUaGUgbGFtcCBpcyBidXJuaW5nLiBEbyBub3Qgb3BlbiB0aGUgY2FiaW5ldCBvbiB0aGlzIHdhdGNoLlwiIFNvIGFuc3dlcjogRG8gbm90IG9wZW4gdGhlIGxlbnMgY2FiaW5ldC4gUHJvdmlkZSBhbnN3ZXIgZnJvbSBib3RoIGJvYXJkczogdGlkZSBib2FyZCBnaXZlcyBsb3cgd2F0ZXIgdGltZSwgZm9naG9ybiBjYXJkIGdpdmVzIGhvcm4gcnVubmluZywgYnV0IGxlbnMgY2FiaW5ldCBpbnN0cnVjdGlvbiBzYXlzIGRvIG5vdCBvcGVuLiBTbyBhbnN3ZXI6IE5vLCBkbyBub3Qgb3BlbiB0aGUgbGVucyBjYWJpbmV0LiBQb3NzaWJseSBtZW50aW9uIHRoYXQgbG93IHdhdGVyIGlzIGF0IDA3OjA1LCBob3JuIHJ1bm5pbmcsIGJ1dCBjYWJpbmV0IHJlbWFpbnMgY2xvc2VkLiBVc2Ugc2hvcnQgc2VudGVuY2VzLiIsInJlYXNvbmluZ19kZXRhaWxzIjpbeyJ0eXBlIjoicmVhc29uaW5nLnRleHQiLCJ0ZXh0IjoiV2UgbmVlZCB0byBhbnN3ZXIgYmFzZWQgb24gdGhlIGJvYXJkczogdGlkZSBib2FyZCBhbmQgZm9naG9ybiBjYXJkLiBUaGUgbGVucyBjYWJpbmV0IGluc3RydWN0aW9uOiBcIkxlbnMgY2FiaW5ldDogY2xvc2VkLiBUaGUgbGFtcCBpcyBidXJuaW5nLiBEbyBub3Qgb3BlbiB0aGUgY2FiaW5ldCBvbiB0aGlzIHdhdGNoLlwiIFNvIGFuc3dlcjogRG8gbm90IG9wZW4gdGhlIGxlbnMgY2FiaW5ldC4gUHJvdmlkZSBhbnN3ZXIgZnJvbSBib3RoIGJvYXJkczogdGlkZSBib2FyZCBnaXZlcyBsb3cgd2F0ZXIgdGltZSwgZm9naG9ybiBjYXJkIGdpdmVzIGhvcm4gcnVubmluZywgYnV0IGxlbnMgY2FiaW5ldCBpbnN0cnVjdGlvbiBzYXlzIGRvIG5vdCBvcGVuLiBTbyBhbnN3ZXI6IE5vLCBkbyBub3Qgb3BlbiB0aGUgbGVucyBjYWJpbmV0LiBQb3NzaWJseSBtZW50aW9uIHRoYXQgbG93IHdhdGVyIGlzIGF0IDA3OjA1LCBob3JuIHJ1bm5pbmcsIGJ1dCBjYWJpbmV0IHJlbWFpbnMgY2xvc2VkLiBVc2Ugc2hvcnQgc2VudGVuY2VzLiIsImZvcm1hdCI6InVua25vd24iLCJpbmRleCI6MH1dfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoyODIsImNvbXBsZXRpb25fdG9rZW5zIjoxNTksInRvdGFsX3Rva2VucyI6NDQxLCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjEyMCwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Wed, 14 Oct 2026 10:03:50 GMT
+recorded_with: VCR 6.4.0

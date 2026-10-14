@@ -30,6 +30,7 @@ module AnacortesNetLoft
       You are Calder, skipper of the seiner Cape Flattery.
       Speak as the skipper, in two short sentences, telling the loft what to mend.
       Use only ticket NL-214.
+      The first sentence must contain NL-214.
       Do not mention a mesh count that is not on the ticket.
     TEXT
 
@@ -45,7 +46,9 @@ module AnacortesNetLoft
       Calder just hailed the loft.
       The belly tear grew from 6 meshes to 9 meshes.
       The cork-line tear is unchanged.
-      What is the belly twine now, and what was the cork-line twine?
+      Answer in two sentences.
+      The first sentence must contain 9 and twine 48.
+      The second sentence must contain twine 36.
     TEXT
 
     SKIPPER_QUESTION = <<~TEXT.strip

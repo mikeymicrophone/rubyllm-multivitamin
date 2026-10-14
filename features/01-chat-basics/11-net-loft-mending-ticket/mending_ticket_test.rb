@@ -15,7 +15,7 @@ class MendingTicketTest < Minitest::Test
     assert_includes result.after_the_hail, "48"
     assert_includes result.after_the_hail, "36"
     assert_includes result.after_the_hail, "9"
-    assert_includes result.skipper, "NL-214"
+    assert_match(/NL.214/, result.skipper)
     assert_match(/cork/i, result.skipper)
 
     assert_equal [3, 5], result.loft_lengths

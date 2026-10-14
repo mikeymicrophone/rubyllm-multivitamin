@@ -44,6 +44,7 @@ module JuanDeFucaChart
 
     Result = Struct.new(
       :clipped_content,
+      :clipped_thinking,
       :clipped_finish,
       :clipped_max_tokens,
       :clipped_status,
@@ -82,6 +83,7 @@ module JuanDeFucaChart
 
       Result.new(
         clipped_content: clipped.content,
+        clipped_thinking: clipped.thinking&.text,
         clipped_finish: clipped.finish_reason,
         clipped_max_tokens: clipped.max_tokens?,
         clipped_status: clipped.raw.status,

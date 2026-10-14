@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "yaml"
 require_relative "chart_notice"
 
 class ChartNoticeTest < Minitest::Test
@@ -9,6 +10,11 @@ class ChartNoticeTest < Minitest::Test
     Multivitamin::Cassettes.play(__dir__, "chart_notice") do
       result = JuanDeFucaChart::ChartNotice.conduct
     end
+
+    assert_nil result.clipped_content
+    assert_includes result.clipped_thinking, "18465"
+    assert_equal :max_tokens, result.clipped_finish
+    assert_equal true, result.clipped_max_tokens
 
     clipped_text = result.clipped_content.to_s.strip
     short_note = clipped_text.empty? || result.clipped_max_tokens || clipped_text.length < JuanDeFucaChart::ChartNotice::SHORT_LENGTH
@@ -27,6 +33,21 @@ class ChartNoticeTest < Minitest::Test
       assert_equal result.clipped_content, result.posted_content
       assert_equal %i[system user assistant], result.roles
     end
+  end
+
+  def test_the_empty_note_is_sent_back_when_the_mate_asks_again
+    cassette = YAML.load_file(File.expand_path("cassettes/chart_notice.yml", __dir__))
+    interactions = cassette.fetch("http_interactions")
+    first_request = interactions[0].dig("request", "body", "string")
+    second_request = interactions[1].dig("request", "body", "string")
+    first_response = interactions[0].dig("response", "body", "string")
+
+    assert_includes first_request, '"max_tokens":64'
+    refute_includes first_request, "reasoning_details"
+    assert_includes first_response, '"content":null'
+    assert_includes first_response, '"reasoning_tokens":64'
+    refute_includes second_request, "max_tokens"
+    assert_includes second_request, "reasoning_details"
   end
 
   def test_cassette_does_not_carry_a_live_key

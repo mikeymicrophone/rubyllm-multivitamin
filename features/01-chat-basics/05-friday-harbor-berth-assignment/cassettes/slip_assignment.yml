@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the night harbormaster at the Port of Friday Harbor marina.\nAnswer in
+        two short sentences.\nUse only the berth board in the question.\nThe first
+        sentence names the berth you assign.\nDo not drop boats from the conversation
+        just because the reply names one of them."},{"role":"user","content":"Berth
+        board for Wednesday night 14 October 2026.\nMarina office, 204 Front Street,
+        Friday Harbor, https://www.portfridayharbor.org/.\nG-14: foghorn tender Alden,
+        42 feet, needs shore power, assign here if the berth is open.\nH-2: cannery
+        tender Retort, 36 feet, water only, already tied and staying.\nFuel float:
+        seiner Cape Flattery, taking diesel, not a berth, cast off when the tanks
+        are full.\nJ-7: closed for piling work, do not assign.\nWhere do you put Alden
+        for the night?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:03:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972187-sEYDqCvZxmEMZp8YRU0e
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c09a5a7efef3-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAp7ImlkIjoiZ2VuLTE3OTE5NzIxODctc0VZRHFDdlp4bUVNWnA4WVJVMGUiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24iLCJjcmVhdGVkIjoxNzkxOTcyMTg3LCJtb2RlbCI6Im52aWRpYS9uZW1vdHJvbi0zLXN1cGVyLTEyMGItYTEyYjpmcmVlIiwicHJvdmlkZXIiOiJOdmlkaWEiLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInNlcnZpY2VfdGllciI6bnVsbCwiY2hvaWNlcyI6W3siaW5kZXgiOjAsImxvZ3Byb2JzIjpudWxsLCJmaW5pc2hfcmVhc29uIjoic3RvcCIsIm5hdGl2ZV9maW5pc2hfcmVhc29uIjoic3RvcCIsIm1lc3NhZ2UiOnsicm9sZSI6ImFzc2lzdGFudCIsImNvbnRlbnQiOiJBc3NpZ24gQWxkZW4gdG8gYmVydGggRy0xNCBmb3IgdGhlIG5pZ2h0LiAgXG5FbnN1cmUgc2hvcmUgcG93ZXIgaXMgY29ubmVjdGVkIGF0IEctMTQuIiwicmVmdXNhbCI6bnVsbCwicmVhc29uaW5nIjoiV2UgbmVlZCB0byBhbnN3ZXIgaW4gdHdvIHNob3J0IHNlbnRlbmNlcy4gRmlyc3Qgc2VudGVuY2UgbmFtZXMgdGhlIGJlcnRoIHdlIGFzc2lnbi4gVXNlIG9ubHkgdGhlIGJlcnRoIGJvYXJkIGluIHRoZSBxdWVzdGlvbi4gU28gd2UgbXVzdCByZWZlciB0byBiZXJ0aHMgbGlzdGVkOiBHLTE0LCBILTIsIEZ1ZWwgZmxvYXQsIEotNy4gQWxkZW4gaXMgZm9naG9ybiB0ZW5kZXIgbmVlZGluZyBzaG9yZSBwb3dlciwgRy0xNCBpcyBsaXN0ZWQgYXMgbmVlZGluZyBzaG9yZSBwb3dlciwgYXNzaWduIGhlcmUgaWYgYmVydGggaXMgb3Blbi4gTm8gaW5mbyB0aGF0IEctMTQgaXMgb2NjdXBpZWQuIFNvIGFzc2lnbiBBbGRlbiB0byBHLTE0LiBTZWNvbmQgc2VudGVuY2U6IG1heWJlIHNvbWV0aGluZyBsaWtlIFwiUGxlYXNlIGVuc3VyZSBzaG9yZSBwb3dlciBpcyBjb25uZWN0ZWQuXCIgTXVzdCBiZSBzaG9ydCBzZW50ZW5jZXMsIHR3byB0b3RhbC4gVXNlIG9ubHkgdGhlIGJlcnRoIGJvYXJkIGluIHRoZSBxdWVzdGlvbuKAlHNvIHdlIGNhbiBvbmx5IG1lbnRpb24gYmVydGhzIGZyb20gYm9hcmQuIFdlIGNhbiBtZW50aW9uIEctMTQgYWdhaW4uIFByb2JhYmx5OiBcIkFzc2lnbiBBbGRlbiB0byBiZXJ0aCBHLTE0IGZvciB0aGUgbmlnaHQuXCIgU2Vjb25kIHNlbnRlbmNlOiBcIk1ha2Ugc3VyZSBzaG9yZSBwb3dlciBpcyBhdmFpbGFibGUgYXQgRy0xNC5cIiBUaGF0IHVzZXMgb25seSBiZXJ0aCBib2FyZCBpbmZvLiBUd28gc2VudGVuY2VzLiIsInJlYXNvbmluZ19kZXRhaWxzIjpbeyJ0eXBlIjoicmVhc29uaW5nLnRleHQiLCJ0ZXh0IjoiV2UgbmVlZCB0byBhbnN3ZXIgaW4gdHdvIHNob3J0IHNlbnRlbmNlcy4gRmlyc3Qgc2VudGVuY2UgbmFtZXMgdGhlIGJlcnRoIHdlIGFzc2lnbi4gVXNlIG9ubHkgdGhlIGJlcnRoIGJvYXJkIGluIHRoZSBxdWVzdGlvbi4gU28gd2UgbXVzdCByZWZlciB0byBiZXJ0aHMgbGlzdGVkOiBHLTE0LCBILTIsIEZ1ZWwgZmxvYXQsIEotNy4gQWxkZW4gaXMgZm9naG9ybiB0ZW5kZXIgbmVlZGluZyBzaG9yZSBwb3dlciwgRy0xNCBpcyBsaXN0ZWQgYXMgbmVlZGluZyBzaG9yZSBwb3dlciwgYXNzaWduIGhlcmUgaWYgYmVydGggaXMgb3Blbi4gTm8gaW5mbyB0aGF0IEctMTQgaXMgb2NjdXBpZWQuIFNvIGFzc2lnbiBBbGRlbiB0byBHLTE0LiBTZWNvbmQgc2VudGVuY2U6IG1heWJlIHNvbWV0aGluZyBsaWtlIFwiUGxlYXNlIGVuc3VyZSBzaG9yZSBwb3dlciBpcyBjb25uZWN0ZWQuXCIgTXVzdCBiZSBzaG9ydCBzZW50ZW5jZXMsIHR3byB0b3RhbC4gVXNlIG9ubHkgdGhlIGJlcnRoIGJvYXJkIGluIHRoZSBxdWVzdGlvbuKAlHNvIHdlIGNhbiBvbmx5IG1lbnRpb24gYmVydGhzIGZyb20gYm9hcmQuIFdlIGNhbiBtZW50aW9uIEctMTQgYWdhaW4uIFByb2JhYmx5OiBcIkFzc2lnbiBBbGRlbiB0byBiZXJ0aCBHLTE0IGZvciB0aGUgbmlnaHQuXCIgU2Vjb25kIHNlbnRlbmNlOiBcIk1ha2Ugc3VyZSBzaG9yZSBwb3dlciBpcyBhdmFpbGFibGUgYXQgRy0xNC5cIiBUaGF0IHVzZXMgb25seSBiZXJ0aCBib2FyZCBpbmZvLiBUd28gc2VudGVuY2VzLiIsImZvcm1hdCI6InVua25vd24iLCJpbmRleCI6MH1dfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoyMTIsImNvbXBsZXRpb25fdG9rZW5zIjoyMjEsInRvdGFsX3Rva2VucyI6NDMzLCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjE5MSwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Wed, 14 Oct 2026 10:03:10 GMT
+recorded_with: VCR 6.4.0

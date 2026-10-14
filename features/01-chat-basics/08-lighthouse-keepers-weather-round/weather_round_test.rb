@@ -12,7 +12,7 @@ class WeatherRoundTest < Minitest::Test
 
     assert_equal true, result.stopped
     assert_equal :stop, result.finish_reason
-    assert_includes result.round, "SE"
+    assert_match(/\bSE\b|southeast/i, result.round)
     assert_includes result.round, "15"
     assert_includes result.round, "4"
     assert_includes result.round, "29.92"

@@ -7,7 +7,8 @@ The retort clerk at the Anacortes cannery logs the morning sockeye cook, takes C
 - The first `ask` logs the posted card: basket 3, 240 F, 75 minutes.
 - The second `ask` corrects the temperature to 242 F. The basket and the minutes stay.
 - The third `ask` recaps the cook. It can name 242 F because the correction is still on the chat.
-- The follow-up request is larger than the first. On this OpenRouter recording the earlier assistant turn is sent back with its `reasoning_details`, not only the visible log line.
+- The follow-up request is larger than the first. On this OpenRouter recording the earlier assistant turn is sent back with its `reasoning_details`, along with the visible log line.
+- The recap prints basket 3 with a narrow no-break space (U+202F) between the word and the number. A check for a normal space misses it.
 
 **Files**
 

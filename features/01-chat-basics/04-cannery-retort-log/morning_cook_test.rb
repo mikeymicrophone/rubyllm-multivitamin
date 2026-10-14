@@ -15,7 +15,9 @@ class MorningCookTest < Minitest::Test
     assert_includes result.log_line, "3"
     assert_includes result.correction, "242"
     assert_includes result.recap, "242"
-    assert_match(/basket 3/i, result.recap)
+    # The model separates "basket" and "3" with U+202F, not a normal space.
+    assert_includes result.recap, "basket\u202f3"
+    assert_match(/basket[[:space:]]3/i, result.recap)
     assert_includes result.recap, "75"
 
     assert_equal %i[system user assistant user assistant user assistant], result.roles
