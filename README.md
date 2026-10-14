@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 1 |
+| Bottled | 13 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,8 +29,8 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 1 of 169 bottled.
-The rest are titled and waiting.
+The bottle is not full yet: 13 features, 13 scenarios each, 13 of 169 bottled.
+Chat basics is full. The other features are titled and waiting.
 
 ## Run the examples
 
@@ -74,8 +74,8 @@ Live runs still need a key in the process, because RubyLLM raises
 unconfigured. Cassette runs set a placeholder when `OPENROUTER_API_KEY` is
 absent. That placeholder is not a credential.
 
-The bottled tide-board cassette is a live OpenRouter recording. `usage.cost`
-is the number the provider reported. See that scenario's README.
+The bottled cassettes are live OpenRouter recordings. `usage.cost`
+is the number the provider reported. See each scenario's README.
 
 ## Free models
 
@@ -126,7 +126,7 @@ hold the cassette player and the model slugs, not the story.
 
 ## Features
 
-1. [Chat basics](features/01-chat-basics/) — 1 of 13 bottled
+1. [Chat basics](features/01-chat-basics/) — 13 of 13 bottled
 2. [Streaming](features/02-streaming/) — 0 of 13 bottled
 3. [Tools](features/03-tools/) — 0 of 13 bottled
 4. [Structured output](features/04-structured-output/) — 0 of 13 bottled
