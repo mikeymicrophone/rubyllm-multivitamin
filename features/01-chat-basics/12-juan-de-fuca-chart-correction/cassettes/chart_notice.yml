@@ -1,0 +1,161 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the mate correcting NOAA chart 18465 on the Strait of Juan de Fuca.\nUse
+        only the correction slip in this chat.\nName chart 18465 and buoy DH.\nDo
+        not invent a latitude or a longitude."},{"role":"user","content":"Correction
+        slip JC-18465, copied for the watch on Wednesday 14 October 2026.\nChart catalog:
+        https://www.nauticalcharts.noaa.gov/.\nNotice desk the mate copied from: https://www.navcen.uscg.gov/.\nNOAA
+        chart 18465, Strait of Juan de Fuca.\nDungeness Spit lighted bell buoy DH
+        is moved 300 yards northwest of the symbol printed on the chart.\nThe old
+        symbol is still printed. Do not use it for a fix.\nThe slip gives no new latitude
+        and no new longitude.\nWrite the correction the watch can pencil on the chart:
+        two sentences, the chart number, the buoy, and the 300 yard move."}],"stream":false,"temperature":0.2,"max_tokens":64}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:03:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972216-D1Eaj9hY855edd9C0HmB
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c1518bd8ef20-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1791972216-D1Eaj9hY855edd9C0HmB\",\"object\":\"chat.completion\",\"created\":1791972216,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"length\",\"native_finish_reason\":\"length\",\"message\":{\"role\":\"assistant\",\"content\":null,\"refusal\":null,\"reasoning\":\"We
+        need to produce two sentences, include chart number, buoy DH, and the 300
+        yard move. No invented lat/long. So something like: \\\"On NOAA chart 18465,
+        the lighted bell buoy DH is to be moved 300 yards northwest of its printed\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to produce two sentences, include chart number, buoy DH, and the 300
+        yard move. No invented lat/long. So something like: \\\"On NOAA chart 18465,
+        the lighted bell buoy DH is to be moved 300 yards northwest of its printed\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":228,\"completion_tokens\":64,\"total_tokens\":292,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":64,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:03:37 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the mate correcting NOAA chart 18465 on the Strait of Juan de Fuca.\nUse
+        only the correction slip in this chat.\nName chart 18465 and buoy DH.\nDo
+        not invent a latitude or a longitude."},{"role":"user","content":"Correction
+        slip JC-18465, copied for the watch on Wednesday 14 October 2026.\nChart catalog:
+        https://www.nauticalcharts.noaa.gov/.\nNotice desk the mate copied from: https://www.navcen.uscg.gov/.\nNOAA
+        chart 18465, Strait of Juan de Fuca.\nDungeness Spit lighted bell buoy DH
+        is moved 300 yards northwest of the symbol printed on the chart.\nThe old
+        symbol is still printed. Do not use it for a fix.\nThe slip gives no new latitude
+        and no new longitude.\nWrite the correction the watch can pencil on the chart:
+        two sentences, the chart number, the buoy, and the 300 yard move."},{"role":"assistant","content":"","reasoning_details":[{"type":"reasoning.text","text":"We
+        need to produce two sentences, include chart number, buoy DH, and the 300
+        yard move. No invented lat/long. So something like: \"On NOAA chart 18465,
+        the lighted bell buoy DH is to be moved 300 yards northwest of its printed","format":"unknown","index":0}]},{"role":"user","content":"That
+        note was too short to pencil on the chart. Write the correction in two sentences.
+        Name chart 18465 and buoy DH and the 300 yard move."}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 10:03:37 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1791972217-UrGwhtBPDt8bwOamZ2ou
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4a5c1581a6dff07-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1791972217-UrGwhtBPDt8bwOamZ2ou\",\"object\":\"chat.completion\",\"created\":1791972217,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"On
+        NOAA chart 18465, the Dungeness Spit lighted bell buoy DH is relocated 300
+        yards northwest of its charted symbol. The former symbol remains printed and
+        must not be used for a fix.\",\"refusal\":null,\"reasoning\":\"We need to
+        produce two sentences, naming chart 18465, buoy DH, and the 300 yard move.
+        Must not invent latitude/longitude. Should be suitable to pencil on chart.
+        Two sentences only. Provide something like: \\\"On NOAA chart 18465, the Dungeness
+        Spit lighted bell buoy DH is relocated 300 yards northwest of its charted
+        symbol. The former symbol remains printed and must not be used for a fix.\\\"
+        That's two sentences, includes chart number, buoy, and move. Ensure no extra
+        sentences. Provide exactly two sentences.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to produce two sentences, naming chart 18465, buoy DH, and the 300 yard
+        move. Must not invent latitude/longitude. Should be suitable to pencil on
+        chart. Two sentences only. Provide something like: \\\"On NOAA chart 18465,
+        the Dungeness Spit lighted bell buoy DH is relocated 300 yards northwest of
+        its charted symbol. The former symbol remains printed and must not be used
+        for a fix.\\\" That's two sentences, includes chart number, buoy, and move.
+        Ensure no extra sentences. Provide exactly two sentences.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":279,\"completion_tokens\":177,\"total_tokens\":456,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":125,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Wed, 14 Oct 2026 10:03:40 GMT
+recorded_with: VCR 6.4.0
