@@ -11,6 +11,7 @@ module Multivitamin
   module Cassettes
     PLACEHOLDER_KEY = "cassette-placeholder-not-a-real-key"
     FILTERED_KEY = "<OPENROUTER_API_KEY>"
+    OPENAI_FILTERED_KEY = "<OPENAI_API_KEY>"
 
     KEY_ENV_VARS = %w[
       OPENROUTER_API_KEY
@@ -52,12 +53,32 @@ module Multivitamin
 
     def prepare_key!
       if live?
-        return unless ENV["OPENROUTER_API_KEY"].to_s.empty?
-
-        abort "LIVE=1 needs OPENROUTER_API_KEY in the environment. Never commit it."
+        require_live_key!
+        return
       end
 
       ENV["OPENROUTER_API_KEY"] ||= PLACEHOLDER_KEY
+      ENV["OPENAI_API_KEY"] ||= PLACEHOLDER_KEY
+    end
+
+    def require_live_key!
+      provider = ENV["LIVE_PROVIDER"].to_s.strip.downcase
+      case provider
+      when "openai"
+        return unless ENV["OPENAI_API_KEY"].to_s.empty?
+
+        abort "LIVE=1 LIVE_PROVIDER=openai needs OPENAI_API_KEY in the environment. Never commit it."
+      when "openrouter"
+        return unless ENV["OPENROUTER_API_KEY"].to_s.empty?
+
+        abort "LIVE=1 LIVE_PROVIDER=openrouter needs OPENROUTER_API_KEY in the environment. Never commit it."
+      when ""
+        return unless ENV["OPENROUTER_API_KEY"].to_s.empty? && ENV["OPENAI_API_KEY"].to_s.empty?
+
+        abort "LIVE=1 needs OPENROUTER_API_KEY or OPENAI_API_KEY in the environment. Never commit it."
+      else
+        abort "LIVE_PROVIDER must be openai or openrouter."
+      end
     end
 
     def configure!
@@ -92,20 +113,35 @@ module Multivitamin
 
       headers.delete_if { |name, _| name.to_s.downcase == "set-cookie" }
       authorization = headers.keys.find { |name| name.to_s.downcase == "authorization" }
-      headers[authorization] = ["Bearer #{FILTERED_KEY}"] if authorization
+      headers[authorization] = ["Bearer #{authorization_placeholder(Array(headers[authorization]).join)}"] if authorization
+    end
+
+    def authorization_placeholder(token)
+      return OPENAI_FILTERED_KEY if token.include?(OPENAI_FILTERED_KEY)
+      return FILTERED_KEY if token.include?(FILTERED_KEY)
+
+      openai = ENV["OPENAI_API_KEY"].to_s
+      openrouter = ENV["OPENROUTER_API_KEY"].to_s
+      return OPENAI_FILTERED_KEY if openai.length > 8 && openai != PLACEHOLDER_KEY && token.include?(openai)
+      return FILTERED_KEY if openrouter.length > 8 && openrouter != PLACEHOLDER_KEY && token.include?(openrouter)
+      return FILTERED_KEY if token.match?(/sk-or-/)
+      return OPENAI_FILTERED_KEY if token.match?(/sk-/)
+
+      FILTERED_KEY
     end
 
     def scrub_text(text)
       return text unless text.is_a?(String)
 
-      scrubbed = text.gsub(/sk-or-v1-[A-Za-z0-9_\-]+/, FILTERED_KEY)
+      scrubbed = text.dup
       KEY_ENV_VARS.each do |name|
         value = ENV[name]
         next if value.nil? || value.empty? || value == PLACEHOLDER_KEY
 
         scrubbed = scrubbed.gsub(value, "<#{name}>")
       end
-      scrubbed
+      scrubbed = scrubbed.gsub(/sk-or-v1-[A-Za-z0-9_\-]+/, FILTERED_KEY)
+      scrubbed.gsub(/sk-(?:proj-)?[A-Za-z0-9_\-]{12,}/, OPENAI_FILTERED_KEY)
     end
   end
 end
