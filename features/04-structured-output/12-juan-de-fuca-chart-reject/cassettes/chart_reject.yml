@@ -1,0 +1,288 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Notice 1842.
+        Station: Ediz Hook. No bearing on this notice."}],"instructions":"You are
+        the mate correcting the Juan de Fuca chart.\nFill the schema from the notice.
+        Copy the station and the notice number.\nThe notice gives no bearing, so bearing
+        is null.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"ChartCorrection","schema":{"type":"object","properties":{"station":{"type":"string","description":"Light
+        or buoy the notice names"},"notice":{"type":"string","description":"Notice
+        number"},"bearing":{"type":"string","description":"Bearing, only when the
+        notice gives one"}},"required":["station","notice"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '324'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827ddfaae8e18-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '32'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_d1d65f3c7b914d19b4d5a1c13e0e6df0
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid schema for response_format 'ChartCorrection': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Missing 'bearing'.",
+            "type": "invalid_request_error",
+            "param": "text.format.schema",
+            "code": "invalid_json_schema"
+          }
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:08 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Notice 1842.
+        Station: Ediz Hook. No bearing on this notice."},{"role":"user","content":"Wednesday
+        14 October 2026, chart desk for the Strait of Juan de Fuca.\nChart catalog:
+        https://www.nauticalcharts.noaa.gov/\nNotice desk: https://www.navcen.uscg.gov/\nNotice
+        1842. Station: Ediz Hook.\nMove the bell buoy symbol 0.2 mile west. No bearing
+        is printed."}],"instructions":"You are the mate correcting the Juan de Fuca
+        chart.\nFill the schema from the notice. Copy the station and the notice number.\nThe
+        notice gives no bearing, so bearing is null.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"chart_notice","schema":{"description":"One
+        Juan de Fuca chart correction","type":"object","properties":{"station":{"type":"string","description":"The
+        light or buoy the notice names"},"notice":{"type":"string","description":"Notice
+        number"},"bearing":{"description":"Bearing if the notice gives one, otherwise
+        null","anyOf":[{"type":"string"},{"type":"null"}]}},"required":["station","notice","bearing"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827dedd52ef60-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '624'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999423'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 17ms
+      X-Request-Id:
+      - req_74057663171c44ceb55cfb318977b7e2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_00df4052d5e15ed5016acfb5ccb42c87d29bd66d086924bfa5",
+          "object": "response",
+          "created_at": 1791997388,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997389,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the mate correcting the Juan de Fuca chart.\nFill the schema from the notice. Copy the station and the notice number.\nThe notice gives no bearing, so bearing is null.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_00df4052d5e15ed5016acfb5cd222887d2aedeef03baa0dd2b",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"station\":\"Ediz Hook\",\"notice\":\"1842\",\"bearing\":null}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "chart_notice",
+              "schema": {
+                "description": "One Juan de Fuca chart correction",
+                "type": "object",
+                "properties": {
+                  "station": {
+                    "type": "string",
+                    "description": "The light or buoy the notice names"
+                  },
+                  "notice": {
+                    "type": "string",
+                    "description": "Notice number"
+                  },
+                  "bearing": {
+                    "description": "Bearing if the notice gives one, otherwise null",
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "station",
+                  "notice",
+                  "bearing"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 228,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 17,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 245
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:09 GMT
+recorded_with: VCR 6.4.0

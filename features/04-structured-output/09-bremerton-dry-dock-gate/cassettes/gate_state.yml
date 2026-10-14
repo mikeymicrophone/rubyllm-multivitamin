@@ -1,0 +1,576 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning, Port of Bremerton dry dock.\nGate office: https://www.portofbremerton.org/\nThe
+        gate is shut. Water over the sill is 18.4 ft.\nRecord the gate state."}],"instructions":"You
+        are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill
+        only that schema from the conversation.\nWhen no schema is set, answer in
+        one prose sentence and do not use JSON.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"gate_state","schema":{"description":"Dry
+        dock gate at the Port of Bremerton","type":"object","properties":{"gate":{"type":"string","enum":["open","shut"],"description":"Whether
+        the gate is open or shut"},"sill_ft":{"type":"number","description":"Water
+        over the sill in feet"}},"required":["gate","sill_ft"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827b12cd2825c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '550'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999780'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_9ef07e31b3ae43ef8e5551317275d6bb
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0f7121968da5086a016acfb5c568d487d28c1ac91b79fc00bb",
+          "object": "response",
+          "created_at": 1791997381,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997381,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill only that schema from the conversation.\nWhen no schema is set, answer in one prose sentence and do not use JSON.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0f7121968da5086a016acfb5c5c41887d2b2b2169549006a44",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"gate\":\"shut\",\"sill_ft\":18.4}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "gate_state",
+              "schema": {
+                "description": "Dry dock gate at the Port of Bremerton",
+                "type": "object",
+                "properties": {
+                  "gate": {
+                    "type": "string",
+                    "enum": [
+                      "open",
+                      "shut"
+                    ],
+                    "description": "Whether the gate is open or shut"
+                  },
+                  "sill_ft": {
+                    "type": "number",
+                    "description": "Water over the sill in feet"
+                  }
+                },
+                "required": [
+                  "gate",
+                  "sill_ft"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 177,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 15,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 192
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:01 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning, Port of Bremerton dry dock.\nGate office: https://www.portofbremerton.org/\nThe
+        gate is shut. Water over the sill is 18.4 ft.\nRecord the gate state."},{"role":"assistant","content":[{"type":"output_text","text":"{\"gate\":\"shut\",\"sill_ft\":18.4}"}]},{"role":"user","content":"Can
+        the crew walk the sill this morning? One sentence."}],"instructions":"You
+        are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill
+        only that schema from the conversation.\nWhen no schema is set, answer in
+        one prose sentence and do not use JSON.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827b5793cb1e2-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '820'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999607'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_5138f9d86afd46cea09a417d010657f1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03824d91e27af245016acfb5c618e887d2938421c0eaa29039",
+          "object": "response",
+          "created_at": 1791997382,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997382,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill only that schema from the conversation.\nWhen no schema is set, answer in one prose sentence and do not use JSON.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_03824d91e27af245016acfb5c6768087d2aecdfb5d12bf2c21",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No, the crew cannot walk the sill this morning because the water over the sill is 18.4 feet, which is too deep to walk."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 140,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 171
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:02 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning, Port of Bremerton dry dock.\nGate office: https://www.portofbremerton.org/\nThe
+        gate is shut. Water over the sill is 18.4 ft.\nRecord the gate state."},{"role":"assistant","content":[{"type":"output_text","text":"{\"gate\":\"shut\",\"sill_ft\":18.4}"}]},{"role":"user","content":"Can
+        the crew walk the sill this morning? One sentence."},{"role":"assistant","content":[{"type":"output_text","text":"No,
+        the crew cannot walk the sill this morning because the water over the sill
+        is 18.4 feet, which is too deep to walk."}]},{"role":"user","content":"Now
+        write the crew note for the afternoon watch. The gate is still shut."}],"instructions":"You
+        are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill
+        only that schema from the conversation.\nWhen no schema is set, answer in
+        one prose sentence and do not use JSON.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"crew_note","schema":{"description":"Note
+        for the dock crew after the prose turn","type":"object","properties":{"watch":{"type":"string","enum":["morning","afternoon"],"description":"Which
+        watch the note is for"},"note":{"type":"string","description":"One sentence.
+        Say whether the gate is shut."}},"required":["watch","note"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827bb7e885347-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '936'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999714'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_f04dd6388b264709b8f954c550920999
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_071013813e43a812016acfb5c70afc87d2985211466039f8f6",
+          "object": "response",
+          "created_at": 1791997383,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997383,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dry dock clerk at the Port of Bremerton.\nWhen a schema is set, fill only that schema from the conversation.\nWhen no schema is set, answer in one prose sentence and do not use JSON.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_071013813e43a812016acfb5c7806c87d2a15974fd69edb749",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"watch\":\"afternoon\",\"note\":\"The gate remains shut this afternoon.\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "crew_note",
+              "schema": {
+                "description": "Note for the dock crew after the prose turn",
+                "type": "object",
+                "properties": {
+                  "watch": {
+                    "type": "string",
+                    "enum": [
+                      "morning",
+                      "afternoon"
+                    ],
+                    "description": "Which watch the note is for"
+                  },
+                  "note": {
+                    "type": "string",
+                    "description": "One sentence. Say whether the gate is shut."
+                  }
+                },
+                "required": [
+                  "watch",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 267,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 17,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 284
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:03 GMT
+recorded_with: VCR 6.4.0

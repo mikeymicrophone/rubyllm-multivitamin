@@ -1,0 +1,294 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Handwritten,
+        Port Angeles net loft, Wednesday 14 October 2026.\nMarina: https://www.portofpa.com/\nBoat:
+        F/V Kulshan. (the seiner. not the loft. Retort was written then crossed out.)\nTwine
+        no. 18 tarred nylon — NOT the cotton, cotton crossed out.\nFathoms: fourteen
+        and a half, write 14.5\nDue Friday for the Alden mending. The Retort name
+        on the due line is crossed out."}],"instructions":"You are the net loft clerk
+        at Port Angeles.\nFill mending_ticket from the handwritten ticket.\nTrust
+        the field descriptions when the handwriting contradicts itself.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"mending_ticket","schema":{"description":"A
+        handwritten mending ticket from the Port Angeles net loft","type":"object","properties":{"boat":{"type":"string","description":"The
+        fishing vessel named on the ticket. Not the loft, and not a boat that was
+        crossed out."},"twine":{"type":"string","description":"The twine that is still
+        wanted. Ignore a fiber marked not or crossed out."},"fathoms":{"type":"number","description":"Length
+        in fathoms as a number"},"due_for":{"type":"string","description":"Who the
+        mending is for. Ignore a name that was crossed out."}},"required":["boat","twine","fathoms","due_for"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4a827d3fa258b1a-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '661'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999703'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_0420eb74b21046e08cab031576846fbf
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_004af04af1835835016acfb5caf5c087d29dc82d2226a469a8",
+          "object": "response",
+          "created_at": 1791997386,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1791997387,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the net loft clerk at Port Angeles.\nFill mending_ticket from the handwritten ticket.\nTrust the field descriptions when the handwriting contradicts itself.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_004af04af1835835016acfb5cb4fe887d295db32b184316446",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"boat\":\"F/V Kulshan\",\"twine\":\"no. 18 tarred nylon\",\"fathoms\":14.5,\"due_for\":\"Alden\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "mending_ticket",
+              "schema": {
+                "description": "A handwritten mending ticket from the Port Angeles net loft",
+                "type": "object",
+                "properties": {
+                  "boat": {
+                    "type": "string",
+                    "description": "The fishing vessel named on the ticket. Not the loft, and not a boat that was crossed out."
+                  },
+                  "twine": {
+                    "type": "string",
+                    "description": "The twine that is still wanted. Ignore a fiber marked not or crossed out."
+                  },
+                  "fathoms": {
+                    "type": "number",
+                    "description": "Length in fathoms as a number"
+                  },
+                  "due_for": {
+                    "type": "string",
+                    "description": "Who the mending is for. Ignore a name that was crossed out."
+                  }
+                },
+                "required": [
+                  "boat",
+                  "twine",
+                  "fathoms",
+                  "due_for"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 278,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 34,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 312
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 17:03:07 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/decisions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-6-luna","input":"Today is Wednesday 14 October 2026.
+        Friday is 16 October 2026.\nHandwritten, Port Angeles net loft, Wednesday
+        14 October 2026.\nMarina: https://www.portofpa.com/\nBoat: F/V Kulshan. (the
+        seiner. not the loft. Retort was written then crossed out.)\nTwine no. 18
+        tarred nylon — NOT the cotton, cotton crossed out.\nFathoms: fourteen and
+        a half, write 14.5\nDue Friday for the Alden mending. The Retort name on the
+        due line is crossed out.","questions":[{"type":"predicate","name":"loft_before_friday","instructions":"Does
+        this mending have to be in the loft before Friday? Yes when the ticket is
+        due Friday or sooner."}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 17:03:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999705'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - x-request-id,retry-after,server-timing-total
+      Server-Timing-Total:
+      - '64.442'
+      Openai-Processing-Ms:
+      - '64'
+      X-Request-Id:
+      - req_1fcc7353b3f249c7bcb859bc7f2beb7e
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Server:
+      - cloudflare
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4a827d8eb88e615-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"gpt-6-luna","answers":[{"type":"predicate","name":"loft_before_friday","probability":1.0}],"usage":{"input_tokens":294,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":0,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":294}}'
+  recorded_at: Wed, 14 Oct 2026 17:03:07 GMT
+recorded_with: VCR 6.4.0

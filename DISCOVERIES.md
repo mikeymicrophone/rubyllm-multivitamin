@@ -137,7 +137,65 @@ Shown in [Juan de Fuca chart stream](features/03-tools/12-juan-de-fuca-chart-str
 
 ## Structured output
 
-No entries yet.
+### A Schematist title is the schema name, and content stays JSON text
+
+**What happens.** `with_schema` on a `Schematist::Schema` subclass sends `text.format.type` `json_schema`. The class `title` becomes `text.format.name` (`posted_tide_board`). A manual hash with no `name` and no `title` is named `response`. A hash that sets `name:` sends that string (`PilotBoardingChecklist`). The schema body on the wire has no `$schema` and no `json-schema.org` dialect URL. `response.content` is still the JSON string. `response.parsed` is a Hash with string keys, and `JSON.parse(content)` equals it. RubyLLM 2.1.1 does not define `RubyLLM::Schema`.
+
+**Why it matters.** A reader looking for a `RubyLLM::Schema` class, or expecting `content` to already be the Hash, will not find that shape in 2.1.1. A test that looks for the name `response` on a titled class will miss the title.
+
+**What to do.** Subclass `Schematist::Schema` or pass a Hash. Read `parsed` for the Hash and `content` for the JSON text. Set `title` or `name:` when the wire name matters.
+
+Shown in [Point Wilson tide heights](features/04-structured-output/01-point-wilson-tide-heights/), [Friday Harbor berth slip](features/04-structured-output/05-friday-harbor-berth-slip/), and [Neah Bay pilot checklist](features/04-structured-output/06-neah-bay-pilot-checklist/).
+
+### Optional properties send strict false, and forcing strict is a 400
+
+**What happens.** A schema with `required: false` leaves that property out of `required` and sends `"strict": false`. The Ediz Hook ticket omitted `replaced_on` and kept `pencil_note`. The same model rejects `"strict": true` when `bearing` is a property and is not in `required`: HTTP 400, `RubyLLM::BadRequestError`, and the message names `ChartCorrection` and `Missing 'bearing'`. An `any_of` of `string` and `null` that stays in `required` sends `"strict": true`, and the parsed bearing is `null`.
+
+**Why it matters.** Leaving a field optional looks like a small schema change and turns off strict mode. Marking the envelope `strict: true` without listing every property fails before a notice is parsed.
+
+**What to do.** Use `required: false` when omission is the point, and expect `strict: false`. When the field must be present and may be empty, use `any_of` of the type and `null` and keep it required.
+
+Shown in [Ediz Hook buoy ticket](features/04-structured-output/07-ediz-hook-buoy-ticket/) and [Juan de Fuca chart reject](features/04-structured-output/12-juan-de-fuca-chart-reject/).
+
+### with_schema(nil) drops the format and keeps the earlier JSON
+
+**What happens.** After a schema turn, `with_schema(nil)` makes the next Responses request omit `text` entirely. That request has no `json_schema`. Its `input` still contains the first answer, including `18.4`. A later `with_schema` sends a different name, `crew_note`. The prose turn does not parse as JSON.
+
+**Why it matters.** Clearing the schema does not clear the conversation. The next model still sees the structured turn. A cassette check that expects every request to carry `json_schema` will fail on the prose turn.
+
+**What to do.** Call `with_schema(nil)` for a prose turn. Read `content` there, not `parsed`. Put the next schema on before the ask that should fill it.
+
+Shown in [Bremerton dry dock gate](features/04-structured-output/09-bremerton-dry-dock-gate/).
+
+### A streamed schema arrives as output_text deltas
+
+**What happens.** `ask` with a block, while a schema is set, sends `"stream": true` and `text.format`. The SSE body contains `response.output_text.delta`. Joining chunk `content` equals `message.content`. `parsed` is the Hash. Direction, knots, and gusts match the board, and the keys are strings.
+
+**Why it matters.** A stream reader that waits for a Hash on each chunk never sees one. The Hash is `parsed` on the message `ask` returns.
+
+**What to do.** Join the chunk strings. Parse the returned message.
+
+Shown in [Port Townsend slip wind](features/04-structured-output/10-port-townsend-slip-wind/).
+
+### Judge posts gpt-6-luna to /v1/decisions, which is not with_schema
+
+**What happens.** `RubyLLM::Judge` with `model "gpt-6-luna", provider: :openai` posts to `https://api.openai.com/v1/decisions`. The body keys are `model`, `input`, and `questions`. There is no `text.format`. A `probability` question is sent as `"type": "predicate"`. A `choice` question sends each declared name as `value` (`three_second_blast`) and the words as `description`. A `score` question labels levels `"0"`, `"1"`, and `"2"`, and the words are descriptions. One call can send a predicate and a choice together. `RubyLLM.config.default_judgment_model` is `jev-latest`. `gpt-4.1-mini` supports `structured_output` and does not support `judgment`. `gpt-6-luna` supports both. `whisper-1` supports neither.
+
+**Why it matters.** Pointing `with_schema` at Luna is a Responses schema call, not the Decisions API. Omitting the model on a Judge uses `jev-latest`, not `gpt-6-luna`. A choice test that looks for the description string as `value` will miss the declared name.
+
+**What to do.** Use `with_schema` when the job is a JSON object. Use `RubyLLM::Judge` with `gpt-6-luna` and `provider: :openai` when the job is a probability, a choice, or a score. Read `probability`, `choice`, and `score` from the judgment. `LIVE_PROVIDER` does not retarget a Judge.
+
+Shown in [Cape Disappointment blast pattern](features/04-structured-output/03-cape-disappointment-blast-pattern/), [Smith Island weather round](features/04-structured-output/08-smith-island-weather-round/), [Port Angeles net ticket](features/04-structured-output/11-port-angeles-net-ticket/), [Juan de Fuca chart reject](features/04-structured-output/12-juan-de-fuca-chart-reject/), and [Admiralty Inlet watch handover](features/04-structured-output/13-admiralty-inlet-watch-handover/).
+
+### A schema and a tool share the request, then the forced choice drops off
+
+**What happens.** The first handover request sends `text.format.name` `watch_handover` and `tool_choice` for `lens_cabinet_latch`. The word `shut` is not in that request's `input`. After the tool runs, the next requests omit `tool_choice` and still send the schema. The follow-up changes `horn` and keeps the boats and the lens crew.
+
+**Why it matters.** A schema does not replace tools, and a forced tool choice does not stay on for the follow-up. The lens-crew fields are not in the question.
+
+**What to do.** Register the tool and the schema on the same chat. Read the tool message for the cabinet. Expect `tool_choice` only on the forced turn.
+
+Shown in [Admiralty Inlet watch handover](features/04-structured-output/13-admiralty-inlet-watch-handover/).
 
 ## Multimodal attachments
 
