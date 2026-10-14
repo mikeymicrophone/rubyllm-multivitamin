@@ -31,7 +31,8 @@ placeholder names here.
 
 The bottle is not full yet: 13 features, 13 scenarios each, 25 of 169 bottled.
 Chat basics is full. Streaming has twelve cassettes; the spoken handover
-is written and not yet recorded. The other features are titled and waiting.
+is written and not yet recorded. Tools has thirteen scripts; every cassette
+is waiting on a live recording. The other features are titled and waiting.
 
 ## Run the examples
 
@@ -129,7 +130,7 @@ hold the cassette player and the model slugs, not the story.
 
 1. [Chat basics](features/01-chat-basics/) — 13 of 13 bottled
 2. [Streaming](features/02-streaming/) — 12 of 13 bottled
-3. [Tools](features/03-tools/) — 0 of 13 bottled
+3. [Tools](features/03-tools/) — 0 of 13 bottled, 13 scripted and waiting on cassettes
 4. [Structured output](features/04-structured-output/) — 0 of 13 bottled
 5. [Multimodal attachments](features/05-multimodal-attachments/) — 0 of 13 bottled
 6. [Embeddings](features/06-embeddings/) — 0 of 13 bottled
