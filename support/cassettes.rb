@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require "base64"
 require "fileutils"
+require "json"
 require "vcr"
 require "webmock"
 
@@ -24,6 +26,16 @@ module Multivitamin
       DEEPSEEK_API_KEY
       PERPLEXITY_API_KEY
     ].freeze
+
+    # 1x1 PNG and JPEG stand-ins so image cassettes do not store megabytes
+    # of b64_json. Not scenario copy.
+    TINY_PNG = Base64.decode64(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+    ).freeze
+    TINY_JPEG = Base64.decode64(
+      "/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAEDAREAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAACP/EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AfwD/2Q=="
+    ).freeze
+    B64_JSON_KEEP_BYTES = 512
 
     module_function
 
@@ -105,7 +117,32 @@ module Multivitamin
       scrub_headers(interaction.request.headers)
       scrub_headers(interaction.response.headers)
       interaction.request.body = scrub_text(interaction.request.body)
-      interaction.response.body = scrub_text(interaction.response.body)
+      interaction.response.body = shrink_image_payload(scrub_text(interaction.response.body))
+    end
+
+    def shrink_image_payload(body)
+      return body unless body.is_a?(String)
+      return body unless body.include?("b64_json")
+
+      data = JSON.parse(body)
+      shrink_b64_json!(data)
+      JSON.generate(data)
+    rescue JSON::ParserError
+      body
+    end
+
+    def shrink_b64_json!(node)
+      case node
+      when Hash
+        if node.key?("b64_json") && node["b64_json"].is_a?(String) && node["b64_json"].bytesize > B64_JSON_KEEP_BYTES
+          raw = Base64.decode64(node["b64_json"])
+          standin = raw.start_with?("\xFF\xD8".b) ? TINY_JPEG : TINY_PNG
+          node["b64_json"] = Base64.strict_encode64(standin)
+        end
+        node.each_value { |value| shrink_b64_json!(value) }
+      when Array
+        node.each { |value| shrink_b64_json!(value) }
+      end
     end
 
     def scrub_headers(headers)

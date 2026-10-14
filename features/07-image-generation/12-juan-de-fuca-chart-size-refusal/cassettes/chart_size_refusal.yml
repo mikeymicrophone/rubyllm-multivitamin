@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Chart table plate of NOAA chart
+        18465, Strait of Juan de Fuca, with a\ncorrection in the margin off New Dungeness.
+        Parallel rulers on the table.\nDocumentary. No invented buoys.","n":1,"size":"256x256","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 20:23:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '217'
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_de39671aa8df4b398b0defa116b88b84
+      Openai-Processing-Ms:
+      - '33'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4a94cb37f5c5ec7-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid size '256x256'. Supported sizes are 1024x1024, 1024x1536, 1536x1024, and auto.",
+            "type": "image_generation_user_error",
+            "param": "size",
+            "code": "invalid_value"
+          }
+        }
+  recorded_at: Wed, 14 Oct 2026 20:23:03 GMT
+recorded_with: VCR 6.4.0

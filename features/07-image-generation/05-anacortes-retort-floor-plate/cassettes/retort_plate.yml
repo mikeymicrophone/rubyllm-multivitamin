@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Documentary plate of retort 2
+        on the Anacortes cannery floor at 04:10.\nBasket 3 of sockeye, cook card 242
+        F for 74 minutes, steam on the gauges.\nLot code ANC-14-OCT-26. Overhead industrial
+        light. No people.","n":1,"size":"1024x1024","quality":"low","output_format":"jpeg"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 20:21:52 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_07b6faeb60fc4c499ddc4c205e6e3412
+      Openai-Processing-Ms:
+      - '7140'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4a94ace6befcf48-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792009312,"background":"opaque","data":[{"b64_json":"/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAEDAREAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAACP/EABQQAQAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AfwD/2Q==","generation_id":"544067c8-f713-4c73-8ed7-f403ebf79e8d"}],"output_format":"jpeg","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":68,"input_tokens_details":{"image_tokens":0,"text_tokens":68},"output_tokens":272,"output_tokens_details":{"image_tokens":272,"text_tokens":0},"total_tokens":340}}'
+  recorded_at: Wed, 14 Oct 2026 20:21:52 GMT
+recorded_with: VCR 6.4.0

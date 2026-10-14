@@ -323,7 +323,55 @@ Shown in [Smith Island barometer card](features/06-embeddings/08-smith-island-ba
 
 ## Image generation
 
-No entries yet.
+### gpt-image-1-mini returns inline bytes, not a URL, and does not rewrite the prompt
+
+**What happens.** `RubyLLM.paint` on `gpt-image-1-mini` fills `image.data` and `image.base64?` is true. `image.url` is `nil`. `image.revised_prompt` is `nil`. The cassette response contains `b64_json` and no hosted `url` and no `revised_prompt` key. The request does not send `response_format`; that parameter is unknown on this model.
+
+**Why it matters.** Code that downloads `image.url`, or that files `revised_prompt` as the prompt that was painted, gets nothing. DALL-E 2 and DALL-E 3, which used to return URLs and (for DALL-E 3) a rewrite, were gone from `https://api.openai.com/v1/models` on 14 October 2026.
+
+**What to do.** Use `save` or `to_blob`. Keep the original prompt if the desk needs a caption. Do not send `response_format`.
+
+Shown in [Cape Disappointment foghorn house](features/07-image-generation/04-cape-disappointment-foghorn-house/) and [Friday Harbor blue hour prompt](features/07-image-generation/06-friday-harbor-blue-hour-prompt/).
+
+### jpeg output still reports mime_type image/png
+
+**What happens.** `provider_options: { output_format: "jpeg" }` is merged onto the payload. The cassette request and response both contain `"output_format":"jpeg"`. `to_blob` starts with JPEG magic (`\xFF\xD8\xFF`). `image.mime_type` is still `"image/png"`. RubyLLM's OpenAI image parser hardcodes that MIME type.
+
+**Why it matters.** Saving as `.png` because `mime_type` says so writes JPEG bytes under a PNG name. A watch that branches on `mime_type` will treat a JPEG plate as PNG.
+
+**What to do.** Read the magic bytes, or the `output_format` in the cassette, when the binder cares about JPEG versus PNG. Do not trust `mime_type` alone on this parser.
+
+Shown in [Anacortes retort floor plate](features/07-image-generation/05-anacortes-retort-floor-plate/).
+
+### tokens are present and cost is nil
+
+**What happens.** The images response includes `usage.input_tokens` and `usage.output_tokens`. `image.tokens.input` and `image.tokens.output` are greater than 0. `image.cost.total`, `image.cost.input`, and `image.cost.output` are `nil`. The bundled registry has no image price for `gpt-image-1-mini`, and the response omits `usage.cost`.
+
+**Why it matters.** A work order that records `cost.total` the way a paid chat does will store nothing. That is not the same as a free chat model's `cost` of `0`.
+
+**What to do.** Record the token counts. Treat `cost.total` as optional. Do not assert `cost > 0` on this model.
+
+Shown in [Bremerton dry dock gate cost](features/07-image-generation/10-bremerton-dry-dock-gate-cost/).
+
+### count: 2 returns an Array; usage lives on the first image
+
+**What happens.** `count: 2` sends `"n":2`. `RubyLLM.paint` returns an Array of two `Image` objects. `tokens.output` on the first is greater than 0. `tokens.output` on the second is `nil`.
+
+**Why it matters.** Summing `cost` or `tokens` across the array double-counts zeros and misses that only the first image carries usage.
+
+**What to do.** Read usage from `images.first`. A default `count` of 1 returns a single `Image`, not a one-element array.
+
+Shown in [Smith Island barometer pair](features/07-image-generation/09-smith-island-barometer-pair/).
+
+### 256x256 is a BadRequestError
+
+**What happens.** `size: "256x256"` on `gpt-image-1-mini` raises `RubyLLM::BadRequestError`. The message names `256x256` and lists `1024x1024`, `1024x1536`, `1536x1024`, and `auto`. The cassette is HTTP 400 and has no `b64_json`.
+
+**Why it matters.** 256 was a DALL-E 2 size. Copying that size onto this model fails before a plate is painted.
+
+**What to do.** Use `1024x1024` as the smallest size. Keep `max_retries` at 0 so Faraday does not double the 400.
+
+Shown in [Juan de Fuca chart size refusal](features/07-image-generation/12-juan-de-fuca-chart-size-refusal/).
 
 ## Models and providers
 

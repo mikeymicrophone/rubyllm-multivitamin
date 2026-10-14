@@ -30,8 +30,14 @@ module Multivitamin
     # the daily cap while this feature was bottled.
     OPENAI_EMBEDDING = "text-embedding-3-small"
 
-    # No :free image model was listed that day. This one is paid.
+    # No :free image model was listed that day. OpenRouter paid default.
     IMAGE = "google/gemini-2.5-flash-image"
+
+    # Cheapest OpenAI image model on https://api.openai.com/v1/models on
+    # 14 October 2026. dall-e-2 and dall-e-3 were gone. Smallest size is
+    # 1024x1024. Pass provider_options: { quality: "low" } on paint.
+    OPENAI_IMAGE = "gpt-image-1-mini"
+    OPENAI_IMAGE_SIZE = "1024x1024"
 
     # Cheap OpenAI chat model that advertises function calling, tool_choice,
     # parallel tool calls, temperature, and structured output. Confirmed on
@@ -87,6 +93,19 @@ module Multivitamin
       when :openrouter
         { model: EMBEDDING_TEXT, provider: :openrouter, assume_model_exists: true }
       end
+    end
+
+    # kwargs for RubyLLM.paint on the bottled OpenAI image model.
+    # LIVE_PROVIDER does not switch this: OpenRouter drops size.
+    def image_paint(**extra)
+      extra = extra.dup
+      provider_options = { quality: "low" }.merge(extra.delete(:provider_options) || {})
+      {
+        model: OPENAI_IMAGE,
+        provider: :openai,
+        size: OPENAI_IMAGE_SIZE,
+        provider_options: provider_options
+      }.merge(extra)
     end
 
     def configure(config, provider:)

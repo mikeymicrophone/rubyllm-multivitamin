@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 78 |
+| Bottled | 91 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,15 +29,16 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 78 of 169 bottled.
-Chat basics, streaming, tools, structured output, multimodal attachments, and
-embeddings are full. Tools, the Point Wilson spoken handover, the schema
-turns, and the attachment scenarios were recorded on OpenAI `gpt-4.1-mini`.
-Decisions calls in the structured-output feature were recorded on OpenAI
-`gpt-6-luna`. Audio attachments were recorded on OpenAI `gpt-audio-mini`.
-Embedding text cassettes were recorded on OpenAI `text-embedding-3-small`.
-The Smith Island barometer card was recorded on OpenRouter
-`google/gemini-embedding-2`. The other bottled cassettes are OpenRouter.
+The bottle is not full yet: 13 features, 13 scenarios each, 91 of 169 bottled.
+Chat basics, streaming, tools, structured output, multimodal attachments,
+embeddings, and image generation are full. Tools, the Point Wilson spoken
+handover, the schema turns, and the attachment scenarios were recorded on
+OpenAI `gpt-4.1-mini`. Decisions calls in the structured-output feature were
+recorded on OpenAI `gpt-6-luna`. Audio attachments were recorded on OpenAI
+`gpt-audio-mini`. Embedding text cassettes were recorded on OpenAI
+`text-embedding-3-small`. The Smith Island barometer card was recorded on
+OpenRouter `google/gemini-embedding-2`. Image generation was recorded on
+OpenAI `gpt-image-1-mini`. The other bottled cassettes are OpenRouter.
 The remaining features are titled and waiting.
 
 ## Run the examples
@@ -89,10 +90,10 @@ Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics and the earlier streaming cassettes are live OpenRouter
 recordings. Tools, the spoken handover, structured output, the
-attachment scenarios, and the embedding text cassettes are live OpenAI
-recordings. The Smith Island barometer card is a live OpenRouter
-recording. `usage.cost` is the number the provider reported. See each
-scenario's README.
+attachment scenarios, the embedding text cassettes, and image generation
+are live OpenAI recordings. The Smith Island barometer card is a live
+OpenRouter recording. `usage.cost` is the number the provider reported.
+See each scenario's README.
 
 ## Free models
 
@@ -112,7 +113,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Audio in | `thinkingmachines/inkling:free` | `thinkingmachines/inkling-small:free`, then `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` |
 | PDF in | none of the `:free` chat models advertised `file` input | `gpt-4.1-mini` on OpenAI, which the attachment scenarios recorded. The free vision and audio slugs were past the daily cap that afternoon, so those cassettes use `gpt-4.1-mini` and `gpt-audio-mini` as well |
 | Embeddings (recorded) | `text-embedding-3-small` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-embed-1b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-embedding-350m:free`. Image `with:` recorded on paid `google/gemini-embedding-2` |
-| Image generation | no `:free` image model that day | paid `google/gemini-2.5-flash-image` on OpenRouter's images endpoint, which `RubyLLM.paint` already speaks |
+| Image generation (recorded) | no `:free` image model that day | bottled on OpenAI `gpt-image-1-mini` (`quality: "low"`, `size: "1024x1024"`); OpenRouter paid fallback `google/gemini-2.5-flash-image` |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise
@@ -127,10 +128,11 @@ attachment scenarios use `gpt-4.1-mini` for that reason. Audio attachments
 use `gpt-audio-mini`. Decisions turns use `gpt-6-luna` because that is the
 model OpenAI's Decisions API accepts. RubyLLM reaches it with
 `RubyLLM::Judge` and `OPENAI_API_KEY`. Embedding text cassettes use
-`text-embedding-3-small`. See
+`text-embedding-3-small`. Image generation uses `gpt-image-1-mini`. See
 [Structured output](features/04-structured-output/),
-[Multimodal attachments](features/05-multimodal-attachments/), and
-[Embeddings](features/06-embeddings/).
+[Multimodal attachments](features/05-multimodal-attachments/),
+[Embeddings](features/06-embeddings/), and
+[Image generation](features/07-image-generation/).
 
 Each feature README repeats the row that belongs to it.
 
@@ -164,7 +166,7 @@ hold the cassette player and the model slugs, not the story.
 4. [Structured output](features/04-structured-output/) — 13 of 13 bottled
 5. [Multimodal attachments](features/05-multimodal-attachments/) — 13 of 13 bottled
 6. [Embeddings](features/06-embeddings/) — 13 of 13 bottled
-7. [Image generation](features/07-image-generation/) — 0 of 13 bottled
+7. [Image generation](features/07-image-generation/) — 13 of 13 bottled
 8. [Models and providers](features/08-models-and-providers/) — 0 of 13 bottled
 9. [Configuration and contexts](features/09-configuration-and-contexts/) — 0 of 13 bottled
 10. [Rails integration](features/10-rails-integration/) — 0 of 13 bottled
