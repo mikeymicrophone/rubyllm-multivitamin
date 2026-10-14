@@ -375,7 +375,56 @@ Shown in [Juan de Fuca chart size refusal](features/07-image-generation/12-juan-
 
 ## Models and providers
 
-No entries yet.
+### assume_model_exists still looks up the registry first
+
+**What happens.** `assume_model_exists: true` without `provider:` raises `ArgumentError` (`Provider must be specified if assume_model_exists is true`) before any HTTP call. With a provider, a slug the bundled registry lacks (`commencement-bay-grain-clerk-unlisted`) becomes a synthetic `RubyLLM::Model`: capabilities `function_calling`, `streaming`, `vision`, `structured_output`, `metadata[:warning]` `Assuming model exists, capabilities may not be accurate`, `supports?(:reasoning)` false, `context_window` nil. The same flag on `gpt-4.1-mini`, which `find` already knows, keeps the registry entry: no warning, context window 1_047_576, and the real capability list, which includes `vision` and does not include `streaming`.
+
+**Why it matters.** The model-resolution guide describes assume as skipping the lookup and building a synthetic model. On RubyLLM 2.1.1 the lookup still runs. A watch that reads `metadata[:warning]` or assumes vision is present will see that only when `find` actually missed.
+
+**What to do.** Name `provider:` whenever you assume. Read `context_window` and `supports?` off `chat.model` after construction if the real capabilities matter. Use a slug `find` cannot see when you need the synthetic object.
+
+Shown in [Commencement Bay grain elevator](features/08-models-and-providers/04-commencement-bay-grain-elevator/).
+
+### Bare find of an alias can keep the short id
+
+**What happens.** `find("claude-haiku-4-5")` with no provider returns Anthropic's exact-id entry `claude-haiku-4-5`. `find("claude-haiku-4-5", provider: :anthropic)` resolves the alias table to `claude-haiku-4-5-20251001`. `provider: :bedrock` resolves to `anthropic.claude-haiku-4-5-20251001-v1:0`. The two provider lookups share family `claude-haiku` and a 200_000 token window. The ids are not the same, and the bare id is not the dated Anthropic alias.
+
+**Why it matters.** A watch that records `chat.model.id` after a bare find will not match the dated string the alias table names for Anthropic.
+
+**What to do.** Pass `provider:` when the dated or vendor-prefixed id is the one you need to log.
+
+Shown in [Lime Kiln whale-watch radio alias](features/08-models-and-providers/03-lime-kiln-whale-watch/).
+
+### The Responses API returns a dated snapshot id
+
+**What happens.** `RubyLLM.chat(model: "gpt-4.1-mini", provider: :openai)` sends `"model":"gpt-4.1-mini"`. The message `ask` returns has `model` `gpt-4.1-mini-2025-04-14`. After `with_model("gpt-4o-mini")`, the second request names `gpt-4o-mini` and the second message is `gpt-4o-mini-2024-07-18`. `chat.model.id` stays `gpt-4o-mini`, the id passed to `with_model`.
+
+**Why it matters.** A test that requires `message.model` to equal the request id fails on OpenAI even though the cassette request is correct.
+
+**What to do.** Assert the request body for the id you sent. Treat `message.model` as the snapshot the provider served. Read `chat.model.id` for the id the chat is aimed at.
+
+Shown in [Hood Canal Bridge opening switch](features/08-models-and-providers/05-hood-canal-bridge-opening/).
+
+### ModelNotFoundError is not a RubyLLM::Error
+
+**What happens.** `find("skagit-bay-light-22")` raises `RubyLLM::ModelNotFoundError`. That class's superclass is `StandardError`. A `rescue RubyLLM::Error` around the same call does not catch it. The message names `RubyLLM.models.refresh`. The lookup does not open a socket.
+
+**Why it matters.** A tender who only rescues `RubyLLM::Error` lets a dropped light-list id through. A missing-model lookup does not refresh on its own.
+
+**What to do.** Rescue `ModelNotFoundError` on its own. Call `refresh` only when the application decides the catalog is stale.
+
+Shown in [Skagit Bay missing light](features/08-models-and-providers/11-skagit-bay-missing-light/).
+
+### Models#find is not Enumerable#find
+
+**What happens.** `RubyLLM.models.by_family("claude-sonnet")` is a `Models` object. Calling `.find { |model| model.provider == "anthropic" }` raises `ArgumentError` (`wrong number of arguments (given 0, expected 1)`). `Models#find` looks up an id. `.all.find` with a block is the Enumerable finder and returns an Anthropic entry.
+
+**Why it matters.** A family filter that looks like any other Ruby collection will raise at the watch desk instead of returning the clerk.
+
+**What to do.** Use `.all.find`, `.detect` on the array from `.all`, or `find("claude-sonnet-4-5", provider: :anthropic)` for an id lookup.
+
+Shown in [Sucia Island sonnet family](features/08-models-and-providers/12-sucia-island-sonnet-family/).
+
 
 ## Configuration and contexts
 
