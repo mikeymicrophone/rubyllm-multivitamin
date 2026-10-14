@@ -8,8 +8,6 @@ class WatchDeskTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/watch_desk.yml", __dir__)
 
   def test_the_desk_picks_a_board_then_stops_on_the_chit
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "watch_desk") do
       result = AdmiraltyInletWatchDesk::WatchDesk.conduct
@@ -38,7 +36,7 @@ class WatchDeskTest < Minitest::Test
     refute_includes horn_request, "relief_handoff"
 
     handoff_request = bodies.find { |body| body.include?('"name":"relief_handoff"') }
-    assert_includes handoff_request, '"tool_choice":{"type":"function","function":{"name":"relief_handoff"}}'
+    assert_includes handoff_request, '"tool_choice":{"type":"function","name":"relief_handoff"}'
     assert_equal bodies.last, handoff_request
   end
 
@@ -49,11 +47,10 @@ class WatchDeskTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

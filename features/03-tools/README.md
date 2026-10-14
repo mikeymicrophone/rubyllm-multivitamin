@@ -12,27 +12,27 @@ The model-facing name, the arguments, and the result all use the scenario's word
 
 Official reference: [Tools](https://rubyllm.com/tools/) and [tool parameters](https://rubyllm.com/tool-parameters/).
 
-## Free models
+## Models
 
-`nvidia/nemotron-3-super-120b-a12b:free` advertises `tools` and `tool_choice`. Fallback: `liquid/lfm-2.5-2.6b:free`. Do not use `nvidia/nemotron-3.5-content-safety:free` here; it does not advertise tools. Checked 14 October 2026.
+These cassettes were recorded on `gpt-4.1-mini` with `provider: :openai`. The id was on OpenAI's models list on 14 October 2026. It advertises function calling, `tool_choice`, parallel tool calls, and temperature. OpenRouter's free-model daily limit was exhausted that day, so the free slug is the re-record alternative: `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`. Do not use `nvidia/nemotron-3.5-content-safety:free` here; it does not advertise tools.
 
-## Examples (0 of 13 bottled, 13 scripted)
+`LIVE=1 LIVE_PROVIDER=openai` records OpenAI again. `LIVE=1 LIVE_PROVIDER=openrouter` overwrites a cassette with the free slug. Replay ignores `LIVE_PROVIDER`.
 
-Every script, test, and README below is written. None of the cassettes are recorded. OpenRouter's free-model daily limit was exhausted on 14 October 2026 and resets at 2026-10-15 00:00 UTC. Each chat test skips with `cassette pending live recording` until a live run writes the cassette. Do not hand-author one. A bottled count below includes only a scenario whose cassette is a live recording.
+## Examples (13 of 13 bottled)
 
-01. [Point Wilson tide window](01-point-wilson-tide-window/) — script ready; cassette not recorded
-02. [New Dungeness lens drawer](02-new-dungeness-lens-drawer/) — script ready; cassette not recorded
-03. [Cape Disappointment compressor](03-cape-disappointment-compressor/) — script ready; cassette not recorded
-04. [Anacortes retort cook book](04-anacortes-retort-cook-book/) — script ready; cassette not recorded
-05. [Friday Harbor berth desk](05-friday-harbor-berth-desk/) — script ready; cassette not recorded
-06. [Neah Bay pilot window](06-neah-bay-pilot-window/) — script ready; cassette not recorded
-07. [Ediz Hook buoy battery](07-ediz-hook-buoy-battery/) — script ready; cassette not recorded
-08. [Smith Island barometer](08-smith-island-barometer/) — script ready; cassette not recorded
-09. [Bremerton dry dock sill](09-bremerton-dry-dock-sill/) — script ready; cassette not recorded
-10. [Port Townsend slip wind](10-port-townsend-slip-wind/) — script ready; cassette not recorded
-11. [Port Angeles net loft](11-port-angeles-net-loft/) — script ready; cassette not recorded
-12. [Juan de Fuca chart stream](12-juan-de-fuca-chart-stream/) — script ready; cassette not recorded
-13. [Admiralty Inlet watch desk](13-admiralty-inlet-watch-desk/) — script ready; cassette not recorded
+01. [Point Wilson tide window](01-point-wilson-tide-window/) — available
+02. [New Dungeness lens drawer](02-new-dungeness-lens-drawer/) — available
+03. [Cape Disappointment compressor](03-cape-disappointment-compressor/) — available
+04. [Anacortes retort cook book](04-anacortes-retort-cook-book/) — available
+05. [Friday Harbor berth desk](05-friday-harbor-berth-desk/) — available
+06. [Neah Bay pilot window](06-neah-bay-pilot-window/) — available
+07. [Ediz Hook buoy battery](07-ediz-hook-buoy-battery/) — available
+08. [Smith Island barometer](08-smith-island-barometer/) — available
+09. [Bremerton dry dock sill](09-bremerton-dry-dock-sill/) — available
+10. [Port Townsend slip wind](10-port-townsend-slip-wind/) — available
+11. [Port Angeles net loft](11-port-angeles-net-loft/) — available
+12. [Juan de Fuca chart stream](12-juan-de-fuca-chart-stream/) — available
+13. [Admiralty Inlet watch desk](13-admiralty-inlet-watch-desk/) — available
 
 ## What each scenario adds
 
@@ -51,22 +51,6 @@ Every script, test, and README below is written. None of the cassettes are recor
 | 11 | `with_tool_options(choice:)` forces the twine tool, then the choice is cleared |
 | 12 | Streamed argument strings, `before_tool_call` / `after_tool_result` / `after_tool_progress`, and `chat.messages` |
 | 13 | Capstone: three tools, a second ask uses the result, then `generate` + `run_tools` stops without `halt` |
-
-## Cassettes still to record
-
-- `01-point-wilson-tide-window/cassettes/posted_board.yml`
-- `02-new-dungeness-lens-drawer/cassettes/lens_drawer.yml`
-- `03-cape-disappointment-compressor/cassettes/compressor_card.yml`
-- `04-anacortes-retort-cook-book/cassettes/cook_card.yml`
-- `05-friday-harbor-berth-desk/cassettes/berth_desk.yml`
-- `06-neah-bay-pilot-window/cassettes/pilot_window.yml`
-- `07-ediz-hook-buoy-battery/cassettes/buoy_battery.yml`
-- `08-smith-island-barometer/cassettes/barometer_glass.yml`
-- `09-bremerton-dry-dock-sill/cassettes/sill_depth.yml`
-- `10-port-townsend-slip-wind/cassettes/slip_wind.yml`
-- `11-port-angeles-net-loft/cassettes/twine_stock.yml`
-- `12-juan-de-fuca-chart-stream/cassettes/chart_stream.yml`
-- `13-admiralty-inlet-watch-desk/cassettes/watch_desk.yml`
 
 Planned titles are proposals, not commitments. See
 [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

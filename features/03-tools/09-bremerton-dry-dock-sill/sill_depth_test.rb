@@ -8,8 +8,6 @@ class SillDepthTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/sill_depth.yml", __dir__)
 
   def test_the_station_is_taken_from_later_in_the_question
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "sill_depth") do
       result = BremertonDryDockSill::SillReading.conduct
@@ -33,11 +31,10 @@ class SillDepthTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

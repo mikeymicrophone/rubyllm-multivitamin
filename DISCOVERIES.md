@@ -83,9 +83,57 @@ Shown in [Dungeness sounding halt](features/02-streaming/08-dungeness-sounding-h
 
 Shown in [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
 
+### The second stream carries the first answer without reasoning_details
+
+**What happens.** On `gpt-4.1-mini`, the first spoken-handover request has no assistant turn and no `reasoning_details`. The second request's `input` includes that assistant turn as `output_text`, and the joined text equals the first message. The SSE body uses `response.output_text.delta`. The cabinet reply does not repeat `07:05`. It still refuses to open the lens cabinet.
+
+**Why it matters.** An OpenRouter check that requires `reasoning_details` on the second turn fails on this model even though the first brief was sent again.
+
+**What to do.** Read the assistant item in `input`. Do not require `reasoning_details` unless the model sent reasoning.
+
+Shown in [Point Wilson spoken handover](features/02-streaming/11-point-wilson-spoken-handover/).
+
 ## Tools
 
-No entries yet.
+### A named tool choice is flat on the Responses API
+
+**What happens.** On `gpt-4.1-mini` with `provider: :openai`, `with_tool_options(choice: TwineStock)` sends `"tool_choice":{"type":"function","name":"twine_stock"}`. The name is not nested under a `function` object. The relief handoff uses the same shape. After the forced call runs, the next request omits `tool_choice`.
+
+**Why it matters.** A cassette check written for Chat Completions looks for `"function":{"name":...}` and misses a forced call that did happen.
+
+**What to do.** Match the flat object on OpenAI's Responses API. Match the nested `function` object on OpenRouter Chat Completions.
+
+Shown in [Port Angeles net loft](features/03-tools/11-port-angeles-net-loft/) and [Admiralty Inlet watch desk](features/03-tools/13-admiralty-inlet-watch-desk/).
+
+### with_thinking(false) raises, and the request still asks for encrypted reasoning
+
+**What happens.** `with_thinking(false)` on `openai/gpt-4.1-mini` raises `ArgumentError` with `no off control` before any HTTP call. The recorded tide-window request therefore does not send `"reasoning":{"enabled":false}`. It does send `"include":["reasoning.encrypted_content"]`. The same include is on the other tools cassettes. None of them contain `reasoning_details`.
+
+**Why it matters.** Copying the OpenRouter thinking-off call into an OpenAI example fails before the tool runs. A reader looking for the OpenRouter reasoning toggle will not find it, and will find an include this model does not fill in.
+
+**What to do.** Skip `with_thinking(false)` on this model. `Multivitamin::Models.quiet_thinking` does that, and still sends the toggle when `LIVE_PROVIDER=openrouter`.
+
+Shown in [Point Wilson tide window](features/03-tools/01-point-wilson-tide-window/).
+
+### A paid OpenAI reply reports a non-zero cost
+
+**What happens.** The tide window's `answer.cost.total` is greater than 0. The free OpenRouter recordings in this catalog report 0.
+
+**Why it matters.** A test that locks `cost` at 0 fails on this cassette.
+
+**What to do.** Assert `cost > 0` for an OpenAI recording.
+
+Shown in [Point Wilson tide window](features/03-tools/01-point-wilson-tide-window/).
+
+### Streamed tool arguments are still strings
+
+**What happens.** The chart-stream cassette contains `response.function_call_arguments.delta`. Chunk `arguments` are strings, including an empty string when the tool name arrives. Joining those strings parses to the Hash `before_tool_call` receives. The tool message content is the JSON string of that Hash.
+
+**Why it matters.** The event name is not a Chat Completions `delta.tool_calls` line. The Ruby objects are the same split the horn relief recorded.
+
+**What to do.** Join the fragment strings. Run the tool from the callback. Look for `response.function_call_arguments.delta` in an OpenAI SSE cassette.
+
+Shown in [Juan de Fuca chart stream](features/03-tools/12-juan-de-fuca-chart-stream/). See also [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
 
 ## Structured output
 

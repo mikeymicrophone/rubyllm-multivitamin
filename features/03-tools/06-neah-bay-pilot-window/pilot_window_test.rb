@@ -8,8 +8,6 @@ class PilotWindowTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/pilot_window.yml", __dir__)
 
   def test_the_cleared_tide_tool_is_not_on_the_request
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "pilot_window") do
       result = NeahBayPilotWindow::LadderWindow.conduct
@@ -29,7 +27,7 @@ class PilotWindowTest < Minitest::Test
   end
 
   def test_with_tools_nil_replaces_the_set
-    ENV["OPENROUTER_API_KEY"] ||= Multivitamin::Cassettes::PLACEHOLDER_KEY
+    Multivitamin::Cassettes.prepare_key!
 
     chat = NeahBayPilotWindow::LadderWindow.open_desk
 
@@ -38,11 +36,10 @@ class PilotWindowTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

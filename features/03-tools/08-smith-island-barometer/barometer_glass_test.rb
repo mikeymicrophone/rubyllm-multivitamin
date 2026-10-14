@@ -8,8 +8,6 @@ class BarometerGlassTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/barometer_glass.yml", __dir__)
 
   def test_a_raised_glass_is_not_sent_back_as_a_tool_message
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "barometer_glass") do
       result = SmithIslandBarometer::GlassCheck.conduct
@@ -37,11 +35,10 @@ class BarometerGlassTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

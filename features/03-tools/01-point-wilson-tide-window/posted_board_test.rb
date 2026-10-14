@@ -8,8 +8,6 @@ class PostedBoardTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/posted_board.yml", __dir__)
 
   def test_the_board_is_a_string_and_the_watch_hears_the_times
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "posted_board") do
       result = PointWilsonTideWindow::TideWindow.conduct
@@ -24,15 +22,29 @@ class PostedBoardTest < Minitest::Test
     assert_equal %i[system user assistant tool assistant], result.roles
     assert_equal :stop, result.finish
     assert_operator result.input_tokens, :>, 0
-    assert_equal 0, result.cost
+    assert_operator result.cost, :>, 0
 
     request = request_bodies.fetch(0)
+    assert_includes request, '"model":"gpt-4.1-mini"'
     assert_includes request, '"name":"posted_tide_board"'
-    assert_includes request, '"tool_choice"'
+    assert_includes request, '"tool_choice":{"type":"function","name":"posted_tide_board"}'
     assert_includes request, '"stream":false'
-    assert_includes request, '"reasoning":{"enabled":false}'
+    assert_includes request, "reasoning.encrypted_content"
+    refute_includes request, '"reasoning":{"enabled":false}'
     refute_includes request, "10:46"
     refute_includes request, "08:57"
+  end
+
+  def test_thinking_off_raises_before_a_request
+    Multivitamin::Cassettes.prepare_key!
+    PointWilsonTideWindow::TideWindow.configure
+    chat = PointWilsonTideWindow::TideWindow.open_chat
+    chat.with_thinking(false)
+
+    error = assert_raises(ArgumentError) { chat.ask("Read the posted board.") }
+
+    assert_match(/no off control/, error.message)
+    assert_match(/gpt-4.1-mini/, error.message)
   end
 
   def test_the_tool_name_and_empty_schema_are_declared_on_the_class
@@ -45,12 +57,11 @@ class PostedBoardTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 
   def request_bodies

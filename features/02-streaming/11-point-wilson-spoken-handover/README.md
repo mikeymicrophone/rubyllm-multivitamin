@@ -9,9 +9,8 @@ first answer.
 
 - Two `ask` calls with blocks share `chat.messages`.
 - Each answer's joined chunks equal that returned message.
-- The second request body contains the first assistant turn. On this free
-  model it also contains `reasoning_details`, which the first request did
-  not send.
+- The second request body contains the first assistant turn as `output_text`
+  inside `input`. This recording has no `reasoning_details`.
 - The follow-up's input token count is larger because that turn is sent again.
 
 **Files**
@@ -33,14 +32,14 @@ bundle exec ruby features/02-streaming/11-point-wilson-spoken-handover/spoken_ha
 
 Both commands replay the cassette. No API key is required.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`.
-Re-record it with:
+Re-record it on OpenAI:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/02-streaming/11-point-wilson-spoken-handover/spoken_handover_test.rb
+LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/02-streaming/11-point-wilson-spoken-handover/spoken_handover_test.rb
 ```
+
+`LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-super-120b-a12b:free` instead and overwrites this cassette. The helper strips `Authorization` and `OPENAI_API_KEY` before the file is written. Do not hand-author the cassette.
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug
-is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+Recorded on `gpt-4.1-mini` with `provider: :openai`. The id was on OpenAI's models list on 14 October 2026. OpenRouter's free chat model remains the alternative for a re-record: `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`.

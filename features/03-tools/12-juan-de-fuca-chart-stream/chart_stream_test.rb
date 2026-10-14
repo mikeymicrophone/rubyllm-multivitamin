@@ -9,8 +9,6 @@ class ChartStreamTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/chart_stream.yml", __dir__)
 
   def test_the_stream_keeps_argument_strings_and_the_callback_keeps_a_hash
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "chart_stream") do
       result = JuanDeFucaChartStream::NoticeStream.conduct
@@ -41,6 +39,7 @@ class ChartStreamTest < Minitest::Test
 
     bodies = YAML.load_file(CASSETTE).fetch("http_interactions").map { |interaction| interaction.dig("request", "body", "string") }
     assert_includes bodies.fetch(0), '"stream":true'
+    assert_includes File.read(CASSETTE), "response.function_call_arguments.delta"
     assert_includes bodies.fetch(0), "chart_notice"
     refute_includes bodies.fetch(0), "18465"
     refute_includes bodies.fetch(1), '"tool_choice"'
@@ -48,11 +47,10 @@ class ChartStreamTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

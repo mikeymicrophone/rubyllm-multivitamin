@@ -61,7 +61,7 @@ module PointWilsonTideWindow
       chat = open_chat
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
-      chat.with_thinking(false)
+      Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat.with_tools(PostedTideBoard)
       chat.with_tool_options(choice: PostedTideBoard)
 
@@ -79,21 +79,12 @@ module PointWilsonTideWindow
     end
 
     def self.open_chat
-      RubyLLM.chat(
-        model: Multivitamin::Models::CHAT,
-        provider: :openrouter,
-        assume_model_exists: true
-      )
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        config.openrouter_api_key = ENV.fetch("OPENROUTER_API_KEY")
-        config.openrouter_app_url = "https://github.com/mikeymicrophone/rubyllm-multivitamin"
-        config.openrouter_app_name = "RubyLLM Multivitamin"
-        # Chat Completions emits a developer role unless this is set.
-        # OpenRouter expects system. The flag is shared with OpenAI's formatter.
-        config.openai_use_system_role = true
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

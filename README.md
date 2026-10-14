@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 25 |
+| Bottled | 39 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,10 +29,10 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 25 of 169 bottled.
-Chat basics is full. Streaming has twelve cassettes; the spoken handover
-is written and not yet recorded. Tools has thirteen scripts; every cassette
-is waiting on a live recording. The other features are titled and waiting.
+The bottle is not full yet: 13 features, 13 scenarios each, 39 of 169 bottled.
+Chat basics, streaming, and tools are full. Tools and the Point Wilson spoken
+handover were recorded on OpenAI `gpt-4.1-mini`. The other bottled cassettes
+are OpenRouter. The remaining features are titled and waiting.
 
 ## Run the examples
 
@@ -69,15 +69,21 @@ LIVE=1 OPENROUTER_API_KEY=... bundle exec rake test
 
 Copy [`.env.example`](.env.example) to `.env` if you want the key next to the
 repo. `.env` is gitignored. Never commit a key. The cassette helper strips
-`Authorization` headers and `sk-or-v1-` tokens before a cassette is written.
+`Authorization` headers, `OPENROUTER_API_KEY`, `OPENAI_API_KEY`, `sk-or-v1-`
+tokens, and other `sk-` tokens before a cassette is written.
 
 Live runs still need a key in the process, because RubyLLM raises
 `RubyLLM::ConfigurationError` before any HTTP call when the provider is
-unconfigured. Cassette runs set a placeholder when `OPENROUTER_API_KEY` is
-absent. That placeholder is not a credential.
+unconfigured. Cassette runs set a placeholder when the key is absent. That
+placeholder is not a credential.
 
-The bottled cassettes are live OpenRouter recordings. `usage.cost`
-is the number the provider reported. See each scenario's README.
+`LIVE_PROVIDER=openai` or `LIVE_PROVIDER=openrouter` overrides the provider
+while `LIVE=1` is recording, for examples that call `Multivitamin::Models.chat`.
+Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
+
+Chat basics and the earlier streaming cassettes are live OpenRouter
+recordings. Tools and the spoken handover are live OpenAI recordings.
+`usage.cost` is the number the provider reported. See each scenario's README.
 
 ## Free models
 
@@ -89,7 +95,8 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Feature | Default | Fallback |
 | --- | --- | --- |
 | Chat, streaming, history, tokens, errors | `nvidia/nemotron-3-super-120b-a12b:free` | `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free` |
-| Tools | same chat model (it advertises `tools` and `tool_choice`) | `liquid/lfm-2.5-2.6b:free` |
+| Tools (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
+| Spoken handover (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | same free chat model via `LIVE_PROVIDER=openrouter` |
 | Structured output | `nvidia/nemotron-3-super-120b-a12b:free` (`structured_outputs`) | `liquid/lfm-2.5-2.6b:free`, then `dots-studio/dots-3-note-preview:free` |
 | Images in, and video in | `google/gemma-4-31b-it:free` | `google/gemma-4-26b-a4b-it:free`, then `dots-studio/dots-3-note-preview:free` (image, no video) |
 | Audio in | `thinkingmachines/inkling:free` | `thinkingmachines/inkling-small:free`, then `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` |
@@ -101,6 +108,11 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 tools. Do not use it for a tool example. Gemma's free models advertise
 `response_format` and do not advertise `structured_outputs`; schema examples
 stay on a model that lists `structured_outputs`.
+
+`gpt-4.1-mini` was confirmed on `https://api.openai.com/v1/models` on
+14 October 2026. `gpt-4.1-nano` is cheaper and shuts down on 2026-10-23.
+`gpt-5-nano` is cheaper, does not take temperature, and is a reasoning model.
+The tools cassettes and the spoken handover use `gpt-4.1-mini` for that reason.
 
 Each feature README repeats the row that belongs to it.
 
@@ -129,8 +141,8 @@ hold the cassette player and the model slugs, not the story.
 ## Features
 
 1. [Chat basics](features/01-chat-basics/) — 13 of 13 bottled
-2. [Streaming](features/02-streaming/) — 12 of 13 bottled
-3. [Tools](features/03-tools/) — 0 of 13 bottled, 13 scripted and waiting on cassettes
+2. [Streaming](features/02-streaming/) — 13 of 13 bottled
+3. [Tools](features/03-tools/) — 13 of 13 bottled
 4. [Structured output](features/04-structured-output/) — 0 of 13 bottled
 5. [Multimodal attachments](features/05-multimodal-attachments/) — 0 of 13 bottled
 6. [Embeddings](features/06-embeddings/) — 0 of 13 bottled

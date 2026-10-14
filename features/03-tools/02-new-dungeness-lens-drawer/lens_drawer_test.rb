@@ -8,8 +8,6 @@ class LensDrawerTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/lens_drawer.yml", __dir__)
 
   def test_the_keeper_reads_the_bullseye_drawer
-    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
-
     result = nil
     Multivitamin::Cassettes.play(__dir__, "lens_drawer") do
       result = NewDungenessLensDrawer::DrawerLookup.conduct
@@ -45,11 +43,10 @@ class LensDrawerTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
-
     cassette = File.read(CASSETTE)
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+    refute_includes cassette, "Bearer sk-"
   end
 end

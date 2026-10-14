@@ -36,7 +36,9 @@ module PortTownsendSlipWind
   class MastRound
     INSTRUCTIONS = <<~TEXT.strip
       You are the slip watch at Port Townsend.
-      Call slip_anemometer twice in one response, once for the north mast and once for the south mast.
+      Your first message must contain exactly two function calls to slip_anemometer,
+      one with mast north and one with mast south.
+      Do not wait for a tool result before the second call.
       Then answer in one sentence that includes both gusts.
     TEXT
 
@@ -54,9 +56,9 @@ module PortTownsendSlipWind
       chat = open_chat
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
-      chat.with_thinking(false)
+      Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat.with_tools(SlipAnemometer)
-      chat.with_tool_options(choice: SlipAnemometer, calls: :many)
+      chat.with_tool_options(choice: :auto, calls: :many)
 
       answer = chat.ask(WIND_QUESTION)
       tool_turn = chat.messages.find(&:tool_call?)
@@ -70,21 +72,12 @@ module PortTownsendSlipWind
     end
 
     def self.open_chat
-      RubyLLM.chat(
-        model: Multivitamin::Models::CHAT,
-        provider: :openrouter,
-        assume_model_exists: true
-      )
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        config.openrouter_api_key = ENV.fetch("OPENROUTER_API_KEY")
-        config.openrouter_app_url = "https://github.com/mikeymicrophone/rubyllm-multivitamin"
-        config.openrouter_app_name = "RubyLLM Multivitamin"
-        # Chat Completions emits a developer role unless this is set.
-        # OpenRouter expects system. The flag is shared with OpenAI's formatter.
-        config.openai_use_system_role = true
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
