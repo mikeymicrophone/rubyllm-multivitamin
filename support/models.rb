@@ -24,6 +24,12 @@ module Multivitamin
     EMBEDDING = "nvidia/llama-nemotron-embed-vl-1b-v2:free"
     EMBEDDING_TEXT = "nvidia/nemotron-3-embed-1b:free"
 
+    # OpenAI embedding model. text-embedding-3-small is 1536 dimensions
+    # and accepts dimensions:. Confirmed on https://api.openai.com/v1/models
+    # on 14 October 2026. The free OpenRouter embedding slugs were past
+    # the daily cap while this feature was bottled.
+    OPENAI_EMBEDDING = "text-embedding-3-small"
+
     # No :free image model was listed that day. This one is paid.
     IMAGE = "google/gemini-2.5-flash-image"
 
@@ -71,6 +77,15 @@ module Multivitamin
         { model: OPENAI_CHAT, provider: :openai }
       when :openrouter
         { model: CHAT, provider: :openrouter, assume_model_exists: true }
+      end
+    end
+
+    def embed(provider:)
+      case recording_provider(provider)
+      when :openai
+        { model: OPENAI_EMBEDDING, provider: :openai }
+      when :openrouter
+        { model: EMBEDDING_TEXT, provider: :openrouter, assume_model_exists: true }
       end
     end
 
