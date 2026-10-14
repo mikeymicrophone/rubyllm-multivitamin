@@ -8,7 +8,7 @@ class TwineStockTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/twine_stock.yml", __dir__)
 
   def test_the_ticket_is_forced_onto_the_twine_tool
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "twine_stock") do

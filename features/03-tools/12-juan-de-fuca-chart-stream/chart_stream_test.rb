@@ -9,7 +9,7 @@ class ChartStreamTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/chart_stream.yml", __dir__)
 
   def test_the_stream_keeps_argument_strings_and_the_callback_keeps_a_hash
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "chart_stream") do

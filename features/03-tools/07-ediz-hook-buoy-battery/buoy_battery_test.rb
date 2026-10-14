@@ -9,7 +9,7 @@ class BuoyBatteryTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/buoy_battery.yml", __dir__)
 
   def test_a_miss_comes_back_as_json_and_the_tender_tries_again
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "buoy_battery") do

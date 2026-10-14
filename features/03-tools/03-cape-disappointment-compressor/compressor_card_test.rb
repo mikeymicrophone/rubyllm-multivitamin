@@ -8,7 +8,7 @@ class CompressorCardTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/compressor_card.yml", __dir__)
 
   def test_the_gauge_is_compared_with_the_posted_minimum
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "compressor_card") do

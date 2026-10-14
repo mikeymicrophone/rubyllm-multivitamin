@@ -8,7 +8,7 @@ class BerthDeskTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/berth_desk.yml", __dir__)
 
   def test_the_clerk_picks_the_berth_length
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "berth_desk") do

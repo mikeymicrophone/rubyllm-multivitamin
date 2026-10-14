@@ -8,7 +8,7 @@ class BarometerGlassTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/barometer_glass.yml", __dir__)
 
   def test_a_raised_glass_is_not_sent_back_as_a_tool_message
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "barometer_glass") do

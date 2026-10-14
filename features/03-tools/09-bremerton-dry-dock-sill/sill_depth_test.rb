@@ -8,7 +8,7 @@ class SillDepthTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/sill_depth.yml", __dir__)
 
   def test_the_station_is_taken_from_later_in_the_question
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "sill_depth") do

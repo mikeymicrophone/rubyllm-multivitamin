@@ -8,7 +8,7 @@ class PilotWindowTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/pilot_window.yml", __dir__)
 
   def test_the_cleared_tide_tool_is_not_on_the_request
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "pilot_window") do

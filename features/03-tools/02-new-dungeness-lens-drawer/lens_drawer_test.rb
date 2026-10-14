@@ -8,7 +8,7 @@ class LensDrawerTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/lens_drawer.yml", __dir__)
 
   def test_the_keeper_reads_the_bullseye_drawer
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "lens_drawer") do

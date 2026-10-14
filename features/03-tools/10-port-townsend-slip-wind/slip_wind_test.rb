@@ -9,7 +9,7 @@ class SlipWindTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/slip_wind.yml", __dir__)
 
   def test_both_masts_come_back_as_json_from_one_turn
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "slip_wind") do

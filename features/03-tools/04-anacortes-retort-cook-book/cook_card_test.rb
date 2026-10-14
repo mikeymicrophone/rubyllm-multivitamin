@@ -8,7 +8,7 @@ class CookCardTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/cook_card.yml", __dir__)
 
   def test_basket_three_comes_from_todays_book
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "cook_card") do

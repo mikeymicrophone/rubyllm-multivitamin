@@ -8,7 +8,7 @@ class PostedBoardTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/posted_board.yml", __dir__)
 
   def test_the_board_is_a_string_and_the_watch_hears_the_times
-    skip "cassette pending live recording" unless File.exist?(CASSETTE)
+    skip "cassette pending live recording" unless File.exist?(CASSETTE) || Multivitamin::Cassettes.live?
 
     result = nil
     Multivitamin::Cassettes.play(__dir__, "posted_board") do
