@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Stamp desk plate of the 1922
+        Gediminas-Tower issue, Vilnius philatelic bureau, with a\nwatermark correction
+        in the margin off the perforation. Tongs on the table.\nDocumentary. No invented
+        overprints.","n":1,"size":"256x256","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:43:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '217'
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_1754c06ff06c4d5da400d5d213c9d7bd
+      Openai-Processing-Ms:
+      - '28'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a7645f43c36d-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid size '256x256'. Supported sizes are 1024x1024, 1024x1536, 1536x1024, and auto.",
+            "type": "image_generation_user_error",
+            "param": "size",
+            "code": "invalid_value"
+          }
+        }
+  recorded_at: Thu, 15 Oct 2026 20:43:03 GMT
+recorded_with: VCR 6.4.0
