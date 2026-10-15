@@ -201,43 +201,43 @@ Shown in [Tashkent fly-floor handover](features/04-structured-output/13-tashkent
 
 ### A PDF under the Responses inline limit is sent as file_data, twice
 
-**What happens.** `auto_upload_large_files` is true. `RubyLLM::Protocols::Responses::Chat::OPENAI_INLINE_FILE_LIMIT` is 52_428_800. The cook card and the twine invoice are both under 1 KB. Each request goes to `https://api.openai.com/v1/responses` and the user content includes `file_data` with a `data:application/pdf;base64,` URI. There is no `file_id` and no `/v1/files` call. On the twine invoice, the second `ask` attaches nothing. The first user message still holds one attachment and the second holds none, and both request bodies still contain that `file_data`. The second body is larger.
+**What happens.** `auto_upload_large_files` is true. `RubyLLM::Protocols::Responses::Chat::OPENAI_INLINE_FILE_LIMIT` is 52_428_800. The ice-core card and the piña invoice are both under 1 KB. Each request goes to `https://api.openai.com/v1/responses` and the user content includes `file_data` with a `data:application/pdf;base64,` URI. There is no `file_id` and no `/v1/files` call. On the piña invoice, the second `ask` attaches nothing. The first user message still holds one attachment and the second holds none, and both request bodies still contain that `file_data`. The second body is larger.
 
 **Why it matters.** A normal procedure card does not take the files API. A follow-up stores the same base64 again. A file over 50 MiB was not recorded; that cassette would have held the upload.
 
 **What to do.** Read `attachment.byte_size` against the inline limit before assuming an upload. Expect `file_data` on later turns.
 
-Shown in [Anacortes retort cook procedure](features/05-multimodal-attachments/04-anacortes-retort-procedure/) and [Port Angeles twine invoice](features/05-multimodal-attachments/11-port-angeles-twine-invoice/).
+Shown in [Nuuk ice-core procedure](features/05-multimodal-attachments/04-nuuk-ice-core-procedure/) and [Cebu piña invoice](features/05-multimodal-attachments/11-cebu-pina-invoice/).
 
 ### :high is detail high on an input_image
 
 **What happens.** `RubyLLM::Attachment.new(path, resolution: :high)` keeps `resolution` as `:high`. The Responses body for `gpt-4.1-mini` contains `"type":"input_image"` and `"detail":"high"`.
 
-**Why it matters.** A cassette check that only looks for the data URI will miss whether the keeper asked for the finer setting.
+**Why it matters.** A cassette check that only looks for the data URI will miss whether the compositor asked for the finer setting.
 
 **What to do.** Assert `resolution` on the attachment and `"detail":"high"` in the request.
 
-Shown in [New Dungeness lens drawer](features/05-multimodal-attachments/02-new-dungeness-lens-drawer/).
+Shown in [Lviv linotype label](features/05-multimodal-attachments/02-lviv-linotype-label/).
 
 ### A trusted https image URL is forwarded, not inlined
 
-**What happens.** The Friday Harbor sheet URL ends in `.jpg`. The request contains that URL on `input_image` and does not contain `data:image`. OpenAI fetches the sheet. The cassette stores the URL.
+**What happens.** The Magelang Borobudur sheet URL ends in `.jpg`. The request contains that URL on `input_image` and does not contain `data:image`. OpenAI fetches the sheet. The cassette stores the URL.
 
 **Why it matters.** A thumbnail URL on the same host failed in a probe with `Error while downloading file`. The original file URL is the one this cassette recorded. The bytes are not in the cassette, so a later change to the remote sheet will not change replay.
 
-**What to do.** Pass a URL the station already trusts, with an extension RubyLLM can name. Do not pass a caller-supplied string.
+**What to do.** Pass a URL the desk already trusts, with an extension RubyLLM can name. Do not pass a caller-supplied string.
 
-Shown in [Friday Harbor berth sheet](features/05-multimodal-attachments/05-friday-harbor-berth-sheet/).
+Shown in [Magelang Borobudur sheet](features/05-multimodal-attachments/05-magelang-borobudur-sheet/).
 
 ### A text file is a file element, not a second image
 
-**What happens.** A `.txt` path beside a photograph becomes a text part whose text is `<file name='weather-round.txt' mime_type='text/plain'>` plus the file bytes. The photograph is a separate `input_image` data URI. The same wrapper is what a converted spreadsheet sends: `<file name='slip-wind.txt' mime_type='text/plain'>`.
+**What happens.** A `.txt` path beside a photograph becomes a text part whose text is `<file name='schoolyard-round.txt' mime_type='text/plain'>` plus the file bytes. The photograph is a separate `input_image` data URI. The same wrapper is what a converted spreadsheet sends: `<file name='sprint-wind.txt' mime_type='text/plain'>`.
 
 **Why it matters.** The model can see the written round only inside that element. A test that searches the cassette for the bare filename will miss it if it does not include the wrapper.
 
 **What to do.** Look for the `<file name=... mime_type=...>` wrapper when the attachment is text.
 
-Shown in [Smith Island barometer round](features/05-multimodal-attachments/08-smith-island-barometer/) and [Port Townsend slip wind](features/05-multimodal-attachments/10-port-townsend-slip-wind/).
+Shown in [Riga schoolyard glass](features/05-multimodal-attachments/08-riga-schoolyard-glass/) and [Kingston sprint wind](features/05-multimodal-attachments/10-kingston-sprint-wind/).
 
 ### The converter runs for a spreadsheet and does not run for an API refusal
 
@@ -247,17 +247,17 @@ Shown in [Smith Island barometer round](features/05-multimodal-attachments/08-sm
 
 **What to do.** Rescue `UnsupportedAttachmentError` for types the protocol cannot format. Rescue `BadRequestError` when the model rejects a modality. Do not expect the converter to run for the second one.
 
-Shown in [Bremerton sill refusal](features/05-multimodal-attachments/09-bremerton-sill-refusal/).
+Shown in [Montevideo wool refusal](features/05-multimodal-attachments/09-montevideo-wool-refusal/).
 
 ### The user message keeps the workbook the wire replaced
 
-**What happens.** The slip-wind converter returns a text attachment. The request body contains the gust line inside the file element and does not contain the spreadsheet MIME type. After `ask`, the user message attachment is still `slip-wind.xlsx` with type `:document`.
+**What happens.** The sprint-wind converter returns a text attachment. The request body contains the gust line inside the file element and does not contain the spreadsheet MIME type. After `ask`, the user message attachment is still `sprint-wind.xlsx` with type `:document`.
 
 **Why it matters.** Logging `message.attachments` shows the workbook the clerk handed over, not the text the model read.
 
 **What to do.** Read the request body for the replacement. Read `message.attachments` for the original.
 
-Shown in [Port Townsend slip wind](features/05-multimodal-attachments/10-port-townsend-slip-wind/).
+Shown in [Kingston sprint wind](features/05-multimodal-attachments/10-kingston-sprint-wind/).
 
 ### An extensionless PNG is sniffed as image/png
 
@@ -267,27 +267,27 @@ Shown in [Port Townsend slip wind](features/05-multimodal-attachments/10-port-to
 
 **What to do.** Read `Attachment#mime_type` and `Attachment#type` after construction. Do not decide the part from the extension alone.
 
-Shown in [Juan de Fuca margin correction](features/05-multimodal-attachments/12-juan-de-fuca-margin-correction/).
+Shown in [Tashkent cadastral margin](features/05-multimodal-attachments/12-tashkent-cadastral-margin/).
 
 ### gpt-audio-mini reports tokens and a nil cost, and the next ask resends the audio
 
-**What happens.** `gpt-audio-mini` answers on Chat Completions. The request contains `input_audio` with `"format":"mp3"`. The response usage includes `audio_tokens`. `tokens.input` is greater than 0. `cost.total` is nil. A second `ask` with no `with:` leaves the second user message with no attachment, and both request bodies still contain one `input_audio` part. The Ediz Hook cassette is about 96 KB because that MP3 is stored twice as base64. The foghorn cassette is about 46 KB for one copy.
+**What happens.** `gpt-audio-mini` answers on Chat Completions. The request contains `input_audio` with `"format":"mp3"`. The response usage includes `audio_tokens`. `tokens.input` is greater than 0. `cost.total` is nil. A second `ask` with no `with:` leaves the second user message with no attachment, and both request bodies still contain one `input_audio` part. The Penang cassette is about 104 KB because that MP3 is stored twice as base64. The Bamako cassette is about 37 KB for one copy.
 
-**Why it matters.** A test that locks `cost` at 0 fails, and a test that requires `cost > 0` fails too. A follow-up that looks attachment-free on `chat.messages` is not attachment-free on the wire. Image cassettes in this feature are smaller (the tide board PNG is about 8 KB and its cassette is about 17 KB) but they are still mostly the data URI.
+**Why it matters.** A test that locks `cost` at 0 fails, and a test that requires `cost > 0` fails too. A follow-up that looks attachment-free on `chat.messages` is not attachment-free on the wire. Image cassettes in this feature are smaller (the cistern board PNG is about 5 KB and its cassette is about 17 KB) but they are still mostly the data URI.
 
 **What to do.** Assert the log line and the token count. Allow a nil cost on this model. Expect the earlier audio on the next request.
 
-Shown in [Cape Disappointment foghorn call](features/05-multimodal-attachments/03-cape-disappointment-foghorn-call/) and [Ediz Hook buoy check-in](features/05-multimodal-attachments/07-ediz-hook-buoy-check-in/).
+Shown in [Bamako ngoni call](features/05-multimodal-attachments/03-bamako-ngoni-call/) and [Penang cable check-in](features/05-multimodal-attachments/07-penang-cable-check-in/).
 
 ### One model can take the photograph and the PDF
 
-**What happens.** `gpt-4.1-mini` on the Responses API accepts `with:` as an array of the tide-board PNG and the cook-procedure PDF. The user message attachments are `:image`, then `:pdf`. The request contains `input_image` and `input_file`. One call returns both the kelp-ledge time and the hold.
+**What happens.** `gpt-4.1-mini` on the Responses API accepts `with:` as an array of the vat-board PNG and the scald-procedure PDF. The user message attachments are `:image`, then `:pdf`. The request contains `input_image` and `input_file`. One call returns both the first-scald time and the hold.
 
 **Why it matters.** The free OpenRouter slugs did not advertise `file` input, so a split across a vision model and a PDF model is not required once the chat is on this id.
 
 **What to do.** Send both files on the same `ask` when the model accepts both modalities.
 
-Shown in [Admiralty Inlet cook and tide](features/05-multimodal-attachments/13-admiralty-inlet-cook-and-tide/).
+Shown in [Nicosia scald and vat](features/05-multimodal-attachments/13-nicosia-scald-and-vat/).
 
 ## Embeddings
 

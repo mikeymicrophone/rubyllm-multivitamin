@@ -1,0 +1,172 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"What
+        magazine is this, and what point size is printed for the Garamond matrices?"},{"type":"input_image","image_url":"data:image/png;base64,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","detail":"high"}]}],"instructions":"You
+        are the compositor at a Lviv linotype shop.\nAnswer in one sentence from the
+        label only.\nInclude the magazine number and the point size.\nDo not invent
+        a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:46:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fcc028a82fbe-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1085'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_ebad9df14ff54f4583e150b74ad5e48e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03024f40a1c48dd1016ad11f8a5ffc87d0b250a37a618e6994",
+          "object": "response",
+          "created_at": 1792089994,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089995,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the compositor at a Lviv linotype shop.\nAnswer in one sentence from the label only.\nInclude the magazine number and the point size.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_03024f40a1c48dd1016ad11f8b357887d09dae9bc49f7e4498",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Magazine 6, 8-point Garamond."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 287,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 12,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 299
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:46:35 GMT
+recorded_with: VCR 6.4.0

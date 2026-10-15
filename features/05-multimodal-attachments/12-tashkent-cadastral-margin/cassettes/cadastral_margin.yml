@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"The
+        plotter dropped the filename extension on this margin scan.\nWhat plot is
+        it, which marker moved, and how far?"},{"type":"input_image","image_url":"data:image/png;base64,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"}]}],"instructions":"You
+        are the cadastre clerk in Tashkent.\nAnswer in one sentence from the scan
+        only.\nName the plot number, the marker, and the area in the margin correction.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:47:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fd92bbb0b74e-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '885'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999058'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 28ms
+      X-Request-Id:
+      - req_4c13bcc157b549d58d654c88cfccd588
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e6d6063af5ebff5016ad11fac090487d093bdeb5a2d025093",
+          "object": "response",
+          "created_at": 1792090028,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792090028,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the cadastre clerk in Tashkent.\nAnswer in one sentence from the scan only.\nName the plot number, the marker, and the area in the margin correction.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0e6d6063af5ebff5016ad11faca63087d09f84204da00b261d",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The plot is 217, the marker QY moved 0.6 hectares west."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 300,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 19,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 319
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:47:08 GMT
+recorded_with: VCR 6.4.0

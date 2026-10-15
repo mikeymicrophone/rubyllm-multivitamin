@@ -14,19 +14,19 @@ On that afternoon the free slugs answered `Rate limit exceeded: free-models-per-
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson tide board](01-point-wilson-tide-board/) — available
-02. [New Dungeness lens drawer](02-new-dungeness-lens-drawer/) — available
-03. [Cape Disappointment foghorn call](03-cape-disappointment-foghorn-call/) — available
-04. [Anacortes retort cook procedure](04-anacortes-retort-procedure/) — available
-05. [Friday Harbor berth sheet](05-friday-harbor-berth-sheet/) — available
-06. [Neah Bay pilot ladder](06-neah-bay-pilot-ladder/) — available
-07. [Ediz Hook buoy check-in](07-ediz-hook-buoy-check-in/) — available
-08. [Smith Island barometer round](08-smith-island-barometer/) — available
-09. [Bremerton sill refusal](09-bremerton-sill-refusal/) — available
-10. [Port Townsend slip wind](10-port-townsend-slip-wind/) — available
-11. [Port Angeles twine invoice](11-port-angeles-twine-invoice/) — available
-12. [Juan de Fuca margin correction](12-juan-de-fuca-margin-correction/) — available
-13. [Admiralty Inlet cook and tide](13-admiralty-inlet-cook-and-tide/) — available
+01. [Sucre cistern board](01-sucre-cistern-board/) — available
+02. [Lviv linotype label](02-lviv-linotype-label/) — available
+03. [Bamako ngoni call](03-bamako-ngoni-call/) — available
+04. [Nuuk ice-core procedure](04-nuuk-ice-core-procedure/) — available
+05. [Magelang Borobudur sheet](05-magelang-borobudur-sheet/) — available
+06. [Luang Prabang mural](06-luang-prabang-mural/) — available
+07. [Penang cable check-in](07-penang-cable-check-in/) — available
+08. [Riga schoolyard glass](08-riga-schoolyard-glass/) — available
+09. [Montevideo wool refusal](09-montevideo-wool-refusal/) — available
+10. [Kingston sprint wind](10-kingston-sprint-wind/) — available
+11. [Cebu piña invoice](11-cebu-pina-invoice/) — available
+12. [Tashkent cadastral margin](12-tashkent-cadastral-margin/) — available
+13. [Nicosia scald and vat](13-nicosia-scald-and-vat/) — available
 
 ## What each scenario adds
 

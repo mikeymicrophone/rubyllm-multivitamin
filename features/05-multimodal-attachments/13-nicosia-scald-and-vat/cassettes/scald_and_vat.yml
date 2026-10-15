@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"Vat
+        2 is on the cook in the PDF.\nEleni is waiting on the vat board.\nWhen does
+        Eleni take the first scald, and how long does vat 2 hold?"},{"type":"input_image","image_url":"data:image/png;base64,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"},{"type":"input_file","filename":"scald-procedure.pdf","file_data":"data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iaiA8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4gZW5kb2JqCjIgMCBvYmogPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4gZW5kb2JqCjMgMCBvYmogPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4gPj4gPj4gZW5kb2JqCjQgMCBvYmogPDwgL0xlbmd0aCAyMTEgPj4gc3RyZWFtCkJUCi9GMSAxNCBUZgo3MiA3NDAgVGQKKE5pY29zaWEgaGFsbG91bWkgc2NhbGQgcHJvY2VkdXJlKSBUagowIC0yMiBUZAooVmF0IDIgaG9sZHMgNDAgbWludXRlcy4pIFRqCjAgLTIyIFRkCihGaXJzdCBzY2FsZCBpcyBwb3N0ZWQgb24gdGhlIGJvYXJkLikgVGoKMCAtMjIgVGQKKEVsZW5pIGxvZ3MgdGhlIHZhdCBiZWZvcmUgdGhlIGFmdGVybm9vbiBjdXQuKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmogPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhID4+IGVuZG9iagp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDkgMDAwMDAgbiAKMDAwMDAwMDA1OCAwMDAwMCBuIAowMDAwMDAwMTE1IDAwMDAwIG4gCjAwMDAwMDAyNDEgMDAwMDAgbiAKMDAwMDAwMDUwMiAwMDAwMCBuIAp0cmFpbGVyIDw8IC9TaXplIDYgL1Jvb3QgMSAwIFIgPj4Kc3RhcnR4cmVmCjU3MgolJUVPRgo="}]}],"instructions":"You
+        are the clerk at a Nicosia halloumi shop.\nThe photograph is the vat board.\nThe
+        PDF is the scald procedure.\nAnswer in two short sentences.\nInclude Eleni,
+        the clock time of the first scald, and the hold in minutes for vat 2.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:47:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fe5f4926ff0d-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '839'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_c17cc887760a48e9a483e7e5f5f48e23
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_052b7636680b3e51016ad11fccc3ec87d0a7d722b2bff78696",
+          "object": "response",
+          "created_at": 1792090061,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792090061,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the clerk at a Nicosia halloumi shop.\nThe photograph is the vat board.\nThe PDF is the scald procedure.\nAnswer in two short sentences.\nInclude Eleni, the clock time of the first scald, and the hold in minutes for vat 2.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_052b7636680b3e51016ad11fcd5ee887d0b872a5b6d2ae79c9",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Eleni takes the first scald at 08:50. Vat 2 holds for 40 minutes."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 390,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 23,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 413
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:47:41 GMT
+recorded_with: VCR 6.4.0

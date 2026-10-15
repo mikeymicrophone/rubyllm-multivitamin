@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"The
+        photograph is the cistern board posted in the Quispe courtyard for Wednesday
+        14 October 2026.\nWhen is the posted height, what is that height, and when
+        may Rosa pump the patio?"},{"type":"input_image","image_url":"data:image/png;base64,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"}]}],"instructions":"You
+        are the household clerk in a Sucre courtyard.\nAnswer in one sentence from
+        the photograph only.\nInclude the posted height time, the posted height, and
+        the clock time when Rosa may pump the patio.\nDo not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:46:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fc7b0e82ff01-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1353'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_110e6f6023f741388345858eb008c704
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_078d2d51ed6c36e6016ad11f7ff12c87d0aaaef0f3729b3611",
+          "object": "response",
+          "created_at": 1792089983,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089985,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the household clerk in a Sucre courtyard.\nAnswer in one sentence from the photograph only.\nInclude the posted height time, the posted height, and the clock time when Rosa may pump the patio.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_078d2d51ed6c36e6016ad11f80f12087d0957eaed0d717571c",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The posted height is at 05:20, the height is 1.6 meters, and Rosa may pump the patio at 07:45."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 322,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 32,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 354
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:46:25 GMT
+recorded_with: VCR 6.4.0

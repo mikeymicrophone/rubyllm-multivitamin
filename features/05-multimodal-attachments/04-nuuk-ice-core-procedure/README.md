@@ -1,0 +1,49 @@
+# Multimodal attachments · 04 · Nuuk ice-core procedure
+
+The ice-core clerk at the Nuuk lab reads a one-page procedure: core 4,
+-32 C, hold 55 minutes. The page is a PDF.
+
+**What it teaches**
+
+- `ask` takes a PDF with `with:`.
+- None of the free OpenRouter chat models advertised `file` input on
+  14 October 2026, so the recording uses `gpt-4.1-mini`.
+- `auto_upload_large_files` is on. The Responses inline limit is 50 MiB
+  (`52_428_800` bytes). This card is far smaller, so the request carries
+  `file_data` and does not call `/v1/files`.
+
+**Files**
+
+| File | Role |
+| --- | --- |
+| [`core_procedure.rb`](core_procedure.rb) | Asks about the PDF and reads the attachment size |
+| [`core_procedure_test.rb`](core_procedure_test.rb) | Replays the cassette and checks `file_data` |
+| [`core-procedure.pdf`](core-procedure.pdf) | The lab card |
+| [`cassettes/core_procedure.yml`](cassettes/core_procedure.yml) | The Responses round-trip |
+
+**Sample file**
+
+`core-procedure.pdf` was written for this catalog as a one-page PDF 1.4
+file with Helvetica text. The procedure is original. The base64 in the
+cassette is small because the card is under 1 KB. Image and audio
+cassettes in this feature are where the base64 shows.
+
+A file over 50 MiB was not recorded. That cassette would have held the
+upload body.
+
+**Try it**
+
+```sh
+bundle exec ruby features/05-multimodal-attachments/04-nuuk-ice-core-procedure/core_procedure.rb
+bundle exec ruby features/05-multimodal-attachments/04-nuuk-ice-core-procedure/core_procedure_test.rb
+```
+
+Re-record with:
+
+```sh
+LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/05-multimodal-attachments/04-nuuk-ice-core-procedure/core_procedure.rb
+```
+
+**Model**
+
+`gpt-4.1-mini` on OpenAI.

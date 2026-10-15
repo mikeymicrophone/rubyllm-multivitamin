@@ -1,0 +1,176 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"What
+        does the glass read now, what did it read at 06:00, and what is the wind?"},{"type":"input_image","image_url":"data:image/png;base64,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"},{"type":"input_text","text":"<file
+        name=''schoolyard-round.txt'' mime_type=''text/plain''>Riga schoolyard weather
+        round, Wednesday 14 October 2026, 08:00.\nWind east at 9 knots.\nThe glass
+        at 06:00 read -1.8 C.\nThe photograph is the glass at 08:00.\n</file>"}]}],"instructions":"You
+        are the science teacher on the Riga schoolyard round.\nUse both attachments.\nThe
+        photograph is the glass at 08:00. The text file is the written round.\nAnswer
+        in one sentence.\nInclude the 08:00 reading, the 06:00 reading, and the wind.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:46:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fd357d2b121f-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1038'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_273ffbbb3727460bafc96212dfc0343e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0050d5cb086dfe62016ad11f9d1ed487d080552f208ced8bc5",
+          "object": "response",
+          "created_at": 1792090013,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792090014,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the science teacher on the Riga schoolyard round.\nUse both attachments.\nThe photograph is the glass at 08:00. The text file is the written round.\nAnswer in one sentence.\nInclude the 08:00 reading, the 06:00 reading, and the wind.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0050d5cb086dfe62016ad11f9dcc2887d084f1083d2fa446c7",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The glass reads -4.2\u00b0C at 08:00, it read -1.8\u00b0C at 06:00, and the wind is east at 9 knots."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 391,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 429
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:46:54 GMT
+recorded_with: VCR 6.4.0
