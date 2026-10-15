@@ -1,0 +1,184 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        slip sheet, Port of Friday Harbor, Wednesday 14 October 2026.\nHarbor office:
+        https://www.portfridayharbor.org/\nTide staff: https://tidesandcurrents.noaa.gov/
+        station 9449880.\nThe sheet is the only assignment log for the inner basin.\n\nSlip
+        2, 36 ft, reserved for the county work skiff Kelp Cutter, power and water
+        on.\nSlip 5, 42 ft, empty, fender pile split at the second wale, do not assign.\nSlip
+        8, 48 ft, held for the mail boat San Juan Packet until 16:00, then open.\nSlip
+        11, 40 ft, occupied by the gillnetter Ruby Point, power only, no water.\nSlip
+        14, 54 ft, assigned to the seiner Cape Flattery, power and water on,\noutbound
+        05:40 for the Rosario grounds.\nSlip 17, 38 ft, empty, last used by the tender
+        Retort, needs a hose bib washer.\nSlip 19, 60 ft, reserved for the state ferry
+        layover if the Friday Harbor\nrun is cancelled; do not assign a fishing boat.\nSlip
+        21, 32 ft, occupied by the rowing gig Spieden, no power.\nSlip 24, 45 ft,
+        empty, awaiting the cannery tender Retort after the\nAnacortes cook, not before
+        14:00.\nSlip 27, 50 ft, occupied by the whale-watch Kestrel, overnight only.\n\nWhich
+        slip is assigned to Cape Flattery?"}],"instructions":"You are the marina clerk
+        at the Port of Friday Harbor.\nAnswer in one sentence. Name the slip number.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa21795f8ce22a-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '831'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999620'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_7be3817d66c24626bd23340c17afe311
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0ef2fcc01e7fc4f5016ad006b238e887d0b125e0ed0f4c0928",
+          "object": "response",
+          "created_at": 1792018098,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018099,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the marina clerk at the Port of Friday Harbor.\nAnswer in one sentence. Name the slip number.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0ef2fcc01e7fc4f5016ad006b2d39c87d0bec3e64bb76cd0c4",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Slip 14 is assigned to the seiner Cape Flattery."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 361,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 13,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 374
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:19 GMT
+recorded_with: VCR 6.4.0

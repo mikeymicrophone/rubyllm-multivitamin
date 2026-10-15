@@ -1,0 +1,347 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        board at Point Wilson, Wednesday night 14 October 2026.\nTide reference: https://tidesandcurrents.noaa.gov/
+        station 9444900.\nLow water 07:05, 1.1 ft.\nVisibility 1 mile, so the horn
+        is running.\nBlast 3 seconds, silent 27 seconds.\nIs the horn running?"}],"instructions":"You
+        are the overnight tide clerk at Point Wilson Light Station on Admiralty Inlet.\nThese
+        are the overnight standing orders.\nAnswer in two short sentences.\nThe first
+        sentence starts with Yes or No.\nName whether the horn is running.\nDo not
+        invent a blast time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa21cd3fc3b024-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '599'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999492'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 15ms
+      X-Request-Id:
+      - req_28ed614f3b37411b9ea4f47b9f67a409
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03ffd072246f5d0e016ad006bfa05487d0b1a6dc57012216e9",
+          "object": "response",
+          "created_at": 1792018111,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018112,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the overnight tide clerk at Point Wilson Light Station on Admiralty Inlet.\nThese are the overnight standing orders.\nAnswer in two short sentences.\nThe first sentence starts with Yes or No.\nName whether the horn is running.\nDo not invent a blast time.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_03ffd072246f5d0e016ad006c006b087d08bf6c961a1716dc9",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yes, the horn is running. It blasts for 3 seconds and is silent for 27 seconds."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 140,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 22,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 162
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:32 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        board at Point Wilson, Thursday 15 October 2026.\nLow water 06:42, 0.4 ft
+        above MLLW.\nHigh water 12:18, 8.1 ft.\nThe foghorn tender Alden clears the
+        kelp ledge at 10:46.\nThe lens cabinet is closed.\nWhen can Alden leave the
+        float?"}],"instructions":"You are the morning relief at Point Wilson Light
+        Station on Admiralty Inlet.\nThese are the morning standing orders.\nAnswer
+        in two short sentences.\nName the clock time Alden leaves.\nDo not invent
+        a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa21d1cb4aa509-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '500'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999321'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 20ms
+      X-Request-Id:
+      - req_3ff6c71a67cc4e8db30d63b38ea3c99d
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_05b3b01d9d66f75f016ad006c066fc87d0a257fe86e2eab2ab",
+          "object": "response",
+          "created_at": 1792018112,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018112,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the morning relief at Point Wilson Light Station on Admiralty Inlet.\nThese are the morning standing orders.\nAnswer in two short sentences.\nName the clock time Alden leaves.\nDo not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_05b3b01d9d66f75f016ad006c0adfc87d0bf147728d709062d",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Alden leaves the float at 10:46. The lens cabinet is closed."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 131,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 18,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 149
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:32 GMT
+recorded_with: VCR 6.4.0

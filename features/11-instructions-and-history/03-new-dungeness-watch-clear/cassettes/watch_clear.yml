@@ -1,0 +1,346 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Cabinet
+        list posted in the lens room at New Dungeness Light.\nStation log: https://newdungenesslighthouse.com/\nDrawer
+        B: spare bull''s-eye, catalog NB-17.\nDrawer C: six lamp chimneys, catalog
+        LC-6.\nDrawer F: clockwork oil cup, catalog OC-9, dry.\nWhich drawer holds
+        the spare bull''s-eye, and what is its catalog mark?"}],"instructions":"You
+        are the lens keeper at New Dungeness Light Station on the Dungeness Spit.\nThese
+        are the lens-room standing orders.\nAnswer in two short sentences.\nQuote
+        catalog marks exactly as printed.\nDo not invent drawers.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa21319c02ef83-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '662'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999839'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 4ms
+      X-Request-Id:
+      - req_85e7e11064554e67856f664653c37443
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_095ac94420bce739016ad006a6bb2087d0a979251f2d9c51ea",
+          "object": "response",
+          "created_at": 1792018086,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018087,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lens keeper at New Dungeness Light Station on the Dungeness Spit.\nThese are the lens-room standing orders.\nAnswer in two short sentences.\nQuote catalog marks exactly as printed.\nDo not invent drawers.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_095ac94420bce739016ad006a72b6087d09ffa2c900f090052",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The spare bull's-eye is in Drawer B. Its catalog mark is NB-17."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 142,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 19,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 161
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:07 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Cabinet
+        list posted in the lens room at New Dungeness Light.\nStation log: https://newdungenesslighthouse.com/\nDrawer
+        B: spare bull''s-eye, catalog NB-17.\nDrawer C: six lamp chimneys, catalog
+        LC-6.\nDrawer F: clockwork oil cup, catalog OC-9, dry.\nWhich drawer holds
+        the spare bull''s-eye, and what is its catalog mark?"},{"role":"assistant","content":[{"type":"output_text","text":"The
+        spare bull''s-eye is in Drawer B. Its catalog mark is NB-17."}]},{"role":"user","content":"The
+        relief watch is on. How many chimneys are in drawer C? Quote the catalog mark."}],"stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa21369bd8ff09-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '719'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999664'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 10ms
+      X-Request-Id:
+      - req_fc83659dd694465c96e8a37f0f2517b6
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0448fd42604da73e016ad006a7957087d0aee5755d0d82af6b",
+          "object": "response",
+          "created_at": 1792018087,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018088,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": null,
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0448fd42604da73e016ad006a80b7887d08ddda2a62c07ed10",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "There are six lamp chimneys in Drawer C. The catalog mark is LC-6."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 138,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 19,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 157
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:08 GMT
+recorded_with: VCR 6.4.0

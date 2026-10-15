@@ -1,0 +1,178 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Evening
+        board posted for Wednesday 14 October 2026 at Point Wilson.\nTide reference:
+        https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nHigh water
+        12:18, 8.1 ft above MLLW.\nLow water 18:55, 2.6 ft.\nThe foghorn tender Alden
+        must be on the float before the falling tide\ndrops through 4.5 ft, or she
+        fouls the kelp ledge.\nMust Alden be back on the float before the 18:55 low,
+        and is 4.5 ft\nstill above that 2.6 ft low?"}],"instructions":"You are the
+        evening tide clerk at Point Wilson Light Station on Admiralty Inlet.\nThese
+        are the kelp-ledge standing orders.\nAnswer in two short sentences.\nThe first
+        sentence starts with Yes or No.\nUse only the evening board in the question.\nName
+        Alden.\nDo not invent tide heights.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:48:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa2115fa991d57-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1050'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999771'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_9a5a79728f18460392228c08cff559ae
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_002513959748ca2d016ad006a2801887d082456c159d565440",
+          "object": "response",
+          "created_at": 1792018082,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018083,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the evening tide clerk at Point Wilson Light Station on Admiralty Inlet.\nThese are the kelp-ledge standing orders.\nAnswer in two short sentences.\nThe first sentence starts with Yes or No.\nUse only the evening board in the question.\nName Alden.\nDo not invent tide heights.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_002513959748ca2d016ad006a3395087d09eadf6813e05d7c4",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yes, Alden must be back on the float before the 18:55 low. No, 4.5 ft is not above the 2.6 ft low; it is higher than the low water level."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 210,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 46,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 256
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:48:03 GMT
+recorded_with: VCR 6.4.0

@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 130 |
+| Bottled | 143 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,26 +29,26 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 130 of 169 bottled.
+The bottle is not full yet: 13 features, 13 scenarios each, 143 of 169 bottled.
 Chat basics, streaming, tools, structured output, multimodal attachments,
 embeddings, image generation, models and providers, configuration and
-contexts, and Rails integration are full. Tools, the Point Wilson spoken
-handover, the schema turns, the attachment scenarios, and the Rails
-integration chats were recorded on OpenAI `gpt-4.1-mini`.
+contexts, Rails integration, and instructions and history are full. Tools,
+the Point Wilson spoken handover, the schema turns, the attachment scenarios,
+and the Rails integration chats were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
 `gpt-6-luna`. Audio attachments were recorded on OpenAI `gpt-audio-mini`.
 Embedding text cassettes were recorded on OpenAI `text-embedding-3-small`.
 The Smith Island barometer card was recorded on OpenRouter
 `google/gemini-embedding-2`. Image generation was recorded on OpenAI
-`gpt-image-1-mini`. Models-and-providers chats were recorded on OpenAI
-`gpt-4.1-mini` (and `gpt-4o-mini` for the mid-chat switch) after the free
-OpenRouter slugs hit the daily cap. The registry `refresh` cassette is the
-published catalog on rubyllm.com. Configuration and contexts were recorded
-on OpenRouter `openai/gpt-4.1-mini` (and `openai/gpt-4.1-nano`) after the
-`:free` slugs hit the daily cap; the Juan de Fuca context embed also
-records OpenAI `text-embedding-3-small` for the global call. The other
-bottled cassettes are OpenRouter. The remaining features are titled
-and waiting.
+`gpt-image-1-mini`. Models-and-providers chats and the
+instructions-and-history cassettes were recorded on OpenAI `gpt-4.1-mini`
+(and `gpt-4o-mini` for the mid-chat switch) after the free OpenRouter slugs
+hit the daily cap. The registry `refresh` cassette is the published catalog
+on rubyllm.com. Configuration and contexts were recorded on OpenRouter
+`openai/gpt-4.1-mini` (and `openai/gpt-4.1-nano`) after the `:free` slugs hit
+the daily cap; the Juan de Fuca context embed also records OpenAI
+`text-embedding-3-small` for the global call. The other bottled cassettes
+are OpenRouter. The remaining features are titled and waiting.
 
 ## Run the examples
 
@@ -179,7 +179,7 @@ hold the cassette player and the model slugs, not the story.
 8. [Models and providers](features/08-models-and-providers/) — 13 of 13 bottled
 9. [Configuration and contexts](features/09-configuration-and-contexts/) — 13 of 13 bottled
 10. [Rails integration](features/10-rails-integration/) — 13 of 13 bottled
-11. [Instructions and history](features/11-instructions-and-history/) — 0 of 13 bottled
+11. [Instructions and history](features/11-instructions-and-history/) — 13 of 13 bottled
 12. [Tokens and cost](features/12-tokens-and-cost/) — 0 of 13 bottled
 13. [Error handling](features/13-error-handling/) — 0 of 13 bottled
 
