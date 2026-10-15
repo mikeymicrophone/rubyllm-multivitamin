@@ -691,6 +691,18 @@ Shown in [Ediz Hook resource attachment](features/15-mcp-client/06-ediz-hook-res
 
 Shown in [Juan de Fuca deferred tool search](features/15-mcp-client/12-juan-de-fuca-defer/).
 
+## Audio transcription
+
+### gpt-transcribe reports duration seconds, not token counts
+
+**What happens.** `RubyLLM.transcribe` on `gpt-transcribe` returns HTTP 200. The response `usage` is `{"type":"duration","seconds":5}`. There is no `input_tokens` or `output_tokens`. `transcription.duration` is that second count. `transcription.tokens.input`, `tokens.output`, and `cost.total` are `nil`. The same duration-only usage is on the silent Mats Mats reel and on the streamed Mystery Bay deltas. `gpt-4o-transcribe-diarize` on the Kilisut Harbor tape reports `usage.type` `tokens` with `input_tokens` and `output_tokens`.
+
+**Why it matters.** A work order that copies `tokens.input` from a chat message onto every transcription stores nothing on the default model. That is not a free chat model's `cost` of `0`.
+
+**What to do.** Read `duration` on `gpt-transcribe`. Read token counts on the diarization model. Treat `nil` cost as unpriced, not as free.
+
+Shown in [Shine Tidal tokens](features/16-audio-transcription/11-shine-tidal-tokens/), [Mats Mats silent tape](features/16-audio-transcription/10-mats-mats-silence/), and [Kilisut Harbor diarized watch](features/16-audio-transcription/08-kilisut-harbor-diarize/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

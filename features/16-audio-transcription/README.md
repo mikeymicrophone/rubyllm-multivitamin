@@ -1,37 +1,55 @@
 # Audio transcription
 
-`RubyLLM.transcribe` turns a recording into a `RubyLLM::Transcription`. Read `text`, `duration`, `segments`, and `words`. Pass `language:`, `prompt:`, `timestamps:`, `format:`, `speaker_names:`, and `speaker_references:`. A block streams `TranscriptionChunk` objects (`delta?`, `partial?`, `segment?`, `done?`). Gemini can raise `ContentFilterError` on a blocked recording.
+`RubyLLM.transcribe` turns a recording into a `RubyLLM::Transcription`. Read
+`text`, `duration`, `segments`, and `words`. Pass `language:`, `prompt:`,
+`timestamps:`, `format:`, `speaker_names:`, and `speaker_references:`. A
+block streams `TranscriptionChunk` objects (`delta?`, `partial?`,
+`segment?`, `done?`). `ctx.transcribe` uses a context's
+`default_transcription_model`. Silent audio returns empty `text`. A
+transcript is ordinary text for a later `chat.ask`.
 
 Official reference: [Audio Transcription](https://rubyllm.com/audio-transcription/).
 
-## RubyLLM 2.1.1 entry points
+## Models
 
-- `RubyLLM.transcribe("meeting.wav")`
-- `transcription.text`, `segments`, `words`, `duration`
-- `language:`, `prompt:`, `timestamps:`, `format:`
-- `speaker_names:` and `speaker_references:`
-- streaming block yielding `TranscriptionChunk`
-- `default_transcription_model`
+These cassettes were recorded on OpenAI with `LIVE=1 LIVE_PROVIDER=openai`.
+`gpt-transcribe` is RubyLLM 2.1.1's default. `whisper-1` is the model that
+takes `timestamps:` and `format: "srt"`. `gpt-4o-transcribe-diarize` labels
+speakers. Slots 12 and 13 then chat with `gpt-4.1-mini`.
+`LIVE_PROVIDER` does not retarget the transcription slugs.
 
-## Providers that can record it
+## Examples (13 of 13 bottled)
 
-OpenAI (`whisper-1`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, `gpt-audio-mini` for chat-side audio). OpenRouter hosts some transcription slugs. Gemini / Vertex AI (`gemini-3.5-transcribe`, Live WebSocket). Deepgram, ElevenLabs Scribe (`scribe_v2`, `scribe_v2_realtime`), xAI `grok-stt`, Mistral, Bedrock. This catalog's cheap record path is OpenAI `whisper-1` or `gpt-4o-transcribe`. Free OpenRouter audio slugs move; check the models API the day you record.
+01. [Tatoosh foghorn tape](01-tatoosh-foghorn-tape/) — available
+02. [Clallam Bay radio check](02-clallam-bay-radio-check/) — available
+03. [Sekiu Spanish hail](03-sekiu-spanish-hail/) — available
+04. [Freshwater Bay vocabulary prompt](04-freshwater-bay-vocabulary/) — available
+05. [Morse Creek word timestamps](05-morse-creek-timestamps/) — available
+06. [Dungeness Spit SRT card](06-dungeness-spit-srt/) — available
+07. [Mystery Bay streamed deltas](07-mystery-bay-stream/) — available
+08. [Kilisut Harbor diarized watch](08-kilisut-harbor-diarize/) — available
+09. [Indian Island known-speaker clips](09-indian-island-speakers/) — available
+10. [Mats Mats silent tape](10-mats-mats-silence/) — available
+11. [Shine Tidal tokens](11-shine-tidal-tokens/) — available
+12. [Thorndyke watch brief](12-thorndyke-watch-brief/) — available
+13. [Squamish Harbor watch tape capstone](13-squamish-harbor-capstone/) — available
 
-## Examples (0 of 13 bottled)
+## What each scenario adds
 
-01. Tatoosh foghorn tape — planned
-02. Clallam Bay radio check speakers — planned
-03. Sekiu Spanish hail (`language:`) — planned
-04. Freshwater Bay vocabulary prompt — planned
-05. Morse Creek word timestamps — planned
-06. Dungeness Spit SRT card — planned
-07. Mystery Bay streamed deltas — planned
-08. Kilisut Harbor diarized watch — planned
-09. Indian Island known-speaker clips — planned
-10. Mats Mats blocked Gemini tape — planned
-11. Shine Tidal WAV vs MP3 — planned
-12. Thorndyke long recording timeout — planned
-13. Squamish Harbor watch tape capstone — planned
+| Slot | What it adds |
+| --- | --- |
+| 01 | `RubyLLM.transcribe` returns a `Transcription`; `gpt-transcribe` |
+| 02 | `ctx.transcribe` uses the context's `whisper-1` default |
+| 03 | `language: "es"` on the request; Spanish hail from Sekiu |
+| 04 | `prompt:` sends Dungeness, kelp ledge, MLLW, Fresnel |
+| 05 | `timestamps: [:word, :segment]` fills `words` and `segments` |
+| 06 | `format: "srt"`; `text` is the subtitle card |
+| 07 | A block yields `TranscriptionChunk`; joined deltas equal `text` |
+| 08 | `gpt-4o-transcribe-diarize` labels speakers on segments |
+| 09 | `speaker_names:` and `speaker_references:` for Alden and Calder |
+| 10 | A silent reel is HTTP 200 and empty `text` |
+| 11 | `gpt-transcribe` reports duration seconds; token counts are nil |
+| 12 | Pipe `tape.text` into `chat.ask` for the posted brief |
+| 13 | Capstone: prompt, timestamps, then the posted card |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

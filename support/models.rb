@@ -73,6 +73,14 @@ module Multivitamin
     # The free OpenRouter audio slugs were past the daily cap that afternoon.
     OPENAI_AUDIO = "gpt-audio-mini"
 
+    # OpenAI transcription models. gpt-transcribe is RubyLLM 2.1.1's
+    # default. whisper-1 takes timestamps: and format: "srt".
+    # gpt-4o-transcribe-diarize labels speakers. LIVE_PROVIDER does not
+    # retarget these: OpenRouter's transcription payload is different.
+    OPENAI_TRANSCRIBE = "gpt-transcribe"
+    OPENAI_TRANSCRIBE_WHISPER = "whisper-1"
+    OPENAI_TRANSCRIBE_DIARIZE = "gpt-4o-transcribe-diarize"
+
     module_function
 
     # The provider a scenario was bottled with. LIVE=1 LIVE_PROVIDER=openai
@@ -107,6 +115,12 @@ module Multivitamin
       when :openrouter
         { model: EMBEDDING_TEXT, provider: :openrouter, assume_model_exists: true }
       end
+    end
+
+    # kwargs for RubyLLM.transcribe on the bottled OpenAI models.
+    # LIVE_PROVIDER does not switch this: the OpenRouter payload differs.
+    def transcribe(model: OPENAI_TRANSCRIBE, **extra)
+      { model: model, provider: :openai }.merge(extra)
     end
 
     # kwargs for RubyLLM.paint on the bottled OpenAI image model.

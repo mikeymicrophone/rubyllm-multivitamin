@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 195 |
+| Bottled | 208 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,11 +29,12 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 195 of 429 are
-bottled. Features 1–14 and MCP client (feature 15) are full. Features 16–33
-have stub READMEs. MCP client chats were recorded on OpenAI `gpt-4.1-mini`,
-except Juan de Fuca deferred tool search which used `gpt-5.4-mini`. Tools,
-the Point Wilson spoken handover, the
+The catalog is 33 features, 13 scenarios each, 429 slots. 208 of 429 are
+bottled. Features 1–16 are full. Features 17–33 have stub READMEs.
+MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
+deferred tool search which used `gpt-5.4-mini`. Audio transcription was
+recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
+`gpt-4o-transcribe-diarize`. Tools, the Point Wilson spoken handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -136,6 +137,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | PDF in | none of the `:free` chat models advertised `file` input | `gpt-4.1-mini` on OpenAI, which the attachment scenarios recorded. The free vision and audio slugs were past the daily cap that afternoon, so those cassettes use `gpt-4.1-mini` and `gpt-audio-mini` as well |
 | Embeddings (recorded) | `text-embedding-3-small` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-embed-1b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-embedding-350m:free`. Image `with:` recorded on paid `google/gemini-embedding-2` |
 | Image generation (recorded) | no `:free` image model that day | bottled on OpenAI `gpt-image-1-mini` (`quality: "low"`, `size: "1024x1024"`); OpenRouter paid fallback `google/gemini-2.5-flash-image` |
+| Audio transcription (recorded) | no `:free` transcription slug used | bottled on OpenAI `gpt-transcribe`, `whisper-1`, and `gpt-4o-transcribe-diarize` |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise
@@ -197,7 +199,7 @@ hold the cassette player and the model slugs, not the story.
 13. [Error handling](features/13-error-handling/) — 13 of 13 bottled
 14. [Agents](features/14-agents/) — 13 of 13 bottled
 15. [MCP client](features/15-mcp-client/) — 13 of 13 bottled
-16. [Audio transcription](features/16-audio-transcription/) — 0 of 13 bottled
+16. [Audio transcription](features/16-audio-transcription/) — 13 of 13 bottled
 17. [Text to speech](features/17-text-to-speech/) — 0 of 13 bottled
 18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 0 of 13 bottled
 19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 0 of 13 bottled
