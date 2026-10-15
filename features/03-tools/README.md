@@ -1,12 +1,12 @@
 # Tools
 
-A tool is a subclass of `RubyLLM::Tool` with a `description` and an `execute` method. RubyLLM derives a JSON schema from keyword parameters when you do not declare one; declare `parameter` or `parameters` when the model needs types and descriptions. The class name becomes the tool name in snake_case, with a trailing `Tool` dropped. A class nested in a module keeps that module in the name, and `::` is written as `--` (the horn-relief cassette records `cape_disappointment_relief--posted_horn_card`). Override `self.tool_name` to keep a short domain name. These scenarios do that.
+A tool is a subclass of `RubyLLM::Tool` with a `description` and an `execute` method. RubyLLM derives a JSON schema from keyword parameters when you do not declare one; declare `parameter` or `parameters` when the model needs types and descriptions. The class name becomes the tool name in snake_case, with a trailing `Tool` dropped. A class nested in a module keeps that module in the name, and `::` is written as `--` (the skip-relief cassette records `kiruna_skip_relief--posted_skip_card`). Override `self.tool_name` to keep a short domain name. These scenarios do that.
 
 `chat.with_tools(PostedLotBoard)` adds a tool. RubyLLM 2.1.1 has no `with_tool`. `with_tools(nil)` clears the set. One `ask` runs the loop: the model requests a call, RubyLLM runs `execute`, the result goes back as a `:tool` message, and `ask` returns when the model stops calling tools. A String result is that message's content. A Hash or Array is sent as JSON. Return `{ error: "..." }` for a miss the model can recover from. Raise for a failure the application owns; the exception leaves `ask` and no `:tool` message is appended.
 
 `with_tool_options(choice:)` takes `:auto`, `:none`, `:required`, a tool name, or a tool class. `calls: :many` sends `parallel_tool_calls`. Callbacks are `before_tool_call`, `after_tool_result`, and `after_tool_progress`. The 1.x names `on_tool_call` and `on_tool_result` are gone. `halt` and `RubyLLM::Tool::Halt` are gone; stop the loop with `generate` and `run_tools`.
 
-A streamed tool call yields argument strings on the chunks. `before_tool_call` receives a Hash. The Cape Disappointment horn relief already recorded that split.
+A streamed tool call yields argument strings on the chunks. `before_tool_call` receives a Hash. The Kiruna skip-hoist relief already recorded that split.
 
 The model-facing name, the arguments, and the result all use the scenario's words.
 

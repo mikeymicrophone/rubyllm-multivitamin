@@ -1,0 +1,195 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Drone corridor
+        check Wednesday 14 October 2026, 06:10.\nThe medical dispatcher Amahoro calls
+        Kigali International.\nWorking corridor 66. The call is loud and clear.\nSpeak
+        the check for the log."}],"instructions":"You are the tower watch at Kigali
+        International Airport.\nAnswer with the corridor check in one short sentence.\nName
+        the dispatcher Amahoro and corridor 66.\nUse only the check in the question.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:43:42 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a0a76bceae0c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '655'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999886'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 3ms
+      X-Request-Id:
+      - req_5418f03d8bbb4437bfd6ae2dd2be8248
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_092c007309e42253016ad110ce171c87d2ab5cc17f0e62286a","object":"response","created_at":1792086222,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the tower watch at Kigali International Airport.\nAnswer with the corridor check in one short sentence.\nName the dispatcher Amahoro and corridor 66.\nUse only the check in the question.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_092c007309e42253016ad110ce171c87d2ab5cc17f0e62286a","object":"response","created_at":1792086222,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the tower watch at Kigali International Airport.\nAnswer with the corridor check in one short sentence.\nName the dispatcher Amahoro and corridor 66.\nUse only the check in the question.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Corr","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"6F7G5ynj3Xyq","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"idor","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"5rhzXP6wlP9Z","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"rsefTx7cauakPXm","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"66","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"IEb0U50rJJLcuQ","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" check","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"XNjd9CWhGG","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" in","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"UbYnKS00VDrdD","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"Xs70iWjBv0YMwVm","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" A","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"txoSk1lGyEmwm7","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"mah","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"bQzXU9IIkW2FA","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"oro","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"wexw8aPoxQDq9","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" loud","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"lxSwxeA6DUx","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" and","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"D4ZAGhnlEKEA","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" clear","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"iJq7miyOO3","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"Wq3CVnSLvy27k","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Kigali","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"lftFaszOx","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" International","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"FK","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"E4tlUCDsDOlfjzV","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Wednesday","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"Dlg0wx","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"cj2yaP2Xb4LMGqS","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"14","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"8abRemzDmkFbr2","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" October","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"DQOzWPVh","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"qSVEhkMjV2g8EVo","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"202","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"fwrProNLdSQ3x","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"o5SqbFfedKJvphJ","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"sUEHN7G2hoNaDw9","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"algGKhsfLcjKf6q","output_index":0,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"06","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"cu99DFPKJqd7BT","output_index":0,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":":","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"MOYPpIwRcz2mL7W","output_index":0,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"10","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"HWw69MZ2STsiqS","output_index":0,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"obfuscation":"XGxFP9uTbBEBbpc","output_index":0,"sequence_number":33}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","logprobs":[],"output_index":0,"sequence_number":34,"text":"Corridor 66 check in, Amahoro loud and clear at Kigali International, Wednesday 14 October 2026, 06:10."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Corridor 66 check in, Amahoro loud and clear at Kigali International, Wednesday 14 October 2026, 06:10."},"sequence_number":35}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Corridor 66 check in, Amahoro loud and clear at Kigali International, Wednesday 14 October 2026, 06:10."}],"role":"assistant"},"output_index":0,"sequence_number":36}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_092c007309e42253016ad110ce171c87d2ab5cc17f0e62286a","object":"response","created_at":1792086222,"status":"completed","access_programs":null,"background":false,"completed_at":1792086223,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the tower watch at Kigali International Airport.\nAnswer with the corridor check in one short sentence.\nName the dispatcher Amahoro and corridor 66.\nUse only the check in the question.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_092c007309e42253016ad110cebab487d2beba14b616f69c7c","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Corridor 66 check in, Amahoro loud and clear at Kigali International, Wednesday 14 October 2026, 06:10."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":95,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":31,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":126},"user":null,"metadata":{}},"sequence_number":37}
+
+  recorded_at: Thu, 15 Oct 2026 17:43:43 GMT
+recorded_with: VCR 6.4.0
+...

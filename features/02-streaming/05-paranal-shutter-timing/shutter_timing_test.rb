@@ -1,0 +1,57 @@
+# frozen_string_literal: true
+
+require "minitest/autorun"
+require "yaml"
+require_relative "shutter_timing"
+
+class ShutterTimingTest < Minitest::Test
+  def test_empty_and_reasoning_chunks_are_kept_off_the_control_phone
+    result = nil
+    Multivitamin::Cassettes.play(__dir__, "shutter_timing") do
+      result = ParanalShutterTiming::ShutterTiming.conduct
+    end
+
+    assert_includes result.speech, "0.4"
+    assert_includes result.speech, "9.6"
+    assert_equal result.speech, result.spoken_pieces.join
+    assert result.spoken_pieces.none?(&:empty?)
+    assert_operator result.empty_chunks, :>=, result.reasoning_chunks
+
+    clipped_text = result.clipped_content.to_s
+    assert_equal clipped_text, result.clipped_spoken_pieces.join
+    assert result.clipped_spoken_pieces.none?(&:empty?)
+    short_clip = clipped_text.empty? || result.clipped_max_tokens ||
+                 clipped_text.length < result.speech.to_s.length
+    assert short_clip
+    if result.clipped_max_tokens
+      assert_equal :max_tokens, result.clipped_finish
+    end
+    if result.clipped_thinking.to_s.length.positive?
+      assert_includes result.clipped_thinking, "0.4"
+    end
+  end
+
+  def test_the_clipped_stream_sends_the_output_cap
+    cassette = YAML.load_file(File.expand_path("cassettes/shutter_timing.yml", __dir__))
+    interactions = cassette.fetch("http_interactions")
+    open_request = interactions[0].dig("request", "body", "string")
+    clipped_request = interactions[1].dig("request", "body", "string")
+    clipped_response = interactions[1].dig("response", "body", "string")
+    clipped_response = clipped_response.dup.force_encoding("UTF-8")
+    clip = ParanalShutterTiming::ShutterTiming::CLIP
+
+    refute_includes open_request, "max_output_tokens"
+    refute_includes open_request, '"max_tokens":'
+    assert_includes clipped_request, "\"max_output_tokens\":#{clip}"
+    assert clipped_response.include?('"status":"incomplete"') ||
+           clipped_response.include?('"finish_reason":"length"') ||
+           clipped_request.include?("\"max_output_tokens\":#{clip}")
+  end
+
+  def test_cassette_does_not_carry_a_live_key
+    cassette = File.read(File.expand_path("cassettes/shutter_timing.yml", __dir__))
+
+    refute_match(/sk-(?:or-v1-)?[A-Za-z0-9_\-]{8,}/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
+  end
+end

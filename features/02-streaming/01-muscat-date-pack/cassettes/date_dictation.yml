@@ -1,0 +1,239 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Date-pack
+        board posted for Wednesday 14 October 2026 at the Muttrah loft, Muscat.\nLoft
+        notes: https://www.oman.om/\nRemaining 06:42, 0.4 kg of Fardh still on the
+        sorting table.\nPacked peak 12:18, 8.1 kg.\nEvening 18:55, 2.6 kg sealed.\nZahra''s
+        export carton needs 6.0 kg of Khalas to close a Gulf Air pallet and can leave
+        at 10:46.\nThe twins can weigh the leftover Fardh at 3.5 kg.\nDictate that
+        carton close for the incoming loft."}],"instructions":"You are the packing
+        clerk at the Muttrah date loft in Muscat.\nDictate the board in two short
+        sentences.\nUse only the board in the question.\nName the packer Zahra, the
+        time 10:46, the leftover 0.4 kg of Fardh,\nand the packed peak of 8.1 kg.\nDo
+        not invent a kilogram figure.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:54:11 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0affefe80fc33-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '434'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999756'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 7ms
+      X-Request-Id:
+      - req_acbbbf7d8767411b8affa432a987a08c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_0ece4679127e9338016ad1134297fc87d2986b1c94c3d2c080","object":"response","created_at":1792086850,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the packing clerk at the Muttrah date loft in Muscat.\nDictate the board in two short sentences.\nUse only the board in the question.\nName the packer Zahra, the time 10:46, the leftover 0.4 kg of Fardh,\nand the packed peak of 8.1 kg.\nDo not invent a kilogram figure.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_0ece4679127e9338016ad1134297fc87d2986b1c94c3d2c080","object":"response","created_at":1792086850,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the packing clerk at the Muttrah date loft in Muscat.\nDictate the board in two short sentences.\nUse only the board in the question.\nName the packer Zahra, the time 10:46, the leftover 0.4 kg of Fardh,\nand the packed peak of 8.1 kg.\nDo not invent a kilogram figure.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"P","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"M0Q3XNvlqWLNvX8","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"acker","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"lWOu4fNvljy","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Zah","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"kj9ZLSWVR97N","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ra","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"kIH0mUUXAjjYQr","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" closed","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"Zd9Hb1Lte","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" her","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"I4PeXnpG1Ln6","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" export","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"bpWPspUnw","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" carton","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"ep1ZUaxrG","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"hGCZ7sueZHopW","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"TH5Cm809va3NcKB","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"10","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"bjWVcoTRuoOBq3","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":":","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"KyJuVnjhJDpZ1OO","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"46","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"0URFgiUOvk2YQg","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" with","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"PoJdU1SbiTr","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" a","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"1byWMQIhXXelbe","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" packed","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"53tBdnnDI","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" peak","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"9FhhTbVWawa","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" of","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"cqQNtAQutnNYY","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"Nwk1Saolrdu1RsM","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"8","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"kvMBoyFvKcLzDWN","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"4hrSJtlaFTcQbX0","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"1","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"Wh5YVGAyxFoRply","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" kg","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"X0Y5hwe8kTKnc","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"cY4opZvdqaW6RIo","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" There","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"YG1ngOAQ3o","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"v9kSH19Mxp7No","output_index":0,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" a","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"ep35hjAEp0TdOw","output_index":0,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" leftover","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"RQZhbG3","output_index":0,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" of","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"SBAyA1z1uYuUQ","output_index":0,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"oU6O7fNtNvhD1o8","output_index":0,"sequence_number":33}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"QTkhTE5bkBwgAYw","output_index":0,"sequence_number":34}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"eI3XqTwCUZUcltx","output_index":0,"sequence_number":35}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"4","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"EgYv6B4aDtEynCW","output_index":0,"sequence_number":36}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" kg","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"1zK9E6Qdsxenn","output_index":0,"sequence_number":37}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" of","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"XLZYgjFVsASwg","output_index":0,"sequence_number":38}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" F","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"bvk5SQbsagalbt","output_index":0,"sequence_number":39}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ard","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"LH0H80KWXTbVZ","output_index":0,"sequence_number":40}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"h","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"LyIc1dS236t10D4","output_index":0,"sequence_number":41}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" on","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"BMHfeRx7QgGLB","output_index":0,"sequence_number":42}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"APlouDjJcmgC","output_index":0,"sequence_number":43}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" sorting","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"AU7cLI6d","output_index":0,"sequence_number":44}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" table","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"qZ6Q4IZdBE","output_index":0,"sequence_number":45}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"obfuscation":"TLAmf4v25whCTgr","output_index":0,"sequence_number":46}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","logprobs":[],"output_index":0,"sequence_number":47,"text":"Packer Zahra closed her export carton at 10:46 with a packed peak of 8.1 kg. There is a leftover of 0.4 kg of Fardh on the sorting table."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Packer Zahra closed her export carton at 10:46 with a packed peak of 8.1 kg. There is a leftover of 0.4 kg of Fardh on the sorting table."},"sequence_number":48}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Packer Zahra closed her export carton at 10:46 with a packed peak of 8.1 kg. There is a leftover of 0.4 kg of Fardh on the sorting table."}],"role":"assistant"},"output_index":0,"sequence_number":49}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_0ece4679127e9338016ad1134297fc87d2986b1c94c3d2c080","object":"response","created_at":1792086850,"status":"completed","access_programs":null,"background":false,"completed_at":1792086851,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the packing clerk at the Muttrah date loft in Muscat.\nDictate the board in two short sentences.\nUse only the board in the question.\nName the packer Zahra, the time 10:46, the leftover 0.4 kg of Fardh,\nand the packed peak of 8.1 kg.\nDo not invent a kilogram figure.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_0ece4679127e9338016ad11342ffe887d2b1df73efeb51e41c","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Packer Zahra closed her export carton at 10:46 with a packed peak of 8.1 kg. There is a leftover of 0.4 kg of Fardh on the sorting table."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":225,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":44,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":269},"user":null,"metadata":{}},"sequence_number":50}
+
+  recorded_at: Thu, 15 Oct 2026 17:54:11 GMT
+recorded_with: VCR 6.4.0
+...

@@ -25,73 +25,73 @@ Shown in [Accession tag for the Singapore Botanic Gardens](features/01-chat-basi
 
 ### Reasoning arrives as chunks whose content is an empty string
 
-**What happens.** With thinking left on, a streamed `ask` to `nvidia/nemotron-3-super-120b-a12b:free` yields reasoning before the spoken words. Those chunks have `content` equal to `""` and a `thinking.text` delta. `""` is truthy in Ruby, so `if chunk.content` does not skip them. Joining every `content` equals `message.content`. Joining every `thinking.text` equals `message.thinking.text`. Every chunk's `model` is the slug, including `:free`. `with_thinking(false)` sends `"reasoning":{"enabled":false}` and the blast log collects no thinking chunks.
+**What happens.** With thinking left on, a streamed `ask` to `nvidia/nemotron-3-super-120b-a12b:free` yields reasoning before the spoken words. Those chunks have `content` equal to `""` and a `thinking.text` delta. `""` is truthy in Ruby, so `if chunk.content` does not skip them. Joining every `content` equals `message.content`. Joining every `thinking.text` equals `message.thinking.text`. Every chunk's `model` is the slug, including `:free`. `with_thinking(false)` sends `"reasoning":{"enabled":false}` and the well log collects no thinking chunks.
 
-**Why it matters.** A watch that prints every truthy `content` posts a blank line for each reasoning delta.
+**Why it matters.** A loft that prints every truthy `content` posts a blank line for each reasoning delta.
 
 **What to do.** Speak a chunk only when `content` is non-empty. Read `thinking.text` for the reasoning. Turn thinking off when the log is only the spoken card.
 
-Shown in [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/) and [Cape Disappointment blast log](features/02-streaming/02-cape-disappointment-blast-log/).
+Shown in [Muscat date-pack dictation](features/02-streaming/01-muscat-date-pack/) and [Reykjavík geothermal well log](features/02-streaming/02-reykjavik-well-log/).
 
 ### Token counts arrive on the last chunk
 
-**What happens.** A block on `ask` sends `"stream":true` and `"stream_options":{"include_usage":true}`. `chunk.tokens` stays nil until the last chunk. An earlier chunk can already carry `finish_reason` while its input tokens are still nil. The last chunk repeats `finish_reason`, and its input, output, and thinking counts match `message.tokens`. On the radio check those three counts are all greater than 0, and `cost` is 0.
+**What happens.** A block on `ask` sends `"stream":true` and `"stream_options":{"include_usage":true}`. `chunk.tokens` stays nil until the last chunk. An earlier chunk can already carry `finish_reason` while its input tokens are still nil. The last chunk repeats `finish_reason`, and its input, output, and thinking counts match `message.tokens`. On the corridor check those three counts are all greater than 0, and `cost` is 0.
 
 **Why it matters.** Reading tokens from the first chunk that has `finish_reason` records a blank usage line.
 
 **What to do.** Read tokens from the message `ask` returns, or from the last chunk.
 
-Shown in [Alden radio check](features/02-streaming/06-alden-radio-check/) and [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/).
+Shown in [Kigali drone corridor check](features/02-streaming/06-kigali-corridor-check/) and [Muscat date-pack dictation](features/02-streaming/01-muscat-date-pack/).
 
 ### A tight output cap on a stream can return nil content
 
-**What happens.** `with_max_output_tokens(64)` sends `"max_tokens":64`. The clipped gallery timing returned `content` nil, `finish_reason` `:max_tokens` (`max_tokens?` is true), and no spoken pieces. The draft is on `thinking.text`, and that text includes the flash time and the lens name. The SSE body contains `"finish_reason":"length"`. The uncapped request in the same cassette omits `max_tokens`. `ask` returns the message. It does not raise. This is the empty-content cap from the chart correction, seen while the reply is still a stream.
+**What happens.** `with_max_output_tokens(64)` sends `"max_tokens":64`. The clipped shutter timing returned `content` nil, `finish_reason` `:max_tokens` (`max_tokens?` is true), and no spoken pieces. The draft is on `thinking.text`, and that text includes the open time and the Nasmyth name. The SSE body contains `"finish_reason":"length"`. The uncapped request in the same cassette omits `max_tokens`. `ask` returns the message. It does not raise. This is the empty-content cap from the accession tag, seen while the reply is still a stream.
 
-**Why it matters.** A gallery phone that only speaks `content` stays silent and treats the timing as missing. The turn is the returned message, and the draft is on `thinking`.
+**Why it matters.** A control phone that only speaks `content` stays silent and treats the timing as missing. The turn is the returned message, and the draft is on `thinking`.
 
 **What to do.** Treat nil `content`, or `max_tokens?`, as a note that was cut off. Read `thinking.text`. Clear the cap before asking again.
 
-Shown in [Fresnel gallery rotation](features/02-streaming/05-fresnel-gallery-rotation/). See also [Accession tag for the Singapore Botanic Gardens](features/01-chat-basics/12-singapore-accession-tag/).
+Shown in [Paranal shutter timing](features/02-streaming/05-paranal-shutter-timing/). See also [Accession tag for the Singapore Botanic Gardens](features/01-chat-basics/12-singapore-accession-tag/).
 
 ### The first spoken chunk can follow a run of reasoning chunks
 
-**What happens.** On the storm warning, the first non-empty `content` is not the first chunk. Every note before it has empty `content`, and at least one of those notes has `thinking`. The clock taken at that first spoken chunk is at or after the clock taken when `ask` started, and the finish clock is at or after the spoken clock. The test locks that order. It does not lock a millisecond.
+**What happens.** On the fault warning, the first non-empty `content` is not the first chunk. Every note before it has empty `content`, and at least one of those notes has `thinking`. The clock taken at that first spoken chunk is at or after the clock taken when `ask` started, and the finish clock is at or after the spoken clock. The test locks that order. It does not lock a millisecond.
 
 **Why it matters.** A first-token timer that waits for non-empty `content` includes the reasoning chunks. On a cassette replay that interval is parse time, not the network wait from the live recording.
 
 **What to do.** Start the spoken clock on the first non-empty `content`. Assert the order of the clocks, not a duration, when the run is a replay.
 
-Shown in [Admiralty Inlet storm warning](features/02-streaming/09-admiralty-inlet-storm-warning/).
+Shown in [Christchurch Alpine Fault warning](features/02-streaming/09-christchurch-fault-warning/).
 
 ### chat.cancel raises at the next chunk, and the cassette keeps the rest
 
-**What happens.** `chat.cancel` does not raise inside the block. After the block returns, the next chunk checkpoint raises `RubyLLM::CancelledError` with the message `Chat generation cancelled`. That class inherits `StandardError`. It does not inherit `RubyLLM::Error`. The assistant turn is not appended: after the Dungeness halt, `chat.messages` is still `[:system, :user]`. The recorded SSE body still contains the later content deltas. The two pieces the block kept are the first two non-empty `delta.content` values. Replay stops at that same prefix. After a tool message is already on the chat, the same error leaves the roles at `[:system, :user, :assistant, :tool]`.
+**What happens.** `chat.cancel` does not raise inside the block. After the block returns, the next chunk checkpoint raises `RubyLLM::CancelledError` with the message `Chat generation cancelled`. That class inherits `StandardError`. It does not inherit `RubyLLM::Error`. The assistant turn is not appended: after the Fez halt, `chat.messages` is still `[:system, :user]`. The recorded SSE body still contains the later content deltas. The two pieces the block kept are the first two non-empty `delta.content` values. Replay stops at that same prefix. After a tool message is already on the chat, the same error leaves the roles at `[:system, :user, :assistant, :tool]`.
 
-**Why it matters.** A rescue of `RubyLLM::Error` does not catch the halt. A reader that assumes the cassette ends where the Ruby call ended will replay soundings the mate never logged.
+**Why it matters.** A rescue of `RubyLLM::Error` does not catch the halt. A reader that assumes the cassette ends where the Ruby call ended will replay pit readings the master never logged.
 
 **What to do.** Rescue `RubyLLM::CancelledError` on its own. Treat the cancelled assistant turn as absent. Expect the cassette to hold the full HTTP body; this catalog's player reads that body before chunks are yielded.
 
-Shown in [Dungeness sounding halt](features/02-streaming/08-dungeness-sounding-halt/) and [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
+Shown in [Fez tannery pit halt](features/02-streaming/08-fez-tannery-halt/) and [Kiruna skip-hoist relief](features/02-streaming/13-kiruna-skip-relief/).
 
 ### A streamed tool call yields argument strings, then a Hash
 
-**What happens.** Chunks for a forced tool call carry `arguments` as a String. One chunk has the tool name and `""`. A later chunk can have no name and more of the JSON. `before_tool_call` receives a Hash. `JSON.parse` of the joined fragment strings equals that Hash. The first request names `posted_horn_card` and does not contain the blast or the compressor figure the tool returns.
+**What happens.** Chunks for a forced tool call carry `arguments` as a String. One chunk has the tool name and `""`. A later chunk can have no name and more of the JSON. `before_tool_call` receives a Hash. `JSON.parse` of the joined fragment strings equals that Hash. The first request names `posted_skip_card` and does not contain the cycle or the accumulator figure the tool returns.
 
 **Why it matters.** Reading arguments off the first chunk, or running the tool from the chunk, sees an empty string.
 
 **What to do.** Run the tool from the callback. Join the fragment strings only when you are inspecting the stream.
 
-Shown in [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
+Shown in [Kiruna skip-hoist relief](features/02-streaming/13-kiruna-skip-relief/).
 
 ### The second stream carries the first answer without reasoning_details
 
-**What happens.** On `gpt-4.1-mini`, the first spoken-handover request has no assistant turn and no `reasoning_details`. The second request's `input` includes that assistant turn as `output_text`, and the joined text equals the first message. The SSE body uses `response.output_text.delta`. The cabinet reply does not repeat `07:05`. It still refuses to open the lens cabinet.
+**What happens.** On `gpt-4.1-mini`, the first marionette-handover request has no assistant turn and no `reasoning_details`. The second request's `input` includes that assistant turn as `output_text`, and the joined text equals the first message. The SSE body uses `response.output_text.delta`. The loft reply does not repeat `07:05`. It still refuses to open the fly loft.
 
 **Why it matters.** An OpenRouter check that requires `reasoning_details` on the second turn fails on this model even though the first brief was sent again.
 
 **What to do.** Read the assistant item in `input`. Do not require `reasoning_details` unless the model sent reasoning.
 
-Shown in [Point Wilson spoken handover](features/02-streaming/11-point-wilson-spoken-handover/).
+Shown in [Prague marionette handover](features/02-streaming/11-prague-marionette-handover/).
 
 ## Tools
 
@@ -129,11 +129,11 @@ Shown in [Addis Ababa coffee-auction chalkboard](features/03-tools/01-addis-abab
 
 **What happens.** The beam-stream cassette contains `response.function_call_arguments.delta`. Chunk `arguments` are strings, including an empty string when the tool name arrives. Joining those strings parses to the Hash `before_tool_call` receives. The tool message content is the JSON string of that Hash.
 
-**Why it matters.** The event name is not a Chat Completions `delta.tool_calls` line. The Ruby objects are the same split the horn relief recorded.
+**Why it matters.** The event name is not a Chat Completions `delta.tool_calls` line. The Ruby objects are the same split the skip relief recorded.
 
 **What to do.** Join the fragment strings. Run the tool from the callback. Look for `response.function_call_arguments.delta` in an OpenAI SSE cassette.
 
-Shown in [Garching beam-time notice](features/03-tools/12-garching-beam-notice/). See also [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
+Shown in [Garching beam-time notice](features/03-tools/12-garching-beam-notice/). See also [Kiruna skip-hoist relief](features/02-streaming/13-kiruna-skip-relief/).
 
 ## Structured output
 
@@ -498,7 +498,7 @@ Shown in [Cape Disappointment blast stream](features/10-rails-integration/04-cap
 
 **What to do.** Rescue `RubyLLM::CancelledError` on its own. Treat the cancelled assistant turn as absent.
 
-Shown in [Juan de Fuca cancel log](features/10-rails-integration/12-juan-de-fuca-cancel-log/). See also [Dungeness sounding halt](features/02-streaming/08-dungeness-sounding-halt/).
+Shown in [Juan de Fuca cancel log](features/10-rails-integration/12-juan-de-fuca-cancel-log/). See also [Fez tannery pit halt](features/02-streaming/08-fez-tannery-halt/).
 
 ## Instructions and history
 
@@ -933,23 +933,23 @@ Shown in [Seabeck Rails approval job](features/19-tool-approval-and-loop-control
 
 ### A non-ASCII SSE body is stored as YAML !binary
 
-**What happens.** The tide-dictation cassette contains U+202F, and VCR wrote that response body as YAML `!binary`. A raw read of the file does not contain `data:`. `YAML.load_file` returns the body, and forcing UTF-8 shows the `data:` lines and the narrow space. One delta ends in `0.4\u202f` and the next begins with `ft`, so the contiguous `0.4\u202fft` is on the joined speech, not in a single SSE line. An ASCII SSE cassette, such as the blast log, keeps the `data:` lines as plain YAML. Neither file contains `sk-or-`. The placeholder `<OPENROUTER_API_KEY>` is in the raw bytes of both.
+**What happens.** An SSE body that contains U+202F is stored by VCR as YAML `!binary`. A raw read of the file does not contain `data:`. `YAML.load_file` returns the body, and forcing UTF-8 shows the `data:` lines and the narrow space. On the original OpenRouter date-pack recording, one delta ends in `0.4\u202f` and the next begins with `kg`, so the contiguous `0.4\u202fkg` is on the joined speech, not in a single SSE line. An ASCII SSE cassette, such as the well log, keeps the `data:` lines as plain YAML. Neither file contains a live `sk-` token. The placeholder is `<OPENAI_API_KEY>` on the bottled OpenAI recordings.
 
-**Why it matters.** `grep data:` across `cassettes/*.yml` misses the tide dictation. A test that scans the YAML text for a tide height will not see it.
+**Why it matters.** `grep data:` across `cassettes/*.yml` misses the date-pack dictation. A test that scans the YAML text for a packed weight will not see it.
 
 **What to do.** Load the cassette with YAML and force UTF-8 before reading SSE lines. Keep the secret check on the raw bytes.
 
-Shown in [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/).
+Shown in [Muscat date-pack dictation](features/02-streaming/01-muscat-date-pack/).
 
 ### A second play of one cassette returns the same pieces
 
-**What happens.** Playing the blast-log cassette again, with no API key, returns the same pieces and the same speech. The cassette holds one HTTP interaction. Those pieces are the non-empty `delta.content` strings in that SSE body.
+**What happens.** Playing the well-log cassette again, with no API key, returns the same pieces and the same speech. The cassette holds one HTTP interaction. Those pieces are the non-empty `delta.content` strings in that SSE body.
 
 **Why it matters.** A catalog run with the key unset is that replay. The test records one interaction, and it compares a second play only when `LIVE` is unset.
 
 **What to do.** Assert the pieces against the stored SSE. Compare a second play only when `LIVE` is unset.
 
-Shown in [Cape Disappointment blast log](features/02-streaming/02-cape-disappointment-blast-log/).
+Shown in [Reykjavík geothermal well log](features/02-streaming/02-reykjavik-well-log/).
 
 ### MCP JSON-RPC request ids are UUIDs
 
@@ -985,10 +985,10 @@ Shown in [Brussels chocolate tempering board](features/01-chat-basics/10-brussel
 
 ### This free model puts U+202F beside a number
 
-**What happens.** Replies from `nvidia/nemotron-3-super-120b-a12b:free` often separate a word and a numeral with U+202F (narrow no-break space), as in `basket\u202f3` and `242\u202f°F`. The same character shows up between a numeral and a unit. The Point Wilson tide dictation contains `0.4\u202fft` and `8.1\u202fft`. A Ruby regexp `\s` does not match that character. `[[:space:]]` and `\p{Space}` do. It is not on every number: the Anacortes lot-code stream wrote `Basket 3` with a normal space.
+**What happens.** Replies from `nvidia/nemotron-3-super-120b-a12b:free` often separate a word and a numeral with U+202F (narrow no-break space), as in `rack\u202f3` and `242\u202f°C`. The same character shows up between a numeral and a unit. The original OpenRouter Muscat date-pack dictation contains `0.4\u202fkg` and `8.1\u202fkg`. A Ruby regexp `\s` does not match that character. `[[:space:]]` and `\p{Space}` do. It is not on every number: the Sheffield heat-lot stream wrote `Rack 3` with a normal space.
 
-**Why it matters.** `assert_includes reply, "basket 3"` and `/0\.4\sft/` fail on a reply that a person would read as "basket 3" or "0.4 ft".
+**Why it matters.** `assert_includes reply, "rack 3"` and `/0\.4\skg/` fail on a reply that a person would read as "rack 3" or "0.4 kg".
 
 **What to do.** Match the recorded character, or use `[[:space:]]`, when the assertion is about a word or a unit sitting next to a number.
 
-Shown in [Lagos ankara bale log for the morning receiving](features/01-chat-basics/04-lagos-ankara-bale-log/) and [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/).
+Shown in [Lagos ankara bale log for the morning receiving](features/01-chat-basics/04-lagos-ankara-bale-log/) and [Muscat date-pack dictation](features/02-streaming/01-muscat-date-pack/).

@@ -1,0 +1,316 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Shutter
+        timing card for Wednesday 14 October 2026, UT1 Nasmyth at Cerro Paranal.\nObservatory
+        notes: https://www.eso.org/public/teles-instr/paranal-observatory/vlt/\nUT1
+        Nasmyth, enclosure closed, lamp burning on the guide probe.\nOpen 0.4 seconds.
+        Closed 9.6 seconds.\nSpeak the timing for the control phone in one short sentence."}],"instructions":"You
+        are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing
+        card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:55:08 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0b15ccee3ac05-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '406'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999841'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 4ms
+      X-Request-Id:
+      - req_822b9ce2c4fd43d1a804179191d1cf32
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_07ead7db2537a658016ad1137b104087d2a7dd96c503a3d853","object":"response","created_at":1792086907,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_07ead7db2537a658016ad1137b104087d2a7dd96c503a3d853","object":"response","created_at":1792086907,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Open","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"dxZLfDc2k8pd","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"o7ibsJwIAou0","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" shutter","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"9ccZxYu3","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"NPCxEksFcytY","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"RmRwrtwoQbbYqdx","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"fAWiJ1ScRPup3Kw","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"Kc8RjxXP8AIr8hw","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"4","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"zDOQyTtxkEkR8iP","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"c3cQsQwV","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"SyYjYbe2KVKhcqT","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" then","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"FkqaCb1q5Dg","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" close","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"FL0R62j09C","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" it","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"wDeVvnVV9I1zi","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"dPezZonSEY07","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"ZonKGRkWOwjtyui","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"9","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"n4ifU5lWcByhZDB","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"epVAQ8GZdYWRF9l","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"ve4VEK01joJVHqS","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"ic9hNFY0","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"obfuscation":"rOgODj0E6adawnj","output_index":0,"sequence_number":23}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","logprobs":[],"output_index":0,"sequence_number":24,"text":"Open the shutter for 0.4 seconds, then close it for 9.6 seconds."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Open the shutter for 0.4 seconds, then close it for 9.6 seconds."},"sequence_number":25}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Open the shutter for 0.4 seconds, then close it for 9.6 seconds."}],"role":"assistant"},"output_index":0,"sequence_number":26}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_07ead7db2537a658016ad1137b104087d2a7dd96c503a3d853","object":"response","created_at":1792086907,"status":"completed","access_programs":null,"background":false,"completed_at":1792086907,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_07ead7db2537a658016ad1137b73f887d2aa93e3986c9de409","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Open the shutter for 0.4 seconds, then close it for 9.6 seconds."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":140,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":21,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":161},"user":null,"metadata":{}},"sequence_number":27}
+
+  recorded_at: Thu, 15 Oct 2026 17:55:08 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"The relief
+        asks for the same Paranal UT1 Nasmyth timing again.\nOpen 0.4 seconds. Closed
+        9.6 seconds. UT1 Nasmyth, enclosure closed,\nlamp burning on the guide probe.\nWrite
+        two sentences that name the open, the closed, Nasmyth, UT1,\nthe enclosure,
+        and the guide probe."}],"instructions":"You are the night astronomer at Cerro
+        Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds
+        and the closed of 9.6 seconds.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"max_output_tokens":16}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:55:09 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0b16ced941ff1-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '957'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999857'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 4ms
+      X-Request-Id:
+      - req_8d8cd3820cbf474b88f3b7fe7ffd8c25
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_0ac0588de387750c016ad1137d1ba487d293bd432c28682eaf","object":"response","created_at":1792086909,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":16,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_0ac0588de387750c016ad1137d1ba487d293bd432c28682eaf","object":"response","created_at":1792086909,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":16,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"D7r7cfg65BIlH","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" UT","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"dn33Q7LaRGvab","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"1","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"ykdehaY87KBYhVq","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Nas","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"c7uDz4Ezyuw5","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"my","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"mOJNQUQU79pcEQ","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"th","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"UrwqEj55qDrYZS","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" shutter","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"rf02nxS7","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"zyJoCaPW5nnN1","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" open","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"D9YMM8uh2ct","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"an5gizPS805E","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"hB2YIT146W6b9ug","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"uIwENJc1CsR2kI5","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"2Ma7Ppj7Hj3NWXp","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"4","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"DmUFktEKqNbL8XD","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"SzRs8nKs","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" with","item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"obfuscation":"kFgyKuMWW3k","output_index":0,"sequence_number":19}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","logprobs":[],"output_index":0,"sequence_number":20,"text":"The UT1 Nasmyth shutter is open for 0.4 seconds with"}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"The UT1 Nasmyth shutter is open for 0.4 seconds with"},"sequence_number":21}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","type":"message","status":"incomplete","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The UT1 Nasmyth shutter is open for 0.4 seconds with"}],"role":"assistant"},"output_index":0,"sequence_number":22}
+
+        event: response.incomplete
+        data: {"type":"response.incomplete","response":{"id":"resp_0ac0588de387750c016ad1137d1ba487d293bd432c28682eaf","object":"response","created_at":1792086909,"status":"incomplete","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":{"reason":"max_output_tokens"},"instructions":"You are the night astronomer at Cerro Paranal in the Atacama.\nUse only the timing card.\nName the open of 0.4 seconds and the closed of 9.6 seconds.","max_output_tokens":16,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_0ac0588de387750c016ad1137df4f087d2803877f47d0862e6","type":"message","status":"incomplete","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The UT1 Nasmyth shutter is open for 0.4 seconds with"}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":124,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":16,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":140},"user":null,"metadata":{}},"sequence_number":23}
+
+  recorded_at: Thu, 15 Oct 2026 17:55:10 GMT
+recorded_with: VCR 6.4.0
+...
