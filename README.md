@@ -21,10 +21,11 @@ snippets are deliberately small: a greeting, a weather tool, a person named
 Alice. That is enough to learn the method names and not enough to see how a
 feature holds up inside a real job of work.
 
-RubyLLM Multivitamin is a catalog of realistic scenarios: a tide board at
-Point Wilson, a Fresnel lens cabinet, a cannery retort log. Each feature gets
-thirteen of them, ranging from moderately complex to complex, so you can see
-the same feature applied in thirteen different shapes.
+RubyLLM Multivitamin is a catalog of realistic scenarios: an inverter board
+in a Bengaluru joint family, a manuscript cabinet in Bologna, an ankara bale
+log in Lagos. Each feature gets thirteen of them, ranging from moderately
+complex to complex, so you can see the same feature applied in thirteen
+different shapes.
 
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
@@ -78,11 +79,11 @@ folder. Nothing calls a provider. No API key is required. Ruby 3.2 or newer.
 Run one example on its own:
 
 ```sh
-bundle exec ruby features/01-chat-basics/01-point-wilson-tide-board/tide_briefing.rb
-bundle exec ruby features/01-chat-basics/01-point-wilson-tide-board/tide_briefing_test.rb
+bundle exec ruby features/01-chat-basics/01-bengaluru-inverter-board/inverter_briefing.rb
+bundle exec ruby features/01-chat-basics/01-bengaluru-inverter-board/inverter_briefing_test.rb
 ```
 
-The script prints the watch brief. The test checks the brief, the transcript
+The script prints the household brief. The test checks the brief, the transcript
 roles, and the token counts.
 
 ### Cassettes and live runs
@@ -112,7 +113,9 @@ placeholder is not a credential.
 while `LIVE=1` is recording, for examples that call `Multivitamin::Models.chat`.
 Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
-Chat basics and the earlier streaming cassettes are live OpenRouter
+Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
+for the mid-chat switch) after OpenRouter `:free` slugs hit
+`free-models-per-day`. The earlier streaming cassettes are live OpenRouter
 recordings. Tools, the spoken handover, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
 text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live
@@ -181,11 +184,11 @@ support/models.rb                  free-model slugs (not scenario copy)
 features/
   01-chat-basics/
     README.md                      what the feature covers, and its 13 slots
-    01-point-wilson-tide-board/
-      tide_briefing.rb             the script
-      tide_briefing_test.rb
+    01-bengaluru-inverter-board/
+      inverter_briefing.rb         the script
+      inverter_briefing_test.rb
       README.md
-      cassettes/tide_briefing.yml
+      cassettes/inverter_briefing.yml
   02-streaming/
   ...
 ```
@@ -231,7 +234,7 @@ hold the cassette player and the model slugs, not the story.
 33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled
 
 The reference scenario that later ones copy is
-[Chat basics · 01 · Point Wilson tide board](features/01-chat-basics/01-point-wilson-tide-board/).
+[Chat basics · 01 · Bengaluru inverter board](features/01-chat-basics/01-bengaluru-inverter-board/).
 
 ## Discoveries
 

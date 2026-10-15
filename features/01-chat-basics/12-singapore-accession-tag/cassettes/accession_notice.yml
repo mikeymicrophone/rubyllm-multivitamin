@@ -1,0 +1,360 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Correction
+        slip SBG-18465, copied for the living collection on Wednesday 14 October 2026.\nGardens
+        catalog: https://www.nparks.gov.sg/sbg.\nHerbarium desk the clerk copied from:
+        https://www.nparks.gov.sg/.\nSheet SBG-18465, Singapore Botanic Gardens.\nLiving-collection
+        tag DH for the Shorea specimen is moved 300 cm northwest of the painted bed
+        mark.\nThe old mark is still painted. Do not use it for a GPS pin.\nThe slip
+        gives no new latitude and no new longitude.\nWrite the correction the gardeners
+        can pencil on the bed plan: two sentences, the sheet number, the tag, and
+        the 300 cm move."}],"instructions":"You are the herbarium clerk correcting
+        sheet SBG-18465 at the Singapore Botanic Gardens.\nUse only the correction
+        slip in this chat.\nName sheet SBG-18465 and tag DH.\nDo not invent a latitude
+        or a longitude.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"max_output_tokens":16}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:44:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b04a2b08221fb9-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '523'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999778'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_7853f46b364645da96d93ae256783a62
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a7c94aed9eb3dcd016ad102f79aec87d0b178299ba24411f5",
+          "object": "response",
+          "created_at": 1792082679,
+          "status": "incomplete",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": null,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": {
+            "reason": "max_output_tokens"
+          },
+          "instructions": "You are the herbarium clerk correcting sheet SBG-18465 at the Singapore Botanic Gardens.\nUse only the correction slip in this chat.\nName sheet SBG-18465 and tag DH.\nDo not invent a latitude or a longitude.",
+          "max_output_tokens": 16,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a7c94aed9eb3dcd016ad102f7f5f087d0b623f66a2f744c35",
+              "type": "message",
+              "status": "incomplete",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Sheet SBG-18465, tag DH: The Shorea specimen is moved"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 203,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 16,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 219
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:44:40 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Correction
+        slip SBG-18465, copied for the living collection on Wednesday 14 October 2026.\nGardens
+        catalog: https://www.nparks.gov.sg/sbg.\nHerbarium desk the clerk copied from:
+        https://www.nparks.gov.sg/.\nSheet SBG-18465, Singapore Botanic Gardens.\nLiving-collection
+        tag DH for the Shorea specimen is moved 300 cm northwest of the painted bed
+        mark.\nThe old mark is still painted. Do not use it for a GPS pin.\nThe slip
+        gives no new latitude and no new longitude.\nWrite the correction the gardeners
+        can pencil on the bed plan: two sentences, the sheet number, the tag, and
+        the 300 cm move."},{"role":"assistant","content":[{"type":"output_text","text":"Sheet
+        SBG-18465, tag DH: The Shorea specimen is moved"}]},{"role":"user","content":"That
+        note was too short to pencil on the bed plan. Write the correction in two
+        sentences. Name sheet SBG-18465 and tag DH and the 300 cm move."}],"instructions":"You
+        are the herbarium clerk correcting sheet SBG-18465 at the Singapore Botanic
+        Gardens.\nUse only the correction slip in this chat.\nName sheet SBG-18465
+        and tag DH.\nDo not invent a latitude or a longitude.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:44:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b04a2f2a040d87-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '755'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999481'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 15ms
+      X-Request-Id:
+      - req_e411097a2e0e45f391d0e0c122a41ef7
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0efc41125bf3fe96016ad102f841a087d0a7d6283446ddc32a",
+          "object": "response",
+          "created_at": 1792082680,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082680,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the herbarium clerk correcting sheet SBG-18465 at the Singapore Botanic Gardens.\nUse only the correction slip in this chat.\nName sheet SBG-18465 and tag DH.\nDo not invent a latitude or a longitude.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0efc41125bf3fe96016ad102f894e887d08a7de693cca9ee89",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Sheet SBG-18465, tag DH: The Shorea specimen has been moved 300 cm northwest of the painted bed mark. The old painted mark remains but should not be used for GPS positioning."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 263,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 42,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 305
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:44:41 GMT
+recorded_with: VCR 6.4.0

@@ -19,7 +19,7 @@ it, and a link to the scenario that shows it.
 
 **What to do.** Before posting a reply, treat nil or blank `content`, or `max_tokens?`, as a note that was cut off. Read `thinking` if you need to see what the model had started. Clear the cap with `with_max_output_tokens(nil)` and `ask` again. Read `raw.status` when you want the HTTP status beside the parsed message. `raw.status` was 200 for both the empty note and the posted correction.
 
-Shown in [Chart correction for the Strait of Juan de Fuca](features/01-chat-basics/12-juan-de-fuca-chart-correction/).
+Shown in [Accession tag for the Singapore Botanic Gardens](features/01-chat-basics/12-singapore-accession-tag/).
 
 ## Streaming
 
@@ -51,7 +51,7 @@ Shown in [Alden radio check](features/02-streaming/06-alden-radio-check/) and [P
 
 **What to do.** Treat nil `content`, or `max_tokens?`, as a note that was cut off. Read `thinking.text`. Clear the cap before asking again.
 
-Shown in [Fresnel gallery rotation](features/02-streaming/05-fresnel-gallery-rotation/). See also [Chart correction for the Strait of Juan de Fuca](features/01-chat-basics/12-juan-de-fuca-chart-correction/).
+Shown in [Fresnel gallery rotation](features/02-streaming/05-fresnel-gallery-rotation/). See also [Accession tag for the Singapore Botanic Gardens](features/01-chat-basics/12-singapore-accession-tag/).
 
 ### The first spoken chunk can follow a run of reasoning chunks
 
@@ -971,7 +971,7 @@ Shown in [Smith Island bearer and OAuth](features/15-mcp-client/08-smith-island-
 
 **What to do.** Expect a multi-turn chat on this model to get larger by the reasoning, and keep `max_retries` at 0 when you are recording a fixed number of calls. Do not strip the array yourself if a later turn needs the model to continue; OpenRouter wants it back.
 
-Shown in [Cannery retort log for the morning cook](features/01-chat-basics/04-cannery-retort-log/) and [Chart correction for the Strait of Juan de Fuca](features/01-chat-basics/12-juan-de-fuca-chart-correction/).
+Shown in [Lagos ankara bale log for the morning receiving](features/01-chat-basics/04-lagos-ankara-bale-log/) and [Accession tag for the Singapore Botanic Gardens](features/01-chat-basics/12-singapore-accession-tag/).
 
 ### with_max_output_tokens is max_tokens on OpenRouter
 
@@ -981,7 +981,7 @@ Shown in [Cannery retort log for the morning cook](features/01-chat-basics/04-ca
 
 **What to do.** Assert the chat readers (`temperature`, `max_output_tokens`) and, when the wire shape matters, the keys actually present in the cassette body.
 
-Shown in [Port Townsend ferry slip wind board](features/01-chat-basics/10-port-townsend-ferry-slip-wind-board/).
+Shown in [Brussels chocolate tempering board](features/01-chat-basics/10-brussels-tempering-board/).
 
 ### This free model puts U+202F beside a number
 
@@ -991,4 +991,4 @@ Shown in [Port Townsend ferry slip wind board](features/01-chat-basics/10-port-t
 
 **What to do.** Match the recorded character, or use `[[:space:]]`, when the assertion is about a word or a unit sitting next to a number.
 
-Shown in [Cannery retort log for the morning cook](features/01-chat-basics/04-cannery-retort-log/) and [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/).
+Shown in [Lagos ankara bale log for the morning receiving](features/01-chat-basics/04-lagos-ankara-bale-log/) and [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tide-dictation/).
