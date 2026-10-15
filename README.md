@@ -8,9 +8,9 @@ Thirteen samples of healthy code for each feature of the
 | --- | --- |
 | Serving size | 1 scenario |
 | Servings per feature | 13 |
-| Features | 13 |
-| Scenarios | 169 |
-| Bottled | 169 |
+| Features | 33 |
+| Scenarios | 429 |
+| Bottled | 182 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,11 +29,9 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is full: 13 features, 13 scenarios each, 169 of 169 bottled.
-Chat basics, streaming, tools, structured output, multimodal attachments,
-embeddings, image generation, models and providers, configuration and
-contexts, Rails integration, instructions and history, tokens and cost,
-and error handling are full. Tools, the Point Wilson spoken handover, the
+The catalog is 33 features, 13 scenarios each, 429 slots. 182 of 429 are
+bottled. Features 1–13 and Agents (feature 14) are full. Features 15–33
+have stub READMEs; a parallel change is filling MCP client. Tools, the Point Wilson spoken handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -54,8 +52,13 @@ reset on 15 October 2026, except Sequim Bay which fell back to OpenAI
 `gpt-4.1-mini` after `free-models-per-day`. Error handling recorded a
 rejected-key 401 and a `free-models-per-day` 429 on OpenRouter, and schema,
 embedding-overflow, tool, cancel, and fallback cassettes on OpenAI
-`gpt-4.1-mini` (and `text-embedding-3-small`). The other bottled cassettes
-are OpenRouter.
+`gpt-4.1-mini` (and `text-embedding-3-small`). Agents recorded OpenAI
+`gpt-4.1-mini` after the free OpenRouter slug hit `free-models-per-day`
+(and `gpt-4o-mini` for the Port Angeles mid-run switch). Neah Bay records
+`openai/gpt-4.1-mini` on OpenRouter so the cassette keeps `X-OpenRouter-Title`.
+Friday Harbor and Bremerton record unlisted-OpenRouter 400s; Friday Harbor
+hops to OpenAI when `on:` lists `BadRequestError`. The other
+bottled cassettes are OpenRouter.
 
 ## Run the examples
 
@@ -120,7 +123,8 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 
 | Feature | Default | Fallback |
 | --- | --- | --- |
-| Chat, streaming, history, tokens, errors | `nvidia/nemotron-3-super-120b-a12b:free` | `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free` |
+| Chat, streaming, history, tokens, errors, agent chat macros | `nvidia/nemotron-3-super-120b-a12b:free` | `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free` |
+| Agents with tools, schema, or `chat_model` (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Tools (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Spoken handover (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | same free chat model via `LIVE_PROVIDER=openrouter` |
 | Structured output (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
@@ -189,6 +193,26 @@ hold the cassette player and the model slugs, not the story.
 11. [Instructions and history](features/11-instructions-and-history/) — 13 of 13 bottled
 12. [Tokens and cost](features/12-tokens-and-cost/) — 13 of 13 bottled
 13. [Error handling](features/13-error-handling/) — 13 of 13 bottled
+14. [Agents](features/14-agents/) — 13 of 13 bottled
+15. [MCP client](features/15-mcp-client/) — 0 of 13 bottled
+16. [Audio transcription](features/16-audio-transcription/) — 0 of 13 bottled
+17. [Text to speech](features/17-text-to-speech/) — 0 of 13 bottled
+18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 0 of 13 bottled
+19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 0 of 13 bottled
+20. [Evaluations](features/20-evaluations/) — 0 of 13 bottled
+21. [Batches](features/21-batches/) — 0 of 13 bottled
+22. [Video generation](features/22-video-generation/) — 0 of 13 bottled
+23. [Moderation](features/23-moderation/) — 0 of 13 bottled
+24. [Reranking](features/24-reranking/) — 0 of 13 bottled
+25. [Document OCR](features/25-document-ocr/) — 0 of 13 bottled
+26. [Files](features/26-files/) — 0 of 13 bottled
+27. [Prompt caching](features/27-prompt-caching/) — 0 of 13 bottled
+28. [Prompt rendering](features/28-prompt-rendering/) — 0 of 13 bottled
+29. [Extended thinking](features/29-extended-thinking/) — 0 of 13 bottled
+30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 0 of 13 bottled
+31. [Tokenization](features/31-tokenization/) — 0 of 13 bottled
+32. [Hosted research](features/32-hosted-research/) — 0 of 13 bottled
+33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled
 
 The reference scenario that later ones copy is
 [Chat basics · 01 · Point Wilson tide board](features/01-chat-basics/01-point-wilson-tide-board/).

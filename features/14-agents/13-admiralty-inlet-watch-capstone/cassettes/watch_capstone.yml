@@ -1,0 +1,639 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        watch handover, Admiralty Inlet, Wednesday 15 October 2026.\nFill the watch
+        card from the posted Point Wilson board."}],"instructions":"You are the watch
+        clerk for Admiralty Inlet at Point Wilson Light Station.\nCall posted_tide_board
+        once on the first question.\nFill the watch card from that board.\nName Alden,
+        Retort, 10:46, and 08:57.\nDo not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_tide_board","description":"Reads
+        the tide board posted at Point Wilson for the Admiralty Inlet watch","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"posted_tide_board"},"text":{"format":{"type":"json_schema","name":"Schema","schema":{"type":"object","properties":{"station":{"type":"string","description":"Light
+        station name"},"alden_clears":{"type":"string","description":"Clock time Alden
+        clears the kelp ledge"},"retort_float":{"type":"string","description":"Clock
+        time Retort can use the float"},"lens_until":{"type":"string","description":"Clock
+        time the lens cabinet must stay shut"}},"required":["station","alden_clears","retort_float","lens_until"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:50:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9ab628dd8e66-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '527'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999418'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 17ms
+      X-Request-Id:
+      - req_1e90b3580ee84868a49b2cbd3e8247fa
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_09438901031fa7fc016ad0bdef244487d098cccbf3e8b8d39c",
+          "object": "response",
+          "created_at": 1792065007,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065007,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk for Admiralty Inlet at Point Wilson Light Station.\nCall posted_tide_board once on the first question.\nFill the watch card from that board.\nName Alden, Retort, 10:46, and 08:57.\nDo not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_09438901031fa7fc016ad0bdef925c87d0a41b3672d337251c",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_VzIuGTBNJbaizjfE879dCGvq",
+              "name": "posted_tide_board"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "Schema",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "station": {
+                    "type": "string",
+                    "description": "Light station name"
+                  },
+                  "alden_clears": {
+                    "type": "string",
+                    "description": "Clock time Alden clears the kelp ledge"
+                  },
+                  "retort_float": {
+                    "type": "string",
+                    "description": "Clock time Retort can use the float"
+                  },
+                  "lens_until": {
+                    "type": "string",
+                    "description": "Clock time the lens cabinet must stay shut"
+                  }
+                },
+                "required": [
+                  "station",
+                  "alden_clears",
+                  "retort_float",
+                  "lens_until"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "posted_tide_board"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the tide board posted at Point Wilson for the Admiralty Inlet watch",
+              "name": "posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 240,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 242
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:50:07 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        watch handover, Admiralty Inlet, Wednesday 15 October 2026.\nFill the watch
+        card from the posted Point Wilson board."},{"type":"function_call","call_id":"call_VzIuGTBNJbaizjfE879dCGvq","name":"posted_tide_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_VzIuGTBNJbaizjfE879dCGvq","output":"Point
+        Wilson tide board for Wednesday 15 October 2026.\nStation page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nLow
+        water 06:42, 0.4 ft above MLLW.\nHigh water 12:18, 8.1 ft.\nAlden clears the
+        kelp ledge at 10:46.\nRetort can use the float at 08:57.\nThe Fresnel lens
+        crew is in the cabinet until 09:30."}],"instructions":"You are the watch clerk
+        for Admiralty Inlet at Point Wilson Light Station.\nCall posted_tide_board
+        once on the first question.\nFill the watch card from that board.\nName Alden,
+        Retort, 10:46, and 08:57.\nDo not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_tide_board","description":"Reads
+        the tide board posted at Point Wilson for the Admiralty Inlet watch","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"text":{"format":{"type":"json_schema","name":"Schema","schema":{"type":"object","properties":{"station":{"type":"string","description":"Light
+        station name"},"alden_clears":{"type":"string","description":"Clock time Alden
+        clears the kelp ledge"},"retort_float":{"type":"string","description":"Clock
+        time Retort can use the float"},"lens_until":{"type":"string","description":"Clock
+        time the lens cabinet must stay shut"}},"required":["station","alden_clears","retort_float","lens_until"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:50:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9aba6e25e22a-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1075'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4995'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998521'
+      X-Ratelimit-Reset-Requests:
+      - 60ms
+      X-Ratelimit-Reset-Tokens:
+      - 44ms
+      X-Request-Id:
+      - req_954f6583e9804a4bb38eee4eb4dc05d6
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a2623eac08f7c75016ad0bdefd80487d0b1065d619336f75d",
+          "object": "response",
+          "created_at": 1792065007,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065008,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk for Admiralty Inlet at Point Wilson Light Station.\nCall posted_tide_board once on the first question.\nFill the watch card from that board.\nName Alden, Retort, 10:46, and 08:57.\nDo not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a2623eac08f7c75016ad0bdf0744c87d0b8edf941af457cdf",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"station\":\"Point Wilson Light Station\",\"alden_clears\":\"10:46\",\"retort_float\":\"08:57\",\"lens_until\":\"09:30\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "Schema",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "station": {
+                    "type": "string",
+                    "description": "Light station name"
+                  },
+                  "alden_clears": {
+                    "type": "string",
+                    "description": "Clock time Alden clears the kelp ledge"
+                  },
+                  "retort_float": {
+                    "type": "string",
+                    "description": "Clock time Retort can use the float"
+                  },
+                  "lens_until": {
+                    "type": "string",
+                    "description": "Clock time the lens cabinet must stay shut"
+                  }
+                },
+                "required": [
+                  "station",
+                  "alden_clears",
+                  "retort_float",
+                  "lens_until"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the tide board posted at Point Wilson for the Admiralty Inlet watch",
+              "name": "posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 357,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 395
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:50:09 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        watch handover, Admiralty Inlet, Wednesday 15 October 2026.\nFill the watch
+        card from the posted Point Wilson board."},{"type":"function_call","call_id":"call_VzIuGTBNJbaizjfE879dCGvq","name":"posted_tide_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_VzIuGTBNJbaizjfE879dCGvq","output":"Point
+        Wilson tide board for Wednesday 15 October 2026.\nStation page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nLow
+        water 06:42, 0.4 ft above MLLW.\nHigh water 12:18, 8.1 ft.\nAlden clears the
+        kelp ledge at 10:46.\nRetort can use the float at 08:57.\nThe Fresnel lens
+        crew is in the cabinet until 09:30."},{"role":"assistant","content":[{"type":"output_text","text":"{\"station\":\"Point
+        Wilson Light Station\",\"alden_clears\":\"10:46\",\"retort_float\":\"08:57\",\"lens_until\":\"09:30\"}"}]},{"role":"user","content":"The
+        lens cabinet stays open until 09:30. Should the watch hail the lens crew before
+        Alden sails at 10:46?"}],"instructions":"You are the watch clerk for Admiralty
+        Inlet at Point Wilson Light Station.\nCall posted_tide_board once on the first
+        question.\nFill the watch card from that board.\nName Alden, Retort, 10:46,
+        and 08:57.\nDo not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_tide_board","description":"Reads
+        the tide board posted at Point Wilson for the Admiralty Inlet watch","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:50:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9ac28aa2efb4-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '837'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999448'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 16ms
+      X-Request-Id:
+      - req_64f0cb56a77945d981e3c670c7e814e9
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0608e6d2d9250d06016ad0bdf1205887d0921a4617334a8e9d",
+          "object": "response",
+          "created_at": 1792065009,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065009,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk for Admiralty Inlet at Point Wilson Light Station.\nCall posted_tide_board once on the first question.\nFill the watch card from that board.\nName Alden, Retort, 10:46, and 08:57.\nDo not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0608e6d2d9250d06016ad0bdf1918c87d0a6e59ab204571d5b",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No, the watch does not need to hail the lens crew before Alden sails at 10:46 because the Fresnel lens crew is in the cabinet only until 09:30, which is before Alden clears the kelp ledge at 10:46."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the tide board posted at Point Wilson for the Admiralty Inlet watch",
+              "name": "posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 335,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 57,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 392
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:50:09 GMT
+recorded_with: VCR 6.4.0
