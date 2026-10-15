@@ -331,7 +331,7 @@ Shown in [Smith Island barometer card](features/06-embeddings/08-smith-island-ba
 
 **What to do.** Use `save` or `to_blob`. Keep the original prompt if the desk needs a caption. Do not send `response_format`.
 
-Shown in [Cape Disappointment foghorn house](features/07-image-generation/04-cape-disappointment-foghorn-house/) and [Friday Harbor blue hour prompt](features/07-image-generation/06-friday-harbor-blue-hour-prompt/).
+Shown in [Isfahan orsi window](features/07-image-generation/04-isfahan-orsi-window/) and [Tbilisi sulfur-bath prompt](features/07-image-generation/06-tbilisi-sulfur-bath-prompt/).
 
 ### jpeg output still reports mime_type image/png
 
@@ -341,7 +341,7 @@ Shown in [Cape Disappointment foghorn house](features/07-image-generation/04-cap
 
 **What to do.** Read the magic bytes, or the `output_format` in the cassette, when the binder cares about JPEG versus PNG. Do not trust `mime_type` alone on this parser.
 
-Shown in [Anacortes retort floor plate](features/07-image-generation/05-anacortes-retort-floor-plate/).
+Shown in [Havana cigar floor plate](features/07-image-generation/05-havana-cigar-floor-plate/).
 
 ### tokens are present and cost is nil
 
@@ -351,7 +351,7 @@ Shown in [Anacortes retort floor plate](features/07-image-generation/05-anacorte
 
 **What to do.** Record the token counts. Treat `cost.total` as optional. Do not assert `cost > 0` on this model.
 
-Shown in [Bremerton dry dock gate cost](features/07-image-generation/10-bremerton-dry-dock-gate-cost/).
+Shown in [Baku pumpjack cost](features/07-image-generation/10-baku-pumpjack-cost/).
 
 ### count: 2 returns an Array; usage lives on the first image
 
@@ -361,7 +361,7 @@ Shown in [Bremerton dry dock gate cost](features/07-image-generation/10-bremerto
 
 **What to do.** Read usage from `images.first`. A default `count` of 1 returns a single `Image`, not a one-element array.
 
-Shown in [Smith Island barometer pair](features/07-image-generation/09-smith-island-barometer-pair/).
+Shown in [Quito pendulum pair](features/07-image-generation/09-quito-pendulum-pair/).
 
 ### 256x256 is a BadRequestError
 
@@ -371,7 +371,7 @@ Shown in [Smith Island barometer pair](features/07-image-generation/09-smith-isl
 
 **What to do.** Use `1024x1024` as the smallest size. Keep `max_retries` at 0 so Faraday does not double the 400.
 
-Shown in [Juan de Fuca chart size refusal](features/07-image-generation/12-juan-de-fuca-chart-size-refusal/).
+Shown in [Vilnius stamp size refusal](features/07-image-generation/12-vilnius-stamp-size-refusal/).
 
 ## Models and providers
 
