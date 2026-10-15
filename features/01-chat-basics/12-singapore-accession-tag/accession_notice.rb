@@ -39,7 +39,7 @@ module SingaporeAccession
 
     REST_QUESTION = "That note was too short to pencil on the bed plan. Write the correction in two sentences. Name sheet SBG-18465 and tag DH and the 300 cm move."
 
-    CLIP = 64
+    CLIP = 16
     SHORT_LENGTH = 80
 
     Result = Struct.new(
@@ -59,11 +59,7 @@ module SingaporeAccession
     def self.conduct
       configure
 
-      chat = RubyLLM.chat(
-        model: Multivitamin::Models::CHAT,
-        provider: :openrouter,
-        assume_model_exists: true
-      )
+      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       chat.with_max_output_tokens(CLIP)
@@ -97,12 +93,7 @@ module SingaporeAccession
 
     def self.configure
       RubyLLM.configure do |config|
-        config.openrouter_api_key = ENV.fetch("OPENROUTER_API_KEY")
-        config.openrouter_app_url = "https://github.com/mikeymicrophone/rubyllm-multivitamin"
-        config.openrouter_app_name = "RubyLLM Multivitamin"
-        # Chat Completions emits a developer role unless this is set.
-        # OpenRouter expects system. The flag is shared with OpenAI's formatter.
-        config.openai_use_system_role = true
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 120
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

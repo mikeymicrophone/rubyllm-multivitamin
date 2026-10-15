@@ -113,7 +113,9 @@ placeholder is not a credential.
 while `LIVE=1` is recording, for examples that call `Multivitamin::Models.chat`.
 Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
-Chat basics and the earlier streaming cassettes are live OpenRouter
+Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
+for the mid-chat switch) after OpenRouter `:free` slugs hit
+`free-models-per-day`. The earlier streaming cassettes are live OpenRouter
 recordings. Tools, the spoken handover, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
 text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live

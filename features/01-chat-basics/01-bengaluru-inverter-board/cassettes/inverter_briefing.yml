@@ -1,0 +1,363 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Inverter
+        board posted for Wednesday 14 October 2026 at the Iyer flat, Jayanagar, Bengaluru.\nBattery
+        06:42, 0.4 kWh remaining on the Luminous inverter.\nSolar peak 12:18, 8.1
+        kWh.\nEvening 18:55, 2.6 kWh.\nLakshmi''s washing machine needs 6.0 kWh on
+        the inverter to finish a cotton load.\nThe twins Arjun and Meera can charge
+        the Chromebook cart at 3.5 kWh.\nUncle Ravi is in the puja room for morning
+        aarti until 09:30 and must not be hailed while the lamp is lit.\nWhen can
+        Lakshmi start the wash this morning, and when can the twins charge?"}],"instructions":"You
+        are the household clerk at the Iyer flat in Jayanagar, Bengaluru.\nBrief the
+        morning in short sentences.\nUse only the inverter board in the question.\nName
+        Lakshmi and the twins.\nDo not invent kilowatt-hour figures.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:42:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b047564829dcdd-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1908'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999764'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 7ms
+      X-Request-Id:
+      - req_24783bce46504c13987c88df53c2b21f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_00454f7cd4af8f5f016ad10284468887d09921eab0c979551a",
+          "object": "response",
+          "created_at": 1792082564,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082566,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the household clerk at the Iyer flat in Jayanagar, Bengaluru.\nBrief the morning in short sentences.\nUse only the inverter board in the question.\nName Lakshmi and the twins.\nDo not invent kilowatt-hour figures.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_00454f7cd4af8f5f016ad102852d9487d0923e1be0df883624",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "This morning at the Iyer flat:\n\n- Battery at 06:42 shows 0.4 kWh remaining on the Luminous inverter.\n- Solar peak reached 8.1 kWh at 12:18.\n- Evening battery level is 2.6 kWh at 18:55.\n\nLakshmi needs 6.0 kWh from the inverter to finish the washing machine cotton load.\n\nThe twins, Arjun and Meera, need 3.5 kWh to charge the Chromebook cart.\n\nUncle Ravi is in the puja room for morning aarti until 09:30 and must not be disturbed.\n\nLakshmi should start the wash after 09:30 when the aarti ends.\n\nThe twins can charge the Chromebook cart after Lakshmi finishes the wash, or when sufficient battery is available."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 217,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 167,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 384
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:42:46 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Inverter
+        board posted for Wednesday 14 October 2026 at the Iyer flat, Jayanagar, Bengaluru.\nBattery
+        06:42, 0.4 kWh remaining on the Luminous inverter.\nSolar peak 12:18, 8.1
+        kWh.\nEvening 18:55, 2.6 kWh.\nLakshmi''s washing machine needs 6.0 kWh on
+        the inverter to finish a cotton load.\nThe twins Arjun and Meera can charge
+        the Chromebook cart at 3.5 kWh.\nUncle Ravi is in the puja room for morning
+        aarti until 09:30 and must not be hailed while the lamp is lit.\nWhen can
+        Lakshmi start the wash this morning, and when can the twins charge?"},{"role":"assistant","content":[{"type":"output_text","text":"This
+        morning at the Iyer flat:\n\n- Battery at 06:42 shows 0.4 kWh remaining on
+        the Luminous inverter.\n- Solar peak reached 8.1 kWh at 12:18.\n- Evening
+        battery level is 2.6 kWh at 18:55.\n\nLakshmi needs 6.0 kWh from the inverter
+        to finish the washing machine cotton load.\n\nThe twins, Arjun and Meera,
+        need 3.5 kWh to charge the Chromebook cart.\n\nUncle Ravi is in the puja room
+        for morning aarti until 09:30 and must not be disturbed.\n\nLakshmi should
+        start the wash after 09:30 when the aarti ends.\n\nThe twins can charge the
+        Chromebook cart after Lakshmi finishes the wash, or when sufficient battery
+        is available."}]},{"role":"user","content":"The puja room stays closed until
+        09:30. Should the household hail Uncle Ravi before Lakshmi''s wash?"}],"instructions":"You
+        are the household clerk at the Iyer flat in Jayanagar, Bengaluru.\nBrief the
+        morning in short sentences.\nUse only the inverter board in the question.\nName
+        Lakshmi and the twins.\nDo not invent kilowatt-hour figures.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:42:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b047670f929790-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1806'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999400'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - req_2e1791242d3746b18d4e39958e38228c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_05112dedb392c33b016ad10286646887d0a83cfcc6d6ba3aa2",
+          "object": "response",
+          "created_at": 1792082566,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082568,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the household clerk at the Iyer flat in Jayanagar, Bengaluru.\nBrief the morning in short sentences.\nUse only the inverter board in the question.\nName Lakshmi and the twins.\nDo not invent kilowatt-hour figures.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_05112dedb392c33b016ad10287c36887d0bb37841f7e516c60",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No, the household should not hail Uncle Ravi before 09:30 while the puja room is closed and the lamp is lit. Lakshmi should wait until after 09:30 to start the wash."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 415,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 43,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 458
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:42:48 GMT
+recorded_with: VCR 6.4.0

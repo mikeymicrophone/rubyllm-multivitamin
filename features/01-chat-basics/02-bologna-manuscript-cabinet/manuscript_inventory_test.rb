@@ -16,8 +16,8 @@ class ManuscriptInventoryTest < Minitest::Test
     assert_match(/\b6\b|six/i, result.content)
 
     assert_equal :assistant, result.role
-    assert_equal Multivitamin::Models::CHAT, result.model_id
-    assert_equal Multivitamin::Models::CHAT, result.chat_model_id
+    assert result.model_id.to_s.start_with?(Multivitamin::Models::OPENAI_CHAT)
+    assert result.chat_model_id.to_s.start_with?(Multivitamin::Models::OPENAI_CHAT)
     assert_equal :stop, result.finish_reason
     assert_equal %i[system user assistant], result.roles
 
@@ -28,7 +28,7 @@ class ManuscriptInventoryTest < Minitest::Test
   def test_cassette_does_not_carry_a_live_key
     cassette = File.read(File.expand_path("cassettes/manuscript_inventory.yml", __dir__))
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end

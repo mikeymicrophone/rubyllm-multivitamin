@@ -28,14 +28,14 @@ bundle exec ruby features/01-chat-basics/13-warsaw-tram-depot-handover/depot_han
 
 Both commands replay the cassette. No API key is required. `rake test` runs the same test with the rest of the bottled examples.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`. First outbound is 07:05, the de-icer is running, and the paint locker stays closed. Re-record it with:
+The cassette is a live recording of OpenAI `gpt-4.1-mini`. First outbound is 07:05, the de-icer is running, and the paint locker stays closed. Re-record it with:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/13-warsaw-tram-depot-handover/depot_handover.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/01-chat-basics/13-warsaw-tram-depot-handover/depot_handover.rb
 ```
 
-`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-or-v1-` token before the file is written.
+`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-` token before the file is written.
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter `:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback: `gpt-4o-mini`.

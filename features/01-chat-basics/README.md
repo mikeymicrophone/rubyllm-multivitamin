@@ -8,7 +8,7 @@ Official reference: [Chat](https://rubyllm.com/chat/).
 
 ## Free models
 
-Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free`. Checked 14 October 2026.
+Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free`. Checked 14 October 2026. These thirteen cassettes were re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini` for the mid-chat switch) after the `:free` slugs hit `free-models-per-day`.
 
 ## Examples (13 of 13 bottled)
 

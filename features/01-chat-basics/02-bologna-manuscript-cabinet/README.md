@@ -4,7 +4,7 @@ The relief librarian at the Archiginnasio in Bologna reads one cabinet list and 
 
 **What it teaches**
 
-- `RubyLLM.chat` opens the conversation. The model is an OpenRouter `:free` slug, so the call names `provider: :openrouter` and `assume_model_exists: true`.
+- `RubyLLM.chat` opens the conversation. The model is OpenAI `gpt-4.1-mini`, so the call names `provider: :openai`.
 - One `ask` returns one `RubyLLM::Message`.
 - `content` is the inventory sentence. `role` is `:assistant`.
 - `model` is the id string the provider returned. There is no `model_id` reader on the message. `chat.model.id` is the slug the chat was opened with.
@@ -30,14 +30,14 @@ bundle exec ruby features/01-chat-basics/02-bologna-manuscript-cabinet/manuscrip
 
 Both commands replay the cassette. No API key is required. `rake test` runs the same test with the rest of the bottled examples.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`. The reply names drawer B, catalog VF-17, and the six cradles under BC-6. Re-record it with:
+The cassette is a live recording of OpenAI `gpt-4.1-mini`. The reply names drawer B, catalog VF-17, and the six cradles under BC-6. Re-record it with:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/02-bologna-manuscript-cabinet/manuscript_inventory.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/01-chat-basics/02-bologna-manuscript-cabinet/manuscript_inventory.rb
 ```
 
-`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-or-v1-` token before the file is written.
+`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-` token before the file is written.
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter `:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback: `gpt-4o-mini`.

@@ -26,7 +26,7 @@ class BoothAssignmentTest < Minitest::Test
   def test_cassette_does_not_carry_a_live_key
     cassette = File.read(File.expand_path("cassettes/booth_assignment.yml", __dir__))
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end

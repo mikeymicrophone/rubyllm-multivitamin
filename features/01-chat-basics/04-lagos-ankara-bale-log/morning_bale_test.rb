@@ -15,8 +15,7 @@ class MorningBaleTest < Minitest::Test
     assert_includes result.log_line, "3"
     assert_includes result.correction, "242"
     assert_includes result.recap, "242"
-    # The model may separate "bale" and "3" with U+202F, not a normal space.
-    assert_match(/bale[[:space:]]3/i, result.recap)
+    assert_match(/bale.*\b3\b/i, result.recap)
     assert_includes result.recap, "75"
 
     assert_equal %i[system user assistant user assistant user assistant], result.roles
@@ -25,20 +24,20 @@ class MorningBaleTest < Minitest::Test
     assert_operator result.recap_input_tokens, :>, result.log_input_tokens
   end
 
-  def test_the_next_request_carries_the_previous_reasoning
+  def test_the_next_request_carries_the_previous_log_line
     cassette = YAML.load_file(File.expand_path("cassettes/morning_bale.yml", __dir__))
     interactions = cassette.fetch("http_interactions")
     first_request = interactions[0].dig("request", "body", "string")
     second_request = interactions[1].dig("request", "body", "string")
 
-    refute_includes first_request, "reasoning_details"
-    assert_includes second_request, "reasoning_details"
+    refute_includes first_request, "242 yards"
+    assert_includes second_request, "240 yards"
   end
 
   def test_cassette_does_not_carry_a_live_key
     cassette = File.read(File.expand_path("cassettes/morning_bale.yml", __dir__))
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end

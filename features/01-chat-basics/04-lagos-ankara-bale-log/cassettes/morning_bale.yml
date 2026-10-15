@@ -1,0 +1,535 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        receiving card for Wednesday 14 October 2026, bale No. 2.\nProduct: ankara
+        wax print.\nBale 3.\nPosted length 240 yards.\nCount 75 pieces.\nUnload started
+        05:10.\nWrite the log line for the wholesale office."}],"instructions":"You
+        are the receiving clerk at the Balogun Market wholesale house in Lagos.\nThe
+        bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep each reply
+        to two short sentences.\nUse only the receiving card and the corrections in
+        this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn corrects
+        a figure, the recap uses the corrected figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:43:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b047c95c7dfdb1-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '803'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999594'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 12ms
+      X-Request-Id:
+      - req_03151cc707e14ae29d9ac0eeb90f1679
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0aa50274506a8da5016ad102961a4487d09b73f756882d6f34",
+          "object": "response",
+          "created_at": 1792082582,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082582,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the receiving clerk at the Balogun Market wholesale house in Lagos.\nThe bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep each reply to two short sentences.\nUse only the receiving card and the corrections in this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn corrects a figure, the recap uses the corrected figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0aa50274506a8da5016ad102968dc487d098cc371ca5c1f794",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Wednesday 14 October 2026, Bale No. 3, Ankara wax print, 240 yards, 75 pieces, unload started 05:10 at Apapa warehouse."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 150,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 188
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:43:02 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        receiving card for Wednesday 14 October 2026, bale No. 2.\nProduct: ankara
+        wax print.\nBale 3.\nPosted length 240 yards.\nCount 75 pieces.\nUnload started
+        05:10.\nWrite the log line for the wholesale office."},{"role":"assistant","content":[{"type":"output_text","text":"Wednesday
+        14 October 2026, Bale No. 3, Ankara wax print, 240 yards, 75 pieces, unload
+        started 05:10 at Apapa warehouse."}]},{"role":"user","content":"The warehouse
+        lead, Kemi, just came down from the mezzanine.\nThe tape was reading short.\nTrue
+        length for this bale is 242 yards, not 240 yards.\nBale 3, 75 pieces, and
+        the 05:10 unload stay as posted.\nCorrect the log line."}],"instructions":"You
+        are the receiving clerk at the Balogun Market wholesale house in Lagos.\nThe
+        bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep each reply
+        to two short sentences.\nUse only the receiving card and the corrections in
+        this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn corrects
+        a figure, the recap uses the corrected figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:43:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b047cf99a7b1c2-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '817'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999725'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_3eef799bf4f24817a72bb5c4d04961fc
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0fe14b15a3e9c9c9016ad102970d8c87d0bdc1d7249bd393eb",
+          "object": "response",
+          "created_at": 1792082583,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082583,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the receiving clerk at the Balogun Market wholesale house in Lagos.\nThe bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep each reply to two short sentences.\nUse only the receiving card and the corrections in this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn corrects a figure, the recap uses the corrected figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0fe14b15a3e9c9c9016ad10297772887d0b2fa5163de3b4f59",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Wednesday 14 October 2026, Bale No. 3, Ankara wax print, 242 yards, 75 pieces, unload started 05:10 at Apapa warehouse."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 256,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 294
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:43:03 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        receiving card for Wednesday 14 October 2026, bale No. 2.\nProduct: ankara
+        wax print.\nBale 3.\nPosted length 240 yards.\nCount 75 pieces.\nUnload started
+        05:10.\nWrite the log line for the wholesale office."},{"role":"assistant","content":[{"type":"output_text","text":"Wednesday
+        14 October 2026, Bale No. 3, Ankara wax print, 240 yards, 75 pieces, unload
+        started 05:10 at Apapa warehouse."}]},{"role":"user","content":"The warehouse
+        lead, Kemi, just came down from the mezzanine.\nThe tape was reading short.\nTrue
+        length for this bale is 242 yards, not 240 yards.\nBale 3, 75 pieces, and
+        the 05:10 unload stay as posted.\nCorrect the log line."},{"role":"assistant","content":[{"type":"output_text","text":"Wednesday
+        14 October 2026, Bale No. 3, Ankara wax print, 242 yards, 75 pieces, unload
+        started 05:10 at Apapa warehouse."}]},{"role":"user","content":"Recap the
+        morning receiving for the office. Use the corrected length, the bale, and
+        the piece count."}],"instructions":"You are the receiving clerk at the Balogun
+        Market wholesale house in Lagos.\nThe bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep
+        each reply to two short sentences.\nUse only the receiving card and the corrections
+        in this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn
+        corrects a figure, the recap uses the corrected figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 16:43:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b047d58de6c8da-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1088'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999346'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 19ms
+      X-Request-Id:
+      - req_f7fa9222c7884e32b9c87b4e20b93ed1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_099efb75fd9ed167016ad1029807a087d093299c0ce9954ae7",
+          "object": "response",
+          "created_at": 1792082584,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792082585,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the receiving clerk at the Balogun Market wholesale house in Lagos.\nThe bales land at the Apapa warehouse, https://www.npa.gov.ng/.\nKeep each reply to two short sentences.\nUse only the receiving card and the corrections in this chat.\nDo not invent yardages, bales, or times.\nWhen a later turn corrects a figure, the recap uses the corrected figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_099efb75fd9ed167016ad10298c42087d08a992cb91a87909b",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Morning receiving, Wednesday 14 October 2026: Bale No. 3, Ankara wax print, 242 yards, 75 pieces, unload started 05:10 at Apapa warehouse."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 323,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 41,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 364
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 16:43:05 GMT
+recorded_with: VCR 6.4.0

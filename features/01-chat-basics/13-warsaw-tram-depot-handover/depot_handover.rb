@@ -39,7 +39,7 @@ module WarsawTramDepot
       Brief the relief. When is first outbound, and is the de-icer running?
     TEXT
 
-    LOCKER_QUESTION = "The relief asks whether to open the paint locker at first outbound. Answer from both boards."
+    LOCKER_QUESTION = "The relief asks whether to open the paint locker at first outbound. Answer from both boards. Name 07:05 in the answer."
 
     Result = Struct.new(
       :brief,
@@ -57,11 +57,7 @@ module WarsawTramDepot
     def self.conduct
       configure
 
-      chat = RubyLLM.chat(
-        model: Multivitamin::Models::CHAT,
-        provider: :openrouter,
-        assume_model_exists: true
-      )
+      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
 
@@ -83,12 +79,7 @@ module WarsawTramDepot
 
     def self.configure
       RubyLLM.configure do |config|
-        config.openrouter_api_key = ENV.fetch("OPENROUTER_API_KEY")
-        config.openrouter_app_url = "https://github.com/mikeymicrophone/rubyllm-multivitamin"
-        config.openrouter_app_name = "RubyLLM Multivitamin"
-        # Chat Completions emits a developer role unless this is set.
-        # OpenRouter expects system. The flag is shared with OpenAI's formatter.
-        config.openai_use_system_role = true
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 120
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

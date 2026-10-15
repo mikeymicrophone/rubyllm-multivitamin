@@ -1,10 +1,10 @@
 # Chat basics · 12 · Accession tag for the Singapore Botanic Gardens
 
-The herbarium clerk has correction slip SBG-18465 for sheet SBG-18465: living-collection tag DH moved 300 cm northwest. The first ask is capped at 64 output tokens, which is tight for a reasoning model. The clerk reads the note, and if it is empty or cut off, clears the cap and asks again.
+The herbarium clerk has correction slip SBG-18465 for sheet SBG-18465: living-collection tag DH moved 300 cm northwest. The first ask is capped at 16 output tokens. The clerk reads the note, and if it is empty or cut off, clears the cap and asks again.
 
 **What it teaches**
 
-- `with_max_output_tokens` caps the next reply. A short or empty `content` is still a message. On this recording the cap was spent entirely on reasoning, `content` is nil, and the draft is on `thinking`.
+- `with_max_output_tokens` caps the next reply. A short or empty `content` is still a message. On this recording the cap cut the note mid-sentence and `finish_reason` is `:max_tokens`.
 - `max_tokens?` is true when the finish reason is the cap. `content.to_s.strip` is how you see that the note is too short to pencil onto the bed plan.
 - `response.raw` is the `Faraday::Response`. `raw.status` is the HTTP status beside the parsed message.
 - Clearing the cap with `with_max_output_tokens(nil)` and asking again posts the full correction on the same chat.
@@ -28,14 +28,14 @@ bundle exec ruby features/01-chat-basics/12-singapore-accession-tag/accession_no
 
 Both commands replay the cassette. No API key is required. `rake test` runs the same test with the rest of the bottled examples.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`. The capped ask returned HTTP 200 with `content` nil and `finish_reason` `:max_tokens`. All 64 completion tokens were reasoning tokens, and the draft of the note sat on `thinking` instead of `content`. The second ask, with the cap cleared, posted the correction: sheet SBG-18465, tag DH, 300 cm northwest. Re-record it with:
+The cassette is a live recording of OpenAI `gpt-4.1-mini`. The capped ask returned HTTP 200 with a 53-character fragment and `finish_reason` `:max_tokens`. The second ask, with the cap cleared, posted the correction: sheet SBG-18465, tag DH, 300 cm northwest. Re-record it with:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/12-singapore-accession-tag/accession_notice.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/01-chat-basics/12-singapore-accession-tag/accession_notice.rb
 ```
 
-`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-or-v1-` token before the file is written.
+`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-` token before the file is written.
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter `:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback: `gpt-4o-mini`.

@@ -28,19 +28,20 @@ class TemperingBoardTest < Minitest::Test
     cassette = YAML.load_file(File.expand_path("cassettes/tempering_board.yml", __dir__))
     bodies = cassette.fetch("http_interactions").map { |interaction| interaction.dig("request", "body", "string") }
 
-    capped = bodies.find { |body| body.include?("\"max_tokens\":#{BrusselsTempering::TemperingBoard::HELD_OUTPUT_CAP}") }
-    unset = bodies.reject { |body| body.include?("max_tokens") }
+    cap = BrusselsTempering::TemperingBoard::HELD_OUTPUT_CAP
+    capped = bodies.find { |body| body.include?("\"max_output_tokens\":#{cap}") }
+    unset = bodies.reject { |body| body.include?("max_output_tokens") }
 
     assert capped
     assert_includes capped, "\"temperature\":0.1"
     assert_equal 1, unset.length
-    refute_includes unset.first, "temperature"
+    refute_includes unset.first, "\"temperature\":"
   end
 
   def test_cassette_does_not_carry_a_live_key
     cassette = File.read(File.expand_path("cassettes/tempering_board.yml", __dir__))
 
-    refute_match(/sk-or-/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    refute_match(/sk-/, cassette)
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end
