@@ -295,31 +295,31 @@ Shown in [Nicosia scald and vat](features/05-multimodal-attachments/13-nicosia-s
 
 **What happens.** On `text-embedding-3-small`, `RubyLLM.embed("")` returns HTTP 200 and a 1536-wide vector. `tokens.input` is 0 and `cost.total` is 0. The vector is not all zeros. `RubyLLM.embed([])` raises `RubyLLM::BadRequestError` with `Invalid 'input': input cannot be an empty array.` The cassette holds both round-trips.
 
-**Why it matters.** A watch that treats a blank service card as missing still stores a vector. A watch that treats an empty stack the same way never gets that far.
+**Why it matters.** A clerk that treats a blank tally card as missing still stores a vector. A clerk that treats an empty stack the same way never gets that far.
 
 **What to do.** Treat `""` as a real embedding with zero billed tokens. Rescue `BadRequestError` for `[]`.
 
-Shown in [Ediz Hook buoy service notes](features/06-embeddings/07-ediz-hook-buoy-notes/).
+Shown in [Bishkek precinct tally cards](features/06-embeddings/07-bishkek-tally-cards/).
 
 ### task_type and title are omitted on OpenAI embeddings
 
-**What happens.** `RubyLLM.embed` accepts `task_type:` and `title:`. OpenAI's Chat Completions embedding payload is `model`, `input`, and optional `dimensions`. The Friday Harbor cassette sends the same remark as `RETRIEVAL_QUERY` and as `RETRIEVAL_DOCUMENT` with a title. Neither request contains `task_type`, `input_type`, `title`, or the retrieval labels. The two vectors are cosine-identical to four places.
+**What happens.** `RubyLLM.embed` accepts `task_type:` and `title:`. OpenAI's Chat Completions embedding payload is `model`, `input`, and optional `dimensions`. The Helsinki cassette sends the same remark as `RETRIEVAL_QUERY` and as `RETRIEVAL_DOCUMENT` with a title. Neither request contains `task_type`, `input_type`, `title`, or the retrieval labels. The two vectors are cosine-identical to four places.
 
 **Why it matters.** A retrieval index that depends on query versus document embeddings will not see that split on this provider.
 
 **What to do.** Assert the keys actually present in the cassette. Do not expect OpenAI to honor `task_type:`.
 
-Shown in [Friday Harbor berth remarks](features/06-embeddings/05-friday-harbor-berth-remarks/).
+Shown in [Helsinki reserve slip](features/06-embeddings/05-helsinki-reserve-slip/).
 
 ### OpenAI embeddings refuse a PNG before HTTP
 
-**What happens.** `with:` a PNG on `text-embedding-3-small` raises `RubyLLM::UnsupportedAttachmentError` (`Unsupported attachment type: image/png`) before a request is sent. OpenRouter's embeddings protocol accepts the same file: the Smith Island cassette posts `{content: [{type: text}, {type: image_url}]}` to `google/gemini-embedding-2` with `dimensions` 768.
+**What happens.** `with:` a PNG on `text-embedding-3-small` raises `RubyLLM::UnsupportedAttachmentError` (`Unsupported attachment type: image/png`) before a request is sent. OpenRouter's embeddings protocol accepts the same file: the Entebbe cassette posts `{content: [{type: text}, {type: image_url}]}` to `google/gemini-embedding-2` with `dimensions` 768.
 
 **Why it matters.** Copying `with:` from chat onto OpenAI embeddings fails locally. The error is not `BadRequestError`.
 
 **What to do.** Use a multimodal embedding model for `with:`. Rescue `UnsupportedAttachmentError` on OpenAI embeddings.
 
-Shown in [Smith Island barometer card](features/06-embeddings/08-smith-island-barometer-card/).
+Shown in [Entebbe incubator plaque](features/06-embeddings/08-entebbe-incubator-card/).
 
 ## Image generation
 
