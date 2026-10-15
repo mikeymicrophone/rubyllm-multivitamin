@@ -538,7 +538,45 @@ No entries yet.
 
 ## Error handling
 
-No entries yet.
+### BadRequestError is not a default fallback
+
+**What happens.** `with_fallbacks` to `gpt-4.1-mini` on an unlisted OpenRouter slug (`hein-bank-shoal-unlisted`, `assume_model_exists: true`) raises `RubyLLM::BadRequestError` (HTTP 400, `not a valid model ID`). The spare model is not tried. `BadRequestError` is not in `RubyLLM::Fallback::DEFAULT_ERRORS`. The same slug with `on: [RubyLLM::BadRequestError]` falls through to OpenAI and returns the sounding.
+
+**Why it matters.** A desk that assumes any provider error hops to the spare model stays on the 400.
+
+**What to do.** Leave the default list for rate limits, server errors, unavailable, overloaded, timeouts, and connection failures. Pass `on:` when a 400 should hop.
+
+Shown in [Hein Bank model fallback](features/13-error-handling/06-hein-bank-model-fallback/).
+
+### An embedding 400 for context length has no request_shape
+
+**What happens.** `RubyLLM.embed` of a 700-cast Partridge Bank log on `text-embedding-3-small` raises `RubyLLM::ContextLengthExceededError`. Status is 400. The message is `Invalid 'input': maximum context length is 8192 tokens.` `request_shape` is nil. Faraday does not retry that class. The cassette is one POST.
+
+**Why it matters.** Rescuing only `BadRequestError` misses the overflow. Logging `request_shape.to_h` on every `RubyLLM::Error` stores nil for embeddings.
+
+**What to do.** Rescue `ContextLengthExceededError` for a pasted log that will not fit. Do not expect a shape on an embedding error.
+
+Shown in [Partridge Bank logbook](features/13-error-handling/07-partridge-bank-logbook/).
+
+### OpenRouter's daily free-model cap is RateLimitError
+
+**What happens.** `poolside/laguna-s-2.1:free` answered HTTP 429 with `Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day`. That is `RubyLLM::RateLimitError`. `max_retries` 0 kept the cassette to one call.
+
+**Why it matters.** The same class covers the daily cap and the shorter upstream-pool 429s. A watch that only matches `Retry-After` will miss this body: the Iceberg Point cassette has no `Retry-After` header.
+
+**What to do.** Rescue `RateLimitError`. Read the message for `free-models-per-day` when the desk needs to know which cap it hit.
+
+Shown in [Iceberg Point rate limit](features/13-error-handling/04-iceberg-point-rate-limit/).
+
+### A context keeps a dead-circuit base off the global config
+
+**What happens.** Pointing `openrouter_api_base` at `127.0.0.1` on `RubyLLM.config` leaves that host on the global config after the example. Later OpenRouter chats in the same process post to the closed sleeper. A `RubyLLM.context` that sets the loopback base leaves `RubyLLM.config.openrouter_api_base` unset.
+
+**Why it matters.** `rake test` loads every bottled example in one process. A leftover loopback base turns later cassette replays into `Faraday::ConnectionFailed`.
+
+**What to do.** Put a dead-circuit `openrouter_api_base` on a context. Assert the global base is not a loopback address when the example finishes.
+
+Shown in [Point No Point retries](features/13-error-handling/11-point-no-point-retries/) and [Foulweather Bluff fallback hooks](features/13-error-handling/12-foulweather-bluff-fallback-hooks/).
 
 ## Running the examples
 

@@ -1,0 +1,698 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/embeddings
+    body:
+      encoding: UTF-8
+      string: '{"model":"text-embedding-3-small","input":"Partridge Bank sounding
+        log, Admiralty Inlet, season 2026.\nChart catalog: https://www.nauticalcharts.noaa.gov/.\nCast
+        1 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 2 off Partridge
+        Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 3 off Partridge Bank: 5.8
+        fathoms, ebb 2 knots, lead shell.\nCast 4 off Partridge Bank: 5.7 fathoms,
+        ebb 0 knots, lead gravel.\nCast 5 off Partridge Bank: 5.6 fathoms, ebb 1 knots,
+        lead tallow.\nCast 6 off Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast
+        7 off Partridge Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 8 off Partridge
+        Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast 9 off Partridge Bank: 5.2
+        fathoms, ebb 2 knots, lead tallow.\nCast 10 off Partridge Bank: 5.1 fathoms,
+        ebb 0 knots, lead sand.\nCast 11 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 12 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        13 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 14 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 15 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 16 off Partridge Bank: 4.5
+        fathoms, ebb 0 knots, lead gravel.\nCast 17 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 18 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 19 off Partridge Bank: 4.2 fathoms, ebb 0 knots, lead
+        shell.\nCast 20 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        21 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 22 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 23 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 24 off Partridge Bank: 5.7
+        fathoms, ebb 2 knots, lead gravel.\nCast 25 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 26 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 27 off Partridge Bank: 5.4 fathoms, ebb 2 knots, lead
+        shell.\nCast 28 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        29 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 30 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 31 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 32 off Partridge Bank: 4.9
+        fathoms, ebb 1 knots, lead gravel.\nCast 33 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 34 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 35 off Partridge Bank: 4.6 fathoms, ebb 1 knots, lead
+        shell.\nCast 36 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        37 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 38 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 39 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 40 off Partridge Bank: 4.1
+        fathoms, ebb 0 knots, lead gravel.\nCast 41 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 42 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 43 off Partridge Bank: 5.8 fathoms, ebb 0 knots, lead
+        shell.\nCast 44 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        45 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 46 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 47 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 48 off Partridge Bank: 5.3
+        fathoms, ebb 2 knots, lead gravel.\nCast 49 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 50 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 51 off Partridge Bank: 5.0 fathoms, ebb 2 knots, lead
+        shell.\nCast 52 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        53 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 54 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 55 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 56 off Partridge Bank: 4.5
+        fathoms, ebb 1 knots, lead gravel.\nCast 57 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 58 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 59 off Partridge Bank: 4.2 fathoms, ebb 1 knots, lead
+        shell.\nCast 60 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        61 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 62 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 63 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 64 off Partridge Bank: 5.7
+        fathoms, ebb 0 knots, lead gravel.\nCast 65 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 66 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 67 off Partridge Bank: 5.4 fathoms, ebb 0 knots, lead
+        shell.\nCast 68 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        69 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 70 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 71 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 72 off Partridge Bank: 4.9
+        fathoms, ebb 2 knots, lead gravel.\nCast 73 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 74 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 75 off Partridge Bank: 4.6 fathoms, ebb 2 knots, lead
+        shell.\nCast 76 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        77 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 78 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 79 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 80 off Partridge Bank: 4.1
+        fathoms, ebb 1 knots, lead gravel.\nCast 81 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 82 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 83 off Partridge Bank: 5.8 fathoms, ebb 1 knots, lead
+        shell.\nCast 84 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        85 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 86 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 87 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 88 off Partridge Bank: 5.3
+        fathoms, ebb 0 knots, lead gravel.\nCast 89 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 90 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 91 off Partridge Bank: 5.0 fathoms, ebb 0 knots, lead
+        shell.\nCast 92 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        93 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 94 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 95 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 96 off Partridge Bank: 4.5
+        fathoms, ebb 2 knots, lead gravel.\nCast 97 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 98 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 99 off Partridge Bank: 4.2 fathoms, ebb 2 knots, lead
+        shell.\nCast 100 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel.\nCast
+        101 off Partridge Bank: 6.0 fathoms, ebb 1 knots, lead tallow.\nCast 102 off
+        Partridge Bank: 5.9 fathoms, ebb 2 knots, lead sand.\nCast 103 off Partridge
+        Bank: 5.8 fathoms, ebb 0 knots, lead shell.\nCast 104 off Partridge Bank:
+        5.7 fathoms, ebb 1 knots, lead gravel.\nCast 105 off Partridge Bank: 5.6 fathoms,
+        ebb 2 knots, lead tallow.\nCast 106 off Partridge Bank: 5.5 fathoms, ebb 0
+        knots, lead sand.\nCast 107 off Partridge Bank: 5.4 fathoms, ebb 1 knots,
+        lead shell.\nCast 108 off Partridge Bank: 5.3 fathoms, ebb 2 knots, lead gravel.\nCast
+        109 off Partridge Bank: 5.2 fathoms, ebb 0 knots, lead tallow.\nCast 110 off
+        Partridge Bank: 5.1 fathoms, ebb 1 knots, lead sand.\nCast 111 off Partridge
+        Bank: 5.0 fathoms, ebb 2 knots, lead shell.\nCast 112 off Partridge Bank:
+        4.9 fathoms, ebb 0 knots, lead gravel.\nCast 113 off Partridge Bank: 4.8 fathoms,
+        ebb 1 knots, lead tallow.\nCast 114 off Partridge Bank: 4.7 fathoms, ebb 2
+        knots, lead sand.\nCast 115 off Partridge Bank: 4.6 fathoms, ebb 0 knots,
+        lead shell.\nCast 116 off Partridge Bank: 4.5 fathoms, ebb 1 knots, lead gravel.\nCast
+        117 off Partridge Bank: 4.4 fathoms, ebb 2 knots, lead tallow.\nCast 118 off
+        Partridge Bank: 4.3 fathoms, ebb 0 knots, lead sand.\nCast 119 off Partridge
+        Bank: 4.2 fathoms, ebb 1 knots, lead shell.\nCast 120 off Partridge Bank:
+        4.1 fathoms, ebb 2 knots, lead gravel.\nCast 121 off Partridge Bank: 6.0 fathoms,
+        ebb 0 knots, lead tallow.\nCast 122 off Partridge Bank: 5.9 fathoms, ebb 1
+        knots, lead sand.\nCast 123 off Partridge Bank: 5.8 fathoms, ebb 2 knots,
+        lead shell.\nCast 124 off Partridge Bank: 5.7 fathoms, ebb 0 knots, lead gravel.\nCast
+        125 off Partridge Bank: 5.6 fathoms, ebb 1 knots, lead tallow.\nCast 126 off
+        Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast 127 off Partridge
+        Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 128 off Partridge Bank:
+        5.3 fathoms, ebb 1 knots, lead gravel.\nCast 129 off Partridge Bank: 5.2 fathoms,
+        ebb 2 knots, lead tallow.\nCast 130 off Partridge Bank: 5.1 fathoms, ebb 0
+        knots, lead sand.\nCast 131 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 132 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        133 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 134 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 135 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 136 off Partridge Bank:
+        4.5 fathoms, ebb 0 knots, lead gravel.\nCast 137 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 138 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 139 off Partridge Bank: 4.2 fathoms, ebb 0 knots,
+        lead shell.\nCast 140 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        141 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 142 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 143 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 144 off Partridge Bank:
+        5.7 fathoms, ebb 2 knots, lead gravel.\nCast 145 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 146 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 147 off Partridge Bank: 5.4 fathoms, ebb 2 knots,
+        lead shell.\nCast 148 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        149 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 150 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 151 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 152 off Partridge Bank:
+        4.9 fathoms, ebb 1 knots, lead gravel.\nCast 153 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 154 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 155 off Partridge Bank: 4.6 fathoms, ebb 1 knots,
+        lead shell.\nCast 156 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        157 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 158 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 159 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 160 off Partridge Bank:
+        4.1 fathoms, ebb 0 knots, lead gravel.\nCast 161 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 162 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 163 off Partridge Bank: 5.8 fathoms, ebb 0 knots,
+        lead shell.\nCast 164 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        165 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 166 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 167 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 168 off Partridge Bank:
+        5.3 fathoms, ebb 2 knots, lead gravel.\nCast 169 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 170 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 171 off Partridge Bank: 5.0 fathoms, ebb 2 knots,
+        lead shell.\nCast 172 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        173 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 174 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 175 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 176 off Partridge Bank:
+        4.5 fathoms, ebb 1 knots, lead gravel.\nCast 177 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 178 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 179 off Partridge Bank: 4.2 fathoms, ebb 1 knots,
+        lead shell.\nCast 180 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        181 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 182 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 183 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 184 off Partridge Bank:
+        5.7 fathoms, ebb 0 knots, lead gravel.\nCast 185 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 186 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 187 off Partridge Bank: 5.4 fathoms, ebb 0 knots,
+        lead shell.\nCast 188 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        189 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 190 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 191 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 192 off Partridge Bank:
+        4.9 fathoms, ebb 2 knots, lead gravel.\nCast 193 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 194 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 195 off Partridge Bank: 4.6 fathoms, ebb 2 knots,
+        lead shell.\nCast 196 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        197 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 198 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 199 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 200 off Partridge Bank:
+        4.1 fathoms, ebb 1 knots, lead gravel.\nCast 201 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 202 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 203 off Partridge Bank: 5.8 fathoms, ebb 1 knots,
+        lead shell.\nCast 204 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        205 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 206 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 207 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 208 off Partridge Bank:
+        5.3 fathoms, ebb 0 knots, lead gravel.\nCast 209 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 210 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 211 off Partridge Bank: 5.0 fathoms, ebb 0 knots,
+        lead shell.\nCast 212 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        213 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 214 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 215 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 216 off Partridge Bank:
+        4.5 fathoms, ebb 2 knots, lead gravel.\nCast 217 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 218 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 219 off Partridge Bank: 4.2 fathoms, ebb 2 knots,
+        lead shell.\nCast 220 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel.\nCast
+        221 off Partridge Bank: 6.0 fathoms, ebb 1 knots, lead tallow.\nCast 222 off
+        Partridge Bank: 5.9 fathoms, ebb 2 knots, lead sand.\nCast 223 off Partridge
+        Bank: 5.8 fathoms, ebb 0 knots, lead shell.\nCast 224 off Partridge Bank:
+        5.7 fathoms, ebb 1 knots, lead gravel.\nCast 225 off Partridge Bank: 5.6 fathoms,
+        ebb 2 knots, lead tallow.\nCast 226 off Partridge Bank: 5.5 fathoms, ebb 0
+        knots, lead sand.\nCast 227 off Partridge Bank: 5.4 fathoms, ebb 1 knots,
+        lead shell.\nCast 228 off Partridge Bank: 5.3 fathoms, ebb 2 knots, lead gravel.\nCast
+        229 off Partridge Bank: 5.2 fathoms, ebb 0 knots, lead tallow.\nCast 230 off
+        Partridge Bank: 5.1 fathoms, ebb 1 knots, lead sand.\nCast 231 off Partridge
+        Bank: 5.0 fathoms, ebb 2 knots, lead shell.\nCast 232 off Partridge Bank:
+        4.9 fathoms, ebb 0 knots, lead gravel.\nCast 233 off Partridge Bank: 4.8 fathoms,
+        ebb 1 knots, lead tallow.\nCast 234 off Partridge Bank: 4.7 fathoms, ebb 2
+        knots, lead sand.\nCast 235 off Partridge Bank: 4.6 fathoms, ebb 0 knots,
+        lead shell.\nCast 236 off Partridge Bank: 4.5 fathoms, ebb 1 knots, lead gravel.\nCast
+        237 off Partridge Bank: 4.4 fathoms, ebb 2 knots, lead tallow.\nCast 238 off
+        Partridge Bank: 4.3 fathoms, ebb 0 knots, lead sand.\nCast 239 off Partridge
+        Bank: 4.2 fathoms, ebb 1 knots, lead shell.\nCast 240 off Partridge Bank:
+        4.1 fathoms, ebb 2 knots, lead gravel.\nCast 241 off Partridge Bank: 6.0 fathoms,
+        ebb 0 knots, lead tallow.\nCast 242 off Partridge Bank: 5.9 fathoms, ebb 1
+        knots, lead sand.\nCast 243 off Partridge Bank: 5.8 fathoms, ebb 2 knots,
+        lead shell.\nCast 244 off Partridge Bank: 5.7 fathoms, ebb 0 knots, lead gravel.\nCast
+        245 off Partridge Bank: 5.6 fathoms, ebb 1 knots, lead tallow.\nCast 246 off
+        Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast 247 off Partridge
+        Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 248 off Partridge Bank:
+        5.3 fathoms, ebb 1 knots, lead gravel.\nCast 249 off Partridge Bank: 5.2 fathoms,
+        ebb 2 knots, lead tallow.\nCast 250 off Partridge Bank: 5.1 fathoms, ebb 0
+        knots, lead sand.\nCast 251 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 252 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        253 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 254 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 255 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 256 off Partridge Bank:
+        4.5 fathoms, ebb 0 knots, lead gravel.\nCast 257 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 258 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 259 off Partridge Bank: 4.2 fathoms, ebb 0 knots,
+        lead shell.\nCast 260 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        261 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 262 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 263 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 264 off Partridge Bank:
+        5.7 fathoms, ebb 2 knots, lead gravel.\nCast 265 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 266 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 267 off Partridge Bank: 5.4 fathoms, ebb 2 knots,
+        lead shell.\nCast 268 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        269 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 270 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 271 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 272 off Partridge Bank:
+        4.9 fathoms, ebb 1 knots, lead gravel.\nCast 273 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 274 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 275 off Partridge Bank: 4.6 fathoms, ebb 1 knots,
+        lead shell.\nCast 276 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        277 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 278 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 279 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 280 off Partridge Bank:
+        4.1 fathoms, ebb 0 knots, lead gravel.\nCast 281 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 282 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 283 off Partridge Bank: 5.8 fathoms, ebb 0 knots,
+        lead shell.\nCast 284 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        285 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 286 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 287 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 288 off Partridge Bank:
+        5.3 fathoms, ebb 2 knots, lead gravel.\nCast 289 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 290 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 291 off Partridge Bank: 5.0 fathoms, ebb 2 knots,
+        lead shell.\nCast 292 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        293 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 294 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 295 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 296 off Partridge Bank:
+        4.5 fathoms, ebb 1 knots, lead gravel.\nCast 297 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 298 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 299 off Partridge Bank: 4.2 fathoms, ebb 1 knots,
+        lead shell.\nCast 300 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        301 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 302 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 303 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 304 off Partridge Bank:
+        5.7 fathoms, ebb 0 knots, lead gravel.\nCast 305 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 306 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 307 off Partridge Bank: 5.4 fathoms, ebb 0 knots,
+        lead shell.\nCast 308 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        309 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 310 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 311 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 312 off Partridge Bank:
+        4.9 fathoms, ebb 2 knots, lead gravel.\nCast 313 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 314 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 315 off Partridge Bank: 4.6 fathoms, ebb 2 knots,
+        lead shell.\nCast 316 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        317 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 318 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 319 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 320 off Partridge Bank:
+        4.1 fathoms, ebb 1 knots, lead gravel.\nCast 321 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 322 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 323 off Partridge Bank: 5.8 fathoms, ebb 1 knots,
+        lead shell.\nCast 324 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        325 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 326 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 327 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 328 off Partridge Bank:
+        5.3 fathoms, ebb 0 knots, lead gravel.\nCast 329 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 330 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 331 off Partridge Bank: 5.0 fathoms, ebb 0 knots,
+        lead shell.\nCast 332 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        333 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 334 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 335 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 336 off Partridge Bank:
+        4.5 fathoms, ebb 2 knots, lead gravel.\nCast 337 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 338 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 339 off Partridge Bank: 4.2 fathoms, ebb 2 knots,
+        lead shell.\nCast 340 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel.\nCast
+        341 off Partridge Bank: 6.0 fathoms, ebb 1 knots, lead tallow.\nCast 342 off
+        Partridge Bank: 5.9 fathoms, ebb 2 knots, lead sand.\nCast 343 off Partridge
+        Bank: 5.8 fathoms, ebb 0 knots, lead shell.\nCast 344 off Partridge Bank:
+        5.7 fathoms, ebb 1 knots, lead gravel.\nCast 345 off Partridge Bank: 5.6 fathoms,
+        ebb 2 knots, lead tallow.\nCast 346 off Partridge Bank: 5.5 fathoms, ebb 0
+        knots, lead sand.\nCast 347 off Partridge Bank: 5.4 fathoms, ebb 1 knots,
+        lead shell.\nCast 348 off Partridge Bank: 5.3 fathoms, ebb 2 knots, lead gravel.\nCast
+        349 off Partridge Bank: 5.2 fathoms, ebb 0 knots, lead tallow.\nCast 350 off
+        Partridge Bank: 5.1 fathoms, ebb 1 knots, lead sand.\nCast 351 off Partridge
+        Bank: 5.0 fathoms, ebb 2 knots, lead shell.\nCast 352 off Partridge Bank:
+        4.9 fathoms, ebb 0 knots, lead gravel.\nCast 353 off Partridge Bank: 4.8 fathoms,
+        ebb 1 knots, lead tallow.\nCast 354 off Partridge Bank: 4.7 fathoms, ebb 2
+        knots, lead sand.\nCast 355 off Partridge Bank: 4.6 fathoms, ebb 0 knots,
+        lead shell.\nCast 356 off Partridge Bank: 4.5 fathoms, ebb 1 knots, lead gravel.\nCast
+        357 off Partridge Bank: 4.4 fathoms, ebb 2 knots, lead tallow.\nCast 358 off
+        Partridge Bank: 4.3 fathoms, ebb 0 knots, lead sand.\nCast 359 off Partridge
+        Bank: 4.2 fathoms, ebb 1 knots, lead shell.\nCast 360 off Partridge Bank:
+        4.1 fathoms, ebb 2 knots, lead gravel.\nCast 361 off Partridge Bank: 6.0 fathoms,
+        ebb 0 knots, lead tallow.\nCast 362 off Partridge Bank: 5.9 fathoms, ebb 1
+        knots, lead sand.\nCast 363 off Partridge Bank: 5.8 fathoms, ebb 2 knots,
+        lead shell.\nCast 364 off Partridge Bank: 5.7 fathoms, ebb 0 knots, lead gravel.\nCast
+        365 off Partridge Bank: 5.6 fathoms, ebb 1 knots, lead tallow.\nCast 366 off
+        Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast 367 off Partridge
+        Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 368 off Partridge Bank:
+        5.3 fathoms, ebb 1 knots, lead gravel.\nCast 369 off Partridge Bank: 5.2 fathoms,
+        ebb 2 knots, lead tallow.\nCast 370 off Partridge Bank: 5.1 fathoms, ebb 0
+        knots, lead sand.\nCast 371 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 372 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        373 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 374 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 375 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 376 off Partridge Bank:
+        4.5 fathoms, ebb 0 knots, lead gravel.\nCast 377 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 378 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 379 off Partridge Bank: 4.2 fathoms, ebb 0 knots,
+        lead shell.\nCast 380 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        381 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 382 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 383 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 384 off Partridge Bank:
+        5.7 fathoms, ebb 2 knots, lead gravel.\nCast 385 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 386 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 387 off Partridge Bank: 5.4 fathoms, ebb 2 knots,
+        lead shell.\nCast 388 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        389 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 390 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 391 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 392 off Partridge Bank:
+        4.9 fathoms, ebb 1 knots, lead gravel.\nCast 393 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 394 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 395 off Partridge Bank: 4.6 fathoms, ebb 1 knots,
+        lead shell.\nCast 396 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        397 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 398 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 399 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 400 off Partridge Bank:
+        4.1 fathoms, ebb 0 knots, lead gravel.\nCast 401 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 402 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 403 off Partridge Bank: 5.8 fathoms, ebb 0 knots,
+        lead shell.\nCast 404 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        405 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 406 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 407 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 408 off Partridge Bank:
+        5.3 fathoms, ebb 2 knots, lead gravel.\nCast 409 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 410 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 411 off Partridge Bank: 5.0 fathoms, ebb 2 knots,
+        lead shell.\nCast 412 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        413 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 414 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 415 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 416 off Partridge Bank:
+        4.5 fathoms, ebb 1 knots, lead gravel.\nCast 417 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 418 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 419 off Partridge Bank: 4.2 fathoms, ebb 1 knots,
+        lead shell.\nCast 420 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        421 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 422 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 423 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 424 off Partridge Bank:
+        5.7 fathoms, ebb 0 knots, lead gravel.\nCast 425 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 426 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 427 off Partridge Bank: 5.4 fathoms, ebb 0 knots,
+        lead shell.\nCast 428 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        429 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 430 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 431 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 432 off Partridge Bank:
+        4.9 fathoms, ebb 2 knots, lead gravel.\nCast 433 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 434 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 435 off Partridge Bank: 4.6 fathoms, ebb 2 knots,
+        lead shell.\nCast 436 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        437 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 438 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 439 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 440 off Partridge Bank:
+        4.1 fathoms, ebb 1 knots, lead gravel.\nCast 441 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 442 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 443 off Partridge Bank: 5.8 fathoms, ebb 1 knots,
+        lead shell.\nCast 444 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        445 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 446 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 447 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 448 off Partridge Bank:
+        5.3 fathoms, ebb 0 knots, lead gravel.\nCast 449 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 450 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 451 off Partridge Bank: 5.0 fathoms, ebb 0 knots,
+        lead shell.\nCast 452 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        453 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 454 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 455 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 456 off Partridge Bank:
+        4.5 fathoms, ebb 2 knots, lead gravel.\nCast 457 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 458 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 459 off Partridge Bank: 4.2 fathoms, ebb 2 knots,
+        lead shell.\nCast 460 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel.\nCast
+        461 off Partridge Bank: 6.0 fathoms, ebb 1 knots, lead tallow.\nCast 462 off
+        Partridge Bank: 5.9 fathoms, ebb 2 knots, lead sand.\nCast 463 off Partridge
+        Bank: 5.8 fathoms, ebb 0 knots, lead shell.\nCast 464 off Partridge Bank:
+        5.7 fathoms, ebb 1 knots, lead gravel.\nCast 465 off Partridge Bank: 5.6 fathoms,
+        ebb 2 knots, lead tallow.\nCast 466 off Partridge Bank: 5.5 fathoms, ebb 0
+        knots, lead sand.\nCast 467 off Partridge Bank: 5.4 fathoms, ebb 1 knots,
+        lead shell.\nCast 468 off Partridge Bank: 5.3 fathoms, ebb 2 knots, lead gravel.\nCast
+        469 off Partridge Bank: 5.2 fathoms, ebb 0 knots, lead tallow.\nCast 470 off
+        Partridge Bank: 5.1 fathoms, ebb 1 knots, lead sand.\nCast 471 off Partridge
+        Bank: 5.0 fathoms, ebb 2 knots, lead shell.\nCast 472 off Partridge Bank:
+        4.9 fathoms, ebb 0 knots, lead gravel.\nCast 473 off Partridge Bank: 4.8 fathoms,
+        ebb 1 knots, lead tallow.\nCast 474 off Partridge Bank: 4.7 fathoms, ebb 2
+        knots, lead sand.\nCast 475 off Partridge Bank: 4.6 fathoms, ebb 0 knots,
+        lead shell.\nCast 476 off Partridge Bank: 4.5 fathoms, ebb 1 knots, lead gravel.\nCast
+        477 off Partridge Bank: 4.4 fathoms, ebb 2 knots, lead tallow.\nCast 478 off
+        Partridge Bank: 4.3 fathoms, ebb 0 knots, lead sand.\nCast 479 off Partridge
+        Bank: 4.2 fathoms, ebb 1 knots, lead shell.\nCast 480 off Partridge Bank:
+        4.1 fathoms, ebb 2 knots, lead gravel.\nCast 481 off Partridge Bank: 6.0 fathoms,
+        ebb 0 knots, lead tallow.\nCast 482 off Partridge Bank: 5.9 fathoms, ebb 1
+        knots, lead sand.\nCast 483 off Partridge Bank: 5.8 fathoms, ebb 2 knots,
+        lead shell.\nCast 484 off Partridge Bank: 5.7 fathoms, ebb 0 knots, lead gravel.\nCast
+        485 off Partridge Bank: 5.6 fathoms, ebb 1 knots, lead tallow.\nCast 486 off
+        Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast 487 off Partridge
+        Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 488 off Partridge Bank:
+        5.3 fathoms, ebb 1 knots, lead gravel.\nCast 489 off Partridge Bank: 5.2 fathoms,
+        ebb 2 knots, lead tallow.\nCast 490 off Partridge Bank: 5.1 fathoms, ebb 0
+        knots, lead sand.\nCast 491 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 492 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        493 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 494 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 495 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 496 off Partridge Bank:
+        4.5 fathoms, ebb 0 knots, lead gravel.\nCast 497 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 498 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 499 off Partridge Bank: 4.2 fathoms, ebb 0 knots,
+        lead shell.\nCast 500 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        501 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 502 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 503 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 504 off Partridge Bank:
+        5.7 fathoms, ebb 2 knots, lead gravel.\nCast 505 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 506 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 507 off Partridge Bank: 5.4 fathoms, ebb 2 knots,
+        lead shell.\nCast 508 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        509 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 510 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 511 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 512 off Partridge Bank:
+        4.9 fathoms, ebb 1 knots, lead gravel.\nCast 513 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 514 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 515 off Partridge Bank: 4.6 fathoms, ebb 1 knots,
+        lead shell.\nCast 516 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        517 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 518 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 519 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 520 off Partridge Bank:
+        4.1 fathoms, ebb 0 knots, lead gravel.\nCast 521 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 522 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 523 off Partridge Bank: 5.8 fathoms, ebb 0 knots,
+        lead shell.\nCast 524 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        525 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 526 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 527 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 528 off Partridge Bank:
+        5.3 fathoms, ebb 2 knots, lead gravel.\nCast 529 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 530 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 531 off Partridge Bank: 5.0 fathoms, ebb 2 knots,
+        lead shell.\nCast 532 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        533 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 534 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 535 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 536 off Partridge Bank:
+        4.5 fathoms, ebb 1 knots, lead gravel.\nCast 537 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 538 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 539 off Partridge Bank: 4.2 fathoms, ebb 1 knots,
+        lead shell.\nCast 540 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        541 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 542 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 543 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 544 off Partridge Bank:
+        5.7 fathoms, ebb 0 knots, lead gravel.\nCast 545 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 546 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 547 off Partridge Bank: 5.4 fathoms, ebb 0 knots,
+        lead shell.\nCast 548 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        549 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 550 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 551 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 552 off Partridge Bank:
+        4.9 fathoms, ebb 2 knots, lead gravel.\nCast 553 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 554 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 555 off Partridge Bank: 4.6 fathoms, ebb 2 knots,
+        lead shell.\nCast 556 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        557 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 558 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 559 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 560 off Partridge Bank:
+        4.1 fathoms, ebb 1 knots, lead gravel.\nCast 561 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 562 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 563 off Partridge Bank: 5.8 fathoms, ebb 1 knots,
+        lead shell.\nCast 564 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        565 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 566 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 567 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 568 off Partridge Bank:
+        5.3 fathoms, ebb 0 knots, lead gravel.\nCast 569 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 570 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 571 off Partridge Bank: 5.0 fathoms, ebb 0 knots,
+        lead shell.\nCast 572 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        573 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 574 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 575 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 576 off Partridge Bank:
+        4.5 fathoms, ebb 2 knots, lead gravel.\nCast 577 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 578 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 579 off Partridge Bank: 4.2 fathoms, ebb 2 knots,
+        lead shell.\nCast 580 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel.\nCast
+        581 off Partridge Bank: 6.0 fathoms, ebb 1 knots, lead tallow.\nCast 582 off
+        Partridge Bank: 5.9 fathoms, ebb 2 knots, lead sand.\nCast 583 off Partridge
+        Bank: 5.8 fathoms, ebb 0 knots, lead shell.\nCast 584 off Partridge Bank:
+        5.7 fathoms, ebb 1 knots, lead gravel.\nCast 585 off Partridge Bank: 5.6 fathoms,
+        ebb 2 knots, lead tallow.\nCast 586 off Partridge Bank: 5.5 fathoms, ebb 0
+        knots, lead sand.\nCast 587 off Partridge Bank: 5.4 fathoms, ebb 1 knots,
+        lead shell.\nCast 588 off Partridge Bank: 5.3 fathoms, ebb 2 knots, lead gravel.\nCast
+        589 off Partridge Bank: 5.2 fathoms, ebb 0 knots, lead tallow.\nCast 590 off
+        Partridge Bank: 5.1 fathoms, ebb 1 knots, lead sand.\nCast 591 off Partridge
+        Bank: 5.0 fathoms, ebb 2 knots, lead shell.\nCast 592 off Partridge Bank:
+        4.9 fathoms, ebb 0 knots, lead gravel.\nCast 593 off Partridge Bank: 4.8 fathoms,
+        ebb 1 knots, lead tallow.\nCast 594 off Partridge Bank: 4.7 fathoms, ebb 2
+        knots, lead sand.\nCast 595 off Partridge Bank: 4.6 fathoms, ebb 0 knots,
+        lead shell.\nCast 596 off Partridge Bank: 4.5 fathoms, ebb 1 knots, lead gravel.\nCast
+        597 off Partridge Bank: 4.4 fathoms, ebb 2 knots, lead tallow.\nCast 598 off
+        Partridge Bank: 4.3 fathoms, ebb 0 knots, lead sand.\nCast 599 off Partridge
+        Bank: 4.2 fathoms, ebb 1 knots, lead shell.\nCast 600 off Partridge Bank:
+        4.1 fathoms, ebb 2 knots, lead gravel.\nCast 601 off Partridge Bank: 6.0 fathoms,
+        ebb 0 knots, lead tallow.\nCast 602 off Partridge Bank: 5.9 fathoms, ebb 1
+        knots, lead sand.\nCast 603 off Partridge Bank: 5.8 fathoms, ebb 2 knots,
+        lead shell.\nCast 604 off Partridge Bank: 5.7 fathoms, ebb 0 knots, lead gravel.\nCast
+        605 off Partridge Bank: 5.6 fathoms, ebb 1 knots, lead tallow.\nCast 606 off
+        Partridge Bank: 5.5 fathoms, ebb 2 knots, lead sand.\nCast 607 off Partridge
+        Bank: 5.4 fathoms, ebb 0 knots, lead shell.\nCast 608 off Partridge Bank:
+        5.3 fathoms, ebb 1 knots, lead gravel.\nCast 609 off Partridge Bank: 5.2 fathoms,
+        ebb 2 knots, lead tallow.\nCast 610 off Partridge Bank: 5.1 fathoms, ebb 0
+        knots, lead sand.\nCast 611 off Partridge Bank: 5.0 fathoms, ebb 1 knots,
+        lead shell.\nCast 612 off Partridge Bank: 4.9 fathoms, ebb 2 knots, lead gravel.\nCast
+        613 off Partridge Bank: 4.8 fathoms, ebb 0 knots, lead tallow.\nCast 614 off
+        Partridge Bank: 4.7 fathoms, ebb 1 knots, lead sand.\nCast 615 off Partridge
+        Bank: 4.6 fathoms, ebb 2 knots, lead shell.\nCast 616 off Partridge Bank:
+        4.5 fathoms, ebb 0 knots, lead gravel.\nCast 617 off Partridge Bank: 4.4 fathoms,
+        ebb 1 knots, lead tallow.\nCast 618 off Partridge Bank: 4.3 fathoms, ebb 2
+        knots, lead sand.\nCast 619 off Partridge Bank: 4.2 fathoms, ebb 0 knots,
+        lead shell.\nCast 620 off Partridge Bank: 4.1 fathoms, ebb 1 knots, lead gravel.\nCast
+        621 off Partridge Bank: 6.0 fathoms, ebb 2 knots, lead tallow.\nCast 622 off
+        Partridge Bank: 5.9 fathoms, ebb 0 knots, lead sand.\nCast 623 off Partridge
+        Bank: 5.8 fathoms, ebb 1 knots, lead shell.\nCast 624 off Partridge Bank:
+        5.7 fathoms, ebb 2 knots, lead gravel.\nCast 625 off Partridge Bank: 5.6 fathoms,
+        ebb 0 knots, lead tallow.\nCast 626 off Partridge Bank: 5.5 fathoms, ebb 1
+        knots, lead sand.\nCast 627 off Partridge Bank: 5.4 fathoms, ebb 2 knots,
+        lead shell.\nCast 628 off Partridge Bank: 5.3 fathoms, ebb 0 knots, lead gravel.\nCast
+        629 off Partridge Bank: 5.2 fathoms, ebb 1 knots, lead tallow.\nCast 630 off
+        Partridge Bank: 5.1 fathoms, ebb 2 knots, lead sand.\nCast 631 off Partridge
+        Bank: 5.0 fathoms, ebb 0 knots, lead shell.\nCast 632 off Partridge Bank:
+        4.9 fathoms, ebb 1 knots, lead gravel.\nCast 633 off Partridge Bank: 4.8 fathoms,
+        ebb 2 knots, lead tallow.\nCast 634 off Partridge Bank: 4.7 fathoms, ebb 0
+        knots, lead sand.\nCast 635 off Partridge Bank: 4.6 fathoms, ebb 1 knots,
+        lead shell.\nCast 636 off Partridge Bank: 4.5 fathoms, ebb 2 knots, lead gravel.\nCast
+        637 off Partridge Bank: 4.4 fathoms, ebb 0 knots, lead tallow.\nCast 638 off
+        Partridge Bank: 4.3 fathoms, ebb 1 knots, lead sand.\nCast 639 off Partridge
+        Bank: 4.2 fathoms, ebb 2 knots, lead shell.\nCast 640 off Partridge Bank:
+        4.1 fathoms, ebb 0 knots, lead gravel.\nCast 641 off Partridge Bank: 6.0 fathoms,
+        ebb 1 knots, lead tallow.\nCast 642 off Partridge Bank: 5.9 fathoms, ebb 2
+        knots, lead sand.\nCast 643 off Partridge Bank: 5.8 fathoms, ebb 0 knots,
+        lead shell.\nCast 644 off Partridge Bank: 5.7 fathoms, ebb 1 knots, lead gravel.\nCast
+        645 off Partridge Bank: 5.6 fathoms, ebb 2 knots, lead tallow.\nCast 646 off
+        Partridge Bank: 5.5 fathoms, ebb 0 knots, lead sand.\nCast 647 off Partridge
+        Bank: 5.4 fathoms, ebb 1 knots, lead shell.\nCast 648 off Partridge Bank:
+        5.3 fathoms, ebb 2 knots, lead gravel.\nCast 649 off Partridge Bank: 5.2 fathoms,
+        ebb 0 knots, lead tallow.\nCast 650 off Partridge Bank: 5.1 fathoms, ebb 1
+        knots, lead sand.\nCast 651 off Partridge Bank: 5.0 fathoms, ebb 2 knots,
+        lead shell.\nCast 652 off Partridge Bank: 4.9 fathoms, ebb 0 knots, lead gravel.\nCast
+        653 off Partridge Bank: 4.8 fathoms, ebb 1 knots, lead tallow.\nCast 654 off
+        Partridge Bank: 4.7 fathoms, ebb 2 knots, lead sand.\nCast 655 off Partridge
+        Bank: 4.6 fathoms, ebb 0 knots, lead shell.\nCast 656 off Partridge Bank:
+        4.5 fathoms, ebb 1 knots, lead gravel.\nCast 657 off Partridge Bank: 4.4 fathoms,
+        ebb 2 knots, lead tallow.\nCast 658 off Partridge Bank: 4.3 fathoms, ebb 0
+        knots, lead sand.\nCast 659 off Partridge Bank: 4.2 fathoms, ebb 1 knots,
+        lead shell.\nCast 660 off Partridge Bank: 4.1 fathoms, ebb 2 knots, lead gravel.\nCast
+        661 off Partridge Bank: 6.0 fathoms, ebb 0 knots, lead tallow.\nCast 662 off
+        Partridge Bank: 5.9 fathoms, ebb 1 knots, lead sand.\nCast 663 off Partridge
+        Bank: 5.8 fathoms, ebb 2 knots, lead shell.\nCast 664 off Partridge Bank:
+        5.7 fathoms, ebb 0 knots, lead gravel.\nCast 665 off Partridge Bank: 5.6 fathoms,
+        ebb 1 knots, lead tallow.\nCast 666 off Partridge Bank: 5.5 fathoms, ebb 2
+        knots, lead sand.\nCast 667 off Partridge Bank: 5.4 fathoms, ebb 0 knots,
+        lead shell.\nCast 668 off Partridge Bank: 5.3 fathoms, ebb 1 knots, lead gravel.\nCast
+        669 off Partridge Bank: 5.2 fathoms, ebb 2 knots, lead tallow.\nCast 670 off
+        Partridge Bank: 5.1 fathoms, ebb 0 knots, lead sand.\nCast 671 off Partridge
+        Bank: 5.0 fathoms, ebb 1 knots, lead shell.\nCast 672 off Partridge Bank:
+        4.9 fathoms, ebb 2 knots, lead gravel.\nCast 673 off Partridge Bank: 4.8 fathoms,
+        ebb 0 knots, lead tallow.\nCast 674 off Partridge Bank: 4.7 fathoms, ebb 1
+        knots, lead sand.\nCast 675 off Partridge Bank: 4.6 fathoms, ebb 2 knots,
+        lead shell.\nCast 676 off Partridge Bank: 4.5 fathoms, ebb 0 knots, lead gravel.\nCast
+        677 off Partridge Bank: 4.4 fathoms, ebb 1 knots, lead tallow.\nCast 678 off
+        Partridge Bank: 4.3 fathoms, ebb 2 knots, lead sand.\nCast 679 off Partridge
+        Bank: 4.2 fathoms, ebb 0 knots, lead shell.\nCast 680 off Partridge Bank:
+        4.1 fathoms, ebb 1 knots, lead gravel.\nCast 681 off Partridge Bank: 6.0 fathoms,
+        ebb 2 knots, lead tallow.\nCast 682 off Partridge Bank: 5.9 fathoms, ebb 0
+        knots, lead sand.\nCast 683 off Partridge Bank: 5.8 fathoms, ebb 1 knots,
+        lead shell.\nCast 684 off Partridge Bank: 5.7 fathoms, ebb 2 knots, lead gravel.\nCast
+        685 off Partridge Bank: 5.6 fathoms, ebb 0 knots, lead tallow.\nCast 686 off
+        Partridge Bank: 5.5 fathoms, ebb 1 knots, lead sand.\nCast 687 off Partridge
+        Bank: 5.4 fathoms, ebb 2 knots, lead shell.\nCast 688 off Partridge Bank:
+        5.3 fathoms, ebb 0 knots, lead gravel.\nCast 689 off Partridge Bank: 5.2 fathoms,
+        ebb 1 knots, lead tallow.\nCast 690 off Partridge Bank: 5.1 fathoms, ebb 2
+        knots, lead sand.\nCast 691 off Partridge Bank: 5.0 fathoms, ebb 0 knots,
+        lead shell.\nCast 692 off Partridge Bank: 4.9 fathoms, ebb 1 knots, lead gravel.\nCast
+        693 off Partridge Bank: 4.8 fathoms, ebb 2 knots, lead tallow.\nCast 694 off
+        Partridge Bank: 4.7 fathoms, ebb 0 knots, lead sand.\nCast 695 off Partridge
+        Bank: 4.6 fathoms, ebb 1 knots, lead shell.\nCast 696 off Partridge Bank:
+        4.5 fathoms, ebb 2 knots, lead gravel.\nCast 697 off Partridge Bank: 4.4 fathoms,
+        ebb 0 knots, lead tallow.\nCast 698 off Partridge Bank: 4.3 fathoms, ebb 1
+        knots, lead sand.\nCast 699 off Partridge Bank: 4.2 fathoms, ebb 2 knots,
+        lead shell.\nCast 700 off Partridge Bank: 4.1 fathoms, ebb 0 knots, lead gravel."}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:35:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '167'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ab1659c959c746-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '14'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '1000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '988231'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 706ms
+      X-Request-Id:
+      - req_1dc76f2e79b64e82b2d3de9b70824703
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid 'input': maximum context length is 8192 tokens.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": null
+          }
+        }
+  recorded_at: Thu, 15 Oct 2026 01:35:28 GMT
+recorded_with: VCR 6.4.0
