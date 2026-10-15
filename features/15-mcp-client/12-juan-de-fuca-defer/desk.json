@@ -1,0 +1,56 @@
+{
+  "name": "juan-de-fuca-chart-desk",
+  "instructions": "Juan de Fuca current, kelp, and correction cards.",
+  "tools": [
+    {
+      "name": "current_gate",
+      "description": "Reads the tidal current gate off Race Rocks in the Strait of Juan de Fuca",
+      "text": "Race Rocks current gate. Ebb 2.8 kn at 14:10. The inbound should wait."
+    },
+    {
+      "name": "kelp_line",
+      "description": "Reads the bull kelp line along the south shore of the Strait of Juan de Fuca",
+      "text": "Bull kelp line sits 200 yd off Cattle Point."
+    },
+    {
+      "name": "chart_correction_184",
+      "description": "Reads chart correction 184 for the Strait of Juan de Fuca",
+      "text": "Correction 184. Shift the 10 fathom curve 40 yd north of Hein Bank."
+    },
+    {
+      "name": "fog_signal_ediz",
+      "description": "Reads the Ediz Hook fog signal card",
+      "text": "Ediz Hook fog signal. Blast 2 seconds, silent 18 seconds."
+    },
+    {
+      "name": "pilot_station_neah",
+      "description": "Reads the Neah Bay pilot station watch",
+      "text": "Neah Bay pilot station. Cutter Makah on station until 18:00."
+    },
+    {
+      "name": "dungeness_spit_range",
+      "description": "Reads the New Dungeness spit range lights",
+      "text": "Dungeness spit range. Front 28 ft, rear 55 ft. Both burning."
+    },
+    {
+      "name": "protection_island_auklet",
+      "description": "Reads the Protection Island auklet watch count",
+      "text": "Protection Island. 1,200 rhinoceros auklets on the water at dusk."
+    },
+    {
+      "name": "smith_island_glass",
+      "description": "Reads the Smith Island barometer",
+      "text": "Smith Island barometer 29.92 inHg."
+    },
+    {
+      "name": "cape_flattery_swell",
+      "description": "Reads the Cape Flattery swell period",
+      "text": "Cape Flattery swell 12 seconds, 8 ft."
+    },
+    {
+      "name": "heins_bank_sounding",
+      "description": "Reads the last sounding on Hein Bank",
+      "text": "Hein Bank least depth 14 ft at 48 21.2 N."
+    }
+  ]
+}

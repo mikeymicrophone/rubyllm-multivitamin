@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 182 |
+| Bottled | 195 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,9 +29,11 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 182 of 429 are
-bottled. Features 1–13 and Agents (feature 14) are full. Features 15–33
-have stub READMEs; a parallel change is filling MCP client. Tools, the Point Wilson spoken handover, the
+The catalog is 33 features, 13 scenarios each, 429 slots. 195 of 429 are
+bottled. Features 1–14 and MCP client (feature 15) are full. Features 16–33
+have stub READMEs. MCP client chats were recorded on OpenAI `gpt-4.1-mini`,
+except Juan de Fuca deferred tool search which used `gpt-5.4-mini`. Tools,
+the Point Wilson spoken handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -194,7 +196,7 @@ hold the cassette player and the model slugs, not the story.
 12. [Tokens and cost](features/12-tokens-and-cost/) — 13 of 13 bottled
 13. [Error handling](features/13-error-handling/) — 13 of 13 bottled
 14. [Agents](features/14-agents/) — 13 of 13 bottled
-15. [MCP client](features/15-mcp-client/) — 0 of 13 bottled
+15. [MCP client](features/15-mcp-client/) — 13 of 13 bottled
 16. [Audio transcription](features/16-audio-transcription/) — 0 of 13 bottled
 17. [Text to speech](features/17-text-to-speech/) — 0 of 13 bottled
 18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 0 of 13 bottled

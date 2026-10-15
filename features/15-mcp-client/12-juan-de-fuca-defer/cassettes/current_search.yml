@@ -1,0 +1,633 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5.4-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 in the Strait of Juan de Fuca.\nChart: https://charts.noaa.gov/RNCs/18465\nWhat
+        is the ebb at the Race Rocks current gate, and should the inbound wait?"}],"instructions":"You
+        are the chart clerk for the Strait of Juan de Fuca.\nSearch the deferred tools
+        for the Race Rocks current gate.\nCall that tool once.\nAnswer in one sentence
+        with the 2.8 kn figure.\nName Race Rocks.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"current_gate","description":"Reads
+        the tidal current gate off Race Rocks in the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"kelp_line","description":"Reads
+        the bull kelp line along the south shore of the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"chart_correction_184","description":"Reads
+        chart correction 184 for the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"fog_signal_ediz","description":"Reads
+        the Ediz Hook fog signal card","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"pilot_station_neah","description":"Reads
+        the Neah Bay pilot station watch","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"dungeness_spit_range","description":"Reads
+        the New Dungeness spit range lights","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"protection_island_auklet","description":"Reads
+        the Protection Island auklet watch count","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"smith_island_glass","description":"Reads
+        the Smith Island barometer","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"cape_flattery_swell","description":"Reads
+        the Cape Flattery swell period","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"heins_bank_sounding","description":"Reads
+        the last sounding on Hein Bank","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"tool_search"}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:51:50 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d3819ab1b5c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '920'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '2000000'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 0s
+      X-Request-Id:
+      - req_b63e278e88d74c43961b69999fe9cdda
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a2194665156d721016ad0be55dd4087d2861d765b04bc7b15",
+          "object": "response",
+          "created_at": 1792065109,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065110,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the chart clerk for the Strait of Juan de Fuca.\nSearch the deferred tools for the Race Rocks current gate.\nCall that tool once.\nAnswer in one sentence with the 2.8 kn figure.\nName Race Rocks.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5.4-mini-2026-03-17",
+          "moderation": null,
+          "output": [
+            {
+              "id": "tsc_0a2194665156d721016ad0be56482c87d28db7208c73525274",
+              "type": "tool_search_call",
+              "status": "completed",
+              "arguments": {
+                "paths": [
+                  "current_gate"
+                ]
+              },
+              "call_id": null,
+              "execution": "server"
+            },
+            {
+              "id": "tso_0a2194665156d721016ad0be56724c87d29e8b324672eb4d4e",
+              "type": "tool_search_output",
+              "status": "completed",
+              "call_id": null,
+              "execution": "server",
+              "tools": [
+                {
+                  "type": "function",
+                  "defer_loading": true,
+                  "description": "Reads the tidal current gate off Race Rocks in the Strait of Juan de Fuca",
+                  "name": "current_gate",
+                  "output_schema": null,
+                  "parameters": {
+                    "type": "object"
+                  },
+                  "strict": false
+                }
+              ]
+            },
+            {
+              "id": "fc_0a2194665156d721016ad0be56919c87d2a110c9d716cee304",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_cEFWxW5RBdolLpfzio0LVHbk",
+              "name": "current_gate",
+              "namespace": "current_gate"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "24h",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "none",
+            "mode": "standard",
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the tidal current gate off Race Rocks in the Strait of Juan de Fuca",
+              "name": "current_gate",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the bull kelp line along the south shore of the Strait of Juan de Fuca",
+              "name": "kelp_line",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads chart correction 184 for the Strait of Juan de Fuca",
+              "name": "chart_correction_184",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Ediz Hook fog signal card",
+              "name": "fog_signal_ediz",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Neah Bay pilot station watch",
+              "name": "pilot_station_neah",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the New Dungeness spit range lights",
+              "name": "dungeness_spit_range",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Protection Island auklet watch count",
+              "name": "protection_island_auklet",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Smith Island barometer",
+              "name": "smith_island_glass",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Cape Flattery swell period",
+              "name": "cape_flattery_swell",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the last sounding on Hein Bank",
+              "name": "heins_bank_sounding",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "tool_search",
+              "description": null,
+              "parameters": null
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 0.98,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 958,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 34,
+            "output_tokens_details": {
+              "reasoning_tokens": 20
+            },
+            "total_tokens": 992
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:51:50 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5.4-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 in the Strait of Juan de Fuca.\nChart: https://charts.noaa.gov/RNCs/18465\nWhat
+        is the ebb at the Race Rocks current gate, and should the inbound wait?"},{"id":"tsc_0a2194665156d721016ad0be56482c87d28db7208c73525274","type":"tool_search_call","status":"completed","arguments":{"paths":["current_gate"]},"call_id":null,"execution":"server"},{"id":"tso_0a2194665156d721016ad0be56724c87d29e8b324672eb4d4e","type":"tool_search_output","status":"completed","call_id":null,"execution":"server","tools":[{"type":"function","defer_loading":true,"description":"Reads
+        the tidal current gate off Race Rocks in the Strait of Juan de Fuca","name":"current_gate","output_schema":null,"parameters":{"type":"object"},"strict":false}]},{"id":"fc_0a2194665156d721016ad0be56919c87d2a110c9d716cee304","type":"function_call","status":"completed","arguments":"{}","call_id":"call_cEFWxW5RBdolLpfzio0LVHbk","name":"current_gate","namespace":"current_gate"},{"type":"function_call_output","call_id":"call_cEFWxW5RBdolLpfzio0LVHbk","output":"Race
+        Rocks current gate. Ebb 2.8 kn at 14:10. The inbound should wait."}],"instructions":"You
+        are the chart clerk for the Strait of Juan de Fuca.\nSearch the deferred tools
+        for the Race Rocks current gate.\nCall that tool once.\nAnswer in one sentence
+        with the 2.8 kn figure.\nName Race Rocks.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"current_gate","description":"Reads
+        the tidal current gate off Race Rocks in the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"kelp_line","description":"Reads
+        the bull kelp line along the south shore of the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"chart_correction_184","description":"Reads
+        chart correction 184 for the Strait of Juan de Fuca","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"fog_signal_ediz","description":"Reads
+        the Ediz Hook fog signal card","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"pilot_station_neah","description":"Reads
+        the Neah Bay pilot station watch","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"dungeness_spit_range","description":"Reads
+        the New Dungeness spit range lights","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"protection_island_auklet","description":"Reads
+        the Protection Island auklet watch count","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"smith_island_glass","description":"Reads
+        the Smith Island barometer","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"cape_flattery_swell","description":"Reads
+        the Cape Flattery swell period","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"function","name":"heins_bank_sounding","description":"Reads
+        the last sounding on Hein Bank","parameters":{"type":"object"},"strict":false,"defer_loading":true},{"type":"tool_search"}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:51:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d3ebf778080-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '656'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '2000000'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 0s
+      X-Request-Id:
+      - req_645064b871054d2a9c7e416a6ff593a2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a2194665156d721016ad0be56ee7487d29b9d1b7d6e01086c",
+          "object": "response",
+          "created_at": 1792065110,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065111,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the chart clerk for the Strait of Juan de Fuca.\nSearch the deferred tools for the Race Rocks current gate.\nCall that tool once.\nAnswer in one sentence with the 2.8 kn figure.\nName Race Rocks.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5.4-mini-2026-03-17",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a2194665156d721016ad0be57566087d2a1035147130a216c",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Race Rocks ebb is 2.8 kn at 14:10, and the inbound should wait."
+                }
+              ],
+              "phase": "final_answer",
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "24h",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "none",
+            "mode": "standard",
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the bull kelp line along the south shore of the Strait of Juan de Fuca",
+              "name": "kelp_line",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads chart correction 184 for the Strait of Juan de Fuca",
+              "name": "chart_correction_184",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Ediz Hook fog signal card",
+              "name": "fog_signal_ediz",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Neah Bay pilot station watch",
+              "name": "pilot_station_neah",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the New Dungeness spit range lights",
+              "name": "dungeness_spit_range",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Protection Island auklet watch count",
+              "name": "protection_island_auklet",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Smith Island barometer",
+              "name": "smith_island_glass",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the Cape Flattery swell period",
+              "name": "cape_flattery_swell",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "defer_loading": true,
+              "description": "Reads the last sounding on Hein Bank",
+              "name": "heins_bank_sounding",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "tool_search",
+              "description": null,
+              "parameters": null
+            },
+            {
+              "type": "namespace",
+              "description": "Reads the tidal current gate off Race Rocks in the Strait of Juan de Fuca",
+              "name": "current_gate",
+              "tools": [
+                {
+                  "type": "function",
+                  "description": "Reads the tidal current gate off Race Rocks in the Strait of Juan de Fuca",
+                  "name": "current_gate",
+                  "output_schema": null,
+                  "parameters": {
+                    "type": "object"
+                  },
+                  "strict": false
+                }
+              ]
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 0.98,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1007,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 25,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1032
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:51:51 GMT
+recorded_with: VCR 6.4.0

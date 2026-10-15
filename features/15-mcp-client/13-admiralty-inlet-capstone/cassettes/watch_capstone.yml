@@ -1,0 +1,785 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhen
+        does the foghorn tender Alden clear the kelp ledge?"}],"instructions":"You
+        are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board
+        for the first question.\nCall admiralty_posted_horn_card for the second.\nEach
+        answer is one sentence that includes the figure the desk returned.\nName Alden.
+        The attached latch card is the lens cabinet.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"admiralty_posted_tide_board","description":"Reads
+        the Point Wilson tide board, including when Alden clears the kelp ledge","parameters":{"type":"object"},"strict":false},{"type":"function","name":"admiralty_posted_horn_card","description":"Reads
+        whether the Admiralty Inlet horn is running and the blast length","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:51:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d6e8fbf2425-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '617'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999158'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_2f1b1097c7b4402e9ab17300ce303815
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_008ff83de9e3d100016ad0be5e959887d295020bd27aa0e70b",
+          "object": "response",
+          "created_at": 1792065118,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065119,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board for the first question.\nCall admiralty_posted_horn_card for the second.\nEach answer is one sentence that includes the figure the desk returned.\nName Alden. The attached latch card is the lens cabinet.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_008ff83de9e3d100016ad0be5f12c887d2b70328c94eb1fd4d",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_9FArgwe0Xr7ZayyhdzfHwOZB",
+              "name": "admiralty_posted_tide_board"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Point Wilson tide board, including when Alden clears the kelp ledge",
+              "name": "admiralty_posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Admiralty Inlet horn is running and the blast length",
+              "name": "admiralty_posted_horn_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 202,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 17,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 219
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:51:59 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhen
+        does the foghorn tender Alden clear the kelp ledge?"},{"type":"function_call","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","name":"admiralty_posted_tide_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","output":"Point
+        Wilson tide board. Low water 07:05, 1.1 ft. Alden clears the kelp ledge at
+        10:12."}],"instructions":"You are the watch clerk at Point Wilson on Admiralty
+        Inlet.\nCall admiralty_posted_tide_board for the first question.\nCall admiralty_posted_horn_card
+        for the second.\nEach answer is one sentence that includes the figure the
+        desk returned.\nName Alden. The attached latch card is the lens cabinet.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"admiralty_posted_tide_board","description":"Reads
+        the Point Wilson tide board, including when Alden clears the kelp ledge","parameters":{"type":"object"},"strict":false},{"type":"function","name":"admiralty_posted_horn_card","description":"Reads
+        whether the Admiralty Inlet horn is running and the blast length","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:52:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d734f376b8a-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '758'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998663'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 40ms
+      X-Request-Id:
+      - req_5025fb07fb1647e7ac6e3630ba2448e0
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_05fc2c2e10613034016ad0be5f593887d2bfa85c68be72dce5",
+          "object": "response",
+          "created_at": 1792065119,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065120,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board for the first question.\nCall admiralty_posted_horn_card for the second.\nEach answer is one sentence that includes the figure the desk returned.\nName Alden. The attached latch card is the lens cabinet.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_05fc2c2e10613034016ad0be5fcddc87d28b3a297b9d390135",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "On Wednesday 14 October 2026, during the morning watch at Point Wilson, the foghorn tender Alden clears the kelp ledge at 10:12."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Point Wilson tide board, including when Alden clears the kelp ledge",
+              "name": "admiralty_posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Admiralty Inlet horn is running and the blast length",
+              "name": "admiralty_posted_horn_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 262,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 37,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 299
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:52:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhen
+        does the foghorn tender Alden clear the kelp ledge?"},{"type":"function_call","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","name":"admiralty_posted_tide_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","output":"Point
+        Wilson tide board. Low water 07:05, 1.1 ft. Alden clears the kelp ledge at
+        10:12."},{"role":"assistant","content":[{"type":"output_text","text":"On Wednesday
+        14 October 2026, during the morning watch at Point Wilson, the foghorn tender
+        Alden clears the kelp ledge at 10:12."}]},{"role":"user","content":[{"type":"input_text","text":"The
+        relief asks whether the horn is running, and what the blast is. The latch
+        card is attached."},{"type":"input_text","text":"<file name=''lens-latch.md''
+        mime_type=''text/markdown''>Point Wilson lens cabinet latch: shut. Lamp burning.
+        Do not open it on this watch.\n</file>"}]}],"instructions":"You are the watch
+        clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board
+        for the first question.\nCall admiralty_posted_horn_card for the second.\nEach
+        answer is one sentence that includes the figure the desk returned.\nName Alden.
+        The attached latch card is the lens cabinet.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"admiralty_posted_tide_board","description":"Reads
+        the Point Wilson tide board, including when Alden clears the kelp ledge","parameters":{"type":"object"},"strict":false},{"type":"function","name":"admiralty_posted_horn_card","description":"Reads
+        whether the Admiralty Inlet horn is running and the blast length","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:52:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d78cd9681e1-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '619'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999384'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - req_bd8139221fae41d3838a41e76eb7f429
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_072d96f8446bcbee016ad0be60436887d2a8b3679244f10344",
+          "object": "response",
+          "created_at": 1792065120,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065120,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board for the first question.\nCall admiralty_posted_horn_card for the second.\nEach answer is one sentence that includes the figure the desk returned.\nName Alden. The attached latch card is the lens cabinet.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_072d96f8446bcbee016ad0be60bee887d295bbbebb1678a8b3",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_VWrdojZeHOpAtVgJYCdje8NW",
+              "name": "admiralty_posted_horn_card"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Point Wilson tide board, including when Alden clears the kelp ledge",
+              "name": "admiralty_posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Admiralty Inlet horn is running and the blast length",
+              "name": "admiralty_posted_horn_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 363,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 17,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 380
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:52:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhen
+        does the foghorn tender Alden clear the kelp ledge?"},{"type":"function_call","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","name":"admiralty_posted_tide_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_9FArgwe0Xr7ZayyhdzfHwOZB","output":"Point
+        Wilson tide board. Low water 07:05, 1.1 ft. Alden clears the kelp ledge at
+        10:12."},{"role":"assistant","content":[{"type":"output_text","text":"On Wednesday
+        14 October 2026, during the morning watch at Point Wilson, the foghorn tender
+        Alden clears the kelp ledge at 10:12."}]},{"role":"user","content":[{"type":"input_text","text":"The
+        relief asks whether the horn is running, and what the blast is. The latch
+        card is attached."},{"type":"input_text","text":"<file name=''lens-latch.md''
+        mime_type=''text/markdown''>Point Wilson lens cabinet latch: shut. Lamp burning.
+        Do not open it on this watch.\n</file>"}]},{"type":"function_call","call_id":"call_VWrdojZeHOpAtVgJYCdje8NW","name":"admiralty_posted_horn_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_VWrdojZeHOpAtVgJYCdje8NW","output":"Admiralty
+        Inlet horn is running. Blast 3 seconds, silent 27 seconds."}],"instructions":"You
+        are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board
+        for the first question.\nCall admiralty_posted_horn_card for the second.\nEach
+        answer is one sentence that includes the figure the desk returned.\nName Alden.
+        The attached latch card is the lens cabinet.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"admiralty_posted_tide_board","description":"Reads
+        the Point Wilson tide board, including when Alden clears the kelp ledge","parameters":{"type":"object"},"strict":false},{"type":"function","name":"admiralty_posted_horn_card","description":"Reads
+        whether the Admiralty Inlet horn is running and the blast length","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:52:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d7dbd63c940-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '753'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998741'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 37ms
+      X-Request-Id:
+      - req_b7c09272ca1c434baca79f8be2215a9e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0f9a20ba16baeb03016ad0be60fb8487d29c65114b25b948a5",
+          "object": "response",
+          "created_at": 1792065121,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065121,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Point Wilson on Admiralty Inlet.\nCall admiralty_posted_tide_board for the first question.\nCall admiralty_posted_horn_card for the second.\nEach answer is one sentence that includes the figure the desk returned.\nName Alden. The attached latch card is the lens cabinet.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0f9a20ba16baeb03016ad0be61525487d28f1ade713355cf00",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The Admiralty Inlet horn is running with a blast length of 3 seconds followed by 27 seconds of silence. The lens cabinet latch is shut and the lamp is burning, so do not open it on this watch."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Point Wilson tide board, including when Alden clears the kelp ledge",
+              "name": "admiralty_posted_tide_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Admiralty Inlet horn is running and the blast length",
+              "name": "admiralty_posted_horn_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 410,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 47,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 457
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:52:01 GMT
+recorded_with: VCR 6.4.0

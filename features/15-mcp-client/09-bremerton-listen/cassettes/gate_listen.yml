@@ -1,0 +1,407 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 at Puget Sound Naval Shipyard.\nYard: https://www.navsea.navy.mil/Home/Shipyards/PSNS-IMF/\nThe
+        tug Skookum is waiting on the sill. What depth is posted?"}],"instructions":"You
+        are the dry dock clerk at Bremerton.\nCall dry_dock_sill once.\nAnswer in
+        one sentence. Include 18.4 ft.\nName the tug Skookum.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"gate_schedule","description":"Reads
+        the Bremerton dry dock gate hours","parameters":{"type":"object"},"strict":false},{"type":"function","name":"post_sill_card","description":"Posts
+        the dry dock sill depth card and announces the new tool","parameters":{"type":"object"},"strict":false},{"type":"function","name":"dry_dock_sill","description":"Reads
+        the Bremerton dry dock sill depth","parameters":{"type":"object"},"strict":false}],"tool_choice":{"type":"function","name":"dry_dock_sill"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:46:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9545ced1d4c1-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '385'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999598'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 12ms
+      X-Request-Id:
+      - req_ba53a6ac4b3a4e49bfbb64831397ba15
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_07340c09602d8590016ad0bd105b7087d299b408cb88c0b122",
+          "object": "response",
+          "created_at": 1792064784,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064784,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dry dock clerk at Bremerton.\nCall dry_dock_sill once.\nAnswer in one sentence. Include 18.4 ft.\nName the tug Skookum.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_07340c09602d8590016ad0bd10a59087d2b427d39df877ca65",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_v8ak671BjR4bjnb2tVY3z2iZ",
+              "name": "dry_dock_sill"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "dry_dock_sill"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Bremerton dry dock gate hours",
+              "name": "gate_schedule",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Posts the dry dock sill depth card and announces the new tool",
+              "name": "post_sill_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the Bremerton dry dock sill depth",
+              "name": "dry_dock_sill",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 185,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 187
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:46:24 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 at Puget Sound Naval Shipyard.\nYard: https://www.navsea.navy.mil/Home/Shipyards/PSNS-IMF/\nThe
+        tug Skookum is waiting on the sill. What depth is posted?"},{"type":"function_call","call_id":"call_v8ak671BjR4bjnb2tVY3z2iZ","name":"dry_dock_sill","arguments":"{}"},{"type":"function_call_output","call_id":"call_v8ak671BjR4bjnb2tVY3z2iZ","output":"Bremerton
+        dry dock sill is 18.4 ft above the blocks."}],"instructions":"You are the
+        dry dock clerk at Bremerton.\nCall dry_dock_sill once.\nAnswer in one sentence.
+        Include 18.4 ft.\nName the tug Skookum.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"gate_schedule","description":"Reads
+        the Bremerton dry dock gate hours","parameters":{"type":"object"},"strict":false},{"type":"function","name":"post_sill_card","description":"Posts
+        the dry dock sill depth card and announces the new tool","parameters":{"type":"object"},"strict":false},{"type":"function","name":"dry_dock_sill","description":"Reads
+        the Bremerton dry dock sill depth","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:46:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9548ff770c59-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '637'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999168'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 24ms
+      X-Request-Id:
+      - req_b7498e33d9f14205b4c322b070718cbd
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0eedd6bee7ba289b016ad0bd10e00c87d286e4c3a7368b7378",
+          "object": "response",
+          "created_at": 1792064784,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064785,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dry dock clerk at Bremerton.\nCall dry_dock_sill once.\nAnswer in one sentence. Include 18.4 ft.\nName the tug Skookum.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0eedd6bee7ba289b016ad0bd113c6c87d2acdbc90a88f9dd2c",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The posted dry dock sill depth at Bremerton is 18.4 ft above the blocks for the tug Skookum."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Bremerton dry dock gate hours",
+              "name": "gate_schedule",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Posts the dry dock sill depth card and announces the new tool",
+              "name": "post_sill_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the Bremerton dry dock sill depth",
+              "name": "dry_dock_sill",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 212,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 27,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 239
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:46:25 GMT
+recorded_with: VCR 6.4.0

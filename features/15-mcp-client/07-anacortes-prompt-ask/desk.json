@@ -1,0 +1,34 @@
+{
+  "name": "anacortes-retort-desk",
+  "instructions": "Anacortes cannery retort prompts.",
+  "tools": [
+    {
+      "name": "cook_book",
+      "description": "Opens the Anacortes retort cook book",
+      "text": "Basket 3. 242 F for 74 minutes."
+    }
+  ],
+  "prompts": [
+    {
+      "name": "retort_cook_brief",
+      "description": "Briefs the morning cook from the Anacortes retort log",
+      "arguments": [
+        { "name": "basket", "description": "Retort basket number", "required": true }
+      ],
+      "messages": [
+        {
+          "role": "user",
+          "text": "Anacortes cannery, Wednesday 14 October 2026. Review retort basket {{basket}}. The cook card says 242 F for 74 minutes. The sockeye in that basket is for the tender Retort."
+        },
+        {
+          "role": "assistant",
+          "text": "Happy to. What should I focus on for basket {{basket}}?"
+        },
+        {
+          "role": "user",
+          "text": "The come-up time and whether 74 minutes is enough. Name the tender Retort. Answer in two short sentences."
+        }
+      ]
+    }
+  ]
+}

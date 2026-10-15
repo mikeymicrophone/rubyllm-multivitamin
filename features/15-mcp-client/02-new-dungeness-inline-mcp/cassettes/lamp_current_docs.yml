@@ -1,0 +1,1137 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"daeebc2d-8e55-49c6-96e2-74813bd49776","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114603Z-178dbddcf86jcbq5hC1IADc0v000000003s0000000006ct8
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '173'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"error":{"code":-32601,"message":"Method \u0027server/discover\u0027 is not available."},"id":"daeebc2d-8e55-49c6-96e2-74813bd49776","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:46:03 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"c150b8c0-cdd9-447f-b1c3-982810fbb42e","method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"ruby_llm","version":"2.1.1"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Method:
+      - initialize
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114603Z-178dbddcf869v85vhC1IADnmqs0000000e10000000009azt
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '1987'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"protocolVersion":"2025-06-18","capabilities":{"logging":{},"prompts":{"listChanged":true},"resources":{"listChanged":true},"tools":{"listChanged":true}},"serverInfo":{"name":"Microsoft Learn MCP Server","version":"1.0.0"},"instructions":"# Microsoft Learn MCP Server\r\n\r\nThis server gives structured access to official Microsoft and Azure documentation via three tools:\r\n\r\n## Tools\r\n\r\n### microsoft_docs_search\r\nSearch official documentation and return up to 10 concise, high-quality content chunks (max 500 tokens each), including title, URL, and excerpt.\r\n\r\n- Use first to get a quick, reliable overview\r\n- Ideal for grounding answers in Microsoft knowledge\r\n\r\n### microsoft_code_sample_search\r\nSearch for code snippets and examples in official Microsoft Learn documentation and return up to 20 relevant, high-quality code samples.\r\n\r\n- Use when you need to provide sample Microsoft/Azure related code in your answers.  \r\n- Ideal for generating code snippets or practical implementation examples.  \r\n- Optional parameter \u0060language\u0060 can filter results. \r\n\r\n### microsoft_docs_fetch\r\nFetch and convert full Microsoft documentation pages to markdown.\r\n\r\n- Use after search when you need full content from a specific URL\r\n- Required for detailed tutorials, troubleshooting, prerequisites, code samples, or when search results are incomplete or outdated\r\n\r\n## Workflow\r\n\r\n1. Use \u0060microsoft_docs_search\u0060 to find relevant documents.\r\n2. If you need code examples or practical snippets, use \u0060microsoft_code_sample_search\u0060.\r\n3. If deeper or complete information is needed, use \u0060microsoft_docs_fetch\u0060.\r\n\r\n**Search gives breadth. Code Sample Search gives practical examples. Fetch gives depth.**\r\n\r\nAll content comes from Microsoft Learn or official sources, returned in clean markdown format."},"id":"c150b8c0-cdd9-447f-b1c3-982810fbb42e","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:46:03 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      Mcp-Method:
+      - notifications/initialized
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Length:
+      - '0'
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114603Z-178dbddcf86mbqpkhC1IADhdfw0000000gsg0000000027yd
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 15 Oct 2026 11:46:03 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"cf6468a9-16dd-491c-9387-9b2d1ac897c7","method":"tools/list","params":{}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      Mcp-Method:
+      - tools/list
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114603Z-178dbddcf86mbqpkhC1IADhdfw0000000gsg0000000027yg
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '4987'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"tools":[{"name":"microsoft_docs_search","title":"Microsoft Docs Search","description":"Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user\u0027s query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.","inputSchema":{"type":"object","properties":{"query":{"description":"a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs","type":"string","default":null}}},"outputSchema":{"type":"object","properties":{"results":{"type":"array","items":{"type":"object","properties":{"id":{"type":["string","null"]},"title":{"type":"string"},"content":{"type":["string","null"]},"contentUrl":{"type":"string"},"content_omitted":{"type":"boolean"},"extensionData":{"type":["object","null"]}}}}}},"annotations":{"title":"Microsoft Docs Search","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}},{"name":"microsoft_code_sample_search","title":"Microsoft Code Sample Search","description":"Search for code snippets and examples in official Microsoft Learn documentation. This tool retrieves relevant code samples from Microsoft documentation pages providing developers with practical implementation examples and best practices for Microsoft/Azure products and services related coding tasks. This tool will help you use the **LATEST OFFICIAL** code snippets to empower coding capabilities.\n\n## When to Use This Tool\n- When you are going to provide sample Microsoft/Azure related code snippets in your answers.\n- When you are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput a descriptive query, or SDK/class/method name to retrieve related code samples. The optional parameter \u0060language\u0060 can help to filter results.\n\nEligible values for \u0060language\u0060 parameter include: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php","inputSchema":{"type":"object","properties":{"query":{"description":"a descriptive query, SDK name, method name or code snippet related to Microsoft/Azure products, services, platforms, developer tools, frameworks, APIs or SDKs","type":"string"},"language":{"description":"Optional parameter specifying the programming language of code snippets to retrieve. Can significantly improve search quality if provided. Eligible values: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php","type":"string","default":null}},"required":["query"]},"outputSchema":{"type":"object","properties":{"results":{"type":"array","items":{"type":"object","properties":{"description":{"type":"string"},"codeSnippet":{"type":["string","null"]},"link":{"type":"string"},"language":{"type":"string"},"content_omitted":{"type":"boolean"}}}}}},"annotations":{"title":"Microsoft Code Sample Search","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}},{"name":"microsoft_docs_fetch","title":"Microsoft Docs Fetch","description":"Fetch and convert a Microsoft Learn documentation webpage to markdown format. This tool retrieves the latest complete content of Microsoft documentation webpages including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n## When to Use This Tool\n- When search results provide incomplete information or truncated content\n- When you need complete step-by-step procedures or tutorials\n- When you need troubleshooting sections, prerequisites, or detailed explanations\n- When search results reference a specific page that seems highly relevant\n- For comprehensive guides that require full context\n\n## Usage Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific high-value pages that need complete content. The search tool gives you an overview; this tool gives you the complete picture.\n\n## URL Requirements\n- The URL must be a valid HTML documentation webpage from the microsoft.com domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output Format\nmarkdown with headings, code blocks, tables, and links preserved.","inputSchema":{"type":"object","properties":{"url":{"description":"URL of the Microsoft documentation page to read","type":"string"}},"required":["url"]},"annotations":{"title":"Microsoft Docs Fetch","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}}]},"id":"cf6468a9-16dd-491c-9387-9b2d1ac897c7","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:46:03 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 in the New Dungeness lens cabinet.\nStation notes: https://www.nps.gov/places/new-dungeness-light-station.htm\nDocs:
+        https://learn.microsoft.com/azure/azure-monitor/essentials/metrics-custom-overview\nThe
+        Fresnel lamp current logger posts custom metrics to Azure Monitor.\nWhich
+        Microsoft Learn page covers custom metrics, so the watch can chart the lamp
+        amperage?"}],"instructions":"You are the lens keeper at New Dungeness Light
+        Station.\nCall microsoft_docs_search once for Azure Monitor custom metrics.\nAnswer
+        in two short sentences.\nName the Fresnel lamp.\nRepeat a phrase the tool
+        returned.\nDo not invent a metric name.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"microsoft_docs_search","description":"Search
+        official Microsoft/Azure documentation to find the most relevant and trustworthy
+        content for a user''s query. This tool returns up to 10 high-quality content
+        chunks (each max 500 tokens), extracted from Microsoft Learn and other official
+        sources. Each result includes the article title, URL, and a self-contained
+        content excerpt optimized for fast retrieval and reasoning. Always use this
+        tool to quickly ground your answers in accurate, first-party Microsoft/Azure
+        knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch
+        when high-value pages are identified by search. The fetch tool complements
+        search by providing the full detail. This is a required step for comprehensive
+        results.","parameters":{"type":"object","properties":{"query":{"description":"a
+        query or topic about Microsoft/Azure products, services, platforms, developer
+        tools, frameworks, or APIs","type":"string","default":null}}},"strict":false},{"type":"function","name":"microsoft_code_sample_search","description":"Search
+        for code snippets and examples in official Microsoft Learn documentation.
+        This tool retrieves relevant code samples from Microsoft documentation pages
+        providing developers with practical implementation examples and best practices
+        for Microsoft/Azure products and services related coding tasks. This tool
+        will help you use the **LATEST OFFICIAL** code snippets to empower coding
+        capabilities.\n\n## When to Use This Tool\n- When you are going to provide
+        sample Microsoft/Azure related code snippets in your answers.\n- When you
+        are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput
+        a descriptive query, or SDK/class/method name to retrieve related code samples.
+        The optional parameter `language` can help to filter results.\n\nEligible
+        values for `language` parameter include: csharp javascript typescript python
+        powershell azurecli al sql java kusto cpp go rust ruby php","parameters":{"type":"object","properties":{"query":{"description":"a
+        descriptive query, SDK name, method name or code snippet related to Microsoft/Azure
+        products, services, platforms, developer tools, frameworks, APIs or SDKs","type":"string"},"language":{"description":"Optional
+        parameter specifying the programming language of code snippets to retrieve.
+        Can significantly improve search quality if provided. Eligible values: csharp
+        javascript typescript python powershell azurecli al sql java kusto cpp go
+        rust ruby php","type":"string","default":null}},"required":["query"]},"strict":false},{"type":"function","name":"microsoft_docs_fetch","description":"Fetch
+        and convert a Microsoft Learn documentation webpage to markdown format. This
+        tool retrieves the latest complete content of Microsoft documentation webpages
+        including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n##
+        When to Use This Tool\n- When search results provide incomplete information
+        or truncated content\n- When you need complete step-by-step procedures or
+        tutorials\n- When you need troubleshooting sections, prerequisites, or detailed
+        explanations\n- When search results reference a specific page that seems highly
+        relevant\n- For comprehensive guides that require full context\n\n## Usage
+        Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific
+        high-value pages that need complete content. The search tool gives you an
+        overview; this tool gives you the complete picture.\n\n## URL Requirements\n-
+        The URL must be a valid HTML documentation webpage from the microsoft.com
+        domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output
+        Format\nmarkdown with headings, code blocks, tables, and links preserved.","parameters":{"type":"object","properties":{"url":{"description":"URL
+        of the Microsoft documentation page to read","type":"string"}},"required":["url"]},"strict":false}],"tool_choice":{"type":"function","name":"microsoft_docs_search"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:46:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae94c2eb8d5f0a-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '543'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998940'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 31ms
+      X-Request-Id:
+      - req_9b7c9d3d320c428c9cedf185e080ec28
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a28866909d2c8c4016ad0bcfb6c3087d29eed9931e7f5ab8e",
+          "object": "response",
+          "created_at": 1792064763,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064763,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lens keeper at New Dungeness Light Station.\nCall microsoft_docs_search once for Azure Monitor custom metrics.\nAnswer in two short sentences.\nName the Fresnel lamp.\nRepeat a phrase the tool returned.\nDo not invent a metric name.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0a28866909d2c8c4016ad0bcfbc8cc87d2a8310ae2244313b8",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"query\":\"Azure Monitor custom metrics\"}",
+              "call_id": "call_wZZrs1ykvQRZFX2QVK8LFhNW",
+              "name": "microsoft_docs_search"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "microsoft_docs_search"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user's query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.",
+              "name": "microsoft_docs_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs",
+                    "type": "string",
+                    "default": null
+                  }
+                }
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Search for code snippets and examples in official Microsoft Learn documentation. This tool retrieves relevant code samples from Microsoft documentation pages providing developers with practical implementation examples and best practices for Microsoft/Azure products and services related coding tasks. This tool will help you use the **LATEST OFFICIAL** code snippets to empower coding capabilities.\n\n## When to Use This Tool\n- When you are going to provide sample Microsoft/Azure related code snippets in your answers.\n- When you are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput a descriptive query, or SDK/class/method name to retrieve related code samples. The optional parameter `language` can help to filter results.\n\nEligible values for `language` parameter include: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php",
+              "name": "microsoft_code_sample_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a descriptive query, SDK name, method name or code snippet related to Microsoft/Azure products, services, platforms, developer tools, frameworks, APIs or SDKs",
+                    "type": "string"
+                  },
+                  "language": {
+                    "description": "Optional parameter specifying the programming language of code snippets to retrieve. Can significantly improve search quality if provided. Eligible values: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php",
+                    "type": "string",
+                    "default": null
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Fetch and convert a Microsoft Learn documentation webpage to markdown format. This tool retrieves the latest complete content of Microsoft documentation webpages including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n## When to Use This Tool\n- When search results provide incomplete information or truncated content\n- When you need complete step-by-step procedures or tutorials\n- When you need troubleshooting sections, prerequisites, or detailed explanations\n- When search results reference a specific page that seems highly relevant\n- For comprehensive guides that require full context\n\n## Usage Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific high-value pages that need complete content. The search tool gives you an overview; this tool gives you the complete picture.\n\n## URL Requirements\n- The URL must be a valid HTML documentation webpage from the microsoft.com domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output Format\nmarkdown with headings, code blocks, tables, and links preserved.",
+              "name": "microsoft_docs_fetch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "description": "URL of the Microsoft documentation page to read",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 843,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 9,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 852
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:46:04 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"cf93c1ef-e71d-41fe-8172-90f5d2570471","method":"tools/call","params":{"name":"microsoft_docs_search","arguments":{"query":"Azure
+        Monitor custom metrics"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      Mcp-Method:
+      - tools/call
+      Mcp-Name:
+      - microsoft_docs_search
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114604Z-178dbddcf869v85vhC1IADnmqs0000000e10000000009b1d
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '38890'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:46:04 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:04 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"content":[{"type":"text","text":"{\u0022results\u0022:[{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\n## Pricing model\\nIngesting standard metrics (platform metrics) into an Azure Monitor metrics store is free. Native custom metrics are also free during the preview. Queries to the metrics API incur costs. Because custom metrics remain in preview and won\\u0027t be made generally available, use the [generally available OpenTelemetry-based replacement](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview) for a supported billing model. For current metric and query pricing, see the [Azure Monitor pricing page](https://azure.microsoft.com/pricing/details/monitor/).\\n## Custom metric definitions\\nEach metric data point you publish contains a namespace, name, and dimension information. The first time you emit a custom metric to Azure Monitor, the service automatically creates a metric definition. You can discover this new metric definition on any resource that the metric is emitted from via the metric definitions. You don\\u0027t need to predefine a custom metric in Azure Monitor before you emit it.\\nNote\\nApplication Insights and the InfluxData Telegraf agent are already configured to emit metric values against the correct regional endpoint and carry all the preceding properties in each emission.\\n## Using custom metrics\\nAfter custom metrics are submitted to Azure Monitor, you can browse through them via the Azure portal and query them via the Azure Monitor REST APIs. You can also create alerts on them to notify you when certain conditions are met.\\nNote\\nYou need the [Monitoring Reader](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#monitoring-reader) role to view custom metrics.\\n### Browse your custom metrics via the Azure portal\\n1. Go to the [Azure portal](https://portal.azure.com).\\n2. Select the **Monitor** pane.\\n3. Select **Metrics**.\\n4. Select a resource that you emit custom metrics against.\\n5. Select the metrics namespace for your custom metric.\\n6. Select the custom metric.\\nFor more information on viewing metrics in the Azure portal, see [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/azure/azure-monitor/metrics/analyze-metrics).\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#pricing-model\u0022},{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\n## Quotas and limits\\nAzure Monitor imposes the following usage limits on custom metrics:\\n| Category | Limit| \\n|  --- | ---  |\\n| Total active time series in a subscription per region | 50,000 |\\n| Dimension keys per metric | 10 |\\n| String length for metric namespaces, metric names, dimension keys, and dimension values | 256 characters |\\n| The combined length of all custom metric names, using utf-8 encoding | 64 KB |\\n\\nAn active time series is any unique combination of metric, dimension key, or dimension value that has metric values published in the past 12 hours.\\nTo understand the limit of 50,000 on time series, consider the following metric:\\n\\n*Server response time* with Dimensions: *Region*, *Department*, *CustomerID*\\n\\nWith this metric, if you have 10 regions, 20 departments, and 100 customers, that gives you 10 x 20 x 100 = 20,000 time series.\\nIf you have 100 regions, 200 departments, and 2,000 customers, the result is 100 x 200 x 2,000 = 40 million time series. This number is far over the limit for a single metric.\\nAgain, this limit isn\\u0027t for an individual metric. It\\u0027s for the sum of all such metrics across a subscription and region.\\nTo see your current total active time series metrics and get more information for troubleshooting, follow these steps.\\n1. Navigate to the Monitor section of the Azure portal.\\n2. Select **Metrics** on the left hand side.\\n3. Under **Select a scope**, check the applicable subscription and resource groups.\\n4. Under **Refine scope**, choose **Custom Metric Usage** and the desired location.\\n5. Select the **Apply** button.\\n6. Choose either **Active Time Series**, **Active Time Series Limit**, or **Throttled Time Series**.\\nAzure Monitor limits the combined length of all custom metric names to 64 KB, assuming UTF-8 encoding or 1 byte per character. If your metric names exceed this limit, Azure Monitor blocks access to metadata for the other metrics. The Azure portal omits those metric names from selection fields, and the API skips them when it returns metric definitions. You can still query the metric data directly, even without the metadata.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits\u0022},{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\nAzure provides metrics out of the box. These metrics are called [standard or platform](https://learn.microsoft.com/azure/azure-monitor/reference/metrics-index) metrics. Custom metrics are performance indicators or business-specific metrics. You can collect them through your application\\u0027s telemetry. You can also use the Azure Monitor Agent or an external monitoring system. After you publish custom metrics to Azure Monitor, you can browse, query, and alert on them along with the standard Azure metrics.\\nNote\\nAzure Monitor custom metrics are in public preview. This feature won\\u0027t be made generally available, because an improved generally available feature achieves the same functionality and more: [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview). In addition to custom metrics, [OpenTelemetry performance counters](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest) from the guest OS of VMs are supported as well.\\n## Use the generally available replacement\\nThe custom metrics described in this article remain in preview and won\\u0027t be made generally available. For new solutions, use the generally available OpenTelemetry-based path, which provides the same functionality and more. To get started, see [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview) and [OpenTelemetry system metrics for virtual machines](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest).\\n## Methods to send custom metrics\\nCustom metrics can be sent to Azure Monitor via several methods:\\n1. Use the Application Insights SDK to instrument your application by sending custom telemetry to Azure Monitor.\\n2. Install the [Azure Monitor Agent](https://learn.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview) on your Windows or Linux Azure virtual machine or virtual machine scale set and use a [data collection rule](https://learn.microsoft.com/azure/azure-monitor/vm/data-collection) to send performance counters to Azure Monitor metrics.\\n3. Install the [InfluxData Telegraf agent](https://learn.microsoft.com/azure/azure-monitor/agents/collect-custom-metrics-linux-telegraf) on your Azure Linux VM. Send metrics by using the Azure Monitor output plug-in.\\n4. Send custom metrics [directly to the Azure Monitor REST API](https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api).\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview\u0022},{\u0022title\u0022:\u0022Ingest custom metrics for an Azure resource using the REST API\u0022,\u0022content\u0022:\u0022# Ingest custom metrics for an Azure resource using the REST API\\n## Send REST requests to ingest custom metrics\\nWith this process, you can emit multiple values for the same metric/dimension combination during a given minute. Azure Monitor then takes all the raw values emitted for a given minute and aggregates them.\\n### Sample custom metric publication\\nIn the following example, create a custom metric called **Memory Bytes in Use** under the metric namespace **Memory Profile** for a virtual machine. The metric has a single dimension called **Process**. For the timestamp, metric values are emitted for two processes.\\nStore the following JSON in a file called *custommetric.json* on your local computer. Update the time parameter so that it\\u0027s within the last 20 minutes. You can\\u0027t put a metric into the store that\\u0027s more than 20 minutes old.\\nSubmit the following HTTP POST request by using the following variables:\\n1. \\u0060location\\u0060: Deployment region of the resource you\\u0027re emitting metrics for.\\n2. \\u0060resourceId\\u0060: Resource ID of the Azure resource you\\u0027re tracking the metric against.\\n3. \\u0060accessToken\\u0060: The authorization token acquired from the *Get an authorization token* step.\\n\\u0060\\u0060\\u0060console\\n  curl -X POST \\u0027https://\\u003Clocation\\u003E.monitoring.azure.com/\\u003CresourceId\\u003E/metrics\\u0027 \\\\\\n  -H \\u0027Content-Type: application/json\\u0027 \\\\\\n  -H \\u0027Authorization: Bearer \\u003CaccessToken\\u003E\\u0027 \\\\\\n  -d @custommetric.json\\n\\u0060\\u0060\\u0060\\n## View your metrics\\n1. Sign in to the Azure portal.\\n2. In the menu on the left, select **Monitor**.\\n3. On the **Monitor** page, select **Metrics**.\\n ![Screenshot that shows how to select Metrics in the Azure portal.](https://learn.microsoft.com/azure/azure-monitor/metrics/media/metrics-store-custom-rest-api/metrics.png)\\n4. Change the aggregation period to **Last hour**.\\n5. In the **Scope** dropdown list, select the resource you send the metric for.\\n6. In the **Metric Namespace** dropdown list, select **Memory Profile**.\\n7. In the **Metric** dropdown list, select **Memory Bytes in Use**.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\u0022},{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\n## Design limitations and considerations\\nBut if high cardinality is essential for your scenario, the aggregated metrics are probably not the right choice. Switch to using custom logs (that is, trackMetric API calls with [trackEvent](https://learn.microsoft.com/azure/azure-monitor/app/usage#how-to-log-custom-events)). However, consider that logs don\\u0027t aggregate values, so every single entry is stored. As a result, if you have a large volume of logs in a small time period (1 million a second, for example), it can cause throttling and ingestion delays.\\nTip\\nAzure Monitor Metrics and Azure Monitor Workspace ingest custom metrics at a fixed 60-second interval. Metrics sent more frequently are buffered and processed once every 60 seconds. Log Analytics records metrics at the interval they\\u2019re sent, which can increase cost at shorter intervals and delay visibility at longer ones.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#design-limitations-and-considerations\u0022},{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\n## Quotas and limits\\nWhen the limit is exceeded, reduce the number of metrics you\\u0027re sending or shorten the length of their names. It takes up to two days for the new metrics\\u0027 names to appear.\\nTo avoid reaching the limit, don\\u0027t include variable or dimensional aspects in your metric names. For example, the metrics for server CPU usage,\\u0060CPU_server_12345678-319d-4a50-b27e-1234567890ab\\u0060 and \\u0060CPU_server_abcdef01-319d-4a50-b27e-abcdef012345\\u0060 should be defined as metric \\u0060CPU\\u0060 and with a \\u0060Server\\u0060 dimension.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits\u0022},{\u0022title\u0022:\u0022Ingest custom metrics for an Azure resource using the REST API\u0022,\u0022content\u0022:\u0022# Ingest custom metrics for an Azure resource using the REST API\\n## Send REST requests to ingest custom metrics\\nThe region property captures the Azure region where the resource you\\u0027re emitting metrics for is deployed. Metrics must be emitted to the same Azure Monitor regional endpoint as the region where the resource is deployed. For example, custom metrics for a VM deployed in West US must be sent to the WestUS regional Azure Monitor endpoint. The region information is also encoded in the URL of the API call.\\n### Timestamp\\nEach data point sent to Azure Monitor must be marked with a timestamp. This timestamp captures the date and time at which the metric value is measured or collected. Azure Monitor accepts metric data with timestamps as far as 20 minutes in the past and 5 minutes in the future. The timestamp must be in ISO 8601 format.\\n### Namespace\\nNamespaces are a way to categorize or group similar metrics together. By using namespaces, you can achieve isolation between groups of metrics that might collect different insights or performance indicators. For example, you might have a namespace called **contosomemorymetrics** that tracks memory-use metrics which profile your app. Another namespace called **contosoapptransaction** might track all metrics about user transactions in your application.\\n### Name\\nThe name property is the name of the metric that\\u0027s being reported. Usually, the name is descriptive enough to help identify what\\u0027s measured. An example is a metric that measures the number of memory bytes used on a VM. It might have a metric name like **Memory Bytes In Use**.\\n### Dimension keys\\nA dimension is a key/value pair that helps describe other characteristics about the metric that\\u0027s being collected. By using the other characteristics, you can collect more information about the metric, which allows for deeper insights.\\nFor example, the **Memory Bytes In Use** metric might have a dimension key called **Process** that captures how many bytes of memory each process on a VM consumes. By using this key, you can filter the metric to see how much memory specific processes use or to identify the top five processes by memory usage.\\nDimensions are optional, and not all metrics have dimensions. A custom metric can have up to 10 dimensions.\\n### Dimension values\\nWhen you\\u0027re reporting a metric data point, for each dimension key on the reported metric, there\\u0027s a corresponding dimension value. For example, you might want to report the memory that ContosoApp uses on your VM:\\n1. The metric name would be **Memory Bytes in Use**.\\n2. The dimension key would be **Process**.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\u0022},{\u0022title\u0022:\u0022Ingest custom metrics for an Azure resource using the REST API\u0022,\u0022content\u0022:\u0022# Ingest custom metrics for an Azure resource using the REST API\\nThis article shows you how to send custom metrics for Azure resources to the Azure Monitor metrics store via the REST API. When the metrics are in Azure Monitor, you can do all the things with them that you do with standard metrics. For example, you can generate charts and alerts and route the metrics to other external tools.\\nNote\\nThe REST API only permits sending custom metrics for Azure resources. To send metrics for resources in other environments or on-premises, use [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics).\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api\u0022},{\u0022title\u0022:\u0022Custom metrics in Azure Monitor (preview)\u0022,\u0022content\u0022:\u0022# Custom metrics in Azure Monitor (preview)\\n## Latency and storage retention\\nCustom metrics are retained for the [same amount of time as platform metrics](https://learn.microsoft.com/azure/azure-monitor/metrics/data-platform-metrics#retention-of-metrics).\\nA newly added metric or a newly added dimension to a metric might take up to 3 minutes to appear. After the data is in the system, it should appear in less than 30 seconds 99 percent of the time.\\nIf you delete a metric or remove a dimension, the change can take a week to a month to be deleted from the system.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#latency-and-storage-retention\u0022},{\u0022title\u0022:\u0022Ingest custom metrics for an Azure resource using the REST API\u0022,\u0022content\u0022:\u0022# Ingest custom metrics for an Azure resource using the REST API\\n## Send REST requests to ingest custom metrics\\nWhen you send custom metrics to Azure Monitor, each data point, or value, reported in the metrics must include the following information.\\n1. Authentication token\\n2. Subject\\n3. Region\\n4. Timestamp\\n5. Namespace\\n6. Name\\n7. Dimension keys\\n8. Dimension values\\n9. Metric values\\n### Authentication\\nTo submit custom metrics to Azure Monitor, the entity that submits the metric needs a valid Microsoft Entra token in the **Bearer** header of the request. Supported ways to acquire a valid bearer token include:\\n1. [Managed identities for Azure resources](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview). You can use a managed identity to give resources permissions to carry out certain operations. An example is allowing a resource to emit metrics about itself. A resource, or its managed identity, can be granted **Monitoring Metrics Publisher** permissions on another resource. With this permission, the managed identity can also emit metrics for other resources.\\n2. [Microsoft Entra service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals). In this scenario, a Microsoft Entra application, or service, can be assigned permissions to emit metrics about an Azure resource. To authenticate the request, Azure Monitor validates the application token by using Microsoft Entra public keys. The existing **Monitoring Metrics Publisher** role already has this permission. It\\u0027s available in the Azure portal.\\n  The service principal, depending on what resources it emits custom metrics for, can be given the **Monitoring Metrics Publisher** role at the scope required. Examples are a subscription, resource group, or specific resource.\\nTip\\nWhen you request a Microsoft Entra token to emit custom metrics, ensure that the audience or resource that the token is requested for is \\u0060https://monitoring.azure.com/\\u0060. Be sure to include the trailing slash.\\n### Get an authorization token\\nOnce you have created your managed identity or service principal and assigned **Monitoring Metrics Publisher** permissions, you can get an authorization token. When requesting a token specify \\u0060resource: https://monitoring.azure.com\\u0060.\\nGet an authentication token using any of the following methods:\\n1. CLI\\n2. REST API\\n3. SDK\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\u0022}]}"}],"structuredContent":{"results":[{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\n## Pricing model\nIngesting standard metrics (platform metrics) into an Azure Monitor metrics store is free. Native custom metrics are also free during the preview. Queries to the metrics API incur costs. Because custom metrics remain in preview and won\u0027t be made generally available, use the [generally available OpenTelemetry-based replacement](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview) for a supported billing model. For current metric and query pricing, see the [Azure Monitor pricing page](https://azure.microsoft.com/pricing/details/monitor/).\n## Custom metric definitions\nEach metric data point you publish contains a namespace, name, and dimension information. The first time you emit a custom metric to Azure Monitor, the service automatically creates a metric definition. You can discover this new metric definition on any resource that the metric is emitted from via the metric definitions. You don\u0027t need to predefine a custom metric in Azure Monitor before you emit it.\nNote\nApplication Insights and the InfluxData Telegraf agent are already configured to emit metric values against the correct regional endpoint and carry all the preceding properties in each emission.\n## Using custom metrics\nAfter custom metrics are submitted to Azure Monitor, you can browse through them via the Azure portal and query them via the Azure Monitor REST APIs. You can also create alerts on them to notify you when certain conditions are met.\nNote\nYou need the [Monitoring Reader](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#monitoring-reader) role to view custom metrics.\n### Browse your custom metrics via the Azure portal\n1. Go to the [Azure portal](https://portal.azure.com).\n2. Select the **Monitor** pane.\n3. Select **Metrics**.\n4. Select a resource that you emit custom metrics against.\n5. Select the metrics namespace for your custom metric.\n6. Select the custom metric.\nFor more information on viewing metrics in the Azure portal, see [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/azure/azure-monitor/metrics/analyze-metrics).","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#pricing-model"},{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\n## Quotas and limits\nAzure Monitor imposes the following usage limits on custom metrics:\n| Category | Limit| \n|  --- | ---  |\n| Total active time series in a subscription per region | 50,000 |\n| Dimension keys per metric | 10 |\n| String length for metric namespaces, metric names, dimension keys, and dimension values | 256 characters |\n| The combined length of all custom metric names, using utf-8 encoding | 64 KB |\n\nAn active time series is any unique combination of metric, dimension key, or dimension value that has metric values published in the past 12 hours.\nTo understand the limit of 50,000 on time series, consider the following metric:\n\n*Server response time* with Dimensions: *Region*, *Department*, *CustomerID*\n\nWith this metric, if you have 10 regions, 20 departments, and 100 customers, that gives you 10 x 20 x 100 = 20,000 time series.\nIf you have 100 regions, 200 departments, and 2,000 customers, the result is 100 x 200 x 2,000 = 40 million time series. This number is far over the limit for a single metric.\nAgain, this limit isn\u0027t for an individual metric. It\u0027s for the sum of all such metrics across a subscription and region.\nTo see your current total active time series metrics and get more information for troubleshooting, follow these steps.\n1. Navigate to the Monitor section of the Azure portal.\n2. Select **Metrics** on the left hand side.\n3. Under **Select a scope**, check the applicable subscription and resource groups.\n4. Under **Refine scope**, choose **Custom Metric Usage** and the desired location.\n5. Select the **Apply** button.\n6. Choose either **Active Time Series**, **Active Time Series Limit**, or **Throttled Time Series**.\nAzure Monitor limits the combined length of all custom metric names to 64 KB, assuming UTF-8 encoding or 1 byte per character. If your metric names exceed this limit, Azure Monitor blocks access to metadata for the other metrics. The Azure portal omits those metric names from selection fields, and the API skips them when it returns metric definitions. You can still query the metric data directly, even without the metadata.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits"},{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\nAzure provides metrics out of the box. These metrics are called [standard or platform](https://learn.microsoft.com/azure/azure-monitor/reference/metrics-index) metrics. Custom metrics are performance indicators or business-specific metrics. You can collect them through your application\u0027s telemetry. You can also use the Azure Monitor Agent or an external monitoring system. After you publish custom metrics to Azure Monitor, you can browse, query, and alert on them along with the standard Azure metrics.\nNote\nAzure Monitor custom metrics are in public preview. This feature won\u0027t be made generally available, because an improved generally available feature achieves the same functionality and more: [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview). In addition to custom metrics, [OpenTelemetry performance counters](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest) from the guest OS of VMs are supported as well.\n## Use the generally available replacement\nThe custom metrics described in this article remain in preview and won\u0027t be made generally available. For new solutions, use the generally available OpenTelemetry-based path, which provides the same functionality and more. To get started, see [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview) and [OpenTelemetry system metrics for virtual machines](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest).\n## Methods to send custom metrics\nCustom metrics can be sent to Azure Monitor via several methods:\n1. Use the Application Insights SDK to instrument your application by sending custom telemetry to Azure Monitor.\n2. Install the [Azure Monitor Agent](https://learn.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview) on your Windows or Linux Azure virtual machine or virtual machine scale set and use a [data collection rule](https://learn.microsoft.com/azure/azure-monitor/vm/data-collection) to send performance counters to Azure Monitor metrics.\n3. Install the [InfluxData Telegraf agent](https://learn.microsoft.com/azure/azure-monitor/agents/collect-custom-metrics-linux-telegraf) on your Azure Linux VM. Send metrics by using the Azure Monitor output plug-in.\n4. Send custom metrics [directly to the Azure Monitor REST API](https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api).","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview"},{"title":"Ingest custom metrics for an Azure resource using the REST API","content":"# Ingest custom metrics for an Azure resource using the REST API\n## Send REST requests to ingest custom metrics\nWith this process, you can emit multiple values for the same metric/dimension combination during a given minute. Azure Monitor then takes all the raw values emitted for a given minute and aggregates them.\n### Sample custom metric publication\nIn the following example, create a custom metric called **Memory Bytes in Use** under the metric namespace **Memory Profile** for a virtual machine. The metric has a single dimension called **Process**. For the timestamp, metric values are emitted for two processes.\nStore the following JSON in a file called *custommetric.json* on your local computer. Update the time parameter so that it\u0027s within the last 20 minutes. You can\u0027t put a metric into the store that\u0027s more than 20 minutes old.\nSubmit the following HTTP POST request by using the following variables:\n1. \u0060location\u0060: Deployment region of the resource you\u0027re emitting metrics for.\n2. \u0060resourceId\u0060: Resource ID of the Azure resource you\u0027re tracking the metric against.\n3. \u0060accessToken\u0060: The authorization token acquired from the *Get an authorization token* step.\n\u0060\u0060\u0060console\n  curl -X POST \u0027https://\u003Clocation\u003E.monitoring.azure.com/\u003CresourceId\u003E/metrics\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027Authorization: Bearer \u003CaccessToken\u003E\u0027 \\\n  -d @custommetric.json\n\u0060\u0060\u0060\n## View your metrics\n1. Sign in to the Azure portal.\n2. In the menu on the left, select **Monitor**.\n3. On the **Monitor** page, select **Metrics**.\n ![Screenshot that shows how to select Metrics in the Azure portal.](https://learn.microsoft.com/azure/azure-monitor/metrics/media/metrics-store-custom-rest-api/metrics.png)\n4. Change the aggregation period to **Last hour**.\n5. In the **Scope** dropdown list, select the resource you send the metric for.\n6. In the **Metric Namespace** dropdown list, select **Memory Profile**.\n7. In the **Metric** dropdown list, select **Memory Bytes in Use**.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics"},{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\n## Design limitations and considerations\nBut if high cardinality is essential for your scenario, the aggregated metrics are probably not the right choice. Switch to using custom logs (that is, trackMetric API calls with [trackEvent](https://learn.microsoft.com/azure/azure-monitor/app/usage#how-to-log-custom-events)). However, consider that logs don\u0027t aggregate values, so every single entry is stored. As a result, if you have a large volume of logs in a small time period (1 million a second, for example), it can cause throttling and ingestion delays.\nTip\nAzure Monitor Metrics and Azure Monitor Workspace ingest custom metrics at a fixed 60-second interval. Metrics sent more frequently are buffered and processed once every 60 seconds. Log Analytics records metrics at the interval they\u2019re sent, which can increase cost at shorter intervals and delay visibility at longer ones.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#design-limitations-and-considerations"},{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\n## Quotas and limits\nWhen the limit is exceeded, reduce the number of metrics you\u0027re sending or shorten the length of their names. It takes up to two days for the new metrics\u0027 names to appear.\nTo avoid reaching the limit, don\u0027t include variable or dimensional aspects in your metric names. For example, the metrics for server CPU usage,\u0060CPU_server_12345678-319d-4a50-b27e-1234567890ab\u0060 and \u0060CPU_server_abcdef01-319d-4a50-b27e-abcdef012345\u0060 should be defined as metric \u0060CPU\u0060 and with a \u0060Server\u0060 dimension.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits"},{"title":"Ingest custom metrics for an Azure resource using the REST API","content":"# Ingest custom metrics for an Azure resource using the REST API\n## Send REST requests to ingest custom metrics\nThe region property captures the Azure region where the resource you\u0027re emitting metrics for is deployed. Metrics must be emitted to the same Azure Monitor regional endpoint as the region where the resource is deployed. For example, custom metrics for a VM deployed in West US must be sent to the WestUS regional Azure Monitor endpoint. The region information is also encoded in the URL of the API call.\n### Timestamp\nEach data point sent to Azure Monitor must be marked with a timestamp. This timestamp captures the date and time at which the metric value is measured or collected. Azure Monitor accepts metric data with timestamps as far as 20 minutes in the past and 5 minutes in the future. The timestamp must be in ISO 8601 format.\n### Namespace\nNamespaces are a way to categorize or group similar metrics together. By using namespaces, you can achieve isolation between groups of metrics that might collect different insights or performance indicators. For example, you might have a namespace called **contosomemorymetrics** that tracks memory-use metrics which profile your app. Another namespace called **contosoapptransaction** might track all metrics about user transactions in your application.\n### Name\nThe name property is the name of the metric that\u0027s being reported. Usually, the name is descriptive enough to help identify what\u0027s measured. An example is a metric that measures the number of memory bytes used on a VM. It might have a metric name like **Memory Bytes In Use**.\n### Dimension keys\nA dimension is a key/value pair that helps describe other characteristics about the metric that\u0027s being collected. By using the other characteristics, you can collect more information about the metric, which allows for deeper insights.\nFor example, the **Memory Bytes In Use** metric might have a dimension key called **Process** that captures how many bytes of memory each process on a VM consumes. By using this key, you can filter the metric to see how much memory specific processes use or to identify the top five processes by memory usage.\nDimensions are optional, and not all metrics have dimensions. A custom metric can have up to 10 dimensions.\n### Dimension values\nWhen you\u0027re reporting a metric data point, for each dimension key on the reported metric, there\u0027s a corresponding dimension value. For example, you might want to report the memory that ContosoApp uses on your VM:\n1. The metric name would be **Memory Bytes in Use**.\n2. The dimension key would be **Process**.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics"},{"title":"Ingest custom metrics for an Azure resource using the REST API","content":"# Ingest custom metrics for an Azure resource using the REST API\nThis article shows you how to send custom metrics for Azure resources to the Azure Monitor metrics store via the REST API. When the metrics are in Azure Monitor, you can do all the things with them that you do with standard metrics. For example, you can generate charts and alerts and route the metrics to other external tools.\nNote\nThe REST API only permits sending custom metrics for Azure resources. To send metrics for resources in other environments or on-premises, use [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics).","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api"},{"title":"Custom metrics in Azure Monitor (preview)","content":"# Custom metrics in Azure Monitor (preview)\n## Latency and storage retention\nCustom metrics are retained for the [same amount of time as platform metrics](https://learn.microsoft.com/azure/azure-monitor/metrics/data-platform-metrics#retention-of-metrics).\nA newly added metric or a newly added dimension to a metric might take up to 3 minutes to appear. After the data is in the system, it should appear in less than 30 seconds 99 percent of the time.\nIf you delete a metric or remove a dimension, the change can take a week to a month to be deleted from the system.","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#latency-and-storage-retention"},{"title":"Ingest custom metrics for an Azure resource using the REST API","content":"# Ingest custom metrics for an Azure resource using the REST API\n## Send REST requests to ingest custom metrics\nWhen you send custom metrics to Azure Monitor, each data point, or value, reported in the metrics must include the following information.\n1. Authentication token\n2. Subject\n3. Region\n4. Timestamp\n5. Namespace\n6. Name\n7. Dimension keys\n8. Dimension values\n9. Metric values\n### Authentication\nTo submit custom metrics to Azure Monitor, the entity that submits the metric needs a valid Microsoft Entra token in the **Bearer** header of the request. Supported ways to acquire a valid bearer token include:\n1. [Managed identities for Azure resources](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview). You can use a managed identity to give resources permissions to carry out certain operations. An example is allowing a resource to emit metrics about itself. A resource, or its managed identity, can be granted **Monitoring Metrics Publisher** permissions on another resource. With this permission, the managed identity can also emit metrics for other resources.\n2. [Microsoft Entra service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals). In this scenario, a Microsoft Entra application, or service, can be assigned permissions to emit metrics about an Azure resource. To authenticate the request, Azure Monitor validates the application token by using Microsoft Entra public keys. The existing **Monitoring Metrics Publisher** role already has this permission. It\u0027s available in the Azure portal.\n  The service principal, depending on what resources it emits custom metrics for, can be given the **Monitoring Metrics Publisher** role at the scope required. Examples are a subscription, resource group, or specific resource.\nTip\nWhen you request a Microsoft Entra token to emit custom metrics, ensure that the audience or resource that the token is requested for is \u0060https://monitoring.azure.com/\u0060. Be sure to include the trailing slash.\n### Get an authorization token\nOnce you have created your managed identity or service principal and assigned **Monitoring Metrics Publisher** permissions, you can get an authorization token. When requesting a token specify \u0060resource: https://monitoring.azure.com\u0060.\nGet an authentication token using any of the following methods:\n1. CLI\n2. REST API\n3. SDK","contentUrl":"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics"}]}},"id":"cf93c1ef-e71d-41fe-8172-90f5d2570471","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:46:04 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026 in the New Dungeness lens cabinet.\nStation notes: https://www.nps.gov/places/new-dungeness-light-station.htm\nDocs:
+        https://learn.microsoft.com/azure/azure-monitor/essentials/metrics-custom-overview\nThe
+        Fresnel lamp current logger posts custom metrics to Azure Monitor.\nWhich
+        Microsoft Learn page covers custom metrics, so the watch can chart the lamp
+        amperage?"},{"type":"function_call","call_id":"call_wZZrs1ykvQRZFX2QVK8LFhNW","name":"microsoft_docs_search","arguments":"{\"query\":\"Azure
+        Monitor custom metrics\"}"},{"type":"function_call_output","call_id":"call_wZZrs1ykvQRZFX2QVK8LFhNW","output":"{\"results\":[{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\n## Pricing model\\nIngesting standard metrics (platform
+        metrics) into an Azure Monitor metrics store is free. Native custom metrics
+        are also free during the preview. Queries to the metrics API incur costs.
+        Because custom metrics remain in preview and won\\u0027t be made generally
+        available, use the [generally available OpenTelemetry-based replacement](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+        for a supported billing model. For current metric and query pricing, see the
+        [Azure Monitor pricing page](https://azure.microsoft.com/pricing/details/monitor/).\\n##
+        Custom metric definitions\\nEach metric data point you publish contains a
+        namespace, name, and dimension information. The first time you emit a custom
+        metric to Azure Monitor, the service automatically creates a metric definition.
+        You can discover this new metric definition on any resource that the metric
+        is emitted from via the metric definitions. You don\\u0027t need to predefine
+        a custom metric in Azure Monitor before you emit it.\\nNote\\nApplication
+        Insights and the InfluxData Telegraf agent are already configured to emit
+        metric values against the correct regional endpoint and carry all the preceding
+        properties in each emission.\\n## Using custom metrics\\nAfter custom metrics
+        are submitted to Azure Monitor, you can browse through them via the Azure
+        portal and query them via the Azure Monitor REST APIs. You can also create
+        alerts on them to notify you when certain conditions are met.\\nNote\\nYou
+        need the [Monitoring Reader](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#monitoring-reader)
+        role to view custom metrics.\\n### Browse your custom metrics via the Azure
+        portal\\n1. Go to the [Azure portal](https://portal.azure.com).\\n2. Select
+        the **Monitor** pane.\\n3. Select **Metrics**.\\n4. Select a resource that
+        you emit custom metrics against.\\n5. Select the metrics namespace for your
+        custom metric.\\n6. Select the custom metric.\\nFor more information on viewing
+        metrics in the Azure portal, see [Analyze metrics with Azure Monitor metrics
+        explorer](https://learn.microsoft.com/azure/azure-monitor/metrics/analyze-metrics).\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#pricing-model\"},{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\n## Quotas and limits\\nAzure Monitor imposes the following
+        usage limits on custom metrics:\\n| Category | Limit| \\n|  --- | ---  |\\n|
+        Total active time series in a subscription per region | 50,000 |\\n| Dimension
+        keys per metric | 10 |\\n| String length for metric namespaces, metric names,
+        dimension keys, and dimension values | 256 characters |\\n| The combined length
+        of all custom metric names, using utf-8 encoding | 64 KB |\\n\\nAn active
+        time series is any unique combination of metric, dimension key, or dimension
+        value that has metric values published in the past 12 hours.\\nTo understand
+        the limit of 50,000 on time series, consider the following metric:\\n\\n*Server
+        response time* with Dimensions: *Region*, *Department*, *CustomerID*\\n\\nWith
+        this metric, if you have 10 regions, 20 departments, and 100 customers, that
+        gives you 10 x 20 x 100 = 20,000 time series.\\nIf you have 100 regions, 200
+        departments, and 2,000 customers, the result is 100 x 200 x 2,000 = 40 million
+        time series. This number is far over the limit for a single metric.\\nAgain,
+        this limit isn\\u0027t for an individual metric. It\\u0027s for the sum of
+        all such metrics across a subscription and region.\\nTo see your current total
+        active time series metrics and get more information for troubleshooting, follow
+        these steps.\\n1. Navigate to the Monitor section of the Azure portal.\\n2.
+        Select **Metrics** on the left hand side.\\n3. Under **Select a scope**, check
+        the applicable subscription and resource groups.\\n4. Under **Refine scope**,
+        choose **Custom Metric Usage** and the desired location.\\n5. Select the **Apply**
+        button.\\n6. Choose either **Active Time Series**, **Active Time Series Limit**,
+        or **Throttled Time Series**.\\nAzure Monitor limits the combined length of
+        all custom metric names to 64 KB, assuming UTF-8 encoding or 1 byte per character.
+        If your metric names exceed this limit, Azure Monitor blocks access to metadata
+        for the other metrics. The Azure portal omits those metric names from selection
+        fields, and the API skips them when it returns metric definitions. You can
+        still query the metric data directly, even without the metadata.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits\"},{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\nAzure provides metrics out of the box. These metrics are
+        called [standard or platform](https://learn.microsoft.com/azure/azure-monitor/reference/metrics-index)
+        metrics. Custom metrics are performance indicators or business-specific metrics.
+        You can collect them through your application\\u0027s telemetry. You can also
+        use the Azure Monitor Agent or an external monitoring system. After you publish
+        custom metrics to Azure Monitor, you can browse, query, and alert on them
+        along with the standard Azure metrics.\\nNote\\nAzure Monitor custom metrics
+        are in public preview. This feature won\\u0027t be made generally available,
+        because an improved generally available feature achieves the same functionality
+        and more: [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview).
+        In addition to custom metrics, [OpenTelemetry performance counters](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest)
+        from the guest OS of VMs are supported as well.\\n## Use the generally available
+        replacement\\nThe custom metrics described in this article remain in preview
+        and won\\u0027t be made generally available. For new solutions, use the generally
+        available OpenTelemetry-based path, which provides the same functionality
+        and more. To get started, see [Application Insights with OpenTelemetry](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+        and [OpenTelemetry system metrics for virtual machines](https://learn.microsoft.com/azure/azure-monitor/vm/metrics-opentelemetry-guest).\\n##
+        Methods to send custom metrics\\nCustom metrics can be sent to Azure Monitor
+        via several methods:\\n1. Use the Application Insights SDK to instrument your
+        application by sending custom telemetry to Azure Monitor.\\n2. Install the
+        [Azure Monitor Agent](https://learn.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview)
+        on your Windows or Linux Azure virtual machine or virtual machine scale set
+        and use a [data collection rule](https://learn.microsoft.com/azure/azure-monitor/vm/data-collection)
+        to send performance counters to Azure Monitor metrics.\\n3. Install the [InfluxData
+        Telegraf agent](https://learn.microsoft.com/azure/azure-monitor/agents/collect-custom-metrics-linux-telegraf)
+        on your Azure Linux VM. Send metrics by using the Azure Monitor output plug-in.\\n4.
+        Send custom metrics [directly to the Azure Monitor REST API](https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api).\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview\"},{\"title\":\"Ingest
+        custom metrics for an Azure resource using the REST API\",\"content\":\"#
+        Ingest custom metrics for an Azure resource using the REST API\\n## Send REST
+        requests to ingest custom metrics\\nWith this process, you can emit multiple
+        values for the same metric/dimension combination during a given minute. Azure
+        Monitor then takes all the raw values emitted for a given minute and aggregates
+        them.\\n### Sample custom metric publication\\nIn the following example, create
+        a custom metric called **Memory Bytes in Use** under the metric namespace
+        **Memory Profile** for a virtual machine. The metric has a single dimension
+        called **Process**. For the timestamp, metric values are emitted for two processes.\\nStore
+        the following JSON in a file called *custommetric.json* on your local computer.
+        Update the time parameter so that it\\u0027s within the last 20 minutes. You
+        can\\u0027t put a metric into the store that\\u0027s more than 20 minutes
+        old.\\nSubmit the following HTTP POST request by using the following variables:\\n1.
+        \\u0060location\\u0060: Deployment region of the resource you\\u0027re emitting
+        metrics for.\\n2. \\u0060resourceId\\u0060: Resource ID of the Azure resource
+        you\\u0027re tracking the metric against.\\n3. \\u0060accessToken\\u0060:
+        The authorization token acquired from the *Get an authorization token* step.\\n\\u0060\\u0060\\u0060console\\n  curl
+        -X POST \\u0027https://\\u003Clocation\\u003E.monitoring.azure.com/\\u003CresourceId\\u003E/metrics\\u0027
+        \\\\\\n  -H \\u0027Content-Type: application/json\\u0027 \\\\\\n  -H \\u0027Authorization:
+        Bearer \\u003CaccessToken\\u003E\\u0027 \\\\\\n  -d @custommetric.json\\n\\u0060\\u0060\\u0060\\n##
+        View your metrics\\n1. Sign in to the Azure portal.\\n2. In the menu on the
+        left, select **Monitor**.\\n3. On the **Monitor** page, select **Metrics**.\\n
+        ![Screenshot that shows how to select Metrics in the Azure portal.](https://learn.microsoft.com/azure/azure-monitor/metrics/media/metrics-store-custom-rest-api/metrics.png)\\n4.
+        Change the aggregation period to **Last hour**.\\n5. In the **Scope** dropdown
+        list, select the resource you send the metric for.\\n6. In the **Metric Namespace**
+        dropdown list, select **Memory Profile**.\\n7. In the **Metric** dropdown
+        list, select **Memory Bytes in Use**.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\"},{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\n## Design limitations and considerations\\nBut if high
+        cardinality is essential for your scenario, the aggregated metrics are probably
+        not the right choice. Switch to using custom logs (that is, trackMetric API
+        calls with [trackEvent](https://learn.microsoft.com/azure/azure-monitor/app/usage#how-to-log-custom-events)).
+        However, consider that logs don\\u0027t aggregate values, so every single
+        entry is stored. As a result, if you have a large volume of logs in a small
+        time period (1 million a second, for example), it can cause throttling and
+        ingestion delays.\\nTip\\nAzure Monitor Metrics and Azure Monitor Workspace
+        ingest custom metrics at a fixed 60-second interval. Metrics sent more frequently
+        are buffered and processed once every 60 seconds. Log Analytics records metrics
+        at the interval they\\u2019re sent, which can increase cost at shorter intervals
+        and delay visibility at longer ones.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#design-limitations-and-considerations\"},{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\n## Quotas and limits\\nWhen the limit is exceeded, reduce
+        the number of metrics you\\u0027re sending or shorten the length of their
+        names. It takes up to two days for the new metrics\\u0027 names to appear.\\nTo
+        avoid reaching the limit, don\\u0027t include variable or dimensional aspects
+        in your metric names. For example, the metrics for server CPU usage,\\u0060CPU_server_12345678-319d-4a50-b27e-1234567890ab\\u0060
+        and \\u0060CPU_server_abcdef01-319d-4a50-b27e-abcdef012345\\u0060 should be
+        defined as metric \\u0060CPU\\u0060 and with a \\u0060Server\\u0060 dimension.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#quotas-and-limits\"},{\"title\":\"Ingest
+        custom metrics for an Azure resource using the REST API\",\"content\":\"#
+        Ingest custom metrics for an Azure resource using the REST API\\n## Send REST
+        requests to ingest custom metrics\\nThe region property captures the Azure
+        region where the resource you\\u0027re emitting metrics for is deployed. Metrics
+        must be emitted to the same Azure Monitor regional endpoint as the region
+        where the resource is deployed. For example, custom metrics for a VM deployed
+        in West US must be sent to the WestUS regional Azure Monitor endpoint. The
+        region information is also encoded in the URL of the API call.\\n### Timestamp\\nEach
+        data point sent to Azure Monitor must be marked with a timestamp. This timestamp
+        captures the date and time at which the metric value is measured or collected.
+        Azure Monitor accepts metric data with timestamps as far as 20 minutes in
+        the past and 5 minutes in the future. The timestamp must be in ISO 8601 format.\\n###
+        Namespace\\nNamespaces are a way to categorize or group similar metrics together.
+        By using namespaces, you can achieve isolation between groups of metrics that
+        might collect different insights or performance indicators. For example, you
+        might have a namespace called **contosomemorymetrics** that tracks memory-use
+        metrics which profile your app. Another namespace called **contosoapptransaction**
+        might track all metrics about user transactions in your application.\\n###
+        Name\\nThe name property is the name of the metric that\\u0027s being reported.
+        Usually, the name is descriptive enough to help identify what\\u0027s measured.
+        An example is a metric that measures the number of memory bytes used on a
+        VM. It might have a metric name like **Memory Bytes In Use**.\\n### Dimension
+        keys\\nA dimension is a key/value pair that helps describe other characteristics
+        about the metric that\\u0027s being collected. By using the other characteristics,
+        you can collect more information about the metric, which allows for deeper
+        insights.\\nFor example, the **Memory Bytes In Use** metric might have a dimension
+        key called **Process** that captures how many bytes of memory each process
+        on a VM consumes. By using this key, you can filter the metric to see how
+        much memory specific processes use or to identify the top five processes by
+        memory usage.\\nDimensions are optional, and not all metrics have dimensions.
+        A custom metric can have up to 10 dimensions.\\n### Dimension values\\nWhen
+        you\\u0027re reporting a metric data point, for each dimension key on the
+        reported metric, there\\u0027s a corresponding dimension value. For example,
+        you might want to report the memory that ContosoApp uses on your VM:\\n1.
+        The metric name would be **Memory Bytes in Use**.\\n2. The dimension key would
+        be **Process**.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\"},{\"title\":\"Ingest
+        custom metrics for an Azure resource using the REST API\",\"content\":\"#
+        Ingest custom metrics for an Azure resource using the REST API\\nThis article
+        shows you how to send custom metrics for Azure resources to the Azure Monitor
+        metrics store via the REST API. When the metrics are in Azure Monitor, you
+        can do all the things with them that you do with standard metrics. For example,
+        you can generate charts and alerts and route the metrics to other external
+        tools.\\nNote\\nThe REST API only permits sending custom metrics for Azure
+        resources. To send metrics for resources in other environments or on-premises,
+        use [Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics).\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api\"},{\"title\":\"Custom
+        metrics in Azure Monitor (preview)\",\"content\":\"# Custom metrics in Azure
+        Monitor (preview)\\n## Latency and storage retention\\nCustom metrics are
+        retained for the [same amount of time as platform metrics](https://learn.microsoft.com/azure/azure-monitor/metrics/data-platform-metrics#retention-of-metrics).\\nA
+        newly added metric or a newly added dimension to a metric might take up to
+        3 minutes to appear. After the data is in the system, it should appear in
+        less than 30 seconds 99 percent of the time.\\nIf you delete a metric or remove
+        a dimension, the change can take a week to a month to be deleted from the
+        system.\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview#latency-and-storage-retention\"},{\"title\":\"Ingest
+        custom metrics for an Azure resource using the REST API\",\"content\":\"#
+        Ingest custom metrics for an Azure resource using the REST API\\n## Send REST
+        requests to ingest custom metrics\\nWhen you send custom metrics to Azure
+        Monitor, each data point, or value, reported in the metrics must include the
+        following information.\\n1. Authentication token\\n2. Subject\\n3. Region\\n4.
+        Timestamp\\n5. Namespace\\n6. Name\\n7. Dimension keys\\n8. Dimension values\\n9.
+        Metric values\\n### Authentication\\nTo submit custom metrics to Azure Monitor,
+        the entity that submits the metric needs a valid Microsoft Entra token in
+        the **Bearer** header of the request. Supported ways to acquire a valid bearer
+        token include:\\n1. [Managed identities for Azure resources](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview).
+        You can use a managed identity to give resources permissions to carry out
+        certain operations. An example is allowing a resource to emit metrics about
+        itself. A resource, or its managed identity, can be granted **Monitoring Metrics
+        Publisher** permissions on another resource. With this permission, the managed
+        identity can also emit metrics for other resources.\\n2. [Microsoft Entra
+        service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals).
+        In this scenario, a Microsoft Entra application, or service, can be assigned
+        permissions to emit metrics about an Azure resource. To authenticate the request,
+        Azure Monitor validates the application token by using Microsoft Entra public
+        keys. The existing **Monitoring Metrics Publisher** role already has this
+        permission. It\\u0027s available in the Azure portal.\\n  The service principal,
+        depending on what resources it emits custom metrics for, can be given the
+        **Monitoring Metrics Publisher** role at the scope required. Examples are
+        a subscription, resource group, or specific resource.\\nTip\\nWhen you request
+        a Microsoft Entra token to emit custom metrics, ensure that the audience or
+        resource that the token is requested for is \\u0060https://monitoring.azure.com/\\u0060.
+        Be sure to include the trailing slash.\\n### Get an authorization token\\nOnce
+        you have created your managed identity or service principal and assigned **Monitoring
+        Metrics Publisher** permissions, you can get an authorization token. When
+        requesting a token specify \\u0060resource: https://monitoring.azure.com\\u0060.\\nGet
+        an authentication token using any of the following methods:\\n1. CLI\\n2.
+        REST API\\n3. SDK\",\"contentUrl\":\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-store-custom-rest-api#send-rest-requests-to-ingest-custom-metrics\"}]}"}],"instructions":"You
+        are the lens keeper at New Dungeness Light Station.\nCall microsoft_docs_search
+        once for Azure Monitor custom metrics.\nAnswer in two short sentences.\nName
+        the Fresnel lamp.\nRepeat a phrase the tool returned.\nDo not invent a metric
+        name.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"microsoft_docs_search","description":"Search
+        official Microsoft/Azure documentation to find the most relevant and trustworthy
+        content for a user''s query. This tool returns up to 10 high-quality content
+        chunks (each max 500 tokens), extracted from Microsoft Learn and other official
+        sources. Each result includes the article title, URL, and a self-contained
+        content excerpt optimized for fast retrieval and reasoning. Always use this
+        tool to quickly ground your answers in accurate, first-party Microsoft/Azure
+        knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch
+        when high-value pages are identified by search. The fetch tool complements
+        search by providing the full detail. This is a required step for comprehensive
+        results.","parameters":{"type":"object","properties":{"query":{"description":"a
+        query or topic about Microsoft/Azure products, services, platforms, developer
+        tools, frameworks, or APIs","type":"string","default":null}}},"strict":false},{"type":"function","name":"microsoft_code_sample_search","description":"Search
+        for code snippets and examples in official Microsoft Learn documentation.
+        This tool retrieves relevant code samples from Microsoft documentation pages
+        providing developers with practical implementation examples and best practices
+        for Microsoft/Azure products and services related coding tasks. This tool
+        will help you use the **LATEST OFFICIAL** code snippets to empower coding
+        capabilities.\n\n## When to Use This Tool\n- When you are going to provide
+        sample Microsoft/Azure related code snippets in your answers.\n- When you
+        are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput
+        a descriptive query, or SDK/class/method name to retrieve related code samples.
+        The optional parameter `language` can help to filter results.\n\nEligible
+        values for `language` parameter include: csharp javascript typescript python
+        powershell azurecli al sql java kusto cpp go rust ruby php","parameters":{"type":"object","properties":{"query":{"description":"a
+        descriptive query, SDK name, method name or code snippet related to Microsoft/Azure
+        products, services, platforms, developer tools, frameworks, APIs or SDKs","type":"string"},"language":{"description":"Optional
+        parameter specifying the programming language of code snippets to retrieve.
+        Can significantly improve search quality if provided. Eligible values: csharp
+        javascript typescript python powershell azurecli al sql java kusto cpp go
+        rust ruby php","type":"string","default":null}},"required":["query"]},"strict":false},{"type":"function","name":"microsoft_docs_fetch","description":"Fetch
+        and convert a Microsoft Learn documentation webpage to markdown format. This
+        tool retrieves the latest complete content of Microsoft documentation webpages
+        including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n##
+        When to Use This Tool\n- When search results provide incomplete information
+        or truncated content\n- When you need complete step-by-step procedures or
+        tutorials\n- When you need troubleshooting sections, prerequisites, or detailed
+        explanations\n- When search results reference a specific page that seems highly
+        relevant\n- For comprehensive guides that require full context\n\n## Usage
+        Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific
+        high-value pages that need complete content. The search tool gives you an
+        overview; this tool gives you the complete picture.\n\n## URL Requirements\n-
+        The URL must be a valid HTML documentation webpage from the microsoft.com
+        domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output
+        Format\nmarkdown with headings, code blocks, tables, and links preserved.","parameters":{"type":"object","properties":{"url":{"description":"URL
+        of the Microsoft documentation page to read","type":"string"}},"required":["url"]},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:46:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae94c9da4a05e3-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1063'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1993721'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 188ms
+      X-Request-Id:
+      - req_4277dd97b57f4da7b19b0507043e3c64
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0f69f00ef5e36de2016ad0bcfc8b2c87d298e96f4c28672fe2",
+          "object": "response",
+          "created_at": 1792064764,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064765,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lens keeper at New Dungeness Light Station.\nCall microsoft_docs_search once for Azure Monitor custom metrics.\nAnswer in two short sentences.\nName the Fresnel lamp.\nRepeat a phrase the tool returned.\nDo not invent a metric name.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0f69f00ef5e36de2016ad0bcfcf19c87d285eba9aeb85511d0",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The Microsoft Learn page that covers custom metrics for Azure Monitor is titled \"Custom metrics in Azure Monitor (preview)\" and can be found at https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-custom-overview. It explains that \"After custom metrics are submitted to Azure Monitor, you can browse through them via the Azure portal and query them via the Azure Monitor REST APIs.\"\n\nThe Fresnel lamp at New Dungeness Light Station is called the \"First Order Fresnel Lens.\""
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user's query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.",
+              "name": "microsoft_docs_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs",
+                    "type": "string",
+                    "default": null
+                  }
+                }
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Search for code snippets and examples in official Microsoft Learn documentation. This tool retrieves relevant code samples from Microsoft documentation pages providing developers with practical implementation examples and best practices for Microsoft/Azure products and services related coding tasks. This tool will help you use the **LATEST OFFICIAL** code snippets to empower coding capabilities.\n\n## When to Use This Tool\n- When you are going to provide sample Microsoft/Azure related code snippets in your answers.\n- When you are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput a descriptive query, or SDK/class/method name to retrieve related code samples. The optional parameter `language` can help to filter results.\n\nEligible values for `language` parameter include: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php",
+              "name": "microsoft_code_sample_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a descriptive query, SDK name, method name or code snippet related to Microsoft/Azure products, services, platforms, developer tools, frameworks, APIs or SDKs",
+                    "type": "string"
+                  },
+                  "language": {
+                    "description": "Optional parameter specifying the programming language of code snippets to retrieve. Can significantly improve search quality if provided. Eligible values: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php",
+                    "type": "string",
+                    "default": null
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Fetch and convert a Microsoft Learn documentation webpage to markdown format. This tool retrieves the latest complete content of Microsoft documentation webpages including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n## When to Use This Tool\n- When search results provide incomplete information or truncated content\n- When you need complete step-by-step procedures or tutorials\n- When you need troubleshooting sections, prerequisites, or detailed explanations\n- When search results reference a specific page that seems highly relevant\n- For comprehensive guides that require full context\n\n## Usage Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific high-value pages that need complete content. The search tool gives you an overview; this tool gives you the complete picture.\n\n## URL Requirements\n- The URL must be a valid HTML documentation webpage from the microsoft.com domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output Format\nmarkdown with headings, code blocks, tables, and links preserved.",
+              "name": "microsoft_docs_fetch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "description": "URL of the Microsoft documentation page to read",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 4994,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 100,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 5094
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:46:05 GMT
+- request:
+    method: delete
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiYjg5YzNlM2EtZGU1ZS00MDNlLWI4MDAtYTViMzUyYmVhOTQ2In0=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: Method Not Allowed
+    headers:
+      Content-Length:
+      - '0'
+      Allow:
+      - POST
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114605Z-178dbddcf867kvgthC1IAD5b200000000fyg0000000010rk
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0
+      Expires:
+      - Thu, 15 Oct 2026 11:46:05 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:46:05 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 15 Oct 2026 11:46:05 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,17 @@
+{
+  "name": "port-angeles-net-loft-desk",
+  "instructions": "Port Angeles twine ledger tasks.",
+  "tools": [
+    {
+      "name": "render_twine_ledger",
+      "description": "Renders the Port Angeles net loft twine ledger in the background",
+      "task": "twine_ledger"
+    }
+  ],
+  "tasks": {
+    "twine_ledger": {
+      "working": ["Spooling page 1 of the twine ledger", "Spooling page 2 of the twine ledger"],
+      "text": "Twine ledger ready. No. 18 tarred nylon: 14 spools at the Port Angeles net loft."
+    }
+  }
+}
