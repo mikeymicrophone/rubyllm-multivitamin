@@ -2,18 +2,18 @@
 
 require "minitest/autorun"
 require "yaml"
-require_relative "umbrella_drawers"
+require_relative "lacquer_drawers"
 
-class UmbrellaDrawerBatchTest < Minitest::Test
-  CASSETTE = File.expand_path("cassettes/umbrella_drawers.yml", __dir__)
+class LacquerDrawerBatchTest < Minitest::Test
+  CASSETTE = File.expand_path("cassettes/lacquer_drawers.yml", __dir__)
 
   def test_four_cabinet_notes_come_back_as_four_vectors
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "umbrella_drawers") do
-      result = ChiangMaiUmbrellaDrawers::UmbrellaDrawers.conduct
+    Multivitamin::Cassettes.play(__dir__, "lacquer_drawers") do
+      result = MandalayLacquerDrawers::LacquerDrawers.conduct
     end
 
-    notes = ChiangMaiUmbrellaDrawers::UmbrellaDrawers::NOTES
+    notes = MandalayLacquerDrawers::LacquerDrawers::NOTES
     assert_equal notes.length, result.vectors.length
     result.vectors.each do |vector|
       assert_equal 1536, vector.length

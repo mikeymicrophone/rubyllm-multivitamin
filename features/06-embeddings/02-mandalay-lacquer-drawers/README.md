@@ -1,8 +1,8 @@
-# Embeddings · 02 · Chiang Mai sa-paper umbrella drawers
+# Embeddings · 02 · Mandalay lacquer drawers
 
-The atelier clerk at Bo Sang embeds four drawer notes in one call: a
-cracked bamboo rib bundle, a hazy sheet of sa paper, chipped lacquer
-brushes, and a seized gold-leaf book.
+The atelier clerk on 26th Street embeds four drawer notes in one call: a
+cracked bamboo cup blank, a hazy gold-leaf book, chipped horsehair
+brushes, and a seized betel-box latch.
 
 **What it teaches**
 
@@ -16,16 +16,16 @@ brushes, and a seized gold-leaf book.
 
 | File | Role |
 | --- | --- |
-| [`umbrella_drawers.rb`](umbrella_drawers.rb) | Embeds the four drawer notes together |
-| [`umbrella_drawers_test.rb`](umbrella_drawers_test.rb) | Replays the cassette |
-| [`cassettes/umbrella_drawers.yml`](cassettes/umbrella_drawers.yml) | Live OpenAI recording of `text-embedding-3-small` |
+| [`lacquer_drawers.rb`](lacquer_drawers.rb) | Embeds the four drawer notes together |
+| [`lacquer_drawers_test.rb`](lacquer_drawers_test.rb) | Replays the cassette |
+| [`cassettes/lacquer_drawers.yml`](cassettes/lacquer_drawers.yml) | Live OpenAI recording of `text-embedding-3-small` |
 
 **Try it**
 
 From the repository root, with the gems installed:
 
 ```sh
-bundle exec ruby features/06-embeddings/02-chiang-mai-umbrella-drawers/umbrella_drawers_test.rb
+bundle exec ruby features/06-embeddings/02-mandalay-lacquer-drawers/lacquer_drawers_test.rb
 ```
 
 The test replays the cassette. No API key is required.
@@ -33,7 +33,7 @@ The test replays the cassette. No API key is required.
 Re-record it on OpenAI:
 
 ```sh
-LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/02-chiang-mai-umbrella-drawers/umbrella_drawers_test.rb
+LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/02-mandalay-lacquer-drawers/lacquer_drawers_test.rb
 ```
 
 `LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-embed-1b:free` instead

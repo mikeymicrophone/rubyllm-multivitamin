@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Embeddings · 10 · Seoul pansori hall hold
+# Embeddings · 10 · Taipei nanguan hall hold
 #
 # Teaches:
 # - A batch of hold notes is ranked against one query.
@@ -11,22 +11,22 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module SeoulPansoriHold
-  # The house clerk at the National Gugak Center ranks this afternoon's
+module TaipeiNanguanHold
+  # The house clerk at the Taipei nanguan hall ranks this afternoon's
   # hold question against three posted notes and names the winner.
   class HallHolds
-    QUERY = "Why is the afternoon pansori sitting holding in the hall?"
+    QUERY = "Why is the afternoon nanguan sitting holding in the hall?"
 
     Note = Struct.new(:title, :body, keyword_init: true)
 
     NOTES = [
       Note.new(
-        title: "Cracked drumhead on the janggu",
-        body: "The 19:45 sitting of Chunhyang is held in the hall. Drumhead split 28 mm from the rim, gaping 34. The west door is not clear."
+        title: "Cracked soundboard on the pipa",
+        body: "The 19:45 sitting of Chen San Wu Niang is held in the hall. Soundboard split 28 mm from the rim, gaping 34. The west door is not clear."
       ),
       Note.new(
-        title: "Tea urn in the foyer",
-        body: "The foyer tea urn is down. Barley tea comes from the concession. The 19:45 still sits on time."
+        title: "Oolong urn in the foyer",
+        body: "The foyer oolong urn is down. Barley tea comes from the concession. The 19:45 still sits on time."
       ),
       Note.new(
         title: "Ticket window at the annex",
@@ -82,7 +82,7 @@ end
 if $PROGRAM_NAME == __FILE__
   result = nil
   Multivitamin::Cassettes.play(__dir__, "hall_holds") do
-    result = SeoulPansoriHold::HallHolds.conduct
+    result = TaipeiNanguanHold::HallHolds.conduct
   end
 
   puts result.winner

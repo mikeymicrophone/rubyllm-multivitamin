@@ -16,8 +16,8 @@ Free OpenRouter fallbacks, when the cap allows: `nvidia/llama-nemotron-embed-vl-
 
 ## Examples (13 of 13 bottled)
 
-01. [Tbilisi qvevri cellar](01-tbilisi-qvevri-cellar/) — available
-02. [Chiang Mai sa-paper umbrella drawers](02-chiang-mai-umbrella-drawers/) — available
+01. [Antananarivo vanilla cellar](01-antananarivo-vanilla-cellar/) — available
+02. [Mandalay lacquer drawers](02-mandalay-lacquer-drawers/) — available
 03. [Skopje filigree anneal faults](03-skopje-filigree-anneal/) — available
 04. [Abidjan cacao lot](04-abidjan-cacao-lot/) — available
 05. [Helsinki reserve slip](05-helsinki-reserve-slip/) — available
@@ -25,7 +25,7 @@ Free OpenRouter fallbacks, when the cap allows: `nvidia/llama-nemotron-embed-vl-
 07. [Bishkek precinct tally cards](07-bishkek-tally-cards/) — available
 08. [Entebbe incubator plaque](08-entebbe-incubator-card/) — available
 09. [Sibiu painted-egg loft](09-sibiu-egg-loft/) — available
-10. [Seoul pansori hall hold](10-seoul-pansori-hold/) — available
+10. [Taipei nanguan hall hold](10-taipei-nanguan-hold/) — available
 11. [Dhaka jamdani ledger](11-dhaka-jamdani-ledger/) — available
 12. [Beirut galley proofs](12-beirut-galley-proofs/) — available
 13. [Lusaka night-ward handover](13-lusaka-ward-handover/) — available

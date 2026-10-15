@@ -2,15 +2,15 @@
 
 require "minitest/autorun"
 require "yaml"
-require_relative "cellar_note"
+require_relative "curing_note"
 
-class CellarNoteVectorTest < Minitest::Test
-  CASSETTE = File.expand_path("cassettes/cellar_note.yml", __dir__)
+class CuringNoteVectorTest < Minitest::Test
+  CASSETTE = File.expand_path("cassettes/curing_note.yml", __dir__)
 
   def test_one_posted_note_becomes_one_flat_vector
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "cellar_note") do
-      result = TbilisiQvevriCellar::CellarNote.conduct
+    Multivitamin::Cassettes.play(__dir__, "curing_note") do
+      result = AntananarivoVanillaCellar::CuringNote.conduct
     end
 
     assert_kind_of Array, result.vectors
@@ -24,7 +24,7 @@ class CellarNoteVectorTest < Minitest::Test
 
     request = request_bodies.fetch(0)
     assert_includes request, '"model":"text-embedding-3-small"'
-    assert_includes request, "Lela clears the tasting ledge"
+    assert_includes request, "Lalao clears the sweating ledge"
     refute_includes request, '"input":['
   end
 

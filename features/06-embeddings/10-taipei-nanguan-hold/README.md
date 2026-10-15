@@ -1,9 +1,9 @@
-# Embeddings · 10 · Seoul pansori hall hold
+# Embeddings · 10 · Taipei nanguan hall hold
 
-The house clerk at the National Gugak Center ranks a question about a
-held Chunhyang sitting against three posted notes: a cracked janggu
-drumhead, a foyer tea urn, and a ticket window at the annex. The
-drumhead is named first.
+The house clerk at a Dihua Street nanguan hall ranks a question about a
+held Chen San Wu Niang sitting against three posted notes: a cracked pipa
+soundboard, a foyer oolong urn, and a ticket window at the annex. The
+soundboard is named first.
 
 **What it teaches**
 
@@ -25,7 +25,7 @@ drumhead is named first.
 From the repository root, with the gems installed:
 
 ```sh
-bundle exec ruby features/06-embeddings/10-seoul-pansori-hold/hall_holds_test.rb
+bundle exec ruby features/06-embeddings/10-taipei-nanguan-hold/hall_holds_test.rb
 ```
 
 The test replays the cassette. No API key is required.
@@ -33,7 +33,7 @@ The test replays the cassette. No API key is required.
 Re-record it on OpenAI:
 
 ```sh
-LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/10-seoul-pansori-hold/hall_holds_test.rb
+LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/10-taipei-nanguan-hold/hall_holds_test.rb
 ```
 
 Do not hand-author the cassette.

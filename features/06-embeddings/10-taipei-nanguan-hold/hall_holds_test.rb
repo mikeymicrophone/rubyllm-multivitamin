@@ -7,13 +7,13 @@ require_relative "hall_holds"
 class HallHoldRankTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/hall_holds.yml", __dir__)
 
-  def test_the_drumhead_note_is_named_first
+  def test_the_soundboard_note_is_named_first
     result = nil
     Multivitamin::Cassettes.play(__dir__, "hall_holds") do
-      result = SeoulPansoriHold::HallHolds.conduct
+      result = TaipeiNanguanHold::HallHolds.conduct
     end
 
-    assert_equal "Cracked drumhead on the janggu", result.winner
+    assert_equal "Cracked soundboard on the pipa", result.winner
     titles = result.ranking.map(&:title)
     assert_equal titles, titles.uniq
     assert_equal 3, result.ranking.length
@@ -24,7 +24,7 @@ class HallHoldRankTest < Minitest::Test
 
     request = request_bodies.fetch(0)
     assert_includes request, "holding in the hall"
-    assert_includes request, "Drumhead split 28"
+    assert_includes request, "Soundboard split 28"
   end
 
   def test_cassette_does_not_carry_a_live_key

@@ -1,9 +1,9 @@
-# Embeddings · 01 · Tbilisi qvevri cellar
+# Embeddings · 01 · Antananarivo vanilla cellar
 
-The Beridze household in Sololaki embeds one posted cellar note: which
-qvevri Nino opens, when Giorgi can take the first pitcher, and when Lela
-clears the tasting ledge. The result is a single vector the later harvest
-can keep with the chalk.
+The Razafy household in Isotry embeds one posted curing note: which crate
+Noro opens, when Hery can take the first braid, and when Lalao clears the
+sweating ledge. The result is a single vector the later harvest can keep
+with the chalk.
 
 **What it teaches**
 
@@ -18,16 +18,16 @@ can keep with the chalk.
 
 | File | Role |
 | --- | --- |
-| [`cellar_note.rb`](cellar_note.rb) | Embeds the posted Sololaki cellar note |
-| [`cellar_note_test.rb`](cellar_note_test.rb) | Replays the cassette |
-| [`cassettes/cellar_note.yml`](cassettes/cellar_note.yml) | Live OpenAI recording of `text-embedding-3-small` |
+| [`curing_note.rb`](curing_note.rb) | Embeds the posted Isotry curing note |
+| [`curing_note_test.rb`](curing_note_test.rb) | Replays the cassette |
+| [`cassettes/curing_note.yml`](cassettes/curing_note.yml) | Live OpenAI recording of `text-embedding-3-small` |
 
 **Try it**
 
 From the repository root, with the gems installed:
 
 ```sh
-bundle exec ruby features/06-embeddings/01-tbilisi-qvevri-cellar/cellar_note_test.rb
+bundle exec ruby features/06-embeddings/01-antananarivo-vanilla-cellar/curing_note_test.rb
 ```
 
 The test replays the cassette. No API key is required.
@@ -35,7 +35,7 @@ The test replays the cassette. No API key is required.
 Re-record it on OpenAI:
 
 ```sh
-LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/01-tbilisi-qvevri-cellar/cellar_note_test.rb
+LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/06-embeddings/01-antananarivo-vanilla-cellar/curing_note_test.rb
 ```
 
 `LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-embed-1b:free` instead

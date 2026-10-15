@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Embeddings · 02 · Chiang Mai sa-paper umbrella drawers
+# Embeddings · 02 · Mandalay lacquer drawers
 #
 # Teaches:
 # - An array of strings is one API call and one Embedding.
@@ -12,15 +12,15 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module ChiangMaiUmbrellaDrawers
-  # The atelier clerk at Bo Sang embeds four drawer notes together so a
-  # later search can rank cracked bamboo against seized gold leaf.
-  class UmbrellaDrawers
+module MandalayLacquerDrawers
+  # The atelier clerk on 26th Street embeds four drawer notes together so a
+  # later search can rank a cracked cup against a seized betel box.
+  class LacquerDrawers
     NOTES = [
-      "Drawer A, bamboo rib bundle, catalog NP-4, cracked, do not issue.",
-      "Drawer B, spare sa paper, catalog NB-17, haze on the inner face.",
-      "Drawer C, six lacquer brushes, catalog LC-6, two chipped at the ferrule.",
-      "Drawer D, gold-leaf book, catalog CW-2, seized and waiting on a pin."
+      "Drawer A, bamboo cup blank, catalog NP-4, cracked, do not issue.",
+      "Drawer B, spare gold-leaf book, catalog NB-17, haze on the inner face.",
+      "Drawer C, six horsehair brushes, catalog LC-6, two chipped at the ferrule.",
+      "Drawer D, betel box latch, catalog CW-2, seized and waiting on a pin."
     ].freeze
 
     Result = Struct.new(:vectors, :model_id, :input_tokens, :cost, keyword_init: true)
@@ -51,8 +51,8 @@ end
 
 if $PROGRAM_NAME == __FILE__
   result = nil
-  Multivitamin::Cassettes.play(__dir__, "umbrella_drawers") do
-    result = ChiangMaiUmbrellaDrawers::UmbrellaDrawers.conduct
+  Multivitamin::Cassettes.play(__dir__, "lacquer_drawers") do
+    result = MandalayLacquerDrawers::LacquerDrawers.conduct
   end
 
   puts "#{result.vectors.length} cabinet notes, #{result.vectors.fetch(0).length} dimensions"

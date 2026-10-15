@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Embeddings · 01 · Tbilisi qvevri cellar
+# Embeddings · 01 · Antananarivo vanilla cellar
 #
 # Teaches:
 # - RubyLLM.embed turns one string into a vector on embedding.vectors.
@@ -12,16 +12,16 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module TbilisiQvevriCellar
-  # The Beridze household in Sololaki embeds one posted cellar note so later
+module AntananarivoVanillaCellar
+  # The Razafy household in Isotry embeds one posted curing note so later
   # harvests can search the desk without rereading the chalk.
-  class CellarNote
+  class CuringNote
     BOARD_NOTE = <<~TEXT.strip
-      Tbilisi qvevri cellar, Wednesday 14 October 2026.
-      House page: https://ich.unesco.org/en/RL/ancient-georgian-traditional-qvevri-wine-making-method-00870
-      Nino opens qvevri 4 at 06:42, 0.4 m below the rim.
-      Giorgi can take the first pitcher at 08:57.
-      Lela clears the tasting ledge at 10:46.
+      Antananarivo vanilla cellar, Wednesday 14 October 2026.
+      Isotry curing shed, crate 4 of Bourbon beans.
+      Noro opens crate 4 at 06:42, 0.4 m below the lid.
+      Hery can take the first braid at 08:57.
+      Lalao clears the sweating ledge at 10:46.
     TEXT
 
     Result = Struct.new(
@@ -64,8 +64,8 @@ end
 
 if $PROGRAM_NAME == __FILE__
   result = nil
-  Multivitamin::Cassettes.play(__dir__, "cellar_note") do
-    result = TbilisiQvevriCellar::CellarNote.conduct
+  Multivitamin::Cassettes.play(__dir__, "curing_note") do
+    result = AntananarivoVanillaCellar::CuringNote.conduct
   end
 
   puts "#{result.model_id} #{result.vectors.length} dimensions"
