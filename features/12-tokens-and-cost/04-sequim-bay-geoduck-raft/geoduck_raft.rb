@@ -73,12 +73,14 @@ module SequimBayGeoduckRaft
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
+      Multivitamin::Models.quiet_thinking(chat, provider: :openai)
+      chat
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 120
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

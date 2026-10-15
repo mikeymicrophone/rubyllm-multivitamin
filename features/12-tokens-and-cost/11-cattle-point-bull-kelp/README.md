@@ -8,8 +8,9 @@ the skiff Haro. Token counts sit on the final answer and on the chat.
 
 - A forced tool round still reports `tokens.input` and `tokens.output`
   on the spoken answer.
-- `chat.tokens` includes the tool-call attempt, so chat input is at
-  least the final answer's input.
+- The first call invented a `skiff` keyword the tool does not take.
+  That becomes a tool-role JSON error, and the model calls again with
+  `{}`. `chat.tokens` includes both attempts.
 - `cost.total` is still the provider's reported number (0 on this free
   slug).
 

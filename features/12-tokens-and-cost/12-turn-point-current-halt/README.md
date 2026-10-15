@@ -13,8 +13,11 @@ attempt still sits on the chat's usage ledger.
 - That attempt is still on `chat.usage_entries`, with status
   `:cancelled`.
 - Usage arrives on the last streamed chunk. Stopping before that chunk
-  leaves no defensible counts, so `chat.cost.total` is `nil` rather than
-  a fake zero. Summing tokens off `chat.messages` undercounts the work.
+  leaves `tokens.input` nil. The Chat Completions parser still defaults
+  omitted `cache_write` to `0`, and this `:free` slug is priced at `$0`
+  per million, so `chat.cost.total` is `0.0` rather than nil. Summing
+  tokens off `chat.messages` undercounts: there is no assistant turn, and
+  the cassette still holds the later usage chunk the halt never applied.
 
 **Files**
 

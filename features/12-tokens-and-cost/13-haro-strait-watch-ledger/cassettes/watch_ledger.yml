@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the overnight current clerk at Turn Point Light, looking into Haro Strait.\nKeep
+        each reply to two short sentences.\nUse only the boards in this chat.\nName
+        3.4 knots and Polar Adventure.\nDo not invent a slack time."},{"role":"user","content":"Haro
+        Strait overnight board, Wednesday 14 October 2026.\nLight list: https://www.navcen.uscg.gov/\nChart
+        catalog: https://www.nauticalcharts.noaa.gov/\nFlood 3.4 knots at Turn Point
+        at 01:10.\nSlack before ebb 04:25.\nTanker Polar Adventure is holding south
+        of the light until slack.\nWhen is slack, and what is the flood?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:34:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028042-4SpSyxgS8GLhXRp3Vv32
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab144089a25d68-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792028042-4SpSyxgS8GLhXRp3Vv32\",\"object\":\"chat.completion\",\"created\":1792028042,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Slack
+        occurs at 04:25.  \\nThe flood is 3.4 knots at 01:10, and Polar Adventure
+        is waiting south of the light until then.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer: \\\"When is slack, and what is the flood?\\\" The user gave:
+        Flood 3.4 knots at Turn Point at 01:10. Slack before ebb 04:25. So slack is
+        at 04:25. Flood is 3.4 knots at 01:10. Must keep each reply to two short sentences.
+        Use only the boards in this chat. Name 3.4 knots and Polar Adventure. So we
+        must mention \\\"3.4 knots\\\" and \\\"Polar Adventure\\\". Two short sentences.
+        Something like: \\\"Slack occurs at 04:25. The flood is 3.4 knots at 01:10,
+        and Polar Adventure is waiting south of the light until then.\\\" That's two
+        sentences? Actually that's two sentences: first sentence: \\\"Slack occurs
+        at 04:25.\\\" second sentence: \\\"The flood is 3.4 knots at 01:10, and Polar
+        Adventure is waiting south of the light until then.\\\" That includes both
+        required names. Ensure no extra sentences. No extra punctuation that creates
+        more sentences? The second sentence has a comma but it's still one sentence.
+        Good.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer: \\\"When is slack, and what is the flood?\\\" The user gave:
+        Flood 3.4 knots at Turn Point at 01:10. Slack before ebb 04:25. So slack is
+        at 04:25. Flood is 3.4 knots at 01:10. Must keep each reply to two short sentences.
+        Use only the boards in this chat. Name 3.4 knots and Polar Adventure. So we
+        must mention \\\"3.4 knots\\\" and \\\"Polar Adventure\\\". Two short sentences.
+        Something like: \\\"Slack occurs at 04:25. The flood is 3.4 knots at 01:10,
+        and Polar Adventure is waiting south of the light until then.\\\" That's two
+        sentences? Actually that's two sentences: first sentence: \\\"Slack occurs
+        at 04:25.\\\" second sentence: \\\"The flood is 3.4 knots at 01:10, and Polar
+        Adventure is waiting south of the light until then.\\\" That includes both
+        required names. Ensure no extra sentences. No extra punctuation that creates
+        more sentences? The second sentence has a comma but it's still one sentence.
+        Good.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":165,\"completion_tokens\":302,\"total_tokens\":467,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":258,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Thu, 15 Oct 2026 01:34:05 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the overnight current clerk at Turn Point Light, looking into Haro Strait.\nKeep
+        each reply to two short sentences.\nUse only the boards in this chat.\nName
+        3.4 knots and Polar Adventure.\nDo not invent a slack time."},{"role":"user","content":"Haro
+        Strait overnight board, Wednesday 14 October 2026.\nLight list: https://www.navcen.uscg.gov/\nChart
+        catalog: https://www.nauticalcharts.noaa.gov/\nFlood 3.4 knots at Turn Point
+        at 01:10.\nSlack before ebb 04:25.\nTanker Polar Adventure is holding south
+        of the light until slack.\nWhen is slack, and what is the flood?"},{"role":"assistant","content":"Slack
+        occurs at 04:25.  \nThe flood is 3.4 knots at 01:10, and Polar Adventure is
+        waiting south of the light until then.","reasoning_details":[{"type":"reasoning.text","text":"We
+        need to answer: \"When is slack, and what is the flood?\" The user gave: Flood
+        3.4 knots at Turn Point at 01:10. Slack before ebb 04:25. So slack is at 04:25.
+        Flood is 3.4 knots at 01:10. Must keep each reply to two short sentences.
+        Use only the boards in this chat. Name 3.4 knots and Polar Adventure. So we
+        must mention \"3.4 knots\" and \"Polar Adventure\". Two short sentences. Something
+        like: \"Slack occurs at 04:25. The flood is 3.4 knots at 01:10, and Polar
+        Adventure is waiting south of the light until then.\" That''s two sentences?
+        Actually that''s two sentences: first sentence: \"Slack occurs at 04:25.\"
+        second sentence: \"The flood is 3.4 knots at 01:10, and Polar Adventure is
+        waiting south of the light until then.\" That includes both required names.
+        Ensure no extra sentences. No extra punctuation that creates more sentences?
+        The second sentence has a comma but it''s still one sentence. Good.","format":"unknown","index":0}]},{"role":"user","content":"Polar
+        Adventure wants to start north at 03:50. May she go, or does she wait for
+        04:25?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:34:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028045-skzfriyTWpNFmavV3v1o
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab1451daf068f1-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n{\"id\":\"gen-1792028045-skzfriyTWpNFmavV3v1o\",\"object\":\"chat.completion\",\"created\":1792028045,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"She
+        must wait; the water is still moving (flood) until slack at 04:25.  \\nPolar
+        Adventure can only proceed north after slack begins at 04:25.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer: Polar Adventure wants to start north at 03:50. She is currently
+        holding south of the light until slack. Slack is at 04:25. The flood is at
+        01:10 (3.4 knots). Starting north at 03:50 would be before slack, during ebb?
+        Actually timeline: Flood at 01:10, then slack before ebb at 04:25. So between
+        01:10 and 04:25 is ebb? Wait: Flood then slack before ebb means after flood,
+        slack occurs before ebb begins. So after flood (01:10) there is a period of
+        decreasing current until slack at 04:25, then ebb begins. So at 03:50 it's
+        still ebb? Actually it's still flood? No, after flood, current goes to slack
+        then ebb. So at 03:50 it's approaching slack, still flood? Actually it's ebb?
+        Let's think: Flood is incoming tide (northward?), slack is zero, then ebb
+        is outgoing. So after flood, current decreases to zero at slack, then reverses
+        to ebb. So at 03:50 it's still flood but weakening, not yet slack. So Polar
+        Adventure wants to go north at 03:50. If she goes north, she would be moving
+        with the flood? Actually flood direction is likely northward (into the strait).
+        She wants to go north, which is same direction as flood. But she is south
+        of the light, wanting to go north through the strait. If flood is northward,
+        then she could go with the current. However the instruction: \\\"Tanker Polar
+        Adventure is holding south of the light until slack.\\\" So they are waiting
+        for slack before proceeding. So answer: She must wait until 04:25 slack; cannot
+        go at 03:50 because still flood/ebb? Actually it's still flood but they are
+        waiting for slack. So answer: She must wait for slack at 04:25. Provide two
+        short sentences.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer: Polar Adventure wants to start north at 03:50. She is currently
+        holding south of the light until slack. Slack is at 04:25. The flood is at
+        01:10 (3.4 knots). Starting north at 03:50 would be before slack, during ebb?
+        Actually timeline: Flood at 01:10, then slack before ebb at 04:25. So between
+        01:10 and 04:25 is ebb? Wait: Flood then slack before ebb means after flood,
+        slack occurs before ebb begins. So after flood (01:10) there is a period of
+        decreasing current until slack at 04:25, then ebb begins. So at 03:50 it's
+        still ebb? Actually it's still flood? No, after flood, current goes to slack
+        then ebb. So at 03:50 it's approaching slack, still flood? Actually it's ebb?
+        Let's think: Flood is incoming tide (northward?), slack is zero, then ebb
+        is outgoing. So after flood, current decreases to zero at slack, then reverses
+        to ebb. So at 03:50 it's still flood but weakening, not yet slack. So Polar
+        Adventure wants to go north at 03:50. If she goes north, she would be moving
+        with the flood? Actually flood direction is likely northward (into the strait).
+        She wants to go north, which is same direction as flood. But she is south
+        of the light, wanting to go north through the strait. If flood is northward,
+        then she could go with the current. However the instruction: \\\"Tanker Polar
+        Adventure is holding south of the light until slack.\\\" So they are waiting
+        for slack before proceeding. So answer: She must wait until 04:25 slack; cannot
+        go at 03:50 because still flood/ebb? Actually it's still flood but they are
+        waiting for slack. So answer: She must wait for slack at 04:25. Provide two
+        short sentences.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":251,\"completion_tokens\":507,\"total_tokens\":758,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":461,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Thu, 15 Oct 2026 01:34:11 GMT
+recorded_with: VCR 6.4.0

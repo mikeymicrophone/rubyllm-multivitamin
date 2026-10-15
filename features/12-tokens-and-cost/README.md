@@ -8,7 +8,7 @@ Official reference: [Tokens and costs](https://rubyllm.com/cost-and-usage-tracki
 
 ## Free models
 
-`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 15 October 2026.
+`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Slot 04 fell back to OpenAI `gpt-4.1-mini` after `free-models-per-day`. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 15 October 2026.
 
 ## Examples (13 of 13 bottled)
 
@@ -36,12 +36,12 @@ Official reference: [Tokens and costs](https://rubyllm.com/cost-and-usage-tracki
 | 04 | The longer prompt reports more input tokens |
 | 05 | `with_max_output_tokens` small enough that `max_tokens?` is true |
 | 06 | Cache buckets keep the provider's zeros; `thinking` is present |
-| 07 | The cassette's `usage.cost` is what `cost.total` returns |
+| 07 | The cassette's `usage.cost` is what `cost.total` returns; components are registry `$0` |
 | 08 | The stream's final chunk carries usage from `stream_options` |
 | 09 | `Cost.aggregate` and `with_usage_owner` across two tenants |
 | 10 | An assumed model with no `usage.cost` on a bare Tokens yields nil |
 | 11 | Tool-call turns still have input and output counts |
-| 12 | `chat.cost` includes an attempt that `cancel` stopped |
+| 12 | A cancelled attempt stays on the chat; input is nil, `cost.total` is `0.0` |
 | 13 | Capstone: a ledger, a budget, and `cost_for` across two models |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

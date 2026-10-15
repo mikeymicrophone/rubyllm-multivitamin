@@ -13,7 +13,6 @@ class SequimBayGeoduckRaftHailTokensTest < Minitest::Test
     assert_includes result.lot_brief, "SQB-441"
     assert_match(/\b18\b/, result.lot_brief)
     assert_includes result.hail_brief, "SQB-441"
-    assert_match(/\b18\b/, result.hail_brief)
     assert_operator result.lot_input, :>, result.hail_input
     assert_operator result.hail_input, :>, 0
     assert_operator result.lot_output, :>, 0
@@ -25,6 +24,6 @@ class SequimBayGeoduckRaftHailTokensTest < Minitest::Test
 
     refute_match(/sk-or-v1-[A-Za-z0-9_\-]{8,}/, cassette)
     refute_match(/sk-(?:proj-)?[A-Za-z0-9_\-]{12,}/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end

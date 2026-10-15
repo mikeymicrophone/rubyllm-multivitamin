@@ -8,8 +8,8 @@ counts, `cost.total` is `nil`.
 
 **What it teaches**
 
-- `assume_model_exists` on an unlisted slug builds a synthetic model
-  with no `price(:input)`.
+- `RubyLLM::Model.default` builds the same synthetic clerk `assume_model_exists`
+  would, with no `price(:input)`, and does not open a socket.
 - `cost_for` still returns `tokens.reported_cost` when that field is
   set, even though the clerk has no registry rates.
 - `RubyLLM::Tokens.new(input:, output:)` drops the reported price. That
@@ -33,8 +33,7 @@ bundle exec ruby features/12-tokens-and-cost/10-roche-harbor-customs-float/custo
 bundle exec ruby features/12-tokens-and-cost/10-roche-harbor-customs-float/customs_float_test.rb
 ```
 
-Both commands replay the cassette. No API key is required. The unlisted
-clerk never opens a socket.
+Both commands replay the cassette. No API key is required. The unlisted clerk is `RubyLLM::Model.default` and never opens a socket.
 
 Re-record it with:
 

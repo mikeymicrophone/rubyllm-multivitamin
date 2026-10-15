@@ -58,18 +58,18 @@ module RocheHarborCustomsFloat
       chat.with_temperature(0.2)
       brief = chat.ask(DECLARATION_QUESTION)
 
-      unlisted = RubyLLM.chat(model: UNLISTED, provider: :openai, assume_model_exists: true)
+      unlisted = RubyLLM::Model.default(UNLISTED, "openai")
       work = RubyLLM::Tokens.new(input: brief.tokens.input, output: brief.tokens.output)
 
       Result.new(
         brief: brief.content,
         live_cost: brief.cost.total,
         live_reported: brief.tokens.reported_cost,
-        unlisted_id: unlisted.model.id,
-        unlisted_warning: unlisted.model.metadata[:warning],
-        unlisted_input_price: unlisted.model.price(:input),
-        priced_with_reported: unlisted.model.cost_for(brief.tokens).total,
-        priced_bare: unlisted.model.cost_for(work).total,
+        unlisted_id: unlisted.id,
+        unlisted_warning: unlisted.metadata[:warning],
+        unlisted_input_price: unlisted.price(:input),
+        priced_with_reported: unlisted.cost_for(brief.tokens).total,
+        priced_bare: unlisted.cost_for(work).total,
         input_tokens: brief.tokens.input,
         output_tokens: brief.tokens.output
       )

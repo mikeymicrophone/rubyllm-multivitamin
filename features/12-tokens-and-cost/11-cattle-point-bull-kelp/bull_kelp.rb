@@ -53,7 +53,7 @@ module CattlePointBullKelp
     Result = Struct.new(
       :answer,
       :roles,
-      :tool_content,
+      :tool_contents,
       :answer_input,
       :answer_output,
       :answer_cost,
@@ -75,12 +75,12 @@ module CattlePointBullKelp
       chat.with_tool_options(choice: PostedKelpCard)
 
       answer = chat.ask(HARVEST_QUESTION)
-      tool_message = chat.messages.find { |message| message.role == :tool }
+      tool_contents = chat.messages.select { |message| message.role == :tool }.map(&:content)
 
       Result.new(
         answer: answer.content,
         roles: chat.messages.map(&:role),
-        tool_content: tool_message&.content,
+        tool_contents: tool_contents,
         answer_input: answer.tokens.input,
         answer_output: answer.tokens.output,
         answer_cost: answer.cost.total,

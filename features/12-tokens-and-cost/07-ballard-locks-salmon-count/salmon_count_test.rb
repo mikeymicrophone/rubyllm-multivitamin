@@ -20,8 +20,8 @@ class BallardLocksSalmonCountReportedCostTest < Minitest::Test
     assert_equal usage_cost, result.cost_total
     assert_equal usage_cost, result.reported_cost
     assert_equal 0, result.cost_total
-    assert_nil result.cost_input
-    assert_nil result.cost_output
+    assert_equal 0.0, result.cost_input
+    assert_equal 0.0, result.cost_output
     assert_operator result.registry_mini_total, :>, 0
     assert_equal 0, result.unlisted_with_reported
     assert_nil result.bare_unlisted_total

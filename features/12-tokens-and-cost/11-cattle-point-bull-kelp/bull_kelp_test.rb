@@ -13,10 +13,11 @@ class CattlePointBullKelpToolTokensTest < Minitest::Test
       result = CattlePointBullKelp::BullKelp.conduct
     end
 
-    assert_equal CattlePointBullKelp::PostedKelpCard::CARD, result.tool_content
+    assert_includes result.tool_contents.first, "unknown keyword: skiff"
+    assert_equal CattlePointBullKelp::PostedKelpCard::CARD, result.tool_contents.last
     assert_includes result.answer, "14"
     assert_includes result.answer, "Haro"
-    assert_equal %i[system user assistant tool assistant], result.roles
+    assert_equal %i[system user assistant tool assistant tool assistant], result.roles
     assert_operator result.answer_input, :>, 0
     assert_operator result.answer_output, :>, 0
     assert_equal 0, result.answer_cost

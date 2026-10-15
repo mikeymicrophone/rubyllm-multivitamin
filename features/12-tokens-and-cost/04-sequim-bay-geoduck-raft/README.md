@@ -32,10 +32,12 @@ Both commands replay the cassette. No API key is required.
 Re-record it with:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/12-tokens-and-cost/04-sequim-bay-geoduck-raft/geoduck_raft.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/12-tokens-and-cost/04-sequim-bay-geoduck-raft/geoduck_raft.rb
 ```
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug
-is gone: `liquid/lfm-2.5-2.6b:free`. Checked 15 October 2026.
+`gpt-4.1-mini` on OpenAI. The free OpenRouter slug hit `free-models-per-day`
+while this slot was being re-recorded. Fallback:
+`LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-super-120b-a12b:free`
+when the daily cap allows. Checked 15 October 2026.

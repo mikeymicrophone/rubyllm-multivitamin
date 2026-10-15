@@ -10,10 +10,11 @@ run through `gpt-4.1-mini`'s registry rates, is a non-zero estimate.
 - When the provider reports a price, `cost.total` is that amount, not a
   registry estimate.
 - Component readers such as `cost.input` still use the registry. This
-  assumed free slug has no prices, so those stay `nil` while total is `0`.
+  `:free` slug is in the bundled catalog at `$0` per million tokens, so
+  those components are `0.0` while `cost.total` is the reported `0`.
 - `model.cost_for` keeps `tokens.reported_cost` when it is present. A
   `Tokens` built with only input and output lets the registry price the
-  work. An unlisted assumed model then yields `nil`.
+  work. `RubyLLM::Model.default` for an unlisted clerk then yields `nil`.
 
 **Files**
 

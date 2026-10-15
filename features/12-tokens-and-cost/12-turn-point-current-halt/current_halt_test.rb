@@ -16,7 +16,11 @@ class TurnPointCurrentHaltCancelledUsageTest < Minitest::Test
     assert_equal :cancelled, result.attempt_status
     assert_equal 1, result.attempt_count
     assert_equal 0, result.message_token_sum
-    assert_nil result.chat_cost
+    assert_nil result.chat_input
+    assert_nil result.chat_output
+    assert_nil result.attempt_input
+    assert_nil result.attempt_reported
+    assert_equal 0, result.chat_cost
   end
 
   def test_cassette_does_not_carry_a_live_key

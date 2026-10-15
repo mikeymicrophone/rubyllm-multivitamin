@@ -61,7 +61,7 @@ module BallardLocksSalmonCount
 
       work = RubyLLM::Tokens.new(input: brief.tokens.input, output: brief.tokens.output)
       mini = RubyLLM.models.find("gpt-4.1-mini", provider: :openai)
-      unlisted = RubyLLM.chat(model: UNLISTED, provider: :openai, assume_model_exists: true)
+      unlisted = RubyLLM::Model.default(UNLISTED, "openai")
 
       Result.new(
         brief: brief.content,
@@ -70,8 +70,8 @@ module BallardLocksSalmonCount
         cost_output: brief.cost.output,
         reported_cost: brief.tokens.reported_cost,
         registry_mini_total: mini.cost_for(work).total,
-        unlisted_with_reported: unlisted.model.cost_for(brief.tokens).total,
-        bare_unlisted_total: unlisted.model.cost_for(work).total,
+        unlisted_with_reported: unlisted.cost_for(brief.tokens).total,
+        bare_unlisted_total: unlisted.cost_for(work).total,
         input_tokens: brief.tokens.input,
         output_tokens: brief.tokens.output
       )

@@ -45,6 +45,9 @@ module TurnPointCurrentHalt
       :chat_cost,
       :attempt_status,
       :attempt_count,
+      :attempt_input,
+      :attempt_output,
+      :attempt_reported,
       :message_token_sum,
       keyword_init: true
     )
@@ -72,6 +75,7 @@ module TurnPointCurrentHalt
       end
 
       message_token_sum = chat.messages.sum { |message| message.tokens.input.to_i }
+      attempt = chat.usage_entries.last
 
       Result.new(
         spoken: spoken,
@@ -80,8 +84,11 @@ module TurnPointCurrentHalt
         chat_input: chat.tokens.input,
         chat_output: chat.tokens.output,
         chat_cost: chat.cost.total,
-        attempt_status: chat.usage_entries.last&.status,
+        attempt_status: attempt&.status,
         attempt_count: chat.usage_entries.size,
+        attempt_input: attempt&.tokens&.input,
+        attempt_output: attempt&.tokens&.output,
+        attempt_reported: attempt&.tokens&.reported_cost,
         message_token_sum: message_token_sum
       )
     end
