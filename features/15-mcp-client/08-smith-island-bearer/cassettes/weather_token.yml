@@ -1,0 +1,710 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"efe960f0-86b9-40e7-b235-99dbdec7a799","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/oauth-client-credentials":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Www-Authenticate:
+      - Bearer realm="mcp", resource_metadata="http://127.0.0.1:18765/.well-known/oauth-protected-resource"
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '25'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_token"}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:18765/.well-known/oauth-protected-resource
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '92'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"resource":"http://127.0.0.1:18765/mcp","authorization_servers":["http://127.0.0.1:18765"]}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:18765/.well-known/oauth-authorization-server
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '147'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"issuer":"http://127.0.0.1:18765","token_endpoint":"http://127.0.0.1:18765/token","token_endpoint_auth_methods_supported":["client_secret_basic"]}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials&client_id=smith-island-weather&resource=http%3A%2F%2F127.0.0.1%3A18765%2Fmcp
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer <MCP_CLIENT_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '81'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<MCP_OAUTH_ACCESS_TOKEN>","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"efe960f0-86b9-40e7-b235-99dbdec7a799","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/oauth-client-credentials":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Authorization:
+      - Bearer <MCP_OAUTH_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '407'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"efe960f0-86b9-40e7-b235-99dbdec7a799","result":{"resultType":"complete","supportedVersions":["2026-07-28"],"capabilities":{"tools":{"listChanged":true},"prompts":{"listChanged":true},"resources":{"listChanged":true,"subscribe":true}},"instructions":"Smith
+        Island barometer cards.","_meta":{"io.modelcontextprotocol/serverInfo":{"name":"smith-island-weather-desk","version":"1.0.0"}}}}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"499b3f0c-e948-487f-8f5c-61256fe6021e","method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/oauth-client-credentials":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/list
+      Authorization:
+      - Bearer <MCP_OAUTH_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '236'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"499b3f0c-e948-487f-8f5c-61256fe6021e","result":{"tools":[{"name":"barometer_glass","description":"Reads
+        the posted barometer on Smith Island","inputSchema":{"type":"object"},"annotations":{"readOnlyHint":true}}]}}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"51c52888-7da0-4f66-8f53-40d10a571542","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Authorization:
+      - Bearer <MCP_BEARER_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '407'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"51c52888-7da0-4f66-8f53-40d10a571542","result":{"resultType":"complete","supportedVersions":["2026-07-28"],"capabilities":{"tools":{"listChanged":true},"prompts":{"listChanged":true},"resources":{"listChanged":true,"subscribe":true}},"instructions":"Smith
+        Island barometer cards.","_meta":{"io.modelcontextprotocol/serverInfo":{"name":"smith-island-weather-desk","version":"1.0.0"}}}}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"10858aa3-48de-4790-9c57-4c2dc13a1e04","method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/list
+      Authorization:
+      - Bearer <MCP_BEARER_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Length:
+      - '236'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"10858aa3-48de-4790-9c57-4c2dc13a1e04","result":{"tools":[{"name":"barometer_glass","description":"Reads
+        the posted barometer on Smith Island","inputSchema":{"type":"object"},"annotations":{"readOnlyHint":true}}]}}'
+  recorded_at: Thu, 15 Oct 2026 11:51:56 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, afternoon watch on Smith Island.\nStation: https://www.nps.gov/places/smith-island-light-station.htm\nThe
+        foghorn tender Alden is standing off the kelp. What is the posted glass?"}],"instructions":"You
+        are the weather clerk on Smith Island.\nCall barometer_glass once.\nAnswer
+        in one sentence. Include 29.92 inHg.\nName the tender Alden.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"barometer_glass","description":"Reads
+        the posted barometer on Smith Island","parameters":{"type":"object"},"strict":false}],"tool_choice":{"type":"function","name":"barometer_glass"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:51:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d613a82de9d-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '505'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999420'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 17ms
+      X-Request-Id:
+      - req_6517f8598ae14352b96206f8b708d72f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_01b5f16509bfef01016ad0be5c7a4887d28cfbee5cdf6febe5",
+          "object": "response",
+          "created_at": 1792065116,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065116,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the weather clerk on Smith Island.\nCall barometer_glass once.\nAnswer in one sentence. Include 29.92 inHg.\nName the tender Alden.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_01b5f16509bfef01016ad0be5cde5c87d2b9ba4c920252cc91",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_0qtOzkonsi0EQIlzqtrlLwGP",
+              "name": "barometer_glass"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "barometer_glass"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the posted barometer on Smith Island",
+              "name": "barometer_glass",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 138,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 140
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:51:57 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:18765/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"5330b8f3-8656-4cc0-9d65-a986b66781df","method":"tools/call","params":{"name":"barometer_glass","arguments":{},"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/call
+      Mcp-Name:
+      - barometer_glass
+      Authorization:
+      - Bearer <MCP_BEARER_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - WEBrick/1.9.2 (Ruby/3.2.3/2024-01-18)
+      Date:
+      - Thu, 15 Oct 2026 11:51:57 GMT
+      Content-Length:
+      - '171'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"5330b8f3-8656-4cc0-9d65-a986b66781df","result":{"content":[{"type":"text","text":"Smith
+        Island barometer. 29.92 inHg and falling. Fog by 16:00."}]}}'
+  recorded_at: Thu, 15 Oct 2026 11:51:57 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, afternoon watch on Smith Island.\nStation: https://www.nps.gov/places/smith-island-light-station.htm\nThe
+        foghorn tender Alden is standing off the kelp. What is the posted glass?"},{"type":"function_call","call_id":"call_0qtOzkonsi0EQIlzqtrlLwGP","name":"barometer_glass","arguments":"{}"},{"type":"function_call_output","call_id":"call_0qtOzkonsi0EQIlzqtrlLwGP","output":"Smith
+        Island barometer. 29.92 inHg and falling. Fog by 16:00."}],"instructions":"You
+        are the weather clerk on Smith Island.\nCall barometer_glass once.\nAnswer
+        in one sentence. Include 29.92 inHg.\nName the tender Alden.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"barometer_glass","description":"Reads
+        the posted barometer on Smith Island","parameters":{"type":"object"},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:51:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9d658ddd5d0d-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '634'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999615'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_9aa9ff3a089a44379db7316d667e9a1c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_021c500cc5b2bfc3016ad0be5d1b3887d2add27a8a73f0b92e",
+          "object": "response",
+          "created_at": 1792065117,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792065117,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the weather clerk on Smith Island.\nCall barometer_glass once.\nAnswer in one sentence. Include 29.92 inHg.\nName the tender Alden.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_021c500cc5b2bfc3016ad0be5d6dac87d293a4c2b542678f5a",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The posted glass on Smith Island is 29.92 inHg and falling; the foghorn tender Alden is standing off the kelp with fog expected by 16:00."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the posted barometer on Smith Island",
+              "name": "barometer_glass",
+              "output_schema": null,
+              "parameters": {
+                "type": "object"
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 168,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 39,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 207
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:51:57 GMT
+recorded_with: VCR 6.4.0

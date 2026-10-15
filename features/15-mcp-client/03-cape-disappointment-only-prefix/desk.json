@@ -1,0 +1,22 @@
+{
+  "name": "cape-disappointment-desk",
+  "instructions": "Cape Disappointment horn and tide cards.",
+  "tools": [
+    {
+      "name": "posted_horn_card",
+      "description": "Reads whether the Cape Disappointment horn is running and the blast length",
+      "text": "Cape Disappointment horn is running. Blast 3 seconds, silent 27 seconds."
+    },
+    {
+      "name": "posted_tide_board",
+      "description": "Reads the Cape Disappointment bar tide board",
+      "text": "Cape Disappointment bar. Low water 07:05, 1.1 ft. Peacock Spit ebb 3.4 kn."
+    },
+    {
+      "name": "silence_horn",
+      "description": "Stops the Cape Disappointment horn. Do not offer this to the model.",
+      "annotations": { "readOnlyHint": false, "destructiveHint": true },
+      "text": "Horn silenced."
+    }
+  ]
+}

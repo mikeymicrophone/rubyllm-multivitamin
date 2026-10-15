@@ -1,0 +1,11 @@
+{
+  "name": "neah-bay-pilot-desk",
+  "instructions": "Neah Bay pilot ladder windows.",
+  "tools": [
+    {
+      "name": "pilot_ladder",
+      "description": "Reads the boarding window for the Neah Bay pilot ladder",
+      "text": "Neah Bay pilot ladder. Board the Makah at 06:40. Freeboard 9 ft. Do not rig after 07:10."
+    }
+  ]
+}

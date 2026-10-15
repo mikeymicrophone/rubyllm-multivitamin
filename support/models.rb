@@ -60,6 +60,15 @@ module Multivitamin
     # does not speak that endpoint. gpt-4.1-mini does not list judgment.
     OPENAI_JUDGMENT = "gpt-6-luna"
 
+    # OpenAI Responses model that accepts the native tool_search tool.
+    # gpt-4.1-mini and gpt-5.4-nano answer HTTP 400: Tool 'tool_search'
+    # is not supported. OpenAI's tool search guide names gpt-5.4 and later.
+    # Cheapest slug that accepted a live tool_search probe on
+    # https://api.openai.com/v1/models on 15 October 2026 is gpt-5.4-mini.
+    # LIVE_PROVIDER does not retarget it: the free OpenRouter slug does
+    # not speak tool_search.
+    OPENAI_CHAT_TOOL_SEARCH = "gpt-5.4-mini"
+
     # Chat Completions audio model, confirmed on the same models list.
     # The free OpenRouter audio slugs were past the daily cap that afternoon.
     OPENAI_AUDIO = "gpt-audio-mini"

@@ -659,6 +659,38 @@ Shown in [Port Townsend slip find](features/14-agents/10-port-townsend-slip-find
 
 Shown in [Ediz Hook buoy chat model](features/14-agents/07-ediz-hook-buoy-chat-model/).
 
+## MCP client
+
+### Microsoft Learn Streamable HTTP answers DELETE 405 on close
+
+**What happens.** After a successful `microsoft_docs_search`, `desk.close` sends `DELETE` to `https://learn.microsoft.com/api/mcp`. The cassette status is 405 Method Not Allowed. `conduct` still returns the tide-gauge answer. RubyLLM does not raise.
+
+**Why it matters.** A watch that treats every non-2xx as a failed briefing would abort after the search already ran.
+
+**What to do.** Let `close` finish. Read the cassette for the 405 when you need to prove the session ended.
+
+Shown in [Point Wilson Learn URL](features/15-mcp-client/01-point-wilson-learn-url/).
+
+### Resource#to_attachment names the file from the URI path
+
+**What happens.** `ask(..., with: card)` turns the MCP resource into an `Attachment` whose filename is `File.basename` of the URI path. The Ediz Hook card URI is `watch://ediz-hook/buoy-battery.md`, so the attachment filename is `buoy-battery.md` and its type is `:text`. The Resource still reports `mimeType` `text/markdown` from the server listing. That string is not what the Responses API sniffs.
+
+**Why it matters.** The documented `with: resource` call only reaches the model when the URI path looks like a file the attachment layer understands.
+
+**What to do.** Give the resource a path that ends in `.md` (or another text extension) when the card is markdown. Assert the attachment filename and type, not only `card.mime_type`.
+
+Shown in [Ediz Hook resource attachment](features/15-mcp-client/06-ediz-hook-resource/).
+
+### Deferred MCP tools send tool_search, then the model looks up the gate
+
+**What happens.** `with_mcp(desk, defer: true)` keeps every server tool in both `chat.tools` and `chat.deferred_tools`. The first Responses request on `gpt-5.4-mini` sends each function with `defer_loading: true` and `{type: "tool_search"}`. It does not contain `tool_search_call`. The follow-up request includes `tool_search_call`, `tool_search_output`, and the `current_gate` result `2.8 kn`.
+
+**Why it matters.** The deferred list is still on the chat object. The provider hides the full definitions behind tool search, then the model calls the gate it found.
+
+**What to do.** Point this slot at a model that accepts `tool_search`. Assert `defer_loading` and `tool_search` on the first request, and `tool_search_call` on the follow-up. `LIVE_PROVIDER` does not retarget this recording.
+
+Shown in [Juan de Fuca deferred tool search](features/15-mcp-client/12-juan-de-fuca-defer/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary
@@ -680,6 +712,16 @@ Shown in [Point Wilson tide dictation](features/02-streaming/01-point-wilson-tid
 **What to do.** Assert the pieces against the stored SSE. Compare a second play only when `LIVE` is unset.
 
 Shown in [Cape Disappointment blast log](features/02-streaming/02-cape-disappointment-blast-log/).
+
+### MCP JSON-RPC request ids are UUIDs
+
+**What happens.** First-party `RubyLLM::MCP` Streamable HTTP requests send `"id":"<uuid>"`. `HTTP::Stream` finds the answer by that same id. A second play of the Smith Island weather-token cassette, with no API key, still matches those bodies because the player strips the UUID before comparing and copies the live id onto the recorded JSON-RPC result. Without that copy, discover looks unanswered and the client falls back to the `initialize` handshake, which is not in the cassette. The bearer and OAuth placeholders remain `<MCP_BEARER_TOKEN>` and `<MCP_OAUTH_ACCESS_TOKEN>`.
+
+**Why it matters.** Matching on the raw body would fail every replay: `SecureRandom.uuid` is new on each `discover` and `tools/list`. Leaving the recorded result id in place makes the watch miss a 200 it already stored.
+
+**What to do.** Keep `jsonrpc_body` in the cassette player, and rewrite the result id on playback. Do not hand-author a fixed id.
+
+Shown in [Smith Island bearer and OAuth](features/15-mcp-client/08-smith-island-bearer/).
 
 ## Provider gotchas
 

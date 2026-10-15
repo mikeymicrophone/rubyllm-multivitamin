@@ -1,0 +1,19 @@
+{
+  "name": "ediz-hook-buoy-desk",
+  "instructions": "Ediz Hook buoy battery cards.",
+  "tools": [
+    {
+      "name": "buoy_station",
+      "description": "Names the Ediz Hook bell buoy",
+      "text": "Ediz Hook bell buoy EH-2."
+    }
+  ],
+  "resources": [
+    {
+      "uri": "watch://ediz-hook/buoy-battery.md",
+      "name": "buoy-battery.md",
+      "mimeType": "text/markdown",
+      "text": "# Ediz Hook bell buoy EH-2\n\nPosted Wednesday 14 October 2026.\nTerminal voltage 14.8 V.\nReplace the bank when it falls below 12.4 V.\nDo not leave the lantern dark overnight.\n"
+    }
+  ]
+}

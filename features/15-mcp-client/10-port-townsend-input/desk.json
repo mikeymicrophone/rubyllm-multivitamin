@@ -1,0 +1,30 @@
+{
+  "name": "port-townsend-slip-desk",
+  "instructions": "Port Townsend ferry slip choices.",
+  "tools": [
+    {
+      "name": "choose_ferry_slip",
+      "description": "Asks which Port Townsend ferry slip the Chetzemoka should take",
+      "elicit": "slip"
+    }
+  ],
+  "elicit": {
+    "slip": {
+      "message": "Which Port Townsend ferry slip should the Chetzemoka take?",
+      "choice_field": "slip",
+      "required": ["slip"],
+      "fields": {
+        "slip": {
+          "type": "string",
+          "title": "Slip",
+          "enum": ["A", "B"],
+          "default": "A"
+        }
+      },
+      "results": {
+        "A": "Chetzemoka takes slip A. Wind 18 kn off Point Hudson. Hold the outbound until the flood eases.",
+        "B": "Chetzemoka takes slip B. That slip is the lee of the Union Wharf pile."
+      }
+    }
+  }
+}

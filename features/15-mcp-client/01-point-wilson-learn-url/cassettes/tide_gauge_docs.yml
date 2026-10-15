@@ -1,0 +1,1073 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"dab4f49d-5b8b-4b49-834c-9de7a4924596","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114550Z-178dbddcf86vbhsmhC1IADgx0g0000000gr0000000000s9p
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '173'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"error":{"code":-32601,"message":"Method \u0027server/discover\u0027 is not available."},"id":"dab4f49d-5b8b-4b49-834c-9de7a4924596","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:45:50 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"ff80d546-8a91-4bf5-9e86-1a6b43e3a494","method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"ruby_llm","version":"2.1.1"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Method:
+      - initialize
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114550Z-178dbddcf86vbhsmhC1IADgx0g0000000gr0000000000sa8
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '1987'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"protocolVersion":"2025-06-18","capabilities":{"logging":{},"prompts":{"listChanged":true},"resources":{"listChanged":true},"tools":{"listChanged":true}},"serverInfo":{"name":"Microsoft Learn MCP Server","version":"1.0.0"},"instructions":"# Microsoft Learn MCP Server\r\n\r\nThis server gives structured access to official Microsoft and Azure documentation via three tools:\r\n\r\n## Tools\r\n\r\n### microsoft_docs_search\r\nSearch official documentation and return up to 10 concise, high-quality content chunks (max 500 tokens each), including title, URL, and excerpt.\r\n\r\n- Use first to get a quick, reliable overview\r\n- Ideal for grounding answers in Microsoft knowledge\r\n\r\n### microsoft_code_sample_search\r\nSearch for code snippets and examples in official Microsoft Learn documentation and return up to 20 relevant, high-quality code samples.\r\n\r\n- Use when you need to provide sample Microsoft/Azure related code in your answers.  \r\n- Ideal for generating code snippets or practical implementation examples.  \r\n- Optional parameter \u0060language\u0060 can filter results. \r\n\r\n### microsoft_docs_fetch\r\nFetch and convert full Microsoft documentation pages to markdown.\r\n\r\n- Use after search when you need full content from a specific URL\r\n- Required for detailed tutorials, troubleshooting, prerequisites, code samples, or when search results are incomplete or outdated\r\n\r\n## Workflow\r\n\r\n1. Use \u0060microsoft_docs_search\u0060 to find relevant documents.\r\n2. If you need code examples or practical snippets, use \u0060microsoft_code_sample_search\u0060.\r\n3. If deeper or complete information is needed, use \u0060microsoft_docs_fetch\u0060.\r\n\r\n**Search gives breadth. Code Sample Search gives practical examples. Fetch gives depth.**\r\n\r\nAll content comes from Microsoft Learn or official sources, returned in clean markdown format."},"id":"ff80d546-8a91-4bf5-9e86-1a6b43e3a494","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:45:50 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      Mcp-Method:
+      - notifications/initialized
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Length:
+      - '0'
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114550Z-178dbddcf86jcbq5hC1IADc0v000000003s0000000006c74
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 15 Oct 2026 11:45:50 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"0665f6b5-2c71-4f32-affb-7b8aed94ef27","method":"tools/list","params":{}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      Mcp-Method:
+      - tools/list
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114550Z-178dbddcf86mbqpkhC1IADhdfw0000000gsg0000000027ev
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '4987'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:50 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"tools":[{"name":"microsoft_docs_search","title":"Microsoft Docs Search","description":"Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user\u0027s query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.","inputSchema":{"type":"object","properties":{"query":{"description":"a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs","type":"string","default":null}}},"outputSchema":{"type":"object","properties":{"results":{"type":"array","items":{"type":"object","properties":{"id":{"type":["string","null"]},"title":{"type":"string"},"content":{"type":["string","null"]},"contentUrl":{"type":"string"},"content_omitted":{"type":"boolean"},"extensionData":{"type":["object","null"]}}}}}},"annotations":{"title":"Microsoft Docs Search","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}},{"name":"microsoft_code_sample_search","title":"Microsoft Code Sample Search","description":"Search for code snippets and examples in official Microsoft Learn documentation. This tool retrieves relevant code samples from Microsoft documentation pages providing developers with practical implementation examples and best practices for Microsoft/Azure products and services related coding tasks. This tool will help you use the **LATEST OFFICIAL** code snippets to empower coding capabilities.\n\n## When to Use This Tool\n- When you are going to provide sample Microsoft/Azure related code snippets in your answers.\n- When you are **generating any Microsoft/Azure related code**.\n\n## Usage Pattern\nInput a descriptive query, or SDK/class/method name to retrieve related code samples. The optional parameter \u0060language\u0060 can help to filter results.\n\nEligible values for \u0060language\u0060 parameter include: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php","inputSchema":{"type":"object","properties":{"query":{"description":"a descriptive query, SDK name, method name or code snippet related to Microsoft/Azure products, services, platforms, developer tools, frameworks, APIs or SDKs","type":"string"},"language":{"description":"Optional parameter specifying the programming language of code snippets to retrieve. Can significantly improve search quality if provided. Eligible values: csharp javascript typescript python powershell azurecli al sql java kusto cpp go rust ruby php","type":"string","default":null}},"required":["query"]},"outputSchema":{"type":"object","properties":{"results":{"type":"array","items":{"type":"object","properties":{"description":{"type":"string"},"codeSnippet":{"type":["string","null"]},"link":{"type":"string"},"language":{"type":"string"},"content_omitted":{"type":"boolean"}}}}}},"annotations":{"title":"Microsoft Code Sample Search","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}},{"name":"microsoft_docs_fetch","title":"Microsoft Docs Fetch","description":"Fetch and convert a Microsoft Learn documentation webpage to markdown format. This tool retrieves the latest complete content of Microsoft documentation webpages including Azure, .NET, Microsoft 365, and other Microsoft technologies.\n\n## When to Use This Tool\n- When search results provide incomplete information or truncated content\n- When you need complete step-by-step procedures or tutorials\n- When you need troubleshooting sections, prerequisites, or detailed explanations\n- When search results reference a specific page that seems highly relevant\n- For comprehensive guides that require full context\n\n## Usage Pattern\nUse this tool AFTER microsoft_docs_search when you identify specific high-value pages that need complete content. The search tool gives you an overview; this tool gives you the complete picture.\n\n## URL Requirements\n- The URL must be a valid HTML documentation webpage from the microsoft.com domain\n- Binary files (PDF, DOCX, images, etc.) are not supported\n\n## Output Format\nmarkdown with headings, code blocks, tables, and links preserved.","inputSchema":{"type":"object","properties":{"url":{"description":"URL of the Microsoft documentation page to read","type":"string"}},"required":["url"]},"annotations":{"title":"Microsoft Docs Fetch","destructiveHint":false,"idempotentHint":true,"readOnlyHint":true}}]},"id":"0665f6b5-2c71-4f32-affb-7b8aed94ef27","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:45:50 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nDocs:
+        https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins\nThe
+        kelp-ledge gauge on the foghorn tender Alden reports through Azure IoT Hub.\nWhat
+        Microsoft Learn page explains device twins, so the watch can store the 6.0
+        ft clearance on the twin?"}],"instructions":"You are the tide clerk at Point
+        Wilson Light Station on Admiralty Inlet.\nCall microsoft_docs_search once
+        for Azure IoT Hub device twins.\nAnswer in two short sentences.\nName the
+        foghorn tender Alden.\nRepeat the document title the tool returned.\nDo not
+        invent a title.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"microsoft_docs_search","description":"Search
+        official Microsoft/Azure documentation to find the most relevant and trustworthy
+        content for a user''s query. This tool returns up to 10 high-quality content
+        chunks (each max 500 tokens), extracted from Microsoft Learn and other official
+        sources. Each result includes the article title, URL, and a self-contained
+        content excerpt optimized for fast retrieval and reasoning. Always use this
+        tool to quickly ground your answers in accurate, first-party Microsoft/Azure
+        knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch
+        when high-value pages are identified by search. The fetch tool complements
+        search by providing the full detail. This is a required step for comprehensive
+        results.","parameters":{"type":"object","properties":{"query":{"description":"a
+        query or topic about Microsoft/Azure products, services, platforms, developer
+        tools, frameworks, or APIs","type":"string","default":null}}},"strict":false}],"tool_choice":{"type":"function","name":"microsoft_docs_search"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:45:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae9473b9e87267-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '901'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999417'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 17ms
+      X-Request-Id:
+      - req_02d71d6c8dac4829831d023a91f19561
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e61eca769a70918016ad0bceec47487d290efa811a5f7ffec",
+          "object": "response",
+          "created_at": 1792064750,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064751,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nCall microsoft_docs_search once for Azure IoT Hub device twins.\nAnswer in two short sentences.\nName the foghorn tender Alden.\nRepeat the document title the tool returned.\nDo not invent a title.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0e61eca769a70918016ad0bcef795487d2994412dd6ebef677",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"query\":\"Azure IoT Hub device twins\"}",
+              "call_id": "call_2gjZEBioEmVeLDF5IxDkQ14M",
+              "name": "microsoft_docs_search"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "microsoft_docs_search"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user's query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.",
+              "name": "microsoft_docs_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs",
+                    "type": "string",
+                    "default": null
+                  }
+                }
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 366,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 11,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 377
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:45:51 GMT
+- request:
+    method: post
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"dcc539e7-852f-4b1c-9a89-c6b74a4dec48","method":"tools/call","params":{"name":"microsoft_docs_search","arguments":{"query":"Azure
+        IoT Hub device twins"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      Mcp-Method:
+      - tools/call
+      Mcp-Name:
+      - microsoft_docs_search
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/event-stream
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114553Z-178dbddcf869v85vhC1IADnmqs0000000e10000000009ak6
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '55699'
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 15 Oct 2026 11:45:54 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:54 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message
+        data: {"result":{"content":[{"type":"text","text":"{\u0022results\u0022:[{\u0022title\u0022:\u0022Understand and use device twins in IoT Hub\u0022,\u0022content\u0022:\u0022# Understand and use device twins in IoT Hub\\n*Device twins* are JSON documents that store device state information including metadata, configurations, and conditions. Azure IoT Hub maintains a device twin for each device that you connect to IoT Hub.\\nNote\\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis article describes:\\n1. The structure of the device twin: *tags*, *desired properties*, and *reported properties*.\\n2. The operations that [*device applications*](https://learn.microsoft.com/azure/iot/iot-glossary#device-app) and the [*solution back end*](https://learn.microsoft.com/azure/iot/iot-glossary#solution-back-end) can perform on device twins.\\nUse device twins to:\\n1. Store device-specific metadata in the cloud. For example, the location of a vending machine.\\n2. Report current state information such as available capabilities and conditions from your device app. For example, whether a device is connected to your IoT hub over cellular or WiFi.\\n3. Synchronize the state of long-running workflows between device app and back-end apps. For example, when a back-end app specifies the new firmware version to install, and the device app reports the various stages of the update process.\\n4. Query your device metadata, configuration, or state.\\nFor more information about using reported properties, device-to-cloud messages, or file upload, see [Device-to-cloud communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-d2c-guidance).\\nFor more information about using desired properties, direct methods, or cloud-to-device messages, see [Cloud-to-device communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-c2d-guidance).\\nTo learn how device twins relate to the device model used by an Azure IoT Plug and Play device, see [Understand IoT Plug and Play digital twins](https://learn.microsoft.com/en-us/previous-versions/azure/iot/concepts-digital-twin).\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-java)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-java)\\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\\nYou can use device twins to:\\n1. Store device metadata from your solution back end\\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\\n4. Query your device metadata, configuration, or state\\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis article shows you how to develop two types of applications:\\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\\nNote\\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\\n## Prerequisites\\n1. An IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4. Requires [Java SE Development Kit 8](https://learn.microsoft.com/en-us/azure/developer/java/fundamentals/). Make sure you select **Java 8** under **Long-term support** to navigate to downloads for JDK 8.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-csharp)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-csharp)\\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\\nYou can use device twins to:\\n1. Store device metadata from your solution back end\\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\\n4. Query your device metadata, configuration, or state\\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis article shows you how to develop two types of applications:\\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\\nNote\\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\\n## Prerequisites\\n1. An IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4. Requires Visual Studio\\n## Overview\\nThis article describes how to use the [Azure IoT SDK for .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/main/readme.md) to create device and backend service application code for device twins.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-node)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-node)\\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\\nYou can use device twins to:\\n1. Store device metadata from your solution back end\\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\\n4. Query your device metadata, configuration, or state\\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis article shows you how to develop two types of applications:\\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\\nNote\\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\\n## Prerequisites\\n1. An IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4. Requires Node.js version 10.0.x or later\\n## Overview\\nThis article describes how to use the [Azure IoT SDK for Node.js](https://github.com/Azure/azure-iot-sdk-node) to create device and backend service application code for device twins.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-python)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-python)\\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\\nYou can use device twins to:\\n1. Store device metadata from your solution back end\\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\\n4. Query your device metadata, configuration, or state\\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis article shows you how to develop two types of applications:\\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\\nNote\\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\\n## Prerequisites\\n1. An IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4. Python SDK - [Python version 3.7 or later](https://www.python.org/downloads/) is recommended. Make sure to use the 32-bit or 64-bit installation as required by your setup. When prompted during the installation, make sure to add Python to your platform-specific environment variable.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-csharp)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-csharp)\\n## Create a backend application\\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\\nThis section describes how to create backend application code to:\\n1. Read and update device twin fields\\n2. Create a device twin query\\nThe [RegistryManager](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager) class exposes all methods required to create a backend application to interact with device twins from the service.\\n### Add service NuGet Package\\nBackend service applications require the **Microsoft.Azure.Devices** NuGet package.\\n### Connect to IoT hub\\nYou can connect a backend service to IoT Hub using the following methods:\\n1. Shared access policy\\n2. Microsoft Entra\\nImportant\\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n#### Connect using a shared access policy\\nConnect a backend application to a device using [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager.createfromconnectionstring). Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \\u0060fromConnectionString\\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\n\\u0060\\u0060\\u0060csharp\\nusing Microsoft.Azure.Devices;\\nstatic RegistryManager registryManager;\\nstatic string connectionString = \\u0022{Shared access policy connection string}\\u0022;\\nregistryManager = RegistryManager.CreateFromConnectionString(connectionString);\\n\\u0060\\u0060\\u0060\\n#### Connect using Microsoft Entra\\nA backend app that uses Microsoft Entra must successfully authenticate and obtain a security token credential before connecting to IoT Hub. This token is passed to a IoT Hub connection method. For general information about setting up and using Microsoft Entra for IoT Hub, see [Control access to IoT Hub by using Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-azure-ad).\\n##### Configure Microsoft Entra app\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-node)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-node)\\n## Create a device application\\nDevice applications can read and write twin reported properties, and be notified of desired twin property changes that are set by a backend application or IoT Hub.\\nThis section describes how to use the [azure-iot-device](https://learn.microsoft.com/en-us/javascript/api/azure-iot-device) package in the Azure IoT SDK for Node.js to create a device application to:\\n1. Retrieve a device twin and examine reported properties\\n2. Update reported device twin properties\\n3. Receive notice of desired property changes\\nImportant\\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n### Install device SDK package\\nRun this command to install the **azure-iot-device** device SDK on your development machine:\\n\\u0060\\u0060\\u0060cmd\\nnpm install azure-iot-device --save\\n\\u0060\\u0060\\u0060\\n### Connect a device to IoT Hub\\nA device app can authenticate with IoT Hub using the following methods:\\n1. X.509 certificate\\n2. Shared access key\\nImportant\\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n#### Authenticate using an X.509 certificate\\nThe X.509 certificate is attached to the device-to-IoT Hub connection transport.\\nTo configure a device-to-IoT Hub connection using an X.509 certificate:\\n1. Call [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/client?#azure-iothub-client-fromconnectionstring) to add the device or identity module connection string, and transport type to the \\u0060Client\\u0060 object. Add \\u0060x509=true\\u0060 to the connection string to indicate that a certificate is added to \\u0060DeviceClientOptions\\u0060. For example:\\n1.1. A **device** connection string:\\n  \\u0060HostName=xxxxx.azure-devices.net;DeviceId=Device-1;SharedAccessKey=xxxxxxxxxxxxx;x509=true\\u0060\\n1.2. An **identity module** connection string:\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-node)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-node)\\n## Create a backend application\\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\\nThis section describes how to create a backend application that:\\n1. Retrieves and updates a device twin\\n2. Creates a device twin query\\n### Install service SDK package\\nRun this command to install **azure-iothub** on your development machine:\\n\\u0060\\u0060\\u0060cmd\\nnpm install azure-iothub --save\\n\\u0060\\u0060\\u0060\\nThe [Registry](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry) class exposes all methods required to interact with device twins from a backend application.\\n### Connect to IoT hub\\nYou can connect a backend service to IoT Hub using the following methods:\\n1. Shared access policy\\n2. Microsoft Entra\\nImportant\\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n#### Connect using a shared access policy\\nUse [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry?#azure-iothub-registry-fromconnectionstring) to connect to IoT hub. Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \\u0060fromConnectionString\\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\n\\u0060\\u0060\\u0060javascript\\n\\u0027use strict\\u0027;\\nvar iothub = require(\\u0027azure-iothub\\u0027);\\nvar connectionString = \\u0027{Shared access policy connection string}\\u0027;\\nvar registry = iothub.Registry.fromConnectionString(connectionString);\\n\\u0060\\u0060\\u0060\\n#### Connect using Microsoft Entra\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-python)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-python)\\n## Create a backend application\\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\\nThis section describes how to create a backend application to:\\n1. Update twin tags and desired properties\\n2. Queries devices using filters on the tags and properties\\nThe [IoTHubRegistryManager](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager) class exposes all methods required to create a backend application to interact with device twins from the service.\\n### Connect to IoT hub\\nYou can connect a backend service to IoT Hub using the following methods:\\n1. Shared access policy\\n2. Microsoft Entra\\nImportant\\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n#### Connect using a shared access policy\\nConnect to IoT hub using [from_connection_string](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?#azure-iot-hub-iothubregistrymanager-from-connection-string). Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \\u0060fromConnectionString\\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\nFor example:\\n\\u0060\\u0060\\u0060python\\nimport sys\\nfrom time import sleep\\nfrom azure.iot.hub import IoTHubRegistryManager\\nfrom azure.iot.hub.models import Twin, TwinProperties, QuerySpecification, QueryResult\\n\\n# Connect to IoT hub\\nIOTHUB_CONNECTION_STRING = \\u0022{IoT hub service connection string}\\u0022\\niothub_registry_manager = IoTHubRegistryManager.from_connection_string(IOTHUB_CONNECTION_STRING)\\n\\u0060\\u0060\\u0060\\n#### Connect using Microsoft Entra\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\u0022},{\u0022title\u0022:\u0022Get started with device twins (programming-language-csharp)\u0022,\u0022content\u0022:\u0022# Get started with device twins (programming-language-csharp)\\n## Create a device application\\nDevice applications can read and write twin reported properties, and be notified of desired twin property changes that are set by a backend application or IoT Hub.\\nThis section describes how to use device application code to:\\n1. Retrieve a device twin and examine reported properties\\n2. Update reported device twin properties\\n3. Create a desired property update callback handler\\n### Required device NuGet package\\nDevice client applications written in C# require the **Microsoft.Azure.Devices.Client** NuGet package.\\nAdd this \\u0060using\\u0060 statement to use the device library.\\n\\u0060\\u0060\\u0060csharp\\nusing Microsoft.Azure.Devices.Client;\\n\\u0060\\u0060\\u0060\\n### Connect a device to IoT Hub\\nA device app can authenticate with IoT Hub using the following methods:\\n1. Shared access key\\n2. X.509 certificate\\nImportant\\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n#### Authenticate using a shared access key\\nThe [DeviceClient](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient) class exposes all the methods required to interact with device twins from the device.\\nConnect to the device using the [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient.createfromconnectionstring?#microsoft-azure-devices-client-deviceclient-createfromconnectionstring%28system-string-microsoft-azure-devices-client-transporttype%29) method along with device connection string and the connection transport protocol.\\nThe \\u0060CreateFromConnectionString\\u0060[TransportType](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.transporttype) transport protocol parameter supports the following transport protocols:\\n1. \\u0060Mqtt\\u0060\\n2. \\u0060Mqtt_WebSocket_Only\\u0060\\n3. \\u0060Mqtt_Tcp_Only\\u0060\\n4. \\u0060Amqp\\u0060\\n5. \\u0060Amqp_WebSocket_Only\\u0060\\n6. \\u0060Amqp_Tcp_Only\\u0060\\nThe \\u0060Http1\\u0060 protocol is not supported for device twin updates.\\nThis example connects to a device using the \\u0060Mqtt\\u0060 transport protocol.\u0022,\u0022contentUrl\u0022:\u0022https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application\u0022}]}"}],"structuredContent":{"results":[{"title":"Understand and use device twins in IoT Hub","content":"# Understand and use device twins in IoT Hub\n*Device twins* are JSON documents that store device state information including metadata, configurations, and conditions. Azure IoT Hub maintains a device twin for each device that you connect to IoT Hub.\nNote\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\nThis article describes:\n1. The structure of the device twin: *tags*, *desired properties*, and *reported properties*.\n2. The operations that [*device applications*](https://learn.microsoft.com/azure/iot/iot-glossary#device-app) and the [*solution back end*](https://learn.microsoft.com/azure/iot/iot-glossary#solution-back-end) can perform on device twins.\nUse device twins to:\n1. Store device-specific metadata in the cloud. For example, the location of a vending machine.\n2. Report current state information such as available capabilities and conditions from your device app. For example, whether a device is connected to your IoT hub over cellular or WiFi.\n3. Synchronize the state of long-running workflows between device app and back-end apps. For example, when a back-end app specifies the new firmware version to install, and the device app reports the various stages of the update process.\n4. Query your device metadata, configuration, or state.\nFor more information about using reported properties, device-to-cloud messages, or file upload, see [Device-to-cloud communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-d2c-guidance).\nFor more information about using desired properties, direct methods, or cloud-to-device messages, see [Cloud-to-device communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-c2d-guidance).\nTo learn how device twins relate to the device model used by an Azure IoT Plug and Play device, see [Understand IoT Plug and Play digital twins](https://learn.microsoft.com/en-us/previous-versions/azure/iot/concepts-digital-twin).","contentUrl":"https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins"},{"title":"Get started with device twins (programming-language-java)","content":"# Get started with device twins (programming-language-java)\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\nYou can use device twins to:\n1. Store device metadata from your solution back end\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\n4. Query your device metadata, configuration, or state\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\nNote\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\nThis article shows you how to develop two types of applications:\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\nNote\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\n## Prerequisites\n1. An IoT hub\n2. A registered device\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\n4. Requires [Java SE Development Kit 8](https://learn.microsoft.com/en-us/azure/developer/java/fundamentals/). Make sure you select **Java 8** under **Long-term support** to navigate to downloads for JDK 8.","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins"},{"title":"Get started with device twins (programming-language-csharp)","content":"# Get started with device twins (programming-language-csharp)\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\nYou can use device twins to:\n1. Store device metadata from your solution back end\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\n4. Query your device metadata, configuration, or state\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\nNote\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\nThis article shows you how to develop two types of applications:\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\nNote\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\n## Prerequisites\n1. An IoT hub\n2. A registered device\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\n4. Requires Visual Studio\n## Overview\nThis article describes how to use the [Azure IoT SDK for .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/main/readme.md) to create device and backend service application code for device twins.","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins"},{"title":"Get started with device twins (programming-language-node)","content":"# Get started with device twins (programming-language-node)\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\nYou can use device twins to:\n1. Store device metadata from your solution back end\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\n4. Query your device metadata, configuration, or state\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\nNote\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\nThis article shows you how to develop two types of applications:\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\nNote\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\n## Prerequisites\n1. An IoT hub\n2. A registered device\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\n4. Requires Node.js version 10.0.x or later\n## Overview\nThis article describes how to use the [Azure IoT SDK for Node.js](https://github.com/Azure/azure-iot-sdk-node) to create device and backend service application code for device twins.","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins"},{"title":"Get started with device twins (programming-language-python)","content":"# Get started with device twins (programming-language-python)\nUse the Azure IoT Hub device SDK and service SDK to develop applications that handle common device twin tasks. Device twins are JSON documents that store device state information including metadata, configurations, and conditions. IoT Hub persists a device twin for each device that connects to it.\nYou can use device twins to:\n1. Store device metadata from your solution back end\n2. Report current state information such as available capabilities and conditions, for example, the connectivity method used, from your device app\n3. Synchronize the state of long-running workflows, such as firmware and configuration updates, between a device app and a back-end app\n4. Query your device metadata, configuration, or state\nFor more information about device twins, including when to use device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\nNote\nThe features described in this article are available only in the standard tier of IoT Hub. For more information about the basic and standard/free IoT Hub tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\nThis article shows you how to develop two types of applications:\n1. Device apps can handle requests to update desired properties and respond with changes to reported properties.\n2. Service apps can update device twin tags, set new desired properties, and query devices based on device twin values.\nNote\nThis article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks) samples that are referenced from within this article. You can use SDK tools to build both device and back-end applications.\n## Prerequisites\n1. An IoT hub\n2. A registered device\n3. If your application uses the MQTT protocol, make sure that port 8883 is open in your firewall. The MQTT protocol communicates over port 8883. This port may be blocked in some corporate and educational network environments. For more information and ways to work around this issue, see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\n4. Python SDK - [Python version 3.7 or later](https://www.python.org/downloads/) is recommended. Make sure to use the 32-bit or 64-bit installation as required by your setup. When prompted during the installation, make sure to add Python to your platform-specific environment variable.","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins"},{"title":"Get started with device twins (programming-language-csharp)","content":"# Get started with device twins (programming-language-csharp)\n## Create a backend application\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\nThis section describes how to create backend application code to:\n1. Read and update device twin fields\n2. Create a device twin query\nThe [RegistryManager](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager) class exposes all methods required to create a backend application to interact with device twins from the service.\n### Add service NuGet Package\nBackend service applications require the **Microsoft.Azure.Devices** NuGet package.\n### Connect to IoT hub\nYou can connect a backend service to IoT Hub using the following methods:\n1. Shared access policy\n2. Microsoft Entra\nImportant\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\n#### Connect using a shared access policy\nConnect a backend application to a device using [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager.createfromconnectionstring). Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \u0060fromConnectionString\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\n\u0060\u0060\u0060csharp\nusing Microsoft.Azure.Devices;\nstatic RegistryManager registryManager;\nstatic string connectionString = \u0022{Shared access policy connection string}\u0022;\nregistryManager = RegistryManager.CreateFromConnectionString(connectionString);\n\u0060\u0060\u0060\n#### Connect using Microsoft Entra\nA backend app that uses Microsoft Entra must successfully authenticate and obtain a security token credential before connecting to IoT Hub. This token is passed to a IoT Hub connection method. For general information about setting up and using Microsoft Entra for IoT Hub, see [Control access to IoT Hub by using Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-azure-ad).\n##### Configure Microsoft Entra app","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application"},{"title":"Get started with device twins (programming-language-node)","content":"# Get started with device twins (programming-language-node)\n## Create a device application\nDevice applications can read and write twin reported properties, and be notified of desired twin property changes that are set by a backend application or IoT Hub.\nThis section describes how to use the [azure-iot-device](https://learn.microsoft.com/en-us/javascript/api/azure-iot-device) package in the Azure IoT SDK for Node.js to create a device application to:\n1. Retrieve a device twin and examine reported properties\n2. Update reported device twin properties\n3. Receive notice of desired property changes\nImportant\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\n### Install device SDK package\nRun this command to install the **azure-iot-device** device SDK on your development machine:\n\u0060\u0060\u0060cmd\nnpm install azure-iot-device --save\n\u0060\u0060\u0060\n### Connect a device to IoT Hub\nA device app can authenticate with IoT Hub using the following methods:\n1. X.509 certificate\n2. Shared access key\nImportant\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\n#### Authenticate using an X.509 certificate\nThe X.509 certificate is attached to the device-to-IoT Hub connection transport.\nTo configure a device-to-IoT Hub connection using an X.509 certificate:\n1. Call [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/client?#azure-iothub-client-fromconnectionstring) to add the device or identity module connection string, and transport type to the \u0060Client\u0060 object. Add \u0060x509=true\u0060 to the connection string to indicate that a certificate is added to \u0060DeviceClientOptions\u0060. For example:\n1.1. A **device** connection string:\n  \u0060HostName=xxxxx.azure-devices.net;DeviceId=Device-1;SharedAccessKey=xxxxxxxxxxxxx;x509=true\u0060\n1.2. An **identity module** connection string:","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application"},{"title":"Get started with device twins (programming-language-node)","content":"# Get started with device twins (programming-language-node)\n## Create a backend application\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\nThis section describes how to create a backend application that:\n1. Retrieves and updates a device twin\n2. Creates a device twin query\n### Install service SDK package\nRun this command to install **azure-iothub** on your development machine:\n\u0060\u0060\u0060cmd\nnpm install azure-iothub --save\n\u0060\u0060\u0060\nThe [Registry](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry) class exposes all methods required to interact with device twins from a backend application.\n### Connect to IoT hub\nYou can connect a backend service to IoT Hub using the following methods:\n1. Shared access policy\n2. Microsoft Entra\nImportant\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\n#### Connect using a shared access policy\nUse [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry?#azure-iothub-registry-fromconnectionstring) to connect to IoT hub. Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \u0060fromConnectionString\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\n\u0060\u0060\u0060javascript\n\u0027use strict\u0027;\nvar iothub = require(\u0027azure-iothub\u0027);\nvar connectionString = \u0027{Shared access policy connection string}\u0027;\nvar registry = iothub.Registry.fromConnectionString(connectionString);\n\u0060\u0060\u0060\n#### Connect using Microsoft Entra","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application"},{"title":"Get started with device twins (programming-language-python)","content":"# Get started with device twins (programming-language-python)\n## Create a backend application\nA backend application connects to a device through IoT Hub and can read device reported and desired properties, write device desired properties, and run device queries.\nThis section describes how to create a backend application to:\n1. Update twin tags and desired properties\n2. Queries devices using filters on the tags and properties\nThe [IoTHubRegistryManager](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager) class exposes all methods required to create a backend application to interact with device twins from the service.\n### Connect to IoT hub\nYou can connect a backend service to IoT Hub using the following methods:\n1. Shared access policy\n2. Microsoft Entra\nImportant\nThis article includes steps to connect to a service using a shared access signature. This authentication method is convenient for testing and evaluation, but authenticating to a service with Microsoft Entra ID or managed identities is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\n#### Connect using a shared access policy\nConnect to IoT hub using [from_connection_string](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?#azure-iot-hub-iothubregistrymanager-from-connection-string). Your application needs the **service connect** permission to modify desired properties of a device twin, and it needs **registry read** permission to query the identity registry. There is no default shared access policy that contains only these two permissions, so you need to create one if a one does not already exist. Supply this shared access policy connection string as a parameter to \u0060fromConnectionString\u0060. For more information about shared access policies, see [Control access to IoT Hub with shared access signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\nFor example:\n\u0060\u0060\u0060python\nimport sys\nfrom time import sleep\nfrom azure.iot.hub import IoTHubRegistryManager\nfrom azure.iot.hub.models import Twin, TwinProperties, QuerySpecification, QueryResult\n\n# Connect to IoT hub\nIOTHUB_CONNECTION_STRING = \u0022{IoT hub service connection string}\u0022\niothub_registry_manager = IoTHubRegistryManager.from_connection_string(IOTHUB_CONNECTION_STRING)\n\u0060\u0060\u0060\n#### Connect using Microsoft Entra","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application"},{"title":"Get started with device twins (programming-language-csharp)","content":"# Get started with device twins (programming-language-csharp)\n## Create a device application\nDevice applications can read and write twin reported properties, and be notified of desired twin property changes that are set by a backend application or IoT Hub.\nThis section describes how to use device application code to:\n1. Retrieve a device twin and examine reported properties\n2. Update reported device twin properties\n3. Create a desired property update callback handler\n### Required device NuGet package\nDevice client applications written in C# require the **Microsoft.Azure.Devices.Client** NuGet package.\nAdd this \u0060using\u0060 statement to use the device library.\n\u0060\u0060\u0060csharp\nusing Microsoft.Azure.Devices.Client;\n\u0060\u0060\u0060\n### Connect a device to IoT Hub\nA device app can authenticate with IoT Hub using the following methods:\n1. Shared access key\n2. X.509 certificate\nImportant\nThis article includes steps to connect a device using a shared access signature, also called symmetric key authentication. This authentication method is convenient for testing and evaluation, but authenticating a device using X.509 certificates is a more secure approach. To learn more, see [Security best practices for IoT solutions \u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\n#### Authenticate using a shared access key\nThe [DeviceClient](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient) class exposes all the methods required to interact with device twins from the device.\nConnect to the device using the [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient.createfromconnectionstring?#microsoft-azure-devices-client-deviceclient-createfromconnectionstring%28system-string-microsoft-azure-devices-client-transporttype%29) method along with device connection string and the connection transport protocol.\nThe \u0060CreateFromConnectionString\u0060[TransportType](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.transporttype) transport protocol parameter supports the following transport protocols:\n1. \u0060Mqtt\u0060\n2. \u0060Mqtt_WebSocket_Only\u0060\n3. \u0060Mqtt_Tcp_Only\u0060\n4. \u0060Amqp\u0060\n5. \u0060Amqp_WebSocket_Only\u0060\n6. \u0060Amqp_Tcp_Only\u0060\nThe \u0060Http1\u0060 protocol is not supported for device twin updates.\nThis example connects to a device using the \u0060Mqtt\u0060 transport protocol.","contentUrl":"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application"}]}},"id":"dcc539e7-852f-4b1c-9a89-c6b74a4dec48","jsonrpc":"2.0"}
+
+  recorded_at: Thu, 15 Oct 2026 11:45:54 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Wednesday
+        14 October 2026, morning watch at Point Wilson.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nDocs:
+        https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins\nThe
+        kelp-ledge gauge on the foghorn tender Alden reports through Azure IoT Hub.\nWhat
+        Microsoft Learn page explains device twins, so the watch can store the 6.0
+        ft clearance on the twin?"},{"type":"function_call","call_id":"call_2gjZEBioEmVeLDF5IxDkQ14M","name":"microsoft_docs_search","arguments":"{\"query\":\"Azure
+        IoT Hub device twins\"}"},{"type":"function_call_output","call_id":"call_2gjZEBioEmVeLDF5IxDkQ14M","output":"{\"results\":[{\"title\":\"Understand
+        and use device twins in IoT Hub\",\"content\":\"# Understand and use device
+        twins in IoT Hub\\n*Device twins* are JSON documents that store device state
+        information including metadata, configurations, and conditions. Azure IoT
+        Hub maintains a device twin for each device that you connect to IoT Hub.\\nNote\\nThe
+        features described in this article are available only in the standard tier
+        of IoT Hub. For more information about the basic and standard/free IoT Hub
+        tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis
+        article describes:\\n1. The structure of the device twin: *tags*, *desired
+        properties*, and *reported properties*.\\n2. The operations that [*device
+        applications*](https://learn.microsoft.com/azure/iot/iot-glossary#device-app)
+        and the [*solution back end*](https://learn.microsoft.com/azure/iot/iot-glossary#solution-back-end)
+        can perform on device twins.\\nUse device twins to:\\n1. Store device-specific
+        metadata in the cloud. For example, the location of a vending machine.\\n2.
+        Report current state information such as available capabilities and conditions
+        from your device app. For example, whether a device is connected to your IoT
+        hub over cellular or WiFi.\\n3. Synchronize the state of long-running workflows
+        between device app and back-end apps. For example, when a back-end app specifies
+        the new firmware version to install, and the device app reports the various
+        stages of the update process.\\n4. Query your device metadata, configuration,
+        or state.\\nFor more information about using reported properties, device-to-cloud
+        messages, or file upload, see [Device-to-cloud communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-d2c-guidance).\\nFor
+        more information about using desired properties, direct methods, or cloud-to-device
+        messages, see [Cloud-to-device communication guidance](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-c2d-guidance).\\nTo
+        learn how device twins relate to the device model used by an Azure IoT Plug
+        and Play device, see [Understand IoT Plug and Play digital twins](https://learn.microsoft.com/en-us/previous-versions/azure/iot/concepts-digital-twin).\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins\"},{\"title\":\"Get
+        started with device twins (programming-language-java)\",\"content\":\"# Get
+        started with device twins (programming-language-java)\\nUse the Azure IoT
+        Hub device SDK and service SDK to develop applications that handle common
+        device twin tasks. Device twins are JSON documents that store device state
+        information including metadata, configurations, and conditions. IoT Hub persists
+        a device twin for each device that connects to it.\\nYou can use device twins
+        to:\\n1. Store device metadata from your solution back end\\n2. Report current
+        state information such as available capabilities and conditions, for example,
+        the connectivity method used, from your device app\\n3. Synchronize the state
+        of long-running workflows, such as firmware and configuration updates, between
+        a device app and a back-end app\\n4. Query your device metadata, configuration,
+        or state\\nFor more information about device twins, including when to use
+        device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe
+        features described in this article are available only in the standard tier
+        of IoT Hub. For more information about the basic and standard/free IoT Hub
+        tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis
+        article shows you how to develop two types of applications:\\n1. Device apps
+        can handle requests to update desired properties and respond with changes
+        to reported properties.\\n2. Service apps can update device twin tags, set
+        new desired properties, and query devices based on device twin values.\\nNote\\nThis
+        article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks)
+        samples that are referenced from within this article. You can use SDK tools
+        to build both device and back-end applications.\\n## Prerequisites\\n1. An
+        IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol,
+        make sure that port 8883 is open in your firewall. The MQTT protocol communicates
+        over port 8883. This port may be blocked in some corporate and educational
+        network environments. For more information and ways to work around this issue,
+        see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4.
+        Requires [Java SE Development Kit 8](https://learn.microsoft.com/en-us/azure/developer/java/fundamentals/).
+        Make sure you select **Java 8** under **Long-term support** to navigate to
+        downloads for JDK 8.\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\"},{\"title\":\"Get
+        started with device twins (programming-language-csharp)\",\"content\":\"#
+        Get started with device twins (programming-language-csharp)\\nUse the Azure
+        IoT Hub device SDK and service SDK to develop applications that handle common
+        device twin tasks. Device twins are JSON documents that store device state
+        information including metadata, configurations, and conditions. IoT Hub persists
+        a device twin for each device that connects to it.\\nYou can use device twins
+        to:\\n1. Store device metadata from your solution back end\\n2. Report current
+        state information such as available capabilities and conditions, for example,
+        the connectivity method used, from your device app\\n3. Synchronize the state
+        of long-running workflows, such as firmware and configuration updates, between
+        a device app and a back-end app\\n4. Query your device metadata, configuration,
+        or state\\nFor more information about device twins, including when to use
+        device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe
+        features described in this article are available only in the standard tier
+        of IoT Hub. For more information about the basic and standard/free IoT Hub
+        tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis
+        article shows you how to develop two types of applications:\\n1. Device apps
+        can handle requests to update desired properties and respond with changes
+        to reported properties.\\n2. Service apps can update device twin tags, set
+        new desired properties, and query devices based on device twin values.\\nNote\\nThis
+        article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks)
+        samples that are referenced from within this article. You can use SDK tools
+        to build both device and back-end applications.\\n## Prerequisites\\n1. An
+        IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol,
+        make sure that port 8883 is open in your firewall. The MQTT protocol communicates
+        over port 8883. This port may be blocked in some corporate and educational
+        network environments. For more information and ways to work around this issue,
+        see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4.
+        Requires Visual Studio\\n## Overview\\nThis article describes how to use the
+        [Azure IoT SDK for .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/main/readme.md)
+        to create device and backend service application code for device twins.\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\"},{\"title\":\"Get
+        started with device twins (programming-language-node)\",\"content\":\"# Get
+        started with device twins (programming-language-node)\\nUse the Azure IoT
+        Hub device SDK and service SDK to develop applications that handle common
+        device twin tasks. Device twins are JSON documents that store device state
+        information including metadata, configurations, and conditions. IoT Hub persists
+        a device twin for each device that connects to it.\\nYou can use device twins
+        to:\\n1. Store device metadata from your solution back end\\n2. Report current
+        state information such as available capabilities and conditions, for example,
+        the connectivity method used, from your device app\\n3. Synchronize the state
+        of long-running workflows, such as firmware and configuration updates, between
+        a device app and a back-end app\\n4. Query your device metadata, configuration,
+        or state\\nFor more information about device twins, including when to use
+        device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe
+        features described in this article are available only in the standard tier
+        of IoT Hub. For more information about the basic and standard/free IoT Hub
+        tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis
+        article shows you how to develop two types of applications:\\n1. Device apps
+        can handle requests to update desired properties and respond with changes
+        to reported properties.\\n2. Service apps can update device twin tags, set
+        new desired properties, and query devices based on device twin values.\\nNote\\nThis
+        article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks)
+        samples that are referenced from within this article. You can use SDK tools
+        to build both device and back-end applications.\\n## Prerequisites\\n1. An
+        IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol,
+        make sure that port 8883 is open in your firewall. The MQTT protocol communicates
+        over port 8883. This port may be blocked in some corporate and educational
+        network environments. For more information and ways to work around this issue,
+        see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4.
+        Requires Node.js version 10.0.x or later\\n## Overview\\nThis article describes
+        how to use the [Azure IoT SDK for Node.js](https://github.com/Azure/azure-iot-sdk-node)
+        to create device and backend service application code for device twins.\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\"},{\"title\":\"Get
+        started with device twins (programming-language-python)\",\"content\":\"#
+        Get started with device twins (programming-language-python)\\nUse the Azure
+        IoT Hub device SDK and service SDK to develop applications that handle common
+        device twin tasks. Device twins are JSON documents that store device state
+        information including metadata, configurations, and conditions. IoT Hub persists
+        a device twin for each device that connects to it.\\nYou can use device twins
+        to:\\n1. Store device metadata from your solution back end\\n2. Report current
+        state information such as available capabilities and conditions, for example,
+        the connectivity method used, from your device app\\n3. Synchronize the state
+        of long-running workflows, such as firmware and configuration updates, between
+        a device app and a back-end app\\n4. Query your device metadata, configuration,
+        or state\\nFor more information about device twins, including when to use
+        device twins, see [Understand and use device twins in IoT Hub](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins).\\nNote\\nThe
+        features described in this article are available only in the standard tier
+        of IoT Hub. For more information about the basic and standard/free IoT Hub
+        tiers, see [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/azure/iot-hub/iot-hub-scaling).\\nThis
+        article shows you how to develop two types of applications:\\n1. Device apps
+        can handle requests to update desired properties and respond with changes
+        to reported properties.\\n2. Service apps can update device twin tags, set
+        new desired properties, and query devices based on device twin values.\\nNote\\nThis
+        article is meant to complement [Azure IoT SDKs](https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks)
+        samples that are referenced from within this article. You can use SDK tools
+        to build both device and back-end applications.\\n## Prerequisites\\n1. An
+        IoT hub\\n2. A registered device\\n3. If your application uses the MQTT protocol,
+        make sure that port 8883 is open in your firewall. The MQTT protocol communicates
+        over port 8883. This port may be blocked in some corporate and educational
+        network environments. For more information and ways to work around this issue,
+        see [Connecting to IoT Hub (MQTT)](https://learn.microsoft.com/azure/iot-hub/iot-mqtt-connect-to-iot-hub#connect-to-iot-hub).\\n4.
+        Python SDK - [Python version 3.7 or later](https://www.python.org/downloads/)
+        is recommended. Make sure to use the 32-bit or 64-bit installation as required
+        by your setup. When prompted during the installation, make sure to add Python
+        to your platform-specific environment variable.\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins\"},{\"title\":\"Get
+        started with device twins (programming-language-csharp)\",\"content\":\"#
+        Get started with device twins (programming-language-csharp)\\n## Create a
+        backend application\\nA backend application connects to a device through IoT
+        Hub and can read device reported and desired properties, write device desired
+        properties, and run device queries.\\nThis section describes how to create
+        backend application code to:\\n1. Read and update device twin fields\\n2.
+        Create a device twin query\\nThe [RegistryManager](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager)
+        class exposes all methods required to create a backend application to interact
+        with device twins from the service.\\n### Add service NuGet Package\\nBackend
+        service applications require the **Microsoft.Azure.Devices** NuGet package.\\n###
+        Connect to IoT hub\\nYou can connect a backend service to IoT Hub using the
+        following methods:\\n1. Shared access policy\\n2. Microsoft Entra\\nImportant\\nThis
+        article includes steps to connect to a service using a shared access signature.
+        This authentication method is convenient for testing and evaluation, but authenticating
+        to a service with Microsoft Entra ID or managed identities is a more secure
+        approach. To learn more, see [Security best practices for IoT solutions \\u003E
+        Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n####
+        Connect using a shared access policy\\nConnect a backend application to a
+        device using [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.registrymanager.createfromconnectionstring).
+        Your application needs the **service connect** permission to modify desired
+        properties of a device twin, and it needs **registry read** permission to
+        query the identity registry. There is no default shared access policy that
+        contains only these two permissions, so you need to create one if a one does
+        not already exist. Supply this shared access policy connection string as a
+        parameter to \\u0060fromConnectionString\\u0060. For more information about
+        shared access policies, see [Control access to IoT Hub with shared access
+        signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\n\\u0060\\u0060\\u0060csharp\\nusing
+        Microsoft.Azure.Devices;\\nstatic RegistryManager registryManager;\\nstatic
+        string connectionString = \\u0022{Shared access policy connection string}\\u0022;\\nregistryManager
+        = RegistryManager.CreateFromConnectionString(connectionString);\\n\\u0060\\u0060\\u0060\\n####
+        Connect using Microsoft Entra\\nA backend app that uses Microsoft Entra must
+        successfully authenticate and obtain a security token credential before connecting
+        to IoT Hub. This token is passed to a IoT Hub connection method. For general
+        information about setting up and using Microsoft Entra for IoT Hub, see [Control
+        access to IoT Hub by using Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-azure-ad).\\n#####
+        Configure Microsoft Entra app\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\"},{\"title\":\"Get
+        started with device twins (programming-language-node)\",\"content\":\"# Get
+        started with device twins (programming-language-node)\\n## Create a device
+        application\\nDevice applications can read and write twin reported properties,
+        and be notified of desired twin property changes that are set by a backend
+        application or IoT Hub.\\nThis section describes how to use the [azure-iot-device](https://learn.microsoft.com/en-us/javascript/api/azure-iot-device)
+        package in the Azure IoT SDK for Node.js to create a device application to:\\n1.
+        Retrieve a device twin and examine reported properties\\n2. Update reported
+        device twin properties\\n3. Receive notice of desired property changes\\nImportant\\nThis
+        article includes steps to connect a device using a shared access signature,
+        also called symmetric key authentication. This authentication method is convenient
+        for testing and evaluation, but authenticating a device using X.509 certificates
+        is a more secure approach. To learn more, see [Security best practices for
+        IoT solutions \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n###
+        Install device SDK package\\nRun this command to install the **azure-iot-device**
+        device SDK on your development machine:\\n\\u0060\\u0060\\u0060cmd\\nnpm install
+        azure-iot-device --save\\n\\u0060\\u0060\\u0060\\n### Connect a device to
+        IoT Hub\\nA device app can authenticate with IoT Hub using the following methods:\\n1.
+        X.509 certificate\\n2. Shared access key\\nImportant\\nThis article includes
+        steps to connect a device using a shared access signature, also called symmetric
+        key authentication. This authentication method is convenient for testing and
+        evaluation, but authenticating a device using X.509 certificates is a more
+        secure approach. To learn more, see [Security best practices for IoT solutions
+        \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n####
+        Authenticate using an X.509 certificate\\nThe X.509 certificate is attached
+        to the device-to-IoT Hub connection transport.\\nTo configure a device-to-IoT
+        Hub connection using an X.509 certificate:\\n1. Call [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/client?#azure-iothub-client-fromconnectionstring)
+        to add the device or identity module connection string, and transport type
+        to the \\u0060Client\\u0060 object. Add \\u0060x509=true\\u0060 to the connection
+        string to indicate that a certificate is added to \\u0060DeviceClientOptions\\u0060.
+        For example:\\n1.1. A **device** connection string:\\n  \\u0060HostName=xxxxx.azure-devices.net;DeviceId=Device-1;SharedAccessKey=xxxxxxxxxxxxx;x509=true\\u0060\\n1.2.
+        An **identity module** connection string:\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application\"},{\"title\":\"Get
+        started with device twins (programming-language-node)\",\"content\":\"# Get
+        started with device twins (programming-language-node)\\n## Create a backend
+        application\\nA backend application connects to a device through IoT Hub and
+        can read device reported and desired properties, write device desired properties,
+        and run device queries.\\nThis section describes how to create a backend application
+        that:\\n1. Retrieves and updates a device twin\\n2. Creates a device twin
+        query\\n### Install service SDK package\\nRun this command to install **azure-iothub**
+        on your development machine:\\n\\u0060\\u0060\\u0060cmd\\nnpm install azure-iothub
+        --save\\n\\u0060\\u0060\\u0060\\nThe [Registry](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry)
+        class exposes all methods required to interact with device twins from a backend
+        application.\\n### Connect to IoT hub\\nYou can connect a backend service
+        to IoT Hub using the following methods:\\n1. Shared access policy\\n2. Microsoft
+        Entra\\nImportant\\nThis article includes steps to connect to a service using
+        a shared access signature. This authentication method is convenient for testing
+        and evaluation, but authenticating to a service with Microsoft Entra ID or
+        managed identities is a more secure approach. To learn more, see [Security
+        best practices for IoT solutions \\u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n####
+        Connect using a shared access policy\\nUse [fromConnectionString](https://learn.microsoft.com/en-us/javascript/api/azure-iothub/registry?#azure-iothub-registry-fromconnectionstring)
+        to connect to IoT hub. Your application needs the **service connect** permission
+        to modify desired properties of a device twin, and it needs **registry read**
+        permission to query the identity registry. There is no default shared access
+        policy that contains only these two permissions, so you need to create one
+        if a one does not already exist. Supply this shared access policy connection
+        string as a parameter to \\u0060fromConnectionString\\u0060. For more information
+        about shared access policies, see [Control access to IoT Hub with shared access
+        signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\n\\u0060\\u0060\\u0060javascript\\n\\u0027use
+        strict\\u0027;\\nvar iothub = require(\\u0027azure-iothub\\u0027);\\nvar connectionString
+        = \\u0027{Shared access policy connection string}\\u0027;\\nvar registry =
+        iothub.Registry.fromConnectionString(connectionString);\\n\\u0060\\u0060\\u0060\\n####
+        Connect using Microsoft Entra\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\"},{\"title\":\"Get
+        started with device twins (programming-language-python)\",\"content\":\"#
+        Get started with device twins (programming-language-python)\\n## Create a
+        backend application\\nA backend application connects to a device through IoT
+        Hub and can read device reported and desired properties, write device desired
+        properties, and run device queries.\\nThis section describes how to create
+        a backend application to:\\n1. Update twin tags and desired properties\\n2.
+        Queries devices using filters on the tags and properties\\nThe [IoTHubRegistryManager](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager)
+        class exposes all methods required to create a backend application to interact
+        with device twins from the service.\\n### Connect to IoT hub\\nYou can connect
+        a backend service to IoT Hub using the following methods:\\n1. Shared access
+        policy\\n2. Microsoft Entra\\nImportant\\nThis article includes steps to connect
+        to a service using a shared access signature. This authentication method is
+        convenient for testing and evaluation, but authenticating to a service with
+        Microsoft Entra ID or managed identities is a more secure approach. To learn
+        more, see [Security best practices for IoT solutions \\u003E Cloud security](https://learn.microsoft.com/azure/iot/iot-overview-security#cloud-security).\\n####
+        Connect using a shared access policy\\nConnect to IoT hub using [from_connection_string](https://learn.microsoft.com/en-us/python/api/azure-iot-hub/azure.iot.hub.iothubregistrymanager?#azure-iot-hub-iothubregistrymanager-from-connection-string).
+        Your application needs the **service connect** permission to modify desired
+        properties of a device twin, and it needs **registry read** permission to
+        query the identity registry. There is no default shared access policy that
+        contains only these two permissions, so you need to create one if a one does
+        not already exist. Supply this shared access policy connection string as a
+        parameter to \\u0060fromConnectionString\\u0060. For more information about
+        shared access policies, see [Control access to IoT Hub with shared access
+        signatures](https://learn.microsoft.com/en-us/azure/iot-hub/authenticate-authorize-sas).\\nFor
+        example:\\n\\u0060\\u0060\\u0060python\\nimport sys\\nfrom time import sleep\\nfrom
+        azure.iot.hub import IoTHubRegistryManager\\nfrom azure.iot.hub.models import
+        Twin, TwinProperties, QuerySpecification, QueryResult\\n\\n# Connect to IoT
+        hub\\nIOTHUB_CONNECTION_STRING = \\u0022{IoT hub service connection string}\\u0022\\niothub_registry_manager
+        = IoTHubRegistryManager.from_connection_string(IOTHUB_CONNECTION_STRING)\\n\\u0060\\u0060\\u0060\\n####
+        Connect using Microsoft Entra\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-backend-application\"},{\"title\":\"Get
+        started with device twins (programming-language-csharp)\",\"content\":\"#
+        Get started with device twins (programming-language-csharp)\\n## Create a
+        device application\\nDevice applications can read and write twin reported
+        properties, and be notified of desired twin property changes that are set
+        by a backend application or IoT Hub.\\nThis section describes how to use device
+        application code to:\\n1. Retrieve a device twin and examine reported properties\\n2.
+        Update reported device twin properties\\n3. Create a desired property update
+        callback handler\\n### Required device NuGet package\\nDevice client applications
+        written in C# require the **Microsoft.Azure.Devices.Client** NuGet package.\\nAdd
+        this \\u0060using\\u0060 statement to use the device library.\\n\\u0060\\u0060\\u0060csharp\\nusing
+        Microsoft.Azure.Devices.Client;\\n\\u0060\\u0060\\u0060\\n### Connect a device
+        to IoT Hub\\nA device app can authenticate with IoT Hub using the following
+        methods:\\n1. Shared access key\\n2. X.509 certificate\\nImportant\\nThis
+        article includes steps to connect a device using a shared access signature,
+        also called symmetric key authentication. This authentication method is convenient
+        for testing and evaluation, but authenticating a device using X.509 certificates
+        is a more secure approach. To learn more, see [Security best practices for
+        IoT solutions \\u003E Connection security](https://learn.microsoft.com/azure/iot/iot-overview-security#connection-security).\\n####
+        Authenticate using a shared access key\\nThe [DeviceClient](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient)
+        class exposes all the methods required to interact with device twins from
+        the device.\\nConnect to the device using the [CreateFromConnectionString](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient.createfromconnectionstring?#microsoft-azure-devices-client-deviceclient-createfromconnectionstring%28system-string-microsoft-azure-devices-client-transporttype%29)
+        method along with device connection string and the connection transport protocol.\\nThe
+        \\u0060CreateFromConnectionString\\u0060[TransportType](https://learn.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.transporttype)
+        transport protocol parameter supports the following transport protocols:\\n1.
+        \\u0060Mqtt\\u0060\\n2. \\u0060Mqtt_WebSocket_Only\\u0060\\n3. \\u0060Mqtt_Tcp_Only\\u0060\\n4.
+        \\u0060Amqp\\u0060\\n5. \\u0060Amqp_WebSocket_Only\\u0060\\n6. \\u0060Amqp_Tcp_Only\\u0060\\nThe
+        \\u0060Http1\\u0060 protocol is not supported for device twin updates.\\nThis
+        example connects to a device using the \\u0060Mqtt\\u0060 transport protocol.\",\"contentUrl\":\"https://learn.microsoft.com/azure/iot-hub/how-to-device-twins#create-a-device-application\"}]}"}],"instructions":"You
+        are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nCall
+        microsoft_docs_search once for Azure IoT Hub device twins.\nAnswer in two
+        short sentences.\nName the foghorn tender Alden.\nRepeat the document title
+        the tool returned.\nDo not invent a title.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"microsoft_docs_search","description":"Search
+        official Microsoft/Azure documentation to find the most relevant and trustworthy
+        content for a user''s query. This tool returns up to 10 high-quality content
+        chunks (each max 500 tokens), extracted from Microsoft Learn and other official
+        sources. Each result includes the article title, URL, and a self-contained
+        content excerpt optimized for fast retrieval and reasoning. Always use this
+        tool to quickly ground your answers in accurate, first-party Microsoft/Azure
+        knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch
+        when high-value pages are identified by search. The fetch tool complements
+        search by providing the full detail. This is a required step for comprehensive
+        results.","parameters":{"type":"object","properties":{"query":{"description":"a
+        query or topic about Microsoft/Azure products, services, platforms, developer
+        tools, frameworks, or APIs","type":"string","default":null}}},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:45:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4ae948c7f412d10-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1117'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1993358'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 199ms
+      X-Request-Id:
+      - req_f8867530222f4321b9e9d2ffefe068dc
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0b41b32d0c6c11d3016ad0bcf2bb1887d291a9f6163aef1bcd",
+          "object": "response",
+          "created_at": 1792064754,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792064755,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nCall microsoft_docs_search once for Azure IoT Hub device twins.\nAnswer in two short sentences.\nName the foghorn tender Alden.\nRepeat the document title the tool returned.\nDo not invent a title.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0b41b32d0c6c11d3016ad0bcf3239c87d2a3b9db0b24f72b12",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The Microsoft Learn page titled \"Understand and use device twins in IoT Hub\" explains device twins, which are JSON documents storing device state information including metadata, configurations, and conditions. The foghorn tender Alden can store the 6.0 ft clearance on its device twin using this guidance.\n\nDocument title: Understand and use device twins in IoT Hub  \nURL: https://learn.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user's query. This tool returns up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.\n\n## Follow-up Pattern\nTo ensure completeness, use microsoft_docs_fetch when high-value pages are identified by search. The fetch tool complements search by providing the full detail. This is a required step for comprehensive results.",
+              "name": "microsoft_docs_search",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "description": "a query or topic about Microsoft/Azure products, services, platforms, developer tools, frameworks, or APIs",
+                    "type": "string",
+                    "default": null
+                  }
+                }
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 6425,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 96,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 6521
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 11:45:55 GMT
+- request:
+    method: delete
+    uri: https://learn.microsoft.com/api/mcp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Mcp-Protocol-Version:
+      - '2025-06-18'
+      Mcp-Session-Id:
+      - eyJjbGllbnRJbmZvIjp7Im5hbWUiOiJydWJ5X2xsbSIsInRpdGxlIjpudWxsLCJ2ZXJzaW9uIjoiMi4xLjEiLCJpY29ucyI6bnVsbCwid2Vic2l0ZVVybCI6bnVsbH0sInVzZXJJZENsYWltIjoiZTZjMjE2OTItOWQ4MS00MGJlLWFhNWYtMGZhNTk2OGYzNjNmIn0=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: Method Not Allowed
+    headers:
+      Content-Length:
+      - '0'
+      Allow:
+      - POST
+      Request-Context:
+      - appId=cid-v1:ccd19013-8f20-4877-8d3f-84a0107e7119
+      X-Powered-By:
+      - ASP.NET
+      X-Azure-Ref:
+      - 20261015T114555Z-175ff7c9b5bpl9d8hS1DMRzz9w0000002wug00000000020d
+      Nel:
+      - '{"report_to":"network-errors","max_age":604800,"success_fraction":0.01,"failure_fraction":1.0}'
+      Report-To:
+      - '{"group":"network-errors","max_age":604800,"endpoints":[{"url":"https://mdec.nelreports.net/api/report?cat=mdocs"}]}'
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0
+      Expires:
+      - Thu, 15 Oct 2026 11:45:56 GMT
+      Date:
+      - Thu, 15 Oct 2026 11:45:56 GMT
+      Connection:
+      - keep-alive
+      Akamai-Cache-Status:
+      - Miss from child, Miss from parent
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 15 Oct 2026 11:45:56 GMT
+recorded_with: VCR 6.4.0

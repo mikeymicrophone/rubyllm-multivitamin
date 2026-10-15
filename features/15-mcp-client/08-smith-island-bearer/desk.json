@@ -1,0 +1,11 @@
+{
+  "name": "smith-island-weather-desk",
+  "instructions": "Smith Island barometer cards.",
+  "tools": [
+    {
+      "name": "barometer_glass",
+      "description": "Reads the posted barometer on Smith Island",
+      "text": "Smith Island barometer. 29.92 inHg and falling. Fog by 16:00."
+    }
+  ]
+}

@@ -15,7 +15,7 @@ module Multivitamin
     FILTERED_KEY = "<OPENROUTER_API_KEY>"
     OPENAI_FILTERED_KEY = "<OPENAI_API_KEY>"
 
-    KEY_ENV_VARS = %w[
+      KEY_ENV_VARS = %w[
       OPENROUTER_API_KEY
       OPENAI_API_KEY
       ANTHROPIC_API_KEY
@@ -25,6 +25,9 @@ module Multivitamin
       COHERE_API_KEY
       DEEPSEEK_API_KEY
       PERPLEXITY_API_KEY
+      MCP_BEARER_TOKEN
+      MCP_CLIENT_SECRET
+      MCP_OAUTH_ACCESS_TOKEN
     ].freeze
 
     # 1x1 PNG and JPEG stand-ins so image cassettes do not store megabytes
@@ -56,7 +59,7 @@ module Multivitamin
       VCR.use_cassette(
         name,
         record: live? ? :all : :none,
-        match_requests_on: %i[method uri body],
+        match_requests_on: %i[method uri jsonrpc_body],
         drop_unused_requests: live?
       ) { yield }
     ensure
@@ -108,9 +111,47 @@ module Multivitamin
         config.before_record do |interaction|
           scrub_interaction(interaction)
         end
+
+        # MCP JSON-RPC request ids are SecureRandom.uuid. Match after
+        # stripping them, then copy the live id onto the recorded answer
+        # so RubyLLM::MCP::HTTP::Stream can find it.
+        config.before_http_request do |request|
+          Thread.current[:multivitamin_jsonrpc_id] = jsonrpc_id(request.body)
+        end
+
+        config.register_request_matcher :jsonrpc_body do |request_one, request_two|
+          normalize_jsonrpc_body(request_one.body) == normalize_jsonrpc_body(request_two.body)
+        end
+
+        config.before_playback do |interaction|
+          sync_jsonrpc_response_id!(interaction, Thread.current[:multivitamin_jsonrpc_id])
+        end
       end
 
+      patch_mcp_jsonrpc_ids!
       @configured = true
+    end
+
+    # RubyLLM::MCP::HTTP::Stream looks up the answer by request id.
+    # Recorded JSON-RPC bodies keep the UUID from the live call, so replay
+    # would miss the result and fall back to the initialize handshake.
+    def patch_mcp_jsonrpc_ids!
+      require "ruby_llm"
+      return if RubyLLM::MCP::HTTP::Stream.instance_variable_get(:@multivitamin_jsonrpc_id_patch)
+
+      RubyLLM::MCP::HTTP::Stream.prepend(Module.new do
+        def answer
+          found = super
+          return found if found
+
+          unmatched = replies.find { |reply| !reply.key?("method") }
+          return unless unmatched
+
+          unmatched["id"] = id
+          unmatched
+        end
+      end)
+      RubyLLM::MCP::HTTP::Stream.instance_variable_set(:@multivitamin_jsonrpc_id_patch, true)
     end
 
     def scrub_interaction(interaction)
@@ -156,15 +197,67 @@ module Multivitamin
     def authorization_placeholder(token)
       return OPENAI_FILTERED_KEY if token.include?(OPENAI_FILTERED_KEY)
       return FILTERED_KEY if token.include?(FILTERED_KEY)
+      return "<MCP_CLIENT_SECRET>" if token.match?(/\Abasic\s/i) || token.include?("<MCP_CLIENT_SECRET>")
+      return "<MCP_BEARER_TOKEN>" if token.include?("<MCP_BEARER_TOKEN>")
+      return "<MCP_OAUTH_ACCESS_TOKEN>" if token.include?("<MCP_OAUTH_ACCESS_TOKEN>")
 
       openai = ENV["OPENAI_API_KEY"].to_s
       openrouter = ENV["OPENROUTER_API_KEY"].to_s
+      bearer = ENV["MCP_BEARER_TOKEN"].to_s
+      oauth = ENV["MCP_OAUTH_ACCESS_TOKEN"].to_s
+      secret = ENV["MCP_CLIENT_SECRET"].to_s
       return OPENAI_FILTERED_KEY if openai.length > 8 && openai != PLACEHOLDER_KEY && token.include?(openai)
       return FILTERED_KEY if openrouter.length > 8 && openrouter != PLACEHOLDER_KEY && token.include?(openrouter)
+      return "<MCP_BEARER_TOKEN>" if bearer.length > 4 && token.include?(bearer)
+      return "<MCP_OAUTH_ACCESS_TOKEN>" if oauth.length > 4 && token.include?(oauth)
+      return "<MCP_CLIENT_SECRET>" if secret.length > 4 && token.include?(secret)
       return FILTERED_KEY if token.match?(/sk-or-/)
       return OPENAI_FILTERED_KEY if token.match?(/sk-/)
 
       FILTERED_KEY
+    end
+
+    def normalize_jsonrpc_body(body)
+      text = body.to_s
+      return text unless text.include?('"jsonrpc"')
+
+      data = JSON.parse(text)
+      strip_jsonrpc_ids!(data)
+      JSON.generate(data)
+    rescue JSON::ParserError
+      text
+    end
+
+    def strip_jsonrpc_ids!(node)
+      case node
+      when Hash
+        node["id"] = "<jsonrpc-id>" if node.key?("id")
+        node.each_value { |value| strip_jsonrpc_ids!(value) }
+      when Array
+        node.each { |value| strip_jsonrpc_ids!(value) }
+      end
+    end
+
+    def jsonrpc_id(body)
+      data = JSON.parse(body.to_s)
+      data["id"] if data.is_a?(Hash) && data["jsonrpc"]
+    rescue JSON::ParserError
+      nil
+    end
+
+    def sync_jsonrpc_response_id!(interaction, request_id)
+      return if request_id.nil?
+
+      body = interaction.response.body
+      return unless body.is_a?(String) && body.include?('"jsonrpc"')
+
+      data = JSON.parse(body)
+      return unless data.is_a?(Hash) && data.key?("id")
+
+      data["id"] = request_id
+      interaction.response.body = JSON.generate(data)
+    rescue JSON::ParserError
+      nil
     end
 
     def scrub_text(text)

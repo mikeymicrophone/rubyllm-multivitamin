@@ -1,0 +1,21 @@
+{
+  "name": "bremerton-dry-dock-desk",
+  "instructions": "Bremerton dry dock gate cards.",
+  "tools": [
+    {
+      "name": "gate_schedule",
+      "description": "Reads the Bremerton dry dock gate hours",
+      "text": "Bremerton dry dock gate. Open 06:00 to 22:00. Last keel block 21:15."
+    },
+    {
+      "name": "post_sill_card",
+      "description": "Posts the dry dock sill depth card and announces the new tool",
+      "add_tool": {
+        "name": "dry_dock_sill",
+        "description": "Reads the Bremerton dry dock sill depth",
+        "text": "Bremerton dry dock sill is 18.4 ft above the blocks."
+      },
+      "text": "Sill card posted. dry_dock_sill is on the desk."
+    }
+  ]
+}

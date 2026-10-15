@@ -1,0 +1,24 @@
+{
+  "name": "admiralty-inlet-watch-desk",
+  "instructions": "Admiralty Inlet watch boards.",
+  "tools": [
+    {
+      "name": "posted_tide_board",
+      "description": "Reads the Point Wilson tide board, including when Alden clears the kelp ledge",
+      "text": "Point Wilson tide board. Low water 07:05, 1.1 ft. Alden clears the kelp ledge at 10:12."
+    },
+    {
+      "name": "posted_horn_card",
+      "description": "Reads whether the Admiralty Inlet horn is running and the blast length",
+      "text": "Admiralty Inlet horn is running. Blast 3 seconds, silent 27 seconds."
+    }
+  ],
+  "resources": [
+    {
+      "uri": "watch://admiralty-inlet/lens-latch.md",
+      "name": "lens-latch.md",
+      "mimeType": "text/markdown",
+      "text": "Point Wilson lens cabinet latch: shut. Lamp burning. Do not open it on this watch.\n"
+    }
+  ]
+}
