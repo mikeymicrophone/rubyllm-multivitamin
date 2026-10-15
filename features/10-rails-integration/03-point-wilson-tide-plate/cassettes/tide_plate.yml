@@ -1,0 +1,174 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"The
+        photograph is the tide board posted at Point Wilson for Wednesday 14 October
+        2026.\nTide reference: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhen
+        is low water, what is that height, and when does Alden clear the kelp ledge?"},{"type":"input_image","image_url":"data:image/png;base64,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"}]}],"instructions":"You
+        are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nAnswer
+        in one sentence from the photograph only.\nInclude the low water time, the
+        low water height, and the clock when Alden clears the kelp ledge.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Oct 2026 22:49:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4aa22ba2a15efd6-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '842'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999235'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_5636470ddccd45b3b6f2e2654af3423c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_038a93530ae29c5a016ad006e589c887d0b93dd960332988c0",
+          "object": "response",
+          "created_at": 1792018149,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792018150,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nAnswer in one sentence from the photograph only.\nInclude the low water time, the low water height, and the clock when Alden clears the kelp ledge.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_038a93530ae29c5a016ad006e614d887d09404849e0f2c82ff",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Low water is at 06:42 with a height of 0.4 feet, and Alden clears the kelp ledge at 10:46."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 347,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 34,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 381
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Wed, 14 Oct 2026 22:49:10 GMT
+recorded_with: VCR 6.4.0
