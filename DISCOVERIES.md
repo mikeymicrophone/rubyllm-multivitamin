@@ -617,6 +617,48 @@ Shown in [Iceberg Point rate limit](features/13-error-handling/04-iceberg-point-
 
 Shown in [Point No Point retries](features/13-error-handling/11-point-no-point-retries/) and [Foulweather Bluff fallback hooks](features/13-error-handling/12-foulweather-bluff-fallback-hooks/).
 
+## Agents
+
+### rescue_from wraps the instance, not Agent.chat
+
+**What happens.** `SillClerk.new.ask` against the unlisted OpenRouter slug `bremerton-sill-unlisted` hits HTTP 400. The class `rescue_from RubyLLM::BadRequestError` handler runs and returns the posted 4.2-fathom string. `SillClerk.chat` returns a `RubyLLM::Chat`. `SillClerk.chat.ask` with the same card raises `RubyLLM::BadRequestError` (status 400). The handler never sees that call.
+
+**Why it matters.** A desk that rescues on the class and then calls `Agent.chat` still leaves on the 400. `Agent.chat` is the unwrapped chat API.
+
+**What to do.** Call `ask` on an agent instance when `rescue_from` should swallow the error. Use `Agent.chat` when you want the raw `Chat` and the original exception.
+
+Shown in [Bremerton sill rescue](features/14-agents/09-bremerton-sill-rescue/).
+
+### complete? is true until ask_later stages a user turn
+
+**What happens.** A new `WeatherClerk` with only the system prompt has `complete?` true. `ask_later` appends the barometer card, returns the wrapped `RubyLLM::Chat`, and `complete?` is then false. `step` generates once, returns the assistant message, and `complete?` is true again. A second `step` returns `nil`.
+
+**Why it matters.** A loop that treats `complete?` as "the model has answered" will skip a brand-new agent. A second `step` is not an error; it is the same end `complete` waits for.
+
+**What to do.** Stage with `ask_later`, generate with `step`, and stop when `complete?` is true after that step, or when `step` returns `nil`.
+
+Shown in [Smith Island weather loop](features/14-agents/08-smith-island-weather-loop/).
+
+### find reapplies the agent without a second system row
+
+**What happens.** `SlipClerk.create!` then `ask` persists one system turn with the wind board. `SlipClerk.find(id)` returns the same `SlipChat` row. A follow-up `ask` on the found record still sees the 28-knot gust. `slip_turns.where(role: :system).count` stays 1.
+
+**Why it matters.** A watch that expects `find` to persist the class `instructions` again would count two system rows and send the standing orders twice.
+
+**What to do.** Treat `find` as runtime application of the agent. Count system rows on the persisted association, not on the class macro.
+
+Shown in [Port Townsend slip find](features/14-agents/10-port-townsend-slip-find/).
+
+### create! without chat_model raises ArgumentError
+
+**What happens.** `Class.new(RubyLLM::Agent).create!` raises `ArgumentError` whose message includes `chat_model`. `BuoyClerk.create!` after `chat_model BuoyLog` returns the persisted `BuoyLog`.
+
+**Why it matters.** Rails-mode helpers look like class methods on every agent. They are not. The argument error is raised in Ruby, before any HTTP call.
+
+**What to do.** Set `chat_model` before `create`, `create!`, `find`, or `sync_instructions`. Use `Agent.new` / `Agent.chat` when the conversation is not a record.
+
+Shown in [Ediz Hook buoy chat model](features/14-agents/07-ediz-hook-buoy-chat-model/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

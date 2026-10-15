@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"bremerton-sill-unlisted","messages":[{"role":"system","content":"You
+        are the dry dock clerk at Bremerton.\nAnswer in one short sentence from the
+        sill card only.\nName 4.2 fathoms."},{"role":"user","content":"Bremerton dry
+        dock sill card, Wednesday 15 October 2026.\nYard notes: https://www.navsea.navy.mil/\nPosted
+        sill 4.2 fathoms at high water.\nWhat sill does the incoming watch post?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:50:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      X-Generation-Id:
+      - gen-1792065006-7mUe4VA22dyQcIej1czI
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ae9ab51b08dd76-PDX
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"bremerton-sill-unlisted is not a valid model ID","code":400},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
+  recorded_at: Thu, 15 Oct 2026 11:50:06 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"bremerton-sill-unlisted","messages":[{"role":"system","content":"You
+        are the dry dock clerk at Bremerton.\nAnswer in one short sentence from the
+        sill card only.\nName 4.2 fathoms."},{"role":"user","content":"Bremerton dry
+        dock sill card, Wednesday 15 October 2026.\nYard notes: https://www.navsea.navy.mil/\nPosted
+        sill 4.2 fathoms at high water.\nWhat sill does the incoming watch post?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 11:50:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      X-Generation-Id:
+      - gen-1792065006-Gph9gUdmjrPx10OsE3gL
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ae9ab56c8f5ec6-PDX
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"bremerton-sill-unlisted is not a valid model ID","code":400},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
+  recorded_at: Thu, 15 Oct 2026 11:50:06 GMT
+recorded_with: VCR 6.4.0
