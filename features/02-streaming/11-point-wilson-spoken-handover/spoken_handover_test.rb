@@ -8,10 +8,6 @@ require_relative "spoken_handover"
 class SpokenHandoverTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/spoken_handover.yml", __dir__)
 
-  def setup
-    skip "spoken handover cassette is not recorded yet" unless File.exist?(CASSETTE)
-  end
-
   def test_the_second_stream_still_knows_the_first_brief
     result = nil
     Multivitamin::Cassettes.play(__dir__, "spoken_handover") do

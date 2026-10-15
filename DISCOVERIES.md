@@ -83,6 +83,16 @@ Shown in [Dungeness sounding halt](features/02-streaming/08-dungeness-sounding-h
 
 Shown in [Cape Disappointment horn relief](features/02-streaming/13-cape-disappointment-relief/).
 
+### The next streamed ask sends the first answer and its reasoning_details
+
+**What happens.** Two streamed asks share one chat on `nvidia/nemotron-3-super-120b-a12b:free`. The first request has no `reasoning_details`. The second request is also `"stream":true`. Its assistant message carries a `reasoning_details` array, and that message's `content` equals the first answer. That content is the join of the first stream's spoken chunks. The second turn's input token count is greater than the first turn's. Both turns finish with `:stop`.
+
+**Why it matters.** A short question about the lens cabinet still uploads the brief and the reasoning from the streamed turn. Input tokens grow by that text, not only by the visible brief.
+
+**What to do.** Expect the second stream to be larger. Keep `max_retries` at 0 when you are recording a fixed number of calls. Leave `reasoning_details` on the message if the next question needs the first turn.
+
+Shown in [Point Wilson spoken handover](features/02-streaming/11-point-wilson-spoken-handover/).
+
 ## Tools
 
 No entries yet.
@@ -153,13 +163,13 @@ Shown in [Cape Disappointment blast log](features/02-streaming/02-cape-disappoin
 
 ### OpenRouter sends reasoning_details back on the next ask
 
-**What happens.** A first request to `nvidia/nemotron-3-super-120b-a12b:free` has no `reasoning_details`. The response carries a `reasoning` string and a `reasoning_details` array. RubyLLM stores that array on the assistant message and the next request includes it on that message. Confirmed on the retort log, where the second request body contains `reasoning_details` and the first does not, and on the chart correction, where the same replay happens after a turn whose `content` was null.
+**What happens.** A first request to `nvidia/nemotron-3-super-120b-a12b:free` has no `reasoning_details`. The response carries a `reasoning` string and a `reasoning_details` array. RubyLLM stores that array on the assistant message and the next request includes it on that message. Confirmed on the retort log, where the second request body contains `reasoning_details` and the first does not, on the chart correction, where the same replay happens after a turn whose `content` was null, and on the spoken handover, where both asks were streamed and the assistant `content` in the second request equals the first answer.
 
 **Why it matters.** A one-line correction still uploads the previous turn's reasoning. Input tokens grow by that text, not only by the visible reply. An empty `content` is not an empty turn on the wire.
 
 **What to do.** Expect a multi-turn chat on this model to get larger by the reasoning, and keep `max_retries` at 0 when you are recording a fixed number of calls. Do not strip the array yourself if a later turn needs the model to continue; OpenRouter wants it back.
 
-Shown in [Cannery retort log for the morning cook](features/01-chat-basics/04-cannery-retort-log/) and [Chart correction for the Strait of Juan de Fuca](features/01-chat-basics/12-juan-de-fuca-chart-correction/).
+Shown in [Cannery retort log for the morning cook](features/01-chat-basics/04-cannery-retort-log/), [Chart correction for the Strait of Juan de Fuca](features/01-chat-basics/12-juan-de-fuca-chart-correction/), and [Point Wilson spoken handover](features/02-streaming/11-point-wilson-spoken-handover/).
 
 ### with_max_output_tokens is max_tokens on OpenRouter
 
