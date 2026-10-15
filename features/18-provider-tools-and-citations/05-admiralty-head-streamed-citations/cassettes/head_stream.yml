@@ -1,0 +1,318 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Admiralty Head morning watch.\nSearch NOAA Tides and Currents
+        for station 9444900, the Port Townsend\ngauge Admiralty Head copies for Admiralty
+        Inlet.\nStation page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhich
+        page names that gauge, and what does it call the station?"}],"instructions":"You
+        are the radio clerk at Admiralty Head on Whidbey Island.\nCall web search.
+        Dictate two short sentences.\nBegin the dictation with: At Admiralty Head,
+        Alden copies this gauge.\nInclude a markdown link to the NOAA page you used.\nDo
+        not invent a station id.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"web_search"}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:46:14 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af44cbcdc90c31-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '469'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999534'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_ee8eb8d7607047fd8cee62ed8fd3e7fc
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_05e5a20b402ba8ac016ad0d925d4d087d1971dbaabcc2333f8","object":"response","created_at":1792071973,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the radio clerk at Admiralty Head on Whidbey Island.\nCall web search. Dictate two short sentences.\nBegin the dictation with: At Admiralty Head, Alden copies this gauge.\nInclude a markdown link to the NOAA page you used.\nDo not invent a station id.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"web_search","return_token_budget":"default","search_content_types":["text"],"search_context_size":"medium","user_location":{"type":"approximate","city":null,"country":"US","region":null,"timezone":null}}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_05e5a20b402ba8ac016ad0d925d4d087d1971dbaabcc2333f8","object":"response","created_at":1792071973,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the radio clerk at Admiralty Head on Whidbey Island.\nCall web search. Dictate two short sentences.\nBegin the dictation with: At Admiralty Head, Alden copies this gauge.\nInclude a markdown link to the NOAA page you used.\nDo not invent a station id.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"web_search","return_token_budget":"default","search_content_types":["text"],"search_context_size":"medium","user_location":{"type":"approximate","city":null,"country":"US","region":null,"timezone":null}}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","type":"web_search_call","status":"in_progress","action":{"type":"search"}},"output_index":0,"sequence_number":2}
+
+        event: response.web_search_call.in_progress
+        data: {"type":"response.web_search_call.in_progress","item_id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","output_index":0,"sequence_number":3}
+
+        event: response.web_search_call.searching
+        data: {"type":"response.web_search_call.searching","item_id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","output_index":0,"sequence_number":4}
+
+        event: response.web_search_call.completed
+        data: {"type":"response.web_search_call.completed","item_id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","output_index":0,"sequence_number":5}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","type":"web_search_call","status":"completed","action":{"type":"search","queries":["NOAA Tides and Currents station 9444900 Port Townsend Admiralty Head"],"query":"NOAA Tides and Currents station 9444900 Port Townsend Admiralty Head"}},"output_index":0,"sequence_number":6}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":1,"sequence_number":7}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","output_index":1,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"0OF3jO637hCBl","output_index":1,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" NOAA","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"uKr1OMMdmI3","output_index":1,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" T","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"24fbfVtXMqPFkv","output_index":1,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ides","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"Fyi2rKqwfb0H","output_index":1,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" and","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"epzQzyoEHUeA","output_index":1,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Curr","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"g5ZjJMfqBWX","output_index":1,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ents","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"14nzrDLdOy7P","output_index":1,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" station","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"KohkaBHB","output_index":1,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" page","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"qSo0VdtWWuH","output_index":1,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"yODfeJ833wN0","output_index":1,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Port","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"uzcU4HgQa5A","output_index":1,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Townsend","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"FIkGZJx","output_index":1,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"yxaHsMCTNZfIbuP","output_index":1,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Washington","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"abSOR","output_index":1,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"bk3Yn9231DC5SbH","output_index":1,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" station","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"mChCallt","output_index":1,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ID","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"mFESSur2LnCaO","output_index":1,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"upXDnJ6PG1KFQ5j","output_index":1,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"944","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"OLA39a2kSi9yS","output_index":1,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"490","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"jC797PUXPXxgV","output_index":1,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"ES0pCJShkO1AhYc","output_index":1,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"h5nj4DAzMXhY5fF","output_index":1,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"dkDEjS0yPQicL","output_index":1,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" titled","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"o1XzjDEPp","output_index":1,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" \"","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"TtxUERtwtCHicA","output_index":1,"sequence_number":33}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Port","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"7w9EyfFXfGS4","output_index":1,"sequence_number":34}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Townsend","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"o2n2XVb","output_index":1,"sequence_number":35}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"GsMBVJeToLIZJRr","output_index":1,"sequence_number":36}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" WA","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"LTvgrSgQmrjDo","output_index":1,"sequence_number":37}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".\"","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"abrl9f0rCkynmk","output_index":1,"sequence_number":38}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"qeveh7KdLDsJP0p","output_index":1,"sequence_number":39}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"Ct9T3EtN498osYM","output_index":1,"sequence_number":40}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"In","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"NlN3FuUxRIbGOn","output_index":1,"sequence_number":41}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"QRn5HSYBNoC1","output_index":1,"sequence_number":42}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Bench","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"z8QFfm8zBV","output_index":1,"sequence_number":43}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Mark","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"iTJA1onxscH","output_index":1,"sequence_number":44}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Sheet","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"sYT5witAx9","output_index":1,"sequence_number":45}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"A32xhCiPiEPW","output_index":1,"sequence_number":46}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" this","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"U4iUm2bOaaO","output_index":1,"sequence_number":47}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" station","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"mQP2vIiY","output_index":1,"sequence_number":48}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"1JIFOGrZ78s49Qs","output_index":1,"sequence_number":49}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"abVWq576m0h8","output_index":1,"sequence_number":50}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" name","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"nTqNV4OhbwJ","output_index":1,"sequence_number":51}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"TfqTq1KoisqLC","output_index":1,"sequence_number":52}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" listed","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"KxhvPgS0V","output_index":1,"sequence_number":53}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" as","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"1whshS0KpF1kE","output_index":1,"sequence_number":54}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" \"","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"QH5KxHzrxizuNJ","output_index":1,"sequence_number":55}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"PORT","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"FfPDsVoU8Evr","output_index":1,"sequence_number":56}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" T","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"b7TapOx54RFR85","output_index":1,"sequence_number":57}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"OW","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"rQFJyDrxbbmBof","output_index":1,"sequence_number":58}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"NS","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"ZrmVESOEbJekeA","output_index":1,"sequence_number":59}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"END","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"cvrazW0OaVkPP","output_index":1,"sequence_number":60}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"KS9eBsCqeJIl0uP","output_index":1,"sequence_number":61}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ADM","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"eGbKC4D7lpVr","output_index":1,"sequence_number":62}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"IR","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"6jAxR3JYho2Lu7","output_index":1,"sequence_number":63}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"AL","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"QrYAnAiGmw7wpJ","output_index":1,"sequence_number":64}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"TY","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"KKcBiotgVWfvpJ","output_index":1,"sequence_number":65}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" IN","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"fea62k9AH3U76","output_index":1,"sequence_number":66}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"LET","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"FlfPYVmjfhyiW","output_index":1,"sequence_number":67}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" WA","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"nL6oDjPXOEnJq","output_index":1,"sequence_number":68}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".\"","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"BozpmfkR0PWUgM","output_index":1,"sequence_number":69}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"IrUhGoZEn93AHcp","output_index":1,"sequence_number":70}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai))","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"ZdM","output_index":1,"sequence_number":71}
+
+        event: response.output_text.annotation.added
+        data: {"type":"response.output_text.annotation.added","annotation":{"type":"url_citation","end_index":334,"start_index":225,"title":"Bench Mark Sheet - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"},"annotation_index":0,"content_index":0,"item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","output_index":1,"sequence_number":72}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"obfuscation":"4isWPJEQv1JgkNB","output_index":1,"sequence_number":73}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","logprobs":[],"output_index":1,"sequence_number":74,"text":"The NOAA Tides and Currents station page for Port Townsend, Washington, station ID 9444900, is titled \"Port Townsend, WA.\"  In the Bench Mark Sheet for this station, the name is listed as \"PORT TOWNSEND, ADMIRALTY INLET WA.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai)) "}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","output_index":1,"part":{"type":"output_text","annotations":[{"type":"url_citation","end_index":334,"start_index":225,"title":"Bench Mark Sheet - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"}],"logprobs":[],"text":"The NOAA Tides and Currents station page for Port Townsend, Washington, station ID 9444900, is titled \"Port Townsend, WA.\"  In the Bench Mark Sheet for this station, the name is listed as \"PORT TOWNSEND, ADMIRALTY INLET WA.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai)) "},"sequence_number":75}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","type":"message","status":"completed","content":[{"type":"output_text","annotations":[{"type":"url_citation","end_index":334,"start_index":225,"title":"Bench Mark Sheet - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"}],"logprobs":[],"text":"The NOAA Tides and Currents station page for Port Townsend, Washington, station ID 9444900, is titled \"Port Townsend, WA.\"  In the Bench Mark Sheet for this station, the name is listed as \"PORT TOWNSEND, ADMIRALTY INLET WA.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai)) "}],"role":"assistant"},"output_index":1,"sequence_number":76}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_05e5a20b402ba8ac016ad0d925d4d087d1971dbaabcc2333f8","object":"response","created_at":1792071973,"status":"completed","access_programs":null,"background":false,"completed_at":1792071975,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the radio clerk at Admiralty Head on Whidbey Island.\nCall web search. Dictate two short sentences.\nBegin the dictation with: At Admiralty Head, Alden copies this gauge.\nInclude a markdown link to the NOAA page you used.\nDo not invent a station id.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"ws_05e5a20b402ba8ac016ad0d9264ebc87d1960a77246dd28b2d","type":"web_search_call","status":"completed","action":{"type":"search","queries":["NOAA Tides and Currents station 9444900 Port Townsend Admiralty Head"],"query":"NOAA Tides and Currents station 9444900 Port Townsend Admiralty Head"}},{"id":"msg_05e5a20b402ba8ac016ad0d92733c887d1923b18cef157806f","type":"message","status":"completed","content":[{"type":"output_text","annotations":[{"type":"url_citation","end_index":334,"start_index":225,"title":"Bench Mark Sheet - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"}],"logprobs":[],"text":"The NOAA Tides and Currents station page for Port Townsend, Washington, station ID 9444900, is titled \"Port Townsend, WA.\"  In the Bench Mark Sheet for this station, the name is listed as \"PORT TOWNSEND, ADMIRALTY INLET WA.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai)) "}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":1}},"tools":[{"type":"web_search","return_token_budget":"default","search_content_types":["text"],"search_context_size":"medium","user_location":{"type":"approximate","city":null,"country":"US","region":null,"timezone":null}}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":8174,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":123,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":8297},"user":null,"metadata":{}},"sequence_number":77}
+
+  recorded_at: Thu, 15 Oct 2026 13:46:16 GMT
+recorded_with: VCR 6.4.0
+...

@@ -1,0 +1,434 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Termination Point overnight desk.\nSearch NOAA Tides and
+        Currents for station 9444900, the Port Townsend\ngauge this desk copies.\nStation
+        page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhich
+        page names that gauge, and what does it call the station?"}],"instructions":"You
+        are the watch clerk at Termination Point on Liberty Bay.\nOn the first question,
+        call web search and cite the NOAA page.\nOn the second question, use code
+        execution and include the exact height.\nThe first sentence of every answer
+        must contain the exact words Termination Point and Alden.\nDo not invent a
+        station id or a different formula.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"web_search"},{"type":"code_interpreter","container":{"type":"auto"}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:45:42 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af43f219beb57f-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '3282'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998571'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 42ms
+      X-Request-Id:
+      - req_2890d691779642ea9633026a3ad4504b
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_01cb0f5814a49d45016ad0d902faf087d1a68ce8bb8297f30a",
+          "object": "response",
+          "created_at": 1792071939,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071942,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Termination Point on Liberty Bay.\nOn the first question, call web search and cite the NOAA page.\nOn the second question, use code execution and include the exact height.\nThe first sentence of every answer must contain the exact words Termination Point and Alden.\nDo not invent a station id or a different formula.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "ws_01cb0f5814a49d45016ad0d903acd487d19e33473fbb07177d",
+              "type": "web_search_call",
+              "status": "completed",
+              "action": {
+                "type": "search",
+                "queries": [
+                  "NOAA Tides and Currents station 9444900 Port Townsend"
+                ],
+                "query": "NOAA Tides and Currents station 9444900 Port Townsend"
+              }
+            },
+            {
+              "id": "msg_01cb0f5814a49d45016ad0d90506b487d1b79d684ca730183a",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [
+                    {
+                      "type": "url_citation",
+                      "end_index": 362,
+                      "start_index": 252,
+                      "title": "Water Levels - NOAA Tides & Currents",
+                      "url": "https://tidesandcurrents.noaa.gov/waterlevels.html?id=9444900&utm_source=openai"
+                    }
+                  ],
+                  "logprobs": [],
+                  "text": "Termination Point and Alden are both associated with the Port Townsend gauge, station 9444900. The NOAA Tides and Currents page for this station is titled \"Water Levels - NOAA Tides & Currents,\" and it refers to the station as \"9444900 Port Townsend.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/waterlevels.html?id=9444900&utm_source=openai)) "
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 1
+            }
+          },
+          "tools": [
+            {
+              "type": "code_interpreter",
+              "container": {
+                "type": "auto"
+              }
+            },
+            {
+              "type": "web_search",
+              "return_token_budget": "default",
+              "search_content_types": [
+                "text"
+              ],
+              "search_context_size": "medium",
+              "user_location": {
+                "type": "approximate",
+                "city": null,
+                "country": "US",
+                "region": null,
+                "timezone": null
+              }
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 8174,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 122,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 8296
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:45:42 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Termination Point overnight desk.\nSearch NOAA Tides and
+        Currents for station 9444900, the Port Townsend\ngauge this desk copies.\nStation
+        page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhich
+        page names that gauge, and what does it call the station?"},{"id":"ws_01cb0f5814a49d45016ad0d903acd487d19e33473fbb07177d","type":"web_search_call","status":"completed","action":{"type":"search","queries":["NOAA
+        Tides and Currents station 9444900 Port Townsend"],"query":"NOAA Tides and
+        Currents station 9444900 Port Townsend"}},{"id":"msg_01cb0f5814a49d45016ad0d90506b487d1b79d684ca730183a","type":"message","status":"completed","content":[{"type":"output_text","annotations":[{"type":"url_citation","end_index":362,"start_index":252,"title":"Water
+        Levels - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/waterlevels.html?id=9444900&utm_source=openai"}],"logprobs":[],"text":"Termination
+        Point and Alden are both associated with the Port Townsend gauge, station
+        9444900. The NOAA Tides and Currents page for this station is titled \"Water
+        Levels - NOAA Tides & Currents,\" and it refers to the station as \"9444900
+        Port Townsend.\" ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/waterlevels.html?id=9444900&utm_source=openai))
+        "}],"role":"assistant"},{"role":"user","content":"Use code execution. Minutes
+        from midnight: 06:42 is 402, 12:18 is 738,\n10:46 is 646. Posted heights:
+        0.4 ft at 06:42, 8.1 ft at 12:18.\nCompute 0.4 + (8.1 - 0.4) * (646 - 402)
+        / (738 - 402).\nPrint the exact number. Does Alden have 6.0 ft at 10:46 at
+        Termination Point?"}],"instructions":"You are the watch clerk at Termination
+        Point on Liberty Bay.\nOn the first question, call web search and cite the
+        NOAA page.\nOn the second question, use code execution and include the exact
+        height.\nThe first sentence of every answer must contain the exact words Termination
+        Point and Alden.\nDo not invent a station id or a different formula.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"web_search"},{"type":"code_interpreter","container":{"type":"auto"}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:45:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af4407bfec88dc-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '3137'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1997963'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 61ms
+      X-Request-Id:
+      - req_719639d90fd146729b7c2256c3edc93d
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_01cb0f5814a49d45016ad0d90672d887d1a44b2dd8551b2060",
+          "object": "response",
+          "created_at": 1792071942,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071945,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the watch clerk at Termination Point on Liberty Bay.\nOn the first question, call web search and cite the NOAA page.\nOn the second question, use code execution and include the exact height.\nThe first sentence of every answer must contain the exact words Termination Point and Alden.\nDo not invent a station id or a different formula.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "ci_01cb0f5814a49d45016ad0d90710a087d1bffa01d13a9bd751",
+              "type": "code_interpreter_call",
+              "status": "completed",
+              "code": "# Given values\r\ntime1 = 402  # 06:42 in minutes from midnight\r\ntime2 = 738  # 12:18 in minutes from midnight\r\ntime_target = 646  # 10:46 in minutes from midnight\r\n\r\nheight1 = 0.4  # height at 06:42\r\nheight2 = 8.1  # height at 12:18\r\n\r\n# Linear interpolation formula\r\nheight_target = height1 + (height2 - height1) * (time_target - time1) / (time2 - time1)\r\nheight_target",
+              "container_id": "cntr_6ad0d906aa388190b17781e62aba0a4d025cd654297bed5c",
+              "outputs": null
+            },
+            {
+              "id": "msg_01cb0f5814a49d45016ad0d908c26887d19d71f236fcfe7c70",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Termination Point and Alden have a computed height of exactly 5.991666666666666 feet at 10:46. Therefore, Alden does not have exactly 6.0 feet at 10:46 at Termination Point; the height is slightly less than 6.0 feet."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "code_interpreter",
+              "container": {
+                "type": "auto"
+              }
+            },
+            {
+              "type": "web_search",
+              "return_token_budget": "default",
+              "search_content_types": [
+                "text"
+              ],
+              "search_context_size": "medium",
+              "user_location": {
+                "type": "approximate",
+                "city": null,
+                "country": "US",
+                "region": null,
+                "timezone": null
+              }
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 988,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 189,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1177
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:45:45 GMT
+recorded_with: VCR 6.4.0

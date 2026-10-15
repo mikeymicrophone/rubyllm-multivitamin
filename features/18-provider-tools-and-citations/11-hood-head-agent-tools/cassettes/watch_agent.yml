@@ -1,0 +1,410 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Hood Head.\nSearch NOAA Tides and Currents for station 9444900,
+        the Port Townsend\ngauge Hood Head copies for Admiralty Inlet.\nStation page:
+        https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhich page
+        names that gauge, and what does it call the station?"}],"instructions":"You
+        are the tide clerk at Hood Head on Hood Canal.\nCall web search on the first
+        question.\nAnswer in two short sentences.\nThe first sentence of every answer
+        must contain the exact words Hood Head and Alden.\nCite the NOAA page you
+        used.\nDo not invent a station id.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"web_search"}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:45:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af43c4c9151c37-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '2179'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999541'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_394748c883fb4f75bb79fd8cbea87831
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0ed3f1622cfa2080016ad0d8fbbbac87d1968498d7b7809851",
+          "object": "response",
+          "created_at": 1792071931,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071933,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Hood Head on Hood Canal.\nCall web search on the first question.\nAnswer in two short sentences.\nThe first sentence of every answer must contain the exact words Hood Head and Alden.\nCite the NOAA page you used.\nDo not invent a station id.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "ws_0ed3f1622cfa2080016ad0d8fc65ac87d18de98e82796c83d3",
+              "type": "web_search_call",
+              "status": "completed",
+              "action": {
+                "type": "search",
+                "queries": [
+                  "NOAA Tides and Currents station 9444900 Port Townsend gauge"
+                ],
+                "query": "NOAA Tides and Currents station 9444900 Port Townsend gauge"
+              }
+            },
+            {
+              "id": "msg_0ed3f1622cfa2080016ad0d8fd3dac87d18750bcec9e2b1769",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [
+                    {
+                      "type": "url_citation",
+                      "end_index": 287,
+                      "start_index": 178,
+                      "title": "Bench Mark Sheet - NOAA Tides & Currents",
+                      "url": "https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"
+                    }
+                  ],
+                  "logprobs": [],
+                  "text": "Hood Head and Alden are both associated with the NOAA Tides and Currents station 9444900, which is named \"Port Townsend, WA.\" This station serves as a gauge for Admiralty Inlet. ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai)) "
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 1
+            }
+          },
+          "tools": [
+            {
+              "type": "web_search",
+              "return_token_budget": "default",
+              "search_content_types": [
+                "text"
+              ],
+              "search_context_size": "medium",
+              "user_location": {
+                "type": "approximate",
+                "city": null,
+                "country": "US",
+                "region": null,
+                "timezone": null
+              }
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 8174,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 105,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 8279
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:45:33 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Hood Head.\nSearch NOAA Tides and Currents for station 9444900,
+        the Port Townsend\ngauge Hood Head copies for Admiralty Inlet.\nStation page:
+        https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nWhich page
+        names that gauge, and what does it call the station?"},{"id":"ws_0ed3f1622cfa2080016ad0d8fc65ac87d18de98e82796c83d3","type":"web_search_call","status":"completed","action":{"type":"search","queries":["NOAA
+        Tides and Currents station 9444900 Port Townsend gauge"],"query":"NOAA Tides
+        and Currents station 9444900 Port Townsend gauge"}},{"id":"msg_0ed3f1622cfa2080016ad0d8fd3dac87d18750bcec9e2b1769","type":"message","status":"completed","content":[{"type":"output_text","annotations":[{"type":"url_citation","end_index":287,"start_index":178,"title":"Bench
+        Mark Sheet - NOAA Tides & Currents","url":"https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai"}],"logprobs":[],"text":"Hood
+        Head and Alden are both associated with the NOAA Tides and Currents station
+        9444900, which is named \"Port Townsend, WA.\" This station serves as a gauge
+        for Admiralty Inlet. ([tidesandcurrents.noaa.gov](https://tidesandcurrents.noaa.gov/benchmarks.html?id=9444900&utm_source=openai))
+        "}],"role":"assistant"},{"role":"user","content":"Should the Hood Head watch
+        hail the lens crew before Alden copies that gauge at 10:46 if the cabinet
+        stays open until 09:30?"}],"instructions":"You are the tide clerk at Hood
+        Head on Hood Canal.\nCall web search on the first question.\nAnswer in two
+        short sentences.\nThe first sentence of every answer must contain the exact
+        words Hood Head and Alden.\nCite the NOAA page you used.\nDo not invent a
+        station id.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"web_search"}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:45:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af43d39b1dff15-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '754'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999389'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - req_a36ac473a1074e13b2dcecf21119228c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0ed3f1622cfa2080016ad0d8fe1b1487d19ab0b14b598ca73e",
+          "object": "response",
+          "created_at": 1792071934,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071934,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Hood Head on Hood Canal.\nCall web search on the first question.\nAnswer in two short sentences.\nThe first sentence of every answer must contain the exact words Hood Head and Alden.\nCite the NOAA page you used.\nDo not invent a station id.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0ed3f1622cfa2080016ad0d8fe7c3887d1bf01eb58dca37a7c",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Hood Head and Alden should not hail the lens crew before 10:46 if the cabinet stays open only until 09:30, as the cabinet closing time is earlier than the copying time. The watch should wait until the cabinet is accessible again or coordinate accordingly."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "web_search",
+              "return_token_budget": "default",
+              "search_content_types": [
+                "text"
+              ],
+              "search_context_size": "medium",
+              "user_location": {
+                "type": "approximate",
+                "city": null,
+                "country": "US",
+                "region": null,
+                "timezone": null
+              }
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 592,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 57,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 649
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:45:34 GMT
+recorded_with: VCR 6.4.0
