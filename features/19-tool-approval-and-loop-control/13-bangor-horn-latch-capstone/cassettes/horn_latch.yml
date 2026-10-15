@@ -1,0 +1,674 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning watch at Bangor.\nBase notes: https://www.cnic.navy.mil/regions/cnrnw/installations/navbase_kitsap.html\nChart:
+        https://www.charts.noaa.gov/\nRead the outbound range and sound the horn for
+        the Kentucky."}],"instructions":"You are the duty officer at Naval Base Kitsap-Bangor
+        on Hood Canal.\nFor the first question, your first message must contain exactly
+        two\nfunction calls: posted_range_card and sound_the_horn. Do not call\nrestricted_gate_log.
+        After both have results, answer in one short\nsentence that names the Kentucky,
+        the outbound clock on the range\ncard, and the blast length the horn returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_range_card","description":"Reads
+        the Bangor outbound range card. Does not sound the horn.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"sound_the_horn","description":"Sounds
+        the Hood Canal horn for outbound Bangor traffic. Needs the duty officer''s
+        latch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"restricted_gate_log","description":"Reads
+        the Bangor restricted-area gate log. Do not call this on the morning watch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required","parallel_tool_calls":true}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3c084c019694-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1640'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999542'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_151ce48076234bcfbae9c076ab340044
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a00f7cb78864c29016ad0d7bedcb487d1a2fa9f259a5e2817",
+          "object": "response",
+          "created_at": 1792071614,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071616,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the duty officer at Naval Base Kitsap-Bangor on Hood Canal.\nFor the first question, your first message must contain exactly two\nfunction calls: posted_range_card and sound_the_horn. Do not call\nrestricted_gate_log. After both have results, answer in one short\nsentence that names the Kentucky, the outbound clock on the range\ncard, and the blast length the horn returns.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0a00f7cb78864c29016ad0d7c06d3887d19ca2aba9edf0a1ca",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_QmqQmnQoD6OyBzOHSfp1PqWx",
+              "name": "posted_range_card"
+            },
+            {
+              "id": "fc_0a00f7cb78864c29016ad0d7c06d4c87d1a79bc3bf80de0d15",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_Oc8mi4JtBfztP1UyxMyXcxyJ",
+              "name": "sound_the_horn"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "required",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Bangor outbound range card. Does not sound the horn.",
+              "name": "posted_range_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Sounds the Hood Canal horn for outbound Bangor traffic. Needs the duty officer's latch.",
+              "name": "sound_the_horn",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the Bangor restricted-area gate log. Do not call this on the morning watch.",
+              "name": "restricted_gate_log",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 241,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 44,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 285
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:16 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning watch at Bangor.\nBase notes: https://www.cnic.navy.mil/regions/cnrnw/installations/navbase_kitsap.html\nChart:
+        https://www.charts.noaa.gov/\nRead the outbound range and sound the horn for
+        the Kentucky."},{"type":"function_call","call_id":"call_QmqQmnQoD6OyBzOHSfp1PqWx","name":"posted_range_card","arguments":"{}"},{"type":"function_call","call_id":"call_Oc8mi4JtBfztP1UyxMyXcxyJ","name":"sound_the_horn","arguments":"{}"},{"type":"function_call_output","call_id":"call_QmqQmnQoD6OyBzOHSfp1PqWx","output":"Bangor
+        range card, Thursday 15 October 2026.\nRange is clear. Submarine traffic:
+        USS Kentucky outbound at 07:40."},{"type":"function_call_output","call_id":"call_Oc8mi4JtBfztP1UyxMyXcxyJ","output":"Hood
+        Canal horn sounded. Blast 4 seconds for the Kentucky."}],"instructions":"You
+        are the duty officer at Naval Base Kitsap-Bangor on Hood Canal.\nFor the first
+        question, your first message must contain exactly two\nfunction calls: posted_range_card
+        and sound_the_horn. Do not call\nrestricted_gate_log. After both have results,
+        answer in one short\nsentence that names the Kentucky, the outbound clock
+        on the range\ncard, and the blast length the horn returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_range_card","description":"Reads
+        the Bangor outbound range card. Does not sound the horn.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"sound_the_horn","description":"Sounds
+        the Hood Canal horn for outbound Bangor traffic. Needs the duty officer''s
+        latch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"restricted_gate_log","description":"Reads
+        the Bangor restricted-area gate log. Do not call this on the morning watch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"parallel_tool_calls":true}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3c13bcac4b01-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '803'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998957'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 31ms
+      X-Request-Id:
+      - req_bd8afbcd3de3492b8a852cbe33858eee
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_00acbcb9c63bb7dc016ad0d7c0acf487d1abd2862edf27eefe",
+          "object": "response",
+          "created_at": 1792071616,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071617,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the duty officer at Naval Base Kitsap-Bangor on Hood Canal.\nFor the first question, your first message must contain exactly two\nfunction calls: posted_range_card and sound_the_horn. Do not call\nrestricted_gate_log. After both have results, answer in one short\nsentence that names the Kentucky, the outbound clock on the range\ncard, and the blast length the horn returns.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_00acbcb9c63bb7dc016ad0d7c1355087d1a1038690e975dda2",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The USS Kentucky is outbound at 07:40 on the Bangor range card, and the Hood Canal horn blast length is 4 seconds."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Bangor outbound range card. Does not sound the horn.",
+              "name": "posted_range_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Sounds the Hood Canal horn for outbound Bangor traffic. Needs the duty officer's latch.",
+              "name": "sound_the_horn",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the Bangor restricted-area gate log. Do not call this on the morning watch.",
+              "name": "restricted_gate_log",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 325,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 30,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 355
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning watch at Bangor.\nBase notes: https://www.cnic.navy.mil/regions/cnrnw/installations/navbase_kitsap.html\nChart:
+        https://www.charts.noaa.gov/\nRead the outbound range and sound the horn for
+        the Kentucky."},{"type":"function_call","call_id":"call_QmqQmnQoD6OyBzOHSfp1PqWx","name":"posted_range_card","arguments":"{}"},{"type":"function_call","call_id":"call_Oc8mi4JtBfztP1UyxMyXcxyJ","name":"sound_the_horn","arguments":"{}"},{"type":"function_call_output","call_id":"call_QmqQmnQoD6OyBzOHSfp1PqWx","output":"Bangor
+        range card, Thursday 15 October 2026.\nRange is clear. Submarine traffic:
+        USS Kentucky outbound at 07:40."},{"type":"function_call_output","call_id":"call_Oc8mi4JtBfztP1UyxMyXcxyJ","output":"Hood
+        Canal horn sounded. Blast 4 seconds for the Kentucky."},{"role":"assistant","content":[{"type":"output_text","text":"The
+        USS Kentucky is outbound at 07:40 on the Bangor range card, and the Hood Canal
+        horn blast length is 4 seconds."}]},{"role":"user","content":"The relief asks
+        whether the Kentucky still leaves at the time on the range card, and whether
+        the horn already sounded."}],"instructions":"You are the duty officer at Naval
+        Base Kitsap-Bangor on Hood Canal.\nFor the first question, your first message
+        must contain exactly two\nfunction calls: posted_range_card and sound_the_horn.
+        Do not call\nrestricted_gate_log. After both have results, answer in one short\nsentence
+        that names the Kentucky, the outbound clock on the range\ncard, and the blast
+        length the horn returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_range_card","description":"Reads
+        the Bangor outbound range card. Does not sound the horn.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"sound_the_horn","description":"Sounds
+        the Hood Canal horn for outbound Bangor traffic. Needs the duty officer''s
+        latch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"restricted_gate_log","description":"Reads
+        the Bangor restricted-area gate log. Do not call this on the morning watch.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"none","parallel_tool_calls":true}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3c19cd2aaee3-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '797'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998326'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 50ms
+      X-Request-Id:
+      - req_a02c219573fc43e9a5dca64ce06d34b9
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0499932fc9475f15016ad0d7c1abd487d1ab03198ff032bc9c",
+          "object": "response",
+          "created_at": 1792071617,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071618,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the duty officer at Naval Base Kitsap-Bangor on Hood Canal.\nFor the first question, your first message must contain exactly two\nfunction calls: posted_range_card and sound_the_horn. Do not call\nrestricted_gate_log. After both have results, answer in one short\nsentence that names the Kentucky, the outbound clock on the range\ncard, and the blast length the horn returns.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0499932fc9475f15016ad0d7c21ec087d1b9f1821071084f4d",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yes, the USS Kentucky is still scheduled to leave at 07:40 as shown on the range card, and the Hood Canal horn has already sounded with a 4-second blast."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "none",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Bangor outbound range card. Does not sound the horn.",
+              "name": "posted_range_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Sounds the Hood Canal horn for outbound Bangor traffic. Needs the duty officer's latch.",
+              "name": "sound_the_horn",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the Bangor restricted-area gate log. Do not call this on the morning watch.",
+              "name": "restricted_gate_log",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 385,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 423
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:18 GMT
+recorded_with: VCR 6.4.0

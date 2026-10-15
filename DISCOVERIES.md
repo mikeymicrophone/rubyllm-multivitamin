@@ -745,6 +745,58 @@ Shown in [Middle Point refused format](features/17-text-to-speech/12-middle-poin
 
 Shown in [Kala Point speed instructions](features/17-text-to-speech/08-kala-point-speed-instructions/).
 
+## Tool approval and loop control
+
+### Forced tool_choice is cleared even while the call still waits on approval
+
+**What happens.** `with_tool_options(choice: PublishWatchNotice)` sends `"tool_choice":{"type":"function","name":"publish_watch_notice"}` on the first Port Ludlow request. `ask` parks because the tool `requires_approval`. `run_tools` has not executed it, but it still clears the forced choice. The follow-up request after `approve` includes the tool result and omits `tool_choice`. The provider reports `"tool_choice":"auto"` on that response.
+
+**Why it matters.** A watch that re-sends the parked chat expecting the same forced latch will not find `tool_choice` on the second POST. The model is free to skip the tool or call it again.
+
+**What to do.** Re-apply `with_tool_options(choice:)` before the next `generate` if the latch still has to be forced. Assert the first request has the flat function object and the follow-up does not contain `tool_choice`.
+
+Shown in [Port Ludlow publish latch](features/19-tool-approval-and-loop-control/01-port-ludlow-publish-latch/).
+
+### A denial is JSON with a fixed error string
+
+**What happens.** `deny` then `complete` appends a `:tool` message whose content is `{"error":"The user denied the fire_range_charge tool call."}`. `execute` never runs. The spoken answer continues from that JSON.
+
+**Why it matters.** A reader looking for a denial role, or for a Ruby exception, will not find one. The model sees the same `{ error: }` shape a tool would return for a miss.
+
+**What to do.** Parse the tool message as JSON and match that error string. Assert the side effect flag is still false.
+
+Shown in [Dabob Bay deny the charge](features/19-tool-approval-and-loop-control/02-dabob-bay-deny-charge/).
+
+### PendingToolCallsError is not a RubyLLM::Error
+
+**What happens.** A second `ask` while `estuary_latch` is still waiting raises `RubyLLM::PendingToolCallsError`. The message names the unanswered tool and tells you to `complete` after `approve` or `deny`. The class inherits `StandardError`. A `rescue RubyLLM::Error` does not catch it. The second question is never staged.
+
+**Why it matters.** The same split as `CancelledError`: provider failures inherit `RubyLLM::Error`, this local refusal does not.
+
+**What to do.** Rescue `PendingToolCallsError` on its own. Finish the pending round before asking again.
+
+Shown in [Skokomish pending ask raises](features/19-tool-approval-and-loop-control/08-skokomish-pending-ask/).
+
+### Concurrent tool results join in completion order, so the cassette body races
+
+**What happens.** `concurrency: :threads` with two Lilliwaup tools appends each `:tool` message as that thread finishes. The next `generate` request includes those results in that order. VCR matches on body. A replay whose creek and boom threads finish in the other order misses the recorded interaction.
+
+**Why it matters.** A live recording that printed the right answer still fails on cassette replay, even though both tools ran.
+
+**What to do.** Give the tools staggered `sleep`s so the same card is always first, on record and on replay. Assert the two `Thread.current.object_id` values differ, not the YAML order of the tool messages.
+
+Shown in [Lilliwaup concurrency threads](features/19-tool-approval-and-loop-control/07-lilliwaup-concurrency-threads/).
+
+### The persisted approval column is the string approved, not true
+
+**What happens.** `approve` on an `acts_as_chat` Seabeck log writes `"approved"` to `ruby_llm_tool_calls.approval`. Before that write the column is `nil`. `HarborMaster.find` then `complete` executes because the approval checker reads that string as `true`. The class-level latch is still unset until that second `complete`.
+
+**Why it matters.** A job that stores `true` in the column, or that compares with `== true`, will not resume. `pending_approvals` on the record returns `RubyLLM::ActiveRecord::ToolCall` rows, not `RubyLLM::ToolCall` objects.
+
+**What to do.** Call `approve` / `deny` and read the string. Load the chat through the agent class so the tools and `requires_approval` come back.
+
+Shown in [Seabeck Rails approval job](features/19-tool-approval-and-loop-control/12-seabeck-rails-approval-job/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

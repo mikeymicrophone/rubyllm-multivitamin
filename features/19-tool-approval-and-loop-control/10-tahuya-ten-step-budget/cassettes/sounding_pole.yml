@@ -1,0 +1,1125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."}],"instructions":"You are
+        the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole
+        reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:04 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3bc4ad66de1d-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '675'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999645'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 10ms
+      X-Request-Id:
+      - req_dfab901a42844720ae65d2387c4f26c4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08f3b752fcfe763e016ad0d7b40a9c87d1ad23edcec132c028",
+          "object": "response",
+          "created_at": 1792071604,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071604,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_08f3b752fcfe763e016ad0d7b49ce087d19b09faf23fa95db8",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_oTIkaA84q4DC42SaTb2Pj59h",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 138,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 140
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:04 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."},{"type":"function_call","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","output":"Tahuya
+        spit sounding 1 of 20: 19 ft at the pole. Call sounding_pole again for the
+        next mark."}],"instructions":"You are the sounding watch at Tahuya spit.\nKeep
+        calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop
+        early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3bca0862816e-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1189'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999241'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 22ms
+      X-Request-Id:
+      - req_017deba645334762b5b82c6b674d273f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_04f94c9f372d84de016ad0d7b4f52c87d18522f60643c05739",
+          "object": "response",
+          "created_at": 1792071604,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071606,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_04f94c9f372d84de016ad0d7b608f887d19c547543ef38b21a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_NoReQsFshOvIuocD7SRDOqTr",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 186,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 188
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:06 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."},{"type":"function_call","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","output":"Tahuya
+        spit sounding 1 of 20: 19 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","output":"Tahuya
+        spit sounding 2 of 20: 18 ft at the pole. Call sounding_pole again for the
+        next mark."}],"instructions":"You are the sounding watch at Tahuya spit.\nKeep
+        calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop
+        early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3bd3189bca84-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '419'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999548'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_0a4e642e4cfa4a47ab7773e675f3fb9d
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0507757c14c1091e016ad0d7b65a0c87d1aad98f09b5bfe402",
+          "object": "response",
+          "created_at": 1792071606,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071606,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0507757c14c1091e016ad0d7b6ab8887d182f77c742b888af0",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_tHvsobmBoUep8HWHyfswIgXE",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 234,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 236
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:06 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."},{"type":"function_call","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","output":"Tahuya
+        spit sounding 1 of 20: 19 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","output":"Tahuya
+        spit sounding 2 of 20: 18 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","output":"Tahuya
+        spit sounding 3 of 20: 17 ft at the pole. Call sounding_pole again for the
+        next mark."}],"instructions":"You are the sounding watch at Tahuya spit.\nKeep
+        calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop
+        early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3bd6de982fbe-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '539'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999048'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 28ms
+      X-Request-Id:
+      - req_417fd49305c3478ab83ea959a2aec62c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_093d9e48d6011268016ad0d7b6f50487d1b4e93ed4bb78556f",
+          "object": "response",
+          "created_at": 1792071607,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071607,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_093d9e48d6011268016ad0d7b75ee887d1b009609f4a7e1f5a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_z6bYhS8JNwkrnBEdHSuf0CG1",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 282,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 284
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:07 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."},{"type":"function_call","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","output":"Tahuya
+        spit sounding 1 of 20: 19 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","output":"Tahuya
+        spit sounding 2 of 20: 18 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","output":"Tahuya
+        spit sounding 3 of 20: 17 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_z6bYhS8JNwkrnBEdHSuf0CG1","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_z6bYhS8JNwkrnBEdHSuf0CG1","output":"Tahuya
+        spit sounding 4 of 20: 16 ft at the pole. Call sounding_pole again for the
+        next mark."}],"instructions":"You are the sounding watch at Tahuya spit.\nKeep
+        calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop
+        early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3bdb68b5a11a-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '707'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998500'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 45ms
+      X-Request-Id:
+      - req_59b6b341462749eb8b60f938857af55d
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0240c92571165f6f016ad0d7b7afa887d18830428a87b37b30",
+          "object": "response",
+          "created_at": 1792071607,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071608,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0240c92571165f6f016ad0d7b844bc87d1ae96044be1d1f6c5",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_o0q3dprFilOYyNY31FdzhbqG",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 330,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 332
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:08 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, sounding round at Tahuya spit.\nCanal notes: https://www.charts.noaa.gov/\nWalk
+        the pole out to sounding 20 and post every mark."},{"type":"function_call","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_oTIkaA84q4DC42SaTb2Pj59h","output":"Tahuya
+        spit sounding 1 of 20: 19 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_NoReQsFshOvIuocD7SRDOqTr","output":"Tahuya
+        spit sounding 2 of 20: 18 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_tHvsobmBoUep8HWHyfswIgXE","output":"Tahuya
+        spit sounding 3 of 20: 17 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_z6bYhS8JNwkrnBEdHSuf0CG1","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_z6bYhS8JNwkrnBEdHSuf0CG1","output":"Tahuya
+        spit sounding 4 of 20: 16 ft at the pole. Call sounding_pole again for the
+        next mark."},{"type":"function_call","call_id":"call_o0q3dprFilOYyNY31FdzhbqG","name":"sounding_pole","arguments":"{}"},{"type":"function_call_output","call_id":"call_o0q3dprFilOYyNY31FdzhbqG","output":"Tahuya
+        spit sounding 5 of 20: 15 ft at the pole. Call sounding_pole again for the
+        next mark."}],"instructions":"You are the sounding watch at Tahuya spit.\nKeep
+        calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop
+        early. Do not invent a depth.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"sounding_pole","description":"Takes
+        the next sounding at Tahuya spit. Call again for the next mark.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"sounding_pole"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:40:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3be10f89fef7-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '535'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4996'
+      X-Ratelimit-Remaining-Tokens:
+      - '1997904'
+      X-Ratelimit-Reset-Requests:
+      - 48ms
+      X-Ratelimit-Reset-Tokens:
+      - 62ms
+      X-Request-Id:
+      - req_02b00d5429bf49e4a551d418cdd851bf
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a6aa1ec2df2c22b016ad0d7b8980487d1888c172589e33e6e",
+          "object": "response",
+          "created_at": 1792071608,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071609,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sounding watch at Tahuya spit.\nKeep calling sounding_pole until the pole reports sounding 20 of 20.\nDo not stop early. Do not invent a depth.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0a6aa1ec2df2c22b016ad0d7b9050087d18807f4ca71e63ca5",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_figl2Z1930YHfPZMwxnVN8bU",
+              "name": "sounding_pole"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "sounding_pole"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Takes the next sounding at Tahuya spit. Call again for the next mark.",
+              "name": "sounding_pole",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 378,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 380
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:40:09 GMT
+recorded_with: VCR 6.4.0
