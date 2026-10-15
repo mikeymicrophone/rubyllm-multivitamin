@@ -1,7 +1,7 @@
 # Contributing to RubyLLM Multivitamin
 
 Every scenario in this catalog follows the same conventions. The reference
-scenario, [Chat basics · 01 · Point Wilson tide board](features/01-chat-basics/01-point-wilson-tide-board/),
+scenario, [Chat basics · 01 · Bengaluru inverter board](features/01-chat-basics/01-bengaluru-inverter-board/),
 follows all of them; copy its shape when you add a new one.
 
 ## The rules
@@ -19,13 +19,13 @@ concrete enough yet.
 
 | Instead of | Write |
 | --- | --- |
-| `class MyTool` | `class KelpLedgeClearance` |
-| `def execute(query:)` | `def execute(station:, boat:)` |
-| `chat.ask "Hello"` | `chat.ask` with the tide board pasted in |
-| `name: "Alice"` | `name: "Alden"` when Alden is the foghorn tender |
+| `class MyTool` | `class InverterClearance` |
+| `def execute(query:)` | `def execute(household:, appliance:)` |
+| `chat.ask "Hello"` | `chat.ask` with the inverter board pasted in |
+| `name: "Alice"` | `name: "Lakshmi"` when Lakshmi runs the wash |
 
-Content counts too: use believable sample data (a posted tide board, a retort
-cook card, a lens-cabinet drawer), not lorem ipsum.
+Content counts too: use believable sample data (a posted inverter board, a
+receiving card, a manuscript-cabinet drawer), not lorem ipsum.
 
 Test files are named `*_test.rb` because Minitest loads them that way. The
 word belongs to the runner, not to the domain. Inside the test, the names are
@@ -33,11 +33,11 @@ still the scenario's names.
 
 ### 2. One believable scenario per scenario folder
 
-Each folder is one real-world job: a tide clerk briefing the watch, a lens
-keeper inventorying a cabinet, a cannery clerk logging a retort cook. Pick a
-scenario where the feature is the natural tool, not one bent to fit it.
-Within a feature, the thirteen scenarios should each show the feature in a
-different shape rather than repeat one pattern.
+Each folder is one real-world job: a household clerk briefing the morning, a
+manuscript librarian inventorying a cabinet, a wholesale clerk logging an
+ankara bale. Pick a scenario where the feature is the natural tool, not one
+bent to fit it. Within a feature, the thirteen scenarios should each show
+the feature in a different shape rather than repeat one pattern.
 
 ### 3. Moderately complex to complex
 
@@ -98,7 +98,7 @@ scenario self-contained:
   time.
 - `support/models.rb` holds provider model slugs. Those are not scenario
   copy. `support/cassettes.rb` holds the player. Neither file should mention
-  a station, a boat, or a cabinet.
+  a household, a booth, or a cabinet.
 
 ## Cassettes
 
@@ -116,7 +116,7 @@ scenario self-contained:
   An OpenRouter recording stores `Bearer <OPENROUTER_API_KEY>`.
   Add a new provider key to `Multivitamin::Cassettes::KEY_ENV_VARS` when a
   scenario starts using it. A test should read the cassette and refute a
-  live key pattern, the way the tide board test does.
+  live key pattern, the way the inverter board test does.
 - Never commit `.env` or a raw key. `.env.example` stays empty.
 - A hand-authored cassette is allowed when no key is available. Build the
   request body by running the script's encoder and write a response in the
