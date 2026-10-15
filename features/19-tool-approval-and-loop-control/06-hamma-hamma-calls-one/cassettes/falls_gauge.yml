@@ -1,0 +1,579 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, gauge round at the Hamma Hamma falls.\nForest notes: https://www.fs.usda.gov/olympic\nRead
+        the upper falls and the lower falls."}],"instructions":"You are the falls
+        watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and for the
+        lower reach.\nYou may only put one function call in a single assistant message.\nAfter
+        both cards are back, answer in one short sentence that names\nboth figures
+        the gauges return.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"falls_gauge","description":"Reads
+        one Hamma Hamma falls gauge. Call once per reach, upper or lower.","parameters":{"type":"object","properties":{"reach":{"type":"string","description":"upper
+        or lower falls"}},"required":["reach"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required","parallel_tool_calls":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:39:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3b65f9a5a60a-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '500'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999794'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_50b5958fd7f0400bb950ea1a5078163c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0087836d4fbbe145016ad0d7a4e56c87d19fb52ac12659a313",
+          "object": "response",
+          "created_at": 1792071588,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071589,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the falls watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and for the lower reach.\nYou may only put one function call in a single assistant message.\nAfter both cards are back, answer in one short sentence that names\nboth figures the gauges return.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0087836d4fbbe145016ad0d7a53fdc87d1945b81d48942f95f",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"reach\":\"upper\"}",
+              "call_id": "call_Ztiy0vzH7QXhndBKhXHfPNdb",
+              "name": "falls_gauge"
+            }
+          ],
+          "parallel_tool_calls": false,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "required",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one Hamma Hamma falls gauge. Call once per reach, upper or lower.",
+              "name": "falls_gauge",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "reach": {
+                    "type": "string",
+                    "description": "upper or lower falls"
+                  }
+                },
+                "required": [
+                  "reach"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 175,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 6,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 181
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:39:49 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, gauge round at the Hamma Hamma falls.\nForest notes: https://www.fs.usda.gov/olympic\nRead
+        the upper falls and the lower falls."},{"type":"function_call","call_id":"call_Ztiy0vzH7QXhndBKhXHfPNdb","name":"falls_gauge","arguments":"{\"reach\":\"upper\"}"},{"type":"function_call_output","call_id":"call_Ztiy0vzH7QXhndBKhXHfPNdb","output":"Upper
+        Hamma Hamma falls: 2.1 ft over the lip."}],"instructions":"You are the falls
+        watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and for the
+        lower reach.\nYou may only put one function call in a single assistant message.\nAfter
+        both cards are back, answer in one short sentence that names\nboth figures
+        the gauges return.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"falls_gauge","description":"Reads
+        one Hamma Hamma falls gauge. Call once per reach, upper or lower.","parameters":{"type":"object","properties":{"reach":{"type":"string","description":"upper
+        or lower falls"}},"required":["reach"],"additionalProperties":false,"strict":true},"strict":false}],"parallel_tool_calls":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:39:50 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3b6a4ccf5ec1-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '560'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999566'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_bddee81034b44470ad1a3f44c861ce79
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e0419088d66dc27016ad0d7a5986887d1949007ce4bbdc872",
+          "object": "response",
+          "created_at": 1792071589,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071590,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the falls watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and for the lower reach.\nYou may only put one function call in a single assistant message.\nAfter both cards are back, answer in one short sentence that names\nboth figures the gauges return.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0e0419088d66dc27016ad0d7a60ca887d18f55a84eff68dc77",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"reach\":\"lower\"}",
+              "call_id": "call_0UBmE8799OkOTG1avn1RmOZo",
+              "name": "falls_gauge"
+            }
+          ],
+          "parallel_tool_calls": false,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one Hamma Hamma falls gauge. Call once per reach, upper or lower.",
+              "name": "falls_gauge",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "reach": {
+                    "type": "string",
+                    "description": "upper or lower falls"
+                  }
+                },
+                "required": [
+                  "reach"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 204,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 17,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 221
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:39:50 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, gauge round at the Hamma Hamma falls.\nForest notes: https://www.fs.usda.gov/olympic\nRead
+        the upper falls and the lower falls."},{"type":"function_call","call_id":"call_Ztiy0vzH7QXhndBKhXHfPNdb","name":"falls_gauge","arguments":"{\"reach\":\"upper\"}"},{"type":"function_call_output","call_id":"call_Ztiy0vzH7QXhndBKhXHfPNdb","output":"Upper
+        Hamma Hamma falls: 2.1 ft over the lip."},{"type":"function_call","call_id":"call_0UBmE8799OkOTG1avn1RmOZo","name":"falls_gauge","arguments":"{\"reach\":\"lower\"}"},{"type":"function_call_output","call_id":"call_0UBmE8799OkOTG1avn1RmOZo","output":"Lower
+        Hamma Hamma falls: 5.4 ft in the plunge pool."}],"instructions":"You are the
+        falls watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and
+        for the lower reach.\nYou may only put one function call in a single assistant
+        message.\nAfter both cards are back, answer in one short sentence that names\nboth
+        figures the gauges return.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"falls_gauge","description":"Reads
+        one Hamma Hamma falls gauge. Call once per reach, upper or lower.","parameters":{"type":"object","properties":{"reach":{"type":"string","description":"upper
+        or lower falls"}},"required":["reach"],"additionalProperties":false,"strict":true},"strict":false}],"parallel_tool_calls":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:39:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af3b6f0e6ac654-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '845'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999286'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 21ms
+      X-Request-Id:
+      - req_6e46ed6394dc41ef88f07a96ef84fc25
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_02824d4904733538016ad0d7a6581c87d19a2dd68ca45113e2",
+          "object": "response",
+          "created_at": 1792071590,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071591,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the falls watch on the Hamma Hamma.\nCall falls_gauge for the upper reach and for the lower reach.\nYou may only put one function call in a single assistant message.\nAfter both cards are back, answer in one short sentence that names\nboth figures the gauges return.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_02824d4904733538016ad0d7a6beb487d186a0b01e2dc8c5c1",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The upper Hamma Hamma falls gauge reads 2.1 ft over the lip, and the lower falls gauge reads 5.4 ft in the plunge pool."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": false,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one Hamma Hamma falls gauge. Call once per reach, upper or lower.",
+              "name": "falls_gauge",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "reach": {
+                    "type": "string",
+                    "description": "upper or lower falls"
+                  }
+                },
+                "required": [
+                  "reach"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 245,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 36,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 281
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:39:51 GMT
+recorded_with: VCR 6.4.0

@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 221 |
+| Bottled | 234 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,13 +29,14 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 221 of 429 are
-bottled. Features 1–17 are full. Features 18–33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 234 of 429 are
+bottled. Features 1–17 and 19 are full. Features 18 and 20–33 have stub
+READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
 `gpt-4o-transcribe-diarize`. Text to speech was recorded on OpenAI `tts-1`.
-Tools, the Point Wilson spoken handover, the
+Tools, tool approval and loop control, the Point Wilson spoken handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -130,6 +131,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Chat, streaming, history, tokens, errors, agent chat macros | `nvidia/nemotron-3-super-120b-a12b:free` | `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free` |
 | Agents with tools, schema, or `chat_model` (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Tools (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
+| Tool approval and loop control (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Spoken handover (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | same free chat model via `LIVE_PROVIDER=openrouter` |
 | Structured output (recorded) | `gpt-4.1-mini` on OpenAI (`provider: :openai`) | `nvidia/nemotron-3-super-120b-a12b:free` via `LIVE_PROVIDER=openrouter`, then `liquid/lfm-2.5-2.6b:free` |
 | Decisions inside structured output (recorded) | `gpt-6-luna` on OpenAI Decisions (`RubyLLM::Judge`, `POST /v1/decisions`) | none. `LIVE_PROVIDER` does not retarget a Judge. There is no separate Luna key |
@@ -208,7 +210,7 @@ hold the cassette player and the model slugs, not the story.
 16. [Audio transcription](features/16-audio-transcription/) — 13 of 13 bottled
 17. [Text to speech](features/17-text-to-speech/) — 13 of 13 bottled
 18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 0 of 13 bottled
-19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 0 of 13 bottled
+19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 13 of 13 bottled
 20. [Evaluations](features/20-evaluations/) — 0 of 13 bottled
 21. [Batches](features/21-batches/) — 0 of 13 bottled
 22. [Video generation](features/22-video-generation/) — 0 of 13 bottled
