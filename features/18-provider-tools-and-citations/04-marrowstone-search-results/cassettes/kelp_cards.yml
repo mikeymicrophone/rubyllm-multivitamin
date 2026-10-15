@@ -1,0 +1,393 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Marrowstone Point kelp ledge.\nSearch the posted cards: when
+        does Alden clear the kelp ledge?"}],"instructions":"You are the tide clerk
+        at Marrowstone Point.\nCall kelp_ledge_cabinet once. Answer in two short sentences
+        from those cards.\nName Alden and 10:46. Do not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"kelp_ledge_cabinet","description":"Searches
+        the posted kelp-ledge cards at Marrowstone Point","parameters":{"type":"object","properties":{"query":{"type":"string","description":"What
+        to look for on the posted cards"}},"required":["query"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"kelp_ledge_cabinet"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:43:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af40776e645ef2-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '628'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999393'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - req_448f7f226555422abf5b4239e756aadf
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_01ba5957f9ccecd2016ad0d874947c87d19b78a94f5ac0d6dd",
+          "object": "response",
+          "created_at": 1792071796,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071797,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Marrowstone Point.\nCall kelp_ledge_cabinet once. Answer in two short sentences from those cards.\nName Alden and 10:46. Do not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_01ba5957f9ccecd2016ad0d875081887d1aa42b7563fb4043a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"query\":\"Alden clear the kelp ledge\"}",
+              "call_id": "call_53KAJR3RpA8co4PHUBjvAM52",
+              "name": "kelp_ledge_cabinet"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "kelp_ledge_cabinet"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Searches the posted kelp-ledge cards at Marrowstone Point",
+              "name": "kelp_ledge_cabinet",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "What to look for on the posted cards"
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 157,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 13,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 170
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:43:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Marrowstone Point kelp ledge.\nSearch the posted cards: when
+        does Alden clear the kelp ledge?"},{"type":"function_call","call_id":"call_53KAJR3RpA8co4PHUBjvAM52","name":"kelp_ledge_cabinet","arguments":"{\"query\":\"Alden
+        clear the kelp ledge\"}"},{"type":"function_call_output","call_id":"call_53KAJR3RpA8co4PHUBjvAM52","output":"{\"search_results\":[{\"title\":\"Marrowstone
+        kelp ledge card\",\"url\":\"https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\",\"text\":\"Marrowstone
+        Point posted card for Thursday 15 October 2026. Alden clears the kelp ledge
+        at 10:46. Low water 06:42, 0.4 ft above MLLW.\"},{\"title\":\"Marrowstone
+        lens cabinet latch\",\"url\":\"https://www.historylink.org/File/20216\",\"text\":\"The
+        Fresnel lens crew is in the Marrowstone cabinet until 09:30. Do not hail them
+        before Alden sails.\"}]}"}],"instructions":"You are the tide clerk at Marrowstone
+        Point.\nCall kelp_ledge_cabinet once. Answer in two short sentences from those
+        cards.\nName Alden and 10:46. Do not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"kelp_ledge_cabinet","description":"Searches
+        the posted kelp-ledge cards at Marrowstone Point","parameters":{"type":"object","properties":{"query":{"type":"string","description":"What
+        to look for on the posted cards"}},"required":["query"],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:43:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af407d2bee5135-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '753'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998844'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 34ms
+      X-Request-Id:
+      - req_8faa496e329148f8b559898eb32c434e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0dcab98f76143a0d016ad0d875648c87d19bd7b3a4532ae8d8",
+          "object": "response",
+          "created_at": 1792071797,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071798,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Marrowstone Point.\nCall kelp_ledge_cabinet once. Answer in two short sentences from those cards.\nName Alden and 10:46. Do not invent a tide height.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0dcab98f76143a0d016ad0d875cfbc87d19ae5b0d5460be4ef",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Alden clears the kelp ledge at 10:46 on Thursday 15 October 2026. Low water is at 06:42, 0.4 ft above MLLW."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Searches the posted kelp-ledge cards at Marrowstone Point",
+              "name": "kelp_ledge_cabinet",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "What to look for on the posted cards"
+                  }
+                },
+                "required": [
+                  "query"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 320,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 43,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 363
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:43:18 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, Bush Point kelp ledge.\nMinutes from midnight: 06:42 is 402,
+        12:18 is 738, 10:46 is 646.\nPosted heights: 0.4 ft at 06:42, 8.1 ft at 12:18.\nUse
+        code execution to compute 0.4 + (8.1 - 0.4) * (646 - 402) / (738 - 402).\nPrint
+        the exact number. Does Alden have 6.0 ft at 10:46?"}],"instructions":"You
+        are the tide clerk at Bush Point.\nUse code execution. Answer in two short
+        sentences.\nName Bush Point and the tender Alden.\nInclude the exact interpolated
+        height.\nDo not invent a different formula.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"code_interpreter","container":{"type":"auto"}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 13:43:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4af4097aff9ef14-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '5573'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999452'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 16ms
+      X-Request-Id:
+      - req_4e2d0defbe864c8c8960cdd3a13b2d45
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a81798c4e84978e016ad0d879ee0087d18037ec4c27d83364",
+          "object": "response",
+          "created_at": 1792071802,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792071807,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the tide clerk at Bush Point.\nUse code execution. Answer in two short sentences.\nName Bush Point and the tender Alden.\nInclude the exact interpolated height.\nDo not invent a different formula.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "ci_0a81798c4e84978e016ad0d87ca8b887d191f6c853114c0ae5",
+              "type": "code_interpreter_call",
+              "status": "completed",
+              "code": "# Given data\nheight_1 = 0.4\nheight_2 = 8.1\ntime_1 = 402\ntime_2 = 738\ntime_target = 646\n\n# Interpolated height calculation\nheight_target = height_1 + (height_2 - height_1) * (time_target - time_1) / (time_2 - time_1)\nheight_target",
+              "container_id": "cntr_6ad0d87a8b0881909dc6e905c319011e0fb27a1c11b8aee3",
+              "outputs": null
+            },
+            {
+              "id": "msg_0a81798c4e84978e016ad0d87eaa7c87d181ebc0056fdfa696",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "At Bush Point kelp ledge, the interpolated tide height for the tender Alden at 10:46 is exactly 5.9916666667 ft. Alden does not have 6.0 ft at 10:46; it is slightly less."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "code_interpreter",
+              "container": {
+                "type": "auto"
+              }
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 438,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 149,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 587
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 13:43:27 GMT
+recorded_with: VCR 6.4.0

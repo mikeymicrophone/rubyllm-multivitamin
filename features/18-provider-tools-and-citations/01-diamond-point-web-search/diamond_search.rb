@@ -21,8 +21,8 @@ module DiamondPointWebSearch
     INSTRUCTIONS = <<~TEXT.strip
       You are the radio clerk at Diamond Point on Discovery Bay.
       Call web search. Answer in two short sentences.
-      Name Diamond Point and the foghorn tender Alden.
-      Cite the NOAA page you used.
+      The first sentence must contain the exact words Diamond Point and Alden.
+      Include a markdown link to the NOAA page you used.
       Do not invent a station id.
     TEXT
 
@@ -33,6 +33,7 @@ module DiamondPointWebSearch
       Station page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900
       When Alden leaves the kelp ledge this morning, which NOAA page names
       that gauge, and what does the page call the station?
+      Start with Diamond Point and Alden. End with a markdown link to the NOAA page.
     TEXT
 
     Result = Struct.new(

@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 234 |
+| Bottled | 247 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,13 +29,13 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 234 of 429 are
-bottled. Features 1–17 and 19 are full. Features 18 and 20–33 have stub
-READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 247 of 429 are
+bottled. Features 1–19 are full. Features 20–33 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
 `gpt-4o-transcribe-diarize`. Text to speech was recorded on OpenAI `tts-1`.
+Provider tools and citations were recorded on OpenAI `gpt-4.1-mini`.
 Tools, tool approval and loop control, the Point Wilson spoken handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
@@ -115,7 +115,7 @@ Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 Chat basics and the earlier streaming cassettes are live OpenRouter
 recordings. Tools, the spoken handover, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
-and text to speech are live OpenAI recordings. The Smith Island barometer card is a live
+text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live
 OpenRouter recording. `usage.cost` is the number the provider reported.
 See each scenario's README.
 
@@ -142,6 +142,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Image generation (recorded) | no `:free` image model that day | bottled on OpenAI `gpt-image-1-mini` (`quality: "low"`, `size: "1024x1024"`); OpenRouter paid fallback `google/gemini-2.5-flash-image` |
 | Audio transcription (recorded) | no `:free` transcription slug used | bottled on OpenAI `gpt-transcribe`, `whisper-1`, and `gpt-4o-transcribe-diarize` |
 | Text to speech (recorded) | no `:free` speech model that day | bottled on OpenAI `tts-1`; `LIVE_PROVIDER` does not retarget speech |
+| Provider tools and citations (recorded) | no `:free` hosted-tool slug used | bottled on OpenAI `gpt-4.1-mini`; `:web_fetch` raises before HTTP on Responses |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise
@@ -158,13 +159,16 @@ model OpenAI's Decisions API accepts. RubyLLM reaches it with
 `RubyLLM::Judge` and `OPENAI_API_KEY`. Embedding text cassettes use
 `text-embedding-3-small`. Image generation uses `gpt-image-1-mini`.
 Audio transcription uses `gpt-transcribe`, `whisper-1`, and
-`gpt-4o-transcribe-diarize`. Text to speech uses `tts-1`. See
+`gpt-4o-transcribe-diarize`. Text to speech uses `tts-1`. Provider tools
+and citations, and tool approval, use `gpt-4.1-mini`. See
 [Structured output](features/04-structured-output/),
 [Multimodal attachments](features/05-multimodal-attachments/),
 [Embeddings](features/06-embeddings/),
 [Image generation](features/07-image-generation/),
-[Audio transcription](features/16-audio-transcription/), and
-[Text to speech](features/17-text-to-speech/).
+[Audio transcription](features/16-audio-transcription/),
+[Text to speech](features/17-text-to-speech/),
+[Provider tools and citations](features/18-provider-tools-and-citations/), and
+[Tool approval and loop control](features/19-tool-approval-and-loop-control/).
 
 Each feature README repeats the row that belongs to it.
 
@@ -209,7 +213,7 @@ hold the cassette player and the model slugs, not the story.
 15. [MCP client](features/15-mcp-client/) — 13 of 13 bottled
 16. [Audio transcription](features/16-audio-transcription/) — 13 of 13 bottled
 17. [Text to speech](features/17-text-to-speech/) — 13 of 13 bottled
-18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 0 of 13 bottled
+18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 13 of 13 bottled
 19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 13 of 13 bottled
 20. [Evaluations](features/20-evaluations/) — 0 of 13 bottled
 21. [Batches](features/21-batches/) — 0 of 13 bottled

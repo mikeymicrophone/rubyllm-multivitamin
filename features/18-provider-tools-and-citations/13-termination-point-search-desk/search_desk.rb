@@ -26,7 +26,7 @@ module TerminationPointSearchDesk
       You are the watch clerk at Termination Point on Liberty Bay.
       On the first question, call web search and cite the NOAA page.
       On the second question, use code execution and include the exact height.
-      Name Termination Point and the tender Alden in every answer.
+      The first sentence of every answer must contain the exact words Termination Point and Alden.
       Do not invent a station id or a different formula.
     TEXT
   end

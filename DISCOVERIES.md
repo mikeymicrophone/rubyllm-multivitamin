@@ -745,6 +745,138 @@ Shown in [Middle Point refused format](features/17-text-to-speech/12-middle-poin
 
 Shown in [Kala Point speed instructions](features/17-text-to-speech/08-kala-point-speed-instructions/).
 
+## Provider tools and citations
+
+### a completed web_search_call can still have empty citations
+
+**What happens.** `with_provider_tools(:web_search)` on `gpt-4.1-mini` sends `"type":"web_search"`. The Diamond Point hail returns a `web_search_call` and `tokens.server_tool_use["web_search_requests"]` of at least 1. `response.citations` is still empty: the recorded `annotations` array was `[]`. Later hails on the same model fill `url_citation` annotations, and those become `RubyLLM::Citation` objects.
+
+**Why it matters.** A watch that treats a missing citation list as a failed search will throw out a hail that already ran on the provider.
+
+**What to do.** Assert the `web_search_call` and the request count. Treat citations as optional unless the cassette actually recorded annotations.
+
+Shown in [Diamond Point web search hail](features/18-provider-tools-and-citations/01-diamond-point-web-search/) and [Tala Point citation indexes](features/18-provider-tools-and-citations/12-tala-point-citation-indexes/).
+
+### gpt-4.1-mini rejects web_search filters
+
+**What happens.** `with_provider_tools(web_search: { filters: { allowed_domains: ["tidesandcurrents.noaa.gov"] } })` raises `RubyLLM::BadRequestError`. The message mentions `filters`. The cassette status is 400. The same model accepts `search_context_size: "low"`: that request contains `"search_context_size":"low"` and `"type":"web_search"`, and the Sequim hail has citation URLs.
+
+**Why it matters.** Domain filters look like the way to keep the clerk on NOAA. On this model they fail before a page is named.
+
+**What to do.** Keep `max_retries` at 0 so Faraday does not double the 400. Fall back to `search_context_size` when the desk only needs a smaller context.
+
+Shown in [Sequim search context](features/18-provider-tools-and-citations/02-sequim-search-context/).
+
+### with_citations on OpenAI warns and leaves document citations empty
+
+**What happens.** `chat.with_citations` then `ask(..., with: pdf)` on `gpt-4.1-mini` logs a warning matching `does not support citations` and the model id. `response.citations` is `[]`. The model still reads the PDF: the Protection Island brief contains `240` and `10:46`. The request body has `"type":"input_file"` and `data:application/pdf;base64,`.
+
+**Why it matters.** Turning the flag on does not make OpenAI cite the attached card. A watch that requires `citations.any?` after a PDF ask will fail even when the clerk copied the figures.
+
+**What to do.** Read the content. Use Anthropic, Cohere, or Bedrock Converse when document citations must be filled. Use web search or file search when this catalog needs `Citation` objects on OpenAI.
+
+Shown in [Protection Island PDF citations](features/18-provider-tools-and-citations/03-protection-island-pdf-citations/).
+
+### SearchResults becomes JSON; OpenAI does not cite it
+
+**What happens.** A `RubyLLM::Tool` that returns `RubyLLM::SearchResults` writes JSON with a `search_results` key onto the `:tool` message. `SearchResults.from_content` reads those titles back. `response.citations` is still `[]`. `RubyLLM::SearchResults.new` with no hits raises `ArgumentError` matching `at least one result`. The forced Marrowstone request names `kelp_ledge_cabinet` in `tool_choice`.
+
+**Why it matters.** SearchResults is a RAG payload for the next model turn, not an OpenAI citation list. An empty constructor fails in Ruby, before HTTP.
+
+**What to do.** Parse the tool message with `from_content`. Do not expect `response.citations` on this provider. Always pass at least one hit.
+
+Shown in [Marrowstone SearchResults RAG](features/18-provider-tools-and-citations/04-marrowstone-search-results/).
+
+### streamed search puts citations on chunks
+
+**What happens.** A block on `ask` with `:web_search` sends `"stream":true`. Some chunks already carry citations. The completed hail's `citations` has HTTP URLs. When both lists are non-empty they overlap. `server_tool_calls` still includes `web_search_call`.
+
+**Why it matters.** A stream that only reads `chunk.content` never sees the NOAA URL until `ask` returns.
+
+**What to do.** Read citations off the completed message. Copy URLs from a chunk only when that chunk already has them.
+
+Shown in [Admiralty Head streamed citations](features/18-provider-tools-and-citations/05-admiralty-head-streamed-citations/).
+
+### code_execution is code_interpreter; server_tool_use stays nil
+
+**What happens.** `with_provider_tools(:code_execution)` sends `"type":"code_interpreter"` and `"container":{"type":"auto"}`. `server_tool_calls` includes `code_interpreter_call`. `tokens.server_tool_use` is `nil`. Roles stay `[:system, :user, :assistant]`: the interpreter is not a local `:tool` message. The Bush Point brief contains `5.99`.
+
+**Why it matters.** A usage line that copies `web_search_requests` onto every hosted tool will store nothing for code. The run still happened.
+
+**What to do.** Assert `code_interpreter_call` and the printed figure. Treat `server_tool_use` as search-specific on this model.
+
+Shown in [Bush Point code execution](features/18-provider-tools-and-citations/06-bush-point-code-execution/).
+
+### file_search needs vector_store_ids
+
+**What happens.** `with_provider_tools(:file_search)` with no ids raises `RubyLLM::BadRequestError` matching `vector_store_ids`. After `RubyLLM.upload` with `purpose: "user_data"`, a Net::HTTP `POST /v1/vector_stores`, `POST .../files`, and a poll to `completed`, `file_search: { vector_store_ids: [id] }` cites `lagoon-point-card.txt`. `source_id` starts with `file-`. `server_tool_calls` includes `file_search_call`. The store is not a RubyLLM object.
+
+**Why it matters.** The alias alone is not a search. Create-with-`file_ids` can race an empty store; attach-and-poll is what this cassette recorded.
+
+**What to do.** Catch the missing-ids 400, upload as `user_data`, attach, wait for `completed`, then pass `vector_store_ids`. Delete the store in `ensure`.
+
+Shown in [Lagoon Point file search](features/18-provider-tools-and-citations/07-lagoon-point-file-search/).
+
+### hosted mcp remaps name and url
+
+**What happens.** `with_provider_tools(mcp: { name: "learn", url: "https://learn.microsoft.com/api/mcp", require_approval: "never", allowed_tools: ["microsoft_docs_search"] })` sends `"type":"mcp"`, `"server_label":"learn"`, `"server_url":"https://learn.microsoft.com/api/mcp"`, and `"require_approval":"never"`. The request does not contain `"url":"https://learn.microsoft.com/api/mcp"`. `server_tool_calls` includes `mcp_list_tools` and `mcp_call` named `microsoft_docs_search`. Roles stay `[:system, :user, :assistant]`. This is not `RubyLLM::MCP`.
+
+**Why it matters.** A cassette or proxy rule that looks for `url` on the MCP tool will miss the connector. Feature 15 already bottled the first-party client.
+
+**What to do.** Assert `server_label` and `server_url`. Pass `require_approval: "never"` when the hosted tool should run without a pause.
+
+Shown in [Mutiny Bay remote MCP](features/18-provider-tools-and-citations/08-mutiny-bay-remote-mcp/).
+
+### :web_fetch raises before HTTP
+
+**What happens.** `with_provider_tools(:web_fetch)` raises `RubyLLM::UnsupportedServerToolError` matching `:web_fetch`. The message lists Known aliases including `:web_search`, `:file_search`, `:code_execution`, and `:mcp`. It does not list `:web_fetch`. No HTTP call is made for that alias. The Useless Bay cassette has one interaction: the later `:web_search`.
+
+**Why it matters.** `:web_fetch` is a Gemini/OpenRouter name. Copying it onto OpenAI Responses fails in Ruby, before Faraday.
+
+**What to do.** Rescue `UnsupportedServerToolError` and parse Known aliases. Fall back to `:web_search` on this protocol.
+
+Shown in [Useless Bay unknown alias](features/18-provider-tools-and-citations/09-useless-bay-unknown-alias/).
+
+### with_citations(false) does not strip search citations
+
+**What happens.** `with_citations(nil)` raises `ArgumentError` matching `true or false`. `with_citations(false)` sets `chat.citations` to `false`. A following `:web_search` still fills `response.citations` with HTTP URLs and records a `web_search_call`.
+
+**Why it matters.** The flag is a document-citation switch. Search annotations do not read it. Turning it off does not hide NOAA links.
+
+**What to do.** Use the flag only for attached documents. Read search citations off the message either way.
+
+Shown in [Double Bluff citations off](features/18-provider-tools-and-citations/10-double-bluff-citations-off/).
+
+### Agent.chat is a Chat; provider_tools is a class list
+
+**What happens.** `provider_tools :web_search` stores `[{ name: :web_search, options: {} }]` on the class. `WatchClerk.chat(...)` returns a `RubyLLM::Chat`. `WatchClerk.new.ask` sends `"type":"web_search"` with no separate `with_provider_tools`. A second `ask` keeps the earlier hail: roles are `[:system, :user, :assistant, :user, :assistant]`.
+
+**Why it matters.** `Agent.chat` is the unwrapped chat API, the same split as `rescue_from` in feature 14. The macro is enough for the hosted search.
+
+**What to do.** Call `ask` on an agent instance. Read `Agent.provider_tools` for the declared list.
+
+Shown in [Hood Head agent provider tools](features/18-provider-tools-and-citations/11-hood-head-agent-tools/).
+
+### url_citation indexes slice the hail
+
+**What happens.** When OpenAI returns `url_citation` annotations, each `RubyLLM::Citation` has `start_index` and `end_index`. `content[start_index...end_index]` equals `citation.text`. `to_h` includes `:url` and omits nil `:cited_text` and `:start_page`.
+
+**Why it matters.** A footnote that uses `cited_text` or page numbers will be blank on this provider. The span is a byte range into `content`.
+
+**What to do.** Slice with the indexes. Assert `to_h` against the keys that are actually present.
+
+Shown in [Tala Point citation indexes](features/18-provider-tools-and-citations/12-tala-point-citation-indexes/).
+
+### both hosted tools stay on every capstone request
+
+**What happens.** An agent with `provider_tools :web_search, :code_execution` sends both `"type":"web_search"` and `"type":"code_interpreter"` on the first request and again on the second. The hail message has `web_search_call` and citation URLs. The height message has `code_interpreter_call` and `5.99`. `server_tool_calls` stay on their own messages. Declared tools are `[{ name: :web_search, options: {} }, { name: :code_execution, options: {} }]`.
+
+**Why it matters.** Declaring two hosted tools does not send only the one the desk asked for. Input tokens include both specs on every turn.
+
+**What to do.** Read `server_tool_calls` per message. Keep both aliases on the agent when the overnight desk really uses both.
+
+Shown in [Termination Point search desk capstone](features/18-provider-tools-and-citations/13-termination-point-search-desk/).
+
 ## Tool approval and loop control
 
 ### Forced tool_choice is cleared even while the call still waits on approval

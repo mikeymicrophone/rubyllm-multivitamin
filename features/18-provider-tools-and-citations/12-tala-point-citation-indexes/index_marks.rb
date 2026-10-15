@@ -19,8 +19,8 @@ module TalaPointCitationIndexes
     INSTRUCTIONS = <<~TEXT.strip
       You are the tide clerk at Tala Point on Hood Canal.
       Call web search. Answer in two short sentences.
-      Name Tala Point and the tender Alden.
-      Cite the NOAA page you used.
+      Begin the answer with: At Tala Point, Alden copies this gauge.
+      Include a markdown link to the NOAA page you used.
       Do not invent a station id.
     TEXT
 
@@ -30,6 +30,7 @@ module TalaPointCitationIndexes
       gauge Tala Point copies.
       Station page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900
       Which page names that gauge, and what does it call the station?
+      Start with Tala Point and Alden. End with a markdown link to the NOAA page.
     TEXT
 
     Result = Struct.new(

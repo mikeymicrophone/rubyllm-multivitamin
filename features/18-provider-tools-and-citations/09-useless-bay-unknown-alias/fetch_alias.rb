@@ -21,8 +21,8 @@ module UselessBayUnknownAlias
     INSTRUCTIONS = <<~TEXT.strip
       You are the tide clerk at Useless Bay.
       Call web search. Answer in two short sentences.
-      Name Useless Bay and the tender Alden.
-      Cite the NOAA page you used.
+      Begin the answer with: At Useless Bay, Alden copies this gauge.
+      Include a markdown link to the NOAA page you used.
       Do not invent a station id.
     TEXT
 

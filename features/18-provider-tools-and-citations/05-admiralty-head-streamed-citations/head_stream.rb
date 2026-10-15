@@ -20,8 +20,8 @@ module AdmiraltyHeadStreamedCitations
     INSTRUCTIONS = <<~TEXT.strip
       You are the radio clerk at Admiralty Head on Whidbey Island.
       Call web search. Dictate two short sentences.
-      Name Admiralty Head and the tender Alden.
-      Cite the NOAA page you used.
+      Begin the dictation with: At Admiralty Head, Alden copies this gauge.
+      Include a markdown link to the NOAA page you used.
       Do not invent a station id.
     TEXT
 

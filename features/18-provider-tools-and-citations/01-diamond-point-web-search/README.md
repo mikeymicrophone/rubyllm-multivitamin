@@ -8,9 +8,11 @@ local Ruby tool.
 **What it teaches**
 
 - `chat.with_provider_tools(:web_search)` sends `"type":"web_search"`.
-- `response.citations` is an array of `RubyLLM::Citation` with `url`.
 - `response.server_tool_calls` includes a `web_search_call`.
 - `tokens.server_tool_use` reports `web_search_requests`.
+- `response.citations` is the normalized list. This recording's
+  `annotations` were empty, so the list is empty even after a search.
+  Later slots show filled `url` citations.
 
 **Files**
 

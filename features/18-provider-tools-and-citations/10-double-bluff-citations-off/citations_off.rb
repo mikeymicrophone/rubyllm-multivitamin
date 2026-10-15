@@ -20,8 +20,8 @@ module DoubleBluffCitationsOff
     INSTRUCTIONS = <<~TEXT.strip
       You are the tide clerk at Double Bluff.
       Call web search. Answer in two short sentences.
-      Name Double Bluff and the tender Alden.
-      Cite the NOAA page you used.
+      Begin the answer with: At Double Bluff, Alden copies this gauge.
+      Include a markdown link to the NOAA page you used.
       Do not invent a station id.
     TEXT
 
