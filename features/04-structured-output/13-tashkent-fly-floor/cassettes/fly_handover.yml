@@ -1,0 +1,927 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        handover, Wednesday 14 October 2026, Alisher Navoi Theatre, Tashkent.\nHouse
+        notes: https://gabt.uz/\nLow fly 06:42, 0.4 m remaining.\nIlkhom can use the
+        deck at 08:57.\nNavoi needs 6.0 m and is holding.\nThe overture sting has
+        not been posted on this note."}],"instructions":"You are the fly-floor clerk
+        at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall costume_cabinet_latch
+        once before you fill fly_handover.\nCopy curtain and companies from the question.\nCopy
+        the costume cabinet and the dresser from the tool.\nSet overture to exactly
+        \"not posted\" until a later message names a sting.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"costume_cabinet_latch","description":"Reads
+        whether the Navoi costume cabinet is shut and who is on the dresser crew tonight","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"costume_cabinet_latch"},"text":{"format":{"type":"json_schema","name":"fly_handover","schema":{"description":"Overnight
+        handover for the Alisher Navoi fly floor","type":"object","properties":{"curtain":{"type":"object","properties":{"low_clock":{"type":"string","description":"Clock
+        time of the low fly"},"low_height_m":{"type":"number","description":"Metres
+        of fly remaining"}},"required":["low_clock","low_height_m"],"additionalProperties":false,"description":"Low
+        fly from the question"},"companies":{"type":"array","description":"One object
+        per company named in the question","items":{"type":"object","properties":{"name":{"type":"string"},"leaves":{"type":"string","description":"Clock
+        time that company can leave, or holding when it cannot"}},"required":["name","leaves"],"additionalProperties":false}},"fly_crew":{"type":"object","properties":{"cabinet":{"type":"string","enum":["shut","open"]},"dresser":{"type":"string","description":"The
+        person the costume cabinet tool names"}},"required":["cabinet","dresser"],"additionalProperties":false,"description":"From
+        the costume cabinet tool, not from guesswork"},"overture":{"type":"string","description":"Overture
+        sting if the floor has stated one. Until then, exactly not posted."}},"required":["curtain","companies","fly_crew","overture"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f5385fd87267-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '450'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999071'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 27ms
+      X-Request-Id:
+      - req_6d10b8caf9504939b53a01b8eef917f2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0ed50062e99f5ada016ad11e55eb2487d2bc125befa304c3ee",
+          "object": "response",
+          "created_at": 1792089685,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089686,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the fly-floor clerk at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall costume_cabinet_latch once before you fill fly_handover.\nCopy curtain and companies from the question.\nCopy the costume cabinet and the dresser from the tool.\nSet overture to exactly \"not posted\" until a later message names a sting.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0ed50062e99f5ada016ad11e564a0887d2b4b36d0156a48136",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_Q4QbFdloeNW0ueEGQpl2KpMu",
+              "name": "costume_cabinet_latch"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "fly_handover",
+              "schema": {
+                "description": "Overnight handover for the Alisher Navoi fly floor",
+                "type": "object",
+                "properties": {
+                  "curtain": {
+                    "type": "object",
+                    "properties": {
+                      "low_clock": {
+                        "type": "string",
+                        "description": "Clock time of the low fly"
+                      },
+                      "low_height_m": {
+                        "type": "number",
+                        "description": "Metres of fly remaining"
+                      }
+                    },
+                    "required": [
+                      "low_clock",
+                      "low_height_m"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Low fly from the question"
+                  },
+                  "companies": {
+                    "type": "array",
+                    "description": "One object per company named in the question",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "leaves": {
+                          "type": "string",
+                          "description": "Clock time that company can leave, or holding when it cannot"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "leaves"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "fly_crew": {
+                    "type": "object",
+                    "properties": {
+                      "cabinet": {
+                        "type": "string",
+                        "enum": [
+                          "shut",
+                          "open"
+                        ]
+                      },
+                      "dresser": {
+                        "type": "string",
+                        "description": "The person the costume cabinet tool names"
+                      }
+                    },
+                    "required": [
+                      "cabinet",
+                      "dresser"
+                    ],
+                    "additionalProperties": false,
+                    "description": "From the costume cabinet tool, not from guesswork"
+                  },
+                  "overture": {
+                    "type": "string",
+                    "description": "Overture sting if the floor has stated one. Until then, exactly not posted."
+                  }
+                },
+                "required": [
+                  "curtain",
+                  "companies",
+                  "fly_crew",
+                  "overture"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "costume_cabinet_latch"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads whether the Navoi costume cabinet is shut and who is on the dresser crew tonight",
+              "name": "costume_cabinet_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 448,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 450
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:26 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        handover, Wednesday 14 October 2026, Alisher Navoi Theatre, Tashkent.\nHouse
+        notes: https://gabt.uz/\nLow fly 06:42, 0.4 m remaining.\nIlkhom can use the
+        deck at 08:57.\nNavoi needs 6.0 m and is holding.\nThe overture sting has
+        not been posted on this note."},{"type":"function_call","call_id":"call_Q4QbFdloeNW0ueEGQpl2KpMu","name":"costume_cabinet_latch","arguments":"{}"},{"type":"function_call_output","call_id":"call_Q4QbFdloeNW0ueEGQpl2KpMu","output":"Costume
+        cabinet latch: shut. Tonight''s dresser is Nigora. Do not open the cabinet."}],"instructions":"You
+        are the fly-floor clerk at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall
+        costume_cabinet_latch once before you fill fly_handover.\nCopy curtain and
+        companies from the question.\nCopy the costume cabinet and the dresser from
+        the tool.\nSet overture to exactly \"not posted\" until a later message names
+        a sting.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"costume_cabinet_latch","description":"Reads
+        whether the Navoi costume cabinet is shut and who is on the dresser crew tonight","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"text":{"format":{"type":"json_schema","name":"fly_handover","schema":{"description":"Overnight
+        handover for the Alisher Navoi fly floor","type":"object","properties":{"curtain":{"type":"object","properties":{"low_clock":{"type":"string","description":"Clock
+        time of the low fly"},"low_height_m":{"type":"number","description":"Metres
+        of fly remaining"}},"required":["low_clock","low_height_m"],"additionalProperties":false,"description":"Low
+        fly from the question"},"companies":{"type":"array","description":"One object
+        per company named in the question","items":{"type":"object","properties":{"name":{"type":"string"},"leaves":{"type":"string","description":"Clock
+        time that company can leave, or holding when it cannot"}},"required":["name","leaves"],"additionalProperties":false}},"fly_crew":{"type":"object","properties":{"cabinet":{"type":"string","enum":["shut","open"]},"dresser":{"type":"string","description":"The
+        person the costume cabinet tool names"}},"required":["cabinet","dresser"],"additionalProperties":false,"description":"From
+        the costume cabinet tool, not from guesswork"},"overture":{"type":"string","description":"Overture
+        sting if the floor has stated one. Until then, exactly not posted."}},"required":["curtain","companies","fly_crew","overture"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f53c1e326012-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '927'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998373'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 48ms
+      X-Request-Id:
+      - req_8c6913144f8b424cbde6ff79a1466582
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0ba8e6b915b8f162016ad11e56860887d2a44ab29a56d0ba24",
+          "object": "response",
+          "created_at": 1792089686,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089687,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the fly-floor clerk at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall costume_cabinet_latch once before you fill fly_handover.\nCopy curtain and companies from the question.\nCopy the costume cabinet and the dresser from the tool.\nSet overture to exactly \"not posted\" until a later message names a sting.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0ba8e6b915b8f162016ad11e571ac887d2a887ead8990816e2",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"curtain\":{\"low_clock\":\"06:42\",\"low_height_m\":0.4},\"companies\":[{\"name\":\"Ilkhom\",\"leaves\":\"08:57\"},{\"name\":\"Navoi\",\"leaves\":\"holding\"}],\"fly_crew\":{\"cabinet\":\"shut\",\"dresser\":\"Nigora\"},\"overture\":\"not posted\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "fly_handover",
+              "schema": {
+                "description": "Overnight handover for the Alisher Navoi fly floor",
+                "type": "object",
+                "properties": {
+                  "curtain": {
+                    "type": "object",
+                    "properties": {
+                      "low_clock": {
+                        "type": "string",
+                        "description": "Clock time of the low fly"
+                      },
+                      "low_height_m": {
+                        "type": "number",
+                        "description": "Metres of fly remaining"
+                      }
+                    },
+                    "required": [
+                      "low_clock",
+                      "low_height_m"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Low fly from the question"
+                  },
+                  "companies": {
+                    "type": "array",
+                    "description": "One object per company named in the question",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "leaves": {
+                          "type": "string",
+                          "description": "Clock time that company can leave, or holding when it cannot"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "leaves"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "fly_crew": {
+                    "type": "object",
+                    "properties": {
+                      "cabinet": {
+                        "type": "string",
+                        "enum": [
+                          "shut",
+                          "open"
+                        ]
+                      },
+                      "dresser": {
+                        "type": "string",
+                        "description": "The person the costume cabinet tool names"
+                      }
+                    },
+                    "required": [
+                      "cabinet",
+                      "dresser"
+                    ],
+                    "additionalProperties": false,
+                    "description": "From the costume cabinet tool, not from guesswork"
+                  },
+                  "overture": {
+                    "type": "string",
+                    "description": "Overture sting if the floor has stated one. Until then, exactly not posted."
+                  }
+                },
+                "required": [
+                  "curtain",
+                  "companies",
+                  "fly_crew",
+                  "overture"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads whether the Navoi costume cabinet is shut and who is on the dresser crew tonight",
+              "name": "costume_cabinet_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 480,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 76,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 556
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:27 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Overnight
+        handover, Wednesday 14 October 2026, Alisher Navoi Theatre, Tashkent.\nHouse
+        notes: https://gabt.uz/\nLow fly 06:42, 0.4 m remaining.\nIlkhom can use the
+        deck at 08:57.\nNavoi needs 6.0 m and is holding.\nThe overture sting has
+        not been posted on this note."},{"type":"function_call","call_id":"call_Q4QbFdloeNW0ueEGQpl2KpMu","name":"costume_cabinet_latch","arguments":"{}"},{"type":"function_call_output","call_id":"call_Q4QbFdloeNW0ueEGQpl2KpMu","output":"Costume
+        cabinet latch: shut. Tonight''s dresser is Nigora. Do not open the cabinet."},{"role":"assistant","content":[{"type":"output_text","text":"{\"curtain\":{\"low_clock\":\"06:42\",\"low_height_m\":0.4},\"companies\":[{\"name\":\"Ilkhom\",\"leaves\":\"08:57\"},{\"name\":\"Navoi\",\"leaves\":\"holding\"}],\"fly_crew\":{\"cabinet\":\"shut\",\"dresser\":\"Nigora\"},\"overture\":\"not
+        posted\"}"}]},{"role":"user","content":"The overture card now says one blast
+        of three seconds.\nUpdate the handover. Keep the curtain, the companies, and
+        the fly crew.\nSet overture to exactly \"three-second blast\"."}],"instructions":"You
+        are the fly-floor clerk at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall
+        costume_cabinet_latch once before you fill fly_handover.\nCopy curtain and
+        companies from the question.\nCopy the costume cabinet and the dresser from
+        the tool.\nSet overture to exactly \"not posted\" until a later message names
+        a sting.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"costume_cabinet_latch","description":"Reads
+        whether the Navoi costume cabinet is shut and who is on the dresser crew tonight","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"text":{"format":{"type":"json_schema","name":"fly_handover","schema":{"description":"Overnight
+        handover for the Alisher Navoi fly floor","type":"object","properties":{"curtain":{"type":"object","properties":{"low_clock":{"type":"string","description":"Clock
+        time of the low fly"},"low_height_m":{"type":"number","description":"Metres
+        of fly remaining"}},"required":["low_clock","low_height_m"],"additionalProperties":false,"description":"Low
+        fly from the question"},"companies":{"type":"array","description":"One object
+        per company named in the question","items":{"type":"object","properties":{"name":{"type":"string"},"leaves":{"type":"string","description":"Clock
+        time that company can leave, or holding when it cannot"}},"required":["name","leaves"],"additionalProperties":false}},"fly_crew":{"type":"object","properties":{"cabinet":{"type":"string","enum":["shut","open"]},"dresser":{"type":"string","description":"The
+        person the costume cabinet tool names"}},"required":["cabinet","dresser"],"additionalProperties":false,"description":"From
+        the costume cabinet tool, not from guesswork"},"overture":{"type":"string","description":"Overture
+        sting if the floor has stated one. Until then, exactly not posted."}},"required":["curtain","companies","fly_crew","overture"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f542ceced6df-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '897'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999113'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 26ms
+      X-Request-Id:
+      - req_635c97e1f7c0454a9bb8ae69ccc707e7
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_04e972050a24c8ce016ad11e5796b087d2ae25105cf68f749d",
+          "object": "response",
+          "created_at": 1792089687,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089688,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the fly-floor clerk at the Alisher Navoi Opera and Ballet Theatre in Tashkent.\nCall costume_cabinet_latch once before you fill fly_handover.\nCopy curtain and companies from the question.\nCopy the costume cabinet and the dresser from the tool.\nSet overture to exactly \"not posted\" until a later message names a sting.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_04e972050a24c8ce016ad11e57fba887d2b5afa2fc57aa423d",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"curtain\":{\"low_clock\":\"06:42\",\"low_height_m\":0.4},\"companies\":[{\"name\":\"Ilkhom\",\"leaves\":\"08:57\"},{\"name\":\"Navoi\",\"leaves\":\"holding\"}],\"fly_crew\":{\"cabinet\":\"shut\",\"dresser\":\"Nigora\"},\"overture\":\"three-second blast\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "fly_handover",
+              "schema": {
+                "description": "Overnight handover for the Alisher Navoi fly floor",
+                "type": "object",
+                "properties": {
+                  "curtain": {
+                    "type": "object",
+                    "properties": {
+                      "low_clock": {
+                        "type": "string",
+                        "description": "Clock time of the low fly"
+                      },
+                      "low_height_m": {
+                        "type": "number",
+                        "description": "Metres of fly remaining"
+                      }
+                    },
+                    "required": [
+                      "low_clock",
+                      "low_height_m"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Low fly from the question"
+                  },
+                  "companies": {
+                    "type": "array",
+                    "description": "One object per company named in the question",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "leaves": {
+                          "type": "string",
+                          "description": "Clock time that company can leave, or holding when it cannot"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "leaves"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "fly_crew": {
+                    "type": "object",
+                    "properties": {
+                      "cabinet": {
+                        "type": "string",
+                        "enum": [
+                          "shut",
+                          "open"
+                        ]
+                      },
+                      "dresser": {
+                        "type": "string",
+                        "description": "The person the costume cabinet tool names"
+                      }
+                    },
+                    "required": [
+                      "cabinet",
+                      "dresser"
+                    ],
+                    "additionalProperties": false,
+                    "description": "From the costume cabinet tool, not from guesswork"
+                  },
+                  "overture": {
+                    "type": "string",
+                    "description": "Overture sting if the floor has stated one. Until then, exactly not posted."
+                  }
+                },
+                "required": [
+                  "curtain",
+                  "companies",
+                  "fly_crew",
+                  "overture"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads whether the Navoi costume cabinet is shut and who is on the dresser crew tonight",
+              "name": "costume_cabinet_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 595,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 77,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 672
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:28 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/decisions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-6-luna","input":"Now is 07:10 at the Alisher Navoi Theatre.
+        A company needs 6.0 m of fly to leave the deck.\n{\"curtain\":{\"low_clock\":\"06:42\",\"low_height_m\":0.4},\"companies\":[{\"name\":\"Ilkhom\",\"leaves\":\"08:57\"},{\"name\":\"Navoi\",\"leaves\":\"holding\"}],\"fly_crew\":{\"cabinet\":\"shut\",\"dresser\":\"Nigora\"},\"overture\":\"three-second
+        blast\"}","questions":[{"type":"predicate","name":"deck_clear","instructions":"Is
+        there at least 6.0 m of fly for a company to leave the deck at the clock in
+        the note?"},{"type":"choice","name":"company","instructions":"Which company
+        should leave the deck at the clock in the note?","choices":[{"value":"navoi","description":"The
+        Navoi company"},{"value":"ilkhom","description":"The Ilkhom company"},{"value":"neither","description":"Neither
+        company. The clock is before their leave times, or the fly is under 6.0 m."}]}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999578'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 12ms
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - x-request-id,retry-after,server-timing-total
+      Server-Timing-Total:
+      - '93.446'
+      Openai-Processing-Ms:
+      - '93'
+      X-Request-Id:
+      - req_182fb771636147a795cbd8f3ff7e417c
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Server:
+      - cloudflare
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b0f5495bdeae14-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"gpt-6-luna","answers":[{"type":"predicate","name":"deck_clear","probability":0.01},{"type":"choice","name":"company","choice":"neither","probabilities":[{"value":"navoi","probability":0.28},{"value":"ilkhom","probability":0.17},{"value":"neither","probability":0.55}],"confidence":0.33}],"usage":{"input_tokens":421,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":0,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":421}}'
+  recorded_at: Thu, 15 Oct 2026 18:41:28 GMT
+recorded_with: VCR 6.4.0

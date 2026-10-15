@@ -1,0 +1,287 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Notice 1842.
+        Shelfmark: Zenon. No findspot on this notice."}],"instructions":"You are the
+        clerk correcting the Alexandria papyrus catalogue.\nFill the schema from the
+        notice. Copy the shelfmark and the notice number.\nThe notice gives no findspot,
+        so findspot is null.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"PapyrusCorrection","schema":{"type":"object","properties":{"shelfmark":{"type":"string","description":"Papyrus
+        the notice names"},"notice":{"type":"string","description":"Notice number"},"findspot":{"type":"string","description":"Findspot,
+        only when the notice gives one"}},"required":["shelfmark","notice"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '327'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f5302dd94a43-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '27'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_97c3346d628c44a48394330f9d665896
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid schema for response_format 'PapyrusCorrection': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Missing 'findspot'.",
+            "type": "invalid_request_error",
+            "param": "text.format.schema",
+            "code": "invalid_json_schema"
+          }
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:24 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Notice 1842.
+        Shelfmark: Zenon. No findspot on this notice."},{"role":"user","content":"Wednesday
+        14 October 2026, catalogue desk for the Bibliotheca Alexandrina.\nCatalogue:
+        https://www.bibalex.org/\nNotice desk: https://www.papyrology.org/\nNotice
+        1842. Shelfmark: Zenon.\nMove the fragment note 0.2 centimetre left. No findspot
+        is printed."}],"instructions":"You are the clerk correcting the Alexandria
+        papyrus catalogue.\nFill the schema from the notice. Copy the shelfmark and
+        the notice number.\nThe notice gives no findspot, so findspot is null.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"papyrus_notice","schema":{"description":"One
+        Alexandria papyrus correction","type":"object","properties":{"shelfmark":{"type":"string","description":"The
+        papyrus the notice names"},"notice":{"type":"string","description":"Notice
+        number"},"findspot":{"description":"Findspot if the notice gives one, otherwise
+        null","anyOf":[{"type":"string"},{"type":"null"}]}},"required":["shelfmark","notice","findspot"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f5310fc52c58-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '475'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999754'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 7ms
+      X-Request-Id:
+      - req_1201e6eb61a8438c835e1613953655a2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_04278abdb38e9783016ad11e54b97487d2a621b109fb83ea94",
+          "object": "response",
+          "created_at": 1792089684,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089685,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the clerk correcting the Alexandria papyrus catalogue.\nFill the schema from the notice. Copy the shelfmark and the notice number.\nThe notice gives no findspot, so findspot is null.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_04278abdb38e9783016ad11e54fee087d28fe6150c9be32ff8",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"shelfmark\":\"Zenon\",\"notice\":\"1842\",\"findspot\":null}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "papyrus_notice",
+              "schema": {
+                "description": "One Alexandria papyrus correction",
+                "type": "object",
+                "properties": {
+                  "shelfmark": {
+                    "type": "string",
+                    "description": "The papyrus the notice names"
+                  },
+                  "notice": {
+                    "type": "string",
+                    "description": "Notice number"
+                  },
+                  "findspot": {
+                    "description": "Findspot if the notice gives one, otherwise null",
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "shelfmark",
+                  "notice",
+                  "findspot"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 227,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 19,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 246
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:25 GMT
+recorded_with: VCR 6.4.0

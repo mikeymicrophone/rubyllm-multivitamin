@@ -1,0 +1,259 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Hanoi phở
+        house, Wednesday 14 October 2026, morning kettle.\nThe house sits on https://whc.unesco.org/en/list/1328\nKettle
+        3, oxtail, 90 minutes.\nVessel: Stockpot No. 2, in the north house.\nCome-up
+        85 C. Simmer 95 C."}],"instructions":"You are the kitchen clerk at a phở house
+        in Hanoi.\nFill stock_card from the card. Nest stock, vessel, and temperatures.\nCopy
+        the numbers as integers.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"stock_card","schema":{"description":"Morning
+        kettle for the Hanoi phở house","type":"object","properties":{"stock":{"type":"object","properties":{"kettle":{"type":"string","description":"Kettle
+        number as written"},"bones":{"type":"string","description":"What is in the
+        kettle"},"minutes":{"type":"integer","description":"Simmer minutes"}},"required":["kettle","bones","minutes"],"additionalProperties":false,"description":"The
+        kettle on the range"},"vessel":{"type":"object","properties":{"name":{"type":"string","description":"Stockpot
+        name"},"house":{"type":"string","description":"Kitchen house"}},"required":["name","house"],"additionalProperties":false,"description":"Which
+        stockpot is firing"},"temperatures":{"type":"object","properties":{"come_up_c":{"type":"integer","description":"Come-up
+        temperature in Celsius"},"simmer_c":{"type":"integer","description":"Simmer
+        temperature in Celsius"}},"required":["come_up_c","simmer_c"],"additionalProperties":false,"description":"Come-up
+        and simmer, degrees Celsius"}},"required":["stock","vessel","temperatures"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f4d8dfa425f7-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1053'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999663'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 10ms
+      X-Request-Id:
+      - req_3baaf16640cf4fcc97d3a855902038c9
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0d5c21cf36b009f3016ad11e46a62087d29f29594a5d59c2ec",
+          "object": "response",
+          "created_at": 1792089670,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089671,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the kitchen clerk at a ph\u1edf house in Hanoi.\nFill stock_card from the card. Nest stock, vessel, and temperatures.\nCopy the numbers as integers.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0d5c21cf36b009f3016ad11e4736ec87d2b15829fb304a42ae",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"stock\":{\"kettle\":\"3\",\"bones\":\"oxtail\",\"minutes\":90},\"vessel\":{\"name\":\"Stockpot No. 2\",\"house\":\"north house\"},\"temperatures\":{\"come_up_c\":85,\"simmer_c\":95}}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "stock_card",
+              "schema": {
+                "description": "Morning kettle for the Hanoi ph\u1edf house",
+                "type": "object",
+                "properties": {
+                  "stock": {
+                    "type": "object",
+                    "properties": {
+                      "kettle": {
+                        "type": "string",
+                        "description": "Kettle number as written"
+                      },
+                      "bones": {
+                        "type": "string",
+                        "description": "What is in the kettle"
+                      },
+                      "minutes": {
+                        "type": "integer",
+                        "description": "Simmer minutes"
+                      }
+                    },
+                    "required": [
+                      "kettle",
+                      "bones",
+                      "minutes"
+                    ],
+                    "additionalProperties": false,
+                    "description": "The kettle on the range"
+                  },
+                  "vessel": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Stockpot name"
+                      },
+                      "house": {
+                        "type": "string",
+                        "description": "Kitchen house"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "house"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Which stockpot is firing"
+                  },
+                  "temperatures": {
+                    "type": "object",
+                    "properties": {
+                      "come_up_c": {
+                        "type": "integer",
+                        "description": "Come-up temperature in Celsius"
+                      },
+                      "simmer_c": {
+                        "type": "integer",
+                        "description": "Simmer temperature in Celsius"
+                      }
+                    },
+                    "required": [
+                      "come_up_c",
+                      "simmer_c"
+                    ],
+                    "additionalProperties": false,
+                    "description": "Come-up and simmer, degrees Celsius"
+                  }
+                },
+                "required": [
+                  "stock",
+                  "vessel",
+                  "temperatures"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 306,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 52,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 358
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:11 GMT
+recorded_with: VCR 6.4.0
