@@ -534,7 +534,46 @@ Shown in [Neah Bay seeded ladder card](features/11-instructions-and-history/10-n
 
 ## Tokens and cost
 
-No entries yet.
+### The free slug is in the registry at zero dollars, so components are 0.0
+
+**What happens.** `nvidia/nemotron-3-super-120b-a12b:free` is in the bundled registry with `input_per_million` 0 and `output_per_million` 0. OpenRouter also reports `usage.cost` 0. `cost.total` is that reported 0. `cost.input` and `cost.output` are registry estimates of `0.0`, not `nil`. `assume_model_exists` keeps that registry entry. An unlisted clerk built with `RubyLLM::Model.default` has no `price(:input)`. `cost_for` on that clerk still returns `tokens.reported_cost` when it is present. `RubyLLM::Tokens.new(input:, output:)` drops the reported price, and the same unlisted clerk then yields `nil`. Pricing those bare tokens on `gpt-4.1-mini` yields a positive total.
+
+**Why it matters.** A test that expects component costs to be nil on a free slug fails once the slug is catalogued at $0. A watch that treats `cost.total == 0` as "unpriced" cannot tell a reported zero from a registry zero. Repricing without stripping `reported_cost` never reaches the nil path.
+
+**What to do.** Read `tokens.reported_cost` beside `cost.total`. Build a `Tokens` with only the counts when you want a registry estimate. Rescue nothing: `nil` is the missing-price signal.
+
+Shown in [Ballard Locks salmon-count reported price](features/12-tokens-and-cost/07-ballard-locks-salmon-count/) and [Roche Harbor customs-float unpriced clerk](features/12-tokens-and-cost/10-roche-harbor-customs-float/).
+
+### OpenRouter reports cache buckets as zero, not omitted
+
+**What happens.** The first Agate Pass request sends `with_caching(ttl: "5m")`. The response still includes `prompt_tokens_details.cached_tokens` 0 and `cache_write_tokens` 0. `tokens.cache_read` and `tokens.cache_write` are `0`. They are not `nil`. `tokens.thinking` is greater than 0.
+
+**Why it matters.** `if tokens.cache_read` is false for both nil and 0 in some writings, but `nil?` is the omission check. On this slug a first pass is a reported miss, not an omitted field.
+
+**What to do.** Assert the integer the cassette actually stored. Do not coerce with `to_i` to hide a missing bucket; this recording happens to report zero.
+
+Shown in [Agate Pass tidal-race cache and thinking](features/12-tokens-and-cost/06-agate-pass-tidal-race/).
+
+### A cancelled stream can price a parser-default cache_write of zero
+
+**What happens.** Cancelling after two spoken pieces leaves `chat.messages` at `[:system, :user]`. The attempt status is `:cancelled`. `tokens.input` and `tokens.output` stay nil: the usage chunk is later in the cassette and is not applied. The Chat Completions parser still defaults omitted `cache_write` to `0`, so the cancelled entry's `tokens.to_h` is `{cache_write_tokens: 0}`. On the free slug priced at $0 per million, `chat.cost.total` is `0.0`, not nil. Summing `message.tokens.input` on the transcript is 0.
+
+**Why it matters.** The docs say a billed attempt with no defensible usage blanks `chat.cost.total`. This parser default plus a $0 registry rate fills in a zero instead. A watch that only sums messages misses the attempt entirely.
+
+**What to do.** Read `chat.usage_entries` for cancelled work. Treat `cache_write` 0 with nil input as "usage never arrived," not as a free successful call.
+
+Shown in [Turn Point current-halt cancelled usage](features/12-tokens-and-cost/12-turn-point-current-halt/).
+
+### An unknown tool keyword becomes a tool-role error, then a retry
+
+**What happens.** `posted_kelp_card` declares no parameters. The model still called it with `skiff`. `execute` raises through RubyLLM as a tool message whose content is `{"error":"Invalid tool arguments: unknown keyword: skiff"}`. The next request sends that error and the model calls again with `{}`. That second tool message is the harvest card. `chat.tokens` includes both attempts. The spoken answer still has the sack count.
+
+**Why it matters.** A test that takes the first `:tool` message as the card gets the error JSON. The extra attempt is on the chat ledger.
+
+**What to do.** Read every tool message. Expect `chat.tokens.input` to exceed the final answer's input when a bad call was retried.
+
+Shown in [Cattle Point bull-kelp harvest tools](features/12-tokens-and-cost/11-cattle-point-bull-kelp/).
+
 
 ## Error handling
 

@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the current clerk at Agate Pass, between Bainbridge Island and the Kitsap
+        shore.\nAnswer in two short sentences.\nUse only the race card in the question.\nName
+        5.2 knots and the ferry Kitsap.\nDo not invent a slack."},{"role":"user","content":"Agate
+        Pass tidal-race card, Wednesday 14 October 2026, 08:10.\nTide reference: https://tidesandcurrents.noaa.gov/\nWSF
+        page: https://wsdot.wa.gov/ferries\nEbb 5.2 knots at the Agate Pass Bridge,
+        setting north toward Port Madison.\nThe 08:20 Kitsap sailing from Suquamish
+        is held until the race drops under 4.0 knots.\nSlack before flood 10:35.\nShould
+        the clerk hold Kitsap, and what is the ebb?"}],"stream":false,"temperature":0.2,"cache_control":{"type":"ephemeral","ttl":"5m"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:33:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028012-LaapL9QdFJbCt2xfsj9x
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab1386a919fef3-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MjAyODAxMi1MYWFwTDlRZEZKYkN0Mnhmc2o5eCIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTIwMjgwMTIsIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlllcywgdGhlIGNsZXJrIHNob3VsZCBob2xkIHRoZSBLaXRzYXAgYmVjYXVzZSB0aGUgZWJiIGlzIDUuMuKAr2tub3RzLCB3aGljaCBpcyBhYm92ZSB0aGUgNC4w4oCRa25vdCBsaW1pdCBmb3IgZGVwYXJ0dXJlLiBUaGUgZWJiIGF0IEFnYXRlIFBhc3MgQnJpZGdlIGlzIDUuMuKAr2tub3RzIHNldHRpbmcgbm9ydGggdG93YXJkIFBvcnQgTWFkaXNvbi4iLCJyZWZ1c2FsIjpudWxsLCJyZWFzb25pbmciOiJXZSBuZWVkIHRvIGFuc3dlciBpbiB0d28gc2hvcnQgc2VudGVuY2VzLiBVc2Ugb25seSB0aGUgcmFjZSBjYXJkIGluIHRoZSBxdWVzdGlvbi4gTmFtZSA1LjIga25vdHMgYW5kIHRoZSBmZXJyeSBLaXRzYXAuIERvIG5vdCBpbnZlbnQgYSBzbGFjay4gU28gd2UgbXVzdCByZWZlcmVuY2UgdGhlIHJhY2UgY2FyZCBpbmZvOiBlYmIgNS4yIGtub3RzIGF0IEFnYXRlIFBhc3MgQnJpZGdlLCBzZXR0aW5nIG5vcnRoIHRvd2FyZCBQb3J0IE1hZGlzb24uIFRoZSAwODoyMCBLaXRzYXAgc2FpbGluZyBmcm9tIFN1cXVhbWlzaCBpcyBoZWxkIHVudGlsIHRoZSByYWNlIGRyb3BzIHVuZGVyIDQuMCBrbm90cy4gU2xhY2sgYmVmb3JlIGZsb29kIDEwOjM1LiBUaGUgcXVlc3Rpb246IFNob3VsZCB0aGUgY2xlcmsgaG9sZCBLaXRzYXAsIGFuZCB3aGF0IGlzIHRoZSBlYmI/IEFuc3dlcjogWWVzLCBob2xkIEtpdHNhcCBiZWNhdXNlIGViYiBpcyA1LjIga25vdHMgKD40LjApLiBBbmQgdGhlIGViYiBpcyA1LjIga25vdHMuIE11c3QgYmUgdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIHJhY2UgY2FyZCBpbiB0aGUgcXVlc3Rpb27igJRtZWFuaW5nIHdlIGNhbm5vdCBhZGQgaW5mbyBub3QgZnJvbSB0aGUgY2FyZD8gUHJvYmFibHkgd2UgbXVzdCBvbmx5IHVzZSBpbmZvIGdpdmVuLiBTbyBhbnN3ZXI6IFllcywgdGhlIGNsZXJrIHNob3VsZCBob2xkIHRoZSBLaXRzYXAgYmVjYXVzZSB0aGUgZWJiIGlzIDUuMiBrbm90cywgd2hpY2ggZXhjZWVkcyB0aGUgNC4w4oCRa25vdCB0aHJlc2hvbGQuIFRoZSBlYmIgYXQgQWdhdGUgUGFzcyBCcmlkZ2UgaXMgNS4yIGtub3RzIG5vcnRod2FyZCB0b3dhcmQgUG9ydCBNYWRpc29uLiBUaGF0J3MgdHdvIHNlbnRlbmNlcy4gRW5zdXJlIHdlIG1lbnRpb24gNS4yIGtub3RzIGFuZCBmZXJyeSBLaXRzYXAuIERvbmUuIiwicmVhc29uaW5nX2RldGFpbHMiOlt7InR5cGUiOiJyZWFzb25pbmcudGV4dCIsInRleHQiOiJXZSBuZWVkIHRvIGFuc3dlciBpbiB0d28gc2hvcnQgc2VudGVuY2VzLiBVc2Ugb25seSB0aGUgcmFjZSBjYXJkIGluIHRoZSBxdWVzdGlvbi4gTmFtZSA1LjIga25vdHMgYW5kIHRoZSBmZXJyeSBLaXRzYXAuIERvIG5vdCBpbnZlbnQgYSBzbGFjay4gU28gd2UgbXVzdCByZWZlcmVuY2UgdGhlIHJhY2UgY2FyZCBpbmZvOiBlYmIgNS4yIGtub3RzIGF0IEFnYXRlIFBhc3MgQnJpZGdlLCBzZXR0aW5nIG5vcnRoIHRvd2FyZCBQb3J0IE1hZGlzb24uIFRoZSAwODoyMCBLaXRzYXAgc2FpbGluZyBmcm9tIFN1cXVhbWlzaCBpcyBoZWxkIHVudGlsIHRoZSByYWNlIGRyb3BzIHVuZGVyIDQuMCBrbm90cy4gU2xhY2sgYmVmb3JlIGZsb29kIDEwOjM1LiBUaGUgcXVlc3Rpb246IFNob3VsZCB0aGUgY2xlcmsgaG9sZCBLaXRzYXAsIGFuZCB3aGF0IGlzIHRoZSBlYmI/IEFuc3dlcjogWWVzLCBob2xkIEtpdHNhcCBiZWNhdXNlIGViYiBpcyA1LjIga25vdHMgKD40LjApLiBBbmQgdGhlIGViYiBpcyA1LjIga25vdHMuIE11c3QgYmUgdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIHJhY2UgY2FyZCBpbiB0aGUgcXVlc3Rpb27igJRtZWFuaW5nIHdlIGNhbm5vdCBhZGQgaW5mbyBub3QgZnJvbSB0aGUgY2FyZD8gUHJvYmFibHkgd2UgbXVzdCBvbmx5IHVzZSBpbmZvIGdpdmVuLiBTbyBhbnN3ZXI6IFllcywgdGhlIGNsZXJrIHNob3VsZCBob2xkIHRoZSBLaXRzYXAgYmVjYXVzZSB0aGUgZWJiIGlzIDUuMiBrbm90cywgd2hpY2ggZXhjZWVkcyB0aGUgNC4w4oCRa25vdCB0aHJlc2hvbGQuIFRoZSBlYmIgYXQgQWdhdGUgUGFzcyBCcmlkZ2UgaXMgNS4yIGtub3RzIG5vcnRod2FyZCB0b3dhcmQgUG9ydCBNYWRpc29uLiBUaGF0J3MgdHdvIHNlbnRlbmNlcy4gRW5zdXJlIHdlIG1lbnRpb24gNS4yIGtub3RzIGFuZCBmZXJyeSBLaXRzYXAuIERvbmUuIiwiZm9ybWF0IjoidW5rbm93biIsImluZGV4IjowfV19fV0sInVzYWdlIjp7InByb21wdF90b2tlbnMiOjIwMiwiY29tcGxldGlvbl90b2tlbnMiOjMzMSwidG90YWxfdG9rZW5zIjo1MzMsImNvc3QiOjAsImlzX2J5b2siOmZhbHNlLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOnsiY2FjaGVkX3Rva2VucyI6MCwiY2FjaGVfd3JpdGVfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjAsInZpZGVvX3Rva2VucyI6MH0sImNvc3RfZGV0YWlscyI6eyJ1cHN0cmVhbV9pbmZlcmVuY2VfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX3Byb21wdF9jb3N0IjowLCJ1cHN0cmVhbV9pbmZlcmVuY2VfY29tcGxldGlvbnNfY29zdCI6MH0sImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOnsicmVhc29uaW5nX3Rva2VucyI6MjY2LCJpbWFnZV90b2tlbnMiOjAsImF1ZGlvX3Rva2VucyI6MH19fQ==
+  recorded_at: Thu, 15 Oct 2026 01:33:37 GMT
+recorded_with: VCR 6.4.0

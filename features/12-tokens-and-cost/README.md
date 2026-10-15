@@ -8,23 +8,23 @@ Official reference: [Tokens and costs](https://rubyllm.com/cost-and-usage-tracki
 
 ## Free models
 
-`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Slot 04 fell back to OpenAI `gpt-4.1-mini` after `free-models-per-day`. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 15 October 2026.
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Token counts on a Point Wilson brief — planned
-02. A reported zero cost on a free model — planned
-03. chat.tokens across two watch questions — planned
-04. A long board versus a one-line hail — planned
-05. max output tokens and finish_reason :max_tokens — planned
-06. Cache fields nil when the provider omits them — planned
-07. Reported cost instead of a registry price — planned
-08. Usage on the final streamed chunk — planned
-09. Summing a watch's chats — planned
-10. Nil total when nobody reported a price — planned
-11. Tokens on a tool round — planned
-12. A cancelled attempt still counted on the chat — planned
-13. A watch ledger of per-turn and total cost — planned
+01. [Point Wilson kelp-ledge token tally](01-point-wilson-kelp-ledge-tokens/) — available
+02. [Foulweather Bluff fog-signal zero](02-foulweather-bluff-fog-signal/) — available
+03. [Protection Island auklet-watch totals](03-protection-island-auklet-watch/) — available
+04. [Sequim Bay geoduck raft versus hail](04-sequim-bay-geoduck-raft/) — available
+05. [Point No Point current-gate cap](05-point-no-point-current-gate/) — available
+06. [Agate Pass tidal-race cache and thinking](06-agate-pass-tidal-race/) — available
+07. [Ballard Locks salmon-count reported price](07-ballard-locks-salmon-count/) — available
+08. [Bush Point flood-table stream usage](08-bush-point-flood-table/) — available
+09. [Penn Cove mussel-raft tenant tallies](09-penn-cove-mussel-raft/) — available
+10. [Roche Harbor customs-float unpriced clerk](10-roche-harbor-customs-float/) — available
+11. [Cattle Point bull-kelp harvest tools](11-cattle-point-bull-kelp/) — available
+12. [Turn Point current-halt cancelled usage](12-turn-point-current-halt/) — available
+13. [Haro Strait watch ledger](13-haro-strait-watch-ledger/) — available
 
 ## What each scenario adds
 
@@ -32,17 +32,16 @@ Official reference: [Tokens and costs](https://rubyllm.com/cost-and-usage-tracki
 | --- | --- |
 | 01 | `tokens.input` and `tokens.output` are integers |
 | 02 | `cost.total` equals the reported `0`, not nil |
-| 03 | The chat's input tokens are at least the sum of the two replies' inputs |
+| 03 | The chat's input tokens equal the sum of the two replies' inputs |
 | 04 | The longer prompt reports more input tokens |
 | 05 | `with_max_output_tokens` small enough that `max_tokens?` is true |
-| 06 | `cache_read` is nil, and nil is not treated as zero in the assertion |
-| 07 | The cassette's `usage.cost` is what `cost.total` returns |
-| 08 | The stream's final message carries usage from `stream_options` |
-| 09 | `Cost.aggregate` across two messages |
-| 10 | An assumed model with no `usage.cost` and no registry price yields nil |
+| 06 | Cache buckets keep the provider's zeros; `thinking` is present |
+| 07 | The cassette's `usage.cost` is what `cost.total` returns; components are registry `$0` |
+| 08 | The stream's final chunk carries usage from `stream_options` |
+| 09 | `Cost.aggregate` and `with_usage_owner` across two tenants |
+| 10 | An assumed model with no `usage.cost` on a bare Tokens yields nil |
 | 11 | Tool-call turns still have input and output counts |
-| 12 | `chat.cost` includes an attempt that `cancel` stopped |
-| 13 | Capstone: print a ledger from `tokens` and `cost` for each turn and the chat |
+| 12 | A cancelled attempt stays on the chat; input is nil, `cost.total` is `0.0` |
+| 13 | Capstone: a ledger, a budget, and `cost_for` across two models |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

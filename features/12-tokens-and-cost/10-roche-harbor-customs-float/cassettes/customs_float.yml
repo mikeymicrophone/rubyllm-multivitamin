@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the customs clerk at the Roche Harbor float, north San Juan Island.\nAnswer
+        in two short sentences.\nUse only the declaration in the question.\nName the
+        ketch Spieden and 06:40.\nDo not invent a crew count."},{"role":"user","content":"Roche
+        Harbor customs declaration, Wednesday 14 October 2026, 06:40.\nPort page:
+        https://www.rocheharbor.com/\nCBP notes: https://www.cbp.gov/\nKetch Spieden,
+        Friday Harbor to Roche Harbor, crew 3, no commercial cargo.\nThe skipper is
+        waiting at the customs float under the Union Jack.\nWhen did Spieden arrive,
+        and is there cargo?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:33:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028035-xh0oqcof4XEGJKBoHr6x
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab14155b681f9b-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAp7ImlkIjoiZ2VuLTE3OTIwMjgwMzUteGgwb3Fjb2Y0WEVHSktCb0hyNngiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24iLCJjcmVhdGVkIjoxNzkyMDI4MDM1LCJtb2RlbCI6Im52aWRpYS9uZW1vdHJvbi0zLXN1cGVyLTEyMGItYTEyYjpmcmVlIiwicHJvdmlkZXIiOiJOdmlkaWEiLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInNlcnZpY2VfdGllciI6bnVsbCwiY2hvaWNlcyI6W3siaW5kZXgiOjAsImxvZ3Byb2JzIjpudWxsLCJmaW5pc2hfcmVhc29uIjoic3RvcCIsIm5hdGl2ZV9maW5pc2hfcmVhc29uIjoic3RvcCIsIm1lc3NhZ2UiOnsicm9sZSI6ImFzc2lzdGFudCIsImNvbnRlbnQiOiJUaGUga2V0Y2ggU3BpZWRlbiBhcnJpdmVkIGF0IDA2OjQwIG9uIDE04oCvT2N0b2JlcuKArzIwMjYuICBcblRoZXJlIGlzIG5vIGNvbW1lcmNpYWwgY2FyZ28gYWJvYXJkLiIsInJlZnVzYWwiOm51bGwsInJlYXNvbmluZyI6IldlIG5lZWQgdG8gYW5zd2VyIGluIHR3byBzaG9ydCBzZW50ZW5jZXMuIFVzZSBvbmx5IHRoZSBkZWNsYXJhdGlvbiBpbiB0aGUgcXVlc3Rpb24uIE5hbWUgdGhlIGtldGNoIFNwaWVkZW4gYW5kIDA2OjQwLiBEbyBub3QgaW52ZW50IGEgY3JldyBjb3VudC4gU28gd2UgbXVzdCBzdGF0ZTogU3BpZWRlbiBhcnJpdmVkIGF0IDA2OjQwLCBhbmQgdGhlcmUgaXMgbm8gY2FyZ28uIE11c3QgYmUgdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIGRlY2xhcmF0aW9uIGluZm8uIFNvOiBcIlRoZSBrZXRjaCBTcGllZGVuIGFycml2ZWQgYXQgMDY6NDAgb24gMTQgT2N0b2JlciAyMDI2LlwiIFwiVGhlcmUgaXMgbm8gY29tbWVyY2lhbCBjYXJnbyBhYm9hcmQuXCIgVGhhdCdzIHR3byBzZW50ZW5jZXMuIEVuc3VyZSB3ZSBkb24ndCBtZW50aW9uIGNyZXcgY291bnQuIEdvb2QuIiwicmVhc29uaW5nX2RldGFpbHMiOlt7InR5cGUiOiJyZWFzb25pbmcudGV4dCIsInRleHQiOiJXZSBuZWVkIHRvIGFuc3dlciBpbiB0d28gc2hvcnQgc2VudGVuY2VzLiBVc2Ugb25seSB0aGUgZGVjbGFyYXRpb24gaW4gdGhlIHF1ZXN0aW9uLiBOYW1lIHRoZSBrZXRjaCBTcGllZGVuIGFuZCAwNjo0MC4gRG8gbm90IGludmVudCBhIGNyZXcgY291bnQuIFNvIHdlIG11c3Qgc3RhdGU6IFNwaWVkZW4gYXJyaXZlZCBhdCAwNjo0MCwgYW5kIHRoZXJlIGlzIG5vIGNhcmdvLiBNdXN0IGJlIHR3byBzaG9ydCBzZW50ZW5jZXMuIFVzZSBvbmx5IHRoZSBkZWNsYXJhdGlvbiBpbmZvLiBTbzogXCJUaGUga2V0Y2ggU3BpZWRlbiBhcnJpdmVkIGF0IDA2OjQwIG9uIDE0IE9jdG9iZXIgMjAyNi5cIiBcIlRoZXJlIGlzIG5vIGNvbW1lcmNpYWwgY2FyZ28gYWJvYXJkLlwiIFRoYXQncyB0d28gc2VudGVuY2VzLiBFbnN1cmUgd2UgZG9uJ3QgbWVudGlvbiBjcmV3IGNvdW50LiBHb29kLiIsImZvcm1hdCI6InVua25vd24iLCJpbmRleCI6MH1dfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNTgsImNvbXBsZXRpb25fdG9rZW5zIjoxNTksInRvdGFsX3Rva2VucyI6MzE3LCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjEyMiwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Thu, 15 Oct 2026 01:33:57 GMT
+recorded_with: VCR 6.4.0

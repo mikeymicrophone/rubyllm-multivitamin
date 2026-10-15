@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 13 |
 | Scenarios | 169 |
-| Bottled | 156 |
+| Bottled | 169 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -29,13 +29,13 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is not full yet: 13 features, 13 scenarios each, 156 of 169 bottled.
+The bottle is full: 13 features, 13 scenarios each, 169 of 169 bottled.
 Chat basics, streaming, tools, structured output, multimodal attachments,
 embeddings, image generation, models and providers, configuration and
-contexts, Rails integration, instructions and history, and error handling
-are full. Tools, the Point Wilson spoken handover, the schema turns, the
-attachment scenarios, and the Rails integration chats were recorded on
-OpenAI `gpt-4.1-mini`.
+contexts, Rails integration, instructions and history, tokens and cost,
+and error handling are full. Tools, the Point Wilson spoken handover, the
+schema turns, the attachment scenarios, and the Rails integration chats
+were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
 `gpt-6-luna`. Audio attachments were recorded on OpenAI `gpt-audio-mini`.
 Embedding text cassettes were recorded on OpenAI `text-embedding-3-small`.
@@ -48,11 +48,14 @@ hit the daily cap. The registry `refresh` cassette is the published catalog
 on rubyllm.com. Configuration and contexts were recorded on OpenRouter
 `openai/gpt-4.1-mini` (and `openai/gpt-4.1-nano`) after the `:free` slugs hit
 the daily cap; the Juan de Fuca context embed also records OpenAI
-`text-embedding-3-small` for the global call. Error handling recorded a
+`text-embedding-3-small` for the global call. Tokens and cost were recorded
+on OpenRouter `nvidia/nemotron-3-super-120b-a12b:free` after the 8 PM ET
+reset on 15 October 2026, except Sequim Bay which fell back to OpenAI
+`gpt-4.1-mini` after `free-models-per-day`. Error handling recorded a
 rejected-key 401 and a `free-models-per-day` 429 on OpenRouter, and schema,
 embedding-overflow, tool, cancel, and fallback cassettes on OpenAI
 `gpt-4.1-mini` (and `text-embedding-3-small`). The other bottled cassettes
-are OpenRouter. The remaining features are titled and waiting.
+are OpenRouter.
 
 ## Run the examples
 
@@ -184,7 +187,7 @@ hold the cassette player and the model slugs, not the story.
 9. [Configuration and contexts](features/09-configuration-and-contexts/) — 13 of 13 bottled
 10. [Rails integration](features/10-rails-integration/) — 13 of 13 bottled
 11. [Instructions and history](features/11-instructions-and-history/) — 13 of 13 bottled
-12. [Tokens and cost](features/12-tokens-and-cost/) — 0 of 13 bottled
+12. [Tokens and cost](features/12-tokens-and-cost/) — 13 of 13 bottled
 13. [Error handling](features/13-error-handling/) — 13 of 13 bottled
 
 The reference scenario that later ones copy is

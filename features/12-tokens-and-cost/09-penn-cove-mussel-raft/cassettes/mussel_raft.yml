@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the harvest clerk on the Penn Cove mussel raft off Coupeville.\nAnswer
+        in one short sentence.\nUse only the harvest card in the question.\nName raft
+        PC-4 and 42 sacks.\nDo not invent a temperature."},{"role":"user","content":"Penn
+        Cove mussel harvest, raft PC-4, Wednesday 14 October 2026, 06:50.\nIsland
+        County page: https://www.islandcountywa.gov/\n42 sacks of mussels, 1,050 pounds,
+        water 51 F.\nThe skiff Penn is alongside.\nHow many sacks on raft PC-4?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:33:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028023-znEatJzwQkPL8kwGoHJ0
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab13cbeca38e63-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792028023-znEatJzwQkPL8kwGoHJ0\",\"object\":\"chat.completion\",\"created\":1792028023,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"There
+        are 42 sacks on raft PC-4.\",\"refusal\":null,\"reasoning\":\"We need to answer
+        in one short sentence, using only the harvest card in the question. The harvest
+        card says: \\\"42 sacks of mussels\\\". So answer: \\\"42 sacks\\\". Must
+        be one short sentence. Probably \\\"There are 42 sacks on raft PC-4.\\\" That's
+        one sentence. Use only the harvest card info. No temperature. So answer: \\\"There
+        are 42 sacks on raft PC-4.\\\"\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in one short sentence, using only the harvest card in the question.
+        The harvest card says: \\\"42 sacks of mussels\\\". So answer: \\\"42 sacks\\\".
+        Must be one short sentence. Probably \\\"There are 42 sacks on raft PC-4.\\\"
+        That's one sentence. Use only the harvest card info. No temperature. So answer:
+        \\\"There are 42 sacks on raft PC-4.\\\"\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":146,\"completion_tokens\":105,\"total_tokens\":251,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":90,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Thu, 15 Oct 2026 01:33:44 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the slip clerk at the Coupeville ferry dock on Penn Cove.\nAnswer in one
+        short sentence.\nUse only the wind board in the question.\nName the 07:30
+        Keystone sailing and 28 knots.\nDo not invent a gust."},{"role":"user","content":"Coupeville
+        ferry dock wind board, Wednesday 14 October 2026, 07:05.\nWSF page: https://wsdot.wa.gov/ferries\nWind
+        down Penn Cove 28 knots, gust 34.\nThe 07:30 Keystone sailing is held.\nIs
+        the 07:30 Keystone held, and what is the wind?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 01:33:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792028024-EnmKRvOOm0IazL9QLoJu
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4ab13d3bfccfeff-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n\n         \n{\"id\":\"gen-1792028024-EnmKRvOOm0IazL9QLoJu\",\"object\":\"chat.completion\",\"created\":1792028024,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"The
+        07:30 Keystone sailing is held, with wind down Penn Cove at 28 knots.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer in one short sentence, using only the wind board in the question.
+        We must not invent a gust. The wind board says: \\\"Wind down Penn Cove 28
+        knots, gust 34.\\\" The question: \\\"Is the 07:30 Keystone held, and what
+        is the wind?\\\" The wind board says the 07:30 Keystone sailing is held. So
+        answer: \\\"The 07:30 Keystone sailing is held, with wind down Penn Cove at
+        28 knots.\\\" Must not mention gust. One short sentence. Ensure we only use
+        info from wind board. Provide answer.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in one short sentence, using only the wind board in the question.
+        We must not invent a gust. The wind board says: \\\"Wind down Penn Cove 28
+        knots, gust 34.\\\" The question: \\\"Is the 07:30 Keystone held, and what
+        is the wind?\\\" The wind board says the 07:30 Keystone sailing is held. So
+        answer: \\\"The 07:30 Keystone sailing is held, with wind down Penn Cove at
+        28 knots.\\\" Must not mention gust. One short sentence. Ensure we only use
+        info from wind board. Provide answer.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":158,\"completion_tokens\":164,\"total_tokens\":322,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":136,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Thu, 15 Oct 2026 01:33:54 GMT
+recorded_with: VCR 6.4.0
