@@ -36,14 +36,14 @@ module FesTannerVat
   class VatLookup
     INSTRUCTIONS = <<~TEXT.strip
       You are the vat clerk at the Chouara tanneries in Fes.
-      Call vat_card with the vat the floor named.
+      Call vat_card with the vat named in the question: chouara, guissa, or recif.
       Answer in one sentence and include the mark the tool returns.
     TEXT
 
     VAT_QUESTION = <<~TEXT.strip
       Thursday 15 October 2026, morning soak at Chouara, Fes.
       Medina notes: https://whc.unesco.org/en/list/170/
-      The relief wants the chouara vat opened before the saffron is mixed.
+      The soaking crew wants the chouara vat opened before the saffron is mixed.
       What is in that vat?
     TEXT
 

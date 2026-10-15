@@ -14,7 +14,7 @@ Official reference: [Tools](https://rubyllm.com/tools/) and [tool parameters](ht
 
 ## Models
 
-These cassettes were recorded on `gpt-4.1-mini` with `provider: :openai`. The id was on OpenAI's models list on 14 October 2026. It advertises function calling, `tool_choice`, parallel tool calls, and temperature. OpenRouter's free-model daily limit was exhausted that day, so the free slug is the re-record alternative: `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`. Do not use `nvidia/nemotron-3.5-content-safety:free` here; it does not advertise tools.
+These cassettes were recorded on `gpt-4.1-mini` with `provider: :openai`. The id was on OpenAI's models list on 14 October 2026. It advertises function calling, `tool_choice`, parallel tool calls, and temperature. OpenRouter `:free` slugs hit `free-models-per-day` on 15 October 2026, so the free slug is the re-record alternative: `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`. Do not use `nvidia/nemotron-3.5-content-safety:free` here; it does not advertise tools.
 
 `LIVE=1 LIVE_PROVIDER=openai` records OpenAI again. `LIVE=1 LIVE_PROVIDER=openrouter` overwrites a cassette with the free slug. Replay ignores `LIVE_PROVIDER`.
 

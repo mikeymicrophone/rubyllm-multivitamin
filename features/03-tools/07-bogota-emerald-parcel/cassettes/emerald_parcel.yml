@@ -1,0 +1,581 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, parcel round at the Muzo desk in Bogotá.\nTrade notes: https://www.fedesmeraldas.org/\nThe
+        floor asked for the card on parcel CO-17.\nRead the card and report the carat
+        weight."}],"instructions":"You are the parcel clerk at the Muzo desk in Bogotá.\nCall
+        emerald_parcel with the parcel the floor named.\nIf the tool returns an error,
+        call emerald_parcel again with the parcel the error names.\nThen answer in
+        one sentence that includes the carat weight from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"emerald_parcel","description":"Reads
+        the parcel card for an emerald lot on the Muzo desk in Bogotá","parameters":{"type":"object","properties":{"parcel":{"type":"string","description":"Parcel
+        name on the desk, such as CO-4"}},"required":["parcel"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a75a084ec9a0-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '768'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999555'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_12e1db9dcb8644d5b1c620eff54256ba
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0c07428b88fba17b016ad111e0688c87d29136cd25d68724b5",
+          "object": "response",
+          "created_at": 1792086496,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086497,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the parcel clerk at the Muzo desk in Bogot\u00e1.\nCall emerald_parcel with the parcel the floor named.\nIf the tool returns an error, call emerald_parcel again with the parcel the error names.\nThen answer in one sentence that includes the carat weight from the card.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0c07428b88fba17b016ad111e0dbb887d2a9455a0d0cdefdfc",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"parcel\":\"CO-17\"}",
+              "call_id": "call_IowdBkachlzea7tB7NUqvtMk",
+              "name": "emerald_parcel"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "required",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the parcel card for an emerald lot on the Muzo desk in Bogot\u00e1",
+              "name": "emerald_parcel",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "parcel": {
+                    "type": "string",
+                    "description": "Parcel name on the desk, such as CO-4"
+                  }
+                },
+                "required": [
+                  "parcel"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 187,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 8,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 195
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, parcel round at the Muzo desk in Bogotá.\nTrade notes: https://www.fedesmeraldas.org/\nThe
+        floor asked for the card on parcel CO-17.\nRead the card and report the carat
+        weight."},{"type":"function_call","call_id":"call_IowdBkachlzea7tB7NUqvtMk","name":"emerald_parcel","arguments":"{\"parcel\":\"CO-17\"}"},{"type":"function_call_output","call_id":"call_IowdBkachlzea7tB7NUqvtMk","output":"{\"error\":\"CO-17
+        is not on the Muzo desk. Call emerald_parcel again with parcel CO-4.\"}"}],"instructions":"You
+        are the parcel clerk at the Muzo desk in Bogotá.\nCall emerald_parcel with
+        the parcel the floor named.\nIf the tool returns an error, call emerald_parcel
+        again with the parcel the error names.\nThen answer in one sentence that includes
+        the carat weight from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"emerald_parcel","description":"Reads
+        the parcel card for an emerald lot on the Muzo desk in Bogotá","parameters":{"type":"object","properties":{"parcel":{"type":"string","description":"Parcel
+        name on the desk, such as CO-4"}},"required":["parcel"],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a75fb98e7077-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '537'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999102'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 26ms
+      X-Request-Id:
+      - req_0d267a9b0c834f738a852b9c49950e35
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_06591b1cae2977c9016ad111e154a487d29bbdfb9c28bb06f8",
+          "object": "response",
+          "created_at": 1792086497,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086497,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the parcel clerk at the Muzo desk in Bogot\u00e1.\nCall emerald_parcel with the parcel the floor named.\nIf the tool returns an error, call emerald_parcel again with the parcel the error names.\nThen answer in one sentence that includes the carat weight from the card.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_06591b1cae2977c9016ad111e1b87c87d2b221eeb97ae26c03",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"parcel\":\"CO-4\"}",
+              "call_id": "call_9UkwUoSOsVoxa0lrtvlJIqvr",
+              "name": "emerald_parcel"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the parcel card for an emerald lot on the Muzo desk in Bogot\u00e1",
+              "name": "emerald_parcel",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "parcel": {
+                    "type": "string",
+                    "description": "Parcel name on the desk, such as CO-4"
+                  }
+                },
+                "required": [
+                  "parcel"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 229,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 20,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 249
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, parcel round at the Muzo desk in Bogotá.\nTrade notes: https://www.fedesmeraldas.org/\nThe
+        floor asked for the card on parcel CO-17.\nRead the card and report the carat
+        weight."},{"type":"function_call","call_id":"call_IowdBkachlzea7tB7NUqvtMk","name":"emerald_parcel","arguments":"{\"parcel\":\"CO-17\"}"},{"type":"function_call_output","call_id":"call_IowdBkachlzea7tB7NUqvtMk","output":"{\"error\":\"CO-17
+        is not on the Muzo desk. Call emerald_parcel again with parcel CO-4.\"}"},{"type":"function_call","call_id":"call_9UkwUoSOsVoxa0lrtvlJIqvr","name":"emerald_parcel","arguments":"{\"parcel\":\"CO-4\"}"},{"type":"function_call_output","call_id":"call_9UkwUoSOsVoxa0lrtvlJIqvr","output":"CO-4
+        parcel 12.6 ct at the Muzo desk, read Thursday 15 October 2026."}],"instructions":"You
+        are the parcel clerk at the Muzo desk in Bogotá.\nCall emerald_parcel with
+        the parcel the floor named.\nIf the tool returns an error, call emerald_parcel
+        again with the parcel the error names.\nThen answer in one sentence that includes
+        the carat weight from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"emerald_parcel","description":"Reads
+        the parcel card for an emerald lot on the Muzo desk in Bogotá","parameters":{"type":"object","properties":{"parcel":{"type":"string","description":"Parcel
+        name on the desk, such as CO-4"}},"required":["parcel"],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a763ed2d2c7f-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '673'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999502'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 14ms
+      X-Request-Id:
+      - req_5ad8fd2663194d9d859ad599fe62be16
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08c2b40f8e020066016ad111e1fd0487d29070775a178f1819",
+          "object": "response",
+          "created_at": 1792086498,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086498,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the parcel clerk at the Muzo desk in Bogot\u00e1.\nCall emerald_parcel with the parcel the floor named.\nIf the tool returns an error, call emerald_parcel again with the parcel the error names.\nThen answer in one sentence that includes the carat weight from the card.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_08c2b40f8e020066016ad111e26e5487d290f55c1742243dd4",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The parcel CO-4 at the Muzo desk has a carat weight of 12.6 ct."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the parcel card for an emerald lot on the Muzo desk in Bogot\u00e1",
+              "name": "emerald_parcel",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "parcel": {
+                    "type": "string",
+                    "description": "Parcel name on the desk, such as CO-4"
+                  }
+                },
+                "required": [
+                  "parcel"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 281,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 24,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 305
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:18 GMT
+recorded_with: VCR 6.4.0
