@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/audio/speech
+    body:
+      encoding: UTF-8
+      string: '{"model":"tts-1","input":"Middle Point. Aiff refused.","voice":"alloy","response_format":"aiff"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 12:37:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '164'
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '11'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - cloudflare
+      X-Ratelimit-Limit-Requests:
+      - '2500'
+      X-Ratelimit-Remaining-Requests:
+      - '2499'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Request-Id:
+      - req_b679551f96884d9b937909aad9fd6620
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4aee0a2896b1b59-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid response_format.",
+            "type": "invalid_request_error",
+            "param": "response_format",
+            "code": "unsupported_value"
+          }
+        }
+  recorded_at: Thu, 15 Oct 2026 12:37:51 GMT
+recorded_with: VCR 6.4.0

@@ -703,6 +703,48 @@ Shown in [Juan de Fuca deferred tool search](features/15-mcp-client/12-juan-de-f
 
 Shown in [Shine Tidal tokens](features/16-audio-transcription/11-shine-tidal-tokens/), [Mats Mats silent tape](features/16-audio-transcription/10-mats-mats-silence/), and [Kilisut Harbor diarized watch](features/16-audio-transcription/08-kilisut-harbor-diarize/).
 
+## Text to speech
+
+### tts-1 returns raw audio, so tokens and cost are nil
+
+**What happens.** `RubyLLM.speak` on `tts-1` fills `speech.to_blob` with MPEG bytes. `speech.tokens.input` and `speech.tokens.output` are `nil`. `speech.cost.total`, `speech.cost.input`, and `speech.cost.output` are `nil`. The cassette response is `audio/mpeg`, not JSON, and does not contain `input_tokens` or `"cost":`. The bundled registry has no speech price for `tts-1`.
+
+**Why it matters.** A work order that records `cost.total` the way a paid chat does will store nothing. That is not the same as a free chat model's `cost` of `0`.
+
+**What to do.** Treat speech usage as optional on this model. Do not assert `tokens.input > 0` or `cost > 0`.
+
+Shown in [Fort Flagler tokens and cost](features/17-text-to-speech/09-fort-flagler-tokens-cost/).
+
+### omitted format leaves response_format off the wire; alloy is still sent
+
+**What happens.** `RubyLLM.speak` without `voice:` or `format:` sends `"model":"tts-1"` and `"voice":"alloy"`. The request does not contain `response_format`. `Speech#format` is still `"mp3"` and `mime_type` is `"audio/mpeg"`. The bytes start with an MPEG frame sync.
+
+**Why it matters.** A test that requires `"response_format":"mp3"` in the cassette will fail even though the clip is MP3. The default voice is not omitted; RubyLLM writes `alloy`.
+
+**What to do.** Assert `Speech#format` and the missing `response_format` key. Name `voice:` when the desk must not be alloy.
+
+Shown in [Fort Worden welcome hail](features/17-text-to-speech/01-fort-worden-welcome-hail/).
+
+### aiff is a BadRequestError
+
+**What happens.** `format: "aiff"` on `tts-1` raises `RubyLLM::BadRequestError`. The message is `Invalid response_format`. The cassette is HTTP 400 and has no audio payload.
+
+**Why it matters.** AIFF is a real recorder format. Copying it onto this model fails before a hail is spoken.
+
+**What to do.** Use `mp3` or `wav`. Keep `max_retries` at 0 so Faraday does not double the 400.
+
+Shown in [Middle Point refused format](features/17-text-to-speech/12-middle-point-refused-format/).
+
+### instructions and speed merge onto tts-1
+
+**What happens.** `provider_options: { instructions: "...", speed: 0.85 }` is merged onto the payload. The Kala Point cassette request contains both `"instructions"` and `"speed":0.85` beside `"model":"tts-1"`. The call returns HTTP 200, not a 400.
+
+**Why it matters.** OpenAI's speech guide says `instructions` does not work with `tts-1` or `tts-1-hd`. RubyLLM still sends the field as-is. A watch that expects a refusal will not see one.
+
+**What to do.** Assert the keys actually present in the cassette. Use `gpt-4o-mini-tts` when the delivery instructions must change the voice.
+
+Shown in [Kala Point speed instructions](features/17-text-to-speech/08-kala-point-speed-instructions/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary
