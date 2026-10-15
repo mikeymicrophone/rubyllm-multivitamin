@@ -22,34 +22,34 @@ Official references: [Structured output](https://rubyllm.com/structured-output/)
 
 ## Models
 
-Schema turns were recorded on `gpt-4.1-mini` with `provider: :openai`. Decisions turns were recorded on `gpt-6-luna`. Both ids were on OpenAI's models list, and in RubyLLM's bundled registry, on 14 October 2026.
+Schema turns were re-recorded on `gpt-4.1-mini` with `provider: :openai` after OpenRouter `:free` slugs hit `free-models-per-day`. Decisions turns were recorded on `gpt-6-luna`. Both ids were on OpenAI's models list, and in RubyLLM's bundled registry, on 14 October 2026.
 
 `LIVE=1 LIVE_PROVIDER=openai` records the schema turns on OpenAI again. `LIVE=1 LIVE_PROVIDER=openrouter` overwrites a schema turn with `nvidia/nemotron-3-super-120b-a12b:free` (`structured_outputs`). Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `dots-studio/dots-3-note-preview:free`. Gemma's free models list `response_format` and do not list `structured_outputs`. Do not use them for `with_schema` until a cassette shows they honor the schema. Replay ignores `LIVE_PROVIDER`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson tide heights](01-point-wilson-tide-heights/) — available
-02. [New Dungeness lens drawers](02-new-dungeness-lens-drawers/) — available
-03. [Cape Disappointment blast pattern](03-cape-disappointment-blast-pattern/) — available
-04. [Anacortes retort card](04-anacortes-retort-card/) — available
-05. [Friday Harbor berth slip](05-friday-harbor-berth-slip/) — available
-06. [Neah Bay pilot checklist](06-neah-bay-pilot-checklist/) — available
-07. [Ediz Hook buoy ticket](07-ediz-hook-buoy-ticket/) — available
-08. [Smith Island weather round](08-smith-island-weather-round/) — available
-09. [Bremerton dry dock gate](09-bremerton-dry-dock-gate/) — available
-10. [Port Townsend slip wind](10-port-townsend-slip-wind/) — available
-11. [Port Angeles net ticket](11-port-angeles-net-ticket/) — available
-12. [Juan de Fuca chart reject](12-juan-de-fuca-chart-reject/) — available
-13. [Admiralty Inlet watch handover](13-admiralty-inlet-watch-handover/) — available
+01. [Ubud subak water board](01-ubud-subak-board/) — available
+02. [Thimphu thangka pigment drawers](02-thimphu-thangka-drawers/) — available
+03. [Yerevan duduk drone card](03-yerevan-duduk-drone/) — available
+04. [Hanoi phở stock card](04-hanoi-pho-stock/) — available
+05. [Stone Town spice stall](05-stone-town-spice-stall/) — available
+06. [Suva kava checklist](06-suva-kava-checklist/) — available
+07. [Lima trolleybus shoe ticket](07-lima-trolleybus-shoe/) — available
+08. [La Paz radiosonde clipboard](08-la-paz-radiosonde/) — available
+09. [Chengdu panda enclosure](09-chengdu-panda-gate/) — available
+10. [Windhoek HF skip board](10-windhoek-hf-skip/) — available
+11. [Iznik glaze ticket](11-iznik-glaze-ticket/) — available
+12. [Alexandria papyrus reject](12-alexandria-papyrus-reject/) — available
+13. [Tashkent fly-floor handover](13-tashkent-fly-floor/) — available
 
 ## What each scenario adds
 
 | Slot | What it adds |
 | --- | --- |
 | 01 | A flat Schematist schema, `response.parsed` as a Hash, string keys, and a title used as the schema name |
-| 02 | An array of objects, one per lens drawer |
+| 02 | An array of objects, one per pigment drawer |
 | 03 | An enum, then a Decisions `choice` on `gpt-6-luna` |
-| 04 | Nested objects for the cook, the vessel, and the temperatures |
+| 04 | Nested objects for the stock, the vessel, and the temperatures |
 | 05 | A manual JSON Schema hash, `additionalProperties: false`, default name `response` |
 | 06 | A custom schema `name:` on that hash |
 | 07 | Optional fields (`required: false`), `strict: false`, and which keys came back |
@@ -57,7 +57,7 @@ Schema turns were recorded on `gpt-4.1-mini` with `provider: :openai`. Decisions
 | 09 | `with_schema`, a prose turn with `with_schema(nil)`, then a second schema |
 | 10 | Streaming a schema. Joined chunks equal `content`. Parsed keys are strings |
 | 11 | Descriptions that steer a messy ticket, then a Decisions predicate |
-| 12 | A strict schema OpenAI rejects, a null union that stays strict, and a station check |
+| 12 | A strict schema OpenAI rejects, a null union that stays strict, and a shelfmark check |
 | 13 | Capstone: schema plus a tool, a follow-up still under the schema, then one Decisions call with a predicate and a choice |
 
 Planned titles are proposals, not commitments. See

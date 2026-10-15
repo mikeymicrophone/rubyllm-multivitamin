@@ -1,0 +1,229 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Tegalalang
+        weir board for Wednesday 14 October 2026.\nStation page: https://whc.unesco.org/en/list/1194\nLow
+        water 06:42, 0.4 cm at the weir.\nHigh water 12:18, 8.1 cm.\nWayan clears
+        the offtake at 10:46.\nKetut can take the terrace at 08:57."}],"instructions":"You
+        are the water clerk for Subak Pulagan at Tegalalang, Ubud.\nFill posted_subak_board
+        from the board in the question.\nCopy clock times and heights exactly. Do
+        not invent a reading.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"posted_subak_board","schema":{"description":"Times
+        and heights copied from the Tegalalang weir board","type":"object","properties":{"station":{"type":"string","description":"Subak
+        name, copied from the board"},"low_clock":{"type":"string","description":"Clock
+        time of low water, 24-hour HH:MM"},"low_height_cm":{"type":"number","description":"Low
+        water at the weir in centimetres, as a number"},"high_clock":{"type":"string","description":"Clock
+        time of high water, 24-hour HH:MM"},"high_height_cm":{"type":"number","description":"High
+        water at the weir in centimetres, as a number"},"wayan_clears":{"type":"string","description":"Clock
+        time Wayan clears the offtake"},"ketut_offtake":{"type":"string","description":"Clock
+        time Ketut can take the terrace"}},"required":["station","low_clock","low_height_cm","high_clock","high_height_cm","wayan_clears","ketut_offtake"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f4b079fa356e-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1048'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999650'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 10ms
+      X-Request-Id:
+      - req_fb0bb7cae2c54e308db847ea23cbbe4e
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03ef061bc2751faa016ad11e40aa5087d2b462be6cabb2871c",
+          "object": "response",
+          "created_at": 1792089664,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089665,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the water clerk for Subak Pulagan at Tegalalang, Ubud.\nFill posted_subak_board from the board in the question.\nCopy clock times and heights exactly. Do not invent a reading.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_03ef061bc2751faa016ad11e41459887d28175121a914c4e72",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"station\":\"Tegalalang\",\"low_clock\":\"06:42\",\"low_height_cm\":0.4,\"high_clock\":\"12:18\",\"high_height_cm\":8.1,\"wayan_clears\":\"10:46\",\"ketut_offtake\":\"08:57\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "posted_subak_board",
+              "schema": {
+                "description": "Times and heights copied from the Tegalalang weir board",
+                "type": "object",
+                "properties": {
+                  "station": {
+                    "type": "string",
+                    "description": "Subak name, copied from the board"
+                  },
+                  "low_clock": {
+                    "type": "string",
+                    "description": "Clock time of low water, 24-hour HH:MM"
+                  },
+                  "low_height_cm": {
+                    "type": "number",
+                    "description": "Low water at the weir in centimetres, as a number"
+                  },
+                  "high_clock": {
+                    "type": "string",
+                    "description": "Clock time of high water, 24-hour HH:MM"
+                  },
+                  "high_height_cm": {
+                    "type": "number",
+                    "description": "High water at the weir in centimetres, as a number"
+                  },
+                  "wayan_clears": {
+                    "type": "string",
+                    "description": "Clock time Wayan clears the offtake"
+                  },
+                  "ketut_offtake": {
+                    "type": "string",
+                    "description": "Clock time Ketut can take the terrace"
+                  }
+                },
+                "required": [
+                  "station",
+                  "low_clock",
+                  "low_height_cm",
+                  "high_clock",
+                  "high_height_cm",
+                  "wayan_clears",
+                  "ketut_offtake"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 331,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 57,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 388
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:05 GMT
+recorded_with: VCR 6.4.0

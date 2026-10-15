@@ -1,0 +1,289 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"El Alto
+        radiosonde round, Wednesday 14 October 2026, 07:00.\nCompare later with https://www.senamhi.gob.bo/\nAltimeter
+        30.12 inches.\nWind west at 8 knots. No gusts.\nAir 48 F.\nSky: smooth. The
+        balloon can leave the shed."}],"instructions":"You are the radiosonde watch
+        at El Alto, La Paz.\nFill balloon_round from the clipboard.\npressure_inhg,
+        wind_knots, and temperature_f must be numbers, not strings.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"balloon_round","schema":{"description":"El
+        Alto radiosonde clipboard","type":"object","properties":{"pressure_inhg":{"type":"number","description":"Altimeter
+        in inches of mercury, as a number, not a string"},"wind_knots":{"type":"integer","description":"Wind
+        speed in knots, as an integer"},"temperature_f":{"type":"number","description":"Air
+        temperature in Fahrenheit, as a number"},"direction":{"type":"string","description":"Wind
+        direction word from the clipboard"}},"required":["pressure_inhg","wind_knots","temperature_f","direction"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f4ff3ef1f442-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '803'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999482'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 15ms
+      X-Request-Id:
+      - req_9854d9c9aa164e6da0a66015d2dfc402
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0fe69ae95b204bc4016ad11e4ccc4487d28312dfb0288d219a",
+          "object": "response",
+          "created_at": 1792089676,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089677,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the radiosonde watch at El Alto, La Paz.\nFill balloon_round from the clipboard.\npressure_inhg, wind_knots, and temperature_f must be numbers, not strings.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0fe69ae95b204bc4016ad11e4d4bbc87d289255aebfce5967b",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"pressure_inhg\":30.12,\"wind_knots\":8,\"temperature_f\":48,\"direction\":\"west\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "balloon_round",
+              "schema": {
+                "description": "El Alto radiosonde clipboard",
+                "type": "object",
+                "properties": {
+                  "pressure_inhg": {
+                    "type": "number",
+                    "description": "Altimeter in inches of mercury, as a number, not a string"
+                  },
+                  "wind_knots": {
+                    "type": "integer",
+                    "description": "Wind speed in knots, as an integer"
+                  },
+                  "temperature_f": {
+                    "type": "number",
+                    "description": "Air temperature in Fahrenheit, as a number"
+                  },
+                  "direction": {
+                    "type": "string",
+                    "description": "Wind direction word from the clipboard"
+                  }
+                },
+                "required": [
+                  "pressure_inhg",
+                  "wind_knots",
+                  "temperature_f",
+                  "direction"
+                ],
+                "additionalProperties": false
+              },
+              "strict": true
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 221,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 25,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 246
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/decisions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-6-luna","input":"El Alto radiosonde round, Wednesday
+        14 October 2026, 07:00.\nCompare later with https://www.senamhi.gob.bo/\nAltimeter
+        30.12 inches.\nWind west at 8 knots. No gusts.\nAir 48 F.\nSky: smooth. The
+        balloon can leave the shed.","questions":[{"type":"score","name":"launch_state","instructions":"How
+        rough is the Altiplano for the balloon launch right now?","levels":[{"label":"0","description":"Calm
+        enough for the balloon to leave the shed"},{"label":"1","description":"Choppy.
+        Wait for a lull"},{"label":"2","description":"Too rough to leave"}]}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999787'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - x-request-id,retry-after,server-timing-total
+      Server-Timing-Total:
+      - '34.928'
+      Openai-Processing-Ms:
+      - '35'
+      X-Request-Id:
+      - req_52a000986210488c838e1896c8913fef
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Server:
+      - cloudflare
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b0f5052e564b85-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"gpt-6-luna","answers":[{"type":"score","name":"launch_state","score":0.02,"probabilities":[{"value":0,"label":"0","probability":0.98},{"value":1,"label":"1","probability":0.02},{"value":2,"label":"2","probability":0.0}],"confidence":0.97}],"usage":{"input_tokens":212,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":0,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":212}}'
+  recorded_at: Thu, 15 Oct 2026 18:41:17 GMT
+recorded_with: VCR 6.4.0

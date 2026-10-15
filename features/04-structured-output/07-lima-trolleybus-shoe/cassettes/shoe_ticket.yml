@@ -1,0 +1,209 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Lima trolleybus
+        shoe service, Wednesday 14 October 2026.\nDepot board: https://www.protransporte.gob.pe/\nCar:
+        Trolebús 12.\nLine reading 12.4 volts.\nNo replacement date on this ticket.\nPencil
+        note: shoe glazed."}],"instructions":"You are the shoe fitter at the Avenida
+        Arequipa depot in Lima.\nFill shoe_ticket from the ticket.\nOmit replaced_on.
+        The ticket has no date.\nInclude pencil_note, because the ticket has a note.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"shoe_ticket","schema":{"description":"Carbon-shoe
+        service for one Lima trolleybus","type":"object","properties":{"car":{"type":"string","description":"Car
+        number from the depot board"},"volts":{"type":"number","description":"Line
+        voltage as a number"},"replaced_on":{"type":"string","description":"ISO date
+        the shoe was replaced. Omit this field when the ticket gives no date."},"pencil_note":{"type":"string","description":"The
+        pencil note, when the ticket has one. Omit this field when the ticket has
+        no note."}},"required":["car","volts"],"additionalProperties":false},"strict":false}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:41:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0f4f6fd09356e-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '569'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999746'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 7ms
+      X-Request-Id:
+      - req_2ef495a9700e413fb366046d9bd24f60
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0d7784557ac0a032016ad11e4b7b4c87d2957b8648ea8734ba",
+          "object": "response",
+          "created_at": 1792089675,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792089675,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the shoe fitter at the Avenida Arequipa depot in Lima.\nFill shoe_ticket from the ticket.\nOmit replaced_on. The ticket has no date.\nInclude pencil_note, because the ticket has a note.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0d7784557ac0a032016ad11e4bd2bc87d2abda60c624d83ef0",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "{\"car\":\"Troleb\u00fas 12\",\"volts\":12.4,\"pencil_note\":\"shoe glazed\"}"
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "json_schema",
+              "description": null,
+              "name": "shoe_ticket",
+              "schema": {
+                "description": "Carbon-shoe service for one Lima trolleybus",
+                "type": "object",
+                "properties": {
+                  "car": {
+                    "type": "string",
+                    "description": "Car number from the depot board"
+                  },
+                  "volts": {
+                    "type": "number",
+                    "description": "Line voltage as a number"
+                  },
+                  "replaced_on": {
+                    "type": "string",
+                    "description": "ISO date the shoe was replaced. Omit this field when the ticket gives no date."
+                  },
+                  "pencil_note": {
+                    "type": "string",
+                    "description": "The pencil note, when the ticket has one. Omit this field when the ticket has no note."
+                  }
+                },
+                "required": [
+                  "car",
+                  "volts"
+                ],
+                "additionalProperties": false
+              },
+              "strict": false
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 235,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 25,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 260
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:41:16 GMT
+recorded_with: VCR 6.4.0
