@@ -37,7 +37,7 @@ deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
 `gpt-4o-transcribe-diarize`. Text to speech was recorded on OpenAI `tts-1`.
 Provider tools and citations were recorded on OpenAI `gpt-4.1-mini`.
-Tools, tool approval and loop control, the Point Wilson spoken handover, the
+Tools, tool approval and loop control, the Prague marionette handover, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -115,8 +115,8 @@ Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
 for the mid-chat switch) after OpenRouter `:free` slugs hit
-`free-models-per-day`. The earlier streaming cassettes are live OpenRouter
-recordings. Tools, the spoken handover, structured output, the
+`free-models-per-day`. Streaming was re-recorded live; the marionette
+handover stays on OpenAI `gpt-4.1-mini`. Tools, the spoken handover, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
 text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live
 OpenRouter recording. `usage.cost` is the number the provider reported.

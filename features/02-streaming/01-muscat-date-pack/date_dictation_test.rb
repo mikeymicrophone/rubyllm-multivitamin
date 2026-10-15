@@ -1,0 +1,67 @@
+# frozen_string_literal: true
+
+require "minitest/autorun"
+require "yaml"
+require_relative "date_dictation"
+
+class DateDictationTest < Minitest::Test
+  def test_the_block_hears_chunks_and_the_message_is_their_join
+    result = nil
+    Multivitamin::Cassettes.play(__dir__, "date_dictation") do
+      result = MuscatDatePack::DateDictation.conduct
+    end
+
+    assert_includes result.speech, "Zahra"
+    assert_includes result.speech, "10:46"
+    assert_match(/0\.4[[:space:]]kg/, result.speech)
+    assert_match(/8\.1[[:space:]]kg/, result.speech)
+    assert result.notes.all?(&:chunk)
+    assert_operator result.notes.size, :>, 1
+
+    assert result.notes.all? { |note| note.content.is_a?(String) }
+    assert_equal result.speech, result.notes.map { |note| note.content.to_s }.join
+    assert_equal result.thinking, result.notes.filter_map(&:thinking).join
+
+    reasoning = result.notes.select { |note| note.content.empty? && note.thinking }
+    assert_operator reasoning.size, :>, 0
+    assert_operator result.notes.count { |note| !note.content.empty? }, :>, 0
+
+    assert result.notes.all? { |note| note.model_id == result.model_id }
+    assert_includes result.model_id, "nemotron-3-super-120b-a12b"
+
+    usage = result.notes.select { |note| note.input_tokens }
+    assert_equal [result.notes.last], usage
+    assert_equal result.input_tokens, usage.last.input_tokens
+    assert_equal result.output_tokens, usage.last.output_tokens
+    assert_equal result.thinking_tokens, usage.last.thinking_tokens
+    assert_operator result.input_tokens, :>, 0
+    assert_operator result.output_tokens, :>, 0
+    assert_operator result.thinking_tokens, :>, 0
+    assert_equal result.finish_reason, usage.last.finish_reason
+    assert_equal :stop, result.finish_reason
+    assert_equal %i[system user assistant], result.roles
+  end
+
+  def test_cassette_does_not_carry_a_live_key
+    cassette = File.binread(File.expand_path("cassettes/date_dictation.yml", __dir__))
+
+    refute_match(/sk-(?:or-v1-)?[A-Za-z0-9_\-]{8,}/, cassette)
+    assert_includes cassette, "<OPENROUTER_API_KEY>"
+  end
+
+  def test_the_narrow_space_sse_body_is_stored_as_binary_yaml
+    raw = File.binread(File.expand_path("cassettes/date_dictation.yml", __dir__))
+
+    assert_includes raw, "!binary"
+    refute_includes raw, "data:"
+
+    loaded = YAML.load_file(File.expand_path("cassettes/date_dictation.yml", __dir__))
+    body = loaded.dig("http_interactions", 0, "response", "body", "string").dup.force_encoding("UTF-8")
+
+    assert_includes body, "data:"
+    assert_includes body, "data: [DONE]"
+    assert_includes body, "0.4\u202f"
+    assert_includes body, "\u202fkg"
+    refute_includes body, "0.4\u202fkg"
+  end
+end
