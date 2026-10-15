@@ -8,25 +8,25 @@ Local failures inherit from `StandardError` directly: `ConfigurationError`, `Pro
 
 Official reference: [Error handling](https://rubyllm.com/error-handling/).
 
-## Free models
+## Models
 
-`ConfigurationError` and `ModelNotFoundError` need no cassette. HTTP errors are cassettes: record a 401, a 429 with `Retry-After`, a 400, and a 503, or hand-author those status bodies in OpenRouter's error JSON. Fallback slug when the first free model is rate-limited: `liquid/lfm-2.5-2.6b:free`. Primary: `nvidia/nemotron-3-super-120b-a12b:free`. Free models are the ones most likely to answer 429. Checked 14 October 2026.
+`ConfigurationError`, `ModelNotFoundError`, `UnsupportedAttachmentError`, and the Point No Point timeout need no provider cassette. HTTP errors are live recordings: a 401 on a rejected OpenRouter key, a 429 on a free OpenRouter slug, a 400 on a broken OpenAI schema, and a 400 context overflow on `text-embedding-3-small`. Tool errors, cancellation, fallbacks that reach a working model, and the Restoration Point desk use OpenAI `gpt-4.1-mini`. Free-model 429s come and go with the shared pool and the daily `free-models-per-day` cap (reset 8 PM ET). Fallback slug when the first free model is gone: `liquid/lfm-2.5-2.6b:free`. Primary catalog chat slug: `nvidia/nemotron-3-super-120b-a12b:free`. Checked 15 October 2026.
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Missing OpenRouter key at the watch desk — planned
-02. Unknown model id for the station — planned
-03. A rejected key — planned
-04. Rate limit on the free tide model — planned
-05. A bad request and its request_shape — planned
-06. Fall back from one free model to another — planned
-07. Context length on a pasted logbook — planned
-08. A file the foghorn model will not take — planned
-09. A tool that returns an error versus a tool that raises — planned
-10. Cancel the in-flight brief — planned
-11. OpenRouter unavailable during the weather round — planned
-12. before_fallback and after_fallback on the watch — planned
-13. The desk rescues, logs the shape, and falls back — planned
+01. [Turn Point missing key](01-turn-point-missing-key/) — available
+02. [Patos Island unknown model](02-patos-island-unknown-model/) — available
+03. [Cattle Point rejected key](03-cattle-point-rejected-key/) — available
+04. [Iceberg Point rate limit](04-iceberg-point-rate-limit/) — available
+05. [Protection Island request shape](05-protection-island-request-shape/) — available
+06. [Hein Bank model fallback](06-hein-bank-model-fallback/) — available
+07. [Partridge Bank logbook](07-partridge-bank-logbook/) — available
+08. [Slip Point unsupported tape](08-slip-point-unsupported-tape/) — available
+09. [West Point gauge error](09-west-point-gauge-error/) — available
+10. [Browns Point cancelled brief](10-browns-point-cancelled-brief/) — available
+11. [Point No Point retries](11-point-no-point-retries/) — available
+12. [Foulweather Bluff fallback hooks](12-foulweather-bluff-fallback-hooks/) — available
+13. [Restoration Point error desk](13-restoration-point-error-desk/) — available
 
 ## What each scenario adds
 
@@ -34,17 +34,16 @@ Official reference: [Error handling](https://rubyllm.com/error-handling/).
 | --- | --- |
 | 01 | Unset key, `ConfigurationError`, no HTTP cassette |
 | 02 | `ModelNotFoundError` from `find`, not from a guessed id |
-| 03 | Cassette status 401 becomes `UnauthorizedError` |
-| 04 | Status 429 with `Retry-After` becomes `RateLimitError`; `max_retries` 0 so the cassette stays one call |
-| 05 | `BadRequestError#request_shape` has roles and sizes, not the board text |
-| 06 | `with_fallbacks` and a 503 then a 200; `on:` lists the classes |
-| 07 | `ContextLengthExceededError` is not followed by a second identical POST |
+| 03 | Cassette status 401 becomes `UnauthorizedError`; the shape omits the ledger |
+| 04 | Status 429 becomes `RateLimitError`; `max_retries` 0 so the cassette stays one call |
+| 05 | `BadRequestError#request_shape` has roles and sizes, not the auklet counts |
+| 06 | `with_fallbacks` skips a 400 until `on:` lists `BadRequestError` |
+| 07 | `ContextLengthExceededError` on an embedding; `request_shape` is nil |
 | 08 | `UnsupportedAttachmentError` before any request, so `request_shape` is nil |
 | 09 | One tool returns `{ error: }` and the model continues; the other raises |
 | 10 | `CancelledError` is not a `RubyLLM::Error` |
-| 11 | Status 503 becomes `ServiceUnavailableError` |
+| 11 | Faraday retries a timeout twice; the class is not `RubyLLM::Error` |
 | 12 | The callbacks see `fallback.from`, `fallback.to`, and `fallback.error` |
-| 13 | Capstone: rescue, log `request_shape.to_h`, fall back to the second free slug |
+| 13 | Capstone: rescue, log `request_shape.to_h`, ask again without the schema |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
