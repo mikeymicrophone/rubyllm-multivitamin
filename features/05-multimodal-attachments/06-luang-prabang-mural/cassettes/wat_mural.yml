@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":[{"type":"input_text","text":"How
+        many panels are on the wall, and which panel must the painter not gild?"},{"type":"input_image","image_url":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAggAAAD6CAMAAADz509qAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAABCUExURRAgKFpgXejdxExVUyUyN+bbwtXMtm9zbDlERpSTh4WGfMO9qaCekLq1ojI9QOfcw9/VvuLYwKqml11kYH2Ad+DWvs4+gd0AAAAHdElNRQfqCg8SKB+mL07yAAAKaUlEQVR42u3d6XajNgCGYRBaAIORIb3/W60WFgkwTj3JpNO+z4/EIQhh9CGE8DkuCgAAAAAAAAAAAAAAAAAAAAAAgH+hUlTup1Ta/2FE7X42onU/xeIWV+y09L967Ve7+x9CDGqw/lUoLIXxv+pOP2xvZCyVbCWUWlerRv3QjYy1Pi8/755Yd89VO7jN2bgJq7tqv6eHIss7KpZdSF5gEQ9/acOR6cLBs+EYlo7u3Y9qXlF37qdR1RoEU8b/urYx65aMuplyanQfSyVbyYJgRG/KD63vxXX5w+7N1ZZFMYlxKs3Y7Pf06TsiCJf06H40o578a9/WpRjF3Pjh78UkykLapliCMCzH0ojR9xahASoVi0izq6HIgjCvJu3tVfll98y8O1sT3m7pu+h29SVFfGTiOyIIFxrrftxM0y3nkmsVOx/WLAj+H324Psw9whaE6vExl+6sPNRwEoRlNSOqvPy4L7/fva3aebPHPX3+jgjChcldRaWqJh1futdN0T1ic+RBkFYP24llhlo64U/ZuPYLB92OxxqWIKhQ4J6udvcX76X8YHatu989Va9bcf/plJH7Op6/I7smuCgIwhnffpV1v2Q8ldyRLqo4btsFoWhF/HsOghueKTWGhpSPNmxIDs2xhjUIYUQ3+NXEsproYnkbyxeqebl7SolhcJuUvRC6qbI6siJqKeK6nUr5S996OSMIJ9wxbN1hdIOEcDRvflw1j9Xy81NqlYy5jJgqJ5yksmitlFsL+wZPztY5PioUKNVJENbyMQhDUn63e/NW/L1AUZvRLpEdP/OO6BGuuIF17y7RXRNOyVq1rudtYjvkQWhsFcaKxzGC9KPI5NJQVc1ZEOIYQaWXhqF9VT7fvWUrC9mr457u3pEI78ivRxCuuJ4z3BPqyY/cmth/qw//r+zSULkWDHePsYfNg1C0jyod7BlxuH6ng8UxHyxelc9379CEJt4PZEHYvyPlLydxNEIQnruLURX+xBlt4btQ3/NWfbgIZEEInWu4ZzsLgrRjevv3IghVHG1IfVvL6yfl891Lqo2/z/qup++IIFzSKowIrB/4lWIKy+KJlh7e1o/Z3ZXDrEFYZnZio83TQnFCyGh9GQQ/oTSVZplQOpT/SMqnu5dWq3u3YifGtI4X72idBNtmw7DpVJiAHWPXHJfFmaPk8NbxYuG68HqbYnbXkEEuZ69ep4jVNkVcFOdByKeYL8t3Ytu9pVo/liw7be3NZHWcFEnfkdmmu9PZcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPxfycp0Wg2izxfXbqlVum+efNOJiV/doZTWncm/uFO7/3wcV06/zM/9OSX/Ssl18fHrRAvp9kor63bL1D994P5jtBJCDbsgyA+9tUx/eshjEET8PkebfAlwUfkl+riyShr2zSAYm6yoicJXmo9qHoR6Xjo381mn4FtKew+xO927sKDaryxEl9WaBOGRugjCGHdHa3usAr/IHdixnXqxD4JtJv/9a2XvD/1JJ721VB2+JXBa/iFdMsas1ZcgqDqpNQ3C5eY3rc9evAzJqbME4UuV4cCOuyDora/vdpf3WdpSJr0WGH8xcWe5zFdW7mKzfQnXO0GQrn+6JcsYJXyDXRAyen/FD7KW8t3G0iw3/9V9vRAmX1mVaWf+ThAMV4PvdxWEdjgdt6UtZbaGrcOo0ORfp+eD4MIxrHW8E4TWbwTf6yoIRij1Igj+RmHuAZowPPDdeJ2trMJK5bzgnSC4LdufPk7/eZc9wumZ+CwIOvbfXTawCEHwlSzXmDd7BMGw4Ju9GCOc/O/JpWGaG7vMTt8YhHpdS74TBJ+228mq+EIXQZhEPvCbHQaLctlQ+EZeH58pXdl3Kt3aJbwOwsnAxE9y2aYkC9/oeRDk+U3Dk9tHuXbfTXq3OAfhruZM7XqE1HxBOQtCPc8r6s5w9/BNngfBneyPsyvz2lKyGgcxDHEY2K53C3U6pzwHwacjfhP8LgjDoPZBOOso7v02v9zSMXyHp0EY00nDVNqALgjxeuB77+UyclsuEsUWBGnnhXkQbKLdFp80ddXoZUrclgW+3LMgjOcDhGLp0ochnp9zq1ZJN2Dy2cZ449HO89VvTTFHcmr7+HyDJHy9J0F4ngPfUkN46HTrm7VFumRg4KcSqm3lGAQ/4vCd/ycGi4O46Pwn/eQRCH7NeRAucnDagP55k9ULtT15WoMQXt0/EwSlhqt2lv3FvuFtp0G4ysFpA/peIrsFWJ48bUHwo4juM/MI1z1CnJQYC3yxsyBc5uC0AW/uNM5vBs26skrK1b8yRljoizkwvOskCNc5OGspf8eY3uA3671kEoQiPI4mCP9SxyC8ugafPxXKpp6qdXYpDYJ/HF3+ehCk63y4NHy5QxBejsVOWsruP8GilwVpEPym9VvPGrLpxIbB4nfYB+H1mPzYUtPhgyPtMD95yoJQxeHDG08f+2ld5HOguX38Qh/hE6P+o8yPx1/2ESf2JrH7SOlxbv/YUv3hocT6uDELwvwZ1GcfXjXZ4r/mH7f4GFr1jZkm0/mnDup0xhNvas+e+Uy7J0HiE0Hwt4TtbqXlc4p5EGq1C8LJjcZ+sT4ssuTgS31ZEM4+N9LOK+VBiB94/8dBKGrTr8+meOj0P1eXxuEzCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+lrHLq3E8LNqZtNKf3hz+LP8gCFI1df3pzeHP8g+CUIlXMSAIf4jy9riVocGr3trxXswtty0vlkX1qG3vvzW+7vRDN7IomkEp1czrrOVb7V5qUyRl1xLhZfznWkPX++WhrrWKsI3m9e7ji1SqqyatR/9qrEqtZWw5/1dcHoTGtH1ZdQ/XBVRt6f7pmk+WopJy2dJSvnVtKY2okrJrCbeV21SZJq15C8JWRfvQ65bxG/ShcYRrhN4P+uSjiS033pblQVgURoW3bl5U+6tCcmmI5X3/0IaFtyYpu5UYl7FlrGHIgrBV0a45wm/xCD24Py9V61/55vEtty0PwqKwQuvbyvT68RClC8KwBmEr31r/qssuK2uJuFpW8xaErYpW/fSR+X+RIjRHP7pzObzqdGi5bXkUFqnH4y+rlG9pU98rMaU9wlzClw9ZmZs3lt1KzKulNW9BCFU8HqGKVzel+Fr2ske4pWe1au6BW92vWqssCGmPcAxCLOGjc9IjNP4iUfRdWgVB+M2ejhF8BKTKxgi3pVBIT7sLwlb+JAixhA/CbozgazahpB3TKgjCb1aJzo/1411DOSV3DUbK3u7uGqaqbFvfmHc/pZgHYSt/EoRYwgdhu2sQy33JXbWyHu2YVkEQfrdS21vpu+X9PIK78Tf5PMLdTwaMbjQvO23HasiDkM4j+D+zIMQSPghhqiDOI+hlpmKbswhVdBVB+BnSml/fyHvWqOGHNVU13fSPTd0QhH+L0ffF95+rniAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/0t+Xk3AviJhyOwAAAABJRU5ErkJggg=="},{"type":"input_image","image_url":"data:image/png;base64,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"}]}],"instructions":"You
+        are the mural painter at Wat Xieng Thong in Luang Prabang.\nThe first photograph
+        is the west wall.\nThe second photograph is the close-up of one panel.\nAnswer
+        in one sentence.\nInclude the panel count and the number of the cracked panel.\nDo
+        not invent a figure.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 18:46:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0fd194f1bff06-PDX
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '776'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998470'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 45ms
+      X-Request-Id:
+      - req_9f177beaccc64d7f83d86f15fccad5a1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0dd6ed05724e95e1016ad11f989bd487d0b30b14ad454b0789",
+          "object": "response",
+          "created_at": 1792090008,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792090009,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the mural painter at Wat Xieng Thong in Luang Prabang.\nThe first photograph is the west wall.\nThe second photograph is the close-up of one panel.\nAnswer in one sentence.\nInclude the panel count and the number of the cracked panel.\nDo not invent a figure.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0dd6ed05724e95e1016ad11f991c5c87d09f4a3238a4f3f30e",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "There are 12 panels on the west wall, and the painter must not gild panel 5 due to its cracked gesso."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 532,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 27,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 559
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 18:46:49 GMT
+recorded_with: VCR 6.4.0
