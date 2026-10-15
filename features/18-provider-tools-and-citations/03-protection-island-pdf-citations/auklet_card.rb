@@ -43,7 +43,14 @@ module ProtectionIslandPdfCitations
 
     def self.conduct
       log = StringIO.new
-      configure(log)
+      station_logger = Logger.new(log)
+      station_logger.level = Logger::WARN
+      configure(station_logger)
+      # RubyLLM.logger is memoized from the first Logger it builds. A later
+      # config.logger = does not take effect until that memo is cleared.
+      # Confirmed by the Smith Island logger scenario.
+      RubyLLM.instance_variable_set(:@logger, nil)
+
       chat = open_chat
       chat.with_instructions(INSTRUCTIONS)
       chat.with_citations
@@ -56,6 +63,8 @@ module ProtectionIslandPdfCitations
         finish: brief.finish_reason,
         cost: brief.cost.total
       )
+    ensure
+      RubyLLM.instance_variable_set(:@logger, nil)
     end
 
     def self.open_chat
@@ -65,14 +74,13 @@ module ProtectionIslandPdfCitations
       chat
     end
 
-    def self.configure(log)
+    def self.configure(station_logger)
       RubyLLM.configure do |config|
         Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(log)
-        config.logger.level = Logger::WARN
+        config.logger = station_logger
       end
     end
   end

@@ -769,13 +769,13 @@ Shown in [Sequim search context](features/18-provider-tools-and-citations/02-seq
 
 ### with_citations on OpenAI warns and leaves document citations empty
 
-**What happens.** `chat.with_citations` then `ask(..., with: pdf)` on `gpt-4.1-mini` logs a warning matching `does not support citations` and the model id. `response.citations` is `[]`. The model still reads the PDF: the Protection Island brief contains `240` and `10:46`. The request body has `"type":"input_file"` and `data:application/pdf;base64,`.
+**What happens.** `chat.with_citations` then `ask(..., with: pdf)` on `gpt-4.1-mini` logs a warning matching `does not support citations` and the model id. The warning is on `RubyLLM.logger`, which is memoized: a later `config.logger =` does not receive it until `@logger` is cleared. `response.citations` is `[]`. The model still reads the PDF: the Protection Island brief contains `240` and `10:46`. The request body has `"type":"input_file"` and `data:application/pdf;base64,`.
 
 **Why it matters.** Turning the flag on does not make OpenAI cite the attached card. A watch that requires `citations.any?` after a PDF ask will fail even when the clerk copied the figures.
 
-**What to do.** Read the content. Use Anthropic, Cohere, or Bedrock Converse when document citations must be filled. Use web search or file search when this catalog needs `Citation` objects on OpenAI.
+**What to do.** Read the content. Use Anthropic, Cohere, or Bedrock Converse when document citations must be filled. Use web search or file search when this catalog needs `Citation` objects on OpenAI. Clear `@logger` after pointing `config.logger` at a StringIO, the same way Smith Island does.
 
-Shown in [Protection Island PDF citations](features/18-provider-tools-and-citations/03-protection-island-pdf-citations/).
+Shown in [Protection Island PDF citations](features/18-provider-tools-and-citations/03-protection-island-pdf-citations/). See also [Smith Island logger](features/09-configuration-and-contexts/06-smith-island-logger/).
 
 ### SearchResults becomes JSON; OpenAI does not cite it
 
