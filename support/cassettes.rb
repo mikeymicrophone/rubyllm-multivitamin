@@ -46,6 +46,17 @@ module Multivitamin
     # Not scenario copy.
     MULTIPART_BOUNDARY_HEX = "multivitamin000000000000000000"
 
+    # Short silent clips so speech cassettes do not store kilobytes of
+    # MPEG or WAV. Not scenario copy. MP3 starts with a frame sync so
+    # replay still looks like OpenAI's tts-1 payload.
+    TINY_MP3 = Base64.decode64(
+      "/+MYxAAAAANIAAAAAExBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV/+MYxDsAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV/+MYxHYAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"
+    ).freeze
+    TINY_WAV = Base64.decode64(
+      "UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQIAAAAAAA=="
+    ).freeze
+    AUDIO_KEEP_BYTES = 512
+
     module_function
 
     def live?
@@ -178,6 +189,27 @@ module Multivitamin
       scrub_headers(interaction.response.headers)
       interaction.request.body = scrub_text(interaction.request.body)
       interaction.response.body = shrink_image_payload(scrub_text(interaction.response.body))
+      shrink_audio_payload!(interaction)
+    end
+
+    def shrink_audio_payload!(interaction)
+      body = interaction.response.body
+      return unless body.is_a?(String) && body.bytesize > AUDIO_KEEP_BYTES
+      return unless interaction.request.uri.to_s.include?("/audio/speech")
+
+      headers = interaction.response.headers
+      content_type = ""
+      headers&.each do |name, value|
+        content_type = Array(value).join if name.to_s.downcase == "content-type"
+      end
+      return if content_type.include?("application/json")
+      return if body.lstrip.start_with?("{")
+
+      request_body = interaction.request.body.to_s
+      wav = request_body.include?('"response_format":"wav"') ||
+            content_type.include?("wav") ||
+            body.start_with?("RIFF")
+      interaction.response.body = wav ? TINY_WAV : TINY_MP3
     end
 
     def shrink_image_payload(body)

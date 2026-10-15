@@ -81,6 +81,12 @@ module Multivitamin
     OPENAI_TRANSCRIBE_WHISPER = "whisper-1"
     OPENAI_TRANSCRIBE_DIARIZE = "gpt-4o-transcribe-diarize"
 
+    # Cheapest OpenAI speech model on https://api.openai.com/v1/models on
+    # 15 October 2026. tts-1 is $15 per 1M characters. tts-1-hd is $30.
+    # gpt-4o-mini-tts is token-priced and is the gem default. This catalog
+    # bottles tts-1. LIVE_PROVIDER does not switch this.
+    OPENAI_SPEECH = "tts-1"
+
     module_function
 
     # The provider a scenario was bottled with. LIVE=1 LIVE_PROVIDER=openai
@@ -121,6 +127,12 @@ module Multivitamin
     # LIVE_PROVIDER does not switch this: the OpenRouter payload differs.
     def transcribe(model: OPENAI_TRANSCRIBE, **extra)
       { model: model, provider: :openai }.merge(extra)
+    end
+
+    # kwargs for RubyLLM.speak on the bottled OpenAI speech model.
+    # LIVE_PROVIDER does not switch this.
+    def speech(**extra)
+      { model: OPENAI_SPEECH, provider: :openai }.merge(extra)
     end
 
     # kwargs for RubyLLM.paint on the bottled OpenAI image model.
