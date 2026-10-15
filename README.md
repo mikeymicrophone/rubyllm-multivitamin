@@ -37,7 +37,7 @@ deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
 `gpt-4o-transcribe-diarize`. Text to speech was recorded on OpenAI `tts-1`.
 Provider tools and citations were recorded on OpenAI `gpt-4.1-mini`.
-Tools, tool approval and loop control, the Prague marionette handover, the
+Tools, tool approval and loop control, streaming, the
 schema turns, the attachment scenarios, and the Rails integration chats
 were recorded on OpenAI `gpt-4.1-mini`.
 Decisions calls in the structured-output feature were recorded on OpenAI
@@ -115,8 +115,8 @@ Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
 for the mid-chat switch) after OpenRouter `:free` slugs hit
-`free-models-per-day`. Streaming was re-recorded live; the marionette
-handover stays on OpenAI `gpt-4.1-mini`. Tools, the spoken handover, structured output, the
+`free-models-per-day`. Streaming was re-recorded on OpenAI `gpt-4.1-mini`
+after the same cap. Tools, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
 text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live
 OpenRouter recording. `usage.cost` is the number the provider reported.
@@ -155,7 +155,7 @@ stay on a model that lists `structured_outputs`.
 `gpt-4.1-mini` was confirmed on `https://api.openai.com/v1/models` on
 14 October 2026. `gpt-4.1-nano` is cheaper and shuts down on 2026-10-23.
 `gpt-5-nano` is cheaper, does not take temperature, and is a reasoning model.
-The tools cassettes, the spoken handover, the schema turns, and the
+The tools cassettes, streaming, the schema turns, and the
 attachment scenarios use `gpt-4.1-mini` for that reason. Audio attachments
 use `gpt-audio-mini`. Decisions turns use `gpt-6-luna` because that is the
 model OpenAI's Decisions API accepts. RubyLLM reaches it with

@@ -4,8 +4,9 @@
 #
 # Teaches:
 # - Empty chunks and reasoning-only chunks are not spoken on the control phone.
-# - A tight with_max_output_tokens can stream reasoning and return nil content.
-# - The draft of that clipped note is on thinking.
+# - A tight with_max_output_tokens can cut the timing. On a reasoning model
+#   the cap can fill with thinking and return nil content. On gpt-4.1-mini
+#   the cap is max_output_tokens and the spoken fragment is short.
 
 require "logger"
 require "ruby_llm"
@@ -14,11 +15,10 @@ require_relative "../../../support/models"
 
 module ParanalShutterTiming
   # The night astronomer times the UT1 Nasmyth shutter, then tries to
-  # dictate a second timing under a cap that the reasoning fills.
+  # dictate a second timing under a tight output cap.
   class ShutterTiming
     INSTRUCTIONS = <<~TEXT.strip
       You are the night astronomer at Cerro Paranal in the Atacama.
-      Speak one short sentence.
       Use only the timing card.
       Name the open of 0.4 seconds and the closed of 9.6 seconds.
     TEXT
@@ -28,16 +28,18 @@ module ParanalShutterTiming
       Observatory notes: https://www.eso.org/public/teles-instr/paranal-observatory/vlt/
       UT1 Nasmyth, enclosure closed, lamp burning on the guide probe.
       Open 0.4 seconds. Closed 9.6 seconds.
-      Speak the timing for the control phone.
+      Speak the timing for the control phone in one short sentence.
     TEXT
 
     CLIPPED_QUESTION = <<~TEXT.strip
       The relief asks for the same Paranal UT1 Nasmyth timing again.
-      Open 0.4 seconds. Closed 9.6 seconds. UT1 Nasmyth.
-      Speak it in two sentences.
+      Open 0.4 seconds. Closed 9.6 seconds. UT1 Nasmyth, enclosure closed,
+      lamp burning on the guide probe.
+      Write two sentences that name the open, the closed, Nasmyth, UT1,
+      the enclosure, and the guide probe.
     TEXT
 
-    CLIP = 64
+    CLIP = 16
 
     Result = Struct.new(
       :speech,
@@ -98,12 +100,12 @@ module ParanalShutterTiming
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

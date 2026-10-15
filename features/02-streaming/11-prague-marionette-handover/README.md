@@ -32,14 +32,19 @@ bundle exec ruby features/02-streaming/11-prague-marionette-handover/marionette_
 
 Both commands replay the cassette. No API key is required.
 
-Re-record it on OpenAI:
+The cassette is a live recording of OpenAI `gpt-4.1-mini`.
+Re-record it with:
 
 ```sh
-LIVE=1 LIVE_PROVIDER=openai OPENAI_API_KEY=... bundle exec ruby features/02-streaming/11-prague-marionette-handover/marionette_handover_test.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/02-streaming/11-prague-marionette-handover/marionette_handover_test.rb
 ```
 
-`LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-super-120b-a12b:free` instead and overwrites this cassette. The helper strips `Authorization` and `OPENAI_API_KEY` before the file is written. Do not hand-author the cassette.
+`LIVE=1` overwrites the cassette. The helper strips `Authorization` and any
+`sk-` token before the file is written. `LIVE_PROVIDER=openrouter` records
+the free slug instead.
 
 **Model**
 
-Recorded on `gpt-4.1-mini` with `provider: :openai`. The id was on OpenAI's models list on 14 October 2026. OpenRouter's free chat model remains the alternative for a re-record: `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter
+`:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback:
+`gpt-4o-mini`. Re-record on the free slug with `LIVE_PROVIDER=openrouter`.

@@ -2,26 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://openrouter.ai/api/v1/chat/completions
+    uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
-        are the retort clerk at the Anacortes cannery.\nCall the come-up in one sentence
-        that lists the four temperatures in order.\nUse only the cook card.\nDo not
-        invent a temperature."},{"role":"user","content":"Come-up card for Wednesday
-        14 October 2026, retort No. 2, sockeye halves, basket 3.\nThe tender ties
-        at the Port of Anacortes marina, https://www.portofanacortes.com/.\n05:12,
-        180 F.\n05:18, 210 F.\n05:24, 240 F.\n05:31, 242 F, and the cook holds there.\nCall
-        the climb for the office."}],"stream":true,"temperature":0.2,"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Come-up
+        card for Wednesday 14 October 2026, kiln No. 2, red facing bricks, rack 3.\nField
+        notes: https://www.bhaktapur.com/\n05:12, 180 C.\n05:18, 210 C.\n05:24, 240
+        C.\n05:31, 242 C, and the fire holds there.\nCall the climb for the office."}],"instructions":"You
+        are the kiln clerk at the Bhaktapur brick field outside Kathmandu.\nCall the
+        come-up in one sentence that lists the four temperatures in order.\nUse only
+        the fire card.\nDo not invent a temperature.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENROUTER_API_KEY>
-      Http-Referer:
-      - https://github.com/mikeymicrophone/rubyllm-multivitamin
-      X-Openrouter-Title:
-      - RubyLLM Multivitamin
+      - Bearer <OPENAI_API_KEY>
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -34,55 +29,207 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 10:43:23 GMT
+      - Thu, 15 Oct 2026 17:43:36 GMT
       Content-Type:
-      - text/event-stream
+      - text/event-stream; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Generation-Id:
-      - gen-1791974602-C8OyGiW2hJQakyJHeNgw
-      Access-Control-Expose-Headers:
-      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
-      Permissions-Policy:
-      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
-        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
-      Referrer-Policy:
-      - no-referrer, strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
+      Cf-Ray:
+      - a4b0a081efa0c98c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
       Server:
       - cloudflare
-      Cf-Ray:
-      - a4a5fb946cd55ec6-PDX
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '545'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999845'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 4ms
+      X-Request-Id:
+      - req_4c7ba974379741c7abfa99844845ea6b
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |+
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"1","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_00b5c84ec54ad865016ad110c81c6887d28663df0588e62a4f","object":"response","created_at":1792086216,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the kiln clerk at the Bhaktapur brick field outside Kathmandu.\nCall the come-up in one sentence that lists the four temperatures in order.\nUse only the fire card.\nDo not invent a temperature.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"80 F","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_00b5c84ec54ad865016ad110c81c6887d28663df0588e62a4f","object":"response","created_at":1792086216,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the kiln clerk at the Bhaktapur brick field outside Kathmandu.\nCall the come-up in one sentence that lists the four temperatures in order.\nUse only the fire card.\nDo not invent a temperature.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":", 21","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"0 F, ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"240 F","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"TzOhKF4IO7jjr","output_index":0,"sequence_number":4}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":", 24","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" come","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"ZjMTohIRB8O","output_index":0,"sequence_number":5}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"2 F","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-up","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"1LFaYRqDnfOcm","output_index":0,"sequence_number":6}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" for","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"21BgDLIA9viw","output_index":0,"sequence_number":7}
 
-        data: {"id":"gen-1791974602-C8OyGiW2hJQakyJHeNgw","object":"chat.completion.chunk","created":1791974602,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":176,"completion_tokens":23,"total_tokens":199,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Wednesday","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"HRoywy","output_index":0,"sequence_number":8}
 
-        data: [DONE]
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"wVhi6517NUPHvLF","output_index":0,"sequence_number":9}
 
-  recorded_at: Wed, 14 Oct 2026 10:43:23 GMT
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"14","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"Butkw4EF0qXd6J","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" October","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"D9j2wr5P","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"mCnoz32IV2QEUsw","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"202","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"CTgOOhFMxdjN8","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"11Xlhdw74WZz0Mu","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"1Cht8l2A9J6hkrK","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" kiln","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"o4ibFAdeZJK","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" No","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"WxLaWvee7IGcU","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"ZMwA9Ewdyw2Nu4D","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"gTGCpaE8iO5XuHz","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"2","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"2kissY5UupMZTya","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"GWZkPYsvscfbkNs","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" red","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"9VZKeWHToxP9","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" facing","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"VTLrKtrSF","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" bricks","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"pdnvTwa17","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"fy8s7pHdGrJARhQ","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" rack","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"to1inJu6eKx","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"Ak9tfbH4ipdlqLI","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"3","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"CNNOgtq7w10aRMP","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"32StLWFjyQH5IMO","output_index":0,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"krsk2Sg3ZEjob","output_index":0,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"LQG6vY2553bUbg2","output_index":0,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"180","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"vcKyAT3j7X0Cx","output_index":0,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" C","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"DIM3eG6odTIgIZ","output_index":0,"sequence_number":33}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"YVWfbCG5rtjosIR","output_index":0,"sequence_number":34}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"Znnp7xMIUDP8EjK","output_index":0,"sequence_number":35}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"210","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"Yv7REjdY5UZf3","output_index":0,"sequence_number":36}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" C","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"9w8jY1OgTlGbuP","output_index":0,"sequence_number":37}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"H6sEoWsCPXh1ZmT","output_index":0,"sequence_number":38}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"cg8cm8hOfa6SHU9","output_index":0,"sequence_number":39}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"240","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"GmfmLLsq2E3FH","output_index":0,"sequence_number":40}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" C","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"CmfqTfYrH4k3Rz","output_index":0,"sequence_number":41}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"RbT0LPyyONVBP9q","output_index":0,"sequence_number":42}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"tGmjzBCydZ9Tas7","output_index":0,"sequence_number":43}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"242","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"5oloqmL5x2KD4","output_index":0,"sequence_number":44}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" C","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"MkSdUE8TnOfACM","output_index":0,"sequence_number":45}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"obfuscation":"XJ7kSQRYEhOGDGN","output_index":0,"sequence_number":46}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","logprobs":[],"output_index":0,"sequence_number":47,"text":"The come-up for Wednesday 14 October 2026, kiln No. 2, red facing bricks, rack 3, is 180 C, 210 C, 240 C, 242 C."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"The come-up for Wednesday 14 October 2026, kiln No. 2, red facing bricks, rack 3, is 180 C, 210 C, 240 C, 242 C."},"sequence_number":48}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The come-up for Wednesday 14 October 2026, kiln No. 2, red facing bricks, rack 3, is 180 C, 210 C, 240 C, 242 C."}],"role":"assistant"},"output_index":0,"sequence_number":49}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_00b5c84ec54ad865016ad110c81c6887d28663df0588e62a4f","object":"response","created_at":1792086216,"status":"completed","access_programs":null,"background":false,"completed_at":1792086217,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the kiln clerk at the Bhaktapur brick field outside Kathmandu.\nCall the come-up in one sentence that lists the four temperatures in order.\nUse only the fire card.\nDo not invent a temperature.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_00b5c84ec54ad865016ad110c8a29887d2a03a85a3a01230f4","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The come-up for Wednesday 14 October 2026, kiln No. 2, red facing bricks, rack 3, is 180 C, 210 C, 240 C, 242 C."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":136,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":44,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":180},"user":null,"metadata":{}},"sequence_number":50}
+
+  recorded_at: Thu, 15 Oct 2026 17:43:37 GMT
 recorded_with: VCR 6.4.0
 ...

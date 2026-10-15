@@ -8,12 +8,14 @@ again yields the same pieces.
 
 - Each non-empty `chunk.content` is written to an IO, then flushed, so a
   terminal shows the card as the stream is parsed.
-- `with_thinking(false)` sends `"reasoning":{"enabled":false}`. The log
-  does not collect reasoning chunks.
-- Passing a block sets `"stream":true` and
-  `"stream_options":{"include_usage":true}` on the Chat Completions body.
+- `Multivitamin::Models.quiet_thinking` sends `"reasoning":{"enabled":false}`
+  on OpenRouter. On `gpt-4.1-mini` that call is a no-op (`with_thinking(false)`
+  raises), and the log still collects no thinking chunks.
+- Passing a block sets `"stream":true`. OpenAI Responses streams
+  `response.output_text.delta` events. Chat Completions also sends
+  `stream_options: { include_usage: true }` and a closing `data: [DONE]`.
 - The response `Content-Type` is `text/event-stream`. The body is `data:`
-  lines and a closing `data: [DONE]`.
+  lines.
 - A second play of that cassette yields the same pieces. The live model
   does not: two recordings of this card were not the same words, so the
   test compares replays, not two live calls.
@@ -38,20 +40,21 @@ bundle exec ruby features/02-streaming/02-reykjavik-well-log/well_log_test.rb
 Both commands replay the cassette. No API key is required. The test plays
 the cassette a second time and checks that the pieces match.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`.
+The cassette is a live recording of OpenAI `gpt-4.1-mini`.
 Re-record it with the test. `LIVE=1` writes one interaction; the second
 play in the test runs only on replay.
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/02-streaming/02-reykjavik-well-log/well_log_test.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/02-streaming/02-reykjavik-well-log/well_log_test.rb
 ```
 
 `LIVE=1` overwrites the cassette. The helper strips `Authorization` and any
-`sk-or-v1-` token before the file is written. This SSE body is ASCII, so
+`sk-` token before the file is written. This SSE body is ASCII, so
 the `data:` lines are plain YAML. A body that contains a character above
 127, such as the date-pack dictation, is stored as `!binary` instead.
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug
-is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter
+`:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback:
+`gpt-4o-mini`. Re-record on the free slug with `LIVE_PROVIDER=openrouter`.

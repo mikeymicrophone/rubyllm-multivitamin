@@ -933,7 +933,7 @@ Shown in [Seabeck Rails approval job](features/19-tool-approval-and-loop-control
 
 ### A non-ASCII SSE body is stored as YAML !binary
 
-**What happens.** The date-pack cassette contains U+202F, and VCR wrote that response body as YAML `!binary`. A raw read of the file does not contain `data:`. `YAML.load_file` returns the body, and forcing UTF-8 shows the `data:` lines and the narrow space. One delta ends in `0.4\u202f` and the next begins with `kg`, so the contiguous `0.4\u202fkg` is on the joined speech, not in a single SSE line. An ASCII SSE cassette, such as the well log, keeps the `data:` lines as plain YAML. Neither file contains `sk-or-`. The placeholder `<OPENROUTER_API_KEY>` is in the raw bytes of both.
+**What happens.** An SSE body that contains U+202F is stored by VCR as YAML `!binary`. A raw read of the file does not contain `data:`. `YAML.load_file` returns the body, and forcing UTF-8 shows the `data:` lines and the narrow space. On the original OpenRouter date-pack recording, one delta ends in `0.4\u202f` and the next begins with `kg`, so the contiguous `0.4\u202fkg` is on the joined speech, not in a single SSE line. An ASCII SSE cassette, such as the well log, keeps the `data:` lines as plain YAML. Neither file contains a live `sk-` token. The placeholder is `<OPENAI_API_KEY>` on the bottled OpenAI recordings.
 
 **Why it matters.** `grep data:` across `cassettes/*.yml` misses the date-pack dictation. A test that scans the YAML text for a packed weight will not see it.
 
@@ -985,7 +985,7 @@ Shown in [Brussels chocolate tempering board](features/01-chat-basics/10-brussel
 
 ### This free model puts U+202F beside a number
 
-**What happens.** Replies from `nvidia/nemotron-3-super-120b-a12b:free` often separate a word and a numeral with U+202F (narrow no-break space), as in `rack\u202f3` and `242\u202f°C`. The same character shows up between a numeral and a unit. The Muscat date-pack dictation contains `0.4\u202fkg` and `8.1\u202fkg`. A Ruby regexp `\s` does not match that character. `[[:space:]]` and `\p{Space}` do. It is not on every number: the Sheffield heat-lot stream wrote `Rack 3` with a normal space.
+**What happens.** Replies from `nvidia/nemotron-3-super-120b-a12b:free` often separate a word and a numeral with U+202F (narrow no-break space), as in `rack\u202f3` and `242\u202f°C`. The same character shows up between a numeral and a unit. The original OpenRouter Muscat date-pack dictation contains `0.4\u202fkg` and `8.1\u202fkg`. A Ruby regexp `\s` does not match that character. `[[:space:]]` and `\p{Space}` do. It is not on every number: the Sheffield heat-lot stream wrote `Rack 3` with a normal space.
 
 **Why it matters.** `assert_includes reply, "rack 3"` and `/0\.4\skg/` fail on a reply that a person would read as "rack 3" or "0.4 kg".
 

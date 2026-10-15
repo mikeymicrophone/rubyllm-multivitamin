@@ -25,6 +25,6 @@ class BlocoBroadcastTest < Minitest::Test
     cassette = File.read(File.expand_path("cassettes/bloco_broadcast.yml", __dir__))
 
     refute_match(/sk-(?:or-v1-)?[A-Za-z0-9_\-]{8,}/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 end

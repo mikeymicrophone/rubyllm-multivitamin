@@ -29,7 +29,7 @@ class TanneryHaltTest < Minitest::Test
     cassette = File.read(File.expand_path("cassettes/tannery_halt.yml", __dir__))
 
     refute_match(/sk-(?:or-v1-)?[A-Za-z0-9_\-]{8,}/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 
   def stream_body
@@ -42,9 +42,11 @@ class TanneryHaltTest < Minitest::Test
       next unless line.start_with?("data:")
 
       payload = line.delete_prefix("data:").strip
-      next if payload == "[DONE]"
+      next if payload.empty? || payload == "[DONE]"
 
-      content = JSON.parse(payload).dig("choices", 0, "delta", "content").to_s
+      parsed = JSON.parse(payload)
+      content = parsed.dig("choices", 0, "delta", "content").to_s
+      content = parsed["delta"].to_s if content.empty? && parsed["type"] == "response.output_text.delta"
       content unless content.empty?
     end
   end

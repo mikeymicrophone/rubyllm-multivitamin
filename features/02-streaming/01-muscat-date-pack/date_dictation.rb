@@ -22,7 +22,8 @@ module MuscatDatePack
       You are the packing clerk at the Muttrah date loft in Muscat.
       Dictate the board in two short sentences.
       Use only the board in the question.
-      Name the packer Zahra and the time 10:46.
+      Name the packer Zahra, the time 10:46, the leftover 0.4 kg of Fardh,
+      and the packed peak of 8.1 kg.
       Do not invent a kilogram figure.
     TEXT
 
@@ -97,12 +98,12 @@ module MuscatDatePack
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

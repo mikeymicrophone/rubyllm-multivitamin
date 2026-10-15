@@ -2,26 +2,21 @@
 http_interactions:
 - request:
     method: post
-    uri: https://openrouter.ai/api/v1/chat/completions
+    uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
-        are the label clerk at the Anacortes cannery.\nWrite two short sentences.\nThe
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Label for
+        Wednesday 14 October 2026, morning heat, table knives.\nWorks notes: https://www.simt.co.uk/kelham-island-museum\nLot
+        code: SHF-2026-1014-R2-B3.\nRack 3. Furnace No. 2. Soak 75 minutes at 242
+        C.\nWrite the label copy."}],"instructions":"You are the stamp clerk at the
+        Kelham Island cutlery works in Sheffield.\nWrite two short sentences.\nThe
         first sentence contains the lot code exactly as given.\nThe second sentence
-        names basket 3 and retort No. 2.\nDo not invent a code."},{"role":"user","content":"Label
-        for Wednesday 14 October 2026, morning cook, sockeye halves.\nThe tender ties
-        at the Port of Anacortes marina, https://www.portofanacortes.com/.\nLot code:
-        ANC-2026-1014-R2-B3.\nBasket 3. Retort No. 2. Cook 75 minutes at 242 F.\nWrite
-        the label copy."}],"stream":true,"temperature":0.2,"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+        names rack 3 and furnace No. 2.\nDo not invent a code.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENROUTER_API_KEY>
-      Http-Referer:
-      - https://github.com/mikeymicrophone/rubyllm-multivitamin
-      X-Openrouter-Title:
-      - RubyLLM Multivitamin
+      - Bearer <OPENAI_API_KEY>
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -34,59 +29,156 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 10:43:28 GMT
+      - Thu, 15 Oct 2026 17:43:49 GMT
       Content-Type:
-      - text/event-stream
+      - text/event-stream; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Generation-Id:
-      - gen-1791974607-i2mndp1Bm09hcw78hGbL
-      Access-Control-Expose-Headers:
-      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
-      Permissions-Policy:
-      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
-        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
-      Referrer-Policy:
-      - no-referrer, strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
+      Cf-Ray:
+      - a4b0a0d14c35150b-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
       Server:
       - cloudflare
-      Cf-Ray:
-      - a4a5fbb3aa4e0c31-PDX
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '343'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999843'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 4ms
+      X-Request-Id:
+      - req_59cbb560005e41389a84eb4f9727f834
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |+
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"AN","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_0dc85f6167cbb5ab016ad110d4c0b487d2bc09613a928c1504","object":"response","created_at":1792086228,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the stamp clerk at the Kelham Island cutlery works in Sheffield.\nWrite two short sentences.\nThe first sentence contains the lot code exactly as given.\nThe second sentence names rack 3 and furnace No. 2.\nDo not invent a code.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"C-20","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_0dc85f6167cbb5ab016ad110d4c0b487d2bc09613a928c1504","object":"response","created_at":1792086228,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the stamp clerk at the Kelham Island cutlery works in Sheffield.\nWrite two short sentences.\nThe first sentence contains the lot code exactly as given.\nThe second sentence names rack 3 and furnace No. 2.\nDo not invent a code.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"26-1","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"014-R","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"2-B3  ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Lot","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"l4tPxZunFgbKL","output_index":0,"sequence_number":4}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"\nBasket 3","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" code","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"Nql1aaq29Wk","output_index":0,"sequence_number":5}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":",","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" SH","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"J9xRiP6QXu3kh","output_index":0,"sequence_number":6}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" Retort No.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"F","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"CBpfzYQU89y8MfY","output_index":0,"sequence_number":7}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 2.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"MIlqQ2rLuRoBzib","output_index":0,"sequence_number":8}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"202","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"WThYPWB4gwp55","output_index":0,"sequence_number":9}
 
-        data: {"id":"gen-1791974607-i2mndp1Bm09hcw78hGbL","object":"chat.completion.chunk","created":1791974607,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":161,"completion_tokens":30,"total_tokens":191,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"ksGtbzbVHK3KZNC","output_index":0,"sequence_number":10}
 
-        data: [DONE]
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"zQw4PJlqcWpnwG6","output_index":0,"sequence_number":11}
 
-  recorded_at: Wed, 14 Oct 2026 10:43:28 GMT
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"101","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"oprkdqwB8MEBX","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"4","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"Kus9o6sYi8jszcp","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-R","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"rYFPhEnRwDs4BQ","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"2","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"T4Z9yRUrYEsCpMY","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-B","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"GgNr7NAIb75oSM","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"3","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"Z0pru1euwXLR3gH","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"E2H5Po3lcEuoiRS","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"FikYXpXydNBuv","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Rack","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"1Qp3WV1MVwKo","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"VA9K1YvAJ7aEYbd","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"3","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"HgCoR6bjvONCoeF","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"sCpUHbl5aXDT4sk","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Furnace","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"42H4VUjF","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" No","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"WhSr98iVdWBle","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"iUDjfMtTiq4Q39Y","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"8ATL4fLkvp8qHhN","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"2","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"Bp9Okl1TTWmfcI3","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"obfuscation":"LheUZx8rFwIoKjp","output_index":0,"sequence_number":29}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","logprobs":[],"output_index":0,"sequence_number":30,"text":"Lot code SHF-2026-1014-R2-B3.  \nRack 3, Furnace No. 2."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Lot code SHF-2026-1014-R2-B3.  \nRack 3, Furnace No. 2."},"sequence_number":31}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Lot code SHF-2026-1014-R2-B3.  \nRack 3, Furnace No. 2."}],"role":"assistant"},"output_index":0,"sequence_number":32}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_0dc85f6167cbb5ab016ad110d4c0b487d2bc09613a928c1504","object":"response","created_at":1792086228,"status":"completed","access_programs":null,"background":false,"completed_at":1792086229,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the stamp clerk at the Kelham Island cutlery works in Sheffield.\nWrite two short sentences.\nThe first sentence contains the lot code exactly as given.\nThe second sentence names rack 3 and furnace No. 2.\nDo not invent a code.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_0dc85f6167cbb5ab016ad110d5150887d2adc0b2fab0e932bc","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Lot code SHF-2026-1014-R2-B3.  \nRack 3, Furnace No. 2."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":138,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":27,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":165},"user":null,"metadata":{}},"sequence_number":33}
+
+  recorded_at: Thu, 15 Oct 2026 17:43:49 GMT
 recorded_with: VCR 6.4.0
 ...

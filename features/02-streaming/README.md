@@ -8,9 +8,7 @@ Official reference: [Streaming](https://rubyllm.com/streaming/).
 
 ## Free models
 
-Same free chat model as chat basics, `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `google/gemma-4-31b-it:free`. OpenRouter streams Chat Completions as server-sent events for these slugs. Checked 14 October 2026.
-
-The marionette handover was recorded on `gpt-4.1-mini` with `provider: :openai` after the free-model daily limit was exhausted. Re-record that cassette with `LIVE_PROVIDER=openrouter` to put it back on the free slug.
+Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `google/gemma-4-31b-it:free`. Checked 14 October 2026. These thirteen cassettes were re-recorded on OpenAI `gpt-4.1-mini` after the `:free` slugs hit `free-models-per-day`. OpenAI streams the Responses API as `response.output_text.delta` events. Re-record on the free slug with `LIVE_PROVIDER=openrouter`.
 
 ## Examples (13 of 13 bottled)
 
@@ -36,11 +34,11 @@ The marionette handover was recorded on `gpt-4.1-mini` with `provider: :openai` 
 | 02 | Print chunks to a terminal; the cassette is an SSE body and a second pass matches |
 | 03 | Temperatures split across chunks; the join equals the returned message |
 | 04 | Ordered stone-join steps survive a mid-sentence flush; the returned message is the assistant turn |
-| 05 | Empty and reasoning-only chunks are not spoken; a tight cap can return nil content |
-| 06 | Token counts arrive on the last chunk after a stream that asked for usage |
+| 05 | Empty and reasoning-only chunks are not spoken; a tight cap can clip the timing |
+| 06 | Token counts arrive on the last chunk |
 | 07 | A long chant; write the pieces to an IO and pull them from an Enumerator |
 | 08 | `chat.cancel` raises `CancelledError` at the next chunk; the assistant turn is not appended |
-| 09 | The fault is named from the joined speech; first-token latency skips reasoning chunks |
+| 09 | The fault is named from the joined speech; first-token latency is the first spoken chunk |
 | 10 | A lot code is read from the join when a flush lands mid-code |
 | 11 | Two streamed asks on one chat; the second request includes the first answer |
 | 12 | Broadcast each spoken chunk to subscribed escolas, in plain Ruby |

@@ -34,14 +34,15 @@ bundle exec ruby features/02-streaming/10-sheffield-heat-lot/heat_lot_test.rb
 Both commands replay the cassette. No API key is required. The script also
 prints each piece so the flush in the middle of the code is visible.
 
-The cassette is a live recording of `nvidia/nemotron-3-super-120b-a12b:free`.
+The cassette is a live recording of OpenAI `gpt-4.1-mini`.
 Re-record it with:
 
 ```sh
-LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/02-streaming/10-sheffield-heat-lot/heat_lot_test.rb
+LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/02-streaming/10-sheffield-heat-lot/heat_lot_test.rb
 ```
 
 **Model**
 
-`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter. Fallback if that slug
-is gone: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter
+`:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback:
+`gpt-4o-mini`. Re-record on the free slug with `LIVE_PROVIDER=openrouter`.

@@ -48,7 +48,7 @@ module KathmanduKilnClimb
       chat = open_chat
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
+      Multivitamin::Models.quiet_thinking(chat, provider: :openai)
 
       pieces = []
       message = chat.ask(CLIMB_QUESTION) do |chunk|
@@ -66,12 +66,12 @@ module KathmanduKilnClimb
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

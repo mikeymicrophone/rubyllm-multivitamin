@@ -3,9 +3,10 @@
 # Streaming · 06 · Kigali drone corridor check
 #
 # Teaches:
-# - A streamed ask asks for usage, and the counts land on the last chunk.
-# - Earlier chunks, including one that already carries finish_reason, have
-#   nil token counts.
+# - A streamed ask lands token counts on the last chunk.
+# - Earlier chunks have nil token counts. On Chat Completions one of those
+#   earlier chunks can already carry finish_reason. On OpenAI Responses the
+#   finish reason typically arrives with the usage chunk.
 # - The returned message's tokens match that last chunk.
 
 require "logger"
@@ -82,12 +83,12 @@ module KigaliCorridorCheck
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

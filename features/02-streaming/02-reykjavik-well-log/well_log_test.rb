@@ -23,7 +23,7 @@ class WellLogTest < Minitest::Test
 
     body = stream_bodies.fetch(0)
     assert_includes body, "data:"
-    assert_includes body, "data: [DONE]"
+    assert_includes body, "response.output_text.delta"
     assert_equal result.pieces, spoken_deltas(body)
 
     # A second play reads the same SSE body. The live model is not asked again:
@@ -48,10 +48,8 @@ class WellLogTest < Minitest::Test
     interactions.each do |interaction|
       request = interaction.dig("request", "body", "string")
       assert_includes request, '"stream":true'
-      assert_includes request, '"include_usage":true'
-      assert_includes request, '"reasoning":{"enabled":false}'
       content_type = interaction.dig("response", "headers", "Content-Type")
-      assert_includes Array(content_type), "text/event-stream"
+      assert Array(content_type).any? { |type| type.include?("text/event-stream") }
     end
   end
 
@@ -59,7 +57,7 @@ class WellLogTest < Minitest::Test
     cassette = File.read(File.expand_path("cassettes/well_log.yml", __dir__))
 
     refute_match(/sk-(?:or-v1-)?[A-Za-z0-9_\-]{8,}/, cassette)
-    assert_includes cassette, "<OPENROUTER_API_KEY>"
+    assert_includes cassette, "<OPENAI_API_KEY>"
   end
 
   def stream_bodies
@@ -74,9 +72,11 @@ class WellLogTest < Minitest::Test
       next unless line.start_with?("data:")
 
       payload = line.delete_prefix("data:").strip
-      next if payload == "[DONE]"
+      next if payload.empty? || payload == "[DONE]"
 
-      content = JSON.parse(payload).dig("choices", 0, "delta", "content").to_s
+      parsed = JSON.parse(payload)
+      content = parsed.dig("choices", 0, "delta", "content").to_s
+      content = parsed["delta"].to_s if content.empty? && parsed["type"] == "response.output_text.delta"
       content unless content.empty?
     end
   end

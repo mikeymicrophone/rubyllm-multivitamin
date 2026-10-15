@@ -6,7 +6,8 @@
 # - The fault's name is read from the joined speech. A chunk may hold only
 #   part of it.
 # - First-token latency is the time until the first non-empty content chunk.
-#   Leading reasoning chunks are not the first spoken token.
+#   Leading reasoning chunks, when the model streams them, are not the
+#   first spoken token. gpt-4.1-mini often speaks on the first chunk.
 
 require "logger"
 require "ruby_llm"
@@ -80,12 +81,12 @@ module ChristchurchFaultWarning
     end
 
     def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openrouter))
+      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
     def self.configure
       RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
+        Multivitamin::Models.configure(config, provider: :openai)
         config.max_retries = 0
         config.request_timeout = 180
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

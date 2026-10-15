@@ -2,26 +2,22 @@
 http_interactions:
 - request:
     method: post
-    uri: https://openrouter.ai/api/v1/chat/completions
+    uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
-        are the outgoing foghorn watch at Cape Disappointment Light.\nCall the posted
-        horn card tool for the station in the question.\nThen speak one short sentence
-        for the relief that includes the blast and the compressor."},{"role":"user","content":"The
-        relief is taking the horn watch at Cape Disappointment on Wednesday 14 October
-        2026.\nStation notes: https://www.nps.gov/places/cape-disappointment-lighthouse.htm\nRead
-        the posted horn card for Cape Disappointment and start the spoken relief."}],"stream":true,"temperature":0.2,"tools":[{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","description":"Reads
-        the foghorn card posted at Cape Disappointment","parameters":{"type":"object","properties":{"station":{"type":"string"}},"required":["station"],"additionalProperties":false,"strict":true}}}],"tool_choice":{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card"}},"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"The relief
+        is taking the skip watch at Kiruna on Wednesday 14 October 2026.\nMine notes:
+        https://lkab.com/en/what-we-do/our-mines/kiruna-mine/\nRead the posted skip
+        card for Kiruna and start the spoken relief."}],"instructions":"You are the
+        outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool
+        for the mine in the question.\nThen speak one short sentence for the relief
+        that includes the cycle and the accumulator.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"kiruna_skip_relief--posted_skip_card","description":"Reads
+        the skip-hoist card posted at Kiruna mine","parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"kiruna_skip_relief--posted_skip_card"}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENROUTER_API_KEY>
-      Http-Referer:
-      - https://github.com/mikeymicrophone/rubyllm-multivitamin
-      X-Openrouter-Title:
-      - RubyLLM Multivitamin
+      - Bearer <OPENAI_API_KEY>
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -34,73 +30,110 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 10:43:31 GMT
+      - Thu, 15 Oct 2026 17:43:55 GMT
       Content-Type:
-      - text/event-stream
+      - text/event-stream; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Generation-Id:
-      - gen-1791974610-3kEzV68W7LSdbey06rbb
-      Access-Control-Expose-Headers:
-      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
-      Permissions-Policy:
-      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
-        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
-      Referrer-Policy:
-      - no-referrer, strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
+      Cf-Ray:
+      - a4b0a0f58e4db14d-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
       Server:
       - cloudflare
-      Cf-Ray:
-      - a4a5fbc60b9acb73-PDX
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '509'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999613'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_27b03b14f4754a43a3449609d426c2c5
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |+
-        : OPENROUTER PROCESSING
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_00ac628b0784ed36016ad110da96fc87d282aa40cff5b4918c","object":"response","created_at":1792086234,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":{"type":"function","name":"kiruna_skip_relief--posted_skip_card"},"tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
 
-        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":null,"role":"assistant","tool_calls":[{"index":0,"id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c","type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","arguments":""}}]},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_00ac628b0784ed36016ad110da96fc87d282aa40cff5b4918c","object":"response","created_at":1792086234,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":{"type":"function","name":"kiruna_skip_relief--posted_skip_card"},"tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
 
-        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":null,"role":"assistant","tool_calls":[{"index":0,"function":{"arguments":"{\"station\":\"Cape Disappointment\"}"}}]},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","type":"function_call","status":"in_progress","arguments":"","call_id":"call_ZSv8e42lPPijBOPMJGfY1BX1","name":"kiruna_skip_relief--posted_skip_card"},"output_index":0,"sequence_number":2}
 
-        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"tool_calls","native_finish_reason":"tool_calls"}]}
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"{\"","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"GNr8YUX5EhAvSM","output_index":0,"sequence_number":3}
 
-        data: {"id":"gen-1791974610-3kEzV68W7LSdbey06rbb","object":"chat.completion.chunk","created":1791974610,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"tool_calls","native_finish_reason":"tool_calls"}],"usage":{"prompt_tokens":394,"completion_tokens":34,"total_tokens":428,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"mine","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"eRszzdi5nmLt","output_index":0,"sequence_number":4}
 
-        data: [DONE]
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"\":\"","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"iUUosU7LOHyTd","output_index":0,"sequence_number":5}
 
-  recorded_at: Wed, 14 Oct 2026 10:43:31 GMT
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"Kir","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"mpafoJlmuMxmZ","output_index":0,"sequence_number":6}
+
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"una","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"qX0OF2wSKPRcE","output_index":0,"sequence_number":7}
+
+        event: response.function_call_arguments.delta
+        data: {"type":"response.function_call_arguments.delta","delta":"\"}","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","obfuscation":"pLB0juBbppc35t","output_index":0,"sequence_number":8}
+
+        event: response.function_call_arguments.done
+        data: {"type":"response.function_call_arguments.done","arguments":"{\"mine\":\"Kiruna\"}","item_id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","output_index":0,"sequence_number":9}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","type":"function_call","status":"completed","arguments":"{\"mine\":\"Kiruna\"}","call_id":"call_ZSv8e42lPPijBOPMJGfY1BX1","name":"kiruna_skip_relief--posted_skip_card"},"output_index":0,"sequence_number":10}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_00ac628b0784ed36016ad110da96fc87d282aa40cff5b4918c","object":"response","created_at":1792086234,"status":"completed","access_programs":null,"background":false,"completed_at":1792086235,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"fc_00ac628b0784ed36016ad110db0c1c87d2a6ed9faa278b5932","type":"function_call","status":"completed","arguments":"{\"mine\":\"Kiruna\"}","call_id":"call_ZSv8e42lPPijBOPMJGfY1BX1","name":"kiruna_skip_relief--posted_skip_card"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":{"type":"function","name":"kiruna_skip_relief--posted_skip_card"},"tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":170,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":7,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":177},"user":null,"metadata":{}},"sequence_number":11}
+
+  recorded_at: Thu, 15 Oct 2026 17:43:55 GMT
 - request:
     method: post
-    uri: https://openrouter.ai/api/v1/chat/completions
+    uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
-        are the outgoing foghorn watch at Cape Disappointment Light.\nCall the posted
-        horn card tool for the station in the question.\nThen speak one short sentence
-        for the relief that includes the blast and the compressor."},{"role":"user","content":"The
-        relief is taking the horn watch at Cape Disappointment on Wednesday 14 October
-        2026.\nStation notes: https://www.nps.gov/places/cape-disappointment-lighthouse.htm\nRead
-        the posted horn card for Cape Disappointment and start the spoken relief."},{"role":"assistant","content":"","tool_calls":[{"id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c","type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","arguments":"{\"station\":\"Cape
-        Disappointment\"}"}}]},{"role":"tool","content":"Cape Disappointment horn
-        card for Cape Disappointment. Blast 2.5 seconds, silent 17.5 seconds. Compressor
-        92 psi.","tool_call_id":"call-7b7f5209-110a-4aab-be39-4bf4ea0ba09c"}],"stream":true,"temperature":0.2,"tools":[{"type":"function","function":{"name":"cape_disappointment_relief--posted_horn_card","description":"Reads
-        the foghorn card posted at Cape Disappointment","parameters":{"type":"object","properties":{"station":{"type":"string"}},"required":["station"],"additionalProperties":false,"strict":true}}}],"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"The relief
+        is taking the skip watch at Kiruna on Wednesday 14 October 2026.\nMine notes:
+        https://lkab.com/en/what-we-do/our-mines/kiruna-mine/\nRead the posted skip
+        card for Kiruna and start the spoken relief."},{"type":"function_call","call_id":"call_ZSv8e42lPPijBOPMJGfY1BX1","name":"kiruna_skip_relief--posted_skip_card","arguments":"{\"mine\":\"Kiruna\"}"},{"type":"function_call_output","call_id":"call_ZSv8e42lPPijBOPMJGfY1BX1","output":"Kiruna
+        skip card for Kiruna. Cycle 2.5 seconds, rest 17.5 seconds. Accumulator 92
+        bar."}],"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall
+        the posted skip card tool for the mine in the question.\nThen speak one short
+        sentence for the relief that includes the cycle and the accumulator.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"kiruna_skip_relief--posted_skip_card","description":"Reads
+        the skip-hoist card posted at Kiruna mine","parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}]}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENROUTER_API_KEY>
-      Http-Referer:
-      - https://github.com/mikeymicrophone/rubyllm-multivitamin
-      X-Openrouter-Title:
-      - RubyLLM Multivitamin
+      - Bearer <OPENAI_API_KEY>
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -113,59 +146,183 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 10:43:31 GMT
+      - Thu, 15 Oct 2026 17:43:56 GMT
       Content-Type:
-      - text/event-stream
+      - text/event-stream; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Generation-Id:
-      - gen-1791974611-mWV8don3MYyRGt96ldv8
-      Access-Control-Expose-Headers:
-      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
-      Permissions-Policy:
-      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
-        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
-      Referrer-Policy:
-      - no-referrer, strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
+      Cf-Ray:
+      - a4b0a0fb4df70fdd-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
       Server:
       - cloudflare
-      Cf-Ray:
-      - a4a5fbca8e736e09-PDX
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '918'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999172'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 24ms
+      X-Request-Id:
+      - req_ad128cfb8d64436a9b237f1563e23338
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |+
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"Rel","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_067b09dea3f8ecbc016ad110db7ffc87d28c92dfda85cbf0a6","object":"response","created_at":1792086235,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"ief: Cape Dis","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_067b09dea3f8ecbc016ad110db7ffc87d28c92dfda85cbf0a6","object":"response","created_at":1792086235,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"appointment horn","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" watch, blast","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 2.5","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Rel","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"ooKS4UFOqunRp","output_index":0,"sequence_number":4}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" seconds, silent ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ief","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"01Lqv63JLslwl","output_index":0,"sequence_number":5}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"17.5","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"2BYO8VEu0qlw7kM","output_index":0,"sequence_number":6}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" seconds, compressor ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" you","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"fphUf8JCf4zb","output_index":0,"sequence_number":7}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"92 psi.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" are","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"h4csAaLkXqL0","output_index":0,"sequence_number":8}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" taking","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"xv26BgEN2","output_index":0,"sequence_number":9}
 
-        data: {"id":"gen-1791974611-mWV8don3MYyRGt96ldv8","object":"chat.completion.chunk","created":1791974611,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":481,"completion_tokens":31,"total_tokens":512,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"4OmrYkRn6Rbl","output_index":0,"sequence_number":10}
 
-        data: [DONE]
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" skip","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"gGcVNAPCJLD","output_index":0,"sequence_number":11}
 
-  recorded_at: Wed, 14 Oct 2026 10:43:32 GMT
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" watch","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"VVp9gaV8g3","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"ohU8dybNmOIuz","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Kir","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"Wr0KECdXuOfb","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"una","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"N5nWdovfGzZ28","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" with","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"B0MggreXkFw","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" cycle","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"744esZqEDn","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"ziOfCiVbVM0b9kw","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"2","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"qAn3goCqjq12POg","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"rcmymiUtK0Wv7Xp","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"5","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"hXCqN5BmfcZRALJ","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"MOZcpcnc","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"W6zBVVapxOUP44o","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" rest","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"iQYVRN6VJlL","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"VIzcMyKvjeY8Cqs","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"17","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"E8rPfYUTrPV1Xv","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"jWPe50vLEf0hs2B","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"5","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"G2AdeFVpjrxLEBW","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"NB0pwgMA","output_index":0,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"67J0V984od48J8R","output_index":0,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" and","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"HpHVpsSeaTJa","output_index":0,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" accumulator","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"vzlR","output_index":0,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" pressure","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"YDjs4QM","output_index":0,"sequence_number":33}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"OyndShCC8zM1Q","output_index":0,"sequence_number":34}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"eixzABsoEwdwQMm","output_index":0,"sequence_number":35}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"92","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"9NXG9j46iwdak4","output_index":0,"sequence_number":36}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" bar","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"d4fkTUYfWuX0","output_index":0,"sequence_number":37}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"obfuscation":"rTjHgVjlLJDNc9W","output_index":0,"sequence_number":38}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","logprobs":[],"output_index":0,"sequence_number":39,"text":"Relief, you are taking the skip watch at Kiruna with cycle 2.5 seconds, rest 17.5 seconds, and accumulator pressure at 92 bar."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Relief, you are taking the skip watch at Kiruna with cycle 2.5 seconds, rest 17.5 seconds, and accumulator pressure at 92 bar."},"sequence_number":40}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Relief, you are taking the skip watch at Kiruna with cycle 2.5 seconds, rest 17.5 seconds, and accumulator pressure at 92 bar."}],"role":"assistant"},"output_index":0,"sequence_number":41}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_067b09dea3f8ecbc016ad110db7ffc87d28c92dfda85cbf0a6","object":"response","created_at":1792086235,"status":"completed","access_programs":null,"background":false,"completed_at":1792086236,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the outgoing skip-hoist watch at LKAB Kiruna.\nCall the posted skip card tool for the mine in the question.\nThen speak one short sentence for the relief that includes the cycle and the accumulator.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_067b09dea3f8ecbc016ad110dc67d487d2b6d0e63e464790fa","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Relief, you are taking the skip watch at Kiruna with cycle 2.5 seconds, rest 17.5 seconds, and accumulator pressure at 92 bar."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[{"type":"function","description":"Reads the skip-hoist card posted at Kiruna mine","name":"kiruna_skip_relief--posted_skip_card","output_schema":null,"parameters":{"type":"object","properties":{"mine":{"type":"string"}},"required":["mine"],"additionalProperties":false,"strict":true},"strict":false}],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":218,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":37,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":255},"user":null,"metadata":{}},"sequence_number":42}
+
+  recorded_at: Thu, 15 Oct 2026 17:43:56 GMT
 recorded_with: VCR 6.4.0
 ...
