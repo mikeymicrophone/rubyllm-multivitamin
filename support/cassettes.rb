@@ -3,6 +3,7 @@
 require "base64"
 require "fileutils"
 require "json"
+require "securerandom"
 require "vcr"
 require "webmock"
 
@@ -15,7 +16,7 @@ module Multivitamin
     FILTERED_KEY = "<OPENROUTER_API_KEY>"
     OPENAI_FILTERED_KEY = "<OPENAI_API_KEY>"
 
-      KEY_ENV_VARS = %w[
+    KEY_ENV_VARS = %w[
       OPENROUTER_API_KEY
       OPENAI_API_KEY
       ANTHROPIC_API_KEY
@@ -40,6 +41,11 @@ module Multivitamin
     ).freeze
     B64_JSON_KEEP_BYTES = 512
 
+    # Faraday::Multipart calls SecureRandom.hex for the form boundary.
+    # VCR matches on body, so a random boundary would fail on replay.
+    # Not scenario copy.
+    MULTIPART_BOUNDARY_HEX = "multivitamin000000000000000000"
+
     module_function
 
     def live?
@@ -56,14 +62,27 @@ module Multivitamin
       VCR.configure { |config| config.cassette_library_dir = library }
       # drop_unused_requests makes a live run replace the cassette. Without it,
       # VCR keeps an old interaction whose request body no longer matches.
-      VCR.use_cassette(
-        name,
-        record: live? ? :all : :none,
-        match_requests_on: %i[method uri jsonrpc_body],
-        drop_unused_requests: live?
-      ) { yield }
+      pin_multipart_boundary do
+        VCR.use_cassette(
+          name,
+          record: live? ? :all : :none,
+          match_requests_on: %i[method uri jsonrpc_body],
+          drop_unused_requests: live?
+        ) { yield }
+      end
     ensure
       VCR.configure { |config| config.cassette_library_dir = previous } if previous
+    end
+
+    def pin_multipart_boundary
+      singleton = SecureRandom.singleton_class
+      original = singleton.instance_method(:hex)
+      singleton.define_method(:hex) do |n = nil|
+        n.nil? ? MULTIPART_BOUNDARY_HEX : original.bind_call(self, n)
+      end
+      yield
+    ensure
+      singleton.define_method(:hex, original) if singleton && original
     end
 
     def prepare_key!
