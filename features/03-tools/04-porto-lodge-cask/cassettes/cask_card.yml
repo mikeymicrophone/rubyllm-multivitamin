@@ -1,0 +1,389 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        lodge round, Thursday 15 October 2026, Vila Nova de Gaia.\nLodge notes: https://www.ivdp.pt/\nCask
+        3 is on the rack. What is that cask''s rest?"}],"instructions":"You are the
+        lodge clerk at Taylor''s in Vila Nova de Gaia, Porto.\nCall lodge_cask_card
+        with the cask number as an integer.\nAnswer in one sentence. Include the lot
+        code the tool returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"lodge_cask_card","description":"Reads
+        one cask from today''s lodge book at a Vila Nova de Gaia port lodge","parameters":{"type":"object","properties":{"cask":{"type":"integer","description":"Cask
+        number on the morning lodge round"}},"required":["cask"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"lodge_cask_card"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7269b932029-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '479'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999147'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_a738aceccf9546f9a74757ab33889eee
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03ddfa3af5068f09016ad111d83a1887d283642e47ea0e3a34",
+          "object": "response",
+          "created_at": 1792086488,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086488,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lodge clerk at Taylor's in Vila Nova de Gaia, Porto.\nCall lodge_cask_card with the cask number as an integer.\nAnswer in one sentence. Include the lot code the tool returns.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_03ddfa3af5068f09016ad111d8961887d2adf7080e1226a02e",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"cask\":3}",
+              "call_id": "call_2OaXQBQYFnGwUmvAlW9bIQN8",
+              "name": "lodge_cask_card"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "lodge_cask_card"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one cask from today's lodge book at a Vila Nova de Gaia port lodge",
+              "name": "lodge_cask_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "cask": {
+                    "type": "integer",
+                    "description": "Cask number on the morning lodge round"
+                  }
+                },
+                "required": [
+                  "cask"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 165,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 7,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 172
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:08 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        lodge round, Thursday 15 October 2026, Vila Nova de Gaia.\nLodge notes: https://www.ivdp.pt/\nCask
+        3 is on the rack. What is that cask''s rest?"},{"type":"function_call","call_id":"call_2OaXQBQYFnGwUmvAlW9bIQN8","name":"lodge_cask_card","arguments":"{\"cask\":3}"},{"type":"function_call_output","call_id":"call_2OaXQBQYFnGwUmvAlW9bIQN8","output":"Cask
+        3: touriga-nacional at 82 percent humidity for 24 months, lot PRT-1014-C3."}],"instructions":"You
+        are the lodge clerk at Taylor''s in Vila Nova de Gaia, Porto.\nCall lodge_cask_card
+        with the cask number as an integer.\nAnswer in one sentence. Include the lot
+        code the tool returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"lodge_cask_card","description":"Reads
+        one cask from today''s lodge book at a Vila Nova de Gaia port lodge","parameters":{"type":"object","properties":{"cask":{"type":"integer","description":"Cask
+        number on the morning lodge round"}},"required":["cask"],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a72abaafd6bf-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '620'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998716'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 38ms
+      X-Request-Id:
+      - req_5329af7727b54d538108dfb985554cf3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0738795580ea80fa016ad111d8d5ac87d28af03fa3634191e3",
+          "object": "response",
+          "created_at": 1792086488,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086489,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the lodge clerk at Taylor's in Vila Nova de Gaia, Porto.\nCall lodge_cask_card with the cask number as an integer.\nAnswer in one sentence. Include the lot code the tool returns.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0738795580ea80fa016ad111d91bd887d2a7b5628758e3fb65",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Cask 3 contains touriga-nacional at 82 percent humidity for 24 months, lot code PRT-1014-C3."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one cask from today's lodge book at a Vila Nova de Gaia port lodge",
+              "name": "lodge_cask_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "cask": {
+                    "type": "integer",
+                    "description": "Cask number on the morning lodge round"
+                  }
+                },
+                "required": [
+                  "cask"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 208,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 239
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:09 GMT
+recorded_with: VCR 6.4.0

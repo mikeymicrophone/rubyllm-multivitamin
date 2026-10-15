@@ -1,0 +1,395 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, PAR round at the Aalsmeer greenhouse.\nAuction floor: https://www.royalfloraholland.com/\nRead
+        the east bench and the west bench."}],"instructions":"You are the greenhouse
+        watch at Aalsmeer.\nYour first message must contain exactly two function calls
+        to bench_par,\none with bench east and one with bench west.\nDo not wait for
+        a tool result before the second call.\nThen answer in one sentence that includes
+        both peaks.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"bench_par","description":"Reads
+        one PAR sensor bench at the Aalsmeer greenhouse. Call once per bench.","parameters":{"type":"object","properties":{"bench":{"type":"string","description":"east
+        or west bench"}},"required":["bench"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"auto","parallel_tool_calls":true}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a78bbc647067-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '722'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999630'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_57b69653115c49aa810f63d1b6a9dfbf
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0aac9e16b195f571016ad111e85d5887d28a29ad1b7c569616",
+          "object": "response",
+          "created_at": 1792086504,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086505,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the greenhouse watch at Aalsmeer.\nYour first message must contain exactly two function calls to bench_par,\none with bench east and one with bench west.\nDo not wait for a tool result before the second call.\nThen answer in one sentence that includes both peaks.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0aac9e16b195f571016ad111e9076c87d2aa3df0d5c5141db6",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"bench\":\"east\"}",
+              "call_id": "call_E8Ryh0P9zQk1qUPRmQu4whc3",
+              "name": "bench_par"
+            },
+            {
+              "id": "fc_0aac9e16b195f571016ad111e9077c87d29f5f45af249e51df",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"bench\":\"west\"}",
+              "call_id": "call_plj1cIgdf6d1FAKPgeTRKshM",
+              "name": "bench_par"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one PAR sensor bench at the Aalsmeer greenhouse. Call once per bench.",
+              "name": "bench_par",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "bench": {
+                    "type": "string",
+                    "description": "east or west bench"
+                  }
+                },
+                "required": [
+                  "bench"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 153,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 47,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 200
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:25 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, PAR round at the Aalsmeer greenhouse.\nAuction floor: https://www.royalfloraholland.com/\nRead
+        the east bench and the west bench."},{"type":"function_call","call_id":"call_E8Ryh0P9zQk1qUPRmQu4whc3","name":"bench_par","arguments":"{\"bench\":\"east\"}"},{"type":"function_call","call_id":"call_plj1cIgdf6d1FAKPgeTRKshM","name":"bench_par","arguments":"{\"bench\":\"west\"}"},{"type":"function_call_output","call_id":"call_E8Ryh0P9zQk1qUPRmQu4whc3","output":"{\"bench\":\"east\",\"micromoles\":18,\"peak\":27}"},{"type":"function_call_output","call_id":"call_plj1cIgdf6d1FAKPgeTRKshM","output":"{\"bench\":\"west\",\"micromoles\":22,\"peak\":31}"}],"instructions":"You
+        are the greenhouse watch at Aalsmeer.\nYour first message must contain exactly
+        two function calls to bench_par,\none with bench east and one with bench west.\nDo
+        not wait for a tool result before the second call.\nThen answer in one sentence
+        that includes both peaks.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"bench_par","description":"Reads
+        one PAR sensor bench at the Aalsmeer greenhouse. Call once per bench.","parameters":{"type":"object","properties":{"bench":{"type":"string","description":"east
+        or west bench"}},"required":["bench"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"auto","parallel_tool_calls":true}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7910b46d32b-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '702'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999140'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_22d47a695a44474e855c7300190e2b92
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0dc2cece660a3aad016ad111e9331487d2b47af0ababc825db",
+          "object": "response",
+          "created_at": 1792086505,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086505,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the greenhouse watch at Aalsmeer.\nYour first message must contain exactly two function calls to bench_par,\none with bench east and one with bench west.\nDo not wait for a tool result before the second call.\nThen answer in one sentence that includes both peaks.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0dc2cece660a3aad016ad111e9a0e887d29d1d4010af503654",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The PAR peak at the east bench was 27 micromoles, while the west bench reached a higher peak of 31 micromoles on Thursday 15 October 2026."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads one PAR sensor bench at the Aalsmeer greenhouse. Call once per bench.",
+              "name": "bench_par",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "bench": {
+                    "type": "string",
+                    "description": "east or west bench"
+                  }
+                },
+                "required": [
+                  "bench"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 227,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 39,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 266
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:25 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,421 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, practice ticket at the MCG net.\nGround notes: https://www.mcg.org.au/\nHow
+        many dozen of four-piece Kookaburras are on the shelf, and what size are the
+        stumps?"}],"instructions":"You are the net clerk at the Melbourne Cricket
+        Ground.\nCall ball_stock for the ball grade in the question.\nDo not call
+        stump_gauge.\nAnswer in one sentence about the dozen. Say the stump gauge
+        was not read on this ticket.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"ball_stock","description":"Counts
+        dozen of four-piece Kookaburras at the MCG practice net","parameters":{"type":"object","properties":{"grade":{"type":"string","description":"Ball
+        grade, such as four-piece"}},"required":["grade"],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"stump_gauge","description":"Reads
+        the practice-stump height at the MCG practice net","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"ball_stock"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a79d2f5c0cf6-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '538'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999592'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 12ms
+      X-Request-Id:
+      - req_602baa9026514ae9b9b2f96779b2b0d8
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0324c1ffc79b06a0016ad111eb222887d280931f734b5d6a64",
+          "object": "response",
+          "created_at": 1792086507,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086507,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the net clerk at the Melbourne Cricket Ground.\nCall ball_stock for the ball grade in the question.\nDo not call stump_gauge.\nAnswer in one sentence about the dozen. Say the stump gauge was not read on this ticket.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0324c1ffc79b06a0016ad111eb88f887d29d1d747196ffd10c",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"grade\":\"four-piece\"}",
+              "call_id": "call_bCITtxRwBI0n9ZNmySmrOJhZ",
+              "name": "ball_stock"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "ball_stock"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Counts dozen of four-piece Kookaburras at the MCG practice net",
+              "name": "ball_stock",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "grade": {
+                    "type": "string",
+                    "description": "Ball grade, such as four-piece"
+                  }
+                },
+                "required": [
+                  "grade"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the practice-stump height at the MCG practice net",
+              "name": "stump_gauge",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 191,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 7,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 198
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:27 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, practice ticket at the MCG net.\nGround notes: https://www.mcg.org.au/\nHow
+        many dozen of four-piece Kookaburras are on the shelf, and what size are the
+        stumps?"},{"type":"function_call","call_id":"call_bCITtxRwBI0n9ZNmySmrOJhZ","name":"ball_stock","arguments":"{\"grade\":\"four-piece\"}"},{"type":"function_call_output","call_id":"call_bCITtxRwBI0n9ZNmySmrOJhZ","output":"Four-piece
+        Kookaburra at the MCG practice net: 14 dozen."}],"instructions":"You are the
+        net clerk at the Melbourne Cricket Ground.\nCall ball_stock for the ball grade
+        in the question.\nDo not call stump_gauge.\nAnswer in one sentence about the
+        dozen. Say the stump gauge was not read on this ticket.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"ball_stock","description":"Counts
+        dozen of four-piece Kookaburras at the MCG practice net","parameters":{"type":"object","properties":{"grade":{"type":"string","description":"Ball
+        grade, such as four-piece"}},"required":["grade"],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"stump_gauge","description":"Reads
+        the practice-stump height at the MCG practice net","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7a13fe296cf-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '918'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999149'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_25d64e3caf8e414c866c08865428336c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08373e30ec849a8f016ad111ebd3ec87d2ab7f7858e5db1a3f",
+          "object": "response",
+          "created_at": 1792086507,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086508,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the net clerk at the Melbourne Cricket Ground.\nCall ball_stock for the ball grade in the question.\nDo not call stump_gauge.\nAnswer in one sentence about the dozen. Say the stump gauge was not read on this ticket.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_08373e30ec849a8f016ad111ec7bec87d28f524133617a2bef",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "There are 14 dozen four-piece Kookaburra balls on the shelf, and the stump gauge was not read on this ticket."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Counts dozen of four-piece Kookaburras at the MCG practice net",
+              "name": "ball_stock",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "grade": {
+                    "type": "string",
+                    "description": "Ball grade, such as four-piece"
+                  }
+                },
+                "required": [
+                  "grade"
+                ],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads the practice-stump height at the MCG practice net",
+              "name": "stump_gauge",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 220,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 29,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 249
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:28 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,1101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning sitting at the Beehive.\nOrder paper: https://www.parliament.nz/\nWhen
+        does clerk Aroha clear the public gallery?"}],"instructions":"You are the
+        sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board
+        that answers the question.\nDo not call the other boards.\nAnswer in one sentence
+        that includes the figure the tool returned.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_sitting_board","description":"Reads
+        the Beehive sitting board, including when Aroha clears the public gallery","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"posted_bell_card","description":"Reads
+        whether the division bells are running and the ring length","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"gallery_latch","description":"Reads
+        whether the Beehive press gallery is shut","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7c01acb5d0d-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '676'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998781'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 36ms
+      X-Request-Id:
+      - req_d46a1a6a294a4ffab8273d7fee4dddb4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_050bdbda09a1f366016ad111f0ba9087d2bb915f99b77d509b",
+          "object": "response",
+          "created_at": 1792086512,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086513,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board that answers the question.\nDo not call the other boards.\nAnswer in one sentence that includes the figure the tool returned.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_050bdbda09a1f366016ad111f1490487d281b38bf9a20fe1d0",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_KdEpHcOk2vRQpGO9eJuWi34z",
+              "name": "posted_sitting_board"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "required",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Beehive sitting board, including when Aroha clears the public gallery",
+              "name": "posted_sitting_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the division bells are running and the ring length",
+              "name": "posted_bell_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Beehive press gallery is shut",
+              "name": "gallery_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 172,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 14,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 186
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:33 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning sitting at the Beehive.\nOrder paper: https://www.parliament.nz/\nWhen
+        does clerk Aroha clear the public gallery?"},{"type":"function_call","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","name":"posted_sitting_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","output":"Beehive
+        sitting board. First question 07:05. Aroha clears the public gallery at 10:12."}],"instructions":"You
+        are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool:
+        the board that answers the question.\nDo not call the other boards.\nAnswer
+        in one sentence that includes the figure the tool returned.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_sitting_board","description":"Reads
+        the Beehive sitting board, including when Aroha clears the public gallery","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"posted_bell_card","description":"Reads
+        whether the division bells are running and the ring length","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"gallery_latch","description":"Reads
+        whether the Beehive press gallery is shut","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7c50f4bf289-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1307'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999550'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 13ms
+      X-Request-Id:
+      - req_bed9d9f6cf0e43488af51bc7cae7d680
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0d44132b17914ae3016ad111f191e087d2a306372253cbc02b",
+          "object": "response",
+          "created_at": 1792086514,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086514,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board that answers the question.\nDo not call the other boards.\nAnswer in one sentence that includes the figure the tool returned.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0d44132b17914ae3016ad111f2872887d2aadb4ef36ec6b64d",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Clerk Aroha clears the public gallery on Thursday 15 October 2026 at 10:12 during the morning sitting at the Beehive."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Beehive sitting board, including when Aroha clears the public gallery",
+              "name": "posted_sitting_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the division bells are running and the ring length",
+              "name": "posted_bell_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Beehive press gallery is shut",
+              "name": "gallery_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 220,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 34,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 254
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:34 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning sitting at the Beehive.\nOrder paper: https://www.parliament.nz/\nWhen
+        does clerk Aroha clear the public gallery?"},{"type":"function_call","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","name":"posted_sitting_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","output":"Beehive
+        sitting board. First question 07:05. Aroha clears the public gallery at 10:12."},{"role":"assistant","content":[{"type":"output_text","text":"Clerk
+        Aroha clears the public gallery on Thursday 15 October 2026 at 10:12 during
+        the morning sitting at the Beehive."}]},{"role":"user","content":"The relief
+        asks whether the bells are running, and what the ring is."}],"instructions":"You
+        are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool:
+        the board that answers the question.\nDo not call the other boards.\nAnswer
+        in one sentence that includes the figure the tool returned.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_sitting_board","description":"Reads
+        the Beehive sitting board, including when Aroha clears the public gallery","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"posted_bell_card","description":"Reads
+        whether the division bells are running and the ring length","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"gallery_latch","description":"Reads
+        whether the Beehive press gallery is shut","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7ce1a9e02dc-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '630'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999025'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 29ms
+      X-Request-Id:
+      - req_e5225286fec743669b1337fa5eef2eac
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08877bff03aa6783016ad111f2fd1087d2b2e2643ae30965b8",
+          "object": "response",
+          "created_at": 1792086515,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086515,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board that answers the question.\nDo not call the other boards.\nAnswer in one sentence that includes the figure the tool returned.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_08877bff03aa6783016ad111f3826087d2b38bbcf63125d14a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_WqAlAHDEBp8ChEH5upp0gE9l",
+              "name": "posted_bell_card"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "required",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Beehive sitting board, including when Aroha clears the public gallery",
+              "name": "posted_sitting_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the division bells are running and the ring length",
+              "name": "posted_bell_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Beehive press gallery is shut",
+              "name": "gallery_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 275,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 14,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 289
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:35 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning sitting at the Beehive.\nOrder paper: https://www.parliament.nz/\nWhen
+        does clerk Aroha clear the public gallery?"},{"type":"function_call","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","name":"posted_sitting_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","output":"Beehive
+        sitting board. First question 07:05. Aroha clears the public gallery at 10:12."},{"role":"assistant","content":[{"type":"output_text","text":"Clerk
+        Aroha clears the public gallery on Thursday 15 October 2026 at 10:12 during
+        the morning sitting at the Beehive."}]},{"role":"user","content":"The relief
+        asks whether the bells are running, and what the ring is."},{"type":"function_call","call_id":"call_WqAlAHDEBp8ChEH5upp0gE9l","name":"posted_bell_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_WqAlAHDEBp8ChEH5upp0gE9l","output":"Division
+        bells are running. Ring 3 seconds, silent 27 seconds."}],"instructions":"You
+        are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool:
+        the board that answers the question.\nDo not call the other boards.\nAnswer
+        in one sentence that includes the figure the tool returned.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_sitting_board","description":"Reads
+        the Beehive sitting board, including when Aroha clears the public gallery","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"posted_bell_card","description":"Reads
+        whether the division bells are running and the ring length","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"gallery_latch","description":"Reads
+        whether the Beehive press gallery is shut","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7d2efa4c590-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '650'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998483'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 45ms
+      X-Request-Id:
+      - req_bda089f5342c43c0a5cce3f348d4d949
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_03717e8ea3268c99016ad111f3c2a087d2bfbfaf3c06425e99",
+          "object": "response",
+          "created_at": 1792086515,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086516,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board that answers the question.\nDo not call the other boards.\nAnswer in one sentence that includes the figure the tool returned.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_03717e8ea3268c99016ad111f4316c87d2b8c9f13d8c3cf170",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "The division bells are running with a ring of 3 seconds followed by a silent period of 27 seconds."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Beehive sitting board, including when Aroha clears the public gallery",
+              "name": "posted_sitting_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the division bells are running and the ring length",
+              "name": "posted_bell_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Beehive press gallery is shut",
+              "name": "gallery_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 312,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 24,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 336
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:36 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Thursday
+        15 October 2026, morning sitting at the Beehive.\nOrder paper: https://www.parliament.nz/\nWhen
+        does clerk Aroha clear the public gallery?"},{"type":"function_call","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","name":"posted_sitting_board","arguments":"{}"},{"type":"function_call_output","call_id":"call_KdEpHcOk2vRQpGO9eJuWi34z","output":"Beehive
+        sitting board. First question 07:05. Aroha clears the public gallery at 10:12."},{"role":"assistant","content":[{"type":"output_text","text":"Clerk
+        Aroha clears the public gallery on Thursday 15 October 2026 at 10:12 during
+        the morning sitting at the Beehive."}]},{"role":"user","content":"The relief
+        asks whether the bells are running, and what the ring is."},{"type":"function_call","call_id":"call_WqAlAHDEBp8ChEH5upp0gE9l","name":"posted_bell_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_WqAlAHDEBp8ChEH5upp0gE9l","output":"Division
+        bells are running. Ring 3 seconds, silent 27 seconds."},{"role":"assistant","content":[{"type":"output_text","text":"The
+        division bells are running with a ring of 3 seconds followed by a silent period
+        of 27 seconds."}]},{"role":"user","content":"Write the relief chit and stop.
+        Do not add a speech."}],"instructions":"You are the sitting clerk at the Beehive
+        in Wellington.\nCall exactly one tool: the board that answers the question.\nDo
+        not call the other boards.\nAnswer in one sentence that includes the figure
+        the tool returned.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_sitting_board","description":"Reads
+        the Beehive sitting board, including when Aroha clears the public gallery","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"posted_bell_card","description":"Reads
+        whether the division bells are running and the ring length","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"gallery_latch","description":"Reads
+        whether the Beehive press gallery is shut","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"relief_handoff","description":"Writes
+        the relief chit and ends the sitting. Call this only when asked for the chit.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"relief_handoff"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 17:48:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b0a7d7dd676589-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '445'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999367'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 18ms
+      X-Request-Id:
+      - req_b7cc307d874043df949d25ca8b958aab
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_041a46ee4b1934a0016ad111f48bac87d296c7019b08f57bbd",
+          "object": "response",
+          "created_at": 1792086516,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792086516,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the sitting clerk at the Beehive in Wellington.\nCall exactly one tool: the board that answers the question.\nDo not call the other boards.\nAnswer in one sentence that includes the figure the tool returned.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_041a46ee4b1934a0016ad111f4e23087d2a71817c891ca8743",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_PXikBQ0YmwJXHZizMutFLGCO",
+              "name": "relief_handoff"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "relief_handoff"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the Beehive sitting board, including when Aroha clears the public gallery",
+              "name": "posted_sitting_board",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the division bells are running and the ring length",
+              "name": "posted_bell_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Reads whether the Beehive press gallery is shut",
+              "name": "gallery_latch",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            },
+            {
+              "type": "function",
+              "description": "Writes the relief chit and ends the sitting. Call this only when asked for the chit.",
+              "name": "relief_handoff",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 393,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 395
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Thu, 15 Oct 2026 17:48:37 GMT
+recorded_with: VCR 6.4.0
