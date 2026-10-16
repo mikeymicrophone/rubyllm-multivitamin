@@ -1214,6 +1214,28 @@ Shown in [Rovaniemi duodji knife](features/29-extended-thinking/01-rovaniemi-duo
 
 Shown in [Gondar parchment folio](features/29-extended-thinking/10-gondar-parchment-folio/) and [Évora cork plank](features/29-extended-thinking/12-evora-cork-plank/).
 
+## Durable agents and Rails
+
+### The cancelled column is a consumed request, not a permanent status
+
+**What happens.** A separate Rapa Nui record calls `cancel`, and a fresh find reads `cancelled?` as true. The worker's next `step` raises `RubyLLM::CancelledError` before HTTP and clears the persisted column. A further find reads false. The staged user turn remains. This is a local persistence assertion; no provider response or cassette is involved.
+
+**Why it matters.** A controller that uses the column as a permanent cancellation audit loses that signal after the worker observes it.
+
+**What to do.** Use `cancel` to request an interruption. Keep an application-owned status or audit record when the UI needs to remember that the operation was stopped.
+
+Shown in [Rapa Nui quarry stop](features/30-durable-agents-and-rails/12-rapa-nui-quarry-stop/).
+
+### Raw record find keeps history but does not restore tools
+
+**What happens.** After Venice persists a tool request, `WatchLog.find(id).tools` is empty. `TideKeeper.find(id)` restores `read_staff` from the agent declaration and completes the saved call. This assertion exercises RubyLLM's real persistence code with hand-authored HTTP replies.
+
+**Why it matters.** A job that finds only the ActiveRecord chat class has the transcript but lacks runtime tool configuration.
+
+**What to do.** Resume work through the agent class's `find`, or explicitly restore the required runtime configuration before completing a raw record.
+
+Shown in [Venice tide gate](features/30-durable-agents-and-rails/09-venice-tide-gate/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

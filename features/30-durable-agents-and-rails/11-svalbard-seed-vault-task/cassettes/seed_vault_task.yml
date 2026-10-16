@@ -1,0 +1,353 @@
+# Hand-authored fixture; requests captured from RubyLLM 2.1.1's encoder.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"4525be1d-f2c2-4d3e-b674-4631f4ded421","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"4525be1d-f2c2-4d3e-b674-4631f4ded421","result":{"resultType":"complete","supportedVersions":["2026-07-28"],"capabilities":{"tools":{}},"_meta":{"io.modelcontextprotocol/serverInfo":{"name":"svalbard-vault","version":"1.0.0"}}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"068541e5-4cb8-41c5-a783-f1d4298d3bd1","method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/list
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"068541e5-4cb8-41c5-a783-f1d4298d3bd1","result":{"tools":[{"name":"reconcile_crates","description":"Reconcile
+        NordGen seed crates on shelf B-12","inputSchema":{"type":"object","properties":{},"required":[]}}]}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Svalbard
+        intake: reconcile the NordGen seed crates for shelf B-12."}],"instructions":"You
+        keep the Svalbard seed vault intake. Call reconcile_crates once, then report
+        the crate count when the task finishes.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"reconcile_crates","description":"Reconcile
+        NordGen seed crates on shelf B-12","parameters":{"type":"object","properties":{},"required":[]},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_11_3","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"function_call","id":"fc_11_3_0","call_id":"call_11_3_0","name":"reconcile_crates","arguments":"{}","status":"completed"}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"fa22f3b1-2f4c-4e35-acb6-3419f3a2ab5e","method":"tools/call","params":{"name":"reconcile_crates","arguments":{},"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/call
+      Mcp-Name:
+      - reconcile_crates
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"fa22f3b1-2f4c-4e35-acb6-3419f3a2ab5e","result":{"taskId":"vault-B12","status":"working","createdAt":"2026-10-16T12:00:00Z","lastUpdatedAt":"2026-10-16T12:00:00Z","ttlMs":60000,"pollIntervalMs":5000,"statusMessage":"Checking
+        NordGen shelf B-12","resultType":"task"}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"38497c51-65f3-454e-83f4-026eb0e19a6a","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"38497c51-65f3-454e-83f4-026eb0e19a6a","result":{"resultType":"complete","supportedVersions":["2026-07-28"],"capabilities":{"tools":{}},"_meta":{"io.modelcontextprotocol/serverInfo":{"name":"svalbard-vault","version":"1.0.0"}}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"8871da3f-0842-49e7-99cc-77c846b03635","method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/list
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"8871da3f-0842-49e7-99cc-77c846b03635","result":{"tools":[{"name":"reconcile_crates","description":"Reconcile
+        NordGen seed crates on shelf B-12","inputSchema":{"type":"object","properties":{},"required":[]}}]}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"79cb54fe-5d61-4993-8bd9-47b3452b8422","method":"tasks/get","params":{"taskId":"vault-B12","_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tasks/get
+      Mcp-Name:
+      - vault-B12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"79cb54fe-5d61-4993-8bd9-47b3452b8422","result":{"taskId":"vault-B12","status":"working","createdAt":"2026-10-16T12:00:00Z","lastUpdatedAt":"2026-10-16T12:00:00Z","ttlMs":60000,"pollIntervalMs":5000,"statusMessage":"Checking
+        NordGen shelf B-12","resultType":"complete"}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"a90f8eb7-5a26-4f48-834b-d9afb81b6967","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - server/discover
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"a90f8eb7-5a26-4f48-834b-d9afb81b6967","result":{"resultType":"complete","supportedVersions":["2026-07-28"],"capabilities":{"tools":{}},"_meta":{"io.modelcontextprotocol/serverInfo":{"name":"svalbard-vault","version":"1.0.0"}}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"51d2f7d8-81b1-45fb-aeda-0486eb112d03","method":"tools/list","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tools/list
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"51d2f7d8-81b1-45fb-aeda-0486eb112d03","result":{"tools":[{"name":"reconcile_crates","description":"Reconcile
+        NordGen seed crates on shelf B-12","inputSchema":{"type":"object","properties":{},"required":[]}}]}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://svalbard-vault.invalid:443/mcp
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"883de5fa-3cc6-498d-901a-4cbe1f62a50e","method":"tasks/get","params":{"taskId":"vault-B12","_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"ruby_llm","version":"2.1.1"},"io.modelcontextprotocol/clientCapabilities":{"elicitation":{"form":{},"url":{}},"extensions":{"io.modelcontextprotocol/tasks":{}}}}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json, text/event-stream
+      Mcp-Protocol-Version:
+      - '2026-07-28'
+      Mcp-Method:
+      - tasks/get
+      Mcp-Name:
+      - vault-B12
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","id":"883de5fa-3cc6-498d-901a-4cbe1f62a50e","result":{"taskId":"vault-B12","status":"completed","createdAt":"2026-10-16T12:00:00Z","lastUpdatedAt":"2026-10-16T12:00:00Z","ttlMs":60000,"pollIntervalMs":5000,"statusMessage":"Checking
+        NordGen shelf B-12","resultType":"complete","result":{"content":[{"type":"text","text":"NordGen
+        shelf B-12: 24 crates reconciled."}]}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Svalbard
+        intake: reconcile the NordGen seed crates for shelf B-12."},{"type":"function_call","call_id":"call_11_3_0","name":"reconcile_crates","arguments":"{}"},{"type":"function_call_output","call_id":"call_11_3_0","output":"NordGen
+        shelf B-12: 24 crates reconciled."}],"instructions":"You keep the Svalbard
+        seed vault intake. Call reconcile_crates once, then report the crate count
+        when the task finishes.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"reconcile_crates","description":"Reconcile
+        NordGen seed crates on shelf B-12","parameters":{"type":"object","properties":{},"required":[]},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_11_11","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"message","id":"msg_11","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Svalbard
+        shelf B-12 has 24 crates reconciled for NordGen.","annotations":[]}]}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0
