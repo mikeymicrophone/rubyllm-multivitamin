@@ -1,0 +1,27 @@
+# Runs every bottled example against its recorded cassette.
+# Cassettes replay offline, so no API keys are needed here.
+# (Replaces the old examples.yml, which ran the same command on every push.)
+name: test
+
+# Run on every pull request, and on pushes to main (after a merge).
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Fetch the repository's code into the runner.
+      - uses: actions/checkout@v4
+
+      # Install Ruby. With no ruby-version given it reads .ruby-version.
+      # bundler-cache runs `bundle install` and caches the gems between runs.
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # Same command you'd run locally (see Rakefile).
+      - name: Run examples against cassettes
+        run: bundle exec rake test
