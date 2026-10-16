@@ -6,12 +6,10 @@
 # - with_schema sticks for later asks until you change it.
 # - with_schema(nil) returns the chat to prose.
 # - A later with_schema installs a different schema on the same chat.
+# - A table of schema/question pairs drives the three turns with map.
 
 require "json"
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module ChengduPandaGate
   class GateState < Schematist::Schema
@@ -58,14 +56,11 @@ module ChengduPandaGate
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
 
-      chat.with_schema(GateState)
-      gate = chat.ask(GATE_QUESTION)
-
-      chat.with_schema(nil)
-      prose = chat.ask(PROSE_QUESTION)
-
-      chat.with_schema(CrewNote)
-      note = chat.ask(NOTE_QUESTION)
+      gate, prose, note = [
+        [GateState, GATE_QUESTION],
+        [nil, PROSE_QUESTION],
+        [CrewNote, NOTE_QUESTION]
+      ].map { |schema, question| chat.with_schema(schema).ask(question) }
 
       Result.new(
         gate: gate.parsed,
@@ -80,22 +75,13 @@ module ChengduPandaGate
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "gate_state") do
-    result = ChengduPandaGate::GateLog.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "gate_state") do
+    ChengduPandaGate::GateLog.conduct
   end
 
   puts JSON.generate(result.gate)

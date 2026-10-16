@@ -25,6 +25,7 @@ class PigmentDrawersTest < Minitest::Test
     assert_equal 1, by_letter["B"]["spares"]
     assert_equal "gold leaf", by_letter["C"]["contents"]
     assert_equal 6, by_letter["C"]["spares"]
+    assert_equal "B", result.last_spare
     assert by_letter.values.all? { |drawer| drawer["spares"].is_a?(Integer) }
     assert_equal %i[system user assistant], result.roles
     assert_equal :stop, result.finish

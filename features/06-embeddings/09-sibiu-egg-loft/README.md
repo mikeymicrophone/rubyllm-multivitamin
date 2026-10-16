@@ -6,6 +6,7 @@ eave repair. The paraphrase wins.
 
 **What it teaches**
 
+- A curried `method(:cosine)` supplies the query vector to both comparisons. Shared cosine math uses `zip` and `sum` instead of indexed accumulation.
 - A sentence and its paraphrase share a meaning the eave note does not.
 - The query, the hygrometer, and the eave ride in one batch.
 - Ranking is cosine on the three vectors. The test locks the order, not a

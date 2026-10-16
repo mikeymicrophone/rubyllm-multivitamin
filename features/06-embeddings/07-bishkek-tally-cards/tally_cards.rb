@@ -6,10 +6,7 @@
 # - An empty string still embeds on OpenAI. tokens.input is 0 and cost is 0.
 # - An empty array raises RubyLLM::BadRequestError before a vector exists.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module BishkekTallyCards
   # The precinct clerk in Sverdlov tries to file a blank tally card, then
@@ -50,22 +47,13 @@ module BishkekTallyCards
       )
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "tally_cards") do
-    result = BishkekTallyCards::TallyCards.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "tally_cards") do
+    BishkekTallyCards::TallyCards.conduct
   end
 
   puts "blank #{result.blank_length} tokens #{result.blank_tokens}"

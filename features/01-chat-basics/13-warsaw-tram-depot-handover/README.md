@@ -4,6 +4,7 @@ The outgoing dispatcher at Zajezdnia Mokotów hands the night timetable and the 
 
 **What it teaches**
 
+- `each_with_object` collects named turns, with `%i[input output]` selecting token readers.
 - `with_instructions` stays on the chat for the brief and the locker question.
 - The first `ask` carries two boards. The second `ask` does not repeat them.
 - `chat.messages` roles are system, user, assistant, user, assistant.

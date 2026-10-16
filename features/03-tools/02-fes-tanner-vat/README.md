@@ -6,6 +6,7 @@ the schema.
 
 **What it teaches**
 
+- Stored `proc` callbacks capture complete arguments with `before_tool_call` and the raw result with `after_tool_result`, without searching the transcript.
 - A required keyword on `execute` becomes a required string property.
 - An optional keyword would be optional. This tool has none, so `vat`
   is the only entry in `required`.

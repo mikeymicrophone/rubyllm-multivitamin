@@ -8,10 +8,8 @@
 # - A query must use the same slug. A different model is refused.
 
 require "json"
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
+require_relative "../../../support/vectors"
 
 module DhakaJamdaniLedger
   # The loft clerk in Narayanganj writes three weaving notes to a JSON
@@ -100,34 +98,15 @@ module DhakaJamdaniLedger
       end.sort_by { |row| -row.score }
     end
 
-    def self.cosine(left, right)
-      dot = 0.0
-      na = 0.0
-      nb = 0.0
-      left.each_index do |index|
-        dot += left[index] * right[index]
-        na += left[index] * left[index]
-        nb += right[index] * right[index]
-      end
-      dot / (Math.sqrt(na) * Math.sqrt(nb))
-    end
+    def self.cosine(left, right) = Multivitamin::Vectors.cosine(left, right)
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "jamdani_ledger") do
-    result = DhakaJamdaniLedger::JamdaniLedger.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "jamdani_ledger") do
+    DhakaJamdaniLedger::JamdaniLedger.conduct
   end
 
   puts result.winner

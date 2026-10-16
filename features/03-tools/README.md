@@ -42,7 +42,7 @@ These cassettes were recorded on `gpt-4.1-mini` with `provider: :openai`. The id
 | 02 | A required keyword (`vat:`) inferred from `execute`; a bad `call` returns `{ error: }` |
 | 03 | An explicit `parameter` with a description, `required: true`, and a numeric type |
 | 04 | A tool instance that closes over today's lodge book, and an integer parameter |
-| 05 | `with_tools` adds a second tool; `choice: :required` lets the model pick |
+| 05 | Class and stateful instance tools registered together, `parameters do`, and `choice: :required` |
 | 06 | `with_tools(nil)` replaces the set. There is no `with_tool` |
 | 07 | A miss returns `{ error: }` as JSON, and the model calls the tool again |
 | 08 | A raise inside `execute` leaves `ask` and does not append a `:tool` message |

@@ -8,10 +8,7 @@
 #   and the model uses its own defaults.
 # - The same tempering board can be asked on each chat.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module BrusselsTempering
   # The chef de laboratoire posts the temper twice: once with sampling and
@@ -75,22 +72,13 @@ module BrusselsTempering
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "tempering_board") do
-    result = BrusselsTempering::TemperingBoard.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "tempering_board") do
+    BrusselsTempering::TemperingBoard.conduct
   end
 
   puts "temperature #{result.held_temperature}, cap #{result.held_output_cap}:"

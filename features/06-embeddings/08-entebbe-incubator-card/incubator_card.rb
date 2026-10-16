@@ -8,10 +8,7 @@
 # - OpenAI text-embedding-3-small raises UnsupportedAttachmentError
 #   before any HTTP call.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module EntebbeIncubatorCard
   # The night clerk at UVRI embeds the photographed incubator plaque with a
@@ -49,32 +46,15 @@ module EntebbeIncubatorCard
       )
     end
 
-    def self.configure_openrouter
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openrouter)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure_openrouter = Multivitamin::Runtime.configure(provider: :openrouter)
 
-    def self.configure_openai
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure_openai = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "incubator_card") do
-    result = EntebbeIncubatorCard::IncubatorCard.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "incubator_card") do
+    EntebbeIncubatorCard::IncubatorCard.conduct
   end
 
   puts "#{result.model_id} #{result.vectors.length} dimensions"

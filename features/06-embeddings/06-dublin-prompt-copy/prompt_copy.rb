@@ -7,10 +7,8 @@
 #   different rain-machine note.
 # - One batch holds the note, its copy, and the rain.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
+require_relative "../../../support/vectors"
 
 module DublinPromptCopy
   # The prompt at the Abbey files Maurya's Act II entrance twice by
@@ -53,34 +51,15 @@ module DublinPromptCopy
       )
     end
 
-    def self.cosine(left, right)
-      dot = 0.0
-      na = 0.0
-      nb = 0.0
-      left.each_index do |index|
-        dot += left[index] * right[index]
-        na += left[index] * left[index]
-        nb += right[index] * right[index]
-      end
-      dot / (Math.sqrt(na) * Math.sqrt(nb))
-    end
+    def self.cosine(left, right) = Multivitamin::Vectors.cosine(left, right)
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "prompt_copy") do
-    result = DublinPromptCopy::PromptCopy.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "prompt_copy") do
+    DublinPromptCopy::PromptCopy.conduct
   end
 
   puts "copy #{result.self_score.round(6)} current #{result.current_score.round(4)}"

@@ -4,6 +4,7 @@ The pigment keeper inventories three drawers of mineral colour at a thangka atel
 
 **What it teaches**
 
+- Parsed hashes become `Data` records through `case/in`; an array find pattern identifies drawer B with its last spare. The recorded counts stay unchanged.
 - `array` with an `object` block is one Hash per drawer.
 - `response.parsed["drawers"]` is an Array. Spare counts are integers.
 - The item schema on the wire is `type: array` with an object `items` schema.

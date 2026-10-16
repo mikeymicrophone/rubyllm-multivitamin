@@ -4,6 +4,7 @@ The watchmaker at the regulating bench in La Chaux-de-Fonds copies the posted ti
 
 **What it teaches**
 
+- Fluent configuration builds the chat; `Data.define` packages the immutable timing slate.
 - `with_temperature(0.0)` sets sampling on this chat before the ask.
 - `with_instructions` tells the watchmaker the three lines the slate is allowed to carry.
 - The reply is still a `RubyLLM::Message`. Short does not mean missing: `content` holds the card, and `finish_reason` still says why it stopped.

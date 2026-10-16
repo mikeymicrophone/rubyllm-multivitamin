@@ -6,6 +6,8 @@ The second AD at Estudios Churubusco has the day's call sheet on one chat. "And 
 
 - Reusing a chat sends the call sheet again, so the follow-up can name the Patio unit's 15:05 setup.
 - A new `RubyLLM.chat` starts empty. The same question, with the same instructions, does not contain Monzón del Palacio or 15:05.
+- `RubyLLM.context` configures the studio without changing global provider settings.
+- Explicit model/provider keywords and `with_provider_options(seed: 1014)` show request options on OpenRouter. In 2.1.1 this replaces the old `with_params` name.
 - Instructions tell the fresh chat to say the call sheet was not handed over, instead of inventing a time.
 
 **Files**
@@ -27,14 +29,14 @@ bundle exec ruby features/01-chat-basics/09-mexico-city-soundstage-call/call_she
 
 Both commands replay the cassette. No API key is required. `rake test` runs the same test with the rest of the bottled examples.
 
-The cassette is a live recording of OpenAI `gpt-4.1-mini`. Monzón del Palacio sets up at 09:15. The Patio unit, on the reused chat, sets up at 15:05. The fresh chat says the call sheet was not handed over. Re-record it with:
+The cassette is a hand-authored OpenRouter replay, adapted from the original OpenAI recording. It preserves the original reply text and token counts; those counts are fixture values, not measurements of the OpenRouter model. The requests use Chat Completions with reasoning disabled and seed 1014. It has not been re-recorded against OpenRouter. Monzón del Palacio sets up at 09:15. The Patio unit, on the reused chat, sets up at 15:05. The fresh chat says the call sheet was not handed over. Re-record it with:
 
 ```sh
-LIVE=1 OPENAI_API_KEY=... bundle exec ruby features/01-chat-basics/09-mexico-city-soundstage-call/call_sheet.rb
+LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/01-chat-basics/09-mexico-city-soundstage-call/call_sheet.rb
 ```
 
 `LIVE=1` overwrites the cassette. The helper strips `Authorization` and any `sk-` token before the file is written.
 
 **Model**
 
-`gpt-4.1-mini` on OpenAI (`provider: :openai`). Recorded after OpenRouter `:free` slugs hit `free-models-per-day` on 15 October 2026. Fallback: `gpt-4o-mini`.
+`nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter (`provider: :openrouter`). Fallback: `liquid/lfm-2.5-2.6b:free`. `LIVE=1` should re-record the hand-authored fixture before treating its replies as model behavior. `LIVE_PROVIDER=openai` selects `gpt-4.1-mini` for a new recording.

@@ -133,7 +133,9 @@ Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
 for the mid-chat switch) after OpenRouter `:free` slugs hit
-`free-models-per-day`. Streaming was re-recorded on OpenAI `gpt-4.1-mini`
+`free-models-per-day`. Chat basics slot 09 now uses a hand-authored OpenRouter
+fixture that preserves the original dialogue; see its README for provenance
+and re-recording instructions. Streaming was re-recorded on OpenAI `gpt-4.1-mini`
 after the same cap. Tools, structured output, the
 attachment scenarios, the embedding text cassettes, image generation,
 text to speech, provider tools and citations, and tool approval are live OpenAI recordings. The Smith Island barometer card is a live

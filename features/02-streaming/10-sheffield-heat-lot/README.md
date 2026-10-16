@@ -7,6 +7,7 @@ chunks.
 
 **What it teaches**
 
+- A stored lambda receives chunks through `ask(..., &collector)`.
 - A lot code is read from the joined `content`, which equals the message
   `ask` returns. This recording splits `SHF-2026-1014-R2-B3` so no piece
   holds the whole code.

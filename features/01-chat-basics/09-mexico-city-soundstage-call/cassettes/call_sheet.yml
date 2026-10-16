@@ -1,523 +1,104 @@
----
+# Hand-authored OpenRouter replay; preserves the original OpenAI reply text.
 http_interactions:
 - request:
     method: post
-    uri: https://api.openai.com/v1/responses
+    uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Call sheet
-        posted at Estudios Churubusco for Wednesday 14 October 2026.\nThe studio page
-        is https://www.estudioschurubusco.com/.\nStage opens 06:30.\nFirst setup 09:15
-        for the song number Monzón del Palacio.\nStage closes 11:40.\nAfternoon setup
-        15:05 for the dialogue unit Patio de los Naranjos.\nWhen is first setup for
-        Monzón del Palacio?"}],"instructions":"You are the second AD at Estudios Churubusco
-        in Mexico City.\nAnswer in one or two short sentences from the call sheet
-        in this conversation.\nIf this conversation has never included a posted call
-        sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet
-        was not handed over.\nDo not invent setup times.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences
+        from the call sheet in this conversation.\nIf this conversation has never included a posted call
+        sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo
+        not invent setup times."},{"role":"user","content":"Call sheet posted at Estudios Churubusco for
+        Wednesday 14 October 2026.\nThe studio page is https://www.estudioschurubusco.com/.\nStage opens
+        06:30.\nFirst setup 09:15 for the song number Monzón del Palacio.\nStage closes 11:40.\nAfternoon
+        setup 15:05 for the dialogue unit Patio de los Naranjos.\nWhen is first setup for Monzón del Palacio?"}],"stream":false,"temperature":0.2,"reasoning":{"enabled":false},"seed":1014}'
     headers:
-      User-Agent:
-      - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENAI_API_KEY>
+      - Bearer <OPENROUTER_API_KEY>
       Content-Type:
       - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Thu, 15 Oct 2026 16:45:33 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cf-Ray:
-      - a4b04b75cf258b10-PDX
-      Cf-Cache-Status:
-      - DYNAMIC
-      Server:
-      - cloudflare
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Access-Control-Expose-Headers:
-      - CF-Ray
-      - CF-Ray
-      - X-Request-ID
-      Openai-Organization:
-      - micharisma
-      Openai-Processing-Ms:
-      - '674'
-      Openai-Project:
-      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '5000'
-      X-Ratelimit-Limit-Tokens:
-      - '2000000'
-      X-Ratelimit-Remaining-Requests:
-      - '4999'
-      X-Ratelimit-Remaining-Tokens:
-      - '1999809'
-      X-Ratelimit-Reset-Requests:
-      - 12ms
-      X-Ratelimit-Reset-Tokens:
-      - 5ms
-      X-Request-Id:
-      - req_804fbac56176490bbc6d83b20e586f21
-      Alt-Svc:
-      - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "id": "resp_0a74e4f32e69e570016ad1032c877887d0bc415a48b26db3f4",
-          "object": "response",
-          "created_at": 1792082732,
-          "status": "completed",
-          "access_programs": null,
-          "background": false,
-          "billing": {
-            "payer": "openai"
-          },
-          "completed_at": 1792082733,
-          "error": null,
-          "frequency_penalty": 0.0,
-          "incomplete_details": null,
-          "instructions": "You are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences from the call sheet in this conversation.\nIf this conversation has never included a posted call sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo not invent setup times.",
-          "max_output_tokens": null,
-          "max_tool_calls": null,
-          "model": "gpt-4.1-mini-2025-04-14",
-          "moderation": null,
-          "output": [
-            {
-              "id": "msg_0a74e4f32e69e570016ad1032cfa1487d098a7d1c2235e2756",
-              "type": "message",
-              "status": "completed",
-              "content": [
-                {
-                  "type": "output_text",
-                  "annotations": [],
-                  "logprobs": [],
-                  "text": "The first setup for Monz\u00f3n del Palacio is at 09:15."
-                }
-              ],
-              "role": "assistant"
-            }
-          ],
-          "parallel_tool_calls": true,
-          "presence_penalty": 0.0,
-          "previous_response_id": null,
-          "prompt_cache_key": null,
-          "prompt_cache_retention": "in_memory",
-          "reasoning": {
-            "context": null,
-            "effort": null,
-            "summary": null
-          },
-          "safety_identifier": null,
-          "service_tier": "default",
-          "store": false,
-          "temperature": 0.2,
-          "text": {
-            "format": {
-              "type": "text"
-            },
-            "verbosity": "medium"
-          },
-          "tool_choice": "auto",
-          "tool_usage": {
-            "image_gen": {
-              "input_tokens": 0,
-              "input_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "output_tokens": 0,
-              "output_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "total_tokens": 0
-            },
-            "web_search": {
-              "num_requests": 0
-            }
-          },
-          "tools": [],
-          "top_logprobs": 0,
-          "top_p": 1.0,
-          "truncation": "disabled",
-          "usage": {
-            "input_tokens": 172,
-            "input_tokens_details": {
-              "cache_write_tokens": 0,
-              "cached_tokens": 0
-            },
-            "output_tokens": 17,
-            "output_tokens_details": {
-              "reasoning_tokens": 0
-            },
-            "total_tokens": 189
-          },
-          "user": null,
-          "metadata": {}
-        }
+      encoding: UTF-8
+      string: '{"id":"churubusco-call-1","object":"chat.completion","created":1792082732,"model":"nvidia/nemotron-3-super-120b-a12b:free","choices":[{"index":0,"finish_reason":"stop","message":{"role":"assistant","content":"The
+        first setup for Monzón del Palacio is at 09:15."}}],"usage":{"prompt_tokens":172,"completion_tokens":17,"total_tokens":189,"cost":0}}'
   recorded_at: Thu, 15 Oct 2026 16:45:33 GMT
 - request:
     method: post
-    uri: https://api.openai.com/v1/responses
+    uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Call sheet
-        posted at Estudios Churubusco for Wednesday 14 October 2026.\nThe studio page
-        is https://www.estudioschurubusco.com/.\nStage opens 06:30.\nFirst setup 09:15
-        for the song number Monzón del Palacio.\nStage closes 11:40.\nAfternoon setup
-        15:05 for the dialogue unit Patio de los Naranjos.\nWhen is first setup for
-        Monzón del Palacio?"},{"role":"assistant","content":[{"type":"output_text","text":"The
-        first setup for Monzón del Palacio is at 09:15."}]},{"role":"user","content":"And
-        the Patio de los Naranjos unit?"}],"instructions":"You are the second AD at
-        Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences
-        from the call sheet in this conversation.\nIf this conversation has never
-        included a posted call sheet, reply with\nexactly this sentence and nothing
-        else:\nThe call sheet was not handed over.\nDo not invent setup times.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences
+        from the call sheet in this conversation.\nIf this conversation has never included a posted call
+        sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo
+        not invent setup times."},{"role":"user","content":"Call sheet posted at Estudios Churubusco for
+        Wednesday 14 October 2026.\nThe studio page is https://www.estudioschurubusco.com/.\nStage opens
+        06:30.\nFirst setup 09:15 for the song number Monzón del Palacio.\nStage closes 11:40.\nAfternoon
+        setup 15:05 for the dialogue unit Patio de los Naranjos.\nWhen is first setup for Monzón del Palacio?"},{"role":"assistant","content":"The
+        first setup for Monzón del Palacio is at 09:15."},{"role":"user","content":"And the Patio de los
+        Naranjos unit?"}],"stream":false,"temperature":0.2,"reasoning":{"enabled":false},"seed":1014}'
     headers:
-      User-Agent:
-      - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENAI_API_KEY>
+      - Bearer <OPENROUTER_API_KEY>
       Content-Type:
       - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Thu, 15 Oct 2026 16:45:33 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cf-Ray:
-      - a4b04b7ade45ff0e-PDX
-      Cf-Cache-Status:
-      - DYNAMIC
-      Server:
-      - cloudflare
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Access-Control-Expose-Headers:
-      - CF-Ray
-      - CF-Ray
-      - X-Request-ID
-      Openai-Organization:
-      - micharisma
-      Openai-Processing-Ms:
-      - '571'
-      Openai-Project:
-      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '5000'
-      X-Ratelimit-Limit-Tokens:
-      - '2000000'
-      X-Ratelimit-Remaining-Requests:
-      - '4999'
-      X-Ratelimit-Remaining-Tokens:
-      - '1999759'
-      X-Ratelimit-Reset-Requests:
-      - 12ms
-      X-Ratelimit-Reset-Tokens:
-      - 7ms
-      X-Request-Id:
-      - req_6846ae7baaa64c48bc3bc89eb0994fbc
-      Alt-Svc:
-      - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "id": "resp_0be76266c4929a6c016ad1032d546c87d0b80e0efa17c9da39",
-          "object": "response",
-          "created_at": 1792082733,
-          "status": "completed",
-          "access_programs": null,
-          "background": false,
-          "billing": {
-            "payer": "openai"
-          },
-          "completed_at": 1792082733,
-          "error": null,
-          "frequency_penalty": 0.0,
-          "incomplete_details": null,
-          "instructions": "You are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences from the call sheet in this conversation.\nIf this conversation has never included a posted call sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo not invent setup times.",
-          "max_output_tokens": null,
-          "max_tool_calls": null,
-          "model": "gpt-4.1-mini-2025-04-14",
-          "moderation": null,
-          "output": [
-            {
-              "id": "msg_0be76266c4929a6c016ad1032dac1487d0837c3c81526cb17a",
-              "type": "message",
-              "status": "completed",
-              "content": [
-                {
-                  "type": "output_text",
-                  "annotations": [],
-                  "logprobs": [],
-                  "text": "The afternoon setup for Patio de los Naranjos is at 15:05."
-                }
-              ],
-              "role": "assistant"
-            }
-          ],
-          "parallel_tool_calls": true,
-          "presence_penalty": 0.0,
-          "previous_response_id": null,
-          "prompt_cache_key": null,
-          "prompt_cache_retention": "in_memory",
-          "reasoning": {
-            "context": null,
-            "effort": null,
-            "summary": null
-          },
-          "safety_identifier": null,
-          "service_tier": "default",
-          "store": false,
-          "temperature": 0.2,
-          "text": {
-            "format": {
-              "type": "text"
-            },
-            "verbosity": "medium"
-          },
-          "tool_choice": "auto",
-          "tool_usage": {
-            "image_gen": {
-              "input_tokens": 0,
-              "input_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "output_tokens": 0,
-              "output_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "total_tokens": 0
-            },
-            "web_search": {
-              "num_requests": 0
-            }
-          },
-          "tools": [],
-          "top_logprobs": 0,
-          "top_p": 1.0,
-          "truncation": "disabled",
-          "usage": {
-            "input_tokens": 206,
-            "input_tokens_details": {
-              "cache_write_tokens": 0,
-              "cached_tokens": 0
-            },
-            "output_tokens": 18,
-            "output_tokens_details": {
-              "reasoning_tokens": 0
-            },
-            "total_tokens": 224
-          },
-          "user": null,
-          "metadata": {}
-        }
+      encoding: UTF-8
+      string: '{"id":"churubusco-call-2","object":"chat.completion","created":1792082733,"model":"nvidia/nemotron-3-super-120b-a12b:free","choices":[{"index":0,"finish_reason":"stop","message":{"role":"assistant","content":"The
+        afternoon setup for Patio de los Naranjos is at 15:05."}}],"usage":{"prompt_tokens":206,"completion_tokens":18,"total_tokens":224,"cost":0}}'
   recorded_at: Thu, 15 Oct 2026 16:45:33 GMT
 - request:
     method: post
-    uri: https://api.openai.com/v1/responses
+    uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"And the
-        Patio de los Naranjos unit?"}],"instructions":"You are the second AD at Estudios
-        Churubusco in Mexico City.\nAnswer in one or two short sentences from the
-        call sheet in this conversation.\nIf this conversation has never included
-        a posted call sheet, reply with\nexactly this sentence and nothing else:\nThe
-        call sheet was not handed over.\nDo not invent setup times.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences
+        from the call sheet in this conversation.\nIf this conversation has never included a posted call
+        sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo
+        not invent setup times."},{"role":"user","content":"And the Patio de los Naranjos unit?"}],"stream":false,"temperature":0.2,"reasoning":{"enabled":false},"seed":1014}'
     headers:
-      User-Agent:
-      - Faraday v2.14.4
       Authorization:
-      - Bearer <OPENAI_API_KEY>
+      - Bearer <OPENROUTER_API_KEY>
       Content-Type:
       - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Thu, 15 Oct 2026 16:45:34 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Cf-Ray:
-      - a4b04b7f4d5ad74d-PDX
-      Cf-Cache-Status:
-      - DYNAMIC
-      Server:
-      - cloudflare
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      X-Content-Type-Options:
-      - nosniff
-      Access-Control-Expose-Headers:
-      - CF-Ray
-      - CF-Ray
-      - X-Request-ID
-      Openai-Organization:
-      - micharisma
-      Openai-Processing-Ms:
-      - '669'
-      Openai-Project:
-      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '5000'
-      X-Ratelimit-Limit-Tokens:
-      - '2000000'
-      X-Ratelimit-Remaining-Requests:
-      - '4998'
-      X-Ratelimit-Remaining-Tokens:
-      - '1999635'
-      X-Ratelimit-Reset-Requests:
-      - 24ms
-      X-Ratelimit-Reset-Tokens:
-      - 10ms
-      X-Request-Id:
-      - req_784a0f899aa34383919e10eb92f522cf
-      Alt-Svc:
-      - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "id": "resp_022098e31bbf9742016ad1032e0d1887d0b17cacff80265289",
-          "object": "response",
-          "created_at": 1792082734,
-          "status": "completed",
-          "access_programs": null,
-          "background": false,
-          "billing": {
-            "payer": "openai"
-          },
-          "completed_at": 1792082734,
-          "error": null,
-          "frequency_penalty": 0.0,
-          "incomplete_details": null,
-          "instructions": "You are the second AD at Estudios Churubusco in Mexico City.\nAnswer in one or two short sentences from the call sheet in this conversation.\nIf this conversation has never included a posted call sheet, reply with\nexactly this sentence and nothing else:\nThe call sheet was not handed over.\nDo not invent setup times.",
-          "max_output_tokens": null,
-          "max_tool_calls": null,
-          "model": "gpt-4.1-mini-2025-04-14",
-          "moderation": null,
-          "output": [
-            {
-              "id": "msg_022098e31bbf9742016ad1032e83d487d08d53142bfa3343f9",
-              "type": "message",
-              "status": "completed",
-              "content": [
-                {
-                  "type": "output_text",
-                  "annotations": [],
-                  "logprobs": [],
-                  "text": "The call sheet was not handed over."
-                }
-              ],
-              "role": "assistant"
-            }
-          ],
-          "parallel_tool_calls": true,
-          "presence_penalty": 0.0,
-          "previous_response_id": null,
-          "prompt_cache_key": null,
-          "prompt_cache_retention": "in_memory",
-          "reasoning": {
-            "context": null,
-            "effort": null,
-            "summary": null
-          },
-          "safety_identifier": null,
-          "service_tier": "default",
-          "store": false,
-          "temperature": 0.2,
-          "text": {
-            "format": {
-              "type": "text"
-            },
-            "verbosity": "medium"
-          },
-          "tool_choice": "auto",
-          "tool_usage": {
-            "image_gen": {
-              "input_tokens": 0,
-              "input_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "output_tokens": 0,
-              "output_tokens_details": {
-                "image_tokens": 0,
-                "text_tokens": 0
-              },
-              "total_tokens": 0
-            },
-            "web_search": {
-              "num_requests": 0
-            }
-          },
-          "tools": [],
-          "top_logprobs": 0,
-          "top_p": 1.0,
-          "truncation": "disabled",
-          "usage": {
-            "input_tokens": 88,
-            "input_tokens_details": {
-              "cache_write_tokens": 0,
-              "cached_tokens": 0
-            },
-            "output_tokens": 9,
-            "output_tokens_details": {
-              "reasoning_tokens": 0
-            },
-            "total_tokens": 97
-          },
-          "user": null,
-          "metadata": {}
-        }
+      encoding: UTF-8
+      string: '{"id":"churubusco-call-3","object":"chat.completion","created":1792082734,"model":"nvidia/nemotron-3-super-120b-a12b:free","choices":[{"index":0,"finish_reason":"stop","message":{"role":"assistant","content":"The
+        call sheet was not handed over."}}],"usage":{"prompt_tokens":88,"completion_tokens":9,"total_tokens":97,"cost":0}}'
   recorded_at: Thu, 15 Oct 2026 16:45:34 GMT
 recorded_with: VCR 6.4.0

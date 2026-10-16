@@ -8,10 +8,7 @@
 #   it as a score question. The score can fall between level indexes.
 
 require "json"
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module LaPazRadiosonde
   class BalloonRound < Schematist::Schema
@@ -86,22 +83,13 @@ module LaPazRadiosonde
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "balloon_round") do
-    result = LaPazRadiosonde::Clipboard.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "balloon_round") do
+    LaPazRadiosonde::Clipboard.conduct
   end
 
   puts JSON.generate(result.parsed)

@@ -28,7 +28,7 @@ class LoomDeskTest < Minitest::Test
     refute_includes request, "54"
   end
 
-  def test_a_second_with_tools_keeps_the_first_tool
+  def test_classes_and_stateful_instances_share_one_registration
     Multivitamin::Cassettes.prepare_key!
 
     chat = AccraKenteLoom::LoomDesk.open_desk

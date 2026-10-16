@@ -7,13 +7,22 @@
 # - A second ask on the same chat sends the earlier tool result back.
 # - halt and RubyLLM::Tool::Halt are gone in 2.1.1. generate, then
 #   run_tools, and do not continue: the loop stops on the tool message.
+# - before_tool_call audits the boards; a refinement formats the chit time.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module WellingtonSittingDesk
+  module SittingClock
+    refine Integer do
+      def hhmm
+        hours, minutes = divmod(60)
+        format("%02d:%02d", hours, minutes)
+      end
+    end
+  end
+
+  using SittingClock
+
   class PostedSittingBoard < RubyLLM::Tool
     description "Reads the Beehive sitting board, including when Aroha clears the public gallery"
 
@@ -58,7 +67,7 @@ module WellingtonSittingDesk
     end
 
     def execute
-      "Relief chit. Aroha clears at 10:12. Bell ring 3 seconds. Gallery stays shut."
+      "Relief chit. Aroha clears at #{(10 * 60 + 12).hhmm}. Bell ring 3 seconds. Gallery stays shut."
     end
   end
 
@@ -87,6 +96,7 @@ module WellingtonSittingDesk
       :roles,
       :tool_contents,
       :settled,
+      :called_boards,
       keyword_init: true
     )
 
@@ -98,6 +108,8 @@ module WellingtonSittingDesk
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat.with_tools(PostedSittingBoard, PostedBellCard, GalleryLatch)
+      called_boards = []
+      chat.before_tool_call { |call| called_boards << call.name }
 
       chat.with_tool_options(choice: :required)
       sitting = chat.ask(SITTING_QUESTION)
@@ -117,7 +129,8 @@ module WellingtonSittingDesk
         chit: chat.messages.reverse.find { |message| message.role == :tool }&.content,
         roles: chat.messages.map(&:role),
         tool_contents: chat.messages.select { |message| message.role == :tool }.map(&:content),
-        settled: chat.complete?
+        settled: chat.complete?,
+        called_boards: called_boards
       )
     end
 
@@ -125,22 +138,13 @@ module WellingtonSittingDesk
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "sitting_desk") do
-    result = WellingtonSittingDesk::SittingDesk.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "sitting_desk") do
+    WellingtonSittingDesk::SittingDesk.conduct
   end
 
   puts result.sitting_answer

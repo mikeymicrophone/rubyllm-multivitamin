@@ -8,7 +8,7 @@ Official reference: [Chat](https://rubyllm.com/chat/).
 
 ## Free models
 
-Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free`. Checked 14 October 2026. These thirteen cassettes were re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini` for the mid-chat switch) after the `:free` slugs hit `free-models-per-day`.
+Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free`. Checked 14 October 2026. Twelve cassettes use OpenAI `gpt-4.1-mini` (and `gpt-4o-mini` for the mid-chat switch), recorded after the `:free` slugs hit `free-models-per-day`. Slot 09 now uses an isolated OpenRouter context and a hand-authored replay preserving the original dialogue; its README describes how to replace that fixture with a live recording.
 
 ## Examples (13 of 13 bottled)
 
@@ -32,17 +32,17 @@ Default `nvidia/nemotron-3-super-120b-a12b:free`. Fallbacks: `liquid/lfm-2.5-2.6
 | --- | --- |
 | 01 | Open a chat, set instructions and temperature, ask, then ask again and read roles |
 | 02 | One question, one answer, and the message readers (`content`, `role`, `model`, `tokens`, `finish_reason`) |
-| 03 | A short card the clerk must not embellish; low temperature |
+| 03 | A short card the clerk must not embellish; low temperature, fluent setup, and a `Data` result |
 | 04 | Three turns: the receiving, a correction, then a recap that uses both |
 | 05 | Several booths in the prompt; the reply names one and `chat.messages` keeps the rest |
 | 06 | Two models on one probe question, then `with_model` for the spare timeout |
 | 07 | `say` as the alias, and `chat.messages` printed with roles |
-| 08 | A factual round where `stopped?` is the check, not a substring of the prose |
-| 09 | Reusing the call-sheet chat versus a fresh chat that never saw the sheet |
+| 08 | An instance owns the factual round's chat; `stopped?` checks completion |
+| 09 | Reused versus fresh transcripts in an OpenRouter context, with provider options |
 | 10 | Temperature and `with_max_output_tokens` set on one chat and left unset on another |
 | 11 | Two personas on two chats, and one transcript that grows turn by turn |
 | 12 | A tight output cap, an empty or short note, then `response.raw.status` on the posted correction |
-| 13 | Capstone: instructions, two boards, a follow-up, roles, finish reason, and tokens |
+| 13 | Capstone: two boards, a follow-up, and named-turn reduction with `each_with_object` |
 
 Planned titles are proposals, not commitments. See
 [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

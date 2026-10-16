@@ -6,6 +6,7 @@ Cosine similarity puts the two torch notes together.
 
 **What it teaches**
 
+- A lexical `Array` refinement delegates `cosine_sim` to the shared vector helper, which uses `zip` and `sum` reductions.
 - Cosine similarity is a Ruby calculation on `embedding.vectors`. RubyLLM
   does not rank the notes for you.
 - The catalog does not add the `matrix` gem. The bench computes the score

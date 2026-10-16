@@ -29,6 +29,6 @@ class CallSheetTest < Minitest::Test
     cassette = File.read(File.expand_path("cassettes/call_sheet.yml", __dir__))
 
     refute_match(/sk-/, cassette)
-    assert_includes cassette, "<OPENAI_API_KEY>"
+    assert_includes cassette, "<OPENROUTER_API_KEY>"
   end
 end

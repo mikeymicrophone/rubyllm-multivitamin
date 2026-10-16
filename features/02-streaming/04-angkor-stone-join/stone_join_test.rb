@@ -19,6 +19,7 @@ class StoneJoinTest < Minitest::Test
     assert_equal %i[system user assistant], result.roles
     assert_equal :stop, result.finish_reason
     assert_equal true, result.stopped
+    assert_equal %i[started assistant], result.events
 
     positions = CHECKS.map { |check| result.speech.downcase.index(check) }
     assert positions.all? { |position| position }

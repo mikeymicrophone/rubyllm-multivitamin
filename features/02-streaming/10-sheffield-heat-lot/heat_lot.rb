@@ -6,11 +6,9 @@
 # - A lot code can be flushed in the middle of the code.
 # - The label is the joined chunks, which is the returned message.
 # - A word beside a number may be separated by U+202F, which \s does not match.
+# - A stored lambda is passed to ask with &collector.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module SheffieldHeatLot
   # The stamp clerk at the Kelham Island cutlery works streams the heat-lot
@@ -46,10 +44,11 @@ module SheffieldHeatLot
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
 
       pieces = []
-      message = chat.ask(LABEL_QUESTION) do |chunk|
+      collector = ->(chunk) do
         piece = chunk.content.to_s
         pieces << piece unless piece.empty?
       end
+      message = chat.ask(LABEL_QUESTION, &collector)
 
       Result.new(speech: message.content, pieces: pieces)
     end
@@ -58,22 +57,13 @@ module SheffieldHeatLot
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "heat_lot") do
-    result = SheffieldHeatLot::HeatLot.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "heat_lot") do
+    SheffieldHeatLot::HeatLot.conduct
   end
 
   puts result.speech

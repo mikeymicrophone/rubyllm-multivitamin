@@ -6,6 +6,7 @@ lot PRT-1014-C3. The lot code is not in the question.
 
 **What it teaches**
 
+- `case/in` destructures a complete cask card and distinguishes missing cards from incomplete ones.
 - Pass an instance to `with_tools` when the tool closes over today's book.
 - `parameter :cask, type: :integer` declares an integer the model must send.
 - `choice: LodgeCaskCard` still matches the instance, because the choice is

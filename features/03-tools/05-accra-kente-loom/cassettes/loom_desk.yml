@@ -13,7 +13,7 @@ http_interactions:
         in one sentence. Include the length the tool returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"reed_sett","description":"Reads
         the reed sett on the Bonwire loom. Not the remaining warp length.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"cloth_length","description":"Reads
         the remaining warp length of a numbered kente cloth at Bonwire","parameters":{"type":"object","properties":{"cloth":{"type":"integer","description":"Cloth
-        number on the Bonwire loom"}},"required":["cloth"],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":"required"}'
+        number on the Bonwire loom"}},"required":["cloth"],"additionalProperties":false},"strict":false}],"tool_choice":"required"}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -217,7 +217,7 @@ http_interactions:
         one sentence. Include the length the tool returns.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"reed_sett","description":"Reads
         the reed sett on the Bonwire loom. Not the remaining warp length.","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"cloth_length","description":"Reads
         the remaining warp length of a numbered kente cloth at Bonwire","parameters":{"type":"object","properties":{"cloth":{"type":"integer","description":"Cloth
-        number on the Bonwire loom"}},"required":["cloth"],"additionalProperties":false,"strict":true},"strict":false}]}'
+        number on the Bonwire loom"}},"required":["cloth"],"additionalProperties":false},"strict":false}]}'
     headers:
       User-Agent:
       - Faraday v2.14.4
