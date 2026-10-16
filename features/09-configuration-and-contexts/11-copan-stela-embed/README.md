@@ -39,7 +39,7 @@ LIVE=1 OPENROUTER_API_KEY=... OPENAI_API_KEY=... bundle exec ruby features/09-co
 
 **Model**
 
-Context: the free OpenRouter embedding slug when the daily cap allows,
-or `openai/text-embedding-3-small` on OpenRouter when
-`CONFIGURATION_OPENROUTER_PAID=1`. Global: `text-embedding-3-small` on
-OpenAI.
+Context: `nvidia/nemotron-3-embed-1b:free` on OpenRouter, recorded
+16 October 2026. `CONFIGURATION_OPENROUTER_PAID=1` uses
+`openai/text-embedding-3-small` on OpenRouter. Global:
+`text-embedding-3-small` on OpenAI.

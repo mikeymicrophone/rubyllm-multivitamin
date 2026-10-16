@@ -53,9 +53,17 @@ module ConfigurationPaidOpenrouter
 
   def prepare(chat)
     chat.with_max_output_tokens(OUTPUT_CAP)
-    unless paid? || Multivitamin::Models.recording_provider(:openrouter) == :openai
-      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
-    end
+    quiet_thinking_if_supported(chat)
     chat
+  end
+
+  def quiet_thinking_if_supported(chat)
+    return if paid?
+    return if Multivitamin::Models.recording_provider(:openrouter) == :openai
+
+    model_id = chat.model&.id.to_s
+    return unless model_id.empty? || model_id.include?("nemotron-3-super")
+
+    Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
   end
 end

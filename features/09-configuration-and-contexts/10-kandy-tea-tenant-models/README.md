@@ -39,6 +39,7 @@ LIVE=1 OPENROUTER_API_KEY=... bundle exec ruby features/09-configuration-and-con
 
 **Model**
 
-Loft: the free OpenRouter chat slug when the daily cap allows. Lab:
-`liquid/lfm-2.5-2.6b:free`. `CONFIGURATION_OPENROUTER_PAID=1` records
-`openai/gpt-4.1-mini` and `openai/gpt-4.1-nano` on OpenRouter.
+Loft: `nvidia/nemotron-3-super-120b-a12b:free` on OpenRouter, recorded
+16 October 2026. Lab: `liquid/lfm-2.5-2.6b:free`.
+`CONFIGURATION_OPENROUTER_PAID=1` records `openai/gpt-4.1-mini` and
+`openai/gpt-4.1-nano` on OpenRouter.

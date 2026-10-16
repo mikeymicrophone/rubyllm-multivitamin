@@ -24,7 +24,7 @@ module LimogesEnamelBase
       You are the kiln clerk at the enamel studio on rue du Consulat, Limoges.
       Answer in one or two short sentences.
       Use only the firing board in the question.
-      Name Sainte-Valerie and 09:15.
+      The reply must include the words Sainte-Valerie and the time 09:15.
       Do not invent a soak time.
     TEXT
 

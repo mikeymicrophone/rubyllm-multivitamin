@@ -5,22 +5,22 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the tide clerk at Point Wilson Light Station on Admiralty Inlet.\nAnswer
-        in one short sentence.\nUse only the tide board in the question.\nName Alden
-        and 10:46.\nDo not invent a tide height."},{"role":"user","content":"Tide
-        board posted for Wednesday 14 October 2026 at Point Wilson.\nStation page:
-        https://tidesandcurrents.noaa.gov/stationhome.html?id=9444900\nAlden clears
-        the kelp ledge at 10:46.\nWhen can Alden leave the float this morning?"}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the press clerk at Huilerie Riadh in Sousse.\nAnswer in one short sentence.\nUse
+        only the press card in the question.\nName Youssef and 06:40.\nDo not invent
+        an acidity."},{"role":"user","content":"Morning press card for Wednesday 14
+        October 2026 at Huilerie Riadh, Sousse.\nCommune page: https://www.commune-sousse.gov.tn/.\nFirst
+        cold press starts at 06:40.\nYoussef runs the stone wheel.\nPosted acidity
+        0.4 percent.\nWhen does Youssef start the first press?"}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
       - Bearer <OPENROUTER_API_KEY>
       Http-Referer:
-      - https://www.nps.gov/places/point-wilson-lighthouse.htm
+      - https://www.commune-sousse.gov.tn/
       X-Openrouter-Title:
-      - Point Wilson Light Station
+      - Huilerie Riadh press desk
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -33,7 +33,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:27 GMT
+      - Fri, 16 Oct 2026 01:54:12 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -43,7 +43,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010606-jm5QcrXz25SC4rABZB3X
+      - gen-1792115652-ykfULeWtGpKVkJVZBhaI
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -56,32 +56,34 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96a954e176e09-PDX
+      - a4b36f2998da5ee5-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010606-jm5QcrXz25SC4rABZB3X\",\"object\":\"chat.completion\",\"created\":1792010606,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"Alden
-        can leave the float at 10:46 on Wednesday, 14 October 2026.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":121,\"completion_tokens\":22,\"total_tokens\":143,\"cost\":0.0000836,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000836,\"upstream_inference_prompt_cost\":0.0000484,\"upstream_inference_completions_cost\":0.0000352},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:27 GMT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n{\"id\":\"gen-1792115652-ykfULeWtGpKVkJVZBhaI\",\"object\":\"chat.completion\",\"created\":1792115652,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Youssef
+        starts the first press at 06:40.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":146,\"completion_tokens\":16,\"total_tokens\":162,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:54:35 GMT
 - request:
     method: post
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the retort clerk at the Anacortes cannery.\nAnswer in one short sentence.\nUse
-        only the cook card in the question.\nName retort 2 and 242 F.\nDo not invent
-        a basket."},{"role":"user","content":"Morning cook card for Wednesday 14 October
-        2026, retort No. 2.\nMarina: https://www.portofanacortes.com/.\nPosted temperature
-        242 F.\nBasket 3 of sockeye.\nWrite the log line for the cannery office."}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the stall clerk at Souk el-Caïd in the Sousse medina.\nAnswer in one short
+        sentence.\nUse only the receiving card in the question.\nName harissa and
+        12.\nDo not invent a tin count."},{"role":"user","content":"Receiving card
+        for Wednesday 14 October 2026, Souk el-Caïd stall.\nMedina page: https://www.commune-sousse.gov.tn/medina.\nLot
+        SOS-314: 12 tins of harissa.\nLot SOS-208: 4 sacks of couscous, already stacked.\nWrite
+        the log line for the stall book."}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
       Authorization:
       - Bearer <OPENROUTER_API_KEY>
       Http-Referer:
-      - https://www.portofanacortes.com/
+      - https://www.commune-sousse.gov.tn/medina
       X-Openrouter-Title:
-      - Anacortes Cannery retort desk
+      - Souk el-Caïd stall
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -94,7 +96,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:28 GMT
+      - Fri, 16 Oct 2026 01:54:35 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -104,7 +106,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010608-JaT5bEn3frAAc5YeWt3o
+      - gen-1792115675-qmTSwxEjwH1nEsgsfJcB
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -117,10 +119,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96a9c284cd82e-PDX
+      - a4b36fbabddf87ab-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010608-JaT5bEn3frAAc5YeWt3o\",\"object\":\"chat.completion\",\"created\":1792010608,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"Retort
-        2, 242 F, basket 3 sockeye, morning cook, Wednesday 14 October 2026.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":110,\"completion_tokens\":27,\"total_tokens\":137,\"cost\":0.0000872,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000872,\"upstream_inference_prompt_cost\":0.000044,\"upstream_inference_completions_cost\":0.0000432},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:28 GMT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n\n         \n{\"id\":\"gen-1792115675-qmTSwxEjwH1nEsgsfJcB\",\"object\":\"chat.completion\",\"created\":1792115675,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"12
+        tins of harissa.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":150,\"completion_tokens\":9,\"total_tokens\":159,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:55:01 GMT
 recorded_with: VCR 6.4.0

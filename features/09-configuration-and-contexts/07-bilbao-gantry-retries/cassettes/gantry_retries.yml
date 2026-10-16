@@ -5,14 +5,14 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the mate on the pilot boat Alden, boarding ships off Neah Bay.\nAnswer
-        in two short sentences.\nUse only the ladder notes in the question.\nThe first
-        sentence starts with Yes or No.\nDo not invent a ladder length."},{"role":"user","content":"Boarding
-        the bulk carrier Silver Kelp off Neah Bay.\nChart catalog: https://www.nauticalcharts.noaa.gov/.\nLight
-        list: https://www.navcen.uscg.gov/.\nRigged ladder: 9 meters of side ropes.\nEmbarkation
-        deck: 8.4 meters above the water.\nThe pilot boat''s rail sits 1.5 meters
-        above the water.\nIs the rigged 9 meter ladder long enough to reach the rail?"}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the crane fitter Aitor on the Zorrotzaurre gantry in Bilbao.\nAnswer in
+        two short sentences.\nUse only the torque notes in the question.\nThe first
+        sentence starts with Yes or No.\nDo not invent a torque figure."},{"role":"user","content":"Torque
+        check on the Nervión gantry at Zorrotzaurre, Bilbao.\nYard page: https://www.bilbao.eus/.\nPosted
+        wrench reading: 420 newton-metres.\nM30 flange bolts are rated 400 newton-metres
+        minimum.\nThe next lift is the coil cradle at 07:20.\nIs the posted 420 newton-metre
+        reading enough for the M30 bolts?"}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -34,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:34 GMT
+      - Fri, 16 Oct 2026 01:56:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010613-C2cLzabVI14sOqEnIOio
+      - gen-1792115793-nXkK4ne8uBflyVV3DFDi
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -57,11 +57,10 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96ac12ed83741-PDX
+      - a4b3729ef91a87ab-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010613-C2cLzabVI14sOqEnIOio\",\"object\":\"chat.completion\",\"created\":1792010613,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"Yes,
-        the 9 meter ladder is long enough to reach the rail. The ladder length exceeds
-        the difference between the embarkation deck and the pilot boat's rail.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":155,\"completion_tokens\":34,\"total_tokens\":189,\"cost\":0.0001164,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0001164,\"upstream_inference_prompt_cost\":0.000062,\"upstream_inference_completions_cost\":0.0000544},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:34 GMT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MjExNTc5My1uWGtLNG5lOHVCZmx5VlYzREZEaSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTIxMTU3OTMsIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlllcywgdGhlIHBvc3RlZCB0b3JxdWUgcmVhZGluZyBvZiA0MjAgbmV3dG9uLW1ldHJlcyBleGNlZWRzIHRoZSBNMzAgZmxhbmdlIGJvbHRz4oCZIG1pbmltdW0gcmVxdWlyZW1lbnQgb2YgNDAwIG5ld3Rvbi1tZXRyZXMuICBcbk5vIGZ1cnRoZXIgYWRqdXN0bWVudCBpcyBuZWVkZWQgYmVmb3JlIHRoZSAwNzoyMCBjb2lsIGNyYWRsZSBsaWZ0LiIsInJlZnVzYWwiOm51bGwsInJlYXNvbmluZyI6bnVsbH19XSwidXNhZ2UiOnsicHJvbXB0X3Rva2VucyI6MTY1LCJjb21wbGV0aW9uX3Rva2VucyI6NTYsInRvdGFsX3Rva2VucyI6MjIxLCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjAsImltYWdlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowfX19
+  recorded_at: Fri, 16 Oct 2026 01:56:55 GMT
 recorded_with: VCR 6.4.0

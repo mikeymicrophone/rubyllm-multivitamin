@@ -5,14 +5,14 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the yard clerk at Bremerton Marina, Port of Bremerton.\nAnswer in one
-        or two short sentences.\nUse only the gate schedule in the question.\nName
-        Cape Flattery and 09:15.\nDo not invent a flood time."},{"role":"user","content":"Haul-out
-        gate schedule posted at Bremerton Marina for Wednesday 14 October 2026.\nPort
-        office: https://www.portofbremerton.org/.\nGate opens 06:30.\nDock floods
-        09:15 for the seiner Cape Flattery.\nAfternoon flood 15:05 for the cannery
-        tender Retort.\nWhen does the dock flood for Cape Flattery?"}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the kiln clerk at the enamel studio on rue du Consulat, Limoges.\nAnswer
+        in one or two short sentences.\nUse only the firing board in the question.\nThe
+        reply must include the words Sainte-Valerie and the time 09:15.\nDo not invent
+        a soak time."},{"role":"user","content":"Firing board posted at the Limoges
+        enamel studio for Wednesday 14 October 2026.\nCity page: https://www.limoges.fr/.\nKiln
+        door opens 06:30.\nFirst soak 09:15 for the Sainte-Valerie plaque.\nAfternoon
+        soak 15:05 for the civic arms dish.\nWhen does the kiln soak for Sainte-Valerie?"}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -34,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:36 GMT
+      - Fri, 16 Oct 2026 02:00:24 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010615-XfdlAC4XkrjQwUQM2SDB
+      - gen-1792116023-DTe6QR77jtdlCKmUpai9
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -57,10 +57,12 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96aca5ad3fef7-PDX
+      - a4b3783cce228969-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010615-XfdlAC4XkrjQwUQM2SDB\",\"object\":\"chat.completion\",\"created\":1792010615,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"The
-        dock floods at 09:15 for Cape Flattery.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":137,\"completion_tokens\":14,\"total_tokens\":151,\"cost\":0.0000772,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000772,\"upstream_inference_prompt_cost\":0.0000548,\"upstream_inference_completions_cost\":0.0000224},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:36 GMT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n{\"id\":\"gen-1792116023-DTe6QR77jtdlCKmUpai9\",\"object\":\"chat.completion\",\"created\":1792116023,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"The
+        kiln soak for the Sainte-Valerie plaque begins at 09:15.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":167,\"completion_tokens\":21,\"total_tokens\":188,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 02:01:02 GMT
 recorded_with: VCR 6.4.0

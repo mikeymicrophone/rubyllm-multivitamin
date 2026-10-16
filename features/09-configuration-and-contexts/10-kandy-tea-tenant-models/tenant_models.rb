@@ -108,6 +108,9 @@ module KandyTeaTenantModels
     def self.configure
       RubyLLM.configure do |config|
         Multivitamin::Models.configure(config, provider: :openrouter)
+        # Leave the catalog default in place so a previous example's
+        # default_model does not leak into this tenant comparison.
+        config.default_model = "gpt-5.6"
         config.max_retries = 0
         config.request_timeout = 120
         config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)

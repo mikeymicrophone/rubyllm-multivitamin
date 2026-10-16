@@ -5,14 +5,14 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the keeper at Smith Island Light.\nRead the weather round back in two
-        short sentences.\nUse only the clipboard in the question.\nInclude SE 15 and
-        29.92.\nDo not forecast tomorrow."},{"role":"user","content":"Keeper''s weather
-        round, Smith Island Light, Wednesday 14 October 2026, 06:00.\nThe relief may
-        later compare the clipboard with https://www.ndbc.noaa.gov/.\nWind: SE 15
-        knots.\nVisibility: 4 miles in fog.\nBarometer: 29.92 inches and steady.\nRead
-        the round back for the log."}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the night NOC clerk at the Kaohsiung science-park wafer line.\nRead the
+        uptime round back in two short sentences.\nUse only the clipboard in the question.\nInclude
+        15 and 99.4.\nDo not forecast the next shift."},{"role":"user","content":"Night
+        uptime round, Southern Taiwan Science Park, Kaohsiung, Wednesday 14 October
+        2026, 06:00.\nPark page: https://www.stsp.gov.tw/.\nEtch tool ETCH-12: 99.4
+        percent uptime.\nWafers completed: 15 lots of 300 mm.\nQueue: two lots waiting
+        on photoresist.\nRead the round back for the log."}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -34,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:33 GMT
+      - Fri, 16 Oct 2026 01:55:56 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010612-wWpO3hZsOpGmgPj2yQma
+      - gen-1792115756-82C5kJHZWoAD1v596Qwk
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -57,11 +57,14 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96ab88b76e6e0-PDX
+      - a4b371b659d28969-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010612-wWpO3hZsOpGmgPj2yQma\",\"object\":\"chat.completion\",\"created\":1792010612,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"Wind
-        is southeast at 15 knots with visibility of 4 miles in fog. Barometer steady
-        at 29.92 inches.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":126,\"completion_tokens\":27,\"total_tokens\":153,\"cost\":0.0000936,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000936,\"upstream_inference_prompt_cost\":0.0000504,\"upstream_inference_completions_cost\":0.0000432},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:33 GMT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n{\"id\":\"gen-1792115756-82C5kJHZWoAD1v596Qwk\",\"object\":\"chat.completion\",\"created\":1792115756,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Night
+        uptime round, Southern Taiwan Science Park, Kaohsiung, Wednesday 14 October
+        2026, 06:00.  \\nEtch tool ETCH-12: 99.4 percent uptime; wafers completed:
+        15 lots of 300 mm; queue: two lots waiting on photoresist.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":169,\"completion_tokens\":78,\"total_tokens\":247,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:56:33 GMT
 recorded_with: VCR 6.4.0

@@ -5,14 +5,14 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-mini","messages":[{"role":"system","content":"You
-        are the lens keeper at New Dungeness Light Station on the Dungeness Spit.\nAnswer
-        in two short sentences.\nUse only the cabinet list in the question.\nQuote
-        catalog NB-17.\nDo not invent a drawer."},{"role":"user","content":"Cabinet
-        list posted in the lens room at New Dungeness Light.\nStation log: https://newdungenesslighthouse.com/.\nDrawer
-        A: fourth-order center prism, cracked, catalog NP-4, do not issue.\nDrawer
-        B: spare bull''s-eye, catalog NB-17.\nDrawer C: six lamp chimneys, catalog
-        LC-6.\nWhich drawer holds the spare bull''s-eye? Quote NB-17."}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the faculty clerk at Chancellor College in Zomba.\nAnswer in two short
+        sentences.\nUse only the cabinet list in the question.\nQuote catalog CH-17.\nDo
+        not invent a drawer."},{"role":"user","content":"Cabinet list posted in the
+        oral-exam office at Chancellor College, Zomba.\nCollege page: https://www.unima.ac.mw/.\nDrawer
+        A: cancelled Geography rubric, cracked spine, catalog CG-4, do not issue.\nDrawer
+        B: spare History oral rubric, catalog CH-17.\nDrawer C: six invigilator badges,
+        catalog IB-6.\nWhich drawer holds the spare History oral rubric? Quote CH-17."}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -34,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:24 GMT
+      - Fri, 16 Oct 2026 01:53:39 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010604-nDMT5ulp3LyTewWxbZ7t
+      - gen-1792115619-0IkT0PsbYEyIy8c0bZhS
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -57,26 +57,26 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96a840a0fff16-PDX
+      - a4b36e5f6fc5afe8-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010604-nDMT5ulp3LyTewWxbZ7t\",\"object\":\"chat.completion\",\"created\":1792010604,\"model\":\"openai/gpt-4.1-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"The
-        spare bull's-eye is in Drawer B. According to catalog NB-17, it is the correct
-        spare bull's-eye for the station.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":145,\"completion_tokens\":30,\"total_tokens\":175,\"cost\":0.000106,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.000106,\"upstream_inference_prompt_cost\":0.000058,\"upstream_inference_completions_cost\":0.000048},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:24 GMT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n\n         \n{\"id\":\"gen-1792115619-0IkT0PsbYEyIy8c0bZhS\",\"object\":\"chat.completion\",\"created\":1792115619,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Drawer
+        B holds the spare History oral rubric. Catalog CH-17.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":153,\"completion_tokens\":17,\"total_tokens\":170,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:54:05 GMT
 - request:
     method: post
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"openai/gpt-4.1-nano","messages":[{"role":"system","content":"You
-        are the lens keeper at New Dungeness Light Station on the Dungeness Spit.\nAnswer
-        in two short sentences.\nUse only the cabinet list in the question.\nQuote
-        catalog NB-17.\nDo not invent a drawer."},{"role":"user","content":"Cabinet
-        list posted in the lens room at New Dungeness Light.\nStation log: https://newdungenesslighthouse.com/.\nDrawer
-        A: fourth-order center prism, cracked, catalog NP-4, do not issue.\nDrawer
-        B: spare bull''s-eye, catalog NB-17.\nDrawer C: six lamp chimneys, catalog
-        LC-6.\nWhich drawer holds the spare bull''s-eye? Quote NB-17."}],"stream":false,"temperature":0.2,"max_tokens":512}'
+      string: '{"model":"liquid/lfm-2.5-2.6b:free","messages":[{"role":"system","content":"You
+        are the faculty clerk at Chancellor College in Zomba.\nAnswer in two short
+        sentences.\nUse only the cabinet list in the question.\nQuote catalog CH-17.\nDo
+        not invent a drawer."},{"role":"user","content":"Cabinet list posted in the
+        oral-exam office at Chancellor College, Zomba.\nCollege page: https://www.unima.ac.mw/.\nDrawer
+        A: cancelled Geography rubric, cracked spine, catalog CG-4, do not issue.\nDrawer
+        B: spare History oral rubric, catalog CH-17.\nDrawer C: six invigilator badges,
+        catalog IB-6.\nWhich drawer holds the spare History oral rubric? Quote CH-17."}],"stream":false,"temperature":0.2,"max_tokens":512}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -98,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Oct 2026 20:43:25 GMT
+      - Fri, 16 Oct 2026 01:54:05 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -108,7 +108,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Generation-Id:
-      - gen-1792010605-ZzIusqKDPc1mMPtQApi4
+      - gen-1792115645-yHAIlB9W3K8HB4VZlVQx
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       Permissions-Policy:
@@ -121,11 +121,32 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4a96a893cd2816e-PDX
+      - a4b36efe18365ec1-PDX
     body:
       encoding: ASCII-8BIT
-      string: "\n         \n{\"id\":\"gen-1792010605-ZzIusqKDPc1mMPtQApi4\",\"object\":\"chat.completion\",\"created\":1792010605,\"model\":\"openai/gpt-4.1-nano\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"Drawer
-        B holds the spare bull's-eye, catalog NB-17.  \\nAs per the catalog NB-17,
-        \\\"Spare bull's-eye lens.\\\"\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":145,\"completion_tokens\":32,\"total_tokens\":177,\"cost\":0.0000273,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000273,\"upstream_inference_prompt_cost\":0.0000145,\"upstream_inference_completions_cost\":0.0000128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
-  recorded_at: Wed, 14 Oct 2026 20:43:26 GMT
+      string: "\n         \n{\"id\":\"gen-1792115645-yHAIlB9W3K8HB4VZlVQx\",\"object\":\"chat.completion\",\"created\":1792115645,\"model\":\"liquid/lfm-2.5-2.6b:free\",\"provider\":\"Liquid\",\"system_fingerprint\":\"vllm-0.31.0-7d3fcc00\",\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Based
+        on the cabinet list, Drawer B holds the spare History oral rubric, catalog
+        CH-17. This is confirmed by the listing which states \\\"Drawer B: spare History
+        oral rubric, catalog CH-17.\\\"\",\"refusal\":null,\"reasoning\":\"The user
+        is asking about which drawer holds the spare History oral rubric. They've
+        provided specific information about three drawers:\\n- Drawer A: cancelled
+        Geography rubric (catalog CG-4), do not issue\\n- Drawer B: spare History
+        oral rubric, catalog CH-17\\n- Drawer C: six invigilator badges, catalog IB-6\\n\\nThey
+        also want me to quote CH-17 specifically. The question asks me to answer in
+        two short sentences and use only the cabinet list in the question.\\n\\nFrom
+        the information given, Drawer B contains the spare History oral rubric with
+        catalog CH-17. I need to provide this answer using only the information from
+        the cabinet list and quoting CH-17 as requested.\\n\\nLet me construct a response
+        that answers the question directly and uses the required quotation.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"The
+        user is asking about which drawer holds the spare History oral rubric. They've
+        provided specific information about three drawers:\\n- Drawer A: cancelled
+        Geography rubric (catalog CG-4), do not issue\\n- Drawer B: spare History
+        oral rubric, catalog CH-17\\n- Drawer C: six invigilator badges, catalog IB-6\\n\\nThey
+        also want me to quote CH-17 specifically. The question asks me to answer in
+        two short sentences and use only the cabinet list in the question.\\n\\nFrom
+        the information given, Drawer B contains the spare History oral rubric with
+        catalog CH-17. I need to provide this answer using only the information from
+        the cabinet list and quoting CH-17 as requested.\\n\\nLet me construct a response
+        that answers the question directly and uses the required quotation.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":153,\"completion_tokens\":217,\"total_tokens\":370,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":170,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:54:06 GMT
 recorded_with: VCR 6.4.0

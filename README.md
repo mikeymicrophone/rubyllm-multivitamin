@@ -49,11 +49,10 @@ The Smith Island barometer card was recorded on OpenRouter
 instructions-and-history cassettes were recorded on OpenAI `gpt-4.1-mini`
 (and `gpt-4o-mini` for the mid-chat switch) after the free OpenRouter slugs
 hit the daily cap. The registry `refresh` cassette is the published catalog
-on rubyllm.com. Configuration and contexts try the free OpenRouter chat slug first
-(`nvidia/nemotron-3-super-120b-a12b:free`); `CONFIGURATION_OPENROUTER_PAID=1`
-records `openai/gpt-4.1-mini` (and `openai/gpt-4.1-nano`) on OpenRouter so
-attribution headers stay on the wire. The Copán stela context embed also
-records OpenAI `text-embedding-3-small` for the global call. Tokens and cost were recorded
+on rubyllm.com. Configuration and contexts were re-recorded on 16 October 2026 on OpenRouter
+`nvidia/nemotron-3-super-120b-a12b:free` (and `liquid/lfm-2.5-2.6b:free` for
+the second tenant) after the 8 PM ET reset; the Copán stela context embed
+also records OpenAI `text-embedding-3-small` for the global call. Tokens and cost were recorded
 on OpenRouter `nvidia/nemotron-3-super-120b-a12b:free` after the 8 PM ET
 reset on 15 October 2026, except Sequim Bay which fell back to OpenAI
 `gpt-4.1-mini` after `free-models-per-day`. Error handling recorded a
