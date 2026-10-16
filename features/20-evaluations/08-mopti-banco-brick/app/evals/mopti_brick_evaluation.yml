@@ -1,0 +1,4 @@
+cases:
+  - name: brick_count
+    inputs: How many banco bricks on the west wall, and who tamps the next course?
+    expected_output: The west wall has 64 banco bricks. Aissata tamps the next course.

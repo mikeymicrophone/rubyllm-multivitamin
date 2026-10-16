@@ -1,0 +1,7 @@
+cases:
+  - name: rack_count
+    inputs:
+      lot: CR-18
+      grade: miang
+      question: How many leaves stay on the rack?
+    expected_output: Lot CR-18 keeps 42 miang leaves on the rack.

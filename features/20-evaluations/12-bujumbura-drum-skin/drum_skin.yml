@@ -1,0 +1,4 @@
+cases:
+  - name: skin_count
+    inputs: How many drum skins hang in the loft, and who tensions the next hoop?
+    expected_output: The drum loft has 14 skins. Immaculee tensions the next hoop.

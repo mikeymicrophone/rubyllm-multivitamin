@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 273 |
+| Bottled | 299 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,8 +30,8 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 273 of 429 are
-bottled. Features 1–19, 23, and 24 are full. Features 20–22 and 25–33
+The catalog is 33 features, 13 scenarios each, 429 slots. 299 of 429 are
+bottled. Features 1–21, 23, and 24 are full. Features 22 and 25–33
 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
@@ -60,7 +60,10 @@ reset on 15 October 2026, except Sequim Bay which fell back to OpenAI
 rejected-key 401 and a `free-models-per-day` 429 on OpenRouter, and schema,
 embedding-overflow, tool, cancel, and fallback cassettes on OpenAI
 `gpt-4.1-mini` (and `text-embedding-3-small`), reworked 16 October 2026
-onto worldwide desks. Agents recorded OpenAI
+onto worldwide desks. Evaluations recorded OpenAI
+`gpt-4.1-mini` for the clerk and the grader (and `gpt-6-luna` for the Tabriz
+Judge). Batches recorded OpenAI Batch on `gpt-4.1-mini` and
+`text-embedding-3-small`; two slots raise before HTTP. Agents recorded OpenAI
 `gpt-4.1-mini` after the free OpenRouter slug hit `free-models-per-day`
 (and `gpt-4o-mini` for the Port Angeles mid-run switch). Neah Bay records
 `openai/gpt-4.1-mini` on OpenRouter so the cassette keeps `X-OpenRouter-Title`.
@@ -153,6 +156,8 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Audio transcription (recorded) | no `:free` transcription slug used | bottled on OpenAI `gpt-transcribe`, `whisper-1`, and `gpt-4o-transcribe-diarize` |
 | Text to speech (recorded) | no `:free` speech model that day | bottled on OpenAI `tts-1`; `LIVE_PROVIDER` does not retarget speech |
 | Provider tools and citations (recorded) | no `:free` hosted-tool slug used | bottled on OpenAI `gpt-4.1-mini`; `:web_fetch` raises before HTTP on Responses |
+| Evaluations (recorded) | no `:free` grader with structured output | bottled on OpenAI `gpt-4.1-mini` for clerk and grader; Tabriz Judge on `gpt-6-luna` |
+| Batches (recorded) | free OpenRouter slugs usually have no batch access | bottled on OpenAI Batch `gpt-4.1-mini` / `text-embedding-3-small`; mix and one-model slots raise before HTTP |
 | Moderation (recorded) | no OpenRouter moderation operation | bottled on OpenAI `omni-moderation-latest`; pin `omni-moderation-2024-09-26` with `model:` or a context. `LIVE_PROVIDER` does not retarget moderation |
 | Reranking (recorded) | `voyageai/rerank-2.5-lite` on OpenRouter | `voyageai/rerank-2.5` on OpenRouter; OpenAI has no rerank API. `LIVE_PROVIDER` does not retarget rerank |
 
@@ -227,8 +232,8 @@ hold the cassette player and the model slugs, not the story.
 17. [Text to speech](features/17-text-to-speech/) — 13 of 13 bottled
 18. [Provider tools and citations](features/18-provider-tools-and-citations/) — 13 of 13 bottled
 19. [Tool approval and loop control](features/19-tool-approval-and-loop-control/) — 13 of 13 bottled
-20. [Evaluations](features/20-evaluations/) — 0 of 13 bottled
-21. [Batches](features/21-batches/) — 0 of 13 bottled
+20. [Evaluations](features/20-evaluations/) — 13 of 13 bottled
+21. [Batches](features/21-batches/) — 13 of 13 bottled
 22. [Video generation](features/22-video-generation/) — 0 of 13 bottled
 23. [Moderation](features/23-moderation/) — 13 of 13 bottled
 24. [Reranking](features/24-reranking/) — 13 of 13 bottled

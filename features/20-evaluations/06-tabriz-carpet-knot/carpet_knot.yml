@@ -1,0 +1,4 @@
+cases:
+  - name: knot_count
+    inputs: How many knots on the north loom, and who ties the next row?
+    expected_output: The north loom has 86 knots. Farhad ties the next row.

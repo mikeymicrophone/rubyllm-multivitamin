@@ -1,0 +1,6 @@
+cases:
+  - name: mill_then_gate
+    inputs:
+      opening: Morning tsampa card. 1,080 sacks on the floor. The yard gate stays closed until 09:15. How many sacks, and is the gate closed?
+      follow_up: Tenzin wants two extra millers through the gate before 09:15. May they enter?
+    expected_output: There are 1,080 tsampa sacks. The gate stays closed until 09:15, so the extra millers may not enter yet.

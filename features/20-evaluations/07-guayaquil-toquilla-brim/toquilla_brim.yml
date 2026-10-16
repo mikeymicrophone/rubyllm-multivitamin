@@ -1,0 +1,4 @@
+cases:
+  - name: brim_width
+    inputs: How wide is the brim on hat TQ-4, and who blocks it?
+    expected_output: Hat TQ-4 has a 12 centimetre brim. Dolores blocks it.
