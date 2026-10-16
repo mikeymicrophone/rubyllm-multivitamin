@@ -1,0 +1,54 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-lalibela-roofs-11
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-lalibela-roofs-11","object":"interaction","agent":"deep-research-preview-04-2026","status":"in_progress","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-lalibela-roofs-11
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-lalibela-roofs-11","object":"interaction","agent":"deep-research-preview-04-2026","status":"completed","steps":[{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"Lalibela
+        roof-shelter research should distinguish the shelter structures from the rock-hewn
+        churches. Recover the original conservation reports and document drainage
+        observations before recommending an alteration.","annotations":[{"type":"url_citation","url":"https://whc.unesco.org/en/list/18/","title":"Rock-Hewn
+        Churches, Lalibela","start_index":0,"end_index":213}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1

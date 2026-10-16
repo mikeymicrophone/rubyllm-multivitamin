@@ -105,6 +105,16 @@ module Multivitamin
     OPENROUTER_RERANK = "voyageai/rerank-2.5-lite"
     OPENROUTER_RERANK_FULL = "voyageai/rerank-2.5"
 
+    # Plain-text tokenizer endpoints in RubyLLM 2.1.1. Counting a full
+    # request is a separate operation; OpenAI has no plain-text tokenizer.
+    COHERE_TOKENIZER = "command-r-08-2024"
+    XAI_TOKENIZER = "grok-4.3"
+    ANTHROPIC_COUNT = "claude-sonnet-4-6"
+    GPUSTACK_TOKENIZER = "qwen2.5-7b-instruct"
+
+    # Hosted agent identity, not an inference model. No model registry lookup.
+    VERTEXAI_RESEARCH = "deep-research-preview-04-2026"
+
     module_function
 
     # The provider a scenario was bottled with. LIVE=1 LIVE_PROVIDER=openai
@@ -112,6 +122,7 @@ module Multivitamin
     # Replay ignores LIVE_PROVIDER so the cassette body still matches.
     def recording_provider(provider)
       fallback = provider.to_sym
+      return fallback if fallback == :vertexai
       return fallback unless ENV["LIVE"] == "1"
 
       name = ENV["LIVE_PROVIDER"].to_s.strip.downcase
@@ -179,7 +190,8 @@ module Multivitamin
     end
 
     def configure(config, provider:)
-      case recording_provider(provider)
+      selected = %i[openai openrouter].include?(provider.to_sym) ? recording_provider(provider) : provider.to_sym
+      case selected
       when :openai
         config.openai_api_key = api_key("OPENAI_API_KEY")
         # Chat Completions emits a developer role unless this is set.
@@ -191,6 +203,21 @@ module Multivitamin
         config.openrouter_app_url = "https://github.com/mikeymicrophone/rubyllm-multivitamin"
         config.openrouter_app_name = "RubyLLM Multivitamin"
         config.openai_use_system_role = true
+      when :cohere
+        config.cohere_api_key = api_key("COHERE_API_KEY")
+      when :xai
+        config.xai_api_key = api_key("XAI_API_KEY")
+      when :anthropic
+        config.anthropic_api_key = api_key("ANTHROPIC_API_KEY")
+      when :gpustack
+        config.gpustack_api_key = api_key("GPUSTACK_API_KEY")
+      when :vertexai
+        config.vertexai_project_id = if Cassettes.live?
+                                      ENV.fetch("GOOGLE_CLOUD_PROJECT")
+                                    else
+                                      "multivitamin-replay"
+                                    end
+        config.vertexai_location = "global"
       end
     end
 

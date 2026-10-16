@@ -1,0 +1,36 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com:443/v1/messages/count_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-sonnet-4-6","messages":[{"role":"user","content":[{"type":"text","text":"Can
+        dhow Mwangaza load 16 spice crates into ZNZ-H2 before its berth window?"}]}],"system":[{"type":"text","text":"You
+        are Asha''s loading clerk at Stone Town. Consult both ledgers before releasing
+        a dhow."}],"tools":[{"name":"berth_ledger","description":"Reads the Stone
+        Town dhow berth ledger for a named vessel","input_schema":{"type":"object","properties":{"vessel":{"type":"string","description":"Dhow
+        name on the Stone Town board"}},"required":["vessel"],"additionalProperties":false}},{"name":"cargo_hold","description":"Looks
+        up the allowed crate count for a dhow hold","input_schema":{"type":"object","properties":{"hold":{"type":"string","description":"Hold
+        reference on the loading manifest"}},"required":["hold"],"additionalProperties":false}}],"tool_choice":{"type":"any"}}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Api-Key:
+      - "<ANTHROPIC_API_KEY>"
+      Anthropic-Version:
+      - '2023-06-01'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":426}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

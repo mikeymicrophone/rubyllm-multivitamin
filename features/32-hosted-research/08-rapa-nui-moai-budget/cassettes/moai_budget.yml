@@ -1,0 +1,57 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Compare
+        published coastal erosion monitoring around Rapa Nui moai platforms. Separate
+        documented observations from proposed surveys; cite evidence and list unresolved
+        sites."}],"background":true,"stream":false}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-rapa-nui-moai-08","object":"interaction","agent":"deep-research-preview-04-2026","status":"queued","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-rapa-nui-moai-08
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-rapa-nui-moai-08","object":"interaction","agent":"deep-research-preview-04-2026","status":"budget_exceeded","steps":[{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"Rapa
+        Nui coastal monitoring should preserve repeat photography and platform-specific
+        records. This partial review leaves survey frequency and several platform
+        comparisons unresolved; do not publish it as a complete intervention plan.","annotations":[{"type":"url_citation","url":"https://whc.unesco.org/en/list/715/","title":"Rapa
+        Nui National Park","start_index":0,"end_index":233}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1

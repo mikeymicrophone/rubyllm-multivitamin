@@ -1,0 +1,57 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Court of
+        the Lions: Inés logs panel ALH-6, plaster loss 24 cm2, rope remains. Prepare
+        the repair card."}],"instructions":"Copy the Alhambra conservation slip exactly."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":90}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Court of
+        the Lions: Inés logs panel ALH-6, plaster loss 24 cm2, rope remains. Prepare
+        the repair card."}],"instructions":"Copy the Alhambra conservation slip exactly.","text":{"format":{"type":"json_schema","name":"alhambra_plaster_card","schema":{"type":"object","properties":{"courtyard":{"type":"string","description":"Courtyard
+        named on the conservation slip"},"repair":{"type":"object","properties":{"panel":{"type":"string","description":"Panel
+        reference on the slip"},"area_cm2":{"type":"number","description":"Measured
+        plaster loss in square centimetres"},"hold":{"type":"boolean","description":"Whether
+        the panel must remain roped off"}},"required":["panel","area_cm2","hold"],"additionalProperties":false}},"required":["courtyard","repair"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":181}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

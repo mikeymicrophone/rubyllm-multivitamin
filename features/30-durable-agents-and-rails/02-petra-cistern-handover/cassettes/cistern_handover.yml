@@ -1,0 +1,70 @@
+# Hand-authored fixture; requests captured from RubyLLM 2.1.1's encoder.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Petra card:
+        Salma logged 840 litres in Siq inlet. Repeat the custodian, cistern and litres."}],"instructions":"You
+        keep Petra''s cistern handover. Use only the card and answer in one sentence.
+        Keep names and quantities.","stream":false,"store":false,"include":["reasoning.encrypted_content"]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_02_1","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"message","id":"msg_1","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Salma
+        logged 840 litres in the Siq inlet cistern at Petra.","annotations":[]}]}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Petra card:
+        Salma logged 840 litres in Siq inlet. Repeat the custodian, cistern and litres."},{"role":"assistant","content":[{"type":"output_text","text":"Salma
+        logged 840 litres in the Siq inlet cistern at Petra."}]},{"role":"user","content":"Which
+        cistern did Salma log? Keep the cistern name."}],"instructions":"You keep
+        Petra''s cistern handover. Use only the card and answer in one sentence. Keep
+        names and quantities.","stream":false,"store":false,"include":["reasoning.encrypted_content"]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_02_2","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"message","id":"msg_2","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Salma
+        logged the Siq inlet cistern.","annotations":[]}]}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0
