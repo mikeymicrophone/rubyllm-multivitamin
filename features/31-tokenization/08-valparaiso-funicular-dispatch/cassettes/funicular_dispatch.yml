@@ -1,0 +1,41 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.x.ai:443/v1/tokenize-text
+    body:
+      encoding: UTF-8
+      string: '{"model":"grok-4.3","text":"Dispatch: Ascensor El Peral: Camila opens
+        gate VAP-2 at 09:10.\nDispatch: Ascensor Reina Victoria: Tomás holds cabin
+        VAP-7 for inspection."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <XAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"token_ids":[{"token_id":300,"string_token":"Dispatch"},{"token_id":437,"string_token":":"},{"token_id":574,"string_token":"
+        Asc"},{"token_id":711,"string_token":"ensor"},{"token_id":848,"string_token":"
+        El"},{"token_id":985,"string_token":" Per"},{"token_id":1122,"string_token":"al"},{"token_id":437,"string_token":":"},{"token_id":1259,"string_token":"
+        Cam"},{"token_id":1396,"string_token":"ila"},{"token_id":1533,"string_token":"
+        opens"},{"token_id":1670,"string_token":" gate"},{"token_id":1807,"string_token":"
+        V"},{"token_id":1944,"string_token":"AP"},{"token_id":2081,"string_token":"-"},{"token_id":2218,"string_token":"2"},{"token_id":2355,"string_token":"
+        at"},{"token_id":2492,"string_token":" 09"},{"token_id":437,"string_token":":"},{"token_id":2629,"string_token":"10"},{"token_id":2766,"string_token":"."},{"token_id":2903,"string_token":"\n"},{"token_id":300,"string_token":"Dispatch"},{"token_id":437,"string_token":":"},{"token_id":574,"string_token":"
+        Asc"},{"token_id":711,"string_token":"ensor"},{"token_id":3040,"string_token":"
+        Reina"},{"token_id":3177,"string_token":" Victoria"},{"token_id":437,"string_token":":"},{"token_id":3314,"string_token":"
+        Tom"},{"token_id":3451,"string_token":"ás"},{"token_id":3588,"string_token":"
+        holds"},{"token_id":3725,"string_token":" cabin"},{"token_id":1807,"string_token":"
+        V"},{"token_id":1944,"string_token":"AP"},{"token_id":2081,"string_token":"-"},{"token_id":3862,"string_token":"7"},{"token_id":3999,"string_token":"
+        for"},{"token_id":4136,"string_token":" inspection"},{"token_id":2766,"string_token":"."}]}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

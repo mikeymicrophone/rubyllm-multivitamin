@@ -1,0 +1,29 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.cohere.com:443/v1/tokenize
+    body:
+      encoding: UTF-8
+      string: '{"model":"command-r-08-2024","text":"伏見稲荷大社 — Akiko checks torii KYT-17
+        before 07:30."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <COHERE_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"tokens":[14236,2219,4038,1776,20091,904,1123,4506,291,804,7128,2419,981,628,441,817,1090,304,1517,23,51,9],"token_strings":["伏","見","稲","荷","大社","
+        —"," A","kiko"," checks"," tor","ii"," K","Y","T","-","17"," before"," ","07",":","30","."]}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

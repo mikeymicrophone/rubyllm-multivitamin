@@ -1,0 +1,54 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Ban Xieng
+        Mene landing: Kham holds ferry LPB-6 until 10:25. When can LPB-6 leave?"}],"instructions":"You
+        are the Luang Prabang ferry clerk. Answer from the landing board in one sentence."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":81}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Ban Xieng
+        Mene landing: Kham holds ferry LPB-6 until 10:25. When can LPB-6 leave?"}],"instructions":"You
+        are the Luang Prabang ferry clerk. Answer from the landing board in one sentence.","stream":false,"store":false,"include":["reasoning.encrypted_content"]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_hand_authored_ferry","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"id":"msg_hand_authored_ferry","type":"message","status":"completed","role":"assistant","content":[{"type":"output_text","text":"Kham
+        can release ferry LPB-6 from Ban Xieng Mene at 10:25.","annotations":[]}]}],"usage":{"input_tokens":84,"input_tokens_details":{"cached_tokens":0},"output_tokens":22,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":106}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

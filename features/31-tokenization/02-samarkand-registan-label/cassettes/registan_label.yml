@@ -1,0 +1,34 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.x.ai:443/v1/tokenize-text
+    body:
+      encoding: UTF-8
+      string: '{"model":"grok-4.3","text":"Registan tile, tile, tile: Dilshod checks
+        turquoise panel SAM-8."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <XAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"token_ids":[{"token_id":300,"string_token":"Reg"},{"token_id":437,"string_token":"istan"},{"token_id":574,"string_token":"
+        tile"},{"token_id":711,"string_token":","},{"token_id":574,"string_token":"
+        tile"},{"token_id":711,"string_token":","},{"token_id":574,"string_token":"
+        tile"},{"token_id":848,"string_token":":"},{"token_id":985,"string_token":"
+        Dil"},{"token_id":1122,"string_token":"shod"},{"token_id":1259,"string_token":"
+        checks"},{"token_id":1396,"string_token":" turquoise"},{"token_id":1533,"string_token":"
+        panel"},{"token_id":1670,"string_token":" SAM"},{"token_id":1807,"string_token":"-"},{"token_id":1944,"string_token":"8"},{"token_id":2081,"string_token":"."}]}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

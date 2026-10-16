@@ -1,0 +1,31 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Nadia measured
+        Siq cistern PTR-4 at 62 cm."},{"role":"assistant","content":[{"type":"output_text","text":"PTR-4
+        is logged at 62 cm for Nadia."}]},{"role":"user","content":"Does Nadia''s
+        PTR-4 reading of 62 cm belong to the Siq?"}],"instructions":"You are Petra''s
+        cistern clerk. Keep the Siq survey separate from the Treasury steps."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":132}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

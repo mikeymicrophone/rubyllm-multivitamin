@@ -1,0 +1,146 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Machu Picchu
+        board: Quispe checks drain MP-4 at 08:20. Which drain is assigned?"}],"instructions":"You
+        are the Machu Picchu terrace clerk. Answer only from the crew board in one
+        short sentence."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":105}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Machu Picchu
+        board: Quispe checks drain MP-4 at 08:20. Which drain is assigned?"}],"instructions":"You
+        are the Machu Picchu terrace clerk. Answer only from the crew board in one
+        short sentence.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"max_output_tokens":100}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_hand_authored_terrace_1","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"id":"msg_hand_authored_terrace_1","type":"message","status":"completed","role":"assistant","content":[{"type":"output_text","text":"Quispe
+        checks drain MP-4 at 08:20.","annotations":[]}]}],"usage":{"input_tokens":107,"input_tokens_details":{"cached_tokens":0},"output_tokens":16,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":123}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Machu Picchu
+        board: Quispe checks drain MP-4 at 08:20. Which drain is assigned?"},{"role":"assistant","content":[{"type":"output_text","text":"Quispe
+        checks drain MP-4 at 08:20."}]},{"role":"user","content":"Huamán waits below
+        terrace MP-7 until Quispe clears MP-4 at 08:20. Who must wait?"}],"instructions":"You
+        are the Machu Picchu terrace clerk. Answer only from the crew board in one
+        short sentence."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":186}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Machu Picchu
+        board: Quispe checks drain MP-4 at 08:20. Which drain is assigned?"},{"role":"assistant","content":[{"type":"output_text","text":"Quispe
+        checks drain MP-4 at 08:20."}]},{"role":"user","content":"Huamán waits below
+        terrace MP-7 until Quispe clears MP-4 at 08:20. Who must wait?"}],"instructions":"You
+        are the Machu Picchu terrace clerk. Answer only from the crew board in one
+        short sentence.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"max_output_tokens":100}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_hand_authored_terrace_2","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"id":"msg_hand_authored_terrace_2","type":"message","status":"completed","role":"assistant","content":[{"type":"output_text","text":"Huamán
+        waits below terrace MP-7 until Quispe clears MP-4 at 08:20.","annotations":[]}]}],"usage":{"input_tokens":188,"input_tokens_details":{"cached_tokens":0},"output_tokens":27,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":215}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Machu Picchu
+        board: Quispe checks drain MP-4 at 08:20. Which drain is assigned?"},{"role":"assistant","content":[{"type":"output_text","text":"Quispe
+        checks drain MP-4 at 08:20."}]},{"role":"user","content":"Huamán waits below
+        terrace MP-7 until Quispe clears MP-4 at 08:20. Who must wait?"},{"role":"assistant","content":[{"type":"output_text","text":"Huamán
+        waits below terrace MP-7 until Quispe clears MP-4 at 08:20."}]},{"role":"user","content":"Sisa''s
+        backlog: terrace MP-1 needs a drainage inspection; terrace MP-2 needs a drainage
+        inspection; terrace MP-3 needs a drainage inspection; terrace MP-4 needs a
+        drainage inspection; terrace MP-5 needs a drainage inspection; terrace MP-6
+        needs a drainage inspection; terrace MP-7 needs a drainage inspection; terrace
+        MP-8 needs a drainage inspection; terrace MP-9 needs a drainage inspection;
+        terrace MP-10 needs a drainage inspection; terrace MP-11 needs a drainage
+        inspection; terrace MP-12 needs a drainage inspection. List every inspection."}],"instructions":"You
+        are the Machu Picchu terrace clerk. Answer only from the crew board in one
+        short sentence."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":328}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0
