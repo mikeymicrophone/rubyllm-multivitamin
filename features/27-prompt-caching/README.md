@@ -15,23 +15,40 @@ Official reference: [Prompt Caching](https://rubyllm.com/prompt-caching/).
 
 ## Providers that can record it
 
-Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mistral (`key:`), Perplexity Router, Gemini and Vertex AI (explicit `RubyLLM.cache` resources). A cache hit is not guaranteed; providers set minimum prefix length. This catalog's cheap record path is OpenAI `gpt-4.1-mini` with `with_caching`, or Anthropic when a guaranteed breakpoint is the point. Free OpenRouter slugs may accept `ttl:` and still report zero cache tokens.
+Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mistral (`key:`), Perplexity Router, Gemini and Vertex AI (explicit `RubyLLM.cache` resources). A cache hit is not guaranteed; providers set minimum prefix length. This catalog's cheap record path is OpenAI `gpt-4.1-mini` with `with_caching`. Gemini `CachedContent` and Anthropic `cache_write_by_ttl` need keys this catalog does not have. Empty `with_caching` sends no `prompt_cache_options` unless `ttl:`, `key:`, or `mode:` is set. Free OpenRouter slugs may accept `ttl:` and still report zero cache tokens. Checked 16 October 2026.
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Union policy prefix — planned
-02. Tahuya ttl 1h vs 5m — planned
-03. Dewatto cache_until_here on instructions — planned
-04. Seabeck with_caching(false) — planned
-05. Bangor Gemini CachedContent — planned
-06. Keyport cache.renew — planned
-07. Poulsbo cache_read after second ask — planned
-08. Liberty Bay Rails cache_ttl — planned
-09. Bainbridge mode explicit — planned
-10. Eagle Harbor too-short prefix — planned
-11. Blakely Rock agent caching macro — planned
-12. Alki write_by_ttl — planned
-13. Duwamish cache desk capstone — planned
+01. [Luxor alabaster policy](01-luxor-alabaster-policy/) — available
+02. [Dubrovnik wall stone](02-dubrovnik-wall-stone/) — available
+03. [Stavanger oil core](03-stavanger-oil-core/) — available
+04. [Meknes thuya chest](04-meknes-thuya-chest/) — available
+05. [Leh pashmina key](05-leh-pashmina-key/) — available
+06. [Bukhara suzani cache](06-bukhara-suzani-cache/) — available
+07. [Palembang songket](07-palembang-songket/) — available
+08. [Cotonou zémidjan fare](08-cotonou-zemidjan-fare/) — available
+09. [Bujumbura ndagala rack](09-bujumbura-ndagala-rack/) — available
+10. [Basel Fasnacht lantern](10-basel-fasnacht-lantern/) — available
+11. [Tampere Finlayson card](11-tampere-finlayson-card/) — available
+12. [Wrocław Nadodrze neon](12-wroclaw-nadodrze-neon/) — available
+13. [Kutaisi qvevri clay](13-kutaisi-qvevri-clay/) — available
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+## What each scenario adds
+
+| Slot | What it adds |
+| --- | --- |
+| 01 | `with_caching` with no options; OpenAI sends no `prompt_cache_options` |
+| 02 | `ttl: "1h"` vs `ttl: "5m"` on the wire |
+| 03 | `cache_until_here(ttl:)` plus `mode: "explicit"` |
+| 04 | `with_caching(false)`; `nil` is `ArgumentError` |
+| 05 | `with_caching(key:)` → `prompt_cache_key` |
+| 06 | `RubyLLM.cache` on OpenAI raises before HTTP |
+| 07 | Second ask reports `tokens.cache_read` (zero is legal) |
+| 08 | Rails `cache_until_here` / `cache_ttl` on the system row |
+| 09 | `with_instructions(..., cache_until_here:)` and `mode: "implicit"` |
+| 10 | Too-short prefix still sends ttl; `cache_read` is 0 |
+| 11 | Agent `caching ttl: "1h"` macro |
+| 12 | `cache_write_by_ttl` is nil on OpenAI |
+| 13 | Capstone: ttl, key, explicit breakpoint, two asks |
+
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
