@@ -478,7 +478,7 @@ Shown in [Nouakchott clinic spare radio](features/09-configuration-and-contexts/
 
 **What to do.** Declare `acts_as_chat` and `acts_as_message` only. Read tool calls from `message.tool_calls` and the registry row from `chat.model`.
 
-Shown in [Friday Harbor berth tool](features/10-rails-integration/05-friday-harbor-berth-tool/) and [Neah Bay pilot slug](features/10-rails-integration/09-neah-bay-pilot-slug/).
+Shown in [Medellín escalator-bay tool](features/10-rails-integration/05-medellin-escalator-bay/) and [Colombo gem-parcel slug](features/10-rails-integration/09-colombo-gem-parcel-slug/).
 
 ### A streamed ask inserts an empty assistant row before the first chunk
 
@@ -488,7 +488,7 @@ Shown in [Friday Harbor berth tool](features/10-rails-integration/05-friday-harb
 
 **What to do.** Leave content optional. Read the filled row after `ask` returns.
 
-Shown in [Cape Disappointment blast stream](features/10-rails-integration/04-cape-disappointment-blast-stream/) and [Bremerton empty gate](features/10-rails-integration/10-bremerton-empty-gate/).
+Shown in [Kumasi fontomfrom stream](features/10-rails-integration/04-kumasi-fontomfrom-stream/) and [Gaborone diamond-tray empty](features/10-rails-integration/10-gaborone-diamond-tray/).
 
 ### cancel on a persisted log destroys the blank assistant
 
@@ -498,7 +498,7 @@ Shown in [Cape Disappointment blast stream](features/10-rails-integration/04-cap
 
 **What to do.** Rescue `RubyLLM::CancelledError` on its own. Treat the cancelled assistant turn as absent.
 
-Shown in [Juan de Fuca cancel log](features/10-rails-integration/12-juan-de-fuca-cancel-log/). See also [Fez tannery pit halt](features/02-streaming/08-fez-tannery-halt/).
+Shown in [Antofagasta flash-furnace cancel](features/10-rails-integration/12-antofagasta-furnace-cancel/). See also [Fez tannery pit halt](features/02-streaming/08-fez-tannery-halt/).
 
 ## Instructions and history
 
