@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
-require_relative "alabaster_policy"
+require_relative "chechia_felt"
 
-class LuxorAlabasterPolicyTest < Minitest::Test
-  CASSETTE = File.expand_path("cassettes/alabaster_policy.yml", __dir__)
+class KairouanChechiaFeltTest < Minitest::Test
+  CASSETTE = File.expand_path("cassettes/chechia_felt.yml", __dir__)
 
   def test_the_standing_order_stays_on_both_turns
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "alabaster_policy") do
-      result = LuxorAlabasterPolicy::AlabasterPolicy.conduct
+    Multivitamin::Cassettes.play(__dir__, "chechia_felt") do
+      result = KairouanChechiaFelt::ChechiaFelt.conduct
     end
 
-    assert_includes result.opening, "Nour"
-    assert_includes result.opening, "07:15"
+    assert_includes result.opening, "Hamza"
+    assert_includes result.opening, "08:25"
     assert_match(/\ANo\b/, result.follow_up)
     assert_equal %i[system user assistant user assistant], result.roles
     assert_operator result.input_tokens, :>, 0

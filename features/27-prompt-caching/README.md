@@ -19,7 +19,7 @@ Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mist
 
 ## Examples (13 of 13 bottled)
 
-01. [Luxor alabaster policy](01-luxor-alabaster-policy/) — available
+01. [Kairouan chechia felt](01-kairouan-chechia-felt/) — available
 02. [Dubrovnik wall stone](02-dubrovnik-wall-stone/) — available
 03. [Stavanger oil core](03-stavanger-oil-core/) — available
 04. [Meknes thuya chest](04-meknes-thuya-chest/) — available
@@ -27,7 +27,7 @@ Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mist
 06. [Bukhara suzani cache](06-bukhara-suzani-cache/) — available
 07. [Palembang songket](07-palembang-songket/) — available
 08. [Cotonou zémidjan fare](08-cotonou-zemidjan-fare/) — available
-09. [Bujumbura ndagala rack](09-bujumbura-ndagala-rack/) — available
+09. [Puno totora reed](09-puno-totora-reed/) — available
 10. [Basel Fasnacht lantern](10-basel-fasnacht-lantern/) — available
 11. [Tampere Finlayson card](11-tampere-finlayson-card/) — available
 12. [Wrocław Nadodrze neon](12-wroclaw-nadodrze-neon/) — available

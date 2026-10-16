@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Prompt caching · 09 · Bujumbura ndagala rack
+# Prompt caching · 09 · Puno totora reed
 #
 # Teaches:
 # - with_caching(mode: "implicit") still sends prompt_cache_options.mode.
@@ -12,20 +12,20 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module BujumburaNdagalaRack
-  class NdagalaRack
+module PunoTotoraReed
+  class TotoraReed
     POLICY = (1..24).map { |n|
-      "Bujumbura ndagala standing order #{n}: rack #{n} holds lot BJM-2026-1016-N#{n}."
+      "Puno totora standing order #{n}: bundle #{n} holds lot PNO-2026-1016-T#{n}."
     }.join(" ")
 
     INSTRUCTIONS = <<~TEXT.strip
-      You are the rack clerk in Bujumbura.
+      You are the reed clerk in Puno.
       #{POLICY}
       Answer in one short sentence from the card only.
-      Name Aline and 05:55.
+      Name Yma and 04:10.
     TEXT
 
-    CARD = "Rack card: Aline turns lot BJM-2026-1016-N4 at 05:55. When does Aline turn?"
+    CARD = "Reed card: Yma binds lot PNO-2026-1016-T7 at 04:10. When does Yma bind?"
 
     Result = Struct.new(:error, keyword_init: true)
 
@@ -61,8 +61,8 @@ end
 
 if $PROGRAM_NAME == __FILE__
   result = nil
-  Multivitamin::Cassettes.play(__dir__, "ndagala_rack") do
-    result = BujumburaNdagalaRack::NdagalaRack.conduct
+  Multivitamin::Cassettes.play(__dir__, "totora_reed") do
+    result = PunoTotoraReed::TotoraReed.conduct
   end
 
   puts result.error.class

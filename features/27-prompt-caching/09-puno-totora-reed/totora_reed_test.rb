@@ -2,15 +2,15 @@
 
 require "minitest/autorun"
 require "yaml"
-require_relative "ndagala_rack"
+require_relative "totora_reed"
 
-class BujumburaNdagalaRackImplicitTest < Minitest::Test
-  CASSETTE = File.expand_path("cassettes/ndagala_rack.yml", __dir__)
+class PunoTotoraReedImplicitTest < Minitest::Test
+  CASSETTE = File.expand_path("cassettes/totora_reed.yml", __dir__)
 
   def test_implicit_mode_is_on_the_wire
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "ndagala_rack") do
-      result = BujumburaNdagalaRack::NdagalaRack.conduct
+    Multivitamin::Cassettes.play(__dir__, "totora_reed") do
+      result = PunoTotoraReed::TotoraReed.conduct
     end
 
     assert_instance_of RubyLLM::BadRequestError, result.error

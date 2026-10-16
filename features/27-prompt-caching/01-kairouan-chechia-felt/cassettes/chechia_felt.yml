@@ -1,0 +1,461 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Hamza
+        starts cap KAI-2026-1016-C3 at 08:25. When does Hamza start?"}],"instructions":"You
+        are the felt clerk at a chechia workshop in Kairouan.\nKairouan chechia standing
+        order 1: rack 1 holds cap KAI-2026-1016-C1, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 2: rack 2 holds
+        cap KAI-2026-1016-C2, felt at 03:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 3: rack 3 holds cap KAI-2026-1016-C3, felt
+        at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 4: rack 4 holds cap KAI-2026-1016-C4, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 5: rack 5 holds
+        cap KAI-2026-1016-C5, felt at 06:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 6: rack 6 holds cap KAI-2026-1016-C6, felt
+        at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 7: rack 7 holds cap KAI-2026-1016-C7, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 8: rack 8 holds
+        cap KAI-2026-1016-C8, felt at 09:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 9: rack 9 holds cap KAI-2026-1016-C9, felt
+        at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 10: rack 10 holds cap KAI-2026-1016-C10, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 11: rack 11 holds
+        cap KAI-2026-1016-C11, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 12: rack 12 holds cap KAI-2026-1016-C12,
+        felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 13: rack 13 holds cap KAI-2026-1016-C13, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 14: rack 14 holds
+        cap KAI-2026-1016-C14, felt at 03:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 15: rack 15 holds cap KAI-2026-1016-C15,
+        felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 16: rack 16 holds cap KAI-2026-1016-C16, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 17: rack 17 holds
+        cap KAI-2026-1016-C17, felt at 06:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 18: rack 18 holds cap KAI-2026-1016-C18,
+        felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 19: rack 19 holds cap KAI-2026-1016-C19, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 20: rack 20 holds
+        cap KAI-2026-1016-C20, felt at 09:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 21: rack 21 holds cap KAI-2026-1016-C21,
+        felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 22: rack 22 holds cap KAI-2026-1016-C22, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 23: rack 23 holds
+        cap KAI-2026-1016-C23, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 24: rack 24 holds cap KAI-2026-1016-C24,
+        felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 25: rack 25 holds cap KAI-2026-1016-C25, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 26: rack 26 holds
+        cap KAI-2026-1016-C26, felt at 03:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 27: rack 27 holds cap KAI-2026-1016-C27,
+        felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 28: rack 28 holds cap KAI-2026-1016-C28, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 29: rack 29 holds
+        cap KAI-2026-1016-C29, felt at 06:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 30: rack 30 holds cap KAI-2026-1016-C30,
+        felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 31: rack 31 holds cap KAI-2026-1016-C31, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 32: rack 32 holds
+        cap KAI-2026-1016-C32, felt at 09:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 33: rack 33 holds cap KAI-2026-1016-C33,
+        felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 34: rack 34 holds cap KAI-2026-1016-C34, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 35: rack 35 holds
+        cap KAI-2026-1016-C35, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 36: rack 36 holds cap KAI-2026-1016-C36,
+        felt at 01:10, do not mix the carded wool with the nap.\nAnswer in one short
+        sentence from the board only.\nName Hamza and 08:25.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:55:22 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6dfbe4c536398-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '954'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998287'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 51ms
+      X-Request-Id:
+      - req_9208e7df6ffd44e3aa435542eb3f8faa
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_099f13d7b6597467016ad210a9819887d2b44cfc8f8a3551a2",
+          "object": "response",
+          "created_at": 1792151721,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792151722,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the felt clerk at a chechia workshop in Kairouan.\nKairouan chechia standing order 1: rack 1 holds cap KAI-2026-1016-C1, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 2: rack 2 holds cap KAI-2026-1016-C2, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 3: rack 3 holds cap KAI-2026-1016-C3, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 4: rack 4 holds cap KAI-2026-1016-C4, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 5: rack 5 holds cap KAI-2026-1016-C5, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 6: rack 6 holds cap KAI-2026-1016-C6, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 7: rack 7 holds cap KAI-2026-1016-C7, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 8: rack 8 holds cap KAI-2026-1016-C8, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 9: rack 9 holds cap KAI-2026-1016-C9, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 10: rack 10 holds cap KAI-2026-1016-C10, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 11: rack 11 holds cap KAI-2026-1016-C11, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 12: rack 12 holds cap KAI-2026-1016-C12, felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing order 13: rack 13 holds cap KAI-2026-1016-C13, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 14: rack 14 holds cap KAI-2026-1016-C14, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 15: rack 15 holds cap KAI-2026-1016-C15, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 16: rack 16 holds cap KAI-2026-1016-C16, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 17: rack 17 holds cap KAI-2026-1016-C17, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 18: rack 18 holds cap KAI-2026-1016-C18, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 19: rack 19 holds cap KAI-2026-1016-C19, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 20: rack 20 holds cap KAI-2026-1016-C20, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 21: rack 21 holds cap KAI-2026-1016-C21, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 22: rack 22 holds cap KAI-2026-1016-C22, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 23: rack 23 holds cap KAI-2026-1016-C23, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 24: rack 24 holds cap KAI-2026-1016-C24, felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing order 25: rack 25 holds cap KAI-2026-1016-C25, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 26: rack 26 holds cap KAI-2026-1016-C26, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 27: rack 27 holds cap KAI-2026-1016-C27, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 28: rack 28 holds cap KAI-2026-1016-C28, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 29: rack 29 holds cap KAI-2026-1016-C29, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 30: rack 30 holds cap KAI-2026-1016-C30, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 31: rack 31 holds cap KAI-2026-1016-C31, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 32: rack 32 holds cap KAI-2026-1016-C32, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 33: rack 33 holds cap KAI-2026-1016-C33, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 34: rack 34 holds cap KAI-2026-1016-C34, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 35: rack 35 holds cap KAI-2026-1016-C35, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 36: rack 36 holds cap KAI-2026-1016-C36, felt at 01:10, do not mix the carded wool with the nap.\nAnswer in one short sentence from the board only.\nName Hamza and 08:25.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_099f13d7b6597467016ad210aa3ba887d29a1bc46b579fda70",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Hamza starts cap KAI-2026-1016-C3 at 08:25."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1694,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 21,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1715
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:55:22 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Hamza
+        starts cap KAI-2026-1016-C3 at 08:25. When does Hamza start?"},{"role":"assistant","content":[{"type":"output_text","text":"Hamza
+        starts cap KAI-2026-1016-C3 at 08:25."}]},{"role":"user","content":"Does the
+        standing order allow mixing the carded wool with the nap? Answer No or Yes."}],"instructions":"You
+        are the felt clerk at a chechia workshop in Kairouan.\nKairouan chechia standing
+        order 1: rack 1 holds cap KAI-2026-1016-C1, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 2: rack 2 holds
+        cap KAI-2026-1016-C2, felt at 03:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 3: rack 3 holds cap KAI-2026-1016-C3, felt
+        at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 4: rack 4 holds cap KAI-2026-1016-C4, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 5: rack 5 holds
+        cap KAI-2026-1016-C5, felt at 06:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 6: rack 6 holds cap KAI-2026-1016-C6, felt
+        at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 7: rack 7 holds cap KAI-2026-1016-C7, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 8: rack 8 holds
+        cap KAI-2026-1016-C8, felt at 09:10, do not mix the carded wool with the nap.
+        Kairouan chechia standing order 9: rack 9 holds cap KAI-2026-1016-C9, felt
+        at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 10: rack 10 holds cap KAI-2026-1016-C10, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 11: rack 11 holds
+        cap KAI-2026-1016-C11, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 12: rack 12 holds cap KAI-2026-1016-C12,
+        felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 13: rack 13 holds cap KAI-2026-1016-C13, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 14: rack 14 holds
+        cap KAI-2026-1016-C14, felt at 03:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 15: rack 15 holds cap KAI-2026-1016-C15,
+        felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 16: rack 16 holds cap KAI-2026-1016-C16, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 17: rack 17 holds
+        cap KAI-2026-1016-C17, felt at 06:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 18: rack 18 holds cap KAI-2026-1016-C18,
+        felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 19: rack 19 holds cap KAI-2026-1016-C19, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 20: rack 20 holds
+        cap KAI-2026-1016-C20, felt at 09:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 21: rack 21 holds cap KAI-2026-1016-C21,
+        felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 22: rack 22 holds cap KAI-2026-1016-C22, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 23: rack 23 holds
+        cap KAI-2026-1016-C23, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 24: rack 24 holds cap KAI-2026-1016-C24,
+        felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 25: rack 25 holds cap KAI-2026-1016-C25, felt at 02:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 26: rack 26 holds
+        cap KAI-2026-1016-C26, felt at 03:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 27: rack 27 holds cap KAI-2026-1016-C27,
+        felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 28: rack 28 holds cap KAI-2026-1016-C28, felt at 05:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 29: rack 29 holds
+        cap KAI-2026-1016-C29, felt at 06:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 30: rack 30 holds cap KAI-2026-1016-C30,
+        felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 31: rack 31 holds cap KAI-2026-1016-C31, felt at 08:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 32: rack 32 holds
+        cap KAI-2026-1016-C32, felt at 09:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 33: rack 33 holds cap KAI-2026-1016-C33,
+        felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing
+        order 34: rack 34 holds cap KAI-2026-1016-C34, felt at 11:10, do not mix the
+        carded wool with the nap. Kairouan chechia standing order 35: rack 35 holds
+        cap KAI-2026-1016-C35, felt at 12:10, do not mix the carded wool with the
+        nap. Kairouan chechia standing order 36: rack 36 holds cap KAI-2026-1016-C36,
+        felt at 01:10, do not mix the carded wool with the nap.\nAnswer in one short
+        sentence from the board only.\nName Hamza and 08:25.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:55:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6dfc99e3b0244-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '747'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1996507'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 104ms
+      X-Request-Id:
+      - req_1ed111ff474b43b780b09147e6a58a32
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0980824085364a59016ad210aa9a1487d2b683bd2628e4a132",
+          "object": "response",
+          "created_at": 1792151722,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792151723,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the felt clerk at a chechia workshop in Kairouan.\nKairouan chechia standing order 1: rack 1 holds cap KAI-2026-1016-C1, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 2: rack 2 holds cap KAI-2026-1016-C2, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 3: rack 3 holds cap KAI-2026-1016-C3, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 4: rack 4 holds cap KAI-2026-1016-C4, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 5: rack 5 holds cap KAI-2026-1016-C5, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 6: rack 6 holds cap KAI-2026-1016-C6, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 7: rack 7 holds cap KAI-2026-1016-C7, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 8: rack 8 holds cap KAI-2026-1016-C8, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 9: rack 9 holds cap KAI-2026-1016-C9, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 10: rack 10 holds cap KAI-2026-1016-C10, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 11: rack 11 holds cap KAI-2026-1016-C11, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 12: rack 12 holds cap KAI-2026-1016-C12, felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing order 13: rack 13 holds cap KAI-2026-1016-C13, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 14: rack 14 holds cap KAI-2026-1016-C14, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 15: rack 15 holds cap KAI-2026-1016-C15, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 16: rack 16 holds cap KAI-2026-1016-C16, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 17: rack 17 holds cap KAI-2026-1016-C17, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 18: rack 18 holds cap KAI-2026-1016-C18, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 19: rack 19 holds cap KAI-2026-1016-C19, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 20: rack 20 holds cap KAI-2026-1016-C20, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 21: rack 21 holds cap KAI-2026-1016-C21, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 22: rack 22 holds cap KAI-2026-1016-C22, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 23: rack 23 holds cap KAI-2026-1016-C23, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 24: rack 24 holds cap KAI-2026-1016-C24, felt at 01:10, do not mix the carded wool with the nap. Kairouan chechia standing order 25: rack 25 holds cap KAI-2026-1016-C25, felt at 02:10, do not mix the carded wool with the nap. Kairouan chechia standing order 26: rack 26 holds cap KAI-2026-1016-C26, felt at 03:10, do not mix the carded wool with the nap. Kairouan chechia standing order 27: rack 27 holds cap KAI-2026-1016-C27, felt at 04:10, do not mix the carded wool with the nap. Kairouan chechia standing order 28: rack 28 holds cap KAI-2026-1016-C28, felt at 05:10, do not mix the carded wool with the nap. Kairouan chechia standing order 29: rack 29 holds cap KAI-2026-1016-C29, felt at 06:10, do not mix the carded wool with the nap. Kairouan chechia standing order 30: rack 30 holds cap KAI-2026-1016-C30, felt at 07:10, do not mix the carded wool with the nap. Kairouan chechia standing order 31: rack 31 holds cap KAI-2026-1016-C31, felt at 08:10, do not mix the carded wool with the nap. Kairouan chechia standing order 32: rack 32 holds cap KAI-2026-1016-C32, felt at 09:10, do not mix the carded wool with the nap. Kairouan chechia standing order 33: rack 33 holds cap KAI-2026-1016-C33, felt at 10:10, do not mix the carded wool with the nap. Kairouan chechia standing order 34: rack 34 holds cap KAI-2026-1016-C34, felt at 11:10, do not mix the carded wool with the nap. Kairouan chechia standing order 35: rack 35 holds cap KAI-2026-1016-C35, felt at 12:10, do not mix the carded wool with the nap. Kairouan chechia standing order 36: rack 36 holds cap KAI-2026-1016-C36, felt at 01:10, do not mix the carded wool with the nap.\nAnswer in one short sentence from the board only.\nName Hamza and 08:25.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0980824085364a59016ad210ab3af887d292464bd0a7d09803",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1741,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 1536
+            },
+            "output_tokens": 3,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1744
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:55:23 GMT
+recorded_with: VCR 6.4.0

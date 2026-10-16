@@ -1092,13 +1092,13 @@ Shown in [Sokoto calabash ridge](features/26-files/10-sokoto-calabash-ridge/).
 
 ### Empty with_caching sends no prompt_cache_options
 
-**What happens.** `chat.with_caching` with no arguments turns automatic caching on. The Luxor, Palembang, Basel, Tampere, and Wrocław requests have no `prompt_cache_options` and no `prompt_cache_key`. `with_caching(key:)` on the Leh shawl sends `"prompt_cache_key":"leh-pashmina-2026-1016"` and still omits `prompt_cache_options`. `with_caching(nil)` raises `ArgumentError` before HTTP. `with_caching(false)` on the Meknes chest sends neither field.
+**What happens.** `chat.with_caching` with no arguments turns automatic caching on. The Kairouan, Palembang, Basel, Tampere, and Wrocław requests have no `prompt_cache_options` and no `prompt_cache_key`. `with_caching(key:)` on the Leh shawl sends `"prompt_cache_key":"leh-pashmina-2026-1016"` and still omits `prompt_cache_options`. `with_caching(nil)` raises `ArgumentError` before HTTP. `with_caching(false)` on the Meknes chest sends neither field.
 
 **Why it matters.** A cassette assertion that looks for `prompt_cache_options` on every cached chat fails on the automatic path. `key:` is not an options object.
 
 **What to do.** Assert `prompt_cache_key` when you passed `key:`. Treat empty `with_caching` as automatic. Pass `false`, not `nil`, to turn it off.
 
-Shown in [Luxor alabaster policy](features/27-prompt-caching/01-luxor-alabaster-policy/), [Leh pashmina key](features/27-prompt-caching/05-leh-pashmina-key/), and [Meknes thuya chest](features/27-prompt-caching/04-meknes-thuya-chest/).
+Shown in [Kairouan chechia felt](features/27-prompt-caching/01-kairouan-chechia-felt/), [Leh pashmina key](features/27-prompt-caching/05-leh-pashmina-key/), and [Meknes thuya chest](features/27-prompt-caching/04-meknes-thuya-chest/).
 
 ### gpt-4.1-mini rejects ttl and mode, then rejects the advertised 30m
 
@@ -1108,7 +1108,7 @@ Shown in [Luxor alabaster policy](features/27-prompt-caching/01-luxor-alabaster-
 
 **What to do.** Use empty `with_caching` or `key:` on `gpt-4.1-mini`. Rescue `BadRequestError` when a desk still sends `ttl:` or `mode:`.
 
-Shown in [Dubrovnik wall stone](features/27-prompt-caching/02-dubrovnik-wall-stone/) and [Bujumbura ndagala rack](features/27-prompt-caching/09-bujumbura-ndagala-rack/).
+Shown in [Dubrovnik wall stone](features/27-prompt-caching/02-dubrovnik-wall-stone/) and [Puno totora reed](features/27-prompt-caching/09-puno-totora-reed/).
 
 ### cache_until_here is a breakpoint this slug will not take
 
