@@ -1,0 +1,556 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        maiolica at the Faenza yard. How many bowls, and which cart is alongside?"}],"instructions":"You
+        are the bowl clerk at the maiolica yard in Faenza.\nCall posted_maiolica_card
+        once when you need the card.\nThen answer in two short sentences. Name 9 bowls
+        and Chiara.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_maiolica_card","description":"Reads
+        the maiolica bowl card posted at the Faenza yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"posted_maiolica_card"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:07:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b69a44fa8d7cb0-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '455'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999531'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 14ms
+      X-Request-Id:
+      - req_1f8a86006977430e86bb59ee12062eff
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e90dda5a45523db016ad2058b1bf087d2894942e6b87611ec",
+          "object": "response",
+          "created_at": 1792148875,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792148875,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the bowl clerk at the maiolica yard in Faenza.\nCall posted_maiolica_card once when you need the card.\nThen answer in two short sentences. Name 9 bowls and Chiara.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "fc_0e90dda5a45523db016ad2058b6fec87d2a6ea623fe5298f41",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{}",
+              "call_id": "call_yySlD4jOGNuCOnQw55f6b0xq",
+              "name": "posted_maiolica_card"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": {
+            "type": "function",
+            "name": "posted_maiolica_card"
+          },
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the maiolica bowl card posted at the Faenza yard",
+              "name": "posted_maiolica_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 119,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 2,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 121
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:07:55 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
+        maiolica at the Faenza yard. How many bowls, and which cart is alongside?"},{"type":"function_call","call_id":"call_yySlD4jOGNuCOnQw55f6b0xq","name":"posted_maiolica_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_yySlD4jOGNuCOnQw55f6b0xq","output":"Faenza
+        maiolica yard card for Friday 16 October 2026.\nBench FZ-4, 9 bowls, cart
+        Chiara alongside at 06:50."}],"instructions":"You are the bowl clerk at the
+        maiolica yard in Faenza.\nCall posted_maiolica_card once when you need the
+        card.\nThen answer in two short sentences. Name 9 bowls and Chiara.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_maiolica_card","description":"Reads
+        the maiolica bowl card posted at the Faenza yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:07:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b69a488c7339a6-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '564'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4997'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999148'
+      X-Ratelimit-Reset-Requests:
+      - 36ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_f5d6e891993a4711a969d4fb4bf6ff1a
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0fe626a8af828f5a016ad2058baf3887d284efe2cec04345db",
+          "object": "response",
+          "created_at": 1792148875,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792148876,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the bowl clerk at the maiolica yard in Faenza.\nCall posted_maiolica_card once when you need the card.\nThen answer in two short sentences. Name 9 bowls and Chiara.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0fe626a8af828f5a016ad2058c0c6887d2893f5b9fd3c03888",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "There are 9 bowls at the Faenza yard. The cart alongside is Chiara."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [
+            {
+              "type": "function",
+              "description": "Reads the maiolica bowl card posted at the Faenza yard",
+              "name": "posted_maiolica_card",
+              "output_schema": null,
+              "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": false,
+                "strict": true
+              },
+              "strict": false
+            }
+          ],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 165,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 20,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 185
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:07:56 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"ruby_llm_batch.jsonl\"\r\nContent-Length:
+        1230\r\nContent-Type: application/jsonl\r\nContent-Transfer-Encoding: binary\r\n\r\n{\"custom_id\":\"0\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Morning
+        maiolica at the Faenza yard. How many bowls, and which cart is alongside?\"},{\"type\":\"function_call\",\"call_id\":\"call_yySlD4jOGNuCOnQw55f6b0xq\",\"name\":\"posted_maiolica_card\",\"arguments\":\"{}\"},{\"type\":\"function_call_output\",\"call_id\":\"call_yySlD4jOGNuCOnQw55f6b0xq\",\"output\":\"Faenza
+        maiolica yard card for Friday 16 October 2026.\\nBench FZ-4, 9 bowls, cart
+        Chiara alongside at 06:50.\"},{\"role\":\"assistant\",\"content\":[{\"type\":\"output_text\",\"text\":\"There
+        are 9 bowls at the Faenza yard. The cart alongside is Chiara.\"}]},{\"role\":\"user\",\"content\":\"Confirm
+        the bench id from the same card.\"}],\"instructions\":\"You are the bowl clerk
+        at the maiolica yard in Faenza.\\nCall posted_maiolica_card once when you
+        need the card.\\nThen answer in two short sentences. Name 9 bowls and Chiara.\",\"store\":false,\"include\":[\"reasoning.encrypted_content\"],\"temperature\":0.2,\"tools\":[{\"type\":\"function\",\"name\":\"posted_maiolica_card\",\"description\":\"Reads
+        the maiolica bowl card posted at the Faenza yard\",\"parameters\":{\"type\":\"object\",\"properties\":{},\"required\":[],\"additionalProperties\":false,\"strict\":true},\"strict\":false}]}}\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"purpose\"\r\n\r\nbatch\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
+      Content-Length:
+      - '1650'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:07:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Request-Id:
+      - req_00f135ab3878464189250448a9afc257
+      Openai-Processing-Ms:
+      - '196'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b69a4cda82ab5c-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "object": "file",
+          "id": "file-4fWpKbEarByiPt89o7DjFe",
+          "purpose": "batch",
+          "filename": "ruby_llm_batch.jsonl",
+          "bytes": 1230,
+          "created_at": 1792148876,
+          "expires_at": 1794740876,
+          "status": "processed",
+          "status_details": null
+        }
+  recorded_at: Fri, 16 Oct 2026 11:07:56 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/batches
+    body:
+      encoding: UTF-8
+      string: '{"input_file_id":"file-4fWpKbEarByiPt89o7DjFe","endpoint":"/v1/responses","completion_window":"24h"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:07:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_8a9d840b56c5428bb205e48d7d573546
+      Openai-Processing-Ms:
+      - '284'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b69a4eabdbf36e-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "batch_6ad2058cd9ec819092d9f3f20f6bc3a1",
+          "object": "batch",
+          "endpoint": "/v1/responses",
+          "model": null,
+          "errors": null,
+          "input_file_id": "file-4fWpKbEarByiPt89o7DjFe",
+          "completion_window": "24h",
+          "status": "validating",
+          "output_file_id": null,
+          "error_file_id": null,
+          "created_at": 1792148876,
+          "in_progress_at": null,
+          "expires_at": 1792235276,
+          "finalizing_at": null,
+          "completed_at": null,
+          "failed_at": null,
+          "expired_at": null,
+          "cancelling_at": null,
+          "cancelled_at": null,
+          "request_counts": {
+            "total": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "metadata": null
+        }
+  recorded_at: Fri, 16 Oct 2026 11:07:56 GMT
+recorded_with: VCR 6.4.0

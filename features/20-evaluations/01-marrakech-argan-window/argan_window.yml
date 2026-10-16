@@ -1,0 +1,7 @@
+cases:
+  - name: unopened_tin
+    inputs: Can I return an unopened argan tin after 14 days?
+    expected_output: Yes, unopened tins can be returned within 30 days.
+  - name: market_day_tin
+    inputs: Can I return a tin I bought on market-day discount?
+    expected_output: No, market-day tins are final.

@@ -1,0 +1,11 @@
+cases:
+  - name: vat_count
+    inputs:
+      vat: SK-7
+      question: How many sheets hang above vat SK-7, and who pulls the next mould?
+    expected_output: Vat SK-7 has 27 sheets on the line. Dilshod pulls the next mould.
+  - name: sizing_window
+    inputs:
+      vat: SK-7
+      question: When does sizing start, and who opens the kettle?
+    expected_output: Sizing starts at 14:40. Dilshod opens the kettle.

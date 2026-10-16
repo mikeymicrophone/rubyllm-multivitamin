@@ -1,0 +1,4 @@
+cases:
+  - name: ruffle_count
+    inputs: How many faralae ruffles sit on the carnival table, and who pins the next bata?
+    expected_output: The carnival table holds 36 faralae ruffles. Rafaela pins the next bata.

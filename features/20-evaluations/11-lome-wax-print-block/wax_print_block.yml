@@ -1,0 +1,7 @@
+cases:
+  - name: block_count
+    inputs: How many wax-print blocks sit on the east table?
+    expected_output: The east table holds 11 wax-print blocks.
+  - name: stamp_clerk
+    inputs: Who stamps the next length?
+    expected_output: Afi stamps the next length.

@@ -1,0 +1,4 @@
+cases:
+  - name: draft_window
+    inputs: When does the north windcatcher draw, and who opens the vent?
+    expected_output: The north windcatcher draws at 10:20. Shirin opens the vent.

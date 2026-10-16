@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"ruby_llm_batch.jsonl\"\r\nContent-Length:
+        988\r\nContent-Type: application/jsonl\r\nContent-Transfer-Encoding: binary\r\n\r\n{\"custom_id\":\"0\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Asmara
+        berbere mill card, Friday 16 October 2026.\\n48 sacks on the west floor. Yonas
+        opens the next millstone.\\nHow many sacks, and who opens the stone?\"}],\"instructions\":\"You
+        are the mill clerk at the berbere loft in Asmara.\\nAnswer in one short sentence
+        from the card only.\\nName 48 sacks and Yonas.\",\"store\":false,\"include\":[\"reasoning.encrypted_content\"],\"temperature\":0.2}}\n{\"custom_id\":\"1\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Asmara
+        berbere mill card, Friday 16 October 2026.\\nThe north stone starts at 07:40.
+        Yonas holds the hopper.\\nWhen does the north stone start?\"}],\"instructions\":\"You
+        are the mill clerk at the berbere loft in Asmara.\\nAnswer in one short sentence
+        from the card only.\\nName 48 sacks and Yonas.\",\"store\":false,\"include\":[\"reasoning.encrypted_content\"],\"temperature\":0.2}}\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"purpose\"\r\n\r\nbatch\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
+      Content-Length:
+      - '1407'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:40:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Request-Id:
+      - req_0dc24503e3fc4c50a239ddf4c1a4a182
+      Openai-Processing-Ms:
+      - '719'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b672c989cb2434-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "object": "file",
+          "id": "file-Fe93mofqLTZYbR9ePzcwGT",
+          "purpose": "batch",
+          "filename": "ruby_llm_batch.jsonl",
+          "bytes": 988,
+          "created_at": 1792147257,
+          "expires_at": 1794739257,
+          "status": "processed",
+          "status_details": null
+        }
+  recorded_at: Fri, 16 Oct 2026 10:40:58 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/batches
+    body:
+      encoding: UTF-8
+      string: '{"input_file_id":"file-Fe93mofqLTZYbR9ePzcwGT","endpoint":"/v1/responses","completion_window":"24h"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:40:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_1308706e2dff48ddb832f4eb489c1020
+      Openai-Processing-Ms:
+      - '496'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b672ceaeeed6fb-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "batch_6ad1ff3abae48190a353009fded9fef0",
+          "object": "batch",
+          "endpoint": "/v1/responses",
+          "model": null,
+          "errors": null,
+          "input_file_id": "file-Fe93mofqLTZYbR9ePzcwGT",
+          "completion_window": "24h",
+          "status": "validating",
+          "output_file_id": null,
+          "error_file_id": null,
+          "created_at": 1792147258,
+          "in_progress_at": null,
+          "expires_at": 1792233658,
+          "finalizing_at": null,
+          "completed_at": null,
+          "failed_at": null,
+          "expired_at": null,
+          "cancelling_at": null,
+          "cancelled_at": null,
+          "request_counts": {
+            "total": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "metadata": null
+        }
+  recorded_at: Fri, 16 Oct 2026 10:40:59 GMT
+recorded_with: VCR 6.4.0

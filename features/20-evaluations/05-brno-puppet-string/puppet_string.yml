@@ -1,0 +1,4 @@
+cases:
+  - name: string_count
+    inputs: How many strings on marionette B-7, and who holds the bar?
+    expected_output: Marionette B-7 has 9 strings. Eliska holds the bar.
