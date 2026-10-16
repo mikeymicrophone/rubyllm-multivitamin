@@ -4,7 +4,7 @@
 #
 # Teaches:
 # - An Agent thinking macro maps onto Chat#with_thinking.
-# - display: :summarized and effort: :low ride on the class.
+# - display: :summarized and effort: :medium ride on the class.
 # - Agent.new.ask runs that configuration.
 
 require "logger"
@@ -15,11 +15,12 @@ require_relative "../../../support/models"
 module HawassaSidamaCoffee
   class MillClerk < RubyLLM::Agent
     model Multivitamin::Models::OPENAI_REASONING, provider: :openai
-    thinking effort: :low, display: :summarized
+    thinking effort: :medium, display: :summarized
     instructions <<~TEXT.strip
       You are the sidama clerk in Hawassa.
       Answer in one short sentence from the board only.
-      Name Tigist and 06:20.
+      The sentence must include the name Tigist and the time 06:20.
+      Do not replace Tigist with a pronoun.
     TEXT
   end
 

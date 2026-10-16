@@ -17,7 +17,8 @@ module GondarParchmentFolio
     INSTRUCTIONS = <<~TEXT.strip
       You are the parchment clerk in Gondar.
       Answer in one short sentence from the board only.
-      Name Yonas and 14:00.
+      The sentence must include the name Yonas and the time 14:00.
+      Do not replace Yonas with a pronoun.
     TEXT
 
     BOARD = "Board: Yonas rules folio GON-2026-1016-P5 at 14:00. When does Yonas rule?"

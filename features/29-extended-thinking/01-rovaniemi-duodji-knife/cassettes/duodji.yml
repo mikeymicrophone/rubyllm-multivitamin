@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the duodji clerk in Rovaniemi.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Aila and the time 08:00.\nDo
+        not replace Aila with a pronoun."},{"role":"user","content":"Board: Aila hones
+        knife ROV-2026-1016-D3 at 08:00. When does Aila hone?"}],"stream":false,"temperature":0.2,"reasoning":{"enabled":true}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:11:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792152675-Hgdp2nKngcIQduDAXGSW
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b6f70b1c0fda5c-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792152675-Hgdp2nKngcIQduDAXGSW\",\"object\":\"chat.completion\",\"created\":1792152675,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Aila
+        hones knife ROV-2026-1016-D3 at 08:00.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer in one short sentence from the board only. Must include name
+        Aila and time 08:00. Do not replace Aila with a pronoun. So answer: \\\"Aila
+        hones knife ROV-2026-1016-D3 at 08:00.\\\" That's a short sentence, includes
+        Aila and 08:00. It's from the board. That satisfies.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in one short sentence from the board only. Must include name
+        Aila and time 08:00. Do not replace Aila with a pronoun. So answer: \\\"Aila
+        hones knife ROV-2026-1016-D3 at 08:00.\\\" That's a short sentence, includes
+        Aila and 08:00. It's from the board. That satisfies.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":101,\"completion_tokens\":123,\"total_tokens\":224,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":93,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 12:11:17 GMT
+recorded_with: VCR 6.4.0

@@ -14,10 +14,10 @@ class EvoraCorkThinkingPersistTest < Minitest::Test
 
     assert_includes result.brief, "Inês"
     assert_includes result.brief, "12:30"
-    refute_nil result.thinking_text
-    refute_empty result.thinking_text
-    assert_equal result.thinking_text, result.reloaded_text
     refute_nil result.thinking_signature
+    refute_empty result.thinking_signature
+    assert_equal result.thinking_signature, result.reloaded_signature
+    assert_equal result.thinking_text.to_s, result.reloaded_text.to_s
     assert_equal 1, result.assistant_count
   end
 

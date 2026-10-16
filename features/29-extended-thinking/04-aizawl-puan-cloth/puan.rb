@@ -3,8 +3,8 @@
 # Extended thinking · 04 · Aizawl puan cloth
 #
 # Teaches:
-# - display: :summarized asks the Responses API for a reasoning summary.
-# - thinking.text is that summary.
+# - display: :summarized sends reasoning.summary auto.
+# - gpt-5-nano may still return an empty summary, so thinking.text is nil.
 # - thinking.signature is the encrypted block.
 
 require "logger"
@@ -17,7 +17,8 @@ module AizawlPuanCloth
     INSTRUCTIONS = <<~TEXT.strip
       You are the puan clerk in Aizawl.
       Answer in one short sentence from the board only.
-      Name Lalrin and 10:15.
+      The sentence must include the name Lalrin and the time 10:15.
+      Do not replace Lalrin with a pronoun.
     TEXT
 
     BOARD = "Board: Lalrin weaves puan AIZ-2026-1016-P4 at 10:15. When does Lalrin weave?"
@@ -27,7 +28,7 @@ module AizawlPuanCloth
     def self.conduct
       configure
       chat = open_chat
-      chat.with_thinking(effort: :low, display: :summarized)
+      chat.with_thinking(effort: :medium, display: :summarized)
       chat.with_instructions(INSTRUCTIONS)
       brief = chat.ask(BOARD)
       Result.new(

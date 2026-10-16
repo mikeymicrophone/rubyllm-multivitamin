@@ -17,7 +17,8 @@ module RovaniemiDuodjiKnife
     INSTRUCTIONS = <<~TEXT.strip
       You are the duodji clerk in Rovaniemi.
       Answer in one short sentence from the board only.
-      Name Aila and 08:00.
+      The sentence must include the name Aila and the time 08:00.
+      Do not replace Aila with a pronoun.
     TEXT
 
     BOARD = "Board: Aila hones knife ROV-2026-1016-D3 at 08:00. When does Aila hone?"

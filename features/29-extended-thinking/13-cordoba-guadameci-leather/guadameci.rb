@@ -23,7 +23,8 @@ module CordobaGuadameciLeather
       You are the guadamecí clerk in Córdoba.
       #{POLICY}
       Answer in one short sentence from the board only.
-      Name Rafael and 08:55.
+      The sentence must include the name Rafael and the time 08:55.
+      Do not replace Rafael with a pronoun.
       Do not mix the tooled hide with the gilt.
     TEXT
 
@@ -44,7 +45,7 @@ module CordobaGuadameciLeather
     def self.conduct
       configure
       chat = RubyLLM.chat(model: Multivitamin::Models::OPENAI_REASONING, provider: :openai)
-      chat.with_thinking(effort: :low, display: :summarized)
+      chat.with_thinking(effort: :medium, display: :summarized)
       chat.with_instructions(INSTRUCTIONS)
       opening = chat.ask(BOARD)
       follow_up = chat.ask(FOLLOW)

@@ -18,7 +18,8 @@ module HotanJadePebble
     OPENAI_INSTRUCTIONS = <<~TEXT.strip
       You are the jade clerk in Hotan.
       Answer in one short sentence from the board only.
-      Name Gulnisa and 09:40.
+      The sentence must include the name Gulnisa and the time 09:40.
+      Do not replace Gulnisa with a pronoun.
     TEXT
 
     OPENROUTER_INSTRUCTIONS = OPENAI_INSTRUCTIONS

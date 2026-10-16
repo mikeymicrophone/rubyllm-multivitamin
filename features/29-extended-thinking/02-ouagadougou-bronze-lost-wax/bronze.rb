@@ -17,7 +17,8 @@ module OuagadougouBronzeLostWax
     INSTRUCTIONS = <<~TEXT.strip
       You are the bronze clerk in Ouagadougou.
       Answer in one short sentence from the board only.
-      Name Aminata and 07:30.
+      The sentence must include the name Aminata and the time 07:30.
+      Do not replace Aminata with a pronoun.
     TEXT
 
     BOARD = "Board: Aminata pours lot OUA-2026-1016-B7 at 07:30. When does Aminata pour?"

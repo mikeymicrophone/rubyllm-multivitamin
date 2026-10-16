@@ -1,8 +1,8 @@
 # Extended thinking · 12 · Évora cork plank
 
 The cork loft in Évora persists thinking on the assistant row. Inês
-grades plank EVO-2026-1016-C2. Reloading the log still shows
-`thinking_text` and `thinking_signature`.
+grades plank EVO-2026-1016-C2. Reloading the log still shows `thinking_signature` (and
+`thinking_text` when the slug returns a summary).
 
 **What it teaches**
 

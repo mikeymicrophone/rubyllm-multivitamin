@@ -2,12 +2,13 @@
 
 The puan loft in Aizawl asks for a summarized thinking display. Lalrin
 weaves puan AIZ-2026-1016-P4. The Responses body includes
-`reasoning.summary auto`, and both `thinking.text` and `signature` are set.
+`reasoning.summary auto`. `gpt-5-nano` can still return an empty
+summary; the encrypted signature is set.
 
 **What it teaches**
 
-- `display: :summarized` asks the Responses API for a reasoning summary.
-- `thinking.text` is that summary.
+- `display: :summarized` sends `reasoning.summary auto`.
+- `thinking.text` can still be nil on this slug.
 - `thinking.signature` is the encrypted block.
 
 **Files**

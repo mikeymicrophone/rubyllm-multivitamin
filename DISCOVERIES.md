@@ -1140,6 +1140,80 @@ Shown in [Bukhara suzani cache](features/27-prompt-caching/06-bukhara-suzani-cac
 
 Shown in [Palembang songket](features/27-prompt-caching/07-palembang-songket/), [Basel Fasnacht lantern](features/27-prompt-caching/10-basel-fasnacht-lantern/), [Wrocław Nadodrze neon](features/27-prompt-caching/12-wroclaw-nadodrze-neon/), and [Kutaisi qvevri clay](features/27-prompt-caching/13-kutaisi-qvevri-clay/).
 
+## Prompt rendering
+
+### PromptNotFoundError is StandardError, not RubyLLM::Error
+
+**What happens.** `RubyLLM.render_prompt("batik/missing_canting")` raises `RubyLLM::PromptNotFoundError` (`Prompt file not found: ...`). That class inherits `StandardError` directly. A `rescue RubyLLM::Error` does not catch it. There is no HTTP call.
+
+**Why it matters.** A mill that only rescues provider errors treats a missing ERB file as an unhandled crash.
+
+**What to do.** Rescue `PromptNotFoundError` on its own. Keep prompt names as application constants.
+
+Shown in [Bandung batik stamp](features/28-prompt-rendering/02-bandung-batik-stamp/) and [Mbarara ankole hide](features/28-prompt-rendering/08-mbarara-ankole-hide/).
+
+### An agent without a prompt file starts with no system turn
+
+**What happens.** `YogyakartaWayangKulit::PuppetClerk` has no `instructions` macro and no `app/prompts/.../instructions.txt.erb`. The first message is `:user`. `instructions { prompt("instructions") }` on the Mbarara hide clerk instead raises `PromptNotFoundError` for `mbarara_ankole_hide/hide_clerk/instructions.txt.erb` before `ask`.
+
+**Why it matters.** Missing ERB is silent unless you opt into `prompt("instructions")`. The two shapes look alike in the class and are not the same at runtime.
+
+**What to do.** Use the conventional file when the clerk must have standing orders. Use `prompt("instructions")` when the file is required.
+
+Shown in [Yogyakarta wayang kulit](features/28-prompt-rendering/07-yogyakarta-wayang-kulit/) and [Mbarara ankole hide](features/28-prompt-rendering/08-mbarara-ankole-hide/).
+
+### Prompt.roots searches the host first
+
+**What happens.** After `Dir.chdir` into the Ljubljana desk, `render_prompt("panel/instructions")` reads the host `app/prompts` file. The engine copy at the same relative path is ignored. `render_prompt("engine_only/card")` raises `PromptNotFoundError` until `RubyLLM::Prompt.roots <<` the engine directory.
+
+**Why it matters.** Appending an engine path does not override a host file. A missing engine-only prompt looks like a missing host prompt until the extra root is registered.
+
+**What to do.** Put the mill's override in `app/prompts` at the same relative path. Append engine roots for files the host does not ship.
+
+Shown in [Ljubljana beehive panel](features/28-prompt-rendering/06-ljubljana-beehive-panel/).
+
+## Extended thinking
+
+### with_thinking(false) raises on resolve, not on the call
+
+**What happens.** `chat.with_thinking(false)` on `gpt-4.1-mini` returns the chat. Reading `chat.thinking` (or sending the next ask) resolves the disable intent and raises `ArgumentError`: `RubyLLM does not know how to disable thinking for openai/gpt-4.1-mini. The model registry has no off control.` There is no HTTP call.
+
+**Why it matters.** A rescue around `with_thinking(false)` alone never sees the error. The raise is on the reader or the request.
+
+**What to do.** Rescue `ArgumentError` where you read `chat.thinking` or `ask`. Skip `with_thinking(false)` on `gpt-4.1-mini`.
+
+Shown in [Agadez silver cross](features/29-extended-thinking/07-agadez-silver-cross/).
+
+### gpt-5-nano omits budget and may return an empty summary
+
+**What happens.** `with_thinking(budget: 1024)` on `gpt-5-nano` keeps `1024` on `chat.thinking` and leaves it off the Responses body. The same budget on Nemotron is `"reasoning":{"max_tokens":1024}`. `display: :summarized` sends `"summary":"auto"`. On the Aizawl puan card `effort: :medium` still returned `summary: []`, so `thinking.text` was nil and `thinking.signature` was the encrypted block. `effort: :low` without display also leaves `thinking.text` nil.
+
+**Why it matters.** A mill that always prints `thinking.text` after `display: :summarized` posts a blank. A mill that looks for `1024` in the OpenAI body will not see the budget it set.
+
+**What to do.** Read `thinking.signature` when the summary is empty. Send `budget:` on Nemotron when the wire must show a cap.
+
+Shown in [Hotan jade pebble](features/29-extended-thinking/03-hotan-jade-pebble/), [Ouagadougou bronze lost-wax](features/29-extended-thinking/02-ouagadougou-bronze-lost-wax/), and [Aizawl puan cloth](features/29-extended-thinking/04-aizawl-puan-cloth/).
+
+### Nemotron off is enabled false; a provider switch drops the OpenAI signature
+
+**What happens.** `with_thinking` with no options on Nemotron sends `"reasoning":{"enabled":true}` and fills `thinking.text`. `with_thinking(false)` sends `"enabled":false` and the karkade brief has no thinking text. After an OpenAI summarized turn, `with_model` to Nemotron omits `encrypted_content` from the follow-up body.
+
+**Why it matters.** Thinking stays with the provider that produced it. Replaying an OpenAI signature on OpenRouter is not a no-op: the field is dropped.
+
+**What to do.** Turn thinking off on Nemotron when the card is only the spoken line. Do not expect another provider to verify an OpenAI signature.
+
+Shown in [Rovaniemi duodji knife](features/29-extended-thinking/01-rovaniemi-duodji-knife/), [Khartoum hibiscus karkade](features/29-extended-thinking/08-khartoum-hibiscus-karkade/), and [Omdurman toub cloth](features/29-extended-thinking/09-omdurman-toub-cloth/).
+
+### tokens.thinking sits inside tokens.output; cost.thinking is nil
+
+**What happens.** On `gpt-5-nano`, `tokens.thinking` is an Integer ≥ 0. `tokens.output` is already at least that large. `cost.thinking` is `nil` because the registry has no separate reasoning price. Rails stores `thinking_signature` (and `thinking_text` when a summary arrives) on the assistant row; reload keeps the same bytes.
+
+**Why it matters.** Adding `tokens.thinking` to `tokens.output` double-counts. A cost line that always prints `cost.thinking` looks blank on this slug.
+
+**What to do.** File `tokens.thinking` beside output, not on top of it. Treat `cost.thinking` nil as missing separate pricing.
+
+Shown in [Gondar parchment folio](features/29-extended-thinking/10-gondar-parchment-folio/) and [Évora cork plank](features/29-extended-thinking/12-evora-cork-plank/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

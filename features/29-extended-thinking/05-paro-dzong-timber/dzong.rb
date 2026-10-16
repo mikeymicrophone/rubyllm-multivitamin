@@ -17,7 +17,8 @@ module ParoDzongTimber
     INSTRUCTIONS = <<~TEXT.strip
       You are the dzong timber clerk in Paro.
       Answer in one short sentence from the board only.
-      Name Tashi and 06:50.
+      The sentence must include the name Tashi and the time 06:50.
+      Do not replace Tashi with a pronoun.
     TEXT
 
     BOARD = "Board: Tashi marks beam PAR-2026-1016-Z6 at 06:50. When does Tashi mark?"

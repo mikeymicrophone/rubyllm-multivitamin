@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Tashi
+        marks beam PAR-2026-1016-Z6 at 06:50. When does Tashi mark?"}],"instructions":"You
+        are the dzong timber clerk in Paro.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Tashi and the time 06:50.\nDo
+        not replace Tashi with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"low"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fcd6e8804944-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1371'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999723'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_7adbeb2441dc4174a62dbc1cf856d3cc
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0fa00deb5f16aeda016ad215509db087d2b990b1e77ec5e17e",
+          "object": "response",
+          "created_at": 1792152912,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152913,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the dzong timber clerk in Paro.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Tashi and the time 06:50.\nDo not replace Tashi with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_0fa00deb5f16aeda016ad21550fd8887d28dd3054b36a5eeac",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hVRjHDcmya_-EScklhQN2dHy1jp2NJU5yo1zJX_FgsShrkyxvU2LyrBek413MTRKANO-qxOEMJZVvcWgv1OGFt55vHHKYhEd1Yb4Da0_4H73x5rs1Aes1909MWlyl0vOCpoKFWv15D_1Xa5iC-FERF7tPCjM5tOwXvAMRuQ6PJ9lrAetPlsm0C_LPAPGAmjLeABm563UEnf03qbmPzAg1_vVf3ujpkZHhmQBiGBes6WhR0UWSoc1DDJqpJ5prqFk1V0UdVCpX1EfpMt2sdGLhb3C2ekuc91Dt_DKS0puNiLbAVfYkewrbqE7x6vsgUSmM1mor9GWI3KB7aGVTG94oS5aV_iSV1uZMINOMmqT8vGXnSh4T6ASWyWuD2Q4DwAFvndSxIbmStD04-kII3AJZNQWU0KlunprfYMBhXXYt2icgvyGbzYyBjNf9zZvv7ukdU409cjEtQtDSCtm52HivGOsAoqVZlGK83po0hXvxFwkMUwQ57ISzHlpK2hJ9LUygba3WEZfjiBUME3aNMl4nS1V6V65uhwd5QylT8Z-uEs9o7qTVuWrKQkFyJizInl4NjZJqfOiNpRlHIAGMaG3AFeo9y2K4ZOfxv0wurT1Qe55hH2TGJyrRr3zpziBtc8itNPkWqPPchriG6FYOOGzlDOa2RMOY5MgzuD_DVFBwwfDvO-fbQXEqoAc-YJEOZ3HFyX-WRMGvcRXW75vn6Uwl6Z99Xt7uxRap5WXS3hGCFXFdZuEKsVdapu-UsMKwWbS2wgd3ohLnMy492_brbx7C9nVluiCFNsIzaiKwKnJ8y-0GnYEDAsVZdeM35RIKNA8Cog_QJ14ILw9oI-D-q5CBZ0IsYwHrHtsc70vve60-kwaUsEHMwWq3UWEQGOPViFBk9OwIy7f6dU1MUhFU1rvNou4csA4QN0I2r7DpjOkw0ejOAY5MIXfxn9QD-lQK7L8VONzu41EWtRznjrTVZwjhzi78Dw2-F_Vy1PCQJEVE2rLzecJxwUDVSpK95gubTFNe9_s7oumCAOnL7lNeddl_9yVYYtyLztv9off73YKr3okFDFWLt3oGnF_vKiqWG4BVjltuXYA8leNRT8TYP0ay8tEA8-5WsQxycubL6w5N0dEDOfQkhJR3lXowyIFDH25rjmUrMeAqwTRx_W5r6IHxnb15CE5jPR-mCiht6j5xRcPffKOo4ixV6B7Jm7GxcNiscH2zSMOs4tGynPp4hePxCiMXFzUBOIOU8vKjDb8mRZ9LK2ux2pC4uDg0jX7bcocYQhsftl4ecoXUu7FcfgdbsDnzsGmLs-9X4QVpOcmIUA9htkJ3b64J6xrO8kRjaJmYnBQx2lcfI7qXk1zLj2S8qk-u2etmISCu4F9ro1qdJ71TWGCmpFU-bpL0KTbWUXZFDvdhtus_FTLTKq9Q9lPB6IXHWRNlrd2cCyjiKRklCbNAR4evRXvBZtiJR5ABIoCWxFqH21ViwXY7T1tFThgkIx2P-dCtaVAkc-yq_65XyAVziETJAfd7Lt3ChNmkBW_FhdEaSyp2L7_H3q6cCf_TDXPmL0ltEKyOPj95iOOxREO0B9CwnFW_rLyWI8Olkfxj_IbXO-XOgy-__03HiMCswYZ4gb__lgTQSimxDYie9SmdteCV71MBBWttLOfm1HX1fcsSqrDeDNU0hiGi88wtfRgC2nXSAO_Q_pDNRSYkrfjAR6cj1-tSaHzO6ye7ZcapT5HjBGsMBQcc6nu2lqr3h2chBgK_QdZghnfwhHnQATMKHMZ6AxGg6NMaZU9GkPQWaMahq5zIGT2l5qN9CsEPT6cDwyYNvKyVnQ09lwoK-4WPw__Zg4PvgGCO_zt9u1Che0f14kJY36G7vhMgLk2hkypNanD-oWmVj85clOIgMnzpeuZJmNwerYR4EKsXamjaQPR0qGei0NrgL1A1FKrvQmbrslZPPIubAtXVYAjNqecKsBgqbb5B4njheWI0Sos4Fl6UC5M6Vdh7bOAWIUz2UzL_VBCySgFWPvfKWeFDegsrWCHO2mKKaAAx6fzYgX4PhpAu71PWSw0yijjRMCdjbhKzfpD4PIuenefZo1cLdXrpNmldEORBw8SpCO1g8IpIyJGN53rfF4yBfW3vME5pu_bhkRHezuXCdWe1dQ51WtwAa0xf68-YpOtJh3mRyLLlfzoja6tc7qozVWvpKT7XnoxrSW0Ym0VuQPzoQ1VjRYn52wpBks5SVxXPRg6v1soPTD-HLCJmN9fE5ZgJpg5_ALP-28VyiJcV_Tkc614S2CZS0_S4C0MfjzA2DB2cVHPf0mxccNARLUJx1MiAO50cmLloD1F9nB14w1hSEuj4afU8oFm53E8_ySSsoQrUBwz69n6hPDg63ZN1FNUDsjwCtgrTlBm32I6XAd3lGrCd8wzVlAl52Yn8kvdz29CV55PMkmTII7nwNaQd9xlL7raB1Tb2fINjMbAxUY-xt7uffDYyA516K0cDj1SUNYTGH5Yxv8d7m28Fpq8ItagTyn4EbfX7BiAo6rbu0BQkwrCW1brr78WgXqGVBVCEM9tRtXrUsWD66DaA6ht4qnsRTDTEcHa4T7PhrGJKqjkBPA9mbcugRuW9K2WaIEOCXzDSxKwmPyisqHu-5vXbUdH3HiCyUYCGaDavdJg570RyqFIclIpfp5MwRahAWZtjqhcrgaHYqWgRSFV609JY2EOLOaQLhpXi83Xz6CiVEvWzQjNfH2M9pmv7NDAWF30I809s7BbSTqejO_zpVJBiecLI4TQdC8o3wnAe52isdAYNwJfZZT-Y-Qpz7LH09YEAtY76fyq7qvgYCjqVPDom-k9bwxMfMagBXCoGQIQP9_iYL-Cjkhq8ivfIcfU1bfcfaMysTXFD77PFDDrYGlYPHWQI-js93fEomrFqH9JKPNUqlVcdh6IsYsWnmKPYcUlVPrBSHRRH5lpDxjoCl4bGKX-OGhjab7pmzcfrDq3zLsZcBVZBedUt3C5RJMvxuiDfsr13Ds-GqmAB7sAPdQugeBss-CA40VQrzIXnjhe1H9yKaRSgeH-UG8dMM7KTSVwCLCehf0kTKaVmB3wsHiEuObE3lbzBpPNCdMfVnyTT_ZdDxa80mugwDsAoPxsACm4h1tSdy9yfid1_u2-M6NXKWv2t9IrERrbfugiMhDUWBmYNw2OUi6RkcaL3D61H-sudvITzLvZcXblDYqreCnpl9ocL1beAwSoKeNNJ1oL2Bx8vZ2QPj2xF0Z_-P0DbEFqPgPsF7RHNHKVfHYt5aJzUXiINMIUuYU8MEq8g9wvvl4ZpWx2Z9EW1I=",
+              "summary": []
+            },
+            {
+              "id": "msg_0fa00deb5f16aeda016ad21551c33087d29d1b37d1b0ede3bc",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Tashi marks beam PAR-2026-1016-Z6 at 06:50."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "low",
+            "mode": "standard",
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 84,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 193,
+            "output_tokens_details": {
+              "reasoning_tokens": 128
+            },
+            "total_tokens": 277
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:15:14 GMT
+recorded_with: VCR 6.4.0

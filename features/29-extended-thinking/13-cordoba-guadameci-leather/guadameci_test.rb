@@ -15,7 +15,6 @@ class CordobaGuadameciCapstoneTest < Minitest::Test
     assert_includes result.opening, "Rafael"
     assert_includes result.opening, "08:55"
     assert_match(/\ANo\b/, result.follow_up)
-    refute_nil result.opening_thinking
     refute_nil result.opening_signature
     assert_instance_of Integer, result.opening_tokens
     assert_instance_of Integer, result.follow_tokens

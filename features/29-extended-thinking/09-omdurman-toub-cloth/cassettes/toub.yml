@@ -1,0 +1,242 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Sittina
+        dyes lot OMD-2026-1016-T9 at 16:10. When does Sittina dye?"}],"instructions":"You
+        are the toub clerk in Omdurman.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Sittina and the time 16:10.\nDo
+        not replace Sittina with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"low","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fd3cd9d9c94e-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1886'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '2000000'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 0s
+      X-Request-Id:
+      - req_48a5c8645702427eb82f3b98c6de69e5
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_08afde9cb2c9e457016ad21560d93887d286f70c7d75461732",
+          "object": "response",
+          "created_at": 1792152928,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152930,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the toub clerk in Omdurman.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Sittina and the time 16:10.\nDo not replace Sittina with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_08afde9cb2c9e457016ad2156155bc87d29e6202d169383fef",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hVi9K3fISFR2YGt6eXBch6fOQ8QS8qfsWlkgXtn-ZA9ZeVhOZoZg2PtLE2JiQ9-cZfZKBS4YZoNQX3oOY6l47Gtd8diEq2rtkNGX0_UzePZ-kn0u3Kocz3S5R5GWQT_FhrWbzY82Xuk4hOzbzhOGyqzDUecCW652B4EKJ5A4vjBGFnjfVtgW-XdiQPdgCztf1iDYbLluAqh4mn6njkdHXvsJSoLhvQisZLH2tlgSkkAeJdwocXg5D1hQ5VbEZXWxM7-mTikhPopQKmZSC-kdGHI8xkd8FXTPel7mOPY1Qvh6cVuKYZc9W2nRwDYiYIAKajS2MPKildqhEQARMF2kCqEVLoU5Iki952A1OG3XGUlo-JqoGNbBRJdHpJB_8Ll2vsonDob5TcNXx04OCcYdELPHYC3C6ULpbJPDVqGA_duCQfwfbGYrSXOjCFGhIfUK-yD__2gJci2XW_r8MoW0Q4fQNiQbY8IveGUeDDo4w2cnFX_6QAhO099sQxEs6i2OSNY6BJpvMzkCuIza_8LRxZloBBrF5QSSlnrmW-Gjj4kjdPUF9qUF_GD6CFCzyXLReeAVwJDYW-KnUO1nMqmRPFX4Py4QcC8TDNxv6Wuc36ut3LipT2jJm6-uIFonS7S3cpINsSNFBjkzy5BI64ubQHet1i5QKZ0xBuC93CB1zhUVSHK7kREJfSVhpwFiJ0TywqAJHys6H_5cE2YDOmbbM7AwHR6kxHpobMMM61pCZWG7O2i0rPBig9PTCA9AO2nP3PlRQHj1yzEsE4vokaFEnB9YpQOnKtxWw2xuoWkYO_kX7r4o31fphDXglpQrRvfqIQ1T-HIh1QIM3yKWpfi8aK5ZCGxlIy-eifVVxVx2IcaqXQWH4DoidavBzD85GawkXak4TDCzhuLOxD_F7qH8204XAgSUVP0Tkat4fnssLrH_zOOY9CnkXmuL4Oj-9AAIo6VpjX1tGOAxsvTQwJMh_wGY-feZPhyacAzsDZob0RHVWPQJ6b_8v0v6J-dSUskU0Pgdf7WjsJCcJFU2u92LVFhvqEkxAsbPq5REBsZuNXy-Z4ydG9hxgTicOFfXQRFwcZnyKnLQ9sWvAW6OdYQM-YpgQQEzqrkgT6Qbj0_Ob4bKoAk0Q82MwUkl-opa5m_Koh8hetfKTPD1WosKz_HMeH1kC0qXdbxCQ8Nkim5LGwczqNtlZwcfeLR6GZDJgTk1kZp_8ZqWnwTClvMVxMJTfFYVJ5UXV_guMGa31eKQu52At2KebNnnVMpv1D7_juI_RL8_jBZgFQxJRLcIWvIyUcElY2X1F8q03oK_5ajZLTcI0rmKFXMQM9Ou5Yy0obWQhlDocWCWdQbAFaarPhvvscpdEBnXmU63X1GYjoZdrBG1L9ZATc7KIj1_dVDB4WjWbaAvinLnha7YdnJi9Q0sj21pYjMajo9tlURvZvEJz2aCaJRggPFd8je6AEIJylT_l6vt_gRkSLDnATSVURGVdipddE_NPbPMVqNKsC-vruMR6I0MxkF_0JyLKFoiXkEXGvq6H8_83n1AFkhBmT4uhgUxX9k_wlVpqfPhaHnSOd-afiIBpdqJw1P7iDonwW--DUhuMOC7ZOTbtVAnQzjsxvRIzHX6_MS9GrvAKzVlWdU2OMsImV7WmVlB-Ymb0MhdiU36qAG0ZP1rIrYurUTvzy8H3zZLY47Rh4g9b0DtQj3ELUYcqxoJ03GeRiyd4udGg9OR9tbBXi_9SCVoDYDd7qKSi_oxUuMPMwBYADHtWH9RXByiNSkfHU9z36dC0WL3xg8MzmrOZnI7nlyj9NiiTbw53sUPWcfbnz8PM5dHCRHugohBRfxpYAkovRutlf2LweGSwsg4II95A6IxqyA8BGkQ8i0QTo0vlMLlPP2a9xdHTzl0OL8R1e-7xPw6sJKCUBGbz-Y26x0quAp3-K3c1pYFmYP95jRYJT1hHtxQXByqNGSjRIfOyjKUHnJyH1KdwBUbYBRxEecjGIU5SLdgge_7uv_lx9YNturUPN1rxKs1SWuMpA874opaO94q-6cIExF_7-Wumq1ryXL-hPUkRT-W_39gBudoyb4xjudz9WMLjDxx9BgMwl0-HZGQltMlrhlI4K21u44vrD-Lh-yG-8SuKXa3YrLN0jGQsymX_23ZKy5u53PRrt1jXhed_k3dtSakpsuuvhqd6sXUhQZnzKjAwWpQmsh8Z5ZGV4LVsN3UV7_oqwM378YzHTwSOVI6goPOsdRsdvfQTX_r9RFD9ZSYdhFEEsc5ptQdIeVbDwHleQyhCg71u6Oj2JxZmiTeo2tLnAGbcH0-H75ceU9klyHi7_22gnxXtbrRR4LroT7v5XWAVsrRRCpGDUrbHwWPCyE5Nz6K272fbLvPmrEkY4xHzexCa73T4G44R7MREtF3pJpVW0TPHmuR1ZULH9FVK8kAry_5puZWVyrThdWwn2C30k1TvEFqSMqjLH6YX5aghQ0MjB2fo-YJyJvW6EYVD6gSJcLNYCwLmwGgUvmup4NS6hpEA0Bc85cC_BBgdfbxIdq9C_XHiJiX7dYQOOJIFWWH6u9JVuvE0XP9G0KJ0XkTb_JUsrg9zx1oXMyS1uLfXX8Y8zso7-cOTawFOsVOObSoJHMMoqxNt9JggoEgRxXhcHad36ZXL3N3zZ76a2DKnItham9nEa8Zf_E3r5yH-dd0nTElGU49sHLyZ4OpQUMD4gLtWgKe33TrD1G0RbWi58tsbC7Qhwu3HI4WTAXRt6cy_k0yoKXCJA20obiM9znB2ce0-lBsLoEv0jpM75Yu0YFQ91RG9SGIkKGj8ClR9nVLi-TtuiqaY5G6Mq3jWdYUBNR652N6HULjUwGA4lvMaPVlD16PLZ8QxcgrnEs283Pdj6N4TypOKaQksQxo_-EJ9R944_ZmPD9mEcm7dKMGKK_iciJq71XMRaGDKGeXEeAbjgIjX-khNmNpg8owiUCRAQFoZRZzgXd6-70hiTc9yyOxiBZ5gUJss1AethUACe7w5ITuJB3I_27av-UgDDqIvzr29adtGPkwAyXDJsasaMw5T0LDakytpA352KfSDiiOx1Y6SATmonF5bXhKl5Wm4Pla0BX70JbTj1-LGCuc7UZjhCY4ldoB40lUkZdZVEqp8WQSAQs5-d2vS7Z42J9PlxAPLFWUU6RJ17n-_1b_iy3ZO4AY6tOxElU-JegScB5hbVhFgkgwdAIvYyBzJuvNdbgUkuxLz8uFRr3s7r_luLqfE_ELZZJhF-f4jBtI5UDESANbpvG7yAY72n-P8e75w==",
+              "summary": []
+            },
+            {
+              "id": "msg_08afde9cb2c9e457016ad215629a2087d2b76e4592c3bea6d3",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Sittina dyes at 16:10."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "low",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 90,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 182,
+            "output_tokens_details": {
+              "reasoning_tokens": 128
+            },
+            "total_tokens": 272
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:15:30 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the toub clerk in Omdurman.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Sittina and the time 16:10.\nDo
+        not replace Sittina with a pronoun."},{"role":"user","content":"Board: Sittina
+        dyes lot OMD-2026-1016-T9 at 16:10. When does Sittina dye?"},{"role":"assistant","content":"Sittina
+        dyes at 16:10."},{"role":"user","content":"The stall asks again: what lot
+        does Sittina dye?"}],"stream":false,"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792152930-PV8IWKRZAR0eoFFHWpgR
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b6fd4979def71f-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792152930-PV8IWKRZAR0eoFFHWpgR\",\"object\":\"chat.completion\",\"created\":1792152930,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Sittina
+        dyes lot OMD-2026-1016-T9.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":141,\"completion_tokens\":21,\"total_tokens\":162,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 12:15:31 GMT
+recorded_with: VCR 6.4.0

@@ -17,7 +17,8 @@ module OmdurmanToubCloth
     INSTRUCTIONS = <<~TEXT.strip
       You are the toub clerk in Omdurman.
       Answer in one short sentence from the board only.
-      Name Sittina and 16:10.
+      The sentence must include the name Sittina and the time 16:10.
+      Do not replace Sittina with a pronoun.
     TEXT
 
     BOARD = "Board: Sittina dyes lot OMD-2026-1016-T9 at 16:10. When does Sittina dye?"

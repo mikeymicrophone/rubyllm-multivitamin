@@ -1,0 +1,170 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Bina
+        splits cane SHL-2026-1016-B8 at 11:20. When does Bina split?"}],"instructions":"You
+        are the bamboo clerk in Shillong.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Bina and the time 11:20.\nDo not
+        replace Bina with a pronoun.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"medium","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:15 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fce9f9be2eee-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '223'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999701'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_7af36881807a4de2adfe1981bcebce5f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_0e4bbfa0e99564a0016ad21553997487d284086ca8abce2ee8","object":"response","created_at":1792152915,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the bamboo clerk in Shillong.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Bina and the time 11:20.\nDo not replace Bina with a pronoun.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-5-nano-2025-08-07","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":"current_turn","effort":"medium","mode":"standard","summary":"detailed"},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":1.0,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_0e4bbfa0e99564a0016ad21553997487d284086ca8abce2ee8","object":"response","created_at":1792152915,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the bamboo clerk in Shillong.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Bina and the time 11:20.\nDo not replace Bina with a pronoun.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-5-nano-2025-08-07","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":"current_turn","effort":"medium","mode":"standard","summary":"detailed"},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":1.0,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"rs_0e4bbfa0e99564a0016ad215540dbc87d28a8f37ca9bb65246","type":"reasoning","content":[],"encrypted_content":"gAAAAABq0hVUJlQ0t1gofsi8eTMqbWB4PHWCrvo5dTyxi7fDFZRYwoxxspgrLzMTOTJ5uEQnH1rDsdn46Obz_TEBt9Bi4tuc9LWhIfQvQtRokei5jrzBcrUWbeR97AD8s-f15v48badpQYoScPpq5jwmcu7QawyUxONH-ZYRCZY03qC7n2TQWuWtuwSVlCRBtpGpdBcKNwB1DSaUDSKqKbJcdTAJxn1zy4LZlkHF5-dLVXz407mmSVzZrs3ybq68YhgH3t3XCYnCClLwj1jHcSzyRzb59eZficUSyCBa1WbfXcw_u2gJ_HG-QbT3ln3luMlUtN4mEah232NDTN1J3-zCL9R-1qqtcBiqreHNYhnbOuPgJGocHP8um1I3C4aXoHP1QBfeqnbIJRH8Tg2v2R8f5YUYFzWiQE3C7w0F2K5Ifad6T4BYahSGejJBTodWT_XFe_g3LMpFpMbvp1ggKE79onI72Bx9XLcV0VNxcx9PUEKkl70DD65mSqMGS1l7Zs9-8JBchh6JdCcVV98CVYZailp7zYxdzciB6lDBiBxU6MMMZd-lLAQt3IJo-WzlncLh8KkHRbW9kMxhLy_ozzQsu1zRHaxAh2AXvArb5MUxMGg1c6ZpPGFC6neJkJxAcTmjwxYTUA4lR7XGUc3grtAjAik-TjZe7Z4XUiWAKxvs2WwhFo3Rn-bMw3NjDf2SCaG3Cu-tF8L2rgsZql7ezXAMb77-ZnTHWg3HNUMFLR_hL8R2gTc3vakYJZ9vF-AydlbjMg4FmHSkquQBT_0KFxbpGgY_pveUqW3ColhjJgrsxMjYMpnLwVr7fpNNlXA0GYKGDCPLbiUzO6atDIHBkIsU2HXJnksuuyld6IQrDwwwQzvSDhi2JFfeG8onx1dOK_GbCBJofWf4mtnvLZ15uP_oxOtRWPRRt7rgq1-QXIZCBebxkHioDrOPzCRQqErNKuEImr7Y6TDtdX6WTSI6nWl3eBZMuTHYxrd7G3y9fXsbQ-D6JUXFqGHutMxtEsM8ZYSBrfrklF1zNMqXj1YPFbhRbw9aOyukj3KEFwo2BmIScLoCEFxPphPvsIWCOiN1IPpHpXuPY53rTnj1nhf2hnxmb9U_edBpz07W1vo0l9CPhOMj9at7Awe3EbmBeO8M2fyoMTPS8t8gkcEv4KotSu9nCKNpS1gmSTcI0xy6diY4uK9NRkaHC8ot2AXPhx-bTagrrZ0a2Aov","summary":[]},"output_index":0,"sequence_number":2}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"rs_0e4bbfa0e99564a0016ad215540dbc87d28a8f37ca9bb65246","type":"reasoning","content":[],"encrypted_content":"gAAAAABq0hVXIu0BwhwLqmX4XmfJM8gYIkaW2B7Ol0b_vyCBB7WL7VWWw8Sk_Hptf3kslIsqS4sR71T_s1qmOD0UB0wy1Tg5f9k9YIuauZJD7ZI508EWgpugYkUmF5JQI-Ji_sp4F2XMiMrHnRfsmOK88fnFz6yOY7PyFWXiLRJu1BKIDNn_4kh2i50MtOY-pTR-8WrrPB0TZPCymjUM2lmvYkLaps8ygHcCOmK-YDuui2DVfJYydwUbp3d-zp4GntPYDwhn1IdOK8Z7M8fwHAQmcKgs4H6mBXwL_RIgQ9vV2im3sTeM6NUoxTUeAFMjaMHci3ZRUKMfxRvXyYR-lNZOvY_FwQoyWHrZE2DQMP1UBrBXRPtFJRe7h0boIVc8sFJvWNXxg5OyHJ8D0ozEq-oTaYsNDJt-qVCv_KwZiqm8h8r_MaaeqJhO2hYFrIbOHsVFjwxQZk3_vinsKbCElAjek-YlGqVIlM_h75UOASjVyuVlB7Bpk0OIWBbC6no7Q1AIJQpx9xoNm6sgPsTdW4czdEpMDWJhDOsCTL4wNlGQ9q7ggIQClryiOjW6Wfc1NejatgdrfLssfkSOkbfuyrF_RezBaet7XGqGAmQ-30mGLQQ7ZokM4_rM4PYj9x9m-z_POwmh7SN8ns-0LA5hDCKuAM4TuspkVmIPVvrTy5UB55M_8b9MdTw7ZlaDUoXtLwnhWXaKlug0s1s_vLAeHTJpUqMo1G4wjnWDwPuNLSk2P7M_BMpOcA6upPn1Ou0HMJKztpcSQgMftl1310DRbyWU4dUhv5_jCc08BjL9aAH42TWECHpcESy1IdSKBjtmEt7Ugw2QS9u3mrkHKbpXV_iOt5oJqLfsOwToDjS-dC-8adTV1MPUj6IawLqSLWdKUMPoQigKBKIcEc_opFZF1LNI-daV1xlj3pEBkWQABXwI3DtdHTNdMcHyb4sdolRKE9yWydXD7RY_epv3WMuRTkP71H7dVvozuKVkpXhl5r37_YPM5suZGT0A9AIyTml3Jr0gRgvVzmcOKqk5OWMYgQrAeIQj1s5uR2aSRKW0Dn_pV1DzHz7tAolSrgkzRTTOy4gbzTWXh-TQV0PCDNH2WowtPI-HtBTNc2loAJvW1CyILFuV1Jl15D9wGuTUQmLgFeiLCtewY5AxYfXaloHyXYvfd92SliZdp6PSrC6sIVo2BUCSzOk4ta_1tqtZCXp7Wt-WqmEw2BWxGEt87oTPYIRYMB17wvSMNE7tzIbaBsgLyBriPQDNvd8GeBR-QnEU7dHs3E_wQ8-JHGKhXABrnRcAYcoYwb4ZFRXi5vZM6KHO7VkZKaYKvgNANcU0XuH5Lg1OUm3jRvdRC9JpcYDgWE8kQ4Uqny7cg5Z8O3_JXQVDDj9wH3F_J8gzOVE_SIvBh2WqJkV-ZrdsXq8aI_9pH8U4RdJP4tyq80GhSmgfcQyoerZOfZoQtkTX4Jpqv-wVMNVqBFffSrgS4O2h01oWpPRKpUQWcqZku9wc5muwbK33PwNQ-SMt-ttB0OX244kpWAhhnkOwAB6XV_JN9PxlvoUsoU4yngmryhNnaGgkPozNeXhzIaPiq8rZhv7jIdlmMxORZY6Nh8usIrQpBJAiD1ktBU71Dtvk50swh0_XZUsGpoqtYMknb9wXYw7p5DrpsWdY2LdDbsfLWNAdnJ1F5KED8wx7NneFV7XZCWaXFlGkksbPN-Zkbkjs1_ZudYZH1yol1gS_mqGwFmNXCxAPW-oNN8ZJ4jo31lHgmx8fvowCq_vqrxKloroUlsPXmMu41dRau5W5F7rbfUWiUdQv3FFI5x8C3aBdJgpGm4V4SL1I81FK9jy_nHBkbiophPg27RgFTtIO5JFqm_hM2CwvG0uDwMT1HuTFAmT0m7Yk4OQkzmxgV2wHX-0NaoC0F8AuP0DKTnX_1PtjeE4oZzGgeEPkXzgj99kNoEOPvFjB5tW_vt2-XTaIfi6eS09QVmzfLKIXFFSBmRaCMwicG8oVTnwOSgSS6RER5VhYUyIJaVlj32Tq-LAiDwQ_IccqIe783yRyA1VINthM5qscx3vJMGcXOGr05RGyQJ_iiNPa-mey92Csc28dZeaeFuQqZHcydxdN26Jy8pEqfJ5y_yXV-RvLebaNAzB8FfBY032PZpj8lUEi1WHUZUr8FX1v6zvTHTWIXG0ZR4h6DAIlJ_JnR5RAMlMMlujpWJ6xnLfdzq-MwwQvacmWJuAFwx0kr8uLfDFz7vZOUWn6qK4dX-_UsKalvZQQgW0K9ynU2x-ZaiGYm8bNccLskoAg4ERodRQjO_A_K5gaLQ0Etn6fLWpf-yY-0N6gyfAcoXFqNPxqilWTrqXE-JcDcsSdtAx4L5l1CbjkEzkVOIpXbMMI4F256WpLDWQSTPkPu2_QfiutpFwTrxKkgRKfpiX3-9M2ZLbQhAdJMb-yAGfQIM5DgtgaYgZBWE-IpyDotyXDKKy3EjZKH-6YHw7o2SZ0lGubKYDXdYC8M0X57MGj9-vqoxtSxBQQbusrJeKN-zTgUFxuPUYoqdgUhDueZD8HuBGHetI60iFv3kvoHhGcYGZ4kVGaS3wo9qmf97uLj9shOYxPUMDjYSiYxB0H08ZjcDt2-r6ZuxBK7E98GNIdDRh0Fppnvaq_zt-C74RxPA4lEb_4wp2YzKXWXd05m51OUfY-NLSP5ol6uWXm1LHVNUfpNG3iu8V4FPIh3XWLdj_8SBYcmKwX5jWd9B73VIeahbJrgvd_NekycWZUvUSOWlMgkoyIMi0duTz5abHeZjbzcQVfOUN0ES_GsOeyadleeKM01RKZgoNayx9Y1QlJ-4U7ysLpLzMuMI2DT5msgIX0qcNM4LEicO4xDBq0R5EstlZ5b9MFfrRISo8mmyQCxuEQWnz3v9ErnAQGc01e35YHf35QgPBYlI3pfHty4twzb-Bf1rr85TVyRGw2P2k1kSHk_Ihr-tt0wHcYsvCw9wiRFrtNVL14d4vgR7IM0o9hYftSiO4Vwx7zh6EPi_Bbq1FBlmydg3n5lN2xolEBAz7NMgOqRhgy9Vo5ilc_X-1D9ueuyts_rpkZxdn5pGGpnML1lr93FtKkin7jgeivQvBO9T0Kqu64-RAukqRrpThmz83UehWpvcLRK_1UnWrD3VrW6TnENHUL_ByOXvNU6_xw3X-5oqafI931adLKGropYTlOyaD4pVfnz_gprmVNyEtM5Zzpw_qu_NZM0cKFOGkEud_l3smAV_66u0xmBCRBDLbzjCPLO-V1aedgOTJsT0kIn6ghnx2faZlzSAbFEBZ9oQT_9BMisrFrRFpGKE4D8VlN4jxPEWelcDuG4FgtnEqr9Z4dm2FRFzQ-dqFNobJpqlZ5gPaFg5zNpC7LGLGxZhbASbFUO9eEybhi9amS40IAuxU76sujGhaosr4y76ji0v9_nYkTRxuvtbiWqceAqicR0fsC1L4WgSe7NEqYRdLZ-aNncWKk_D3dU-9kMl59MfMxpbhqkA7Y7uTGJZirP8y1tDKnYvhhQg-VwrwOhGvHuh9so9LoGorrStGnxYewNyAVLioleipTEKQjmP-S5FAj0u7bCPfn0tscUna8A9aUjMKyD2ML86U1r4HL0RLza75jvAWQyksDV-qH-_yMNRm2vKgZZuFIpZ64FMMlxFJRxgiCR4kFpMbdLZ3Iqgg67Ph_oyzAaiQuvvtpu1fG7Rr5T1GvphIdZ0UwzZ3KB5HC2sOWWL0eaR9R7EDhO_9XyZjT4waDHx-BRMvFn6CZYFvvIq_kpa5ZFyGPVQQ316tzduROQNYeG16YFAt6F04v92JmndruKj2kbc0I1Iiho5VCEDhLkns7xc2D1vUzuJKusF3Pr4jIcjxcMMV1chIYuHwAo4rVI9hjO7KCTQCFYhkw8yg6bbtjHrIgOqfJn1aP5xcQoQuxAAUswiwWa7u0VZzGYnVcH49SpYbyOlHJ2kpR7NbwrU8NMOhbodwvZKZo7328-xoeBQ1MJYnlkb9yeRYa9yE3e_i5VV89eW0B_sGrUwqSXcr3TCQ-9_i5Jo_pJG2Lhf-oKrdEDxLQMk3eEb79-w4ZAJh4SkNpkDAwBJ5Yxbs_IlatyioQbp65F4mtvuZ5-ySu-EplsX4N-P38Zgijj4Jx8Y-KFU2ilYKrXORyeW23IMnVPHKe7OaYe3c5B6c7I_52gml5YKeW6UhByTTB46MlKTYLo08lQbLZ3WaE6zASmP7C9mOUDk3RsUyYXzTaXWLKt2dQ55pewQsMAbTTOd6Nbfa3to-BDO1MGNH5qzG7R7w7uuwycRhYeHuORKE1Z-148cvCVsk9Qk23gTMr9P5f6LE2oTgcDj8CMRm98zU0dAw7qAB_6VACioG8vJYtLIzNJq-jy9WEM5IkWbxgDQDxNlhySiLTIgcQrySpqbCxIgD99gPSklj2MFaJ9-xGCDwePdIObResFa1Be_W_7mFP6geHHzL4nwqRS9LvsVNVlnO1eypaIrFMJEOZdVqI9oIvUrCryzYe_qXy2j6SZmnG4LFHEUdDBCvtGCVadnJ8t42ceMIj9gOitDumx1auf-QV84SvgmgCgpiTYdwIw6yFBxag5xyMqvlAv-R4gxXOquXtWvJ0V8dDEMsBO2xhyIDTvmaiyTbGiP9tNaCYcVcMkjOPVLCMIRUaJbmNHSxzyAGOnUK50C1zvwxV928RJBsaI6TwOzYLmNALTL8N_dO_ee7u_ED3URrJIii3Tq8Ket2MipXHiW9gW00s_8PoRupPeXB0Aiyk369TEJ7xl2uQTV20mMpeSpQMujUjh-m_vKrWI3XFdqFz6BF5zt5nAmkuHvxHxA7vX-rnwYuzraEZFTnNJWy-5iBIIL8MBotYVR0DJ4C7bJFUqIuzDME9hbYe6q_VIHRftBNa1kdrq7hywp-r4uXrCzTae5nlshpRDTeQ1gy-Bp31","summary":[]},"output_index":0,"sequence_number":3}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":1,"sequence_number":4}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","output_index":1,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"B","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"ahirr4qxp4wcSV7","output_index":1,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ina","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"sR0xbI9FAF7Q9","output_index":1,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" splits","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"rtryKguGj","output_index":1,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" cane","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"z6Pfh7FZ6Wf","output_index":1,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" SH","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"VZvKAKBBTWqpz","output_index":1,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"L","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"sVeWJeZxusRxcMY","output_index":1,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"dGknVMxNcsTN8kF","output_index":1,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"202","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"uFHiH49bAdo7u","output_index":1,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"RpsO0PDRnFfdMT0","output_index":1,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"wvW0cbhCmJVZkZW","output_index":1,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"101","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"hrMSsSsMiMv26","output_index":1,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"dsfYCF1uC16eo7D","output_index":1,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-B","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"06hkXUKMtfu3OS","output_index":1,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"8","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"AiqnWI0VUX5uLYM","output_index":1,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"sNas96AYbXLlt","output_index":1,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"Arw7ToIpTvXR5Jq","output_index":1,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"11","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"gwcFfBzHZkoYHm","output_index":1,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":":","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"FcFw1osrkh9g5de","output_index":1,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"20","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"opIp8GeOkyYmEV","output_index":1,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"obfuscation":"D0i0rGuQOxQ5zt2","output_index":1,"sequence_number":25}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","logprobs":[],"output_index":1,"sequence_number":26,"text":"Bina splits cane SHL-2026-1016-B8 at 11:20."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","output_index":1,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Bina splits cane SHL-2026-1016-B8 at 11:20."},"sequence_number":27}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Bina splits cane SHL-2026-1016-B8 at 11:20."}],"role":"assistant"},"output_index":1,"sequence_number":28}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_0e4bbfa0e99564a0016ad21553997487d284086ca8abce2ee8","object":"response","created_at":1792152915,"status":"completed","access_programs":null,"background":false,"completed_at":1792152919,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the bamboo clerk in Shillong.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Bina and the time 11:20.\nDo not replace Bina with a pronoun.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-5-nano-2025-08-07","moderation":null,"output":[{"id":"rs_0e4bbfa0e99564a0016ad215540dbc87d28a8f37ca9bb65246","type":"reasoning","content":[],"encrypted_content":"gAAAAABq0hVXikajUyVkQrF7VlBhIo2PLg2a46e1fozXhjQGK64gn1TyApDY6T9pzugykCrJFD7X-F6OJOJi8EMUb7mYX7zUcMT5n6Wqzc6Q--zCL2LG4wONGGAtfNsvR1CymVjFYHN--FRjtCOShLpQxzFEInkCC55GH8M1FnqxGC1XIRUb1vRCt3vyfSarldS_JUqBy2ckKpSrLOwJ8jeWUQ6zI9pfya-GobTrqUp14KkYNz9BTkmlFqjr9jc3vEF3dYQycAtDjNJVpOf9SXps0n39Dg_X_iYvusxeCb3QF6iV5NnoVrHseLc76J1IkeWemsPCzrt1Up_ZofVa_oOqo_JgupwRai8slMspEp3dlGvws8TiYnjY7ep5kfixX2kmPWBowtRV1VC753u-F4BXxF-PwvaFOL8fzQd509ts9jQTis9-6uug6ZZV2HlBwJMlFy3yzPjRTRHW3YcAX8B6uakReMJDL4KXai7CA4KYl18xZ4i2AVit4QGJpyGZ47YDiABxL4U7s6HYZpNCDU6ffNbXJ7JtQzmW1OSEnJOCIdV89R6hbB4Dk6JX9Hb9PoRyWv06HqzvJJTxA6RD42gP8mhva0el9wUwkkQwNQ3Z6Veh56C8P3LKJHNLEnSSGlTRZTXQzMzuxZ0jGBOQB4eLsHmoy4khw5tzb2rI3lX-0uscD9pdeEAzWZRS2u3s2bur5X0EbyeTKjDpe6jT-eN0-e9_u7dBvtjTigdU7beqhb5zE7TxDv7c0lBkGyMHvPPFustQSxOYgypLK3eNQBXpf_YBCAZtmy3hemyHuLNa45CPJiNoWUEhGdNpVpJW0Y6D7o07VjPL3lTqUVRBRxOuGHNjKetRkdmf_Oaz-CZ7dEclQx92Jq3aYV0uY0U7sy8N7A-n1elN-l1Aj96QsjyTovfMbKMlSyXVfDVLRfnKcifRVXbIUKpoVF5s2VGQmBI1swHnkRioQVsCQPSHZ6CDFARH7fgM4ozf4ruEZcrpjhb8xhjGYAbgypn-wIUvoPwiz5Pln22P1iq6E4BDVbUCqAe9xjbxCdhJ3VyBpfmnRYWtfvq6b_0xrHp46OVh9yrZXkpAdXTdkOuCu1-9PHbSj4lXtM2YnVGHPzgnaAVLSF5t4mTLgYXvsdzq8EQs5GKV9N1Wf1eqp7rp-AvvGFXDq68IB5xZmUyulRNqIMQFtFNcWpoQ4UVF19ZdLJ7NNqSuI1Gbow8bFHtvBFRysUZez1AJzXlkC_LyeKawLKOiVszYbYV-N55nZTXjBoqrFaMTSEQPoqscTlLu0l81L_gjdH_0ccwGCiAMfaNczi860N7oaNYuxGna48JzCi1H7uMEka0dkUI5SWOUBOSQ231qeH1ckAthVyYmSm9n8TyS3PEFZmW8Ucy3RNIMFirI4wOz5xSvOPnqpZNQIaDUpKTW1J-nIvWyjb9b2mnymkqKAxCmWdX3gZmA4cjPJG-tqQ__P0k5C2jAzaMLxSwSng5_TqTaAli5tIv6F-ZJWuiM6jyi3LAXFm78sogOYA4IfCeUgQZdlSTdqxAinAetBww7vpn6ttCH0V64w-m5GNhvkBz9KhwuDA5MCkqeAAXGLSgmyczQa5JEWiAztNV0FDQu5aWGSzdmfhnaEfJYeIZnxjo2IF1O393d437rPluI567WT4nIE-L9sS2-F1GmpMwZQgTqpDkd_iegfKZGX0t3sGuul0shDVVINLJl8O7PROw6-P-odpYwoFpV5SSF5py0OqBeyAvD2fIUTmlYCybDNBlCjkxOVwZW0QsmmjyL7pPLh6BRMpupNz76As8YerE_JYBYv-8pAMbwPVyEDC_QrZooHoNhMRG6z_jSuWvRKmr71l1fvCxVC8HGkhWc2-KKqsrZ3tul1d-gDQuvjafwQ6uWq40jRyasue4jjbvwFHIb9pv2KXH3W8YNCa0F53d1mtVdq9ENW3Hkrbgnpyc7DMa6jrlXcaUkC6Sef0_yd8Esb1Zsd0DtjE805BiXvMsMtr6bdK4LbCwA1QxOiXub55aBuC34Ix9JwK59ZWJCwmiaaU9Z8gWdpAir9i91b3mbbS6Ra6nphn7V0D-NPLP-FZrT0m7Q9xj907D8JycJrGZBQBht3sqMubq_jhWTrdmGtJFP0vYoQV2EQneLsl7XVLJRTFlfyUDJakdc1tlH8QfCeWDbLz_bQj2YxeD_pB2UC6qwGysNergj4ELEtl33tUtwpWzb_2C4bi7kLonLM7ykt2YNHGKcyIcLUiZvfN9eYIGYgtmIsgsBcEjQEpIi4zzVhJudvm38JLJtcC3Uw_bm_10bdcOx1a0XXVmP8l84g3LXaQ3X4naDulOorS15sUXgqWZPjOJUcKM8Sa3QXp8G35F8xYdiXGYqPhUFfQndO84-tTGCSO9d-oGt8JhR-bz7hSAehflbhdR-D12I-MiZW1cwC-g5dccVNAXJa7TjHEv7fTI5hE2yBUqknAaqZ3NK9MpBhe7n80khwiSrlE9AgNTHBPtaF7B2_YYNusJBMMsgNPuXVhmtkaTQLQ4w7LwcHziL3KC3QT6xOPWtKwHyQHUEA3iVULiZZva3SoApLf-x9BCMwo7CwkH803k1GPzjuCftUAzT0F8tkXNDkKtpWKy1DUNsSi9MZMj0BoKoErsWbMUHxhRiroccVX86i6K2ddGvFOWZTV6EXt9ntrbfR7OijsnSwT8x5nbz6xdvisSOKcln2L3d78XOFfCkwwyNfGuJWkQrSniDyoGn8bulaGe4Sxk-cFSxa8XoqDfTf8ATabXNx-rNySy8PLw9x3vBsOP7APHPRWW4xQPx8QhoZoqL2qWyd1kqh6qXn0q4FKuoUM8M8h2B-B3oVCztJgbiljTYMG64yEOdALZwef89du5KKgtTzkkAwSrr6uT2WDGFXWzuUya98uHD5UmIYjYw_byyXgEgt1BTt3gGHfsLWwE2uxBYzpaF2UcY1A7trnyg4iloSpjv_XzXJ_GdSUcVOm2EK9-jLTi1J_QRfGeBm5nwHUve19UFWr3nKJmFYo1eGxvJ3SKmKj98TOruyKMdPhOQoa-61vWV49wmcgYrS7I62kGXB0M8Ot8OVcYOK8em7iRJT7wOyupexI6rwl-ue35mOx5YZDXZaotAcWRJYkHFbcqzYK6hDeVV-8yJ7_yOvECOmRJPcPIkIFB3Ln3Eq4GGqISPEeZBSP3Z7JgBnGmkEhe1MUSgpTzvdXkwWxZ4AgR47-Ey-MJSRjKRk_ALyJGcB_RnljVX6oJllcvQeaS2r6GvjKTg_MxqC6GaXGwHym4Zpi48gr8E5bjWwx8TcKH2huaT08iHMjTMo0UOlo8SVm-WtcbVRUJ9ed5iUphyo-jN_Q7-c-ae15VI8l5PQ8MOu7eMGvuyoJlLiu3ZQ2_G5_6GZ0CXtA81J8na8TSl9jwtRpisg5qgJgq0dnUJfi8XDI-jRQaNobIo38y2y6Y49uQ5XdteG-P6UaMUel4TLRIBtzz5s64BCIua8zFo_3qWtmMQEpJvO-0SZ4rJNesat2CX8yaNVaGYnMzCBBKQvSiLgOuZYE7oB5V6BroPI5Sbg0qi-snxV--pCJQmFdNNfRBpZUjUgErxSGpw5eKFhJZlyoM7DJu0WKWN9mR1_-phEYrzPuJUE-QChbJZpFTKWW_spKBAT2NfnI2hTSYFmYIoEMzlj4FUnMDO3xB0V9SNm3rszFLgWerqPTuDvOzpv5XNHAQe6Oinp6B56Kc4f1YVsCjDHkf1b6HzWdOXrBCg2nQkH5N6JcVKxHM3mR7dNZ9tcZsry1TmDNzu5hVWeJAlm8Zq0wCEupD4HapshxloRlzU7xQVKOLYXIABbQ17Y58DcN70bQk5BaPErEgNEKLBtDLQUfy7Jpysk1wYx33Z0a3QJgWzJZb6g4HurGBjsP0VqLLKwNgg6yDqhqYipt0XiM287t9iuvgPC_nbRJNduFD8zxq-gM_34JEM8xjDHXTmF6TZ2RJERcOBQpvlZjRuBjDztChn9sdojLtmyVnlgfFT7NDMdQ8bLY4KbSuCn-tiIAeKA_MohMvQj1HKDxXgaumnutgMKJ_yZdwICuoxd8FKzbrYQVMkW8Nzkd-ejTkI92oYDKfOrQFwZKdwiQXuw4mVwKlkSiujALofn3nTChyBZzN7x0gxgX3PpRrafDljsXTEVRPH29M2Ojme6XzYTadmxm6o5jb3rH4jCtZYEOsULLvtyVnpJYPwGzogZn-9j2u_kUtSNCilSgW0VDcaPxUfBobv0ND6QobR6NVN94K2YNWLRFcZvz2d0NlIsJ6llgRnvA-wxPslSDrcufTdg8aqR6D_tJdlhki7Sa8f8uo4JOVdtQrSwHTKTG64QzN_T3C5a985DiOZRD6cltaxViR1oHhOykmI3l6Tz6xwvd2AljUv8e53z9kJnk_0Y9pDe0C9Oj20SDMsycEoI1utFYXkI1SM4WMf_Kki9xY4KFlM3mybIxjJal_8tdYXDW512LNzFCUv41YxKmZKddeNdc8qUSFGUuqdSpKkQsQHj85uUPQ12SsZeSFJQk4edc7SIAIUotH79n1rdKOTYsKfeCt1yXcEr7kuYk8uJp62AMnQ8BOIeT30l5nh0XdG6FO_ii-VB5NSAxA6OVs3vRCvb_r45FBDQtgfORFZeeOm5idA8oJMa8Es76Z3ffGHAMGDeL6yhNLID6N3KyoPzPCDqLYk3sX6rFRkcSAFZK368CUcUXTFqdaXvYmupaHDmu87qWTs_AomVk676kxE7AY0duGT2xVN-xdM9C4_0TA3bjZtzKpd5SGtZoGV3qvb_rgJx4-9AI2vYB1rn9KHvFUk41NF3r8CDp2DOY1u5LNKK7m-0rWkR5uANWdwHywbJ_NWA0KIwBLxtltc6M8ZCEAdVdGNAMmfDOgrygBeDdNvBrvLSdurva6Q6f-9N3tMA8aV","summary":[]},{"id":"msg_0e4bbfa0e99564a0016ad21557235087d29addbc824384a0b8","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Bina splits cane SHL-2026-1016-B8 at 11:20."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":"current_turn","effort":"medium","mode":"standard","summary":"detailed"},"safety_identifier":null,"service_tier":"default","store":false,"temperature":1.0,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":82,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":348,"output_tokens_details":{"reasoning_tokens":320},"total_tokens":430},"user":null,"metadata":{}},"sequence_number":29}
+
+  recorded_at: Fri, 16 Oct 2026 12:15:19 GMT
+recorded_with: VCR 6.4.0
+...

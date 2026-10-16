@@ -17,7 +17,8 @@ module KhartoumHibiscusKarkade
     INSTRUCTIONS = <<~TEXT.strip
       You are the karkade clerk in Khartoum.
       Answer in one short sentence from the board only.
-      Name Maha and 05:45.
+      The sentence must include the name Maha and the time 05:45.
+      Do not replace Maha with a pronoun.
     TEXT
 
     BOARD = "Board: Maha steeps lot KRT-2026-1016-H1 at 05:45. When does Maha steep?"

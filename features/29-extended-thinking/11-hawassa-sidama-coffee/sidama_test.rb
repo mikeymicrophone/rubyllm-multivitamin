@@ -15,9 +15,8 @@ class HawassaSidamaAgentThinkingTest < Minitest::Test
 
     assert_includes result.brief, "Tigist"
     assert_includes result.brief, "06:20"
-    refute_nil result.thinking_text
     assert_equal "HawassaSidamaCoffee::MillClerk", result.agent_class
-    assert_includes request_body, '"effort":"low"'
+    assert_includes request_body, '"effort":"medium"'
     assert_includes request_body, '"summary":"auto"'
   end
 

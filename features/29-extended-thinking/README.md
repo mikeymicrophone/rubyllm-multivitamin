@@ -40,7 +40,7 @@ OpenAI `gpt-5-nano` takes `effort:` (`minimal`/`low`/`medium`/`high`) and needs 
 | 01 | Default `with_thinking` on Nemotron; `thinking.text` is present |
 | 02 | `effort: :low` on `gpt-5-nano`; the wire sends `reasoning.effort` |
 | 03 | `budget: 1024` omitted on OpenAI, sent as `reasoning.max_tokens` on Nemotron |
-| 04 | `display: :summarized` fills `thinking.text` on OpenAI |
+| 04 | `display: :summarized` sends `summary: auto`; text may still be nil |
 | 05 | `display: :omitted` keeps thinking on the wire without summary text |
 | 06 | Streamed `chunk.thinking` with summarized display |
 | 07 | `gpt-4.1-mini` disable intent raises on `chat.thinking`; no cassette |

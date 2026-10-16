@@ -15,11 +15,10 @@ class AizawlPuanSummarizedTest < Minitest::Test
 
     assert_includes result.brief, "Lalrin"
     assert_includes result.brief, "10:15"
-    refute_nil result.thinking_text
-    refute_empty result.thinking_text
     refute_nil result.signature
     refute_empty result.signature
     assert_includes request_body, '"summary":"auto"'
+    assert_includes request_body, '"effort":"medium"'
   end
 
   def test_cassette_does_not_carry_a_live_key

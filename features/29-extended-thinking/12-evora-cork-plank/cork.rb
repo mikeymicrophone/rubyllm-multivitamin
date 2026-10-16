@@ -33,7 +33,8 @@ module EvoraCorkPlank
     INSTRUCTIONS = <<~TEXT.strip
       You are the cork clerk in Évora.
       Answer in one short sentence from the board only.
-      Name Inês and 12:30.
+      The sentence must include the name Inês and the time 12:30.
+      Do not replace Inês with a pronoun.
     TEXT
 
     BOARD = "Board: Inês grades plank EVO-2026-1016-C2 at 12:30. When does Inês grade?"
@@ -43,13 +44,14 @@ module EvoraCorkPlank
       :thinking_text,
       :thinking_signature,
       :reloaded_text,
+      :reloaded_signature,
       :assistant_count,
       keyword_init: true
     )
 
     def self.conduct
       log = open_log
-      log.with_thinking(effort: :low, display: :summarized)
+      log.with_thinking(effort: :medium, display: :summarized)
       log.with_instructions(INSTRUCTIONS)
       brief = log.ask(BOARD)
 
@@ -62,6 +64,7 @@ module EvoraCorkPlank
         thinking_text: assistant.thinking_text,
         thinking_signature: assistant.thinking_signature,
         reloaded_text: reloaded_assistant.thinking_text,
+        reloaded_signature: reloaded_assistant.thinking_signature,
         assistant_count: log.cork_entries.where(role: "assistant").count
       )
     end

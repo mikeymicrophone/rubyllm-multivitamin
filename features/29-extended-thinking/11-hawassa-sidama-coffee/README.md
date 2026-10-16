@@ -1,13 +1,13 @@
 # Extended thinking · 11 · Hawassa sidama coffee
 
 The sidama mill in Hawassa pins thinking on the agent class. Tigist
-pulps lot HAW-2026-1016-C3. `Agent.new.ask` sends low effort and a
+pulps lot HAW-2026-1016-C3. `Agent.new.ask` sends medium effort and a
 summarized display.
 
 **What it teaches**
 
 - An Agent `thinking` macro maps onto `Chat#with_thinking`.
-- `display: :summarized` and `effort: :low` ride on the class.
+- `display: :summarized` and `effort: :medium` ride on the class.
 - `Agent.new.ask` runs that configuration.
 
 **Files**

@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Yonas
+        rules folio GON-2026-1016-P5 at 14:00. When does Yonas rule?"}],"instructions":"You
+        are the parchment clerk in Gondar.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Yonas and the time 14:00.\nDo
+        not replace Yonas with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"low","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fd55d82eaf13-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1884'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999683'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 9ms
+      X-Request-Id:
+      - req_9ae18846bc77467981d9ae433b28c0c9
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e088e1f5d2968a7016ad21564da3c87d2a51bdc51f3115791",
+          "object": "response",
+          "created_at": 1792152932,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152934,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the parchment clerk in Gondar.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Yonas and the time 14:00.\nDo not replace Yonas with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_0e088e1f5d2968a7016ad2156538a487d2a1c22c896aa86724",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hVm--9lL02TUhYK5q05uBzki7WOIokrZkQy7YsYNTKBD5m5NsfY8C4DzWlwYt_aL1i_L7AKhAPJYoaqXAKEFMdKmhyqrIqliyMfeBZUijmgCOy6GL2z_O_D6L-U8n1ohhm8pxGHuJSs9juxD26o_QyNvs35VcZf9GNnIgvCbL1QLRYn2H5L_S83Py2CxyC73GbGsbFrnO86quvriRhKRg0u4H2YVenSM7vbZWXtQr2ZWen2Z0-DcHN6o68q0jWQKrpa3l_pj2d7HXJkTNpMwVwGmW5MFdAx1nRu9lVV5omW-TGzcvWIKVxluXbV6ZorYh1Lb4YpATGFHQLRNW0MxShqMvsLx_YPU_DTfPZAKibKXQltkYUuyS5uSpgZNVUGo21IcQcAkXKor4Bdcs7GkNCCK551f9Qim17_RMUEJwejrnNQKUaZnZomrpdYjC_TgFqcBZF6ri_dx6e1HR6hU2dnU_JP6SB0F5BRcuThFgWJO8HBwKYtGu0H_mF1XMH9RMoKn3m6tc1HTW6ZAPcVbQKu_TyeTYTwt7FhB12lKKXSdgmZ-3gL8vTUA4kuLO5RvwAYXNblXPaKzCRpcHrgazfeICdUDcITN1uXpYWo65W48WCNT5bAeifJUnDkvp2XDDr6gxfDMVKd90IbPJxM0_wqoXjqmQbVSN6_7hSvWhB25wK76ip7UvEHbFTEU-fw4zz9kh_cZBmF4_vtIHLxhJNMOn6zoSUtVqfOW2eY8itcBPuC5J9a8lYq1f8Q9T9TKvtxsqQIQHx0GTPsZ-oHRmATkFoHWilBhZbra2Fc-Xa0aiTHcpcsf94PnUjFx16WN9TZbWXg7UDAiLC5HxE201BlIQQjBgS7BucbeUITFWdD-ogCevmbMKyhSE66mYArAJ3IvSkAenepfp5LMi8zoywl-zeYhfVaM9GRGGPpzQ-B6qefhRUpwQ783W12i7pVnN6ieleTlHFf6EffM8_Rr06nJESdujIOevLHGUpMSEHUlqzTmq8zo0ySzeBIvw8C3OmV6hjda9fmkwrd73voTMkdp4gNcB76gvgV-Y2bHF6DI9wNEwmjVjpUbB1Fv9_Y04qCjYvE7RclWi_vif5-Bg2_yizT_R8gjZdnlthXI7xOn1sryYBTEbbKklpd-oIF7tLeNosy24eyakOXkrvP9AeKbtceMG21Xi2tzKk7UZUg2JOv7ZKQhcs4esICZJNNXvSWe9lXH9dyiND6iW5dVQjKBGJHNaqzZeUWpTMzIC85A6JQp0Jgc_k4-vCWzTKFSkS-NumAHb9tcswbWg-mI3Hnozh3wvGVTfjVrCQ3F0fWUZaBAdUCNltlxw9Q8RPYVkHEUah5bv4BkRUv_iiSODUYkpBO-ZTB0j3ZdJyEQTI_LC-rLSVuTO5DEdsFTFSKEL61IUPz2Ze3-p8UhD38Ox2qzHN9ITCzOKzHEC_xn9PyHt8wWEja16uFwu3QCaT6CPoYFVnJl4YSBytcN78E4rPuLvyQ8AM-k9VIpZijhDOAeXHUEBce1yphiz11mSJiaSjdZpJvPgz77B4rnlMJoU7s546iLeVhOY-QU-0HRUjFDOE6uq4MVyShj-d0UDgRpdjWvW9gwEPSBQaWe4HIMj_zI1pGWZp0NTiQh6ws2hj7fRpEcwP6UZjJZn5HMSAuumMjFKOI_bj9zC1ebfVWyGQ-490jzmgN77O0tSlrxRcLe0g1qd2pd3DdLI43NyuLraOnuZRlINsjdTA-O24EsmL5r0P0ZSp9BBEQe-moOvzrLynD0zIo17qgGUiY7o70fBLG5-WuB-4v8dad8KgFpmn99nGPQChxEJ1grjXei1jtyu5HqqD2KDwQknKD07weW89ijGDYSKaVHlfCUjt_H5-EAPjaTV_KNUB2GDksXI4sGpthxOVhNyrFV8wwKr8YAMF5135LFIEuMBFLVIU8EH7HurTxvqH0EjLONCqNQU_aUbnwCY02B3eHojf2K0QgdjadiolkEk5VskoDStpKoqol1IAeu62lIGYKFezXmDrvHSkYygb5guUrUY6yKhF6NMM0lGGo4C6yrppb_8xueYLkRJ5kRVw_tB8VWHICvmFycsGKzxcvxkoc0jbLwHv9zSFIsLMP_b_8-KuRd0AHYGSlJDcxr6OL8F7phTvt5GSeIVyGTpZaur4tnv6NVmXP6ZSBaEekmXom3MtBxAueqC04lnv4Y3CoOpCSMFQUGb1UuiPSOggqJwmwpQGgqRomKhOZxBLHV51FNmTUIa7qwDBXYEObKSBQ_KbriNpJzMbmdl4mJ1mmCLNuiDggTJjfAqJu1ELLrNAvqW7rE_e1Ebg0N1lkim7KUwSevVbmc3pHQxleSAENGKqTcCgT8wwQ_SQGN3-Dzz0kHsrHHWYQcQCffJbGxalUcsJHRjccR1Weird-_AojU_8LOqk22WTi1gC11Wxp73AGgr1skoE_-JEjElc7lcgA6N7lHd3m9EfSyAGXeGZ38W5KPRx7Ns6sCAzNvS2G9Or9Jl2Ji2bo0w0UdMZ8frF4rHOOxT0doS1mcLuFnvLbw0a8or3lRcnu4p71f59NFWn5aw8xZs2JLNHqcMgek49aUEZzc4XnyZFxIw_MMrWxVjxn3r9DRi5n0ypLSY0aa59UtAriFS3H0_0GjSUPO0y8VQ7adSr5AgpoVR5GmKFbxNJn8SVoYAL4X8Clnb52G8ZmvZ0ZmcpCZhHWalkuVjE3BrqIDqvmsNeNTdPmWaTKqZaVY1WK_qCI4d37c73EbduDkFX4qxOz_StCb5PQytAblw9DaPPpatzupc5k5Vu1am6y4YoV-8GRue3s2oCuzoLetjFx9vTICEgyvHLRbOJJiszTF1eh4o65qHaqaRFnzTehgEvQMQlbA1ZO3zLQlBdYddAShHWLEgkWVCC0HIEWqPD55SbAUVgQ4e5C4KmVXW0stciH4G90IRInObJDHWBGC63c5SzmZ-Qqq8QaxiybakQ_PfCMtMOAkd8skS7JU9Nq_ntfeixhOtVRRQrGlzf_ctWtvfza6KPovLTMq7-tCDbzX9QJLR4oOmKy0OCc1G0NvuXLnia2RwSdYT4Pt68wx8PdU4XfaWdF0xKytJn2dKA0ews5Ojzuqyb_WprYHNHLXiZwPJ6OhdJUBUSYfOyhctde_jWSlPJEKzIe4K0mBf3n1oacIf7xZqrAL0Wo_bYX6n5Kvs9trLf7Yqu37ko5pD-RYXAH26VzaMOW6YMo2N7U3DB2KxCpCpkUQbeRnXNrn6DfdQhDWyrH6Tdd3Sp21Prp86gSIecNsThsx5tieRFOnGdvXrQRtGmlvA1JDum-2JnGqIcSb0utyz9AuOvoG-Xiv3l2GxnKgweGJoIqp6kEZZZw8iO1S1ZsKucGysnX06sWSSUNNNIbSEskTp-YxVRevFPY3FRv2A7hQ0sPWhgCF1W5C54VslozLupjLTU6UOjnxToj2rZoENKisgK5p29IdyW-lFs6vn4odhcav9CiR52st3ZCTiYWkqGHLwqPwv1HhregxZpiBs0wXlQazqj1F-X_IjzDVzBjQuyOzQWr-z-erEvtLKoqnx16TQfJYUytopH8cbsYx5zzPRrO_ddCBNx3_T7sPgDHFA5MkwZY-0B1Uk020l-Mf-Y5eqCRpZARVZga-LgH-yluFWegNOVJv1j7L8dcxajIvcTkP_CbbOh_5usLKDK52ruh4i2moUfiAHV6pOoN03lRhjhagfSfoGh5DC6jJo0i1ktkiLp7LqU2wQMR9JPbAG8WYqwZuojsI_QYEyGZwVpXV91YtNaBVebH0EuzUlL_9KC7KCcX92kIsNaqeb80AFzCD12dxGdko_dt162b",
+              "summary": []
+            },
+            {
+              "id": "msg_0e088e1f5d2968a7016ad215669f6087d290481b749b5858d4",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yonas rules at 14:00."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "low",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 84,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 233,
+            "output_tokens_details": {
+              "reasoning_tokens": 192
+            },
+            "total_tokens": 317
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:15:34 GMT
+recorded_with: VCR 6.4.0
