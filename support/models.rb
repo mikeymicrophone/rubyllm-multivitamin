@@ -112,6 +112,9 @@ module Multivitamin
     ANTHROPIC_COUNT = "claude-sonnet-4-6"
     GPUSTACK_TOKENIZER = "qwen2.5-7b-instruct"
 
+    # Hosted agent identity, not an inference model. No model registry lookup.
+    VERTEXAI_RESEARCH = "deep-research-preview-04-2026"
+
     module_function
 
     # The provider a scenario was bottled with. LIVE=1 LIVE_PROVIDER=openai
@@ -119,6 +122,7 @@ module Multivitamin
     # Replay ignores LIVE_PROVIDER so the cassette body still matches.
     def recording_provider(provider)
       fallback = provider.to_sym
+      return fallback if fallback == :vertexai
       return fallback unless ENV["LIVE"] == "1"
 
       name = ENV["LIVE_PROVIDER"].to_s.strip.downcase
@@ -207,6 +211,13 @@ module Multivitamin
         config.anthropic_api_key = api_key("ANTHROPIC_API_KEY")
       when :gpustack
         config.gpustack_api_key = api_key("GPUSTACK_API_KEY")
+      when :vertexai
+        config.vertexai_project_id = if Cassettes.live?
+                                      ENV.fetch("GOOGLE_CLOUD_PROJECT")
+                                    else
+                                      "multivitamin-replay"
+                                    end
+        config.vertexai_location = "global"
       end
     end
 

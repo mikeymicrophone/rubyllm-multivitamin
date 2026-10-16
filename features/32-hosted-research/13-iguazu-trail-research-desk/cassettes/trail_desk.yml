@@ -1,0 +1,112 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Research
+        documented flood closures on Iguazú National Park trails in Argentina. Separate
+        historical damage from present access; cite the national park authority."}],"background":true,"stream":false,"tools":[{"type":"google_search"}]}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-iguazu-argentina-13","object":"interaction","agent":"deep-research-preview-04-2026","status":"queued","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Research
+        accessible viewing routes at Iguaçu National Park in Brazil. Distinguish published
+        accessibility guidance from current closure notices; cite official sources."}],"background":true,"stream":false,"tools":[{"type":"google_search"}]}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-iguacu-brazil-13","object":"interaction","agent":"deep-research-preview-04-2026","status":"queued","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-iguazu-argentina-13
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-iguazu-argentina-13","object":"interaction","agent":"deep-research-preview-04-2026","status":"completed","steps":[{"type":"google_search_call","id":"search-research-iguazu-argentina-13","arguments":{"queries":["Parque
+        Nacional Iguazú"]}},{"type":"google_search_result","call_id":"search-research-iguazu-argentina-13","result":[{"url":"https://www.argentina.gob.ar/parquesnacionales/iguazu","title":"Parque
+        Nacional Iguazú"}]},{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"Iguazú
+        trail research in Argentina should distinguish past flood damage from present
+        access notices. Consult the park authority before issuing a route card; this
+        historical review does not confirm today''s closures.","annotations":[{"type":"url_citation","url":"https://www.argentina.gob.ar/parquesnacionales/iguazu","title":"Parque
+        Nacional Iguazú","start_index":0,"end_index":215}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-iguacu-brazil-13
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-iguacu-brazil-13","object":"interaction","agent":"deep-research-preview-04-2026","status":"completed","steps":[{"type":"google_search_call","id":"search-research-iguacu-brazil-13","arguments":{"queries":["Parque
+        Nacional do Iguaçu"]}},{"type":"google_search_result","call_id":"search-research-iguacu-brazil-13","result":[{"url":"https://www.icmbio.gov.br/parnaiguacu/","title":"Parque
+        Nacional do Iguaçu"}]},{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"Iguaçu
+        viewing-route research in Brazil should preserve published accessibility guidance
+        and check current park notices separately. Confirm assistance arrangements
+        with the operator before booking a visit.","annotations":[{"type":"url_citation","url":"https://www.icmbio.gov.br/parnaiguacu/","title":"Parque
+        Nacional do Iguaçu","start_index":0,"end_index":206}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1

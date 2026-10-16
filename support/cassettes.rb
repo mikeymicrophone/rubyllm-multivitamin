@@ -30,6 +30,7 @@ module Multivitamin
       MCP_BEARER_TOKEN
       MCP_CLIENT_SECRET
       MCP_OAUTH_ACCESS_TOKEN
+      VERTEXAI_ACCESS_TOKEN
     ].freeze
 
     # 1x1 PNG and JPEG stand-ins so image cassettes do not store megabytes
@@ -74,13 +75,15 @@ module Multivitamin
       VCR.configure { |config| config.cassette_library_dir = library }
       # drop_unused_requests makes a live run replace the cassette. Without it,
       # VCR keeps an old interaction whose request body no longer matches.
-      pin_multipart_boundary do
-        VCR.use_cassette(
-          name,
-          record: live? ? :all : :none,
-          match_requests_on: %i[method uri jsonrpc_body],
-          drop_unused_requests: live?
-        ) { yield }
+      pin_vertexai_credentials do
+        pin_multipart_boundary do
+          VCR.use_cassette(
+            name,
+            record: live? ? :all : :none,
+            match_requests_on: %i[method uri jsonrpc_body],
+            drop_unused_requests: live?
+          ) { yield }
+        end
       end
     ensure
       VCR.configure { |config| config.cassette_library_dir = previous } if previous
@@ -95,6 +98,20 @@ module Multivitamin
       yield
     ensure
       singleton.define_method(:hex, original) if singleton && original
+    end
+
+    # Replay never asks ADC/googleauth for a token. Scope the replacement to
+    # playback and restore it even when a scenario raises. Live uses real ADC.
+    def pin_vertexai_credentials
+      return yield if live?
+
+      require "ruby_llm"
+      provider = RubyLLM::Providers::VertexAI
+      original = provider.instance_method(:headers)
+      provider.define_method(:headers) { { "Authorization" => "Bearer <VERTEXAI_ACCESS_TOKEN>" } }
+      yield
+    ensure
+      provider.define_method(:headers, original) if provider && original
     end
 
     def prepare_key!
@@ -119,6 +136,8 @@ module Multivitamin
 
         abort "LIVE=1 LIVE_PROVIDER=openrouter needs OPENROUTER_API_KEY in the environment. Never commit it."
       when ""
+        return unless ENV["GOOGLE_CLOUD_PROJECT"].to_s.empty?
+
         provider_keys = %w[OPENROUTER_API_KEY OPENAI_API_KEY COHERE_API_KEY XAI_API_KEY ANTHROPIC_API_KEY GPUSTACK_API_KEY]
         return if provider_keys.any? { |name| !ENV[name].to_s.empty? && ENV[name] != PLACEHOLDER_KEY }
 
@@ -188,6 +207,10 @@ module Multivitamin
 
     def scrub_interaction(interaction)
       scrub_headers(interaction.request.headers)
+      if interaction.request.uri.to_s.include?("aiplatform.googleapis.com/")
+        authorization = interaction.request.headers.keys.find { |name| name.to_s.downcase == "authorization" }
+        interaction.request.headers[authorization] = ["Bearer <VERTEXAI_ACCESS_TOKEN>"] if authorization
+      end
       scrub_headers(interaction.response.headers)
       interaction.request.body = scrub_text(interaction.request.body)
       interaction.response.body = shrink_image_payload(scrub_text(interaction.response.body))
@@ -248,6 +271,7 @@ module Multivitamin
     end
 
     def authorization_placeholder(token)
+      return "<VERTEXAI_ACCESS_TOKEN>" if token.include?("<VERTEXAI_ACCESS_TOKEN>")
       return OPENAI_FILTERED_KEY if token.include?(OPENAI_FILTERED_KEY)
       return FILTERED_KEY if token.include?(FILTERED_KEY)
       return "<MCP_CLIENT_SECRET>" if token.match?(/\Abasic\s/i) || token.include?("<MCP_CLIENT_SECRET>")
