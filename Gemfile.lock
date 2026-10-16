@@ -53,6 +53,18 @@ GEM
       uri (>= 0.11.1)
     net-protocol (0.4.0)
       timeout
+    opentelemetry-api (1.5.0)
+    opentelemetry-common (0.21.0)
+      opentelemetry-api (~> 1.0)
+    opentelemetry-registry (0.3.1)
+      opentelemetry-api (~> 1.1)
+    opentelemetry-sdk (1.7.0)
+      opentelemetry-api (~> 1.1)
+      opentelemetry-common (~> 0.20)
+      opentelemetry-registry (~> 0.2)
+      opentelemetry-semantic_conventions
+    opentelemetry-semantic_conventions (1.10.1)
+      opentelemetry-api (~> 1.0)
     public_suffix (7.0.5)
     rake (13.4.2)
     rexml (3.4.4)
@@ -87,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 8.0)
   minitest (~> 5.25)
+  opentelemetry-sdk (= 1.7.0)
   rake (~> 13.2)
   ruby_llm (= 2.1.1)
   sqlite3 (~> 2.6)
@@ -119,6 +132,11 @@ CHECKSUMS
   multipart-post (2.4.1) sha256=9872d03a8e552020ca096adadbf5e3cb1cd1cdd6acd3c161136b8a5737cdb4a8
   net-http (0.10.0) sha256=1a2ff6e37a05724973c43f2bf7bf105f59c36a4cd0a7e9b1c021a0a566987c27
   net-protocol (0.4.0) sha256=f9f90c8c6f64794a45160bf422177a336db12809de3beeeaa26b88fcd2e8c853
+  opentelemetry-api (1.5.0) sha256=8dcc33e7aba70b1da630065ce0db3d6f50cb8ebd2017383209739439025ea997
+  opentelemetry-common (0.21.0) sha256=fe891a44583a20bc3217b324aec76d066504494951682d391cfd57d40cd01c98
+  opentelemetry-registry (0.3.1) sha256=73a48234635b0ed1c75e4b5fb267fb3004baf616d43fe38e8380ecbb933d88df
+  opentelemetry-sdk (1.7.0) sha256=5960aa56ddeccbea4a668cd18df68471e7ae8a59a7fcadc980be9c73bd1edbb3
+  opentelemetry-semantic_conventions (1.10.1) sha256=fe9cf823a846cbbbb0300cb5a090c4072b57b2ed21ac8db82de85d330eef5681
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142

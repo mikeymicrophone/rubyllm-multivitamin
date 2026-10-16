@@ -1,0 +1,36 @@
+# Hand-authored fixture; see ../README.md for provenance and re-recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Siq channel:
+        Salma clears the east intake at 07:20. Hold the visitor gate until 07:35.
+        State the opening instruction."}],"instructions":"Brief Petra''s Siq gate
+        from the inspection card only; name Salma, the hold, and the opening time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.1,"max_output_tokens":160}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_2_0","object":"response","created_at":1792166400,"status":"completed","model":"gpt-4.1-mini-2025-04-14","output":[{"id":"msg_2_0","type":"message","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Salma
+        clears the east intake at 07:20; hold Petra''s Siq visitor gate until 07:35.","annotations":[],"logprobs":[]}]}],"parallel_tool_calls":true,"error":null,"incomplete_details":null,"usage":{"input_tokens":92,"input_tokens_details":{"cached_tokens":0},"output_tokens":28,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":120}}'
+  recorded_at: Fri, 16 Oct 2026 16:00:00 GMT
+recorded_with: VCR 6.4.0

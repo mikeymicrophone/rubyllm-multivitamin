@@ -1,0 +1,38 @@
+# Hand-authored fixture; see ../README.md for provenance and re-recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Manifest
+        RIALTO-SEALED-73: Lucia unloads the artichoke crates at 05:50. Read back the
+        reference and time."}],"instructions":"You are the Rialto receiving clerk.
+        Repeat the sealed reference and the unloading time from the manifest.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"metadata":{"receiving_seal":"RIALTO-SEALED-73"}}'
+    headers:
+      X-Receiving-Seal:
+      - RIALTO-SEALED-73
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_5_0","object":"response","created_at":1792166400,"status":"completed","model":"gpt-4.1-mini-2025-04-14","output":[{"id":"msg_5_0","type":"message","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Lucia
+        unloads the artichoke crates at 05:50 under sealed reference RIALTO-SEALED-73.","annotations":[],"logprobs":[]}]}],"parallel_tool_calls":true,"error":null,"incomplete_details":null,"usage":{"input_tokens":92,"input_tokens_details":{"cached_tokens":0},"output_tokens":28,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":120}}'
+  recorded_at: Fri, 16 Oct 2026 16:00:00 GMT
+recorded_with: VCR 6.4.0

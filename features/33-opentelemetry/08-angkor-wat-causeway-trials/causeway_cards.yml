@@ -1,0 +1,11 @@
+cases:
+  - name: west_causeway
+    inputs:
+      section: West
+      keeper: Sopheak
+      reopen: "08:10"
+  - name: east_causeway
+    inputs:
+      section: East
+      keeper: Dara
+      reopen: "09:25"

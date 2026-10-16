@@ -1,0 +1,105 @@
+# Hand-authored fixture; see ../README.md for provenance and re-recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Read the
+        tile cart and issue the first dispatch."}],"instructions":"You are the Registan
+        conservation clerk. Read tile_cart for the first dispatch. Keep its keeper
+        and crate count on later turns; change only an explicitly revised unloading
+        time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"tile_cart","description":"Reads
+        the posted Registan conservation tile cart","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"tile_cart"},"text":{"format":{"type":"json_schema","name":"registan_dispatch","schema":{"type":"object","properties":{"keeper":{"type":"string"},"tile_crates":{"type":"integer"},"unload":{"type":"string"}},"required":["keeper","tile_crates","unload"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_13_0","object":"response","created_at":1792166400,"status":"completed","model":"gpt-4.1-mini-2025-04-14","output":[{"id":"fc_tile_cart","type":"function_call","call_id":"call_tile_cart","name":"tile_cart","arguments":"{}","status":"completed"}],"parallel_tool_calls":true,"error":null,"incomplete_details":null,"usage":{"input_tokens":92,"input_tokens_details":{"cached_tokens":0},"output_tokens":12,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":104}}'
+  recorded_at: Fri, 16 Oct 2026 16:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Read the
+        tile cart and issue the first dispatch."},{"type":"function_call","call_id":"call_tile_cart","name":"tile_cart","arguments":"{}"},{"type":"function_call_output","call_id":"call_tile_cart","output":"{\"tile_crates\":8,\"keeper\":\"Dilshod\",\"unload\":\"08:25\"}"}],"instructions":"You
+        are the Registan conservation clerk. Read tile_cart for the first dispatch.
+        Keep its keeper and crate count on later turns; change only an explicitly
+        revised unloading time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"tile_cart","description":"Reads
+        the posted Registan conservation tile cart","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"text":{"format":{"type":"json_schema","name":"registan_dispatch","schema":{"type":"object","properties":{"keeper":{"type":"string"},"tile_crates":{"type":"integer"},"unload":{"type":"string"}},"required":["keeper","tile_crates","unload"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_13_1","object":"response","created_at":1792166400,"status":"completed","model":"gpt-4.1-mini-2025-04-14","output":[{"id":"msg_13_1","type":"message","role":"assistant","status":"completed","content":[{"type":"output_text","text":"{\"keeper\":\"Dilshod\",\"tile_crates\":8,\"unload\":\"08:25\"}","annotations":[],"logprobs":[]}]}],"parallel_tool_calls":true,"error":null,"incomplete_details":null,"usage":{"input_tokens":242,"input_tokens_details":{"cached_tokens":0},"output_tokens":28,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":270}}'
+  recorded_at: Fri, 16 Oct 2026 16:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Read the
+        tile cart and issue the first dispatch."},{"type":"function_call","call_id":"call_tile_cart","name":"tile_cart","arguments":"{}"},{"type":"function_call_output","call_id":"call_tile_cart","output":"{\"tile_crates\":8,\"keeper\":\"Dilshod\",\"unload\":\"08:25\"}"},{"role":"assistant","content":[{"type":"output_text","text":"{\"keeper\":\"Dilshod\",\"tile_crates\":8,\"unload\":\"08:25\"}"}]},{"role":"user","content":"The
+        Registan loading crew moves unloading to 08:50. Issue the revised dispatch
+        with the same keeper and crate count."}],"instructions":"You are the Registan
+        conservation clerk. Read tile_cart for the first dispatch. Keep its keeper
+        and crate count on later turns; change only an explicitly revised unloading
+        time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"tile_cart","description":"Reads
+        the posted Registan conservation tile cart","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"text":{"format":{"type":"json_schema","name":"registan_dispatch","schema":{"type":"object","properties":{"keeper":{"type":"string"},"tile_crates":{"type":"integer"},"unload":{"type":"string"}},"required":["keeper","tile_crates","unload"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_13_2","object":"response","created_at":1792166400,"status":"completed","model":"gpt-4.1-mini-2025-04-14","output":[{"id":"msg_13_2","type":"message","role":"assistant","status":"completed","content":[{"type":"output_text","text":"{\"keeper\":\"Dilshod\",\"tile_crates\":8,\"unload\":\"08:50\"}","annotations":[],"logprobs":[]}]}],"parallel_tool_calls":true,"error":null,"incomplete_details":null,"usage":{"input_tokens":272,"input_tokens_details":{"cached_tokens":0},"output_tokens":28,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":300}}'
+  recorded_at: Fri, 16 Oct 2026 16:00:00 GMT
+recorded_with: VCR 6.4.0
