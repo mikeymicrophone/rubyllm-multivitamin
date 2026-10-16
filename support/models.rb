@@ -87,6 +87,17 @@ module Multivitamin
     # bottles tts-1. LIVE_PROVIDER does not switch this.
     OPENAI_SPEECH = "tts-1"
 
+    # OpenAI moderation models. OpenRouter has no separate moderation
+    # operation in 2.1.1. LIVE_PROVIDER does not retarget these.
+    # omni-moderation-latest is Configuration#default_moderation_model.
+    OPENAI_MODERATION = "omni-moderation-latest"
+    OPENAI_MODERATION_PINNED = "omni-moderation-2024-09-26"
+
+    # OpenRouter Voyage rerankers. OpenAI has no rerank API in 2.1.1.
+    # LIVE_PROVIDER does not retarget these. Cheap slug first.
+    OPENROUTER_RERANK = "voyageai/rerank-2.5-lite"
+    OPENROUTER_RERANK_FULL = "voyageai/rerank-2.5"
+
     module_function
 
     # The provider a scenario was bottled with. LIVE=1 LIVE_PROVIDER=openai
@@ -133,6 +144,18 @@ module Multivitamin
     # LIVE_PROVIDER does not switch this.
     def speech(**extra)
       { model: OPENAI_SPEECH, provider: :openai }.merge(extra)
+    end
+
+    # kwargs for RubyLLM.moderate on the bottled OpenAI models.
+    # LIVE_PROVIDER does not switch this: OpenRouter has no moderation API.
+    def moderation(model: OPENAI_MODERATION, **extra)
+      { model: model, provider: :openai }.merge(extra)
+    end
+
+    # kwargs for RubyLLM.rerank on the bottled OpenRouter Voyage slugs.
+    # LIVE_PROVIDER does not switch this: OpenAI has no rerank API.
+    def rerank(model: OPENROUTER_RERANK, **extra)
+      { model: model, provider: :openrouter, assume_model_exists: true }.merge(extra)
     end
 
     # kwargs for RubyLLM.paint on the bottled OpenAI image model.

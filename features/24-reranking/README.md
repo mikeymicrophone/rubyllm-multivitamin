@@ -4,33 +4,42 @@
 
 Official reference: [Reranking](https://rubyllm.com/rerank/).
 
-## RubyLLM 2.1.1 entry points
+## Models
 
-- `RubyLLM.rerank(query, documents, model: "rerank-v3.5")`
-- `rerank.results.first.index` / `document` / `score`
-- `top_n:`
-- `provider: :bedrock` / `:azure` / `:vertexai` / `:openrouter`
-- `rerank.tokens` and `rerank.cost`
+OpenAI has no rerank API in 2.1.1. This catalog records OpenRouter Voyage `voyageai/rerank-2.5-lite`, and `voyageai/rerank-2.5` when a slot needs the full slug. Briefs after a rank use `gpt-4.1-mini`. The Dunedin mill also records OpenAI `text-embedding-3-small`. Cohere, Bedrock, Azure, and Vertex need keys or projects this catalog does not have. Checked 16 October 2026.
 
-## Providers that can record it
+## Examples (13 of 13 bottled)
 
-Cohere `rerank-v3.5` (bills per search unit). OpenRouter Voyage (`voyageai/rerank-2.5-lite`). Bedrock `amazon.rerank-v1:0`. Azure deployed rerankers. Vertex AI `semantic-ranker-default-004` with `assume_model_exists: true`. OpenAI has no rerank API in 2.1.1. This catalog's cheap record path is Cohere `rerank-v3.5` or OpenRouter Voyage. Needs `COHERE_API_KEY` or `OPENROUTER_API_KEY`.
+01. [Livingstone mukwa yard](01-livingstone-mukwa-yard/) — available
+02. [Cali salsa plaza](02-cali-salsa-plaza/) — available
+03. [Arequipa sillar quarry](03-arequipa-sillar-quarry/) — available
+04. [Lautoka sugar crush](04-lautoka-sugar-crush/) — available
+05. [Jos plateau strawberry](05-jos-plateau-strawberry/) — available
+06. [Cuenca toquilla hat](06-cuenca-toquilla-hat/) — available
+07. [Francistown agate cutoff](07-francistown-agate-cutoff/) — available
+08. [Dunedin tweed mill](08-dunedin-tweed-mill/) — available
+09. [Port Louis sega tokens](09-port-louis-sega-tokens/) — available
+10. [Nadi ginger shed](10-nadi-ginger-shed/) — available
+11. [Kampala bark cloth](11-kampala-bark-cloth/) — available
+12. [Salvador acarajé stall](12-salvador-acaraje-stall/) — available
+13. [Rotorua hāngī pit](13-rotorua-hangi-pit/) — available
 
-## Examples (0 of 13 bottled)
+## What each scenario adds
 
-01. Bainbridge capital of the US — planned
-02. Eagle Harbor top_n five — planned
-03. Blakely Rock index back to records — planned
-04. Alki Voyage on OpenRouter — planned
-05. Duwamish Bedrock amazon.rerank — planned
-06. Elliott Bay Vertex semantic-ranker — planned
-07. Shilshole score cutoff — planned
-08. Golden Gardens embed then rerank — planned
-09. Meadow Point tokens.input — planned
-10. Carkeek missing model: raises — planned
-11. Richmond Beach empty documents — planned
-12. Edmonds neighbor gem pipeline — planned
-13. Possession Sound search desk capstone — planned
+| Slot | What it adds |
+| --- | --- |
+| 01 | Basic rank, first `index` / `document` / `score` |
+| 02 | `top_n: 5` of eight flyers |
+| 03 | `index` back to quarry structs |
+| 04 | Explicit `provider: :openrouter` on Voyage lite |
+| 05 | Full `voyageai/rerank-2.5` slug |
+| 06 | Spanish query, mixed-language cards |
+| 07 | Score cutoff against first place |
+| 08 | Embed the query, then rerank |
+| 09 | `tokens.input` and `cost.total` |
+| 10 | Missing `model:` raises `ArgumentError` locally |
+| 11 | Empty document list |
+| 12 | Rank, then `chat.ask` the winner |
+| 13 | Capstone: eight pits, `top_n: 3`, brief |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
