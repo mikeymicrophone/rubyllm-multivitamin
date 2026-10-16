@@ -1,0 +1,50 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Research
+        archive sources for Reykjavík district heating pipe replacement. Compare historical
+        network maps with public maintenance reports and cite each source."}],"background":true,"stream":false}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-reykjavik-heat-07","object":"interaction","agent":"deep-research-preview-04-2026","status":"in_progress","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-reykjavik-heat-07/cancel
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-reykjavik-heat-07","object":"interaction","agent":"deep-research-preview-04-2026","status":"cancelled","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1
