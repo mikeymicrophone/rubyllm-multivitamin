@@ -10,9 +10,9 @@ class ManausAcaiLotHailTokensTest < Minitest::Test
       result = ManausAcaiLot::AcaiLot.conduct
     end
 
-    assert_includes result.lot_brief, "AMZ-441"
+    assert_match(/AMZ[-‑–]441/, result.lot_brief)
     assert_match(/\b18\b/, result.lot_brief)
-    assert_includes result.hail_brief, "AMZ-441"
+    assert_match(/AMZ[-‑–]441/, result.hail_brief)
     assert_operator result.lot_input, :>, result.hail_input
     assert_operator result.hail_input, :>, 0
     assert_operator result.lot_output, :>, 0

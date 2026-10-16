@@ -9,9 +9,9 @@ the chat.
 
 - A forced tool round still reports `tokens.input` and `tokens.output`
   on the spoken answer.
-- The first call invents a keyword the tool does not take. That becomes
-  a tool-role JSON error, and the model calls again with `{}`.
-  `chat.tokens` includes both attempts.
+- The first call invented a `yardage` keyword the tool does not take.
+  That becomes a tool-role JSON error, and the model calls again with
+  `{}`. `chat.tokens` includes both attempts.
 - `cost.total` is still the provider's reported number (0 on this free
   slug).
 

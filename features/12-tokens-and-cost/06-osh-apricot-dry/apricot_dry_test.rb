@@ -14,7 +14,7 @@ class OshApricotDryCacheTokensTest < Minitest::Test
       result = OshApricotDry::ApricotDry.conduct
     end
 
-    assert_includes result.brief, "Ala-Too"
+    assert_match(/Ala[-‑–]Too/, result.brief)
     assert_includes result.brief, "5.2"
     assert_operator result.input_tokens, :>, 0
     assert_operator result.output_tokens, :>, 0

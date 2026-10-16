@@ -11,7 +11,7 @@ class CochabambaMarketTenantTalliesTest < Minitest::Test
     end
 
     assert_includes result.mill_brief, "42"
-    assert_includes result.mill_brief, "LC-4"
+    assert_match(/LC[-‑–]4/, result.mill_brief)
     assert_includes result.oven_brief, "28"
     assert_match(/07:30|7:30/, result.oven_brief)
 

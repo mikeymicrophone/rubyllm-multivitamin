@@ -566,7 +566,7 @@ Shown in [Kano indigo-halt cancelled usage](features/12-tokens-and-cost/12-kano-
 
 ### An unknown tool keyword becomes a tool-role error, then a retry
 
-**What happens.** `posted_gara_card` declares no parameters. The model still called it with an extra keyword. `execute` raises through RubyLLM as a tool message whose content is `{"error":"Invalid tool arguments: unknown keyword: …"}`. The next request sends that error and the model calls again with `{}`. That second tool message is the dye card. `chat.tokens` includes both attempts. The spoken answer still has the yardage.
+**What happens.** `posted_gara_card` declares no parameters. The model still called it with `yardage`. `execute` raises through RubyLLM as a tool message whose content is `{"error":"Invalid tool arguments: unknown keyword: yardage"}`. The next request sends that error and the model calls again with `{}`. That second tool message is the dye card. `chat.tokens` includes both attempts. The spoken answer still has the yardage.
 
 **Why it matters.** A test that takes the first `:tool` message as the card gets the error JSON. The extra attempt is on the chat ledger.
 

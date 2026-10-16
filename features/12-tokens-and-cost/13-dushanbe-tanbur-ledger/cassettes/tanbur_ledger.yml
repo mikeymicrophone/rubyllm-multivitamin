@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the overnight glue clerk at the tanbur shop in Dushanbe.\nKeep each reply
+        to two short sentences.\nUse only the boards in this chat.\nName 3.4 kg and
+        Parvina.\nDo not invent a dry time."},{"role":"user","content":"Dushanbe tanbur
+        overnight board, Friday 16 October 2026.\nShop notes: https://www.dushanbe.tj/\nCraft
+        board: https://www.culture.tj/\nHide glue 3.4 kg at the neck joint at 01:10.\nClamp
+        release 04:25.\nPlayer Parvina is holding the morning rehearsal until the
+        clamp comes off.\nWhen is clamp release, and what is the glue weight?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:27:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121221-KftE4hRybY5H58DeVgFq
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f7223c2b9422-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MjEyMTIyMS1LZnRFNGhSeWJZNUg1OERlVmdGcSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTIxMjEyMjEsIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlRoZSBjbGFtcCByZWxlYXNlcyBhdCAwNDoyNS4gIFxuVGhlIGhpZGUgZ2x1ZSB3ZWlnaHMgMy404oCva2cuIiwicmVmdXNhbCI6bnVsbCwicmVhc29uaW5nIjoiV2UgbmVlZCB0byBhbnN3ZXI6IFdoZW4gaXMgY2xhbXAgcmVsZWFzZSwgYW5kIHdoYXQgaXMgdGhlIGdsdWUgd2VpZ2h0PyBVc2Ugb25seSB0aGUgYm9hcmRzIGluIHRoaXMgY2hhdC4gVGhlIGluZm86IEhpZGUgZ2x1ZSAzLjQga2cgYXQgdGhlIG5lY2sgam9pbnQgYXQgMDE6MTAuIENsYW1wIHJlbGVhc2UgMDQ6MjUuIFBsYXllciBQYXJ2aW5hIGlzIGhvbGRpbmcgdGhlIG1vcm5pbmcgcmVoZWFyc2FsIHVudGlsIHRoZSBjbGFtcCBjb21lcyBvZmYuIFNvIGNsYW1wIHJlbGVhc2UgaXMgMDQ6MjUsIGdsdWUgd2VpZ2h0IGlzIDMuNCBrZy4gTXVzdCBrZWVwIGVhY2ggcmVwbHkgdG8gdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIGJvYXJkcyBpbiB0aGlzIGNoYXQgKGkuZS4sIHdlIGNhbm5vdCByZWZlcmVuY2UgZXh0ZXJuYWwgaW5mbykuIFNvIGFuc3dlcjogVGhlIGNsYW1wIHJlbGVhc2VzIGF0IDA0OjI1LiBUaGUgZ2x1ZSB3ZWlnaHQgaXMgMy40IGtnLiBUd28gc2hvcnQgc2VudGVuY2VzLiIsInJlYXNvbmluZ19kZXRhaWxzIjpbeyJ0eXBlIjoicmVhc29uaW5nLnRleHQiLCJ0ZXh0IjoiV2UgbmVlZCB0byBhbnN3ZXI6IFdoZW4gaXMgY2xhbXAgcmVsZWFzZSwgYW5kIHdoYXQgaXMgdGhlIGdsdWUgd2VpZ2h0PyBVc2Ugb25seSB0aGUgYm9hcmRzIGluIHRoaXMgY2hhdC4gVGhlIGluZm86IEhpZGUgZ2x1ZSAzLjQga2cgYXQgdGhlIG5lY2sgam9pbnQgYXQgMDE6MTAuIENsYW1wIHJlbGVhc2UgMDQ6MjUuIFBsYXllciBQYXJ2aW5hIGlzIGhvbGRpbmcgdGhlIG1vcm5pbmcgcmVoZWFyc2FsIHVudGlsIHRoZSBjbGFtcCBjb21lcyBvZmYuIFNvIGNsYW1wIHJlbGVhc2UgaXMgMDQ6MjUsIGdsdWUgd2VpZ2h0IGlzIDMuNCBrZy4gTXVzdCBrZWVwIGVhY2ggcmVwbHkgdG8gdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIGJvYXJkcyBpbiB0aGlzIGNoYXQgKGkuZS4sIHdlIGNhbm5vdCByZWZlcmVuY2UgZXh0ZXJuYWwgaW5mbykuIFNvIGFuc3dlcjogVGhlIGNsYW1wIHJlbGVhc2VzIGF0IDA0OjI1LiBUaGUgZ2x1ZSB3ZWlnaHQgaXMgMy40IGtnLiBUd28gc2hvcnQgc2VudGVuY2VzLiIsImZvcm1hdCI6InVua25vd24iLCJpbmRleCI6MH1dfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNjksImNvbXBsZXRpb25fdG9rZW5zIjoxNzUsInRvdGFsX3Rva2VucyI6MzQ0LCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjE0NywiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Fri, 16 Oct 2026 03:27:05 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the overnight glue clerk at the tanbur shop in Dushanbe.\nKeep each reply
+        to two short sentences.\nUse only the boards in this chat.\nName 3.4 kg and
+        Parvina.\nDo not invent a dry time."},{"role":"user","content":"Dushanbe tanbur
+        overnight board, Friday 16 October 2026.\nShop notes: https://www.dushanbe.tj/\nCraft
+        board: https://www.culture.tj/\nHide glue 3.4 kg at the neck joint at 01:10.\nClamp
+        release 04:25.\nPlayer Parvina is holding the morning rehearsal until the
+        clamp comes off.\nWhen is clamp release, and what is the glue weight?"},{"role":"assistant","content":"The
+        clamp releases at 04:25.  \nThe hide glue weighs 3.4 kg.","reasoning_details":[{"type":"reasoning.text","text":"We
+        need to answer: When is clamp release, and what is the glue weight? Use only
+        the boards in this chat. The info: Hide glue 3.4 kg at the neck joint at 01:10.
+        Clamp release 04:25. Player Parvina is holding the morning rehearsal until
+        the clamp comes off. So clamp release is 04:25, glue weight is 3.4 kg. Must
+        keep each reply to two short sentences. Use only the boards in this chat (i.e.,
+        we cannot reference external info). So answer: The clamp releases at 04:25.
+        The glue weight is 3.4 kg. Two short sentences.","format":"unknown","index":0}]},{"role":"user","content":"Parvina
+        wants to start the rehearsal at 03:50. May she go, or does she wait for 04:25?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:27:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121225-mP6OtIOQ8iJGY26NM0vJ
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f738ff3990f9-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKeyJpZCI6Imdlbi0xNzkyMTIxMjI1LW1QNk90SU9ROGlKR1kyNk5NMHZKIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTc5MjEyMTIyNSwibW9kZWwiOiJudmlkaWEvbmVtb3Ryb24tMy1zdXBlci0xMjBiLWExMmI6ZnJlZSIsInByb3ZpZGVyIjoiTnZpZGlhIiwic3lzdGVtX2ZpbmdlcnByaW50IjpudWxsLCJzZXJ2aWNlX3RpZXIiOm51bGwsImNob2ljZXMiOlt7ImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6InN0b3AiLCJuYXRpdmVfZmluaXNoX3JlYXNvbiI6InN0b3AiLCJtZXNzYWdlIjp7InJvbGUiOiJhc3Npc3RhbnQiLCJjb250ZW50IjoiUGFydmluYSBtdXN0IHdhaXQ7IHRoZSBjbGFtcCByZWxlYXNlcyBhdCAwNDoyNS4gIFxuVGhlIGhpZGUgZ2x1ZSBhdCB0aGUgbmVjayBqb2ludCB3ZWlnaHMgMy404oCva2cuIiwicmVmdXNhbCI6bnVsbCwicmVhc29uaW5nIjoiV2UgbmVlZCB0byBhbnN3ZXI6IFBhcnZpbmEgd2FudHMgdG8gc3RhcnQgcmVoZWFyc2FsIGF0IDAzOjUwLiBUaGUgY2xhbXAgcmVsZWFzZSBpcyBhdCAwNDoyNS4gU2hlIG11c3Qgd2FpdCB1bnRpbCBjbGFtcCByZWxlYXNlLiBTbyBhbnN3ZXI6IFNoZSBtdXN0IHdhaXQgdW50aWwgMDQ6MjUsIGNhbm5vdCBzdGFydCBhdCAwMzo1MC4gS2VlcCBlYWNoIHJlcGx5IHRvIHR3byBzaG9ydCBzZW50ZW5jZXMuIFVzZSBvbmx5IHRoZSBib2FyZHMgaW4gdGhpcyBjaGF0LiBOYW1lIDMuNCBrZyBhbmQgUGFydmluYS4gRG8gbm90IGludmVudCBhIGRyeSB0aW1lLiBTbyB3ZSBtdXN0IG1lbnRpb24gUGFydmluYSBhbmQgMy40IGtnPyBUaGUgaW5zdHJ1Y3Rpb246IFwiTmFtZSAzLjQga2cgYW5kIFBhcnZpbmEuXCIgTWVhbnMgd2UgbmVlZCB0byBpbmNsdWRlIHRob3NlIG5hbWVzIGluIHJlcGx5LiBQcm9iYWJseSBtZW50aW9uIFBhcnZpbmEgYW5kIHRoZSBnbHVlIHdlaWdodCAzLjQga2cuIFR3byBzaG9ydCBzZW50ZW5jZXMuIEVnOiBcIlBhcnZpbmEgbXVzdCB3YWl0OyB0aGUgY2xhbXAgcmVsZWFzZXMgYXQgMDQ6MjUuXCIgVGhhdCdzIG9uZSBzZW50ZW5jZS4gTmVlZCBzZWNvbmQgc2VudGVuY2U6IFwiVGhlIGhpZGUgZ2x1ZSBhdCB0aGUgbmVjayBqb2ludCB3ZWlnaHMgMy404oCva2cuXCIgVGhhdCdzIHR3byBzZW50ZW5jZXMuIEVuc3VyZSBubyBleHRyYS4gTm8gZHJ5IHRpbWUuIEdvb2QuIiwicmVhc29uaW5nX2RldGFpbHMiOlt7InR5cGUiOiJyZWFzb25pbmcudGV4dCIsInRleHQiOiJXZSBuZWVkIHRvIGFuc3dlcjogUGFydmluYSB3YW50cyB0byBzdGFydCByZWhlYXJzYWwgYXQgMDM6NTAuIFRoZSBjbGFtcCByZWxlYXNlIGlzIGF0IDA0OjI1LiBTaGUgbXVzdCB3YWl0IHVudGlsIGNsYW1wIHJlbGVhc2UuIFNvIGFuc3dlcjogU2hlIG11c3Qgd2FpdCB1bnRpbCAwNDoyNSwgY2Fubm90IHN0YXJ0IGF0IDAzOjUwLiBLZWVwIGVhY2ggcmVwbHkgdG8gdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIGJvYXJkcyBpbiB0aGlzIGNoYXQuIE5hbWUgMy40IGtnIGFuZCBQYXJ2aW5hLiBEbyBub3QgaW52ZW50IGEgZHJ5IHRpbWUuIFNvIHdlIG11c3QgbWVudGlvbiBQYXJ2aW5hIGFuZCAzLjQga2c/IFRoZSBpbnN0cnVjdGlvbjogXCJOYW1lIDMuNCBrZyBhbmQgUGFydmluYS5cIiBNZWFucyB3ZSBuZWVkIHRvIGluY2x1ZGUgdGhvc2UgbmFtZXMgaW4gcmVwbHkuIFByb2JhYmx5IG1lbnRpb24gUGFydmluYSBhbmQgdGhlIGdsdWUgd2VpZ2h0IDMuNCBrZy4gVHdvIHNob3J0IHNlbnRlbmNlcy4gRWc6IFwiUGFydmluYSBtdXN0IHdhaXQ7IHRoZSBjbGFtcCByZWxlYXNlcyBhdCAwNDoyNS5cIiBUaGF0J3Mgb25lIHNlbnRlbmNlLiBOZWVkIHNlY29uZCBzZW50ZW5jZTogXCJUaGUgaGlkZSBnbHVlIGF0IHRoZSBuZWNrIGpvaW50IHdlaWdocyAzLjTigK9rZy5cIiBUaGF0J3MgdHdvIHNlbnRlbmNlcy4gRW5zdXJlIG5vIGV4dHJhLiBObyBkcnkgdGltZS4gR29vZC4iLCJmb3JtYXQiOiJ1bmtub3duIiwiaW5kZXgiOjB9XX19XSwidXNhZ2UiOnsicHJvbXB0X3Rva2VucyI6MjQxLCJjb21wbGV0aW9uX3Rva2VucyI6MjU1LCJ0b3RhbF90b2tlbnMiOjQ5NiwiY29zdCI6MCwiaXNfYnlvayI6ZmFsc2UsInByb21wdF90b2tlbnNfZGV0YWlscyI6eyJjYWNoZWRfdG9rZW5zIjowLCJjYWNoZV93cml0ZV90b2tlbnMiOjAsImF1ZGlvX3Rva2VucyI6MCwidmlkZW9fdG9rZW5zIjowfSwiY29zdF9kZXRhaWxzIjp7InVwc3RyZWFtX2luZmVyZW5jZV9jb3N0IjowLCJ1cHN0cmVhbV9pbmZlcmVuY2VfcHJvbXB0X2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9jb21wbGV0aW9uc19jb3N0IjowfSwiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6eyJyZWFzb25pbmdfdG9rZW5zIjoyMTcsImltYWdlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowfX19
+  recorded_at: Fri, 16 Oct 2026 03:27:12 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the dye clerk at the indigo pits in Kano.\nCall the four pit figures in
+        order, one short sentence each.\nUse only the pit card."},{"role":"user","content":"Kano
+        indigo pit card, Friday 16 October 2026, morning dip.\nCity notes: https://www.kanostate.gov.ng/\nCraft
+        board: https://www.nigerianembassy.org/\nFirst call: vat 3.4 cubits at the
+        north pit.\nSecond call: 4.1 cubits in the mid yard toward Kurmi.\nThird call:
+        2.6 cubits off the south wall.\nFourth call: rinse filling, and the buyer
+        Halima holds south of the pits.\nCall the four figures."}],"stream":true,"temperature":0.2,"stream_options":{"include_usage":true},"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:26:59 GMT
+      Content-Type:
+      - text/event-stream
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Generation-Id:
+      - gen-1792121219-So8npwB6G4FbdHXNf7aB
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f715ca43c595-IAD
+    body:
+      encoding: UTF-8
+      string: |+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"North","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" pit:","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 3.4","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" cubits","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"  ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"\nMid yard","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" toward Kurmi:","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 4.1","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" cubits  \n","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"Off","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" the south wall:","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" 2.","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"6 cubits  ","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"\nRinse filling","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":", buyer Halima","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" south","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":" of the pits","role":"assistant"},"finish_reason":null,"native_finish_reason":null}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}]}
+
+        data: {"id":"gen-1792121219-So8npwB6G4FbdHXNf7aB","object":"chat.completion.chunk","created":1792121219,"model":"nvidia/nemotron-3-super-120b-a12b:free","provider":"Nvidia","service_tier":null,"choices":[{"index":0,"delta":{"content":"","role":"assistant"},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"prompt_tokens":167,"completion_tokens":50,"total_tokens":217,"cost":0,"is_byok":false,"prompt_tokens_details":{"cached_tokens":0,"cache_write_tokens":0,"audio_tokens":0,"video_tokens":0},"cost_details":{"upstream_inference_cost":0,"upstream_inference_prompt_cost":0,"upstream_inference_completions_cost":0},"completion_tokens_details":{"reasoning_tokens":0,"image_tokens":0,"audio_tokens":0}}}
+
+        data: [DONE]
+
+  recorded_at: Fri, 16 Oct 2026 03:27:00 GMT
+recorded_with: VCR 6.4.0
+...

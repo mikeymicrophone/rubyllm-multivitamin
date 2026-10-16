@@ -13,7 +13,7 @@ class FreetownGaraClothToolTokensTest < Minitest::Test
       result = FreetownGaraCloth::GaraCloth.conduct
     end
 
-    assert_match(/unknown keyword: \w+/, result.tool_contents.first)
+    assert_includes result.tool_contents.first, "unknown keyword: yardage"
     assert_equal FreetownGaraCloth::PostedGaraCard::CARD, result.tool_contents.last
     assert_includes result.answer, "14"
     assert_includes result.answer, "Lumley"
