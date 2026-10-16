@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 351 |
+| Bottled | 364 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,9 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 351 of 429 are
-bottled. Features 1–21, 23, 24, and 26–29 are full. Features 22, 25,
-and 30–33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 364 of 429 are
+bottled. Features 1–21, 23, 24, 26–29, and 32 are full. Features 22, 25,
+30, 31, and 33 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -82,7 +82,12 @@ an ask follows the ERB; six slots raise or assert locally and have no
 cassette. Extended thinking recorded OpenAI `gpt-5-nano` (effort and
 `display: :summarized`) and OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`
 (toggle, budget, and `with_thinking(false)`); `gpt-4.1-mini` raises
-before HTTP on the off control. The other bottled cassettes are OpenRouter.
+before HTTP on the off control. Hosted research uses hand-authored Vertex AI
+Interactions cassettes in twelve scenarios with `deep-research-preview-04-2026`;
+the approval/options slot raises locally.
+These are offline scaffolding, not live recordings; see
+[Hosted research](features/32-hosted-research/) for provenance and live setup.
+The other bottled cassettes are OpenRouter.
 
 ## Run the examples
 
@@ -122,13 +127,16 @@ repo. `.env` is gitignored. Never commit a key. The cassette helper strips
 `Authorization` headers, `OPENROUTER_API_KEY`, `OPENAI_API_KEY`, `sk-or-v1-`
 tokens, and other `sk-` tokens before a cassette is written.
 
-Live runs still need a key in the process, because RubyLLM raises
+Chat live runs still need a key in the process, because RubyLLM raises
 `RubyLLM::ConfigurationError` before any HTTP call when the provider is
 unconfigured. Cassette runs set a placeholder when the key is absent. That
 placeholder is not a credential.
 
 `LIVE_PROVIDER=openai` or `LIVE_PROVIDER=openrouter` overrides the provider
 while `LIVE=1` is recording, for examples that call `Multivitamin::Models.chat`.
+Hosted research uses Google ADC with `GOOGLE_CLOUD_PROJECT`; it is not retargeted
+by `LIVE_PROVIDER`. Its offline player supplies a placeholder Vertex bearer
+header without consulting Google credentials.
 Replay ignores `LIVE_PROVIDER`, so the cassette body still matches.
 
 Chat basics was re-recorded on OpenAI `gpt-4.1-mini` (and `gpt-4o-mini`
@@ -171,6 +179,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Moderation (recorded) | no OpenRouter moderation operation | bottled on OpenAI `omni-moderation-latest`; pin `omni-moderation-2024-09-26` with `model:` or a context. `LIVE_PROVIDER` does not retarget moderation |
 | Reranking (recorded) | `voyageai/rerank-2.5-lite` on OpenRouter | `voyageai/rerank-2.5` on OpenRouter; OpenAI has no rerank API. `LIVE_PROVIDER` does not retarget rerank |
 | Files (recorded) | no `:free` Files API | bottled on OpenAI Files (`purpose: "user_data"` or `"batch"`) plus `gpt-4.1-mini` when a chat reads the file. `LIVE_PROVIDER` does not retarget Files |
+| Hosted research (hand-authored) | Vertex AI `deep-research-preview-04-2026` hosted agent with global location | No free OpenRouter equivalent. Live requires Google ADC and `GOOGLE_CLOUD_PROJECT`; see [Hosted research](features/32-hosted-research/) |
 | Prompt caching (recorded) | OpenAI `gpt-4.1-mini` with empty `with_caching` and `with_caching(key:)` | That slug rejects `prompt_cache_options` and `prompt_cache_breakpoint`. `ttl: "1h"` 400s as invalid (only `30m` is listed). Gemini `CachedContent` needs `GEMINI_API_KEY` |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
@@ -256,7 +265,7 @@ hold the cassette player and the model slugs, not the story.
 29. [Extended thinking](features/29-extended-thinking/) — 13 of 13 bottled
 30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 0 of 13 bottled
 31. [Tokenization](features/31-tokenization/) — 0 of 13 bottled
-32. [Hosted research](features/32-hosted-research/) — 0 of 13 bottled
+32. [Hosted research](features/32-hosted-research/) — 13 of 13 bottled
 33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled
 
 The reference scenario that later ones copy is
