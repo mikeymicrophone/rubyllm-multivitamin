@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the seed-vault clerk at Svalbard Global Seed Vault\noutside Longyearbyen.\nCopy
+        the logger card in two short sentences.\nUse only the card in the question.\nInclude
+        -18 and SV-180.\nDo not describe the mountain."},{"role":"user","content":"Logger
+        card posted in the Svalbard seed vault, Wednesday 14 October 2026.\nVault
+        page: https://www.seedvault.no/.\nChamber temperature -18 C and steady.\nAccession
+        SV-180, Ethiopian teff, last checked 03:10.\nThe satellite hop to the Oslo
+        desk can sit for three minutes.\nWrite the slate for the vault log."}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:55:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115701-9qLEn4EbVq9QnIIBQiyC
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b37060deb028b9-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n{\"id\":\"gen-1792115701-9qLEn4EbVq9QnIIBQiyC\",\"object\":\"chat.completion\",\"created\":1792115701,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Logger
+        card: Chamber temperature -18 C and steady; Accession SV-180, Ethiopian teff,
+        last checked 03:10.  \\nSatellite hop to Oslo desk may sit for three minutes.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":158,\"completion_tokens\":48,\"total_tokens\":206,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:55:22 GMT
+recorded_with: VCR 6.4.0

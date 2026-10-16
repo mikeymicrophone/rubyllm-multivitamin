@@ -10,23 +10,23 @@ Official reference: [Configuration](https://rubyllm.com/configuration/), [connec
 
 ## Models
 
-The `:free` OpenRouter chat slugs answered `Rate limit exceeded: free-models-per-day` while this feature was bottled (14 October 2026, before the 8 PM ET reset). Chat examples therefore record `openai/gpt-4.1-mini` on OpenRouter, still `provider: :openrouter`, so `HTTP-Referer` and `X-OpenRouter-Title` stay on the wire. The second tenant slug is `openai/gpt-4.1-nano`. A 512-token output cap is set because this workspace's OpenRouter key could not afford the default 65536 `max_tokens`. The Juan de Fuca context embed uses `openai/text-embedding-3-small` on OpenRouter and the same id on OpenAI for the global call. Fallback: `LIVE_PROVIDER=openai` records native OpenAI `gpt-4.1-mini`. Checked 14 October 2026.
+These thirteen cassettes were re-recorded on 16 October 2026 after the 8 PM ET reset, on the free OpenRouter chat slug `nvidia/nemotron-3-super-120b-a12b:free`. The second tenant slug is `liquid/lfm-2.5-2.6b:free`. OpenRouter attribution (`HTTP-Referer`, `X-OpenRouter-Title`) stays on the wire because the provider is still `:openrouter`. `with_thinking(false)` is sent only on the Nemotron slug; the Liquid spare has no off control. A 512-token output cap is set. When the `:free` catalog answers `free-models-per-day`, set `CONFIGURATION_OPENROUTER_PAID=1` to record `openai/gpt-4.1-mini` (and `openai/gpt-4.1-nano`) on OpenRouter. The Copán context embed uses `nvidia/nemotron-3-embed-1b:free` on OpenRouter and `text-embedding-3-small` on OpenAI for the global call. Fallback: `LIVE_PROVIDER=openai` records native OpenAI `gpt-4.1-mini`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson attribution headers](01-point-wilson-attribution/) — available
-02. [New Dungeness default model](02-new-dungeness-default-model/) — available
-03. [Cannery tenant and light station, two contexts](03-cannery-and-station-contexts/) — available
-04. [Cape Disappointment request timeout](04-cape-disappointment-timeout/) — available
-05. [Friday Harbor key copy](05-friday-harbor-key-copy/) — available
-06. [Smith Island logger](06-smith-island-logger/) — available
-07. [Neah Bay retry knobs](07-neah-bay-retry-knobs/) — available
-08. [Bremerton OpenRouter base URL](08-bremerton-openrouter-base/) — available
-09. [Port Townsend sampling and params](09-port-townsend-sampling/) — available
-10. [Ediz Hook and Port Angeles default models](10-ediz-hook-tenant-models/) — available
-11. [Juan de Fuca context embed](11-juan-de-fuca-context-embed/) — available
-12. [Bell buoy empty context](12-bell-buoy-empty-context/) — available
-13. [Admiralty Inlet tenant router](13-admiralty-inlet-tenant-router/) — available
+01. [Siena Palio attribution headers](01-siena-palio-attribution/) — available
+02. [Zomba exam-rubric drawer](02-zomba-exam-drawer/) — available
+03. [Sousse olive press and medina stall, two contexts](03-sousse-press-and-stall/) — available
+04. [Svalbard seed-vault request timeout](04-svalbard-seed-timeout/) — available
+05. [Paramaribo pantry key copy](05-paramaribo-pantry-key/) — available
+06. [Kaohsiung wafer-fab logger](06-kaohsiung-fab-logger/) — available
+07. [Bilbao gantry retry knobs](07-bilbao-gantry-retries/) — available
+08. [Limoges enamel OpenRouter base URL](08-limoges-enamel-base/) — available
+09. [Asunción harp sampling and params](09-asuncion-harp-sampling/) — available
+10. [Kandy tea loft and factory lab](10-kandy-tea-tenant-models/) — available
+11. [Copán stela context embed](11-copan-stela-embed/) — available
+12. [Nouakchott clinic spare radio](12-nouakchott-clinic-radio/) — available
+13. [Maputo pão and chapas router](13-maputo-pao-chapas-router/) — available
 
 ## What each scenario adds
 
@@ -41,7 +41,7 @@ The `:free` OpenRouter chat slugs answered `Rate limit exceeded: free-models-per
 | 07 | `max_retries` is 0 on the cassette context and the default elsewhere |
 | 08 | `openrouter_api_base` on the cassette URI; `http_proxy` nil; registry path inside the scenario `tmp/` |
 | 09 | `with_temperature` and `with_provider_options` on one chat; the other omits both |
-| 10 | Each tenant's `default_model` is a different OpenRouter slug (mini vs nano) |
+| 10 | Each tenant's `default_model` is a different OpenRouter slug |
 | 11 | `ctx.embed` Authorization comes from the context; `RubyLLM.embed` uses the global key |
 | 12 | Rescue `ConfigurationError` from the empty context only |
 | 13 | Capstone: a router vends a context per tenant; `with_headers` and `with_context` |

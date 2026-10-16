@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the recording clerk at the folkloric harp desk in Asunción.\nAnswer in
+        two short sentences.\nUse only the tuning board in the question.\nInclude
+        the 31 and Pájaro Campana.\nSay whether the clerk holds that take.\nDo not
+        invent a different detune."},{"role":"user","content":"Tuning board at the
+        Asunción harp desk, Wednesday 14 October 2026, 06:40.\nMunicipal page: https://www.asuncion.gov.py/.\nFirst-string
+        detune: 31 cents sharp.\nThe morning take is Pájaro Campana, and the board
+        says hold it.\nShould the clerk hold the Pájaro Campana take, and what is
+        the detune?"}],"stream":false,"temperature":0.1,"max_tokens":512,"reasoning":{"enabled":false},"top_p":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:57:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115839-qo6T7nZ2fVrqmJdjsa1L
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b373bdda5cff17-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKeyJpZCI6Imdlbi0xNzkyMTE1ODM5LXFvNlQ3bloyZlZycW1KZGpzYTFMIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwiY3JlYXRlZCI6MTc5MjExNTgzOSwibW9kZWwiOiJudmlkaWEvbmVtb3Ryb24tMy1zdXBlci0xMjBiLWExMmI6ZnJlZSIsInByb3ZpZGVyIjoiTnZpZGlhIiwic3lzdGVtX2ZpbmdlcnByaW50IjpudWxsLCJzZXJ2aWNlX3RpZXIiOm51bGwsImNob2ljZXMiOlt7ImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6InN0b3AiLCJuYXRpdmVfZmluaXNoX3JlYXNvbiI6InN0b3AiLCJtZXNzYWdlIjp7InJvbGUiOiJhc3Npc3RhbnQiLCJjb250ZW50IjoiWWVzLCB0aGUgY2xlcmsgaG9sZHMgdGhlIFDDoWphcm8gQ2FtcGFuYSB0YWtlLiAgXG5UaGUgZGV0dW5lIGlzIDMxIGNlbnRzIHNoYXJwLiIsInJlZnVzYWwiOm51bGwsInJlYXNvbmluZyI6bnVsbH19XSwidXNhZ2UiOnsicHJvbXB0X3Rva2VucyI6MTY0LCJjb21wbGV0aW9uX3Rva2VucyI6MjYsInRvdGFsX3Rva2VucyI6MTkwLCJjb3N0IjowLCJpc19ieW9rIjpmYWxzZSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjAsImNhY2hlX3dyaXRlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowLCJ2aWRlb190b2tlbnMiOjB9LCJjb3N0X2RldGFpbHMiOnsidXBzdHJlYW1faW5mZXJlbmNlX2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9wcm9tcHRfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX2NvbXBsZXRpb25zX2Nvc3QiOjB9LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjp7InJlYXNvbmluZ190b2tlbnMiOjAsImltYWdlX3Rva2VucyI6MCwiYXVkaW9fdG9rZW5zIjowfX19
+  recorded_at: Fri, 16 Oct 2026 01:57:45 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the recording clerk at the folkloric harp desk in Asunción.\nAnswer in
+        two short sentences.\nUse only the tuning board in the question.\nInclude
+        the 31 and Pájaro Campana.\nSay whether the clerk holds that take.\nDo not
+        invent a different detune."},{"role":"user","content":"Tuning board at the
+        Asunción harp desk, Wednesday 14 October 2026, 06:40.\nMunicipal page: https://www.asuncion.gov.py/.\nFirst-string
+        detune: 31 cents sharp.\nThe morning take is Pájaro Campana, and the board
+        says hold it.\nShould the clerk hold the Pájaro Campana take, and what is
+        the detune?"}],"stream":false,"max_tokens":512,"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:57:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115865-ODwbi2Oc7HL8ej9CT65N
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3745e0f14dcdd-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCgogICAgICAgICAKCiAgICAgICAgIAoKICAgICAgICAgCnsiaWQiOiJnZW4tMTc5MjExNTg2NS1PRHdiaTJPYzdITDhlajlDVDY1TiIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTIxMTU4NjUsIm1vZGVsIjoibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiOmZyZWUiLCJwcm92aWRlciI6Ik52aWRpYSIsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwic2VydmljZV90aWVyIjpudWxsLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwibmF0aXZlX2ZpbmlzaF9yZWFzb24iOiJzdG9wIiwibWVzc2FnZSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IlRoZSBjbGVyayBob2xkcyB0aGUgUMOhamFybyBDYW1wYW5hIHRha2UgYXMgaW5zdHJ1Y3RlZCBieSB0aGUgYm9hcmQuIFRoZSBkZXR1bmUgaXMgMzEgY2VudHMgc2hhcnAuIiwicmVmdXNhbCI6bnVsbCwicmVhc29uaW5nIjpudWxsfX1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoxNjQsImNvbXBsZXRpb25fdG9rZW5zIjoyNywidG90YWxfdG9rZW5zIjoxOTEsImNvc3QiOjAsImlzX2J5b2siOmZhbHNlLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOnsiY2FjaGVkX3Rva2VucyI6MCwiY2FjaGVfd3JpdGVfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjAsInZpZGVvX3Rva2VucyI6MH0sImNvc3RfZGV0YWlscyI6eyJ1cHN0cmVhbV9pbmZlcmVuY2VfY29zdCI6MCwidXBzdHJlYW1faW5mZXJlbmNlX3Byb21wdF9jb3N0IjowLCJ1cHN0cmVhbV9pbmZlcmVuY2VfY29tcGxldGlvbnNfY29zdCI6MH0sImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOnsicmVhc29uaW5nX3Rva2VucyI6MCwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Fri, 16 Oct 2026 01:58:07 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the withering clerk in the tea loft above Kandy.\nAnswer in two short
+        sentences.\nUse only the ledger in the question.\nQuote 11.8 kilograms.\nDo
+        not invent a wither date."},{"role":"user","content":"Withering ledger for
+        the loft above the Kandy factory.\nInstitute page: https://www.tri.lk/.\nLast
+        turned: 12 March 2026, orange pekoe leaf.\nLeaf on the tats this morning:
+        11.8 kilograms.\nNext wither: 3 November 2026.\nWhat is the leaf weight, and
+        when is the next wither?"}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:58:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115887-hO6BZqa1c4RSQsWdz95N
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b374ea8e0e054d-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n{\"id\":\"gen-1792115887-hO6BZqa1c4RSQsWdz95N\",\"object\":\"chat.completion\",\"created\":1792115887,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"The
+        leaf weight is 11.8 kilograms.  \\nThe next wither is scheduled for 3 November
+        2026.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":153,\"completion_tokens\":31,\"total_tokens\":184,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:58:29 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"liquid/lfm-2.5-2.6b:free","messages":[{"role":"system","content":"You
+        are Nimal, the tasting clerk at the Kandy factory lab.\nAnswer in two short
+        sentences.\nUse only ticket TF-214 in the question.\nName theaflavin 36.\nDo
+        not taste the broken pekoe dust."},{"role":"user","content":"Tasting ticket
+        TF-214 for the Kandy factory lab.\nCup 1: orange pekoe, liquor bright, theaflavin
+        36.\nCup 2: broken pekoe, dull, theaflavin 22.\nThe dust grade is not on this
+        ticket.\nWhich cup do you taste first, and what theaflavin?"}],"stream":false,"temperature":0.2,"max_tokens":512}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:58:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115909-2aL7qOTcL7wIxV5KsIaq
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b37572d9fd1319-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792115909-2aL7qOTcL7wIxV5KsIaq\",\"object\":\"chat.completion\",\"created\":1792115909,\"model\":\"liquid/lfm-2.5-2.6b:free\",\"provider\":\"Liquid\",\"system_fingerprint\":\"vllm-0.31.0-7d3fcc00\",\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"I
+        would taste Cup 1 first since it displays brighter liquor with theaflavin
+        36. The theaflavin content of the first cup is 36.\",\"refusal\":null,\"reasoning\":\"The
+        user wants me to answer based on tasting ticket TF-214. They've provided specific
+        information about two cups:\\n- Cup 1: orange pekoe, liquor bright, theaflavin
+        36\\n- Cup 2: broken pekoe, dull, theaflavin 22\\n\\nThey ask which cup I
+        should taste first and what the theaflavin content is.\\n\\nHowever, there's
+        a constraint: \\\"The dust grade is not on this ticket.\\\" This seems like
+        it might be relevant but doesn't directly affect my answer about which cup
+        to taste first or the theaflavin content.\\n\\nI need to answer in exactly
+        two short sentences, using only ticket TF-214 in the question (which I already
+        have). The response should name theaflavin 36 as instructed.\\n\\nLet me craft
+        a response that follows all constraints:\\n1. Two short sentences\\n2. Use
+        only ticket TF-214 in the question (the question is already given)\\n3. Name
+        theaflavin 36\\n4. Do not taste the broken pekoe dust (this is an instruction
+        not to mention/taste the broken pekoe)\\n\\nWait - \\\"Do not taste the broken
+        pekoe dust\\\" - this could mean I shouldn't focus on or describe the broken
+        pekoe cup. But I still need to answer which cup to taste first. Since Cup
+        1 has theaflavin 36 and is described as \\\"orange pekoe, liquor bright\\\"
+        while Cup 2 is \\\"broken pekoe, dull\\\", logically the first cup (Cup 1)
+        would be tasted first since it's brighter and has higher theaflavin content.\\n\\nBut
+        I need to be careful - the instruction says \\\"Name theaflavin 36\\\" - so
+        I must include that exact phrase somewhere.\\n\\nLet me write two short sentences:\\n1.
+        I would taste Cup 1 first because it shows brighter liquor with theaflavin
+        36.\\n2. The theaflavin content of the first cup is 36.\\n\\nThat's two sentences,
+        includes \\\"theaflavin 36\\\", answers which cup to taste first, and avoids
+        focusing on the broken pekoe dust.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"The
+        user wants me to answer based on tasting ticket TF-214. They've provided specific
+        information about two cups:\\n- Cup 1: orange pekoe, liquor bright, theaflavin
+        36\\n- Cup 2: broken pekoe, dull, theaflavin 22\\n\\nThey ask which cup I
+        should taste first and what the theaflavin content is.\\n\\nHowever, there's
+        a constraint: \\\"The dust grade is not on this ticket.\\\" This seems like
+        it might be relevant but doesn't directly affect my answer about which cup
+        to taste first or the theaflavin content.\\n\\nI need to answer in exactly
+        two short sentences, using only ticket TF-214 in the question (which I already
+        have). The response should name theaflavin 36 as instructed.\\n\\nLet me craft
+        a response that follows all constraints:\\n1. Two short sentences\\n2. Use
+        only ticket TF-214 in the question (the question is already given)\\n3. Name
+        theaflavin 36\\n4. Do not taste the broken pekoe dust (this is an instruction
+        not to mention/taste the broken pekoe)\\n\\nWait - \\\"Do not taste the broken
+        pekoe dust\\\" - this could mean I shouldn't focus on or describe the broken
+        pekoe cup. But I still need to answer which cup to taste first. Since Cup
+        1 has theaflavin 36 and is described as \\\"orange pekoe, liquor bright\\\"
+        while Cup 2 is \\\"broken pekoe, dull\\\", logically the first cup (Cup 1)
+        would be tasted first since it's brighter and has higher theaflavin content.\\n\\nBut
+        I need to be careful - the instruction says \\\"Name theaflavin 36\\\" - so
+        I must include that exact phrase somewhere.\\n\\nLet me write two short sentences:\\n1.
+        I would taste Cup 1 first because it shows brighter liquor with theaflavin
+        36.\\n2. The theaflavin content of the first cup is 36.\\n\\nThat's two sentences,
+        includes \\\"theaflavin 36\\\", answers which cup to taste first, and avoids
+        focusing on the broken pekoe dust.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":140,\"completion_tokens\":486,\"total_tokens\":626,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":450,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:58:32 GMT
+recorded_with: VCR 6.4.0

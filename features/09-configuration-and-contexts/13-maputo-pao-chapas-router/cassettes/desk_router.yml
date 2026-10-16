@@ -1,0 +1,134 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the outgoing oven clerk at Padaria da Beira in Maputo.\nAnswer in two
+        short sentences.\nUse only the overnight boards in the question.\nName 07:05
+        and the oven.\nDo not invent a loaf count."},{"role":"user","content":"Overnight
+        handover at Padaria da Beira, Wednesday night 14 October 2026.\nBakery street:
+        Avenida 24 de Julho, Maputo.\nFirst bake 00:40, 76 pão da Beira.\nSecond bake
+        07:05, 11 pão de ló.\nOven card: wood low, oven running, door 3 minutes.\nSugar
+        bin: closed.\nWhen is the second bake, and is the oven running?"}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
+    headers:
+      X-Maputo-Desk:
+      - padaria-overnight
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://www.cmmaputo.gov.mz/
+      X-Openrouter-Title:
+      - Padaria da Beira oven desk
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:58:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115934-yfupsMTPTNopxMHiwF1v
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b376113bf1e102-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n{\"id\":\"gen-1792115934-yfupsMTPTNopxMHiwF1v\",\"object\":\"chat.completion\",\"created\":1792115934,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"The
+        second bake is at 07:05, and the oven is running.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":175,\"completion_tokens\":19,\"total_tokens\":194,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:59:16 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the rank clerk at Terminal da Junta in Maputo.\nAnswer in two short sentences.\nUse
+        only the fare card in the question.\nName chapas 42 and 12.\nDo not invent
+        a fare."},{"role":"user","content":"Morning fare card for Wednesday 14 October
+        2026, Terminal da Junta.\nRank page: https://www.cmmaputo.gov.mz/transportes.\nPosted
+        fare 12 meticais.\nChapas 42 to Costa do Sol, lot JUN-314.\nWrite the log
+        line for the rank office."}],"stream":false,"temperature":0.2,"max_tokens":512,"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://www.cmmaputo.gov.mz/transportes
+      X-Openrouter-Title:
+      - Terminal da Junta chapas rank
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:59:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792115956-8hlNmyKmnvnaztZp4lsR
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b37698ef9768f1-PDX
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n\n         \n\n         \n\n         \n\n         \n\n
+        \        \n\n         \n{\"id\":\"gen-1792115956-8hlNmyKmnvnaztZp4lsR\",\"object\":\"chat.completion\",\"created\":1792115956,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Morning
+        fare card for Wednesday 14 October 2026, Terminal da Junta.  \\nChapas 42
+        to Costa do Sol, lot JUN-314: 12 meticais.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":134,\"completion_tokens\":48,\"total_tokens\":182,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 01:59:55 GMT
+recorded_with: VCR 6.4.0

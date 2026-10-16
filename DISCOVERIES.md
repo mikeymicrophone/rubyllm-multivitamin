@@ -430,13 +430,13 @@ Shown in [Uppsala Linnaeus family](features/08-models-and-providers/12-uppsala-l
 
 ### Provider headers win over with_headers
 
-**What happens.** `with_headers("HTTP-Referer" => "https://www.portoftacoma.com/", "X-Point-Wilson-Watch" => "overnight-kelp-ledge")` stores both on `chat.headers`. The cassette request still sends the configured `openrouter_app_url` as `HTTP-Referer` (`https://www.nps.gov/places/point-wilson-lighthouse.htm`). `X-Point-Wilson-Watch` is on the wire. Faraday merges chat headers first, then `OpenRouter#headers`, so `Authorization`, `HTTP-Referer`, and `X-OpenRouter-Title` cannot be replaced.
+**What happens.** `with_headers("HTTP-Referer" => "https://www.sienatours.it/", "X-Siena-Watch" => "overnight-drappellone")` stores both on `chat.headers`. The cassette request still sends the configured `openrouter_app_url` as `HTTP-Referer` (`https://www.comune.siena.it/`). `X-Siena-Watch` is on the wire. Faraday merges chat headers first, then `OpenRouter#headers`, so `Authorization`, `HTTP-Referer`, and `X-OpenRouter-Title` cannot be replaced.
 
 **Why it matters.** A tenant that tries to swap the attribution URL from the chat object never changes what OpenRouter records.
 
 **What to do.** Set `openrouter_app_url` and `openrouter_app_name` on the context or global config. Use `with_headers` only for names the provider does not already send.
 
-Shown in [Point Wilson attribution headers](features/09-configuration-and-contexts/01-point-wilson-attribution/).
+Shown in [Siena Palio attribution headers](features/09-configuration-and-contexts/01-siena-palio-attribution/).
 
 ### Chat has with_provider_options, not with_params
 
@@ -446,17 +446,17 @@ Shown in [Point Wilson attribution headers](features/09-configuration-and-contex
 
 **What to do.** Call `with_provider_options` for extra request fields. Call `with_temperature` for sampling.
 
-Shown in [Port Townsend sampling and params](features/09-configuration-and-contexts/09-port-townsend-sampling/).
+Shown in [Asunción harp sampling and params](features/09-configuration-and-contexts/09-asuncion-harp-sampling/).
 
 ### RubyLLM.logger is memoized from the first Logger it builds
 
 **What happens.** `RubyLLM.logger` is `@logger ||= config.logger || Logger.new(config.log_file, ...)`. After that memo is filled, assigning `config.logger` to a new `StringIO` Logger does not change `RubyLLM.logger`. Faraday's connection cache keys on that memoized object, so request logs keep going to the first Logger. Clearing `RubyLLM.instance_variable_set(:@logger, nil)` makes the next read pick up `config.logger`. Connection settings also include the Logger, so a new Logger gets a new Faraday connection.
 
-**Why it matters.** A station desk that reconfigures `logger` mid-process, or a test that sets a `StringIO` after an earlier example already chatted, never sees those lines.
+**Why it matters.** A fab desk that reconfigures `logger` mid-process, or a test that sets a `StringIO` after an earlier example already chatted, never sees those lines.
 
 **What to do.** Set `config.logger` before the first request. If a later block needs a different IO, clear the memo. Restore `File::NULL` and clear the memo when a test finishes so later examples are not flooded.
 
-Shown in [Smith Island logger](features/09-configuration-and-contexts/06-smith-island-logger/).
+Shown in [Kaohsiung wafer-fab logger](features/09-configuration-and-contexts/06-kaohsiung-fab-logger/).
 
 ### ConfigurationError is not a RubyLLM::Error
 
@@ -466,7 +466,7 @@ Shown in [Smith Island logger](features/09-configuration-and-contexts/06-smith-i
 
 **What to do.** Rescue `RubyLLM::ConfigurationError` on its own. Treat it as a local setup miss, not a provider response.
 
-Shown in [Bell buoy empty context](features/09-configuration-and-contexts/12-bell-buoy-empty-context/).
+Shown in [Nouakchott clinic spare radio](features/09-configuration-and-contexts/12-nouakchott-clinic-radio/).
 
 ## Rails integration
 
@@ -773,9 +773,9 @@ Shown in [Sequim search context](features/18-provider-tools-and-citations/02-seq
 
 **Why it matters.** Turning the flag on does not make OpenAI cite the attached card. A watch that requires `citations.any?` after a PDF ask will fail even when the clerk copied the figures.
 
-**What to do.** Read the content. Use Anthropic, Cohere, or Bedrock Converse when document citations must be filled. Use web search or file search when this catalog needs `Citation` objects on OpenAI. Clear `@logger` after pointing `config.logger` at a StringIO, the same way Smith Island does.
+**What to do.** Read the content. Use Anthropic, Cohere, or Bedrock Converse when document citations must be filled. Use web search or file search when this catalog needs `Citation` objects on OpenAI. Clear `@logger` after pointing `config.logger` at a StringIO, the same way the Kaohsiung fab logger does.
 
-Shown in [Protection Island PDF citations](features/18-provider-tools-and-citations/03-protection-island-pdf-citations/). See also [Smith Island logger](features/09-configuration-and-contexts/06-smith-island-logger/).
+Shown in [Protection Island PDF citations](features/18-provider-tools-and-citations/03-protection-island-pdf-citations/). See also [Kaohsiung wafer-fab logger](features/09-configuration-and-contexts/06-kaohsiung-fab-logger/).
 
 ### SearchResults becomes JSON; OpenAI does not cite it
 
