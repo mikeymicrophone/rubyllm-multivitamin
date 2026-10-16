@@ -504,33 +504,33 @@ Shown in [Antofagasta flash-furnace cancel](features/10-rails-integration/12-ant
 
 ### Replacing instructions appends the new system message at the end
 
-**What happens.** After a morning ask, `chat.messages` is `[:system, :user, :assistant]`. A second `with_instructions` without `append:` rejects the morning system message and `<<` the afternoon one. The Ruby roles are then `[:user, :assistant, :system]`. On OpenAI Responses the encoder still lifts that last system text into `instructions`. The second request contains `afternoon standing orders` and does not contain `morning standing orders`. The 18.4 ft sill from the first user turn is still in `input`.
+**What happens.** After a morning ask, `chat.messages` is `[:system, :user, :assistant]`. A second `with_instructions` without `append:` rejects the morning system message and `<<` the afternoon one. The Ruby roles are then `[:user, :assistant, :system]`. On OpenAI Responses the encoder still lifts that last system text into `instructions`. On OpenRouter Chat Completions the afternoon text is a `"role":"system"` message. The second request contains `afternoon standing orders` and does not contain `morning standing orders`. The 18.4 kg tesserae bin from the first user turn is still on the wire.
 
 **Why it matters.** A watch that reads `messages.first` after a swap no longer has the standing orders. A cassette check that expects `input[0]` to be `system` will miss the replacement.
 
 **What to do.** After a replace, read system messages with `messages.select { |m| m.role == :system }`, not `messages.first`. On Responses, assert the `instructions` field.
 
-Shown in [Bremerton afternoon relief](features/11-instructions-and-history/08-bremerton-afternoon-relief/).
+Shown in [Amman mosaic afternoon relief](features/11-instructions-and-history/08-amman-mosaic-relief/).
 
 ### Two system messages join with a blank line on Responses
 
-**What happens.** `append: true` leaves two `:system` entries on `chat.messages`. The Cape Disappointment request sends both texts in one `instructions` string, joined by `\n\n`. `input` starts with the user visibility card. There is no second `role: system` item.
+**What happens.** `append: true` leaves two `:system` entries on `chat.messages`. An OpenAI Responses request sends both texts in one `instructions` string, joined by `\n\n`, and `input` starts with the user humidity card. An OpenRouter Chat Completions request sends two `"role":"system"` messages. There is no joined `instructions` field on that protocol.
 
 **Why it matters.** A Chat Completions check that counts `"role":"system"` on the wire will count zero on this protocol even though `chat.messages` has two system turns.
 
 **What to do.** Assert the two texts and the `\n\n` join in `instructions`. Read the count from `chat.messages`.
 
-Shown in [Cape Disappointment horn rule appended](features/11-instructions-and-history/02-cape-disappointment-horn-append/).
+Shown in [Coimbra fado humidity rule appended](features/11-instructions-and-history/02-coimbra-fado-append/).
 
 ### add_message seeds a turn without an HTTP call
 
-**What happens.** `add_message(role: :user)` and `add_message(role: :assistant)` append last watch's ladder card. `ask` then makes the only request. That request body contains the seeded `8 steps` and Calder's `9 steps`. The cassette has one interaction.
+**What happens.** `add_message(role: :user)` and `add_message(role: :assistant)` append last watch's bellows card. `ask` then makes the only request. That request body contains the seeded `8 folds` and Sigrid's `9 folds`. The cassette has one interaction.
 
 **Why it matters.** A test that expects one round-trip per transcript turn will fail. The seeded assistant text is on the wire before the model speaks.
 
 **What to do.** Seed with `add_message` when the desk already has a written card. Count HTTP calls from the cassette, not from `chat.messages.length`.
 
-Shown in [Neah Bay seeded ladder card](features/11-instructions-and-history/10-neah-bay-seeded-ladder/).
+Shown in [Trondheim seeded bellows card](features/11-instructions-and-history/10-trondheim-bellows-seed/).
 
 ## Tokens and cost
 
