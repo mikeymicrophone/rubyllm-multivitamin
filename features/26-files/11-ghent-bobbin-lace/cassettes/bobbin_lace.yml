@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"lace-lot.jsonl\"\r\nContent-Length: 197\r\nContent-Type:
+        application/jsonl\r\nContent-Transfer-Encoding: binary\r\n\r\n{\"custom_id\":\"ghent-lace-1\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":\"Ghent
+        bobbin-lace pillow GNT-2026-1016-L6, 24 pairs, Lille ground, Els starts at
+        08:50.\"}}\n\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"purpose\"\r\n\r\nbatch\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
+      Content-Length:
+      - '610'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Request-Id:
+      - req_371e92850c764ecdadf558aaa58e9c6f
+      Openai-Processing-Ms:
+      - '310'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b6a9d02fd7d63d-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "object": "file",
+          "id": "file-LrNDvTa1TRdj5LT8X8uE1Z",
+          "purpose": "batch",
+          "filename": "lace-lot.jsonl",
+          "bytes": 197,
+          "created_at": 1792149512,
+          "expires_at": 1794741512,
+          "status": "processed",
+          "status_details": null
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:33 GMT
+- request:
+    method: get
+    uri: https://api.openai.com/v1/files/file-LrNDvTa1TRdj5LT8X8uE1Z/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept:
+      - application/octet-stream
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:33 GMT
+      Content-Type:
+      - application/octet-stream
+      Content-Length:
+      - '197'
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Content-Disposition:
+      - attachment; filename="lace-lot.jsonl"
+      X-Request-Id:
+      - req_8a0a811f7f244172b6b9322da447417b
+      Openai-Processing-Ms:
+      - '112'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b6a9d89ba72869-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"custom_id":"ghent-lace-1","method":"POST","url":"/v1/responses","body":{"model":"gpt-4.1-mini","input":"Ghent
+        bobbin-lace pillow GNT-2026-1016-L6, 24 pairs, Lille ground, Els starts at
+        08:50."}}
+
+        '
+  recorded_at: Fri, 16 Oct 2026 11:18:33 GMT
+recorded_with: VCR 6.4.0

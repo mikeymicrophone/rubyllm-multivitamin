@@ -5,7 +5,7 @@
 # Teaches:
 # - tokens.cache_write_by_ttl is the Anthropic split. OpenAI omits it.
 # - A nil split is not {}. positive_counts drops empty hashes.
-# - Read cache_write beside the split.
+# - Read cache_write beside the split. ttl: is slot 02.
 
 require "logger"
 require "ruby_llm"
@@ -40,7 +40,7 @@ module WroclawNadodrzeNeon
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_caching(ttl: "1h")
+      chat.with_caching
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)

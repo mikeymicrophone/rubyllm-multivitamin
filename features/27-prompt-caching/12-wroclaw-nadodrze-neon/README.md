@@ -1,14 +1,14 @@
 # Prompt caching · 12 · Wrocław Nadodrze neon
 
-The neon clerk in Wrocław asks for a one-hour cache write. Marek lights
-at 19:45. OpenAI reports `cache_read` and omits `cache_write_by_ttl`.
-That split is Anthropic.
+The neon clerk in Wrocław turns automatic caching on. Marek lights at
+19:45. OpenAI reports `cache_read` and omits `cache_write_by_ttl`. That
+split is Anthropic.
 
 **What it teaches**
 
 - `tokens.cache_write_by_ttl` is nil when the provider does not split.
 - A nil split is not `{}`.
-- Read `cache_write` beside the split.
+- Read `cache_write` beside the split. `ttl:` is slot 02.
 
 **Files**
 

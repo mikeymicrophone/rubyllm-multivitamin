@@ -6,7 +6,7 @@ Official reference: [Files](https://rubyllm.com/files/).
 
 ## Models
 
-This catalog records OpenAI Files with `purpose: "user_data"` or `"batch"`, and `gpt-4.1-mini` when a chat reads the file. Anthropic, Gemini, Vertex, Mistral, and DeepSeek need keys or buckets this catalog does not have. OpenAI's inline PDF limit is 50 MiB, so a small mill card stays `file_data` even with automatic uploads on. Checked 16 October 2026.
+This catalog records OpenAI Files with `purpose: "user_data"` or `"batch"`, and `gpt-4.1-mini` when a chat reads the file. Anthropic, Gemini, Vertex, Mistral, and DeepSeek need keys or buckets this catalog does not have. OpenAI's inline PDF limit is 50 MiB, so a small mill card stays `file_data` even with automatic uploads on. OpenAI will not download `purpose: "user_data"` or `"assistants"`; a `batch` jsonl will. Checked 16 October 2026.
 
 ## Examples (13 of 13 bottled)
 
@@ -31,15 +31,15 @@ This catalog records OpenAI Files with `purpose: "user_data"` or `"batch"`, and 
 | 01 | Upload PDF, then `ask` with the `UploadedFile` |
 | 02 | `purpose: "batch"` jsonl, no batch job |
 | 03 | `expires_in:` one day |
-| 04 | `find` and `download` / `save` |
+| 04 | `find` works; `user_data` download is HTTP 400 |
 | 05 | Auto-upload on, small PDF stays inline |
 | 06 | `auto_upload_large_files = false` |
 | 07 | One upload, two asks |
 | 08 | One-hour expiry, `expired?` false |
 | 09 | IO plus `filename:` |
 | 10 | Missing `purpose:` HTTP 400 |
-| 11 | Download bytes keep the mill copy |
-| 12 | CSV round-trip |
-| 13 | Capstone: upload, find, ask, download |
+| 11 | `purpose: "batch"` jsonl download keeps the mill copy |
+| 12 | CSV `user_data` upload and `find` |
+| 13 | Capstone: upload, find, ask, `user_data` download 400 |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

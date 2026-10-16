@@ -1,13 +1,14 @@
 # Files · 13 · Salta empanada press
 
-The press clerk in Salta uploads the morning card, finds it, asks about
-Ines, and downloads the bytes. Lot SLA-2026-1016-E2 still folds at 07:05.
+The press clerk in Salta uploads the morning card, finds it, and asks
+about Ines. Lot SLA-2026-1016-E2 still folds at 07:05. Downloading the
+`user_data` card is HTTP 400.
 
 **What it teaches**
 
-- Capstone: upload, find, ask, download.
+- Capstone: upload, find, ask, download 400.
 - Four HTTP calls.
-- The mill copy and the brief agree on the lot code.
+- The brief names the lot; the bytes stay on the mill.
 
 **Files**
 
@@ -16,7 +17,7 @@ Ines, and downloads the bytes. Lot SLA-2026-1016-E2 still folds at 07:05.
 | [`empanada_press.rb`](empanada_press.rb) | Runs the desk |
 | [`empanada_press_test.rb`](empanada_press_test.rb) | Checks the four calls |
 | [`empanada-press.pdf`](empanada-press.pdf) | The press card |
-| [`cassettes/empanada_press.yml`](cassettes/empanada_press.yml) | Files, find, Responses, download |
+| [`cassettes/empanada_press.yml`](cassettes/empanada_press.yml) | Files, find, Responses, download 400 |
 
 **Try it**
 

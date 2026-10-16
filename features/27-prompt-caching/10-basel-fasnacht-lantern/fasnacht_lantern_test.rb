@@ -7,7 +7,7 @@ require_relative "fasnacht_lantern"
 class BaselFasnachtLanternShortPrefixTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/fasnacht_lantern.yml", __dir__)
 
-  def test_a_short_prefix_still_asks_for_a_five_minute_write
+  def test_a_short_prefix_reports_a_zero_read
     result = nil
     Multivitamin::Cassettes.play(__dir__, "fasnacht_lantern") do
       result = BaselFasnachtLantern::FasnachtLantern.conduct
@@ -15,7 +15,7 @@ class BaselFasnachtLanternShortPrefixTest < Minitest::Test
 
     assert_includes result.brief, "Elsa"
     assert_includes result.brief, "14:10"
-    assert_includes request_body, '"ttl":"5m"'
+    refute_includes request_body, "prompt_cache_options"
     assert_kind_of Integer, result.cache_read
     assert_equal 0, result.cache_read
     assert_operator result.input_tokens, :<, 200

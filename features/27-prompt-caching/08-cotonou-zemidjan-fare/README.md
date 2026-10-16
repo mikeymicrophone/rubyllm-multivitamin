@@ -2,13 +2,14 @@
 
 The zémidjan clerk in Cotonou keeps the standing order on a persisted
 fare log. Koffi starts at 06:40. Rails stores `cache_until_here` and
-`cache_ttl` on the system row.
+`cache_ttl`. `with_caching(false)` keeps the breakpoint off the wire, so
+`gpt-4.1-mini` still answers.
 
 **What it teaches**
 
 - `with_instructions(..., cache_until_here: { ttl: "1h" })` on `acts_as_chat`.
 - Reload the log; the ttl is still `"1h"`.
-- The request still carries `prompt_cache_breakpoint`.
+- The request does not carry `prompt_cache_breakpoint`.
 
 **Files**
 

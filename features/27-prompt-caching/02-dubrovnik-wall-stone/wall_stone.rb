@@ -3,9 +3,9 @@
 # Prompt caching · 02 · Dubrovnik wall stone
 #
 # Teaches:
-# - with_caching(ttl: "1h") and ttl: "5m" send prompt_cache_options.
-# - A longer write can cost more. The mill picks the lifetime.
-# - Two chats, two TTLs, one cassette.
+# - with_caching(ttl: "1h") and ttl: "30m" send prompt_cache_options.
+# - gpt-4.1-mini rejects 1h as an invalid value (only 30m is listed).
+# - It then rejects 30m: prompt_cache_options is not supported on this model.
 
 require "logger"
 require "ruby_llm"
@@ -26,15 +26,15 @@ module DubrovnikWallStone
 
     BOARD = "Board: Luka sets block DBV-2026-1016-W2 at 08:40. When does Luka set?"
 
-    Result = Struct.new(:hour_brief, :five_brief, keyword_init: true)
+    Result = Struct.new(:hour_error, :half_error, keyword_init: true)
 
     def self.conduct
       configure
 
-      hour = ask_with(ttl: "1h")
-      five = ask_with(ttl: "5m")
-
-      Result.new(hour_brief: hour.content, five_brief: five.content)
+      Result.new(
+        hour_error: ask_with(ttl: "1h"),
+        half_error: ask_with(ttl: "30m")
+      )
     end
 
     def self.ask_with(ttl:)
@@ -44,6 +44,9 @@ module DubrovnikWallStone
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat.ask(BOARD)
+      nil
+    rescue RubyLLM::BadRequestError => raised
+      raised
     end
 
     def self.configure
@@ -64,6 +67,6 @@ if $PROGRAM_NAME == __FILE__
     result = DubrovnikWallStone::WallStone.conduct
   end
 
-  puts result.hour_brief
-  puts result.five_brief
+  puts result.hour_error.message
+  puts result.half_error.message
 end

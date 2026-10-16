@@ -3,9 +3,9 @@
 # Prompt caching · 10 · Basel Fasnacht lantern
 #
 # Teaches:
-# - A prefix under the provider minimum still sends prompt_cache_options.
+# - A prefix under the provider minimum still turns automatic caching on.
 # - tokens.cache_read can be 0. A miss is not an error.
-# - Do not pad the standing order just to force a hit.
+# - Do not pad the standing order just to force a hit. ttl: is slot 02.
 
 require "logger"
 require "ruby_llm"
@@ -28,7 +28,7 @@ module BaselFasnachtLantern
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_caching(ttl: "5m")
+      chat.with_caching
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)

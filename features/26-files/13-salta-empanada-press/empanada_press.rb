@@ -3,9 +3,9 @@
 # Files · 13 · Salta empanada press
 #
 # Teaches:
-# - Capstone: upload, find, ask, download.
+# - Capstone: upload, find, ask, then download of user_data 400s.
 # - The press card names Ines and SLA-2026-1016-E2.
-# - Four HTTP calls: Files POST, GET metadata, Responses, GET content.
+# - Four HTTP calls: Files POST, GET metadata, Responses, GET content 400.
 
 require "logger"
 require "ruby_llm"
@@ -24,7 +24,7 @@ module SaltaEmpanadaPress
 
     QUESTION = "Which lot is on the press card, and when does Ines fold? One sentence."
 
-    Result = Struct.new(:file_id, :found_id, :brief, :blob, keyword_init: true)
+    Result = Struct.new(:file_id, :found_id, :brief, :download_error, keyword_init: true)
 
     def self.conduct
       configure
@@ -36,13 +36,18 @@ module SaltaEmpanadaPress
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       brief = chat.ask(QUESTION, with: file)
-      downloaded = RubyLLM.download(file.id, provider: :openai)
+      download_error = nil
+      begin
+        RubyLLM.download(file.id, provider: :openai)
+      rescue RubyLLM::Error => raised
+        download_error = raised
+      end
 
       Result.new(
         file_id: file.id,
         found_id: found.id,
         brief: brief.content,
-        blob: downloaded.to_s
+        download_error: download_error
       )
     end
 
@@ -66,4 +71,5 @@ if $PROGRAM_NAME == __FILE__
 
   puts result.file_id
   puts result.brief
+  puts result.download_error.class
 end

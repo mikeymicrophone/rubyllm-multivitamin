@@ -13,11 +13,14 @@ class DubrovnikWallStoneTtlTest < Minitest::Test
       result = DubrovnikWallStone::WallStone.conduct
     end
 
-    assert_includes result.hour_brief, "Luka"
-    assert_includes result.five_brief, "08:40"
+    assert_instance_of RubyLLM::BadRequestError, result.hour_error
+    assert_instance_of RubyLLM::BadRequestError, result.half_error
+    assert_match(/Invalid value: '1h'/, result.hour_error.message)
+    assert_match(/30m/, result.hour_error.message)
+    assert_match(/prompt_cache_options is not supported/i, result.half_error.message)
     assert_equal 2, interactions.length
     assert_includes request_body(0), '"ttl":"1h"'
-    assert_includes request_body(1), '"ttl":"5m"'
+    assert_includes request_body(1), '"ttl":"30m"'
   end
 
   def test_cassette_does_not_carry_a_live_key

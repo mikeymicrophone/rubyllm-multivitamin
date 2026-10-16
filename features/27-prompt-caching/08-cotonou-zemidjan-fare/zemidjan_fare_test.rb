@@ -19,7 +19,8 @@ class CotonouZemidjanFareRailsTest < Minitest::Test
     assert_equal "1h", result.cache_ttl
     assert_equal "1h", result.reloaded_ttl
     assert_equal 1, result.system_count
-    assert_includes request_body, "prompt_cache_breakpoint"
+    refute_includes request_body, "prompt_cache_breakpoint"
+    refute_includes request_body, "prompt_cache_options"
   end
 
   def test_cassette_does_not_carry_a_live_key

@@ -3,9 +3,9 @@
 # Prompt caching · 13 · Kutaisi qvevri clay
 #
 # Teaches:
-# - Capstone: ttl, key, an explicit breakpoint, and a second ask.
+# - Capstone: named key, automatic caching, and a second ask.
 # - cache_read on the follow-up is an Integer. Zero is legal.
-# - The cassette is two Responses POSTs.
+# - ttl, mode, and breakpoint 400 on this slug; those are earlier slots.
 
 require "logger"
 require "ruby_llm"
@@ -44,8 +44,8 @@ module KutaisiQvevriClay
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_caching(ttl: "1h", key: CACHE_KEY, mode: "explicit")
-      chat.with_instructions(INSTRUCTIONS).cache_until_here(ttl: "1h")
+      chat.with_caching(key: CACHE_KEY)
+      chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       opening = chat.ask(BOARD)

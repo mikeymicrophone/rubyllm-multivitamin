@@ -164,7 +164,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Moderation (recorded) | no OpenRouter moderation operation | bottled on OpenAI `omni-moderation-latest`; pin `omni-moderation-2024-09-26` with `model:` or a context. `LIVE_PROVIDER` does not retarget moderation |
 | Reranking (recorded) | `voyageai/rerank-2.5-lite` on OpenRouter | `voyageai/rerank-2.5` on OpenRouter; OpenAI has no rerank API. `LIVE_PROVIDER` does not retarget rerank |
 | Files (recorded) | no `:free` Files API | bottled on OpenAI Files (`purpose: "user_data"` or `"batch"`) plus `gpt-4.1-mini` when a chat reads the file. `LIVE_PROVIDER` does not retarget Files |
-| Prompt caching (recorded) | OpenAI `gpt-4.1-mini` with `with_caching` | Gemini `CachedContent` needs `GEMINI_API_KEY`; Anthropic `cache_write_by_ttl` needs `ANTHROPIC_API_KEY`. Empty `with_caching` sends no `prompt_cache_options` unless `ttl:`, `key:`, or `mode:` is set |
+| Prompt caching (recorded) | OpenAI `gpt-4.1-mini` with empty `with_caching` and `with_caching(key:)` | That slug rejects `prompt_cache_options` and `prompt_cache_breakpoint`. `ttl: "1h"` 400s as invalid (only `30m` is listed). Gemini `CachedContent` needs `GEMINI_API_KEY` |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise

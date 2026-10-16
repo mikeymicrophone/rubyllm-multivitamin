@@ -1,20 +1,20 @@
 # Prompt caching · 11 · Tampere Finlayson card
 
-The mill clerk at Finlayson in Tampere is an agent with a one-hour
-caching macro. Aino counts at 07:00.
+The mill clerk at Finlayson in Tampere is an agent with a caching macro
+and no extra options. Aino counts at 07:00.
 
 **What it teaches**
 
-- `caching ttl: "1h"` on `RubyLLM::Agent` maps onto `Chat#with_caching`.
+- `caching` on `RubyLLM::Agent` maps onto `Chat#with_caching`.
 - `Agent.new.ask` runs that setup.
-- The request body has `prompt_cache_options.ttl`.
+- Empty caching sends no `prompt_cache_options`. `ttl:` is slot 02.
 
 **Files**
 
 | File | Role |
 | --- | --- |
 | [`finlayson_card.rb`](finlayson_card.rb) | Declares the agent, then asks |
-| [`finlayson_card_test.rb`](finlayson_card_test.rb) | Checks Aino and the ttl |
+| [`finlayson_card_test.rb`](finlayson_card_test.rb) | Checks Aino and the missing options |
 | [`cassettes/finlayson_card.yml`](cassettes/finlayson_card.yml) | One Responses POST |
 
 **Try it**

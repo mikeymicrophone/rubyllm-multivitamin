@@ -1,0 +1,467 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Nour
+        starts block LXR-2026-1016-A3 at 07:15. When does Nour start?"}],"instructions":"You
+        are the mill clerk at an alabaster workshop in Luxor.\nLuxor alabaster standing
+        order 1: rack 1 holds block LXR-2026-1016-A1, weigh at 02:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 2: rack 2 holds
+        block LXR-2026-1016-A2, weigh at 03:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 3: rack 3 holds block LXR-2026-1016-A3,
+        weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 4: rack 4 holds block LXR-2026-1016-A4, weigh at 05:10, do
+        not mix the Nile silt with the calcite. Luxor alabaster standing order 5:
+        rack 5 holds block LXR-2026-1016-A5, weigh at 06:10, do not mix the Nile silt
+        with the calcite. Luxor alabaster standing order 6: rack 6 holds block LXR-2026-1016-A6,
+        weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 7: rack 7 holds block LXR-2026-1016-A7, weigh at 08:10, do
+        not mix the Nile silt with the calcite. Luxor alabaster standing order 8:
+        rack 8 holds block LXR-2026-1016-A8, weigh at 09:10, do not mix the Nile silt
+        with the calcite. Luxor alabaster standing order 9: rack 9 holds block LXR-2026-1016-A9,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 10: rack 10 holds block LXR-2026-1016-A10, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        11: rack 11 holds block LXR-2026-1016-A11, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 12: rack 12 holds
+        block LXR-2026-1016-A12, weigh at 01:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 13: rack 13 holds block LXR-2026-1016-A13,
+        weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 14: rack 14 holds block LXR-2026-1016-A14, weigh at 03:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        15: rack 15 holds block LXR-2026-1016-A15, weigh at 04:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 16: rack 16 holds
+        block LXR-2026-1016-A16, weigh at 05:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 17: rack 17 holds block LXR-2026-1016-A17,
+        weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 18: rack 18 holds block LXR-2026-1016-A18, weigh at 07:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        19: rack 19 holds block LXR-2026-1016-A19, weigh at 08:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 20: rack 20 holds
+        block LXR-2026-1016-A20, weigh at 09:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 21: rack 21 holds block LXR-2026-1016-A21,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 22: rack 22 holds block LXR-2026-1016-A22, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        23: rack 23 holds block LXR-2026-1016-A23, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 24: rack 24 holds
+        block LXR-2026-1016-A24, weigh at 01:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 25: rack 25 holds block LXR-2026-1016-A25,
+        weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 26: rack 26 holds block LXR-2026-1016-A26, weigh at 03:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        27: rack 27 holds block LXR-2026-1016-A27, weigh at 04:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 28: rack 28 holds
+        block LXR-2026-1016-A28, weigh at 05:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 29: rack 29 holds block LXR-2026-1016-A29,
+        weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 30: rack 30 holds block LXR-2026-1016-A30, weigh at 07:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        31: rack 31 holds block LXR-2026-1016-A31, weigh at 08:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 32: rack 32 holds
+        block LXR-2026-1016-A32, weigh at 09:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 33: rack 33 holds block LXR-2026-1016-A33,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 34: rack 34 holds block LXR-2026-1016-A34, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        35: rack 35 holds block LXR-2026-1016-A35, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 36: rack 36 holds
+        block LXR-2026-1016-A36, weigh at 01:10, do not mix the Nile silt with the
+        calcite.\nAnswer in one short sentence from the board only.\nName Nour and
+        07:15.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6aa124bda0db7-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '739'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998328'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 50ms
+      X-Request-Id:
+      - req_188cc0f2731d4510a096199546419b2c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0883076af9b3efb6016ad208125d4487d2ba7e11ebe9969b98",
+          "object": "response",
+          "created_at": 1792149522,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149523,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the mill clerk at an alabaster workshop in Luxor.\nLuxor alabaster standing order 1: rack 1 holds block LXR-2026-1016-A1, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 2: rack 2 holds block LXR-2026-1016-A2, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 3: rack 3 holds block LXR-2026-1016-A3, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 4: rack 4 holds block LXR-2026-1016-A4, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 5: rack 5 holds block LXR-2026-1016-A5, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 6: rack 6 holds block LXR-2026-1016-A6, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 7: rack 7 holds block LXR-2026-1016-A7, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 8: rack 8 holds block LXR-2026-1016-A8, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 9: rack 9 holds block LXR-2026-1016-A9, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 10: rack 10 holds block LXR-2026-1016-A10, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 11: rack 11 holds block LXR-2026-1016-A11, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 12: rack 12 holds block LXR-2026-1016-A12, weigh at 01:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 13: rack 13 holds block LXR-2026-1016-A13, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 14: rack 14 holds block LXR-2026-1016-A14, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 15: rack 15 holds block LXR-2026-1016-A15, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 16: rack 16 holds block LXR-2026-1016-A16, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 17: rack 17 holds block LXR-2026-1016-A17, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 18: rack 18 holds block LXR-2026-1016-A18, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 19: rack 19 holds block LXR-2026-1016-A19, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 20: rack 20 holds block LXR-2026-1016-A20, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 21: rack 21 holds block LXR-2026-1016-A21, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 22: rack 22 holds block LXR-2026-1016-A22, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 23: rack 23 holds block LXR-2026-1016-A23, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 24: rack 24 holds block LXR-2026-1016-A24, weigh at 01:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 25: rack 25 holds block LXR-2026-1016-A25, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 26: rack 26 holds block LXR-2026-1016-A26, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 27: rack 27 holds block LXR-2026-1016-A27, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 28: rack 28 holds block LXR-2026-1016-A28, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 29: rack 29 holds block LXR-2026-1016-A29, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 30: rack 30 holds block LXR-2026-1016-A30, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 31: rack 31 holds block LXR-2026-1016-A31, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 32: rack 32 holds block LXR-2026-1016-A32, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 33: rack 33 holds block LXR-2026-1016-A33, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 34: rack 34 holds block LXR-2026-1016-A34, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 35: rack 35 holds block LXR-2026-1016-A35, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 36: rack 36 holds block LXR-2026-1016-A36, weigh at 01:10, do not mix the Nile silt with the calcite.\nAnswer in one short sentence from the board only.\nName Nour and 07:15.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0883076af9b3efb6016ad20812d86887d2bbc9d74f6cac48a7",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Nour starts block LXR-2026-1016-A3 at 07:15."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1653,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 21,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1674
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:43 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Nour
+        starts block LXR-2026-1016-A3 at 07:15. When does Nour start?"},{"role":"assistant","content":[{"type":"output_text","text":"Nour
+        starts block LXR-2026-1016-A3 at 07:15."}]},{"role":"user","content":"Does
+        the standing order allow mixing Nile silt with the calcite? Answer No or Yes."}],"instructions":"You
+        are the mill clerk at an alabaster workshop in Luxor.\nLuxor alabaster standing
+        order 1: rack 1 holds block LXR-2026-1016-A1, weigh at 02:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 2: rack 2 holds
+        block LXR-2026-1016-A2, weigh at 03:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 3: rack 3 holds block LXR-2026-1016-A3,
+        weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 4: rack 4 holds block LXR-2026-1016-A4, weigh at 05:10, do
+        not mix the Nile silt with the calcite. Luxor alabaster standing order 5:
+        rack 5 holds block LXR-2026-1016-A5, weigh at 06:10, do not mix the Nile silt
+        with the calcite. Luxor alabaster standing order 6: rack 6 holds block LXR-2026-1016-A6,
+        weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 7: rack 7 holds block LXR-2026-1016-A7, weigh at 08:10, do
+        not mix the Nile silt with the calcite. Luxor alabaster standing order 8:
+        rack 8 holds block LXR-2026-1016-A8, weigh at 09:10, do not mix the Nile silt
+        with the calcite. Luxor alabaster standing order 9: rack 9 holds block LXR-2026-1016-A9,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 10: rack 10 holds block LXR-2026-1016-A10, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        11: rack 11 holds block LXR-2026-1016-A11, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 12: rack 12 holds
+        block LXR-2026-1016-A12, weigh at 01:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 13: rack 13 holds block LXR-2026-1016-A13,
+        weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 14: rack 14 holds block LXR-2026-1016-A14, weigh at 03:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        15: rack 15 holds block LXR-2026-1016-A15, weigh at 04:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 16: rack 16 holds
+        block LXR-2026-1016-A16, weigh at 05:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 17: rack 17 holds block LXR-2026-1016-A17,
+        weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 18: rack 18 holds block LXR-2026-1016-A18, weigh at 07:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        19: rack 19 holds block LXR-2026-1016-A19, weigh at 08:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 20: rack 20 holds
+        block LXR-2026-1016-A20, weigh at 09:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 21: rack 21 holds block LXR-2026-1016-A21,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 22: rack 22 holds block LXR-2026-1016-A22, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        23: rack 23 holds block LXR-2026-1016-A23, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 24: rack 24 holds
+        block LXR-2026-1016-A24, weigh at 01:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 25: rack 25 holds block LXR-2026-1016-A25,
+        weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 26: rack 26 holds block LXR-2026-1016-A26, weigh at 03:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        27: rack 27 holds block LXR-2026-1016-A27, weigh at 04:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 28: rack 28 holds
+        block LXR-2026-1016-A28, weigh at 05:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 29: rack 29 holds block LXR-2026-1016-A29,
+        weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 30: rack 30 holds block LXR-2026-1016-A30, weigh at 07:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        31: rack 31 holds block LXR-2026-1016-A31, weigh at 08:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 32: rack 32 holds
+        block LXR-2026-1016-A32, weigh at 09:10, do not mix the Nile silt with the
+        calcite. Luxor alabaster standing order 33: rack 33 holds block LXR-2026-1016-A33,
+        weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster
+        standing order 34: rack 34 holds block LXR-2026-1016-A34, weigh at 11:10,
+        do not mix the Nile silt with the calcite. Luxor alabaster standing order
+        35: rack 35 holds block LXR-2026-1016-A35, weigh at 12:10, do not mix the
+        Nile silt with the calcite. Luxor alabaster standing order 36: rack 36 holds
+        block LXR-2026-1016-A36, weigh at 01:10, do not mix the Nile silt with the
+        calcite.\nAnswer in one short sentence from the board only.\nName Nour and
+        07:15.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6aa17afe75316-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '498'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1996589'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 102ms
+      X-Request-Id:
+      - req_f473079108fd453eaddbd9b1cab7c7a6
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a36623eee72ca54016ad20813372087d2aba0f053a7e14bc9",
+          "object": "response",
+          "created_at": 1792149523,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149523,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the mill clerk at an alabaster workshop in Luxor.\nLuxor alabaster standing order 1: rack 1 holds block LXR-2026-1016-A1, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 2: rack 2 holds block LXR-2026-1016-A2, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 3: rack 3 holds block LXR-2026-1016-A3, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 4: rack 4 holds block LXR-2026-1016-A4, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 5: rack 5 holds block LXR-2026-1016-A5, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 6: rack 6 holds block LXR-2026-1016-A6, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 7: rack 7 holds block LXR-2026-1016-A7, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 8: rack 8 holds block LXR-2026-1016-A8, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 9: rack 9 holds block LXR-2026-1016-A9, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 10: rack 10 holds block LXR-2026-1016-A10, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 11: rack 11 holds block LXR-2026-1016-A11, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 12: rack 12 holds block LXR-2026-1016-A12, weigh at 01:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 13: rack 13 holds block LXR-2026-1016-A13, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 14: rack 14 holds block LXR-2026-1016-A14, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 15: rack 15 holds block LXR-2026-1016-A15, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 16: rack 16 holds block LXR-2026-1016-A16, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 17: rack 17 holds block LXR-2026-1016-A17, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 18: rack 18 holds block LXR-2026-1016-A18, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 19: rack 19 holds block LXR-2026-1016-A19, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 20: rack 20 holds block LXR-2026-1016-A20, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 21: rack 21 holds block LXR-2026-1016-A21, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 22: rack 22 holds block LXR-2026-1016-A22, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 23: rack 23 holds block LXR-2026-1016-A23, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 24: rack 24 holds block LXR-2026-1016-A24, weigh at 01:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 25: rack 25 holds block LXR-2026-1016-A25, weigh at 02:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 26: rack 26 holds block LXR-2026-1016-A26, weigh at 03:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 27: rack 27 holds block LXR-2026-1016-A27, weigh at 04:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 28: rack 28 holds block LXR-2026-1016-A28, weigh at 05:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 29: rack 29 holds block LXR-2026-1016-A29, weigh at 06:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 30: rack 30 holds block LXR-2026-1016-A30, weigh at 07:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 31: rack 31 holds block LXR-2026-1016-A31, weigh at 08:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 32: rack 32 holds block LXR-2026-1016-A32, weigh at 09:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 33: rack 33 holds block LXR-2026-1016-A33, weigh at 10:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 34: rack 34 holds block LXR-2026-1016-A34, weigh at 11:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 35: rack 35 holds block LXR-2026-1016-A35, weigh at 12:10, do not mix the Nile silt with the calcite. Luxor alabaster standing order 36: rack 36 holds block LXR-2026-1016-A36, weigh at 01:10, do not mix the Nile silt with the calcite.\nAnswer in one short sentence from the board only.\nName Nour and 07:15.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a36623eee72ca54016ad2081399e087d2aebe66d829943fe3",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1700,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 3,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1703
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:43 GMT
+recorded_with: VCR 6.4.0

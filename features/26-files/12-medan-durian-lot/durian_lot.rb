@@ -3,9 +3,9 @@
 # Files · 12 · Medan durian lot
 #
 # Teaches:
-# - A CSV mill sheet uploads as user_data and downloads as the same rows.
+# - A CSV mill sheet uploads as user_data.
+# - find reloads filename and byte_size. Download is slot 04.
 # - Mistral-generated CSV needs a key this catalog does not have.
-# - The round-trip keeps MDN-2026-1016-D9.
 
 require "logger"
 require "ruby_llm"
@@ -16,18 +16,20 @@ module MedanDurianLot
   class DurianLot
     SHEET = File.expand_path("durian-lot.csv", __dir__)
 
-    Result = Struct.new(:file_id, :filename, :blob, keyword_init: true)
+    Result = Struct.new(:file_id, :filename, :purpose, :byte_size, :found_id, keyword_init: true)
 
     def self.conduct
       configure
 
       file = RubyLLM.upload(SHEET, provider: :openai, purpose: "user_data")
-      downloaded = RubyLLM.download(file.id, provider: :openai)
+      found = RubyLLM::UploadedFile.find(file.id, provider: :openai)
 
       Result.new(
         file_id: file.id,
-        filename: file.filename,
-        blob: downloaded.to_s
+        filename: found.filename,
+        purpose: found.purpose,
+        byte_size: found.byte_size,
+        found_id: found.id
       )
     end
 
@@ -49,6 +51,5 @@ if $PROGRAM_NAME == __FILE__
     result = MedanDurianLot::DurianLot.conduct
   end
 
-  puts "#{result.file_id} #{result.filename}"
-  puts result.blob
+  puts "#{result.file_id} #{result.filename} #{result.purpose} #{result.byte_size}"
 end

@@ -4,8 +4,8 @@
 #
 # Teaches:
 # - cache_until_here marks the instructions as an explicit breakpoint.
-# - ttl: on the boundary rides prompt_cache_breakpoint.
-# - with_instructions(..., cache_until_here:) is the same mark.
+# - gpt-4.1-mini answers HTTP 400: prompt_cache_breakpoint is not supported.
+# - Empty with_caching still enables automatic caching; the mark is extra.
 
 require "logger"
 require "ruby_llm"
@@ -27,19 +27,24 @@ module StavangerOilCore
 
     CARD = "Tray card: Sigrid logs core SVG-2026-1016-C4 at 06:50. When does Sigrid log?"
 
-    Result = Struct.new(:brief, keyword_init: true)
+    Result = Struct.new(:error, keyword_init: true)
 
     def self.conduct
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_caching(mode: "explicit")
-      chat.with_instructions(INSTRUCTIONS).cache_until_here(ttl: "1h")
+      chat.with_caching
+      chat.with_instructions(INSTRUCTIONS).cache_until_here
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
-      brief = chat.ask(CARD)
+      error = nil
+      begin
+        chat.ask(CARD)
+      rescue RubyLLM::BadRequestError => raised
+        error = raised
+      end
 
-      Result.new(brief: brief.content)
+      Result.new(error: error)
     end
 
     def self.configure
@@ -60,5 +65,6 @@ if $PROGRAM_NAME == __FILE__
     result = StavangerOilCore::OilCore.conduct
   end
 
-  puts result.brief
+  puts result.error.class
+  puts result.error.message
 end

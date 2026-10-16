@@ -13,10 +13,9 @@ class StavangerOilCoreBreakpointTest < Minitest::Test
       result = StavangerOilCore::OilCore.conduct
     end
 
-    assert_includes result.brief, "Sigrid"
-    assert_includes result.brief, "06:50"
+    assert_instance_of RubyLLM::BadRequestError, result.error
+    assert_match(/prompt_cache_breakpoint is not supported/i, result.error.message)
     assert_includes request_body, "prompt_cache_breakpoint"
-    assert_includes request_body, '"mode":"explicit"'
   end
 
   def test_cassette_does_not_carry_a_live_key

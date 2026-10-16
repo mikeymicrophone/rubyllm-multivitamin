@@ -15,7 +15,7 @@ Official reference: [Prompt Caching](https://rubyllm.com/prompt-caching/).
 
 ## Providers that can record it
 
-Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mistral (`key:`), Perplexity Router, Gemini and Vertex AI (explicit `RubyLLM.cache` resources). A cache hit is not guaranteed; providers set minimum prefix length. This catalog's cheap record path is OpenAI `gpt-4.1-mini` with `with_caching`. Gemini `CachedContent` and Anthropic `cache_write_by_ttl` need keys this catalog does not have. Empty `with_caching` sends no `prompt_cache_options` unless `ttl:`, `key:`, or `mode:` is set. Free OpenRouter slugs may accept `ttl:` and still report zero cache tokens. Checked 16 October 2026.
+Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mistral (`key:`), Perplexity Router, Gemini and Vertex AI (explicit `RubyLLM.cache` resources). A cache hit is not guaranteed; providers set minimum prefix length. This catalog's cheap record path is OpenAI `gpt-4.1-mini` with empty `with_caching` and `with_caching(key:)`. That slug rejects `prompt_cache_options` (`ttl:`, `mode:`) and `prompt_cache_breakpoint`. `ttl: "1h"` 400s as an invalid value (only `30m` is listed) before the model-support check. Gemini `CachedContent` and Anthropic `cache_write_by_ttl` need keys this catalog does not have. Empty `with_caching` sends no `prompt_cache_options` unless `ttl:`, `key:`, or `mode:` is set. Checked 16 October 2026.
 
 ## Examples (13 of 13 bottled)
 
@@ -38,17 +38,17 @@ Anthropic, OpenRouter, Bedrock Converse, selected OpenAI-compatible models, Mist
 | Slot | What it adds |
 | --- | --- |
 | 01 | `with_caching` with no options; OpenAI sends no `prompt_cache_options` |
-| 02 | `ttl: "1h"` vs `ttl: "5m"` on the wire |
-| 03 | `cache_until_here(ttl:)` plus `mode: "explicit"` |
+| 02 | `ttl: "1h"` vs `"30m"`: invalid value, then options unsupported |
+| 03 | `cache_until_here` → `prompt_cache_breakpoint` 400 |
 | 04 | `with_caching(false)`; `nil` is `ArgumentError` |
 | 05 | `with_caching(key:)` → `prompt_cache_key` |
 | 06 | `RubyLLM.cache` on OpenAI raises before HTTP |
 | 07 | Second ask reports `tokens.cache_read` (zero is legal) |
-| 08 | Rails `cache_until_here` / `cache_ttl` on the system row |
-| 09 | `with_instructions(..., cache_until_here:)` and `mode: "implicit"` |
-| 10 | Too-short prefix still sends ttl; `cache_read` is 0 |
-| 11 | Agent `caching ttl: "1h"` macro |
+| 08 | Rails stores `cache_until_here` / `cache_ttl`; false keeps it off the wire |
+| 09 | `with_caching(mode: "implicit")` → options 400 |
+| 10 | Too-short prefix; `cache_read` is 0 |
+| 11 | Agent `caching` macro with no options |
 | 12 | `cache_write_by_ttl` is nil on OpenAI |
-| 13 | Capstone: ttl, key, explicit breakpoint, two asks |
+| 13 | Capstone: named key, two asks |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

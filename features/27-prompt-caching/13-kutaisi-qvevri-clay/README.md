@@ -1,11 +1,12 @@
 # Prompt caching · 13 · Kutaisi qvevri clay
 
-The qvevri clerk in Kutaisi names the cache, sets a one-hour lifetime,
-marks an explicit breakpoint, and asks twice. Nino seals at 16:20.
+The qvevri clerk in Kutaisi names the cache and asks twice. Nino seals
+at 16:20. `ttl:`, `mode:`, and `cache_until_here` 400 on this slug;
+those are earlier slots.
 
 **What it teaches**
 
-- Capstone: `ttl:`, `key:`, `mode: "explicit"`, and `cache_until_here`.
+- Capstone: `key:` plus automatic caching and a follow-up.
 - `cache_read` on the follow-up is an Integer. Zero is legal.
 - Two Responses POSTs in one cassette.
 
@@ -13,8 +14,8 @@ marks an explicit breakpoint, and asks twice. Nino seals at 16:20.
 
 | File | Role |
 | --- | --- |
-| [`qvevri_clay.rb`](qvevri_clay.rb) | Marks, names, then asks twice |
-| [`qvevri_clay_test.rb`](qvevri_clay_test.rb) | Checks Nino, No, and the wire shape |
+| [`qvevri_clay.rb`](qvevri_clay.rb) | Names the cache, then asks twice |
+| [`qvevri_clay_test.rb`](qvevri_clay_test.rb) | Checks Nino, No, and the key |
 | [`cassettes/qvevri_clay.yml`](cassettes/qvevri_clay.yml) | Two Responses |
 
 **Try it**

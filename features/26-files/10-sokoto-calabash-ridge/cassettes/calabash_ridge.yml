@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"ridge-note.txt\"\r\nContent-Length: 101\r\nContent-Type:
+        text/plain\r\nContent-Transfer-Encoding: binary\r\n\r\nSokoto calabash ridge
+        note, Friday 16 October 2026.\nRidge SKT-2026-1016-C2, 18 gourds, dry at 15:40.\n\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
+      Content-Length:
+      - '387'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:17:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '232'
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - req_f94c02bd903e472a8c335c05b6512cab
+      Openai-Processing-Ms:
+      - '14'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b6a7b4fb5ad701-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "message": "'purpose' is a required property",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": null
+          },
+          "detail": {
+            "message": "'purpose' is a required property",
+            "code": null
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 11:17:05 GMT
+recorded_with: VCR 6.4.0

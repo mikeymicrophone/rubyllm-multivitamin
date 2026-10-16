@@ -19,10 +19,9 @@ class KutaisiQvevriClayCapstoneTest < Minitest::Test
     assert_equal %i[system user assistant user assistant], result.roles
     assert_kind_of Integer, result.cache_read
     assert_equal 2, interactions.length
-    assert_includes request_body(0), '"ttl":"1h"'
     assert_includes request_body(0), '"prompt_cache_key":"kutaisi-qvevri-2026-1016"'
-    assert_includes request_body(0), "prompt_cache_breakpoint"
-    assert_includes request_body(0), '"mode":"explicit"'
+    refute_includes request_body(0), "prompt_cache_options"
+    refute_includes request_body(0), "prompt_cache_breakpoint"
   end
 
   def test_cassette_does_not_carry_a_live_key

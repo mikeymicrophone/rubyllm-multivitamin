@@ -1,13 +1,14 @@
 # Prompt caching · 02 · Dubrovnik wall stone
 
-The wall clerk in Dubrovnik runs the same Luka board twice: once with a
-one-hour cache write, once with five minutes. `prompt_cache_options.ttl`
-is on the wire.
+The wall clerk in Dubrovnik asks for a one-hour cache write, then thirty
+minutes. `gpt-4.1-mini` rejects `1h` as an invalid value (only `30m` is
+listed) and then rejects `30m` because `prompt_cache_options` is not
+supported on this model.
 
 **What it teaches**
 
-- `with_caching(ttl: "1h")` and `ttl: "5m"` are request-level lifetimes.
-- A longer write can cost more.
+- `with_caching(ttl: "1h")` and `ttl: "30m"` are request-level lifetimes.
+- The advertised value and the model support check are two different 400s.
 - Two chats, two TTLs, one cassette.
 
 **Files**
@@ -15,8 +16,8 @@ is on the wire.
 | File | Role |
 | --- | --- |
 | [`wall_stone.rb`](wall_stone.rb) | Asks once per TTL |
-| [`wall_stone_test.rb`](wall_stone_test.rb) | Checks both ttl strings |
-| [`cassettes/wall_stone.yml`](cassettes/wall_stone.yml) | Two Responses |
+| [`wall_stone_test.rb`](wall_stone_test.rb) | Checks both ttl strings and both 400s |
+| [`cassettes/wall_stone.yml`](cassettes/wall_stone.yml) | Two Responses 400s |
 
 **Try it**
 

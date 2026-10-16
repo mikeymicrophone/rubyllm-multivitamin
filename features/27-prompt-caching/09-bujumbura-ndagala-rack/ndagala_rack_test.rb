@@ -7,17 +7,15 @@ require_relative "ndagala_rack"
 class BujumburaNdagalaRackImplicitTest < Minitest::Test
   CASSETTE = File.expand_path("cassettes/ndagala_rack.yml", __dir__)
 
-  def test_the_keyword_breakpoint_and_implicit_mode_are_on_the_wire
+  def test_implicit_mode_is_on_the_wire
     result = nil
     Multivitamin::Cassettes.play(__dir__, "ndagala_rack") do
       result = BujumburaNdagalaRack::NdagalaRack.conduct
     end
 
-    assert_includes result.brief, "Aline"
-    assert_includes result.brief, "05:55"
-    assert_includes request_body, "prompt_cache_breakpoint"
+    assert_instance_of RubyLLM::BadRequestError, result.error
+    assert_match(/prompt_cache_options is not supported/i, result.error.message)
     assert_includes request_body, '"mode":"implicit"'
-    assert_includes request_body, '"ttl":"1h"'
   end
 
   def test_cassette_does_not_carry_a_live_key

@@ -1,21 +1,21 @@
 # Prompt caching · 10 · Basel Fasnacht lantern
 
-The lantern clerk in Basel keeps a short standing order and still asks
-for a five-minute cache write. Elsa hangs at 14:10. The prefix is under
-the provider minimum, so `cache_read` is 0.
+The lantern clerk in Basel keeps a short standing order and still turns
+automatic caching on. Elsa hangs at 14:10. The prefix is under the
+provider minimum, so `cache_read` is 0.
 
 **What it teaches**
 
-- A too-short prefix still sends `prompt_cache_options`.
+- A too-short prefix still enables automatic caching.
 - Zero is a miss, not an error.
-- Do not pad the board just to force a hit.
+- Do not pad the board just to force a hit. `ttl:` is slot 02.
 
 **Files**
 
 | File | Role |
 | --- | --- |
 | [`fasnacht_lantern.rb`](fasnacht_lantern.rb) | Asks with a short prefix |
-| [`fasnacht_lantern_test.rb`](fasnacht_lantern_test.rb) | Checks Elsa, ttl, and a zero read |
+| [`fasnacht_lantern_test.rb`](fasnacht_lantern_test.rb) | Checks Elsa and a zero read |
 | [`cassettes/fasnacht_lantern.yml`](cassettes/fasnacht_lantern.yml) | One Responses POST |
 
 **Try it**

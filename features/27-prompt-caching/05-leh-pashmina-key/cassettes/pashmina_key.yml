@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Tsering
+        weighs shawl LEH-2026-1016-P8 at 10:05. When does Tsering weigh?"}],"instructions":"You
+        are the shawl clerk in Leh.\nLeh pashmina standing order 1: shawl 1 is lot
+        LEH-2026-1016-P1. Leh pashmina standing order 2: shawl 2 is lot LEH-2026-1016-P2.
+        Leh pashmina standing order 3: shawl 3 is lot LEH-2026-1016-P3. Leh pashmina
+        standing order 4: shawl 4 is lot LEH-2026-1016-P4. Leh pashmina standing order
+        5: shawl 5 is lot LEH-2026-1016-P5. Leh pashmina standing order 6: shawl 6
+        is lot LEH-2026-1016-P6. Leh pashmina standing order 7: shawl 7 is lot LEH-2026-1016-P7.
+        Leh pashmina standing order 8: shawl 8 is lot LEH-2026-1016-P8. Leh pashmina
+        standing order 9: shawl 9 is lot LEH-2026-1016-P9. Leh pashmina standing order
+        10: shawl 10 is lot LEH-2026-1016-P10. Leh pashmina standing order 11: shawl
+        11 is lot LEH-2026-1016-P11. Leh pashmina standing order 12: shawl 12 is lot
+        LEH-2026-1016-P12. Leh pashmina standing order 13: shawl 13 is lot LEH-2026-1016-P13.
+        Leh pashmina standing order 14: shawl 14 is lot LEH-2026-1016-P14. Leh pashmina
+        standing order 15: shawl 15 is lot LEH-2026-1016-P15. Leh pashmina standing
+        order 16: shawl 16 is lot LEH-2026-1016-P16. Leh pashmina standing order 17:
+        shawl 17 is lot LEH-2026-1016-P17. Leh pashmina standing order 18: shawl 18
+        is lot LEH-2026-1016-P18. Leh pashmina standing order 19: shawl 19 is lot
+        LEH-2026-1016-P19. Leh pashmina standing order 20: shawl 20 is lot LEH-2026-1016-P20.
+        Leh pashmina standing order 21: shawl 21 is lot LEH-2026-1016-P21. Leh pashmina
+        standing order 22: shawl 22 is lot LEH-2026-1016-P22. Leh pashmina standing
+        order 23: shawl 23 is lot LEH-2026-1016-P23. Leh pashmina standing order 24:
+        shawl 24 is lot LEH-2026-1016-P24.\nAnswer in one short sentence. Name Tsering
+        and 10:05.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_key":"leh-pashmina-2026-1016"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6aa35af8caeda-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '532'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999289'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 21ms
+      X-Request-Id:
+      - req_e2524be305c746bc912ced301b4cce88
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0330c953adee97dc016ad20818042c87d28940b7ad4d6d9a99",
+          "object": "response",
+          "created_at": 1792149528,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149528,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the shawl clerk in Leh.\nLeh pashmina standing order 1: shawl 1 is lot LEH-2026-1016-P1. Leh pashmina standing order 2: shawl 2 is lot LEH-2026-1016-P2. Leh pashmina standing order 3: shawl 3 is lot LEH-2026-1016-P3. Leh pashmina standing order 4: shawl 4 is lot LEH-2026-1016-P4. Leh pashmina standing order 5: shawl 5 is lot LEH-2026-1016-P5. Leh pashmina standing order 6: shawl 6 is lot LEH-2026-1016-P6. Leh pashmina standing order 7: shawl 7 is lot LEH-2026-1016-P7. Leh pashmina standing order 8: shawl 8 is lot LEH-2026-1016-P8. Leh pashmina standing order 9: shawl 9 is lot LEH-2026-1016-P9. Leh pashmina standing order 10: shawl 10 is lot LEH-2026-1016-P10. Leh pashmina standing order 11: shawl 11 is lot LEH-2026-1016-P11. Leh pashmina standing order 12: shawl 12 is lot LEH-2026-1016-P12. Leh pashmina standing order 13: shawl 13 is lot LEH-2026-1016-P13. Leh pashmina standing order 14: shawl 14 is lot LEH-2026-1016-P14. Leh pashmina standing order 15: shawl 15 is lot LEH-2026-1016-P15. Leh pashmina standing order 16: shawl 16 is lot LEH-2026-1016-P16. Leh pashmina standing order 17: shawl 17 is lot LEH-2026-1016-P17. Leh pashmina standing order 18: shawl 18 is lot LEH-2026-1016-P18. Leh pashmina standing order 19: shawl 19 is lot LEH-2026-1016-P19. Leh pashmina standing order 20: shawl 20 is lot LEH-2026-1016-P20. Leh pashmina standing order 21: shawl 21 is lot LEH-2026-1016-P21. Leh pashmina standing order 22: shawl 22 is lot LEH-2026-1016-P22. Leh pashmina standing order 23: shawl 23 is lot LEH-2026-1016-P23. Leh pashmina standing order 24: shawl 24 is lot LEH-2026-1016-P24.\nAnswer in one short sentence. Name Tsering and 10:05.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0330c953adee97dc016ad20818502c87d2bf7c32952e08bcd3",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Tsering weighs shawl LEH-2026-1016-P8 at 10:05."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": "leh-pashmina-2026-1016",
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 692,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 23,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 715
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:48 GMT
+recorded_with: VCR 6.4.0

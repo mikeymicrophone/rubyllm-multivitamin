@@ -15,7 +15,7 @@ class WroclawNadodrzeNeonSplitTest < Minitest::Test
 
     assert_includes result.brief, "Marek"
     assert_includes result.brief, "19:45"
-    assert_includes request_body, '"ttl":"1h"'
+    refute_includes request_body, "prompt_cache_options"
     assert_nil result.cache_write_by_ttl
     refute_nil result.cache_read
     assert_operator result.input_tokens, :>, 0

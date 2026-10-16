@@ -4,8 +4,8 @@
 #
 # Teaches:
 # - acts_as_message stores cache_until_here and cache_ttl on the system row.
-# - with_instructions(..., cache_until_here: { ttl: "1h" }) marks the log.
-# - Reload the fare log; the boundary is still there.
+# - with_caching(false) keeps the breakpoint off the wire, so gpt-4.1-mini
+#   still answers. Reload the fare log; the boundary is still there.
 
 require "logger"
 require "ruby_llm"
@@ -53,8 +53,8 @@ module CotonouZemidjanFare
 
     def self.conduct
       log = open_log
-      log.with_caching
       log.with_instructions(INSTRUCTIONS, cache_until_here: { ttl: "1h" })
+      log.with_caching(false)
       log.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(log, provider: :openai)
       brief = log.ask(BOARD)

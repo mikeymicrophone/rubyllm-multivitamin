@@ -3,10 +3,9 @@
 # Prompt caching · 09 · Bujumbura ndagala rack
 #
 # Teaches:
-# - with_instructions(..., cache_until_here: { ttl: "1h" }) is the keyword
-#   form of the breakpoint, not the chained method.
 # - with_caching(mode: "implicit") still sends prompt_cache_options.mode.
-# - Slot 03 used mode explicit and the method chain.
+# - gpt-4.1-mini answers HTTP 400: prompt_cache_options is not supported.
+# - Slot 03 used cache_until_here; this slot is the mode option.
 
 require "logger"
 require "ruby_llm"
@@ -28,19 +27,24 @@ module BujumburaNdagalaRack
 
     CARD = "Rack card: Aline turns lot BJM-2026-1016-N4 at 05:55. When does Aline turn?"
 
-    Result = Struct.new(:brief, keyword_init: true)
+    Result = Struct.new(:error, keyword_init: true)
 
     def self.conduct
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
       chat.with_caching(mode: "implicit")
-      chat.with_instructions(INSTRUCTIONS, cache_until_here: { ttl: "1h" })
+      chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
-      brief = chat.ask(CARD)
+      error = nil
+      begin
+        chat.ask(CARD)
+      rescue RubyLLM::BadRequestError => raised
+        error = raised
+      end
 
-      Result.new(brief: brief.content)
+      Result.new(error: error)
     end
 
     def self.configure
@@ -61,5 +65,6 @@ if $PROGRAM_NAME == __FILE__
     result = BujumburaNdagalaRack::NdagalaRack.conduct
   end
 
-  puts result.brief
+  puts result.error.class
+  puts result.error.message
 end

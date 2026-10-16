@@ -3,9 +3,9 @@
 # Prompt caching · 11 · Tampere Finlayson card
 #
 # Teaches:
-# - An Agent caching ttl: "1h" macro maps onto Chat#with_caching.
+# - An Agent caching macro maps onto Chat#with_caching with no options.
 # - The class holds the policy; Agent.new.ask runs it.
-# - The request body has prompt_cache_options.ttl.
+# - ttl: on this slug is slot 02. Empty caching still enables automatic.
 
 require "logger"
 require "ruby_llm"
@@ -16,7 +16,7 @@ module TampereFinlaysonCard
   class MillClerk < RubyLLM::Agent
     model Multivitamin::Models::OPENAI_CHAT, provider: :openai
 
-    caching ttl: "1h"
+    caching
 
     instructions <<~TEXT.strip
       You are the mill clerk at Finlayson in Tampere.

@@ -1,0 +1,193 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Luka
+        sets block DBV-2026-1016-W2 at 08:40. When does Luka set?"}],"instructions":"You
+        are the wall clerk in Dubrovnik.\nDubrovnik wall standing order 1: block 1
+        on the Stradun face is lot DBV-2026-1016-W1. Dubrovnik wall standing order
+        2: block 2 on the Stradun face is lot DBV-2026-1016-W2. Dubrovnik wall standing
+        order 3: block 3 on the Stradun face is lot DBV-2026-1016-W3. Dubrovnik wall
+        standing order 4: block 4 on the Stradun face is lot DBV-2026-1016-W4. Dubrovnik
+        wall standing order 5: block 5 on the Stradun face is lot DBV-2026-1016-W5.
+        Dubrovnik wall standing order 6: block 6 on the Stradun face is lot DBV-2026-1016-W6.
+        Dubrovnik wall standing order 7: block 7 on the Stradun face is lot DBV-2026-1016-W7.
+        Dubrovnik wall standing order 8: block 8 on the Stradun face is lot DBV-2026-1016-W8.
+        Dubrovnik wall standing order 9: block 9 on the Stradun face is lot DBV-2026-1016-W9.
+        Dubrovnik wall standing order 10: block 10 on the Stradun face is lot DBV-2026-1016-W10.
+        Dubrovnik wall standing order 11: block 11 on the Stradun face is lot DBV-2026-1016-W11.
+        Dubrovnik wall standing order 12: block 12 on the Stradun face is lot DBV-2026-1016-W12.
+        Dubrovnik wall standing order 13: block 13 on the Stradun face is lot DBV-2026-1016-W13.
+        Dubrovnik wall standing order 14: block 14 on the Stradun face is lot DBV-2026-1016-W14.
+        Dubrovnik wall standing order 15: block 15 on the Stradun face is lot DBV-2026-1016-W15.
+        Dubrovnik wall standing order 16: block 16 on the Stradun face is lot DBV-2026-1016-W16.
+        Dubrovnik wall standing order 17: block 17 on the Stradun face is lot DBV-2026-1016-W17.
+        Dubrovnik wall standing order 18: block 18 on the Stradun face is lot DBV-2026-1016-W18.
+        Dubrovnik wall standing order 19: block 19 on the Stradun face is lot DBV-2026-1016-W19.
+        Dubrovnik wall standing order 20: block 20 on the Stradun face is lot DBV-2026-1016-W20.
+        Dubrovnik wall standing order 21: block 21 on the Stradun face is lot DBV-2026-1016-W21.
+        Dubrovnik wall standing order 22: block 22 on the Stradun face is lot DBV-2026-1016-W22.
+        Dubrovnik wall standing order 23: block 23 on the Stradun face is lot DBV-2026-1016-W23.
+        Dubrovnik wall standing order 24: block 24 on the Stradun face is lot DBV-2026-1016-W24.\nAnswer
+        in one short sentence. Name Luka and 08:40.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_options":{"ttl":"1h"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:21:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '194'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6ae0239f1202e-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '20'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_ad7bd5f374524f37a43973ff660354e4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid value: '1h'. Supported values are: '30m'.",
+            "type": "invalid_request_error",
+            "param": "prompt_cache_options.ttl",
+            "code": "invalid_value"
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 11:21:23 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Luka
+        sets block DBV-2026-1016-W2 at 08:40. When does Luka set?"}],"instructions":"You
+        are the wall clerk in Dubrovnik.\nDubrovnik wall standing order 1: block 1
+        on the Stradun face is lot DBV-2026-1016-W1. Dubrovnik wall standing order
+        2: block 2 on the Stradun face is lot DBV-2026-1016-W2. Dubrovnik wall standing
+        order 3: block 3 on the Stradun face is lot DBV-2026-1016-W3. Dubrovnik wall
+        standing order 4: block 4 on the Stradun face is lot DBV-2026-1016-W4. Dubrovnik
+        wall standing order 5: block 5 on the Stradun face is lot DBV-2026-1016-W5.
+        Dubrovnik wall standing order 6: block 6 on the Stradun face is lot DBV-2026-1016-W6.
+        Dubrovnik wall standing order 7: block 7 on the Stradun face is lot DBV-2026-1016-W7.
+        Dubrovnik wall standing order 8: block 8 on the Stradun face is lot DBV-2026-1016-W8.
+        Dubrovnik wall standing order 9: block 9 on the Stradun face is lot DBV-2026-1016-W9.
+        Dubrovnik wall standing order 10: block 10 on the Stradun face is lot DBV-2026-1016-W10.
+        Dubrovnik wall standing order 11: block 11 on the Stradun face is lot DBV-2026-1016-W11.
+        Dubrovnik wall standing order 12: block 12 on the Stradun face is lot DBV-2026-1016-W12.
+        Dubrovnik wall standing order 13: block 13 on the Stradun face is lot DBV-2026-1016-W13.
+        Dubrovnik wall standing order 14: block 14 on the Stradun face is lot DBV-2026-1016-W14.
+        Dubrovnik wall standing order 15: block 15 on the Stradun face is lot DBV-2026-1016-W15.
+        Dubrovnik wall standing order 16: block 16 on the Stradun face is lot DBV-2026-1016-W16.
+        Dubrovnik wall standing order 17: block 17 on the Stradun face is lot DBV-2026-1016-W17.
+        Dubrovnik wall standing order 18: block 18 on the Stradun face is lot DBV-2026-1016-W18.
+        Dubrovnik wall standing order 19: block 19 on the Stradun face is lot DBV-2026-1016-W19.
+        Dubrovnik wall standing order 20: block 20 on the Stradun face is lot DBV-2026-1016-W20.
+        Dubrovnik wall standing order 21: block 21 on the Stradun face is lot DBV-2026-1016-W21.
+        Dubrovnik wall standing order 22: block 22 on the Stradun face is lot DBV-2026-1016-W22.
+        Dubrovnik wall standing order 23: block 23 on the Stradun face is lot DBV-2026-1016-W23.
+        Dubrovnik wall standing order 24: block 24 on the Stradun face is lot DBV-2026-1016-W24.\nAnswer
+        in one short sentence. Name Luka and 08:40.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_options":{"ttl":"30m"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:21:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '196'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6ae03797635b0-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '41'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_a6d74da7795842efb6739deb1fa6cc7c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "prompt_cache_options is not supported on this model",
+            "type": "invalid_request_error",
+            "param": "prompt_cache_options",
+            "code": "invalid_parameter"
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 11:21:23 GMT
+recorded_with: VCR 6.4.0

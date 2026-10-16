@@ -3,9 +3,9 @@
 # Files · 11 · Ghent bobbin lace
 #
 # Teaches:
-# - Downloaded bytes of a user_data PDF still contain the mill copy.
-# - DownloadedFile is a String. Include the lot code directly.
-# - DeepSeek image-download refusal needs a key this catalog does not have.
+# - purpose: "batch" jsonl is downloadable on OpenAI. user_data is not.
+# - DownloadedFile is a String. to_blob is the same bytes.
+# - The mill copy survives the round-trip.
 
 require "logger"
 require "ruby_llm"
@@ -14,20 +14,21 @@ require_relative "../../../support/models"
 
 module GhentBobbinLace
   class BobbinLace
-    CARD = File.expand_path("lace-card.pdf", __dir__)
+    LOT = File.expand_path("lace-lot.jsonl", __dir__)
 
-    Result = Struct.new(:file_id, :blob, :byte_size, keyword_init: true)
+    Result = Struct.new(:file_id, :blob, :byte_size, :purpose, keyword_init: true)
 
     def self.conduct
       configure
 
-      file = RubyLLM.upload(CARD, provider: :openai, purpose: "user_data")
+      file = RubyLLM.upload(LOT, provider: :openai, purpose: "batch")
       downloaded = RubyLLM.download(file.id, provider: :openai)
 
       Result.new(
         file_id: file.id,
         blob: downloaded.to_blob,
-        byte_size: downloaded.bytesize
+        byte_size: downloaded.bytesize,
+        purpose: file.purpose
       )
     end
 
@@ -49,6 +50,6 @@ if $PROGRAM_NAME == __FILE__
     result = GhentBobbinLace::BobbinLace.conduct
   end
 
-  puts "#{result.file_id} bytes=#{result.byte_size}"
+  puts "#{result.file_id} #{result.purpose} bytes=#{result.byte_size}"
   puts result.blob.include?("GNT-2026-1016-L6")
 end

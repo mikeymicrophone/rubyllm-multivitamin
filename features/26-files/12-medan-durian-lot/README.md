@@ -1,23 +1,24 @@
 # Files · 12 · Medan durian lot
 
-The stall clerk in Medan stores a CSV lot sheet and downloads it again.
-Row MDN-2026-1016-D9 still opens at 07:25. A Mistral-generated CSV needs
-a key this catalog does not have.
+The stall clerk in Medan stores a CSV lot sheet and finds it by id.
+Row MDN-2026-1016-D9 still opens at 07:25. OpenAI will not download
+`user_data`; that refusal is the Valparaíso card. A Mistral-generated
+CSV needs a key this catalog does not have.
 
 **What it teaches**
 
 - A CSV uploads as `user_data`.
-- The download is the same rows, not a generated file.
-- `DownloadedFile` is a String.
+- `find` reloads filename and byte_size.
+- Download of `user_data` is slot 04.
 
 **Files**
 
 | File | Role |
 | --- | --- |
-| [`durian_lot.rb`](durian_lot.rb) | Uploads and downloads the CSV |
-| [`durian_lot_test.rb`](durian_lot_test.rb) | Checks the lot code |
+| [`durian_lot.rb`](durian_lot.rb) | Uploads and finds the CSV |
+| [`durian_lot_test.rb`](durian_lot_test.rb) | Checks the filename |
 | [`durian-lot.csv`](durian-lot.csv) | The stall sheet |
-| [`cassettes/durian_lot.yml`](cassettes/durian_lot.yml) | POST then GET content |
+| [`cassettes/durian_lot.yml`](cassettes/durian_lot.yml) | POST then GET metadata |
 
 **Try it**
 

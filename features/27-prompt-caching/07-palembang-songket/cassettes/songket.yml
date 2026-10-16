@@ -1,0 +1,485 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Wati
+        starts cloth PLB-2026-1016-S5 at 11:30. When does Wati start?"}],"instructions":"You
+        are the loom clerk in Palembang.\nPalembang songket standing order 1: loom
+        1 holds cloth PLB-2026-1016-S1, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 2: loom
+        2 holds cloth PLB-2026-1016-S2, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 3: loom
+        3 holds cloth PLB-2026-1016-S3, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 4: loom
+        4 holds cloth PLB-2026-1016-S4, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 5: loom
+        5 holds cloth PLB-2026-1016-S5, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 6: loom
+        6 holds cloth PLB-2026-1016-S6, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 7: loom
+        7 holds cloth PLB-2026-1016-S7, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 8: loom
+        8 holds cloth PLB-2026-1016-S8, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 9: loom
+        9 holds cloth PLB-2026-1016-S9, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 10: loom
+        10 holds cloth PLB-2026-1016-S10, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 11: loom
+        11 holds cloth PLB-2026-1016-S11, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 12: loom
+        12 holds cloth PLB-2026-1016-S12, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 13: loom
+        13 holds cloth PLB-2026-1016-S13, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 14: loom
+        14 holds cloth PLB-2026-1016-S14, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 15: loom
+        15 holds cloth PLB-2026-1016-S15, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 16: loom
+        16 holds cloth PLB-2026-1016-S16, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 17: loom
+        17 holds cloth PLB-2026-1016-S17, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 18: loom
+        18 holds cloth PLB-2026-1016-S18, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 19: loom
+        19 holds cloth PLB-2026-1016-S19, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 20: loom
+        20 holds cloth PLB-2026-1016-S20, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 21: loom
+        21 holds cloth PLB-2026-1016-S21, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 22: loom
+        22 holds cloth PLB-2026-1016-S22, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 23: loom
+        23 holds cloth PLB-2026-1016-S23, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 24: loom
+        24 holds cloth PLB-2026-1016-S24, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 25: loom
+        25 holds cloth PLB-2026-1016-S25, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 26: loom
+        26 holds cloth PLB-2026-1016-S26, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 27: loom
+        27 holds cloth PLB-2026-1016-S27, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 28: loom
+        28 holds cloth PLB-2026-1016-S28, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 29: loom
+        29 holds cloth PLB-2026-1016-S29, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 30: loom
+        30 holds cloth PLB-2026-1016-S30, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 31: loom
+        31 holds cloth PLB-2026-1016-S31, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 32: loom
+        32 holds cloth PLB-2026-1016-S32, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 33: loom
+        33 holds cloth PLB-2026-1016-S33, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 34: loom
+        34 holds cloth PLB-2026-1016-S34, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 35: loom
+        35 holds cloth PLB-2026-1016-S35, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground. Palembang songket standing order 36: loom
+        36 holds cloth PLB-2026-1016-S36, gold thread faces the Musi, do not mix the
+        supplemental weft with the ground.\nAnswer in one short sentence from the
+        board only.\nName Wati and 11:30.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:50 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6aa423d1b20bd-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '577'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1997633'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 71ms
+      X-Request-Id:
+      - req_f13c570146484633ad0bf385af3a3ff8
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a08319f6d1565d5016ad2081a090487d2b256eae87f20d8d6",
+          "object": "response",
+          "created_at": 1792149530,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149530,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the loom clerk in Palembang.\nPalembang songket standing order 1: loom 1 holds cloth PLB-2026-1016-S1, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 2: loom 2 holds cloth PLB-2026-1016-S2, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 3: loom 3 holds cloth PLB-2026-1016-S3, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 4: loom 4 holds cloth PLB-2026-1016-S4, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 5: loom 5 holds cloth PLB-2026-1016-S5, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 6: loom 6 holds cloth PLB-2026-1016-S6, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 7: loom 7 holds cloth PLB-2026-1016-S7, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 8: loom 8 holds cloth PLB-2026-1016-S8, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 9: loom 9 holds cloth PLB-2026-1016-S9, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 10: loom 10 holds cloth PLB-2026-1016-S10, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 11: loom 11 holds cloth PLB-2026-1016-S11, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 12: loom 12 holds cloth PLB-2026-1016-S12, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 13: loom 13 holds cloth PLB-2026-1016-S13, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 14: loom 14 holds cloth PLB-2026-1016-S14, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 15: loom 15 holds cloth PLB-2026-1016-S15, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 16: loom 16 holds cloth PLB-2026-1016-S16, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 17: loom 17 holds cloth PLB-2026-1016-S17, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 18: loom 18 holds cloth PLB-2026-1016-S18, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 19: loom 19 holds cloth PLB-2026-1016-S19, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 20: loom 20 holds cloth PLB-2026-1016-S20, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 21: loom 21 holds cloth PLB-2026-1016-S21, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 22: loom 22 holds cloth PLB-2026-1016-S22, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 23: loom 23 holds cloth PLB-2026-1016-S23, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 24: loom 24 holds cloth PLB-2026-1016-S24, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 25: loom 25 holds cloth PLB-2026-1016-S25, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 26: loom 26 holds cloth PLB-2026-1016-S26, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 27: loom 27 holds cloth PLB-2026-1016-S27, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 28: loom 28 holds cloth PLB-2026-1016-S28, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 29: loom 29 holds cloth PLB-2026-1016-S29, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 30: loom 30 holds cloth PLB-2026-1016-S30, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 31: loom 31 holds cloth PLB-2026-1016-S31, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 32: loom 32 holds cloth PLB-2026-1016-S32, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 33: loom 33 holds cloth PLB-2026-1016-S33, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 34: loom 34 holds cloth PLB-2026-1016-S34, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 35: loom 35 holds cloth PLB-2026-1016-S35, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 36: loom 36 holds cloth PLB-2026-1016-S36, gold thread faces the Musi, do not mix the supplemental weft with the ground.\nAnswer in one short sentence from the board only.\nName Wati and 11:30.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a08319f6d1565d5016ad2081a5d2887d292f08c88ed714e6e",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Wati starts cloth PLB-2026-1016-S5 at 11:30."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1615,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 21,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1636
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:50 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Wati
+        starts cloth PLB-2026-1016-S5 at 11:30. When does Wati start?"},{"role":"assistant","content":[{"type":"output_text","text":"Wati
+        starts cloth PLB-2026-1016-S5 at 11:30."}]},{"role":"user","content":"Does
+        the standing order allow mixing the supplemental weft with the ground? Answer
+        No or Yes."}],"instructions":"You are the loom clerk in Palembang.\nPalembang
+        songket standing order 1: loom 1 holds cloth PLB-2026-1016-S1, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 2: loom 2 holds cloth PLB-2026-1016-S2, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 3: loom 3 holds cloth PLB-2026-1016-S3, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 4: loom 4 holds cloth PLB-2026-1016-S4, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 5: loom 5 holds cloth PLB-2026-1016-S5, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 6: loom 6 holds cloth PLB-2026-1016-S6, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 7: loom 7 holds cloth PLB-2026-1016-S7, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 8: loom 8 holds cloth PLB-2026-1016-S8, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 9: loom 9 holds cloth PLB-2026-1016-S9, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 10: loom 10 holds cloth PLB-2026-1016-S10, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 11: loom 11 holds cloth PLB-2026-1016-S11, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 12: loom 12 holds cloth PLB-2026-1016-S12, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 13: loom 13 holds cloth PLB-2026-1016-S13, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 14: loom 14 holds cloth PLB-2026-1016-S14, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 15: loom 15 holds cloth PLB-2026-1016-S15, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 16: loom 16 holds cloth PLB-2026-1016-S16, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 17: loom 17 holds cloth PLB-2026-1016-S17, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 18: loom 18 holds cloth PLB-2026-1016-S18, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 19: loom 19 holds cloth PLB-2026-1016-S19, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 20: loom 20 holds cloth PLB-2026-1016-S20, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 21: loom 21 holds cloth PLB-2026-1016-S21, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 22: loom 22 holds cloth PLB-2026-1016-S22, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 23: loom 23 holds cloth PLB-2026-1016-S23, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 24: loom 24 holds cloth PLB-2026-1016-S24, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 25: loom 25 holds cloth PLB-2026-1016-S25, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 26: loom 26 holds cloth PLB-2026-1016-S26, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 27: loom 27 holds cloth PLB-2026-1016-S27, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 28: loom 28 holds cloth PLB-2026-1016-S28, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 29: loom 29 holds cloth PLB-2026-1016-S29, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 30: loom 30 holds cloth PLB-2026-1016-S30, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 31: loom 31 holds cloth PLB-2026-1016-S31, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 32: loom 32 holds cloth PLB-2026-1016-S32, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 33: loom 33 holds cloth PLB-2026-1016-S33, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 34: loom 34 holds cloth PLB-2026-1016-S34, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 35: loom 35 holds cloth PLB-2026-1016-S35, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground. Palembang
+        songket standing order 36: loom 36 holds cloth PLB-2026-1016-S36, gold thread
+        faces the Musi, do not mix the supplemental weft with the ground.\nAnswer
+        in one short sentence from the board only.\nName Wati and 11:30.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:18:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6aa46aea77044-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '823'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1998319'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 50ms
+      X-Request-Id:
+      - req_981e6eebb8854ef7a71157385cb0846c
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0a61079a58a7b627016ad2081ac57c87d2b4bd7f71d401db32",
+          "object": "response",
+          "created_at": 1792149530,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149531,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the loom clerk in Palembang.\nPalembang songket standing order 1: loom 1 holds cloth PLB-2026-1016-S1, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 2: loom 2 holds cloth PLB-2026-1016-S2, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 3: loom 3 holds cloth PLB-2026-1016-S3, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 4: loom 4 holds cloth PLB-2026-1016-S4, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 5: loom 5 holds cloth PLB-2026-1016-S5, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 6: loom 6 holds cloth PLB-2026-1016-S6, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 7: loom 7 holds cloth PLB-2026-1016-S7, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 8: loom 8 holds cloth PLB-2026-1016-S8, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 9: loom 9 holds cloth PLB-2026-1016-S9, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 10: loom 10 holds cloth PLB-2026-1016-S10, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 11: loom 11 holds cloth PLB-2026-1016-S11, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 12: loom 12 holds cloth PLB-2026-1016-S12, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 13: loom 13 holds cloth PLB-2026-1016-S13, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 14: loom 14 holds cloth PLB-2026-1016-S14, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 15: loom 15 holds cloth PLB-2026-1016-S15, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 16: loom 16 holds cloth PLB-2026-1016-S16, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 17: loom 17 holds cloth PLB-2026-1016-S17, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 18: loom 18 holds cloth PLB-2026-1016-S18, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 19: loom 19 holds cloth PLB-2026-1016-S19, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 20: loom 20 holds cloth PLB-2026-1016-S20, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 21: loom 21 holds cloth PLB-2026-1016-S21, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 22: loom 22 holds cloth PLB-2026-1016-S22, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 23: loom 23 holds cloth PLB-2026-1016-S23, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 24: loom 24 holds cloth PLB-2026-1016-S24, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 25: loom 25 holds cloth PLB-2026-1016-S25, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 26: loom 26 holds cloth PLB-2026-1016-S26, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 27: loom 27 holds cloth PLB-2026-1016-S27, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 28: loom 28 holds cloth PLB-2026-1016-S28, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 29: loom 29 holds cloth PLB-2026-1016-S29, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 30: loom 30 holds cloth PLB-2026-1016-S30, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 31: loom 31 holds cloth PLB-2026-1016-S31, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 32: loom 32 holds cloth PLB-2026-1016-S32, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 33: loom 33 holds cloth PLB-2026-1016-S33, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 34: loom 34 holds cloth PLB-2026-1016-S34, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 35: loom 35 holds cloth PLB-2026-1016-S35, gold thread faces the Musi, do not mix the supplemental weft with the ground. Palembang songket standing order 36: loom 36 holds cloth PLB-2026-1016-S36, gold thread faces the Musi, do not mix the supplemental weft with the ground.\nAnswer in one short sentence from the board only.\nName Wati and 11:30.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0a61079a58a7b627016ad2081b75cc87d282d335f71a5a0727",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1662,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 3,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1665
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:18:51 GMT
+recorded_with: VCR 6.4.0
