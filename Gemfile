@@ -12,6 +12,9 @@ gem "vcr", "~> 6.3"
 gem "webmock", "~> 3.24"
 gem "webrick", "~> 1.8"
 
+# Local, synchronous trace export for feature 33; no OTLP service required.
+gem "opentelemetry-sdk", "1.7.0"
+
 # Rails integration scenarios boot an in-memory SQLite schema. Not a
 # full Rails application. See features/10-rails-integration/.
 gem "activerecord", "~> 8.0"

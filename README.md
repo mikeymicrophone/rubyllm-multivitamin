@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 390 |
+| Bottled | 403 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,9 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 390 of 429 are
-bottled. Features 1–21, 23, 24, and 26–32 are full. Features 22, 25,
-and 33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 403 of 429 are
+bottled. Features 1–21, 23, 24, and 26–33 are full. Features 22 and 25
+have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -82,7 +82,10 @@ an ask follows the ERB; six slots raise or assert locally and have no
 cassette. Extended thinking recorded OpenAI `gpt-5-nano` (effort and
 `display: :summarized`) and OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`
 (toggle, budget, and `with_thinking(false)`); `gpt-4.1-mini` raises
-before HTTP on the off control. [Tokenization](features/31-tokenization/) uses
+before HTTP on the off control. [OpenTelemetry](features/33-opentelemetry/)
+uses hand-authored OpenAI/OpenRouter fixtures generated with the pinned
+request encoders; its SDK spans are created locally on every replay. Two
+tracing slots make no HTTP calls. [Tokenization](features/31-tokenization/) uses
 hand-authored fixtures for Cohere and xAI tokenizers, OpenAI Responses and
 Anthropic request counting, and a GPUStack model proxy. Their requests were
 captured from the RubyLLM 2.1.1 encoder with network blocked; responses and
@@ -229,6 +232,7 @@ Each feature README repeats the row that belongs to it.
 Rakefile                           runs features/**/*_test.rb against cassettes
 support/cassettes.rb               VCR + WebMock, LIVE=1, key filtering
 support/models.rb                  free-model slugs (not scenario copy)
+support/tracing.rb                 isolated SDK + in-memory trace exporter
 features/
   01-chat-basics/
     README.md                      what the feature covers, and its 13 slots
@@ -279,7 +283,7 @@ hold the cassette player and the model slugs, not the story.
 30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 13 of 13 bottled
 31. [Tokenization](features/31-tokenization/) — 13 of 13 bottled
 32. [Hosted research](features/32-hosted-research/) — 13 of 13 bottled
-33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled
+33. [OpenTelemetry](features/33-opentelemetry/) — 13 of 13 bottled
 
 The reference scenario that later ones copy is
 [Chat basics · 01 · Bengaluru inverter board](features/01-chat-basics/01-bengaluru-inverter-board/).

@@ -1,36 +1,104 @@
 # OpenTelemetry
 
-`RubyLLM::OpenTelemetry.enable` starts tracing against the process SDK (`opentelemetry-sdk` + an exporter). Spans follow GenAI conventions: `chat`, `embeddings`, `generate_content`, `transcription`, `ocr`, `rerank`, `moderation`, `judgment`, `execute_tool`, `invoke_workflow`, `ruby_llm.workflow_step`. `RubyLLM.workflow("Answer question")` groups calls. Attributes cover model, tokens, and tool names — never prompts, messages, or credentials. `enable` is process-wide; `disable` stops new spans.
+`RubyLLM::OpenTelemetry.enable` subscribes to instrumentation events after the
+application configures its SDK. Spans use GenAI operation names and include
+model, usage, tool, and workflow identifiers. Prompts, replies, credentials,
+provider options, and exception messages stay out of exported spans.
+`disable` stops new operations; running spans finish normally.
 
 Official reference: [OpenTelemetry](https://rubyllm.com/opentelemetry/).
+The scenarios target the locally inspected RubyLLM **2.1.1** implementation.
 
 ## RubyLLM 2.1.1 entry points
 
-- `RubyLLM::OpenTelemetry.enable` / `disable`
-- `RubyLLM.workflow("Answer question") { |workflow| workflow.step(...) }`
-- span names `chat`, `execute_tool`, `invoke_workflow`
-- `gen_ai.request.model`, `gen_ai.usage.*`
-- no spans for batches, video, research, or raw HTTP
+- `RubyLLM::OpenTelemetry.enable` / `disable` (process-wide, including contexts)
+- `RubyLLM.workflow(name, id:, metadata:) { |workflow| workflow.step(name) { ... } }`
+- Client spans: `chat`, `embeddings`, `generate_content`, `transcription`,
+  `ocr`, `rerank`, `moderation`, `judgment`, followed by the requested model
+- Internal spans: `execute_tool <tool>`, `invoke_workflow <workflow>`,
+  `ruby_llm.workflow_step <step>`
+- `gen_ai.request.model`, `gen_ai.response.model`, `gen_ai.usage.*`, `error.type`
+- No RubyLLM spans for batches, tokenization, video, research, registry refresh,
+  or raw HTTP. HTTP instrumentation is a separate application choice.
 
 ## Providers that can record it
 
-Tracing is local. The nested model call records on whatever provider the example uses (OpenRouter free slugs or OpenAI `gpt-4.1-mini`). Export goes to your OTLP backend (`OTEL_EXPORTER_OTLP_ENDPOINT`), not to OpenRouter. Scenarios that only assert span names against an in-memory exporter need no provider cassette; scenarios that wrap a live `ask` record both the chat cassette and the spans.
+Tracing is local. These fixtures wrap OpenAI `gpt-4.1-mini`, OpenAI
+`text-embedding-3-small`, and OpenRouter
+`nvidia/nemotron-3-super-120b-a12b:free`. The fallback uses both chat providers.
+Calls are pinned to those protocols for replay; `LIVE_PROVIDER` only retargets
+calls that go through `Multivitamin::Models.chat`, so keep its default unset
+when re-recording this feature as a whole.
 
-## Examples (0 of 13 bottled)
+The [shared tracing helper](../../support/tracing.rb) uses the real
+`opentelemetry-sdk` 1.7.0, an always-on sampler, `SimpleSpanProcessor`, and
+`InMemorySpanExporter`. This keeps the repo's Ruby 3.2 baseline and needs no
+OTLP exporter, collector, or endpoint. Each capture owns a temporary provider
+and RubyLLM subscription, snapshots finished spans before SDK shutdown, and
+restores the previous process provider in `ensure`. The examples run serially,
+as does the repository's test task. The SDK constructs fresh trace IDs, span
+IDs, and timestamps on every run; those values are never fixture assertions.
 
-01. Bush Point enable after SDK configure — planned
-02. Lagoon Point chat span kind client — planned
-03. Mutiny Bay execute_tool child — planned
-04. Useless Bay workflow tree — planned
-05. Double Bluff no prompt attributes — planned
-06. Hood Head streaming span stays open — planned
-07. Tala Point fallback gets its own span — planned
-08. Termination Point eval trial workflow — planned
-09. Port Ludlow disable stops new spans — planned
-10. Dabob Bay in-memory exporter — planned
-11. Quilcene error.type on raise — planned
-12. Dosewallips job context — planned
-13. Duckabush trace desk capstone — planned
+In a host application, configure its SDK/exporter once and call `enable` after
+that setup. Use its existing lifecycle instead of replacing its provider with
+the catalog's isolated capture helper. Application-created jobs and threads
+need explicit context propagation, shown in slot 12.
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+## Examples (13 of 13 bottled)
+
+01. [Kyoto Fushimi lantern watch](01-kyoto-fushimi-lanterns/) — available
+02. [Petra Siq water gate](02-petra-siq-water-gate/) — available
+03. [Zanzibar Stone Town tide steps](03-zanzibar-stone-town-steps/) — available
+04. [Machu Picchu terrace drains](04-machu-picchu-terrace-drains/) — available
+05. [Venice Rialto sealed manifest](05-venice-rialto-sealed-manifest/) — available
+06. [Svalbard seed vault stream](06-svalbard-seed-vault-stream/) — available
+07. [Cape Town cableway fallback](07-cape-town-cableway-fallback/) — available
+08. [Angkor Wat causeway trials](08-angkor-wat-causeway-trials/) — available
+09. [Dubrovnik wall watch](09-dubrovnik-wall-watch/) — available
+10. [Ilulissat icefjord index](10-ilulissat-icefjord-index/) — available
+11. [Lalibela roof brief refusal](11-lalibela-roof-brief-refusal/) — available
+12. [Rapa Nui moai survey job](12-rapa-nui-moai-survey-job/) — available
+13. [Samarkand Registan trace desk](13-samarkand-registan-trace-desk/) — available
+
+## What each scenario adds
+
+| Slot | What it adds |
+| --- | --- |
+| 01 | Existing chat; SDK configured first; idempotent enable |
+| 02 | Client kind, request settings, response model, token buckets |
+| 03 | Class/instance tools, block schema, manual stop at tool result |
+| 04 | Nested local workflow tree and block return values; no HTTP |
+| 05 | Context instrumenter still runs; exported metadata excludes manifest content |
+| 06 | Streaming span remains current until the final chunk |
+| 07 | Cross-provider fallback; failed and successful model spans |
+| 08 | Each evaluation trial gets a workflow with perform/evaluate steps |
+| 09 | Disable stops new operations, lets active spans finish, keeps SDK alive |
+| 10 | Batch embeddings, dimension/usage attributes, exporter snapshot and reset |
+| 11 | Provider error sets error.type on chat, step, and workflow |
+| 12 | W3C context carrier across an application-created worker thread |
+| 13 | Agent, schema, tools, two-turn loop, workflow, and usage capstone |
+
+## Fixture provenance and verification
+
+All **11 HTTP cassettes are hand-authored**, not live recordings. Request
+bodies were generated by executing RubyLLM 2.1.1's encoders with locally
+stubbed transport and tracing bypassed only in the temporary encoder harness.
+Responses use the real provider JSON/SSE shapes; replies and usage counts are
+illustrative. The committed scripts and tests always use the real SDK and
+cassette player. No tracing replacement or synthetic span fixture is shipped.
+Slots 04 and 09 make no HTTP calls and need no cassettes. Slot 08 also has a
+hand-authored YAML inspection dataset.
+
+Re-record with `LIVE=1` and the scenario's documented provider key(s). Replays
+need no keys. A live response may change phrasing or counts; assertions compare
+usage to the returned message and check the posted facts and trace structure.
+The local encoder pass checked all 15 HTTP interactions, including the stream,
+tool loop, fallback, and evaluation results. Syntax checks cover every script,
+test, and the shared helper. Full SDK replay and `rake test` still require CI:
+the SDK is unavailable locally, and the locked JSON/BigDecimal native gems
+cannot be built in this offline workspace. No live provider behavior was
+verified here. The additive SDK dependency versions and checksums were
+transcribed from [Datadog's Ruby 3.2 OpenTelemetry integration lockfile](https://github.com/DataDog/dd-trace-rb/blob/4f1caa5569a0ae492be668cb6be145fa4728645a/gemfiles/ruby_3.2_opentelemetry_otlp_1_5.gemfile.lock),
+preserving the existing locked gems and Bundler's frozen checksum checks.
+
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) for the scenario conventions.
