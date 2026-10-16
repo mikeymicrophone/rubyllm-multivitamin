@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Watercolor of the posted tissue-color
+        board at Atelier Rohan, Johari Bazaar, Jaipur, on the eve of Uttarayan.\nChalked
+        colors: saffron tissue 07:15, 36 sheets; indigo tissue 14:40, 64 sheets.\nThe
+        dyer Farida is at the manjha trough.\nAtelier reference: loft card JA-17.\nDocumentary,
+        not decorative. No people.","n":1,"size":"1024x1024","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:41:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_635d0f2a07724e23a5dda14803ede605
+      Openai-Processing-Ms:
+      - '7699'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a49ffedd4b01-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792096878,"background":"opaque","data":[{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"481453d9-2cab-4a9f-980a-f6a4a44e593a"}],"output_format":"png","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":92,"input_tokens_details":{"image_tokens":0,"text_tokens":92},"output_tokens":272,"output_tokens_details":{"image_tokens":272,"text_tokens":0},"total_tokens":364}}'
+  recorded_at: Thu, 15 Oct 2026 20:41:19 GMT
+recorded_with: VCR 6.4.0

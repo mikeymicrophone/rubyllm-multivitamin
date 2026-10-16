@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Foucault pendulum in the equatorial
+        hall at Ciudad Mitad del Mundo, Quito.\nBob at the noon mark, 16.4 s period,
+        brass disk, lamp over the log.\nTwo plates from one request for the noon round
+        and the relief kit. Documentary.","n":2,"size":"1024x1024","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:42:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_e7ea762e20164ee0a67552674e91a112
+      Openai-Processing-Ms:
+      - '5985'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a6cb0fbd302c-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792096965,"background":"opaque","data":[{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"955a71ab-5e1d-4ece-a736-65300fe0b96f"},{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"c8f22fb0-6025-4877-abe9-60701acc7cea"}],"output_format":"png","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":124,"input_tokens_details":{"image_tokens":0,"text_tokens":124},"output_tokens":544,"output_tokens_details":{"image_tokens":544,"text_tokens":0},"total_tokens":668}}'
+  recorded_at: Thu, 15 Oct 2026 20:42:46 GMT
+recorded_with: VCR 6.4.0

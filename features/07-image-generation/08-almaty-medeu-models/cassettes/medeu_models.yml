@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Speed-skating oval at Medeu,
+        Almaty, 1,691 m.\nIce last resurfaced 12 March 2026, dam wall wet from melt.\nLooking
+        from the stands toward the dam. Documentary, no skaters invented.","n":1,"size":"1024x1024","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:42:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_f3eb11a609a14804be91e8709758c1f2
+      Openai-Processing-Ms:
+      - '7106'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a6501e7c962a-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792096946,"background":"opaque","data":[{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"7532110f-9087-49c5-81f1-a47966727c0c"}],"output_format":"png","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":56,"input_tokens_details":{"image_tokens":0,"text_tokens":56},"output_tokens":272,"output_tokens_details":{"image_tokens":272,"text_tokens":0},"total_tokens":328}}'
+  recorded_at: Thu, 15 Oct 2026 20:42:27 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-2","prompt":"Speed-skating oval at Medeu, Almaty,
+        1,691 m.\nIce last resurfaced 12 March 2026, dam wall wet from melt.\nLooking
+        from the stands toward the dam. Documentary, no skaters invented.","n":1,"size":"1024x1024","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:42:37 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_1561fe01565b459981362a76effe0432
+      Openai-Processing-Ms:
+      - '10222'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a6816e7661c8-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792096957,"background":"opaque","data":[{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"487a0f24-90e6-40f9-9378-232799e239c7"}],"output_format":"png","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":56,"input_tokens_details":{"image_tokens":0,"text_tokens":56},"output_tokens":196,"output_tokens_details":{"image_tokens":196,"text_tokens":0},"total_tokens":252}}'
+  recorded_at: Thu, 15 Oct 2026 20:42:38 GMT
+recorded_with: VCR 6.4.0

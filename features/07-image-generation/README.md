@@ -27,19 +27,19 @@ on OpenAI. Replay ignores `LIVE_PROVIDER`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson tide board watercolor](01-point-wilson-tide-board-watercolor/) — available
-02. [Mukilteo range light size](02-mukilteo-range-light-size/) — available
-03. [New Dungeness lens cutaway](03-new-dungeness-lens-cutaway/) — available
-04. [Cape Disappointment foghorn house](04-cape-disappointment-foghorn-house/) — available
-05. [Anacortes retort floor plate](05-anacortes-retort-floor-plate/) — available
-06. [Friday Harbor blue hour prompt](06-friday-harbor-blue-hour-prompt/) — available
-07. [Neah Bay pilot ladder sizes](07-neah-bay-pilot-ladder-sizes/) — available
-08. [Ediz Hook bell buoy models](08-ediz-hook-bell-buoy-models/) — available
-09. [Smith Island barometer pair](09-smith-island-barometer-pair/) — available
-10. [Bremerton dry dock gate cost](10-bremerton-dry-dock-gate-cost/) — available
-11. [Port Townsend slip blob](11-port-townsend-slip-blob/) — available
-12. [Juan de Fuca chart size refusal](12-juan-de-fuca-chart-size-refusal/) — available
-13. [Admiralty Inlet chart handover](13-admiralty-inlet-chart-handover/) — available
+01. [Jaipur kite-tissue board](01-jaipur-kite-tissue-board/) — available
+02. [Seoul ondol flue size](02-seoul-ondol-flue-size/) — available
+03. [Cremona varnish cutaway](03-cremona-varnish-cutaway/) — available
+04. [Isfahan orsi window](04-isfahan-orsi-window/) — available
+05. [Havana cigar floor plate](05-havana-cigar-floor-plate/) — available
+06. [Tbilisi sulfur-bath prompt](06-tbilisi-sulfur-bath-prompt/) — available
+07. [Rila hearth sizes](07-rila-hearth-sizes/) — available
+08. [Almaty Medeu models](08-almaty-medeu-models/) — available
+09. [Quito pendulum pair](09-quito-pendulum-pair/) — available
+10. [Baku pumpjack cost](10-baku-pumpjack-cost/) — available
+11. [Chiang Mai umbrella blob](11-chiang-mai-umbrella-blob/) — available
+12. [Vilnius stamp size refusal](12-vilnius-stamp-size-refusal/) — available
+13. [Sarajevo anvil handover](13-sarajevo-anvil-handover/) — available
 
 ## What each scenario adds
 

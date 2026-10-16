@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-image-1-mini","prompt":"Square documentary plate of the
+        ondol flue at Hanok 14, Bukchon-ro, Seoul.\nThe flue cap stands above the
+        kitchen ondol. Rain on the clay stack.\nOndol survey reference for Bukchon,
+        not a postcard.\nNo people, no courtyard invented beyond the flue.","n":1,"size":"1024x1024","quality":"low"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Oct 2026 20:41:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_8631e67f815e4bd391a4b6fb675e1d67
+      Openai-Processing-Ms:
+      - '7088'
+      Server:
+      - cloudflare
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - X-Request-ID
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b1a4dd9a0f8d3a-PDX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"created":1792096887,"background":"opaque","data":[{"b64_json":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","generation_id":"d620ef3a-0527-4235-a89d-9b70c603a158"}],"output_format":"png","quality":"low","safety_identifier":null,"size":"1024x1024","usage":{"input_tokens":67,"input_tokens_details":{"image_tokens":0,"text_tokens":67},"output_tokens":272,"output_tokens_details":{"image_tokens":272,"text_tokens":0},"total_tokens":339}}'
+  recorded_at: Thu, 15 Oct 2026 20:41:28 GMT
+recorded_with: VCR 6.4.0
