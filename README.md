@@ -58,7 +58,8 @@ reset on 15 October 2026, except Sequim Bay which fell back to OpenAI
 `gpt-4.1-mini` after `free-models-per-day`. Error handling recorded a
 rejected-key 401 and a `free-models-per-day` 429 on OpenRouter, and schema,
 embedding-overflow, tool, cancel, and fallback cassettes on OpenAI
-`gpt-4.1-mini` (and `text-embedding-3-small`). Agents recorded OpenAI
+`gpt-4.1-mini` (and `text-embedding-3-small`), reworked 16 October 2026
+onto worldwide desks. Agents recorded OpenAI
 `gpt-4.1-mini` after the free OpenRouter slug hit `free-models-per-day`
 (and `gpt-4o-mini` for the Port Angeles mid-run switch). Neah Bay records
 `openai/gpt-4.1-mini` on OpenRouter so the cassette keeps `X-OpenRouter-Title`.
