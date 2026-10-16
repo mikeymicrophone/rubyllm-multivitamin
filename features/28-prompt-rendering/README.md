@@ -15,23 +15,40 @@ Official reference: [Prompt Rendering](https://rubyllm.com/prompt-rendering/).
 
 ## Providers that can record it
 
-Rendering is local. A follow-up `ask` that uses the rendered string records on the chat provider: OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`, then `liquid/lfm-2.5-2.6b:free`, or OpenAI `gpt-4.1-mini`. Scenarios that only assert the rendered string, a missing file, or a partial need no HTTP cassette.
+Rendering is local. A follow-up `ask` that uses the rendered string records on OpenAI `gpt-4.1-mini`. Scenarios that only assert the rendered string, a missing file, or a partial need no HTTP cassette. Checked 16 October 2026.
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Elliott Bay station instructions — planned
-02. Shilshole missing prompt — planned
-03. Golden Gardens welcome locals — planned
-04. Meadow Point nested path — planned
-05. Carkeek tone partial — planned
-06. Richmond Beach engine roots — planned
-07. Edmonds empty agent template — planned
-08. Possession Sound prompt("instructions") — planned
-09. Gedney untrusted name — planned
-10. Hat Island chat.with_instructions render — planned
-11. Priest Point display_name lambda — planned
-12. Tulalip local_assigns optional — planned
-13. Camano prompt desk capstone — planned
+01. [Tlemcen burnous wool](01-tlemcen-burnous-wool/) — available
+02. [Bandung batik stamp](02-bandung-batik-stamp/) — available
+03. [Kraków obwarzanek stall](03-krakow-obwarzanek-stall/) — available
+04. [Mostar copper pot](04-mostar-copper-pot/) — available
+05. [Taroudant tadelakt plaster](05-taroudant-tadelakt-plaster/) — available
+06. [Ljubljana beehive panel](06-ljubljana-beehive-panel/) — available
+07. [Yogyakarta wayang kulit](07-yogyakarta-wayang-kulit/) — available
+08. [Mbarara ankole hide](08-mbarara-ankole-hide/) — available
+09. [Valletta pastizzi dough](09-valletta-pastizzi-dough/) — available
+10. [Gyumri khachkar carving](10-gyumri-khachkar-carving/) — available
+11. [Harar bookbinding](11-harar-bookbinding/) — available
+12. [Chichicastenango huipil](12-chichicastenango-huipil/) — available
+13. [Kashgar atlas silk](13-kashgar-atlas-silk/) — available
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+## What each scenario adds
+
+| Slot | What it adds |
+| --- | --- |
+| 01 | `render_prompt` with locals, then `with_instructions` and `ask` |
+| 02 | Missing file raises `PromptNotFoundError` before HTTP |
+| 03 | Static prompt: no locals |
+| 04 | Nested path `coppersmith/instructions` |
+| 05 | `render "tone"` partial next to the prompt |
+| 06 | `Prompt.roots <<` engine path; the host file wins |
+| 07 | Agent with no prompt file starts without a system turn |
+| 08 | `instructions { prompt("instructions") }` fails loudly when absent |
+| 09 | Map a stall card to a known prompt name; do not interpolate |
+| 10 | `ask` a rendered question template |
+| 11 | Agent `instructions display_name:` lambda |
+| 12 | Optional local through `local_assigns` |
+| 13 | Capstone: nested path, partial, auto-loaded agent prompt, two asks |
+
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

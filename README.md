@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 325 |
+| Bottled | 351 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,9 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 325 of 429 are
-bottled. Features 1–21, 23, 24, 26, and 27 are full. Features 22, 25,
-and 28–33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 351 of 429 are
+bottled. Features 1–21, 23, 24, and 26–29 are full. Features 22, 25,
+and 30–33 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -77,7 +77,12 @@ records OpenAI `text-embedding-3-small`, and Salvador and Rotorua briefs
 use `gpt-4.1-mini`. Files recorded OpenAI Files (`purpose: "user_data"`
 or `"batch"`) and `gpt-4.1-mini` when a chat reads the file. Prompt
 caching recorded OpenAI `gpt-4.1-mini`; Gemini `CachedContent` is a
-local OpenAI refusal. The other bottled cassettes are OpenRouter.
+local OpenAI refusal. Prompt rendering recorded OpenAI `gpt-4.1-mini` when
+an ask follows the ERB; six slots raise or assert locally and have no
+cassette. Extended thinking recorded OpenAI `gpt-5-nano` (effort and
+`display: :summarized`) and OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`
+(toggle, budget, and `with_thinking(false)`); `gpt-4.1-mini` raises
+before HTTP on the off control. The other bottled cassettes are OpenRouter.
 
 ## Run the examples
 
@@ -245,8 +250,8 @@ hold the cassette player and the model slugs, not the story.
 25. [Document OCR](features/25-document-ocr/) — 0 of 13 bottled
 26. [Files](features/26-files/) — 13 of 13 bottled
 27. [Prompt caching](features/27-prompt-caching/) — 13 of 13 bottled
-28. [Prompt rendering](features/28-prompt-rendering/) — 0 of 13 bottled
-29. [Extended thinking](features/29-extended-thinking/) — 0 of 13 bottled
+28. [Prompt rendering](features/28-prompt-rendering/) — 13 of 13 bottled
+29. [Extended thinking](features/29-extended-thinking/) — 13 of 13 bottled
 30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 0 of 13 bottled
 31. [Tokenization](features/31-tokenization/) — 0 of 13 bottled
 32. [Hosted research](features/32-hosted-research/) — 0 of 13 bottled
