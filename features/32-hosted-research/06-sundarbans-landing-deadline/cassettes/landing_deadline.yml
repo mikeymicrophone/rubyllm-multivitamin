@@ -1,0 +1,57 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Research
+        raised passenger landings in the Sundarbans. Compare mangrove protection with
+        cyclone access needs; identify evidence gaps before proposing a monitoring
+        plan."}],"background":true,"stream":false}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-sundarbans-landings-06","object":"interaction","agent":"deep-research-preview-04-2026","status":"in_progress","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-sundarbans-landings-06
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-sundarbans-landings-06","object":"interaction","agent":"deep-research-preview-04-2026","status":"completed","steps":[{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"Sundarbans
+        landing design needs separate evidence for cyclone access and mangrove disturbance.
+        Begin with a seasonal passenger-access log and shoreline photographs; engineering
+        siting remains unresolved pending local assessment.","annotations":[{"type":"url_citation","url":"https://whc.unesco.org/en/list/798/","title":"The
+        Sundarbans","start_index":0,"end_index":228}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,62 @@
+# Hand-authored Vertex research fixture; not a live recording.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions
+    body:
+      encoding: UTF-8
+      string: '{"agent":"deep-research-preview-04-2026","input":[{"type":"text","text":"Design
+        a humidity-sensor archive for Istanbul''s Basilica Cistern using Azure IoT.
+        Use Microsoft Learn for retry and retention semantics; distinguish proposed
+        sensor placement from heritage authority guidance. Cite both kinds of sources."}],"background":true,"stream":false,"tools":[{"type":"google_search"},{"type":"mcp_server","name":"learn","url":"https://learn.microsoft.com/api/mcp","allowed_tools":["microsoft_docs_search"]}]}'
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-istanbul-cistern-09","object":"interaction","agent":"deep-research-preview-04-2026","status":"queued","steps":[],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z"}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+- request:
+    method: get
+    uri: https://aiplatform.googleapis.com/v1beta1/projects/multivitamin-replay/locations/global/interactions/research-istanbul-cistern-09
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <VERTEXAI_ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"id":"research-istanbul-cistern-09","object":"interaction","agent":"deep-research-preview-04-2026","status":"completed","steps":[{"type":"google_search_call","id":"search-research-istanbul-cistern-09","arguments":{"queries":["Azure
+        IoT Hub documentation"]}},{"type":"google_search_result","call_id":"search-research-istanbul-cistern-09","result":[{"url":"https://learn.microsoft.com/en-us/azure/iot-hub/","title":"Azure
+        IoT Hub documentation"}]},{"type":"mcp_server_tool_call","id":"mcp-research-istanbul-cistern-09","name":"microsoft_docs_search","arguments":{"query":"Azure
+        archive ingestion retry guidance"}},{"type":"mcp_server_tool_result","call_id":"mcp-research-istanbul-cistern-09","name":"microsoft_docs_search","result":{"content":[{"type":"text","text":"Use
+        durable queues and preserve the original blob reference."}]}},{"type":"thought","summary":[{"type":"text","text":"Compare
+        source provenance and keep current access claims separate from historical
+        evidence."}]},{"type":"model_output","content":[{"type":"text","text":"The
+        Basilica Cistern archive proposal should buffer sensor readings in a durable
+        queue and preserve raw timestamps. Proposed humidity-sensor positions require
+        heritage authority review; Azure retention semantics do not establish conservation
+        approval.","annotations":[{"type":"url_citation","url":"https://learn.microsoft.com/en-us/azure/iot-hub/","title":"Azure
+        IoT Hub documentation","start_index":0,"end_index":251}]}]}],"created":"2026-10-16T14:00:00Z","updated":"2026-10-16T14:00:10Z","usage":{"total_input_tokens":800,"total_output_tokens":160,"total_thought_tokens":60,"total_tool_use_tokens":40,"total_cached_tokens":0}}'
+  recorded_at: Fri, 16 Oct 2026 14:00:10 GMT
+recorded_with: VCR 6.3.1
