@@ -16,7 +16,7 @@ class CaliSalsaPlazaTopNTest < Minitest::Test
     assert_equal 5, result.count
     assert result.documents.any? { |card| card.include?("Calle Quinta") }
     assert_includes request_body, '"top_n":5'
-    assert_includes request_body, "vallenato"
+    assert_includes request_body, "Vallenato"
   end
 
   def test_cassette_does_not_carry_a_live_key

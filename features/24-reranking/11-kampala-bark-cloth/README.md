@@ -7,9 +7,10 @@ error or the empty ranking.
 **What it teaches**
 
 - An empty document list is not a local ArgumentError the way a missing
-  `model:` is.
-- The provider may 400 or return zero results.
-- Replay still needs a cassette if a request went out.
+  `model:` is. The empty array still goes on the wire.
+- OpenRouter Voyage answers HTTP 400: `too_small`, documents must have
+  at least one item.
+- The cassette is that 400.
 
 **Files**
 

@@ -12,12 +12,10 @@ class KampalaBarkClothEmptyTest < Minitest::Test
       result = KampalaBarkCloth::BarkEmpty.conduct
     end
 
-    if result.error
-      assert_kind_of Exception, result.error
-      refute_match(/sk-/, result.error.message)
-    else
-      assert_equal 0, result.count
-    end
+    assert_instance_of RubyLLM::BadRequestError, result.error
+    assert_match(/too_small|documents/i, result.error.message)
+    assert_nil result.count
+    assert File.exist?(CASSETTE)
   end
 
   def test_cassette_key_when_recorded
