@@ -1,0 +1,390 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Rafael
+        tools hide COR-2026-1016-L4 at 08:55. When does Rafael tool?"}],"instructions":"You
+        are the guadamecí clerk in Córdoba.\nCórdoba guadamecí standing order 1: hide
+        1 is lot COR-2026-1016-L1. Córdoba guadamecí standing order 2: hide 2 is lot
+        COR-2026-1016-L2. Córdoba guadamecí standing order 3: hide 3 is lot COR-2026-1016-L3.
+        Córdoba guadamecí standing order 4: hide 4 is lot COR-2026-1016-L4. Córdoba
+        guadamecí standing order 5: hide 5 is lot COR-2026-1016-L5. Córdoba guadamecí
+        standing order 6: hide 6 is lot COR-2026-1016-L6. Córdoba guadamecí standing
+        order 7: hide 7 is lot COR-2026-1016-L7. Córdoba guadamecí standing order
+        8: hide 8 is lot COR-2026-1016-L8.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Rafael and the time 08:55.\nDo
+        not replace Rafael with a pronoun.\nDo not mix the tooled hide with the gilt.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"medium","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:16:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fddbce500620-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '6096'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999494'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 15ms
+      X-Request-Id:
+      - req_e94d2b72f8b940ae8f02812ff6f9c82b
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0e046df34ddc2909016ad2157a53e087d2a5ba36e1406ca50e",
+          "object": "response",
+          "created_at": 1792152954,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152960,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the guadamec\u00ed clerk in C\u00f3rdoba.\nC\u00f3rdoba guadamec\u00ed standing order 1: hide 1 is lot COR-2026-1016-L1. C\u00f3rdoba guadamec\u00ed standing order 2: hide 2 is lot COR-2026-1016-L2. C\u00f3rdoba guadamec\u00ed standing order 3: hide 3 is lot COR-2026-1016-L3. C\u00f3rdoba guadamec\u00ed standing order 4: hide 4 is lot COR-2026-1016-L4. C\u00f3rdoba guadamec\u00ed standing order 5: hide 5 is lot COR-2026-1016-L5. C\u00f3rdoba guadamec\u00ed standing order 6: hide 6 is lot COR-2026-1016-L6. C\u00f3rdoba guadamec\u00ed standing order 7: hide 7 is lot COR-2026-1016-L7. C\u00f3rdoba guadamec\u00ed standing order 8: hide 8 is lot COR-2026-1016-L8.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Rafael and the time 08:55.\nDo not replace Rafael with a pronoun.\nDo not mix the tooled hide with the gilt.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_0e046df34ddc2909016ad2157acee487d29b236e5989486590",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hWAwoFGDcMnDHq1_d0x0GK9NfSBbui8EcP0AAzfhXRH3RyUeuYA8jQq7LIZkXmeTCjqORfpTZjUvOTFCvFF7BuSHGLtCi9xurin7Pi6POvPc-InDJO_j1G1jcG_94B1cHJ6C6kdbQiwqpTCS39DDvQJgt6g2qGSSTigxLSC6yvaUTBr72SMD9Pz8w-HHefZRAnOy-jv-6fcqnGqqNnP3yYyPQMF9ImrOgoWor_MYwoUSlu9ZmCRAmMrjneWeyCGe19g7gDL-sYhidmHhMgOwmp6d8_B5MhMZCbFg_aedxe26JU8hDFGqDbSHp56FlSYvs6MPSNjHZwsuJE5S8qhhmkzWYHraSaOgUpiCD_kqgYxNEtngHHYKzRQLLIgV4tP3CynnkV0Ye1dmBUujiK8BEecp5kOR3u-J7Ik-Sc0bPmKTcRyf0k1sWfGXpFSVngpc8MuFVAitL0aXMn_fYLOsvj3diecJOiQT8H0vvwRm7ecp1udMddM_fpVpZcTCZ5MGrMVtHJ8O7qWjlL-V0hcspf7eSjYfc9Vucd7gdpIa7Hb6RV56QbrG3Cq3uNrKGy0dt6rL6zCOhhAw58wHQ4y5EsjCFdpETYEaN3zCY-UuG5I-xdu4xzOygUWZUVnejmt5AWp1lUjoYbXYqPc0ITKiQYoQker275SvRInj5KnyYLIDUmnXg-COgYQPhdnQsquajdB6M1YOX21wZe6yRY36rLVAwGZGlXuoQKZyPN1TIxb9-KHMacAYEinG7gPvboO47PpSlyhdCMWvssOoi3EA9LNPYmXllFdqhjEu6PjEqlNHUDbbqnlH3Tosd24kAlprCxViz8g-mzhsFt9O82lHjR-IXihUrqHtH0R-Bjq-vzZfuigjZDpzndCFC1nZLw73i_wYYfUojh6q8bAT5raj7i-ngbGphTgnNRVAtajstjwaZMhF5X5n5TFZ9SUPe_E5td_A0TO6owVBEVldZcCH_AyCo8kcN7Zjf_JauT1Watl25IQ2tGdUK3l806cQkceSbGleOSRJYEZxAduEvP532nVeY58Vffd1ppr1-ewxVVeuxmz7LsE1Be04wISwIsmYd7q2an2tHbdVH0iOFTaVDKKVih8AaS-WoOOPmIVNikZN5LOyemkhouqkkRFK5fW3aUaTvhvV2E82ne3s7OWBOwsqh49dwFWTRcPRRadCkKGVKxKuXRoMi6WsdzIgaKptzkueDzeaH7whlcM-sggee88Zv8xHt0_P4EQ0VXwIesHZyf958AgMXNF1ucoKGY8UJHE7vjUJA9NN8MopaDceKgFJ4wgnujKptRC2H4TjVYjS0a2E3W0vEQ3R_mf1hzPcgpPEc1zCPM8XVWhpax9Iw3jK3kIZhlknDaetONVIKsgeWz7pvcr2lXWR6_67bV9drahCc4_kYdR4ubvt-PXJAKE3XNg-7G0sTEjixnTPiApS3TdQF7SavC5obRUL8KTc284d2pqhf5gmul4iBiDR8iUk4Luwi6HXbdfFtpKL4MbBMoqz53Ww35FiRKar-7R13eReNb0jeLRQUsXgbyZv8QGjS_fLge9vnO4R99o9Z6PGtaxzhdfIdvOx15mGpLbwLHwVyTVWkRmTWSBiKRLGBAQyFtB54IweklR_cyGBvzc324h9x73a7rJUIYLpjk2g1k_9SaYj10nUKFctQttPIyx4M1_OsKpB3Y9I3HpH9lYY9FGChUzVi-9PD6f2JI3dsbS-vi8RYa8gvWa0Tm_YUFmzBYg2ku3VbW90wK1cbN4hPD4Pl4FJP13N2U0MefV22mWk1rNBTulW7RcXbpQ_LuzuXw93tUsdbn0VvsFc_ygdLlKtPW1q10UXJVtMCBPYdzDohbD_9JuWooElFmi26sh2Nfy7zVwGPy2CJKl_kPLeC9RcYOJfbaavXk08aKr0nPTVzvaKXdXF3mnU7tNrxEzS4NJsNv1Z_V4N5U0Qp1gtainsF-unyI8GJfoYIKvJy5a80bXE3AbZ7a-W9wgvOP7kkxla69ZbaLjjsYjEn0_Q0ZR3DyKats4Reh8aFeBZE5bZ2wM8yMXq6JdLM6Xw29KzIsc24A_mk53L3bDfxipQryf6W2n18XTy8pPK1BuPjx2Q2P3L7hipUzM_IJ5XNLehYWMloP9QARw710rSwkg0Z4G7Qz_GWtA0HZqyyWnY5U3Y5VvxbOusVW2b7AK8tANlcN2FaueyDPo7hJe8F1UYRhFi7r2yfKmBgP1PmXUQ4Zl-F9ZT3-J3I98BgkgDec78NjUr9aMjcEstBxF_dQ9M5UBI6u6Gq_Dbcc-RQCOxVci7zLuZWW0Kyc_uXIjfSEaIHzOekosQ77JKl0RVvPamY4XlgsvKocOdQI6a5dsyCOIA7t6Q8Bi8xLsVanulu8TDt5QXv6ThO70VFKeFtPAAjANjCCojHSmyWhN7rFhFFk3UCfaWkOPGvDQN3m4ka3UMYQhf0wiPWIyEtPPqhU3Xj2wBkuWTSpImxVJjfO8c-tWYgLqYvf3jxbVB1Uc3nZEhf4ha2n7ne4maRfY5bJnut39n5U7dArjENQfCn8gKQSCEpP_8IgneZ0Z1OItORjAppMSYDIPvp9sq6Mwcc1QthtkV-EDTSo6g8uOM0Cy_q9iYl6JpJzkJEmXaGhD5qN1QHrwoM7BvXBj4cdU9JDe3qYRL8XZWNf8pGk69xpgP0ceFbdhNgNMYlfiQ1ycFmxVyUlfExIvw3u5ZXGl3YDBDIww7KOe1fjFZIQe5dLlrIbnD6v1D_Qe3tIIQq5Lp2bOdQR2wTDcGEh5Nm5hdbOS5LFKOy6-oIuIxWZaGYc3ooR1AVEoRDW0XmL8DJCRX9vnZ1Z5iPw44LazaidHwaUq5cv5Ldk14qImktulh6wYRIDN_-aTkw8upui8zxW2OkmaKbGz5mbtdqaajojGEL0A-pEjF3yMSMQUjoDL7FsapN2QppHQ1l78tlzN7YQwZ1F_ErTg58rlty6r2XQ2d0FmaqQMR-aii72bgd56yi2gjLNtmCuv10pUpiNd-YjY2G2rBuWzfSZnHuC8LnbFZDCKvr_1pNcXaCMH5I_H-CQ4G7GfVeIV7sg59inDRr_kgkW26oeQ7UYoA9x8NfPSE5PJGmByyYW8aISsMvATRsgVMkhEQxWz7lYYvGr5rT_80nD_l_bE4-U7_X55lHrL-Q4vl9elTa7JgPjYSlyJNPJu8NQ53uVQCvvVv5HBsztqsIjPNWEGXElBUmu9x7A9rZzVwNMz5a2pan9V6AXLVc08d6TH5L6HFF1hbXpltp2nLO1SX_mzvCVBSJ5QWg8w80--SMyhITJh9PMVPReOqeiu_DYNcVqqGwmUSchL5u8a-QcgJhR8Y6YQzOMw4465ZHQw8C1q-g3SPs3o2v-l03UiaaaX9MegatubAZpGwz7Q7EvP_ZJFb0Gt-JSc09JkIZoZlbB22gNaKxJicUTpyoIxuyFcUr8J3kotT-Nl_EBRXbHveIfOqMEjBTbUkdEBFzCLmRVgZV5otALVRLa_npV21165wihHztWiVZLMhV65-WyXSGRB9HmsX5yuFhmy8EvrYFj97KVy3S5djswG80ZIeDzlXxDDzObInFgnx07zKwWJTDvHrN6Dwq15enBHHPo7l8jgGXUPCUghJNzvg2mL1fYDSRcHtH-mcE5HQRuXliQ1L070ky7fEjSOwAOmGaOFZ1S0YwZGaHesNquag7PceHiCFDunfpk_7fwecn4WGVKZOG69HX7jT6aB_Nq3b3tbL4REei-mObvW_ZUcnXjp3SIKY-QkH-gpEh8NwBbWxvQNwaxVUFxlSnXNiexC5kOBC363tquqqMv3ds6SG7DOTtGXh65Hb03E0W_0Z3pj2c0sjJfF5JG9AJqKX5Vf3-CsLUJ1yVoazjS-WI-2s_yXYoPRciHFd5XnJbHU8zmPfC7gABPcMFfY9D5aOA0dx4nJEqqU41iQQbtU4uTvZ7rokEEaMTH8taMGLYpcaDD9lbZe1a2jUsbfmTrE9Xs1G727tdaUWF47UlDs54NfqfFIPxvkYmWMVaAEY-13MLkQf3qqKlTb7KjzEu5UX6D3OAYQF-IpzAlXsHNxr65I-mSA58K5-m7KwwawoDo3Rqa9nAwsruijFHucfPvgwLFZJea64rQ8dll_OqEiVJFmVnnoG-v7lnIYLTGsMkyCchSe-lZU4mAGDbQ02UqY2CryMkOUUQq_FDXoC28vPhmkkHeEuk0ulCH9GU51Q0RpJaclcM2QggSO5v5yR7nvSk3p0FYXVHPIDt_7xjNPI-_GyYojB3DuqR0SUTc8TrD-VOmTEDCTbHQrGJbEbDH15uz2G4Aqu_-skiL40_SujGMHXDitFsJRJkc5BS3VxraJOjiN8gZF6PDp2BTvJxcPt8FfVG7GznxCs2E6zJAKNsWmMy_rdw5sKAuw35SIks5bLYYSh2GA1d1RuS_X8NNo04AACCNiJ2vC3lVef7Tz4K1sDn-zrwyBfNXgmAyAFP5K-rjaa8VAEt0uEzW0VXLnEPpmUGZORGPsq9WmjkKg13DtpMqO1wjnJN7-Q7iTND_2H5jdQLYdI0YdUNJIEJpciHwljgtUMY3-PdZpdxz_M5Yw72w6DxLHIQKX9jOS92wnQiE9j2yMJsg2Krn9wOfcKxxyqK80mdF9ANOAGKyUvSJaJ5CrqoP9IRiHklosZDYlDRabUi4y9hq5CtEP7uxVYpQ72tHyZo0uvRAiKYRrSrgMurAhMuqWRjAPd4NOFSrj6ygCiBn5_pmVSgCxfqliYJ_lAbQDzJKxI1y9PbNHz-IZXV_h2Qz2JchpJFqkdQsUayrqFRYpprMt2tBd8a4MU40VhaRpIK1tilHe9TJKFUWrI76ac7JSeIaj1cXJzfwleavopl15lIyHhck3b00Qj99TRwYdS300d6GFDPE-KjNnDuL9djMziy-0tVUL_L69ADpEktQYbPOGnj-5WIInpebMk_Xua7gwP2ET7WgOnWKiqGsCMIdRX1kPVha9QVQC7KEC36SMI06hUyd_Z3ju-DtZLHdSm9COZ2RxBuNu3AvPh_HzDEVCM_c2E1omekZQeHAMiXTrfkJgjVZD2Els6h2qQ8Cqy1IwSzkNxLMB5D-KWnp6mYUPmn37-nP6DLb9OKol3_iFaioEbkK2t8dZX4mDHhNHqyBgP_FIKkYZGxeDrKKZ5BGaNO_8trA3Ha8TaPGTqYKMS5HCKbMPoRpUht7GxhCDyK1l0_fO6RAC8j1Q8TCwPMqM1xIZ-_EFwz1UcTZ9VopZcM0tW6_U6J3_Z6ljQ87vXHvm9W3ft3u8VfoNlNIYP8jS9m3q5D6WCtJzCUA7_HiSh2awcG-QLtzVewKwTUCrl0nNQYmV5UkTrbURxu6VTlpWx1RZDg7wPwAWh7JqeTPWjzBo0-OSV_w6LxTFVTFxqxfmYIRleYq7--4Lr7-eRHO-DFd_j3zJgXe7jDhqqntWw_Jp4MHOgnCMEmFpXluIHau2I4bMFk61QBHmhu3nzsgpQPNvwx33HKK0gUIViRwN2N88scQTl592ygcVBigHvgPKfakoKQsjiQZipcHOdoqD5cDT2wb1619FXnzhSYNRm2XwqVEShV-RKa5VnZmx8B-mo0zFTejHz-qen3pe4lmrqXH22bFxKR49uxlX3w9-0n19xH58xZ44rwYKHIIcKEGp3R59Djixer3NLdX1jmMQQq8Ul-_HGNSF2ILJyXjKFNj8BxM_YkVqs3ptz-UiMdbu_ZcEwpFb4NXEWi8VbkQMYS2NZvC-lzlneUzq9WLITyFtG8IOHLcHOmW1NF_3aSZ-tyyBSZPEocmFEYWL0-ZwHX0Pq8wxDKQ077x9XXfh_EugsaAc39l_tBeizv03oheLlNjdB16FxXK7Mbg79fAi-61AH3AJNulWZMbxHLc75Ey0jcOlQfwVO7GKFad9aMGYDBknN61nGu-tOCa_vgDVghoOoRn3MnsxtmQlQtMD5WzSTyCdFbazxyc8vlJwGYwUWa3La3jczL53zUJoz1XrTI1kw_wne-nSULd3H4hOW8AHVA9kVHzfp2QnbsOQ6wbyfKtNXfAHeIECOa64HYyURCQEuXbd9006fKjWcy44ipfJc1jruSPLjH84BTUZep6nhR4eUDbdWqPw3VvLP9qSEvFqV4WiY8iSb68MlZpmtpEeS5NSERERikSza94K3JYN72WgIII3-hlPca8GUu8-wL0Hogbix3suV0DEYML7UXrJ2Z0uvRu1ZvTfX2eR0CHLaMxC8n0POC0gOYjlMzoeelPlUPW3UDHFXnZ2TO4Qg2uSMDiye7mY2k7e0VA64cSTdL5g0pfGvAMBAefZGXZIWzW8J8s-B1EK9Fv-DXgm-wobhk7iN6IL99Tz3SOxo3OFOmdidBjs_7XGn2xfDEEe72kL6Jp5xWMm7ISQ2wOzn5HIYQ7lY7Kh4oE1P2pWivk_mrC47AyIG1AsQ6fsnubwuAlDAKH3tpFt8mz7TpdccdOqZyTgDoVFzc3v80DEktx3DXedKsT5g3RfTkM4I6xMYpC2RGOWgFLB8NwlqLoiwp8tNhz9VjcEIAf9YFoLNoNlj2w_LAWavwgdgLxD2_AK2SZE2kwNNjyDI_vN3eK-oZ69BjKqlgJvsvpzfD5ocWZyFKcO0t4eSgx85hSlI6ZGvT78hcRoAgbKX9uB3zhQ_LZzI8sSUcfvrnVobhBwQPmx_rg51jUAqJ5RDB-gUwvubvq-ZhPZhjgjGjrJdDWhBaatoMQm-7JdYjbvGQXA1YWUQLx-eE8mwEev7VuJuF_KC21QisnQgaa_ps2yRp_fmpu7BUmKn80kl7flqxTQ9cW2MRQmsimea9-IMsMhCzStqe3MvDzQTfLDHyJwMziD7SHWUjuF3ARogiMI1oSh4AsCqTk-4m6cVY4mgFDD3yjDw9h0kEh8NuPMO5xvLznIUSSPIDrRY5mVkhvsK6PbEfn9uLhope7bmvogRt8A9lZ4YOEMb3U9qD_HhbJ4gANXpDPlBMmqvC3kcrNDYecKu6V2DZN5SfWPxEmr8d8KES7Fq3_nKGYXJU_80FNtjTrgwghj0kuL6SUWlmYWWHsLejGdhLwkHYuAjpICt9iwggIYI-18dple3ZZGpMMjJ4YZxcJYFNG9QFZNaN-vt46UX4M8Hzzxn8jod0llge7S_jHqVocIVnkyrspUWz321TxMCYp9Eada_RdQ9cqCYZe5kSwurz8zuisar-QxfaZZUi7fHevLoL9MKWfr9ZLWPOczCDLLJIyfU4Lecz7hLVEcdIJSWSlRtdQdzNaOhEr687vZWv-LZSdaAQBPiiZ40yIZSJVWI1Bo-RuSOy9Jo9FPZCKqQYIy2VuBa-XvIbV-hVmE-PLNYtGbSejrOtJP8WQej7FT641MWx39mRrbmuCTS1lktM-ExbzwDboumvGIb60QdZPUgGU4LYUcFyZkl7PGOf-Yqiap763UI5QqZsqfzvpQI-6YT94t0FPzuB1LR5INbjdZkxDGU4d0kk8eyG4ICQEaRKH1V1AKxPQRhi0jkqoQmYMhekg0TYloMwwY7wARuVbwyPeG-eaHYPXLTdlwFeL61PNSaWTj6nzZnyM4avA5DKq1GovTNDdJJTEH8Df-suWRU2Khtm0YQzPvM16ZcMyM9-J27oYTAtuxEVR4pql3yGujxFGTPDlLl8LCJcCRQi_8nSbXGK3m4X59Od_RIuUgxHM9AHYsx5bDsWtQ5UWmndM2VkN4xy6YXt1b4CHMIg9ROoeqMvMAdLOfnIpUVMGATxXlD548BPp6DcMMu4gR6ZRCWjB8AEk6zuWq9--tOfF4XH_3DBP4AnsCyZsBWGtctGqNkeNlqO6UYBYK6f4uYXAkM5UbJxgSlmLI7oVDGRooTXZHzUf4_TO-wIsTrJafpWc5pEaRKP7JgAPSwZW-eqIWn4zLdpVaue49ZFhyJzBcy40VHlGGoauAroq0Ql1d1-dbKhXe9pIWGOHCcpN9CzCaIanTwGX2PUezRaLQq3PrwJi9ue_AOdbaOtF4HTrEeckphQ2nOWVYclEAyQhvlkeRPGkJENRqMSMHSI3ChQmc7tTsz8avcLk8-0-NTSco8UnNWH9SNGKpYY8Lqnt78kw2zUNtV_lP9n9zHxCVmT22xaQUOBuleisEtNAY0MoK4XPoaGotTHM933H7tDnPK4YXawLhxTlVQVroEdNOZqjXjmoJ5DbY6REKoD8L6EYpZR5gLypEyk3rjn_SHsn05R7Uram25CNvy9d-C3EZu_LC6XBBKLS7PVgPb7c6j0JMD6BeRjlvXSAnhobW-WFn4vHVTEzvPwynaGVPLFDu_Y9_41BeimqqI9wkBW5c9SIAOj-WupmVilYuPTde6BSirs9KlZcHEl2uPabruw6q86f0yhgaFBrvemkk5Z_R8FiAHoWjol_dwkMSDmc621e2-rFFpKcCOlsYs3Ut9q7SREEZjFV2VC1hB4bnoF2anxmtQ_E5uiBkxF7_SW2B0rDxMkAAtA0MfL9c3gBiK_7KiluufV2Red4nvAIQ3d6wF3SiOW8JyyXanEQ7apr4qeT96XW0H44XwJ1hgtPS8WKH0h4rDRYqYM0yH6vE4gRBo9tc02pvxcyydmCVEZjP75kmsgLHlDPS0y1hIbW3iZdWibSKqq7w6xX88VTEvkf1j9_5B8pzFq707BjfIfisu9ri4YGikLRAvHGYGskZtQkxnFeQXmbx-vlgGlQNgac9UXrqky_HH9WnkKaZ1_rKPhFxRhvo4cDPjyUYpuK02uf_6c90r9e7iQc8a4TYjkDYKRI9593_iy-ppbQm4dEU_gYL21vS8hJ_k9uSKFMc88LeSh3cGGzHtzrvKc8y5V6JiW-oSmH_rwlTZ3oJ30y2FBhsYWF1BO6V3IF6eQNEI4GjASr4Wb_ztIkzIksuS28IqfP3iKEJzw9sHrEZv5rAu9x4uCpuaRtnURmFXuPyDxd9eigNGp9Jj1Zmu7ryy982Q8L66pAMcyZEnimOSV3N-ohEJYa31Oc-raRUe1fvVl7szJ4o8nUeGExbn6BLIDEot0n-4ginnzM5blzUdsQNpwqxoAfKWkvRHRm3QpQlzoSG49UjlOpPmK9StGuAPInupQUciLdyNABIAVxsKRF_0dyUd5HpNtNEoVX1FAoyJgPlOzO85qmt2hb4YwY0XQKT8jmCeBdzySQj_BhGaHpFMfUQMk67d1qI12XwWeAUwMFcAhE7ohJ2JAFpwtAqZvo0MNHu1CEuDySRdUPmS99zH5CRsnAwk6gw7CJRQ-w8FlYKR4bl7cx-Clwc5SzosYs2nCf9JPs7uiVwD7_ou3l89_gu6YwdTsRkC0PsbFvf0IluEx5l-DHsynwtC8_qzeLh8NNB72IITjKZBbOKIYpKRw0=",
+              "summary": []
+            },
+            {
+              "id": "msg_0e046df34ddc2909016ad21580404087d2b68375079ce010e8",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Rafael tools hide COR-2026-1016-L4 at 08:55."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "medium",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 292,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 723,
+            "output_tokens_details": {
+              "reasoning_tokens": 640
+            },
+            "total_tokens": 1015
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:16:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Rafael
+        tools hide COR-2026-1016-L4 at 08:55. When does Rafael tool?"},{"type":"reasoning","summary":[],"encrypted_content":"gAAAAABq0hWAwoFGDcMnDHq1_d0x0GK9NfSBbui8EcP0AAzfhXRH3RyUeuYA8jQq7LIZkXmeTCjqORfpTZjUvOTFCvFF7BuSHGLtCi9xurin7Pi6POvPc-InDJO_j1G1jcG_94B1cHJ6C6kdbQiwqpTCS39DDvQJgt6g2qGSSTigxLSC6yvaUTBr72SMD9Pz8w-HHefZRAnOy-jv-6fcqnGqqNnP3yYyPQMF9ImrOgoWor_MYwoUSlu9ZmCRAmMrjneWeyCGe19g7gDL-sYhidmHhMgOwmp6d8_B5MhMZCbFg_aedxe26JU8hDFGqDbSHp56FlSYvs6MPSNjHZwsuJE5S8qhhmkzWYHraSaOgUpiCD_kqgYxNEtngHHYKzRQLLIgV4tP3CynnkV0Ye1dmBUujiK8BEecp5kOR3u-J7Ik-Sc0bPmKTcRyf0k1sWfGXpFSVngpc8MuFVAitL0aXMn_fYLOsvj3diecJOiQT8H0vvwRm7ecp1udMddM_fpVpZcTCZ5MGrMVtHJ8O7qWjlL-V0hcspf7eSjYfc9Vucd7gdpIa7Hb6RV56QbrG3Cq3uNrKGy0dt6rL6zCOhhAw58wHQ4y5EsjCFdpETYEaN3zCY-UuG5I-xdu4xzOygUWZUVnejmt5AWp1lUjoYbXYqPc0ITKiQYoQker275SvRInj5KnyYLIDUmnXg-COgYQPhdnQsquajdB6M1YOX21wZe6yRY36rLVAwGZGlXuoQKZyPN1TIxb9-KHMacAYEinG7gPvboO47PpSlyhdCMWvssOoi3EA9LNPYmXllFdqhjEu6PjEqlNHUDbbqnlH3Tosd24kAlprCxViz8g-mzhsFt9O82lHjR-IXihUrqHtH0R-Bjq-vzZfuigjZDpzndCFC1nZLw73i_wYYfUojh6q8bAT5raj7i-ngbGphTgnNRVAtajstjwaZMhF5X5n5TFZ9SUPe_E5td_A0TO6owVBEVldZcCH_AyCo8kcN7Zjf_JauT1Watl25IQ2tGdUK3l806cQkceSbGleOSRJYEZxAduEvP532nVeY58Vffd1ppr1-ewxVVeuxmz7LsE1Be04wISwIsmYd7q2an2tHbdVH0iOFTaVDKKVih8AaS-WoOOPmIVNikZN5LOyemkhouqkkRFK5fW3aUaTvhvV2E82ne3s7OWBOwsqh49dwFWTRcPRRadCkKGVKxKuXRoMi6WsdzIgaKptzkueDzeaH7whlcM-sggee88Zv8xHt0_P4EQ0VXwIesHZyf958AgMXNF1ucoKGY8UJHE7vjUJA9NN8MopaDceKgFJ4wgnujKptRC2H4TjVYjS0a2E3W0vEQ3R_mf1hzPcgpPEc1zCPM8XVWhpax9Iw3jK3kIZhlknDaetONVIKsgeWz7pvcr2lXWR6_67bV9drahCc4_kYdR4ubvt-PXJAKE3XNg-7G0sTEjixnTPiApS3TdQF7SavC5obRUL8KTc284d2pqhf5gmul4iBiDR8iUk4Luwi6HXbdfFtpKL4MbBMoqz53Ww35FiRKar-7R13eReNb0jeLRQUsXgbyZv8QGjS_fLge9vnO4R99o9Z6PGtaxzhdfIdvOx15mGpLbwLHwVyTVWkRmTWSBiKRLGBAQyFtB54IweklR_cyGBvzc324h9x73a7rJUIYLpjk2g1k_9SaYj10nUKFctQttPIyx4M1_OsKpB3Y9I3HpH9lYY9FGChUzVi-9PD6f2JI3dsbS-vi8RYa8gvWa0Tm_YUFmzBYg2ku3VbW90wK1cbN4hPD4Pl4FJP13N2U0MefV22mWk1rNBTulW7RcXbpQ_LuzuXw93tUsdbn0VvsFc_ygdLlKtPW1q10UXJVtMCBPYdzDohbD_9JuWooElFmi26sh2Nfy7zVwGPy2CJKl_kPLeC9RcYOJfbaavXk08aKr0nPTVzvaKXdXF3mnU7tNrxEzS4NJsNv1Z_V4N5U0Qp1gtainsF-unyI8GJfoYIKvJy5a80bXE3AbZ7a-W9wgvOP7kkxla69ZbaLjjsYjEn0_Q0ZR3DyKats4Reh8aFeBZE5bZ2wM8yMXq6JdLM6Xw29KzIsc24A_mk53L3bDfxipQryf6W2n18XTy8pPK1BuPjx2Q2P3L7hipUzM_IJ5XNLehYWMloP9QARw710rSwkg0Z4G7Qz_GWtA0HZqyyWnY5U3Y5VvxbOusVW2b7AK8tANlcN2FaueyDPo7hJe8F1UYRhFi7r2yfKmBgP1PmXUQ4Zl-F9ZT3-J3I98BgkgDec78NjUr9aMjcEstBxF_dQ9M5UBI6u6Gq_Dbcc-RQCOxVci7zLuZWW0Kyc_uXIjfSEaIHzOekosQ77JKl0RVvPamY4XlgsvKocOdQI6a5dsyCOIA7t6Q8Bi8xLsVanulu8TDt5QXv6ThO70VFKeFtPAAjANjCCojHSmyWhN7rFhFFk3UCfaWkOPGvDQN3m4ka3UMYQhf0wiPWIyEtPPqhU3Xj2wBkuWTSpImxVJjfO8c-tWYgLqYvf3jxbVB1Uc3nZEhf4ha2n7ne4maRfY5bJnut39n5U7dArjENQfCn8gKQSCEpP_8IgneZ0Z1OItORjAppMSYDIPvp9sq6Mwcc1QthtkV-EDTSo6g8uOM0Cy_q9iYl6JpJzkJEmXaGhD5qN1QHrwoM7BvXBj4cdU9JDe3qYRL8XZWNf8pGk69xpgP0ceFbdhNgNMYlfiQ1ycFmxVyUlfExIvw3u5ZXGl3YDBDIww7KOe1fjFZIQe5dLlrIbnD6v1D_Qe3tIIQq5Lp2bOdQR2wTDcGEh5Nm5hdbOS5LFKOy6-oIuIxWZaGYc3ooR1AVEoRDW0XmL8DJCRX9vnZ1Z5iPw44LazaidHwaUq5cv5Ldk14qImktulh6wYRIDN_-aTkw8upui8zxW2OkmaKbGz5mbtdqaajojGEL0A-pEjF3yMSMQUjoDL7FsapN2QppHQ1l78tlzN7YQwZ1F_ErTg58rlty6r2XQ2d0FmaqQMR-aii72bgd56yi2gjLNtmCuv10pUpiNd-YjY2G2rBuWzfSZnHuC8LnbFZDCKvr_1pNcXaCMH5I_H-CQ4G7GfVeIV7sg59inDRr_kgkW26oeQ7UYoA9x8NfPSE5PJGmByyYW8aISsMvATRsgVMkhEQxWz7lYYvGr5rT_80nD_l_bE4-U7_X55lHrL-Q4vl9elTa7JgPjYSlyJNPJu8NQ53uVQCvvVv5HBsztqsIjPNWEGXElBUmu9x7A9rZzVwNMz5a2pan9V6AXLVc08d6TH5L6HFF1hbXpltp2nLO1SX_mzvCVBSJ5QWg8w80--SMyhITJh9PMVPReOqeiu_DYNcVqqGwmUSchL5u8a-QcgJhR8Y6YQzOMw4465ZHQw8C1q-g3SPs3o2v-l03UiaaaX9MegatubAZpGwz7Q7EvP_ZJFb0Gt-JSc09JkIZoZlbB22gNaKxJicUTpyoIxuyFcUr8J3kotT-Nl_EBRXbHveIfOqMEjBTbUkdEBFzCLmRVgZV5otALVRLa_npV21165wihHztWiVZLMhV65-WyXSGRB9HmsX5yuFhmy8EvrYFj97KVy3S5djswG80ZIeDzlXxDDzObInFgnx07zKwWJTDvHrN6Dwq15enBHHPo7l8jgGXUPCUghJNzvg2mL1fYDSRcHtH-mcE5HQRuXliQ1L070ky7fEjSOwAOmGaOFZ1S0YwZGaHesNquag7PceHiCFDunfpk_7fwecn4WGVKZOG69HX7jT6aB_Nq3b3tbL4REei-mObvW_ZUcnXjp3SIKY-QkH-gpEh8NwBbWxvQNwaxVUFxlSnXNiexC5kOBC363tquqqMv3ds6SG7DOTtGXh65Hb03E0W_0Z3pj2c0sjJfF5JG9AJqKX5Vf3-CsLUJ1yVoazjS-WI-2s_yXYoPRciHFd5XnJbHU8zmPfC7gABPcMFfY9D5aOA0dx4nJEqqU41iQQbtU4uTvZ7rokEEaMTH8taMGLYpcaDD9lbZe1a2jUsbfmTrE9Xs1G727tdaUWF47UlDs54NfqfFIPxvkYmWMVaAEY-13MLkQf3qqKlTb7KjzEu5UX6D3OAYQF-IpzAlXsHNxr65I-mSA58K5-m7KwwawoDo3Rqa9nAwsruijFHucfPvgwLFZJea64rQ8dll_OqEiVJFmVnnoG-v7lnIYLTGsMkyCchSe-lZU4mAGDbQ02UqY2CryMkOUUQq_FDXoC28vPhmkkHeEuk0ulCH9GU51Q0RpJaclcM2QggSO5v5yR7nvSk3p0FYXVHPIDt_7xjNPI-_GyYojB3DuqR0SUTc8TrD-VOmTEDCTbHQrGJbEbDH15uz2G4Aqu_-skiL40_SujGMHXDitFsJRJkc5BS3VxraJOjiN8gZF6PDp2BTvJxcPt8FfVG7GznxCs2E6zJAKNsWmMy_rdw5sKAuw35SIks5bLYYSh2GA1d1RuS_X8NNo04AACCNiJ2vC3lVef7Tz4K1sDn-zrwyBfNXgmAyAFP5K-rjaa8VAEt0uEzW0VXLnEPpmUGZORGPsq9WmjkKg13DtpMqO1wjnJN7-Q7iTND_2H5jdQLYdI0YdUNJIEJpciHwljgtUMY3-PdZpdxz_M5Yw72w6DxLHIQKX9jOS92wnQiE9j2yMJsg2Krn9wOfcKxxyqK80mdF9ANOAGKyUvSJaJ5CrqoP9IRiHklosZDYlDRabUi4y9hq5CtEP7uxVYpQ72tHyZo0uvRAiKYRrSrgMurAhMuqWRjAPd4NOFSrj6ygCiBn5_pmVSgCxfqliYJ_lAbQDzJKxI1y9PbNHz-IZXV_h2Qz2JchpJFqkdQsUayrqFRYpprMt2tBd8a4MU40VhaRpIK1tilHe9TJKFUWrI76ac7JSeIaj1cXJzfwleavopl15lIyHhck3b00Qj99TRwYdS300d6GFDPE-KjNnDuL9djMziy-0tVUL_L69ADpEktQYbPOGnj-5WIInpebMk_Xua7gwP2ET7WgOnWKiqGsCMIdRX1kPVha9QVQC7KEC36SMI06hUyd_Z3ju-DtZLHdSm9COZ2RxBuNu3AvPh_HzDEVCM_c2E1omekZQeHAMiXTrfkJgjVZD2Els6h2qQ8Cqy1IwSzkNxLMB5D-KWnp6mYUPmn37-nP6DLb9OKol3_iFaioEbkK2t8dZX4mDHhNHqyBgP_FIKkYZGxeDrKKZ5BGaNO_8trA3Ha8TaPGTqYKMS5HCKbMPoRpUht7GxhCDyK1l0_fO6RAC8j1Q8TCwPMqM1xIZ-_EFwz1UcTZ9VopZcM0tW6_U6J3_Z6ljQ87vXHvm9W3ft3u8VfoNlNIYP8jS9m3q5D6WCtJzCUA7_HiSh2awcG-QLtzVewKwTUCrl0nNQYmV5UkTrbURxu6VTlpWx1RZDg7wPwAWh7JqeTPWjzBo0-OSV_w6LxTFVTFxqxfmYIRleYq7--4Lr7-eRHO-DFd_j3zJgXe7jDhqqntWw_Jp4MHOgnCMEmFpXluIHau2I4bMFk61QBHmhu3nzsgpQPNvwx33HKK0gUIViRwN2N88scQTl592ygcVBigHvgPKfakoKQsjiQZipcHOdoqD5cDT2wb1619FXnzhSYNRm2XwqVEShV-RKa5VnZmx8B-mo0zFTejHz-qen3pe4lmrqXH22bFxKR49uxlX3w9-0n19xH58xZ44rwYKHIIcKEGp3R59Djixer3NLdX1jmMQQq8Ul-_HGNSF2ILJyXjKFNj8BxM_YkVqs3ptz-UiMdbu_ZcEwpFb4NXEWi8VbkQMYS2NZvC-lzlneUzq9WLITyFtG8IOHLcHOmW1NF_3aSZ-tyyBSZPEocmFEYWL0-ZwHX0Pq8wxDKQ077x9XXfh_EugsaAc39l_tBeizv03oheLlNjdB16FxXK7Mbg79fAi-61AH3AJNulWZMbxHLc75Ey0jcOlQfwVO7GKFad9aMGYDBknN61nGu-tOCa_vgDVghoOoRn3MnsxtmQlQtMD5WzSTyCdFbazxyc8vlJwGYwUWa3La3jczL53zUJoz1XrTI1kw_wne-nSULd3H4hOW8AHVA9kVHzfp2QnbsOQ6wbyfKtNXfAHeIECOa64HYyURCQEuXbd9006fKjWcy44ipfJc1jruSPLjH84BTUZep6nhR4eUDbdWqPw3VvLP9qSEvFqV4WiY8iSb68MlZpmtpEeS5NSERERikSza94K3JYN72WgIII3-hlPca8GUu8-wL0Hogbix3suV0DEYML7UXrJ2Z0uvRu1ZvTfX2eR0CHLaMxC8n0POC0gOYjlMzoeelPlUPW3UDHFXnZ2TO4Qg2uSMDiye7mY2k7e0VA64cSTdL5g0pfGvAMBAefZGXZIWzW8J8s-B1EK9Fv-DXgm-wobhk7iN6IL99Tz3SOxo3OFOmdidBjs_7XGn2xfDEEe72kL6Jp5xWMm7ISQ2wOzn5HIYQ7lY7Kh4oE1P2pWivk_mrC47AyIG1AsQ6fsnubwuAlDAKH3tpFt8mz7TpdccdOqZyTgDoVFzc3v80DEktx3DXedKsT5g3RfTkM4I6xMYpC2RGOWgFLB8NwlqLoiwp8tNhz9VjcEIAf9YFoLNoNlj2w_LAWavwgdgLxD2_AK2SZE2kwNNjyDI_vN3eK-oZ69BjKqlgJvsvpzfD5ocWZyFKcO0t4eSgx85hSlI6ZGvT78hcRoAgbKX9uB3zhQ_LZzI8sSUcfvrnVobhBwQPmx_rg51jUAqJ5RDB-gUwvubvq-ZhPZhjgjGjrJdDWhBaatoMQm-7JdYjbvGQXA1YWUQLx-eE8mwEev7VuJuF_KC21QisnQgaa_ps2yRp_fmpu7BUmKn80kl7flqxTQ9cW2MRQmsimea9-IMsMhCzStqe3MvDzQTfLDHyJwMziD7SHWUjuF3ARogiMI1oSh4AsCqTk-4m6cVY4mgFDD3yjDw9h0kEh8NuPMO5xvLznIUSSPIDrRY5mVkhvsK6PbEfn9uLhope7bmvogRt8A9lZ4YOEMb3U9qD_HhbJ4gANXpDPlBMmqvC3kcrNDYecKu6V2DZN5SfWPxEmr8d8KES7Fq3_nKGYXJU_80FNtjTrgwghj0kuL6SUWlmYWWHsLejGdhLwkHYuAjpICt9iwggIYI-18dple3ZZGpMMjJ4YZxcJYFNG9QFZNaN-vt46UX4M8Hzzxn8jod0llge7S_jHqVocIVnkyrspUWz321TxMCYp9Eada_RdQ9cqCYZe5kSwurz8zuisar-QxfaZZUi7fHevLoL9MKWfr9ZLWPOczCDLLJIyfU4Lecz7hLVEcdIJSWSlRtdQdzNaOhEr687vZWv-LZSdaAQBPiiZ40yIZSJVWI1Bo-RuSOy9Jo9FPZCKqQYIy2VuBa-XvIbV-hVmE-PLNYtGbSejrOtJP8WQej7FT641MWx39mRrbmuCTS1lktM-ExbzwDboumvGIb60QdZPUgGU4LYUcFyZkl7PGOf-Yqiap763UI5QqZsqfzvpQI-6YT94t0FPzuB1LR5INbjdZkxDGU4d0kk8eyG4ICQEaRKH1V1AKxPQRhi0jkqoQmYMhekg0TYloMwwY7wARuVbwyPeG-eaHYPXLTdlwFeL61PNSaWTj6nzZnyM4avA5DKq1GovTNDdJJTEH8Df-suWRU2Khtm0YQzPvM16ZcMyM9-J27oYTAtuxEVR4pql3yGujxFGTPDlLl8LCJcCRQi_8nSbXGK3m4X59Od_RIuUgxHM9AHYsx5bDsWtQ5UWmndM2VkN4xy6YXt1b4CHMIg9ROoeqMvMAdLOfnIpUVMGATxXlD548BPp6DcMMu4gR6ZRCWjB8AEk6zuWq9--tOfF4XH_3DBP4AnsCyZsBWGtctGqNkeNlqO6UYBYK6f4uYXAkM5UbJxgSlmLI7oVDGRooTXZHzUf4_TO-wIsTrJafpWc5pEaRKP7JgAPSwZW-eqIWn4zLdpVaue49ZFhyJzBcy40VHlGGoauAroq0Ql1d1-dbKhXe9pIWGOHCcpN9CzCaIanTwGX2PUezRaLQq3PrwJi9ue_AOdbaOtF4HTrEeckphQ2nOWVYclEAyQhvlkeRPGkJENRqMSMHSI3ChQmc7tTsz8avcLk8-0-NTSco8UnNWH9SNGKpYY8Lqnt78kw2zUNtV_lP9n9zHxCVmT22xaQUOBuleisEtNAY0MoK4XPoaGotTHM933H7tDnPK4YXawLhxTlVQVroEdNOZqjXjmoJ5DbY6REKoD8L6EYpZR5gLypEyk3rjn_SHsn05R7Uram25CNvy9d-C3EZu_LC6XBBKLS7PVgPb7c6j0JMD6BeRjlvXSAnhobW-WFn4vHVTEzvPwynaGVPLFDu_Y9_41BeimqqI9wkBW5c9SIAOj-WupmVilYuPTde6BSirs9KlZcHEl2uPabruw6q86f0yhgaFBrvemkk5Z_R8FiAHoWjol_dwkMSDmc621e2-rFFpKcCOlsYs3Ut9q7SREEZjFV2VC1hB4bnoF2anxmtQ_E5uiBkxF7_SW2B0rDxMkAAtA0MfL9c3gBiK_7KiluufV2Red4nvAIQ3d6wF3SiOW8JyyXanEQ7apr4qeT96XW0H44XwJ1hgtPS8WKH0h4rDRYqYM0yH6vE4gRBo9tc02pvxcyydmCVEZjP75kmsgLHlDPS0y1hIbW3iZdWibSKqq7w6xX88VTEvkf1j9_5B8pzFq707BjfIfisu9ri4YGikLRAvHGYGskZtQkxnFeQXmbx-vlgGlQNgac9UXrqky_HH9WnkKaZ1_rKPhFxRhvo4cDPjyUYpuK02uf_6c90r9e7iQc8a4TYjkDYKRI9593_iy-ppbQm4dEU_gYL21vS8hJ_k9uSKFMc88LeSh3cGGzHtzrvKc8y5V6JiW-oSmH_rwlTZ3oJ30y2FBhsYWF1BO6V3IF6eQNEI4GjASr4Wb_ztIkzIksuS28IqfP3iKEJzw9sHrEZv5rAu9x4uCpuaRtnURmFXuPyDxd9eigNGp9Jj1Zmu7ryy982Q8L66pAMcyZEnimOSV3N-ohEJYa31Oc-raRUe1fvVl7szJ4o8nUeGExbn6BLIDEot0n-4ginnzM5blzUdsQNpwqxoAfKWkvRHRm3QpQlzoSG49UjlOpPmK9StGuAPInupQUciLdyNABIAVxsKRF_0dyUd5HpNtNEoVX1FAoyJgPlOzO85qmt2hb4YwY0XQKT8jmCeBdzySQj_BhGaHpFMfUQMk67d1qI12XwWeAUwMFcAhE7ohJ2JAFpwtAqZvo0MNHu1CEuDySRdUPmS99zH5CRsnAwk6gw7CJRQ-w8FlYKR4bl7cx-Clwc5SzosYs2nCf9JPs7uiVwD7_ou3l89_gu6YwdTsRkC0PsbFvf0IluEx5l-DHsynwtC8_qzeLh8NNB72IITjKZBbOKIYpKRw0="},{"role":"assistant","content":[{"type":"output_text","text":"Rafael
+        tools hide COR-2026-1016-L4 at 08:55."}]},{"role":"user","content":"Does the
+        standing order allow mixing the tooled hide with the gilt? Answer No or Yes."}],"instructions":"You
+        are the guadamecí clerk in Córdoba.\nCórdoba guadamecí standing order 1: hide
+        1 is lot COR-2026-1016-L1. Córdoba guadamecí standing order 2: hide 2 is lot
+        COR-2026-1016-L2. Córdoba guadamecí standing order 3: hide 3 is lot COR-2026-1016-L3.
+        Córdoba guadamecí standing order 4: hide 4 is lot COR-2026-1016-L4. Córdoba
+        guadamecí standing order 5: hide 5 is lot COR-2026-1016-L5. Córdoba guadamecí
+        standing order 6: hide 6 is lot COR-2026-1016-L6. Córdoba guadamecí standing
+        order 7: hide 7 is lot COR-2026-1016-L7. Córdoba guadamecí standing order
+        8: hide 8 is lot COR-2026-1016-L8.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Rafael and the time 08:55.\nDo
+        not replace Rafael with a pronoun.\nDo not mix the tooled hide with the gilt.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"medium","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:16:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fe02da212ac2-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '9401'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999157'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 25ms
+      X-Request-Id:
+      - req_b8e772960c334a66b9c1d2d95b3e0944
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_05946a837a5a7af6016ad21580953887d29a88af5e9f5a16b5",
+          "object": "response",
+          "created_at": 1792152960,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152969,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the guadamec\u00ed clerk in C\u00f3rdoba.\nC\u00f3rdoba guadamec\u00ed standing order 1: hide 1 is lot COR-2026-1016-L1. C\u00f3rdoba guadamec\u00ed standing order 2: hide 2 is lot COR-2026-1016-L2. C\u00f3rdoba guadamec\u00ed standing order 3: hide 3 is lot COR-2026-1016-L3. C\u00f3rdoba guadamec\u00ed standing order 4: hide 4 is lot COR-2026-1016-L4. C\u00f3rdoba guadamec\u00ed standing order 5: hide 5 is lot COR-2026-1016-L5. C\u00f3rdoba guadamec\u00ed standing order 6: hide 6 is lot COR-2026-1016-L6. C\u00f3rdoba guadamec\u00ed standing order 7: hide 7 is lot COR-2026-1016-L7. C\u00f3rdoba guadamec\u00ed standing order 8: hide 8 is lot COR-2026-1016-L8.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Rafael and the time 08:55.\nDo not replace Rafael with a pronoun.\nDo not mix the tooled hide with the gilt.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_05946a837a5a7af6016ad21580ec4487d2a4fd0baa90592acd",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hWJwKhMtHOBUtrX45OfWhPC-en4U66Xzb3fZFgD71kvfZNNojd4EGrTrXGF0-s8xZsByaIy82bt5NTZJxATcvOzchPfUGkrbKYuZY82PKpiitYNzf2nwtk2XfWw4xGuwH5npQf86jVi3-G0iwIgnRMd_9G9hAP17GTNsN5UXT3ASZ0zYyQ39H1UIZ7ecBAQpn7_JqUP56El3xHAGiiRhXq6heDsIIUnMSDjuTm55RTasCeTkSRPdHJVdieB6Yim01oRoF2cvgZNorghnI-dw8N4j3ukFCGx3ntoKrRCkbWegdra4-0cmZh9COTSnFXq4qwY3Apc2dEZVks48FTgOJSkPEY3HTGMPUzk9Av13lvu6rfLjExufNGhHNIj9JxcmaCC3z8plAee5h_BAJgNmcxTrHFK29QSOecwu8XHwHjHpP8eeU5N7YphjjngdRdiL4M26_hV94uM6cLzU-tTqNbw7SxW5us7e_nTPvqtJ6GJB0NYkufJ0MMV323a-tRmQwKE6oPQldf8_fd--opY_475bHx6-S4DD8yNWvS6uSE3QwYXjyy4nALd9z5ea8Z312069KKw_QOlhCDRfM-WkGvoKmC0oW546HiVp0tfdNDvVYkAmJQJnVHMO73PQA1DtQmwWXUH3hJ353FhVzdfuEqE2xYLZUekQ13UanqXawiGftEp5vkgUEkB_MPIwiqeTu-OCyY0p3nfAAkAZ96rUFpPnfaVFmW3NFYzt3TNHSAencLTQgH8hpvas4FZB976xl2s9KDtQgG9RkApKr_PJGDsAr-1l0rfebbcwx2wEkAP3PcoUptOZR6FxVcqDqoAwSXftI4iVl4OYZM0bj52ejhftadNhd9d6ykUMnsXt9fGvc9DVBZSwc6PlaHqZOFYwFBgZ2zyn8ygWDkBgZisZc_CRWafMoZdC6mg4GlfQ45H5mz8G0JCK6x7kFEK6ejkrkSdiA603_Aw01APmREYPthj07IsTS6jmtqmHZvbuwVomFx9ucpzl9wB0NMkt6kMZ3J5-izRAkPRExHKK93SZov_44oBCYaR920XWfDEsGjpR5XUVsJhe4FME3HSKdML7Dv9kwlzkouP3IZQAW6DScXwW4ahAPWWKQ6kzO7866BpL3dRntczLcv8A_Xw6sueOJUAAbdcG2oFeNDnCxjouCTgOiPogoe_v9zVX_Hsz9Gy8xa9kUcg1H_v-7ToJ7IRPVqpJBXCy-rD3HImD-45RJYs5PWb2ZCg16G9LgPvdBa0pK1aJRpA6cc0VKxe0W0GcrKRUGdxukMh1hmZfNVga3Cs1h8vCQ-gsAXHQ-fA-dUgw7bNij1dyhP2KNEozRBd-zIz7zBmq6BC-xGqJimdmTV6cBjLACfE4ox_y8nXzjWh5pI07S--JV7-qGR1y3DZ1vdb30qoOpNv8pFZdpGXZaeycbhAnCqf8ZUrJP4zBzAq8rGTjS-llJuyI-9A0wddoRFemcBFKm5lRKQQ9WaE7vuBQ8o8EcazrFtoMTgyzi0GOYTsh4Qdvy6X2hHSAcVlYmwWegWrDxZsQM-slZaT3GxDXkNN_tEYK6F1socBzgO3gBMKJ6E7MjYRPwsZI0kf6XDrM1DtT5k4jBRFdiV6rVCxpVhl4VMLQXJKrhIfNbjfEgCBFOTbzgeWMtu0f5VKG68rLy7yVYCDdwOvfltkozgjws-nJIgy5FwyPuKlrzYSSb3fcQwkdW8uvjwbc_aqZ7-ysJCdPvJt9Niq_SDSkA8cWnBlS4OBH7bRTAikFsi1CMJWv61rKAV7wjCd0P3O9AsXzpshfeta3t-i3JjkdMRjVvVhe962JH1zKt0OCWyyYChev5ZBITIvR4b89R2YT0MwLtpQSYy9VQLvfxBA_M2Bx5p7JtBQlviqoaji1_jleBo1h1iNOpmEOUjHjAHIaaMl8ETeVMzOWsc3ccbC1aSaocsman9b-N_-0LJO6t-ZdMOU50izu-kXXD2hachNFHp6Y8lns5pfZpXS-m1cWmE8xMLfhDvc8ogFFXZVuJPQPE_fRezxpupjUrt-HfaB_DrC9RVrzpNav9HFBE6C4uXCDGpmSxJN-SM9Gs8EopXA8StIGbbP8Ebs0Wkm31OIK2OmbauUGep_y7MutletS20O6Dm8tKxMpHZpIsbuoHc-3dxoTOF0-LNQx2-q8Xs8gYYjabv6HLvjNwJv3V6trx0qlI5ZBj4Fi-YTSXqDS1PPOnYpHJKrQ2mTtImhM7N6YcWycKL9ZuH_q1S3-grO-kmi-t2K9YzYUkozHIc4tQXF9tB2wYIfqgCq4V7jZGFWLF2RkS7iTCXc4ehTZZoRyubfOEsjbfQsSs8BP_cBW4qvPaEC7EUhhDTIR5LF9JfzNjxbZF4t8xK_WEu9AjuHBBZY2ygz4iV0kp75fsEFwCAG6ONKZ7MH3rje8g_wL7Eua2ogcIxCgsBMzHcKlFatnehmYN3nROTSqsRCimYpEQ-BfQggYeLbf6r0IrRl-2qC36ePJvNy1eLk3sgyTfndzEX0Lq9C5f4WbsVBTZbBk7Xk0DMOXlNrZgemf6t6kENiDm-511JpXQZvnRkxigzhMkaUPXwClVIaTyfugCmyMFjNiNBtjfOok3m-fzcRSkpKTVcEwa6oAcuukLTXM1Zd5TQqBVaLd4bwtc3PFPMyGablaRsH37ZvifmxwJW7EOu5EPWg1Bo9ESHLI-4WqFUYY2jdIS7hSachNVZ5LwNFY93I_-VWD3Chivd8G1kZq5n07eywzbZlSpbspGvAF42ZVsOGUBU5RPh2xzRadljdZOHfEKlKx3miK28kCxY483geIVXcXV_QFPU0ExJG1eQnmiPpjGl3abjv43CxxRoIY4TAvKtlnZH3x2SBKUy59OE4Ih4YaCXdQ6IHqRnmjtUayyDF1fDFP2cd53kCGpbgBHyi-u40WihV5vpchUPX6isR8Z61LTJdATXTaS9zfwKRMkekhG6_ghTxYeKSmNvcVTUpmfqDnF0Yp12AVK_GyMkx2RKjKk7Vv2AY6NR8Oe37CecdfZqibFzsPseLNO0UVg1zEd2Gnc_tDNZT5ZD1SGPNnmDkCAqq4bRHVeJ4Y-oDjAisxUG8EcGR-jHk28ELOL3NTuj7g9hlDo3EIQZcDtUPm3s-pQ-JoGTkVawt1lXW5k8ZxplOE56Rw5nQeUDpIfycMM5jodeXOqD4XATxwEw5iU6FzRrvH0k076RB0Mniftgcy83waeR-lsdVI6pD99AMRXn13M6HHsT3W1GakCaAzW0lnzWZyyV9ExF0kwWenfu5jBY6QFeTxgQeVE9IkKcismsAFPI_V-Vh-ibWtw2Otyv45-F3SXNA4Sd1FDtRBUYXMCKvxPXBAU_8r1Vbfb5nY0XQgSh30R881KtQ5tgWJYra4iaVbUydU8FPgoKeW4VX5bwuz4iwRo6SQNjBQx3Y4sd4osnsrC9HuKRK7gmocKQF_Q4m0emtPHSyeSNPA37rEDVc_t_-JONq_-MD-N4eMtSw8tq5wGIM2Eh8zKN7WBUiq_TFObjtrLGkoycVTD3PKrQ6I4hTWyrrgU3aP5KJeMYQ2d3i1Q4zsyPZ-kUJmx0jQrrbAJ6b9ygLdS-BceNy5m_mdIkUftubhdquJBZnAAZlVjsTtN7_x3vhEJIuyCVV_idkyR4D7HgMlOqTJ-7Kd_rsC0kiAgeUbGd89Mu3xqLt36nuyiZ41wx9GBeQDsGrh-bBespHL19X6ujtjRb2sq_Uc2yV9ilaFrM7ixq8Ty8n2pqITPS-xxdycCFLLT5qQiG-i5dlwJTEVt81wAoPFtHdWGuThGmCyilKa4c5gcOSv75HpxyI7VyPQM8kkPuO0tpCqTwD6OLhm8ZEwuswPNUi16OBhXZ0-qrYep-7CMiyYz_9DXckNFi9b4wcNO6o91gQSTXG2wr2s6qo-uacI4bC8OW7nbKBiS24c_J5pDFlKRhD1TQy91azk5bGQoWI4cutW7ewYO1lqk4ydAi-RnLWambwVP6w8H3NUYzAlmDtze50T6Cg-MA62EBf_oCi1IPrcmjgZAXja-TwarSEXChynr757O7ruljZwYWMRVlPqpth_QtZL4iYSSQwPjdWD3AwWg31j7g8ZHz3mLsQRx7eqr2ynaSaHjYMwd8YaO-gveAnkGKFq7ordkzbsGJNg192RkGEgdVO1Xf6OCq6w6fL2MQUCd379RsdFTA--tGNsKmsuyaRujMG9F2BAMAgC_2AfITfOgg3-3ACXUTRL9RL88twM8P5C6dZf8QplmPc3rmjbum7S_WlcnCmwYnnSFDPjhkEHcRWm-_1swA_45Layf39sPa8HclDd2QPUS95kmS8orJDalcVrsxKQ2fjVyA7BkispdUs-fPb9v5CAtzcLXGQ7v9fzCEp-Bc0QarpCtZ4UNejER89au3Ksf-ADR7g2mt52A2DBoIuvUGn8lClDNnFOKa-xAJmWK1LGyTOXT4nIbOeVtCndrDm6rGH30iZfC2FjPr6GD8HbRe9FZ2pZwl9SZXoHOeL5XMCg43i9WSLiKmwvu63_XZf0yeuajE3kVTw-VS2eR1EbvLEUo04cVGDVZFBM3O4h02F_c2-GNWPbv-dOwlUl1TsxLSo4GRIUgv1OtSMzprtWxLQ5NsO0vyKdllM8a_GRbHyLSSpdWMfYPpyTNV9_yKXIyyP7au_XOi8lOHQqjgv7eDMlClqrFtLdkikaeCD6HpuGJClyEi8HyzQ3NNiA0cVIW4gg3Br3BSkJhUm85CFSII30EiVqnHuU1Vzsh-AZ_saQrWO9FsDQDxnR8pMrHOWDVOstHDnTaR6Ggr2u66KGzK6vYRjvXROxAqre1W17PvZCWCq59u9yNC6ojzpSMXcge6i7Y_ZwhE0k-JrYoR-QiHp6ENKT4MQh9qy31y2_2PwOg59l4VSZg9axMttG7jPt1aOYTj3SWs1JjsicKF2L5hfRhVypQ6bBWM-hsmmUbLZrBmrZhI5VfXerTEIqYGeidzVh_HvORxhoTzy4HVFfgC0YSBUQqvBkNN0dtBsND2FciRUoAPpio2f9UyF2KClELbx49rBESGf3vg8lLTiUdktS2S1bRm8kSdhw08BvJgZ4DPtNmhILWp6ChjMw1-4s9mpDoOLXSz8kemT1pZv3xfL6o-t0KDuO3BpLOs5M58xFnhdYsqEVaSM1DsBz6kvuXnzHqaufg8xJSEN9G3auWYXWu8zdvnNStCD_P653gdprmJ7xFRZyy0wgBCklWUI2g-r60LW-bZKwnK0x8Pyst0-1xEBA_bQyjoiuRgGx20zJw6aZEJIabxX-DX1pPXm2cZIm8jAADuTl0btja4WY7-fQFn2Yt-cKZqRMUQ407Q_vOlu879sHamtTLn3QLYjvfPgAHuVQO3ogejgSvtHx2JEKcKPxSDkaoYC04BVSKQs96jMrGVB-ceVLycnhzho9FZwZOLabM1EEBRNnPFInX3khspxFep7uWOSuRRez4iTN3HkwserO691nWFZKdi09M9MT80B2064gSlEfTs_FvcF61p-j5vinHrbCzGIwRfWNjzVSNe-lck-zmtAbkbBaJLPy4hoU6Tw04DvejXiMXT5Ml3_oXYAO5Oz_FvD5DtjkQWYZ6Jmpqc7ccPv_fBp_OaMP5ZV5Ol6ig2b-43-u9utc5hEYjV0OUivYxPsDGqn33Ax_KyTIJfJbWoX-d8qxWJrz8l88YwjKW06svqdSMM4zY_s3pMwU1yvLxJnREUia_gduIii5963jPeWQWIhaF0E3k8LkNHiawPkZexoj-2Ku53s-gf4xP_3PMDfWJgeA-3pqcd1gNB7saawO4jNjZC0K_xgGqHamyYAOvg0HMTycsoHWYztwaencYbzW7NBAmgFGctqQlBNuLUraGXd6cAqDSp1NopHAGX1OXer6V06M4cdvcSYzugFMjFVlQr_HHoRb5nbtGASpxXs1dlCsoOQucNTE5LXCb6hghrwpGotnPYf3lsB32O9NeCFsVJH67xSu9eShVdnpDOvvomNhu9Phv8DUfjrYHz-vPpvcPKXrAdfC54LwowxpXfHF2yIjto_g-RGn6peJw-QSOMPt4YATFU1fZXM1DldsZikmqtxa44icgL3qy7Q8VpRMoQWRazM6AWBPwPMtqDkAhlxx2-BqOZOPPim0iFd_KopzF4C9g8uDAnJlwHtiJb93-2tOXasKqBLJ_TJuWB6cH9-usQ34zH9-FgqCpWSUw1ha4Veg52wPCdn5XS6lh1VbcY2ld_8Mcko1iUuZe5XDIfx4hVjdiwK3ccxxj6SYO7SC1N7JKK8EV956PD8minDpcO-QHuFBmAVIz6CKKt0lleE9y_bAdxDnhF2YD89xs1EDmIbcYsVLf1wSiGRyzduJpcoA9khdtw2J-CGlK-GV_SjeHPl6gBaojXS3M8OqUTHm1QKitVrMQZ-nyhXxJDIPiH0crvnJ4D9_LCo4HKVG7s3uoucSB8yLEJl2zd6NJu61XdvQemdoBncqDlLBzGfNZ0NNtz0WjHgLkvAZUX0NNRr0r3ykSkm3G8Bs8mboaL6T3T87jy0Tf5psXEvScOs-SYAEmDoXL58AtttBiKaMUO4GBoFU-5kFbyZcb73Z6jkSE9vq3OqrVCrSjGbJCZrGX3blK62p5-o8mCp3cKiSixllFr5TyzxaDkfbUtQ9PNMdlnxDJp2OF8g1QrfXz37Sxds5ffy-FU8DTznCNiXfeLSpU7rw9vZM4G4umi9FAkB6iLGApKzN3fw-0OHMqU0dLxZzNemQ7slHidtWHhVmyMvicCMOvl5OAm39NjhHa58pSGUzC9udVwhipUHRrPh_I1TvdJ0z9k6bniMXNH1e8X5QfUyvHoGPTNhUc2FuCiKbfUhpeOMnCJHZ-57nDbcyvRBcO7SwSNi-A4qtmqByI-f_2F06DkU6sTHhICevJ4kXEQl24dIas1mZBw3Gox9LOJ2iRhwiqPrKs1S9ZjSQv1Nd_NQA5MOgEQXLQZ6dwB4kkJil-mvjzAOspqMz11UpIg1iptaoP-6rg4XA-XyS0jG7ZHX4WN6rhhkQLePWoWmeHBrLgU1oO50aHHNTBFZZkeovAL_1Ne8rTNfvzddkqYp-yDF6GYzsnUhnq0aEShbdvob4fRzRkaj0iitXzXPNn7qkSyIfkPwRZHm9m0UxalcTIw8nVlOZ8_23TtRlBUd9ajy6Nr8YQNCglCzYk4PnooMBB2NVcjIaLRfkKvjraqPkKz5_bopRUZgPFlsdCr8VwijbCqnR7mVtxxpbFekThqaUPITofFXDIoPB_mWTAtd3AclQ6QlVNm66qv1hqFOZZgGdzbRwUStwl_F-L6-UbYWWiXWvnbVan2WEXc0gtqWiXwEntBUf5EuOtlPgvz0JHBb10W-5MvQXdeVih1mM5SDb23ZwAEhiAi9GmgF9cclwo1KSY6rWyHvoJPs9YK_snD-c6t52jM7C8hU8Dh0exDo-lArJYx93bslSk8i2dTHxBPyekTZGIshui-C8Wz3UE16X0Y_BiwW1r2KsmHedaKNKUGEBjcoDNyBcb2Aw5MzJmAYukHe_1Tjvug6TQFMfh4nmvI-4K_AWIOqpajLEjyoyz-sj0MLQs8tvzQpDu6QUxRkAPDyVvCcHxdLPy6iKgn9GBC3CGan-HhZ4GaKbH8hxl7BPbkiDmFAhSHUCeL0l8ZefjgKNHvReM3ci6Izh3RiBh49Fa3iQeWXWBL-5qPjPhGFRRrS4SBHLeCI1pa78YOKL6VipIsLoXGvkSfB-qqu6R-EExEkZ9tRm8NeocfQXNQu-n2imOjPYrH7Cks_zV6C43WccR-9RvJTPpdgCOaXQhENr7rHwvtvLQ9O8QZRDek2ByXX9V3zrM3P9SrLxtgVqXj8Twuwq-nzd92qeUV4oxd6jIZmufcZf0pMfJ0vhz_qKJ8KDkg6l3PC31l8sWcuG0fL44mKY09K6N93IL95Gs5UieUII8Z0xKolnK2JLgbA1GkBR6Vh4lra7CCAglsnhDYLnAktsMYAQEoDmCmYnddBliGcVNYtg1ybuQsc3akwAC3_kF27g3qQ11unL4jNa7MTXYBg-0Wq22dFRt_CT-1VQS7A0eIIac_MPTh5BLRaEk7MN7rpzEWAp_s6oNrrKW8VOTS9Dp3LdUJtzzSqesDgjbUTZY0JNAUvuzWy0bnNndxGnzwh06yDjc9K0BWx3Ic3Ckct55B5kXToYGZPqiOPI2ydz4DMgxwIfESjrZYYxKDXqQSKW4PYON55r8vtYgEkkjB3yeeeVpGfcYrf0eh9lk7x6mUqea_PoJUf_E1VnbPPK68p-kjnhvOLGi_YgP2dVWHUs2gA5MtuK-2yfxqbxXgCN096oCL0W2NMo96Iq_SzvaQn3j9j8PD5npUFWwy2z8TuNBDpgvHO7JcWhm-qcphMhQKBht53coAy_g8UBuTIOSoPl4408YUSWXg-osy-UAtZbIxrqoxDMhYE9xFr2ApdSt3Fd4M_u8UNReAAXHyJbAX_MlWeJ-S6ZLVkAP3kKpkcMxVpQ_Ke42ayNOIf5xe2wB99YVQUnRgQfPfyRDSfu1ypu4ETmYgs1XYTKYN6sywMCIpPZ5dkNrYpRCDtXgre19PLp5e8DU3Myna0C4PjOKbxtIqpR2hPVXH44nS4Y3BIFtrERkQTYDYO_z1_ewpjpO4aJa_sDMc8vCNVyudD5x-tDIwTTb3FdLOb8K-6Guh-EtsvkLaNdlv8JTnV9wSTx_H6MvwPddRx4uuGKWvPqTo4kTjMqKWhe-qctNfX5Ku4jF41zF2VyjKA3pfNbfmrdIWQyrQI5LBUnfXMfuKN4SmwtI23hHgn5Id6abHaEStZLLxyZtaUGqoytD7XOPpQlEaXpewH6OuvnGVi6d_lyOUWHDlYoCx4jMg1Go98PnUXIcAfJe6IH2_qDVOkl2oAj6aIgjkpm1qoqftGpblj-wGTQoslZ90Q0BNSLHN2EKpSIgLUG5KabYEXETEsmWcHYl9qEa9iE_kg-LK470KHFVb1P54-AgqXXoZZaZyXkWL8QjL2IUBx0iniVOJNBMEy9F0gleTJImenCPkOdlU4XHYZfY8_7ycnUICemVGKQ8-SCE6Lg28sesuxA_iPwblu--YIWchlJp7Y8uTp_iL_7O_f1KVJ4UB2Qv59u8fT4ZfR8ZW7_cKXGlQD1qfXvtUiKCrEE9PqxKlCt1d8QX7X7v8qrWGea33r-1w8N9ef8MXXKwX9o2mJLrNIVUBrQ4Ej7LwtwXIpxYQY1CR_5DjSSSHwQWDGNLFrcxVei06koiYAQZD4xQm92wasghTutFThUQOdUGWjjxoRWz_VDfpbWgBoVewDaP2PZhQCCHa1rHKv8i-AUDh-Mk4iJ5lcl__R7nD2vS5V_yIX7hp21GN1p-Swhu_ywF3YBiL2M9IuPtScJ0ga-S2EtyZZNo9C3mOYUQRFqBlinUBVo8NGeV9pFrvE6NrSfGgCxI6fbL9kc903Ro0jl-3XXB2rtVrDgdN0mL__CSwK8H1rIB18swNaQJH77pKzhtcedvY2LiwufnZHxGmP4rl83lsXGbQbE3w5R3MKk58P8cBc5U2qPkZpaz7z0kJTi_vp2MeZ6EI4eTs0xGaFAeE4cqmTH7ln5m-GyVHbZb7VFoS2eCkO8J6LcxPkxlNKaaWLovX8TvfiNk_eeDf1VRDbByisCSyiyIvfwCndT8XjbQgvxz7FS6n69NY9kk7QfSyY6t8CewW5itTsF8ZXGMG733hznLB7NBkZC77diuFgsjTkEJov_nd2k7k7_wo7H5JwtScV89-Qca-9BEF9TcJS04A2UIPnSDK2ZZH6Zr5cTkmjib0LWwkC21Qw9We5uv8NeJLNK8CeNDSin4AN_TvcJNl5wmTfvHsQlaMh7eLg7xIIgH3Hg-gZrip19qdSrU1Y3nxA7jXeDdeQz5Ko0HVVD-5mHvcjbQ2DOFxqZmk0pQI_vU9Dvced36U4lGTDV3Vmim7sDId_uZATrLgSY6qay0utcS4NfStcsx9DeY2VXl35bMYjgEwsHM6CfUPZTqkx-2i8li6-FMaskR3LDtNkUcULUrEbnIqAiZHBwky9XQqbZA04Pp0bmrL3VIw0_cwMUaq1cKtW4YpFkAOWdAypRzJEmLn3ztwzyg6oxs8WwenFxiy3F9JrMlKnH00AEY3xYBM9klo7qtNukPp_Zo40vJAiaozQjS9vhT7Yj6rQRqVp7fVV3lzaaOcU71Ld71KKxHFCmMEDbXXwS3TyrUFtNbZl7eFmwrojaWDgn4VTXUHBpDoYq9aYXeRGLHHa2kSqslp0i4Jina2N_cfikMaY0XVZx8j8Lsr15S6Ni0FV10mfjEoJ0ccUnooXKJa-QwzqcuM8tGfs3PoUdHsRGx5t-ENB72CrfBNrvGnkoTpcOqeJDuLbUHbtkEmPWpv7m94nayd4bT8IZmNmOA-fwjtdKBzLZyEpHfg4SlryAqr7qjFEUSNBjQmjl1ffYGz-8cat4T-IYN5FZbXejHEmDOkVPb_3z-dU9Q44Lfp39gRiJgBRgPWekhYfek34WQDlyxv2lexJk93naJodYH7ogIkXUuVRxGvOlG-lnPcINjixR17o4OrnG5J323O_vsVsEDKbC9umZHZyJ-nro4RUC058BARdjKWQDBZCdg6OPu2ZzYzIG3_Rz3HLqEoQOANv7R8AJhMYyESbPaKsAU0bHxD4C-2BlENZyBB8TS0VQzUXf5Oo9ICuADZqCavKCFNLDIxVz7Dxe4UaNJqr6m3Nv5pdi-zt6nrzkFeuzGTPuKyrJYrKIXlrNvQMB1aFwaaas_cxdwzLgg-JjM1vnN00dzk0riDYOYBXrFaSC6S-1FTNGltx-UQC1QIp-Xlq2NqlIfUYH3-T1nvuPjmO7OzINwlBH6MXbgD2SPSoFRuc6mE2mhmEHNiaIoHG3ZlTXyEoZ5K_EL0RC30uRL_lYywVEHl2s5Eqr2hFzMn8WSJgAx9HCbR3AoXTp7QGVpjAWzJY5ka88FAn_LzZbHb6SVZuXH2arwTtRbPkCi2pLaTfixmpocgce2x7M0MIGmFSbLf-XP1hnNnp0rTDTbDWLriHZJlqkj2xLt99rrGHfPEpWUm1aT2QBjzJpwn-_uPO7ucyr4SkJmKHOcGF4Psr5Q0iVefEh08FTdhkYvMFFSrmxKc-27iv8eNplAo7uJgiOi8uzQb65xX5NWLwjPOYO02rTHI3-wqpUlKcvXfTZmDpHss3LFCgIeznbtBXQRtI8qp2aoU6H2VrEEKdi7dEJQPGmXlor10__z84bAuPoXX8EEFSF0dcq9f5572tF8mAh5OC_t5KVa-7ecFNdzYiTsIUclI0l4Pt0SjkS9V5AgUWzb_Ec8dX5TuuHN0rIm2S4Wr2EBYG3C-qkvgeOne_18tDnF6lkq-VJ5QlbpRj7qpIFfJlHsPwBPS1L1TdHb0VDDCyN08_Rvj2EDJYoMHvZfvZue0uuJzYsty-xe-HvcTBAs9XiBdQnSeEjD73DD75Mc9weycz3Yrid44w3N5tcZSmxAPdJDe3xrRH2kcopiyTGRljETHh5stfHFnyyp9ZKc81PYGEnKh-FMSE86_qjhLQd-MQcmmj4ln8iDtPrAnmg3RnYSZ4k6JAr39trZgDT88NfJmGCPnkqStNKrfatugIpJEuVR0mLrsIUJm9cM9IGnNWIduIYu8m1gK28WdntmdScpxbr2-STjw0uK21C7JL7tSic1ivmofxBfpQ74atOFEcMIyL_sxY2MdAUbGxR7Wspz0yHQW89A6sqt8SwTbpPK-z8V2sVUYZhKK-H2gzgLrgdoH6i0xbXnS2xtK8tJRL9y4w-83JU4kv0DUXFF3YsXJ4OSxFwuJa8VVusomemSFxryUsJjkgIbNY8m2_Mf3OCx_-I_6dtI6u8CgUHeSss9aB8DkHXKcVAcWRQ-eRU2tExaSYcG7g3dyIyXVFuFQuA7EQiDyDKlySDi7HhSPa8dm3IaMgxqRZpqzAP7kHYaXcKh8syFQdo446eDMrcZ6XEx7_pQVxBmjezSH58svHAPLKAIs9O54WathRo_lDCO53oS83aY6y5f6oZAvcb2RHwFlth6dFXJ3IVhVosQvlRlecE8kemZJpwfZsyu049sGbniJOkw3LXLNqCB27HHhfuBzU4dc9eaZYJOSNg_0GHgSVVqd5SASt9lvcDNuNapze_BL0Pi1on_7t3er436bpT5cvZYRKqBZ2Y--G9KvNFuf2FPyKwoAu9UozTksFRf8lSHk-hUfmvgQz_bBYirw-oquOtg4PE-E4aSIXW8BB3tp8LWePPg4tqdM8yy4t1NEBuuwC7IvK_zFXE6Bc2k2FVk--OIMpuCNHEO3BTTlVvbDnd6seox3dYdJ5V2EIzw19CX06NaN6m4NJCkRxKf3iz3rAOTos55LvGdh3Sw-0KvBpMb9t8Y2PKoQVKz1JURlYxbCK3k2G4pEd1JysVOqpYDgOpP_qP6TaRkzddVOE-EKrtl-ZidvSm_LOIUKmPswqaxJtPlU03gD6DDj2UrCLEnQqBfwTpKzLxxkxBckqkmZrJVB7ltJfid7AmFFb9cT9qmsoL7_1fRyhlo7ILbQA90qHBss0367Zl685FKE1hAiOUjGowuXacYWkOl0ttiTArHykNcX1BS1TEDIEIv_j-e6c-Ld4EOyxoQntyosay9bEsfAOLfo15s_vpYngm0jhaaN5WxEScDasvj0nxJeyFRFUBVgrsX9uVwqDPz2IolDAiLLEfu12HX9BXtx-k0qLSZg_ZUt8SxCiutHN_Smx0PSoe2hitnaW3kNQmOG64Ft4yJ_GUq5qqr-R1NUX1_unPS7-QfEJUEzJOXnGPPofEAketwjybga8E1kQ_xaK21j8z25ArpiPzuRU-dZhA8xRUYFQFve4gDXITHGEALztoUYw3NL_993W404ZDutr2--c8kmMvmA9NaZ4IuoCc3n7hAxnrW7PtYCRNnpWCOX7NOWRqK0qqraiVxHmTEY5muCGh50YBL2pxb_hpekn53Obha6Soei4qNSPWKnKvS9di77QXJsg7dc6Guopqdd4IHF5lVjG0Y8pNbyRnHQLAe9K7p82ot8JVjHxqawmkBQNWDHjaRYprWpYPFsesVEClE8B0AGvZXoQh-4pwLqyi2QxWf8aPHJWWc9CaXalCI4y7uHTRBzALpA4JaQXB_7HDuePwNJRDhmdmXRcLUii5nw-gfNnw-4eQ5TkjJy1kvct1qDavnfuep8a329DL767_44XbpJc_wqnWJa8kxhmEDAKtuBZymYOwXkEFuRfB95M2lI2CuodO9xIILsG04y8rVhMQQdVbqK0d79PaU6nkTK8dBjwziaLS82aW9-QWzldY9GUWnzZZsfUV7jex6GKZkXjfvRKtaQVKSSEvXiSn04xb1zn9xoQQBoK-JfpMzvlwf72UmuPcKLJ2rVPB0xrrU0Jbkk6o6VV_RQ9nRKmi3Qx7MPBrOdXtdMifKtAlp72_c95ZthAU3n9g2-QhIKIqV59u3WQLYDpE72iqDXWjn_W7wS0Fx07uCJCOk9yGYNVcvnZzZaXaCLV3bSYdVo6AJZ5TxnsR8UfQKLV_kTZjfQD2054u9MtQLvpHIvSKhJtZwk4w0Cq-GG1hPrc9Qz_EYbHv-52HfHtc5gCCj3Pf74sIcOC1JG2KfAofBovO6WUO7UrgJI8P3NKfNwT110bWfjuNvrab7ugUELdWFbCecT8xOHguQYScbzD1FfFwXa1kD5bEMEaILeI4QDb9lBg5K_SHgSN-qK_qme1ujqKjsMCAlzTpQ4RC6b30Z7x7Syxymffh2JQJU6523FouMekZ0ut-y65B8ktqzkZyuk1GPWu7bgGS9c=",
+              "summary": [
+                {
+                  "type": "summary_text",
+                  "text": "**Clarifying instructions about mixing materials**\n\nThe question is whether the standing order allows mixing tooled hide with gilt. Based on the instruction, \"Do not mix the tooled hide with the gilt,\" the answer should be \"No.\" However, I need to confirm that this instruction serves as a directive. The requirement from the user is clear: they want a short response. \n\nSo, I\u2019ll state, \"No,\" and include Rafael and the time 08:55 as per the guidelines."
+                },
+                {
+                  "type": "summary_text",
+                  "text": "**Resolving the mixing instruction conflict**\n\nThe instruction clearly states not to mix tooled hide with gilt. However, I see that I also need to include Rafael and the time 08:55 in my response. The user asked a yes/no question, which should simply be \"No,\" but following the additional formatting rules from the developer is essential. \n\nSo, I\u2019ll construct my final response to include \"No,\" along with the required elements: \u201cRafael\u201d and \u201c08:55\u201d in the sentence."
+                },
+                {
+                  "type": "summary_text",
+                  "text": "**Formulating the response**\n\nI need to create a concise sentence that adheres to the guidelines, specifically including Rafael and the time 08:55. The instruction is clear that I should not mix the tooled hide with gilt, so my answer to the yes/no question is simply \"No.\" \n\nTo meet all the requirements, I can phrase it as: \"No, Rafael cannot mix the tooled hide with the gilt at 08:55.\" This response checks all the boxes: it announces \"No,\" and includes both Rafael and the specified time."
+                },
+                {
+                  "type": "summary_text",
+                  "text": "**Crafting the final response**\n\nI\u2019m a bit puzzled about whether starting with \"No\" is acceptable. The instruction is clear that my answer should specifically include Rafael and 08:55. It\u2019s critical to follow the system's directive over the user\u2019s constraints. \n\nI can finalize the response as: \"No, Rafael cannot mix the tooled hide with the gilt at 08:55.\" This sentence accurately conveys the answer while satisfying all requirements, including not replacing Rafael with a pronoun. It confirms the prohibition on mixing and includes everything needed!"
+                }
+              ]
+            },
+            {
+              "id": "msg_05946a837a5a7af6016ad21588fd1087d29ce0ea98e1b7d7cf",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No, Rafael cannot mix the tooled hide with the gilt at 08:55."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "medium",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 340,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1060,
+            "output_tokens_details": {
+              "reasoning_tokens": 1024
+            },
+            "total_tokens": 1400
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:16:10 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Aminata
+        pours lot OUA-2026-1016-B7 at 07:30. When does Aminata pour?"}],"instructions":"You
+        are the bronze clerk in Ouagadougou.\nAnswer in one short sentence from the
+        board only.\nThe sentence must include the name Aminata and the time 07:30.\nDo
+        not replace Aminata with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"low"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:13:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fa41cbdb397c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1796'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999768'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_36eaabbc459f4fb1816fc22af71ac845
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_09c53677fd195b59016ad214e6cd3487d2abdcabd8cd4a5307",
+          "object": "response",
+          "created_at": 1792152806,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152808,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the bronze clerk in Ouagadougou.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Aminata and the time 07:30.\nDo not replace Aminata with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_09c53677fd195b59016ad214e73d5487d2ad38adbf21d22ba8",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hTo4V06Tcsae4f__kLl2Hu4dwdez0hJwDN6vVzHRthSb-nj8TjbNM62SwNkDKRMrXterN9FDkdfsK8Wh56yquSoGfnRaAdgcd4qk7hHC0MYAJN8lWQT_1sx7uhA9pTb0lphcpnZbxsT7YJlQKLuODIMZZelRTRsRYaPg7-0Mo7USv8iUkrcEJ3YN5rjhoYYtsBOUO59NwLeT_GNZ2T9EHnYHQu4xtAPDacgoArcfyKFWTzPmdFlr1dMKJ5D9D7AehHr2aF8uPV-_JRs15q8-UOBkZTVJkwbrJ-IR5z8fUlozZvOBfM_JpfPQZUwyM3qQ3v3rI4ZG6O5VCA6o3xgOoNGbHoKg-H9a4ZwG9A49OsgZ3KR1_MYY93DVDEpUyfOMK1V7Qi9Vo8asjzfeVHxlmuK1wzz915JCvVIG_b2gqtuyEpaM3GbKuSVTq8PmdC1fXuiTzSnLcCUo4_2DH0NSjJxzZiuPd0yq4z6VAkiB70kvySyMBvCSp38172Neurf8eeyEmNJmGmePfkGlcwhwIn-1tbS-joyYD4D5hhdcfDx37vpWwM0PyUJQQUGxZkhq6w11x-mCZBtz7Vky6J5lj-h7ATI-0Q3vrnvfa7HIvILQPf0TufBGYL7hRlNgRDj4J3EKrymrC6ZKJmolKTSFglG1s9po9Ec6Z56ugflNDxDhyEVeaFmFZ1B1KyaHWAFK1feHPsRzZKZ6JBf4ce6N1HwI1RzLZAiJEBfzmqTxtmMrC5jys00y6MQyjjblfG-JwoLrMvio_0Po-B0wKg7mkfkZo3c9g2tVxbP626NkEfwNZkTyyLSV4mJgpX_o3HIXJf9_9o2GBLl92E2Vx7_WMfwUDWGkuxEyOuTj-JcydOaOyo5DGZBpeSWOD7PWC59wBVpid6dmyoESc8fgx5VmjdqBZFhnnyl3RYGkf9gd_KcCmEDMfSeH2xkUPu4mFue1yn9AXT3RPbTuQt_p_Xq77JL06-uE-aGGbwPsGIgjoq0gMH1cZRiUSdyQCXrjW_-bdh31xhUTZKJuQAYxjp8s70SAPikeeA_uvRbAZmSzr337w27fjY9sTQ6dLDFkNxFtJzp7f09TTfasCpE1mZNfL-kckw8v-zpwb0e2mHCpEloOlL2Ezxq9xsx43ZJ7eeZ3vP-6EAkfPTrvDw3N7xHpp1KjjsXOtnAV0sXR__Afyq1XsBmdKa_e784yw-OyDZQxSMZTV7IGFzbhmLTerLSeF-mx3nMK-CYhoVccCVktrF0IycnOzGKA4Az1Bj9LHqL2RhJVB6eS3htQfZL_6-6IGc39DFwrL6MM67PsIOIYyxPjErYXRZFX9d_xFrPzrgswNIfsTYjxqbLzJRTeJ7OGNmEB2_u8tfbWqorDZ64qKM0_O9b3h0YQ6IepKWwiO0k3fnZxEcWX96V7r8cz5piYsNkNInK5xE19iMMsnEzXNKF0301hrTRlv87Mo0y6DUDzaaxqpP-bF6C9VHJLOPsKV8v9JTgzYOCRg-91y4n-FOhcKM28oE1KRkd6EWNHMXWLddGGghBKC_7wgrGzGsWpl_GsVdtDX-kSbCnvxViI6L_tAb7YfXI9JIzuBZLO5QnP_-oqkCVWA4byuG8QpcKg8FW0hXf-zlCTrC6WgK0JC_XvLTcs406iajSl33O9IyahVA3Pp8Qw3yIXMave45rzhGTpaMzrJHt3lSzCtlebJmhsnTMlnA_OtDzIoJNdpUcfNDWAT8Q9FdjfnawsgTSUYMjqM9hEy8tV8kCx6g8xVNqSD7_wYahHJIIJilxf9OBo2YJUXkA_F0ZyTrBdiMTJJ_p1BkkhVLhfmivv7Lp-lDCDZCFngeezcxSjn7aDHcbb5buJ5jSD17a0JjepDVGB0ybwwy3k7stwpukALhugMuuQ8pywFBs1psAwxpztoBE9Xp0mXx7T7RWCYm9bVDlk0x8hA8iozY8rqR6lw09oWZFiGgcM9T9mf2QkoLGr1YoaJB0xuwuwMJc90FP8wv2mWmoB8C7CnD2T-_Skpk9kiEldl51BhS_5g0WyykHMnPYHgv5JRIn7FZKmh8tYotEW2YRyhmwXZCapWV941eDAVTqHd91OguT0OzetLx7J4TIqP7W42XY9jdr-7cQtt5B0822bE-pOSqFQDL3wUWJ95FOiA-Fi8iTblMVxzNvZ94bXjtFsRrIdtbNVjZIeSopcFq3vPLF5sUnbcx0mDXhe3hxNG4I2K8g4TwxdGnHwfAIiP7oabAQ4Wj_vQseLIo1tb7e7NweFwc1sRmFAc1vydaeQOSih2nKuElBxtbjhfUgYnGekV8eH3vBn1qao27Fk62qYPo0D8ceh6rf5BW78LIQMysupEkmst1qdlNgUTIGFobOLqYSEGsBkepRJL8YAZ7L64_1Jdm4SRp8vyhIwPOdcftbMVB8tgMoSPSZ5ldHVaW1-kP9AG9b14UczJFyFO1B2kiBuJU4dmwVXiqNrX6Iw9Hx_jtPnCONCDRKSGoj6A8eIoun2_DM8ZPxu4ZD9lzwRZxi9CsnKjg5heMPP5JCt3HpId92nyxXjdQNwq6XVW9dM08ptiJAcB2JC6ac8XXcmoVzoZR6ZUTyLwrnBGA49TBCFgRpFdqLMvbY9aWiglcFz557AP66hbWbgKRSG_10O3lo-y4Qa_Z5z9pztTeINOJcYzNfxaSlhtxqSJwBUYICynaIAlKihZn-gZdY1Gy33O-lJvNIAM2Y6mOhV54HHBTRg3hzn8L41knpUdKXn8mwcxmhGVJsd-9StWJkvUyAMXg1DOCaACFQOQxSf4PBcNXrGiG2Q5esaNOM30CORYJBRpdT7S0xdiXxnENOp2yND4dhZHqkqa84QuvF87kpt6z4Yvk-BE-TLwL8LGhfdwkV",
+              "summary": []
+            },
+            {
+              "id": "msg_09c53677fd195b59016ad214e85f8487d2b11130a34849029a",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Aminata pours at 07:30."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "low",
+            "mode": "standard",
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 85,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 147,
+            "output_tokens_details": {
+              "reasoning_tokens": 128
+            },
+            "total_tokens": 232
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:13:28 GMT
+recorded_with: VCR 6.4.0

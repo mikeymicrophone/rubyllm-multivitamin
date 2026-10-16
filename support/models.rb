@@ -48,6 +48,13 @@ module Multivitamin
     # protocol raises UnsupportedAttachmentError.
     OPENAI_CHAT = "gpt-4.1-mini"
 
+    # Cheapest OpenAI reasoning model on the same models list. Takes
+    # effort: (minimal/low/medium/high). Does not take temperature.
+    # thinking.text needs display: :summarized. LIVE_PROVIDER does not
+    # retarget slots that pin this id: the free OpenRouter slug speaks a
+    # different reasoning payload.
+    OPENAI_REASONING = "gpt-5-nano"
+
     # Second OpenAI chat id for a mid-conversation with_model switch.
     # Distinct from OPENAI_CHAT so the cassette shows the new id.
     # Cheaper than gpt-4.1-mini. Confirmed on the same models list.

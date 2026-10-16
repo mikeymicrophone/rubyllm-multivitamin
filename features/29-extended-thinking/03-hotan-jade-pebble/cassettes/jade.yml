@@ -1,0 +1,250 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Gulnisa
+        grades pebble HOT-2026-1016-J2 at 09:40. When does Gulnisa grade?"}],"instructions":"You
+        are the jade clerk in Hotan.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Gulnisa and the time 09:40.\nDo
+        not replace Gulnisa with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:13:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fa577a006006-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '3708'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999792'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 6ms
+      X-Request-Id:
+      - req_2409e9b516614c4ca49516c4fe8a3fcf
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_015d23d1ae5499b4016ad214ea3e6487d2a6962db3a1d91353",
+          "object": "response",
+          "created_at": 1792152810,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152813,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the jade clerk in Hotan.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Gulnisa and the time 09:40.\nDo not replace Gulnisa with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_015d23d1ae5499b4016ad214ea9f7c87d2ae5be24d1c5746fe",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hTtaJaN_s1iE3-TKzT2W2iDSbWLyw-Ll3bKrOxCyyMDz6qVlBGa0WJc_RTZH0-cusDQA1dBw-dzpEyBy8H146L-fqt7ziKsegFLnKzn2tjMMhZjm7QXvWK-lGtagNO9JQ6kuWoCQvpdpIydlWToONBBBlJT0Rg-1-GHwSUXFjqgtDst9r-kGU1d5rwXixV2IFYf0IEKAGAx4mGetwT3soqAyNHekhWkf-fTDx6_jMv6ZLT9bO_UdRmfcVzlZ87Hm_6iwDSZLnMOgKbG9_wlv4sRtMMXgpjPcsh9An4fZhuxa2zzu7KLaIpa_BSOId8-XdINJppErAg21v1Zla98ng_kqJRTAJBPRE-bKcfTIoTWshDod0NlbOaG1uAJ4sH0y-sO7lSti0LUDOUFwQgv0vL-UlnQeHrIwRX-IuUv3P4zDWavadrdaSF5lQs25nLHuzFapJtcV9yBnrNHHFkENnA2_VyTWrf9C8hTIloEEowOakO4_BLFSWpawcAhXb2IKa5nJnolDbclQYYdpl8eGFPK1LxxkiusbBEDs-0G6kGj3Ad2MlLKX-r6rekomU0sfdYvwKFxHdD9npWuoTq7SMs1_Qldql5Z3dDEZNSf_8Afw8R3th8JX3q7M8-zR78VN3OkQLzCQrYHF1Mhnm7WLaP194BPoyKFEflGgApwfjf1RluVvIwpkEy7cRWFS0hi-wDvT-8lxlHX-YnxOLu__k8yHSWb-tRhR_NvTCb4QBPMrVJj4xYXbL3tH4b8j7CErqpdG0OqRv4I7DdoCyMrPaUYOgYs8nhlK4ydPhgXT8NXvhPoa4S__u-v2cm6jIKpQKd38Zulm0eowSgIIS-ZmUjDYQKK6rsypH0-j8_Xlucz7AMFTKGb4kvD9Sg4KxLZB4ruT1BvBpnWEeVMWvANTx7bnsDH24wVzDvj-1z6x-WWnbTmDvtUMn9k2kiSZB6uzVg20hUDSG3pvKSh6K-_WndEJzquvZoeQENaq5jS7qMEFY83yKL2YUXM9Qj_Hn3t1SqQ_VgjX-4sSZg9WWLZ-Mle8vMnb3JI5ftbD6K1aC4BQxS9QGM1rGAoqWpACF7_fpfv5EMDxp5G2ieKAwGMme9g_wminDXqSsiLSbv2d8I7iwU_2j78IJT4sy1nxq1q_oCTLFkWvCuqMhmF14VJmDb082-3H2JkBI0xqDBsZY8CPymqgJN16A751OmQP5Mg-KOYb5HPWitMOQw4XOC7AlN4ZIBiFhYX27zwpDR5mj60slUKB1jPhRFyOcM542nbkBMYLUvHyxsuwa2-trNY7i2Ygvt6PFkV_LPemvpdXCWP4hLbPASbucfFcqr4RheXV3fNP-ADRghfsn2f6Z6_BFj3l8hzRs1cwbewpaKxd6EuyZKBv3zzE5SRdyGXFaIUcb8SadHH5gSGq_svAc78zTcDyeu801NcgbjlQUFbHMf53qbbaNxY_SGO99mzLVJ7K0yGrc10jeF_k68XC3wq8qQuvQbJ0bFJkoiRzECuMqjhX1x8AhEVLU2cSD8Abglkdt7Yo6i2rhVptoZd2NI_X2J6T6ZarCrps399F4caqezkpDVY9qzL9oI3g3-0xFEhAxGXbBZD1gau0WOi35pkibBHc0k2cu_iRuBUSO3QzCGFyHpk-uDEXU1vwanbbdLOUYQ5o7hpl4HYoo4qJScH0o4hgI19ra043c3RPcTHEPFiS0SD82RoaNF5IpdMq3dMimfbkMhA87wLH_5AN0WdQ9bMv_0P14UK9rZ8D3JBnEefnzsYJ-UKk1ro_8NN9rrD97DQm0repWwJ7whF7duIi0vkdfaDJvlHrkCuidCZ3strDsGPrvMRDw5rwHz0Wun1Olo1IRS-OGCMkb63ttp5_Z580jys0_EKT5Qcuxp-LshZWCFIs2M89enYGR3Flr6J1ANSEdf62L_6NQ_fj0YpNVw6U2WC8lIjWqwwUA1NMK9NHB2BmlZrS2nj5T0HVSPBcwPrkLcZcu7cA-cPsCBVCgKlGSdzM2aEk1Ikhwt6O_RgyGp13RgfQeS3SgEyZ1wIVcBDF4sXLcBXDkMVz-DM1AgDY5NFnGgDROX-MWkviEwNFCT8w81TwyWlRaeItnYnTqqIQs5awuoe0CDvWNVRqkeiwwURSfblLyOIlTZJaLuOH94Qi9VxjnghsdsAM_SsVz06rnwldf_L6NGEFuL3C0GbAmaQvAsk83hp30mfFyNX7r2F_3of9lU04BWfEII-WuAub89RozlDySujPefCfIEY8UdeV1LiFbLbdyHn9Vce54kvX7yiKt6qH_8QzBSRg7jzaXfqCAXxf-sbMi23N4DlUMg2jBTzPOFAssBEw3HdBz3Ng6jd8Xf0dSWN0jktFOPjrYpso9L830Wvt9TDDAFQGzc9auGDOQxJHmPcNlZKqv2bpphOxr-barvXtVlhgDXaCwwvTExxA7r82q_ZVJi-jhcKISEDu57ZpDy1eOWxbkQPpfIBwRR6d6wPL7UAeDXsfTc1VITuuZwvW47PL6nCjGladggb3XK5D09r9WUsRSIZ-LHFdevtsFN1VuBaRjka7DPr0I-B2OESQF2CrX0w9TIsqZxErZc2ZVEzXmpYY3bLKnweIF7WWChloEcegY0xT6qzA3BFunlivL_Zwadxw-BSBOAZ3HIvj4ePNRtn9fiB47qgu6LjTGU4Bk0mSDh5gTYn9i1_dkaSKkhLsE0eQApj_Cq_yra6aen1D2WbYJd5O-mW_REkSgzIJ-2m0Zz0Ttuo1AK6CG8APGIgVOZiSw2z-xH4zUzdU4mcEBRJq4-x7cFwcplOIDYE6ovRDHC9qk0Ux7nW5VSJ-lPf46bHxqd7WJ8EhjvcSX1vufKrRuzcgGeTw0MMGYSGF3o99r5OXSITUwl5gcLXJb1s0UphXSkSLE3dWQFnnJWhX9xFhm4nv7E9g7ex8xlR5iZMM6CkjqlvjD90MMx3ohpP01Y2g8c1vheUdaro3hNTH02OENs7Gdj5TC2IHW2ft2x22ey_pY2Id2EX5lG7bBirZ5Awl5bzKJi21nVMgg0KzIEkar5lnB158bZ5ioq7ogXuafE9NVfSgHUanWrGLisoHIqM4EIT75SoHzzjwJ3eJS7KqGbHNnuz0sk2o-XVSTIrm-sNy_g4hv6JJgkXT9OHmRGNC26d0C2O05ywdRmIxFXbOAQklSjpyo2rLOTiK6tW9J5sTAyBWD5BwSTGUChpKppB8icH6qQRINWYIpjoMtqFXwZYqcqRrcCg6F5M_wfdaE9SkBpLvT46_WpzJdHQFLA43wWUtjnqk_d_9VKR_9u6TeKgImKRpFtoSP4WfxfIRTjEJVs19So_o_ywKrx72Kostae_kACqBWZqqxcXMcvMfZSIxW5jqtpiKkC2ntyBV8TqfeMacwtsyWth9RkmVwoeFBJ5XO3krKxEKVNABYRy1PU3JPG8_z-JEErQIbikVf6G-QzJTAjP_QlFlLDs-PX_iBDNwT_warCHVdBaAYp4bHrCWazCY_XBk0-bLXXnuPJYXwSzPAYrwXE3u3IkjTTzDsinoiLgmXhl_ZynLMSJHTEB1I5ajHZsAXUggbXivqy0P36RuSpFz87lw0kFYYANeFNSsSbunTjm2DSyIA3mzWXbaLObJigp1FXX3_gl5ko4_Geb1ce0CH2GkuOUZPhUMxOf7q-AG8Ayos-JTBrZYnpwd1j89nyunTntwBefH1yXovjMN7t-WKuxn4_UNGITbpVJkVaSRLXPGpIgd8eK0dlIwSQNIiEea6J336qZ7hWvkomf-kZtPcuZV59Q9yxKnwPeCnOXhd07U0Ccoxv_eiIdLN22vcay8U4XXM6su4SWLg_m5ddGkRQdIsUxQaoC-k-P6HYq2Wop3aisiCIcCca_WjJG5tpZZ8cwwIKQROB8sL5AKEgW1V4yz1KMzUSpeaTqHKreBEqaZeNyOS5vKfddgjDKt2z3WIygxucKP4wJpUyu2JQSN2zN9sTCniIGGgQf9zvpbOVyZBNQ5oSmD9R22pEnFKaa-3SVztoZrphvSifkWrGOMmJe4iyZHsw63XCtS4Oy5OkIt3LX9KZIs47mHEFWoiYNWRvSlrG60NUa8w2cPkyFhnjd-Domjh1WXTpFwml3a9p3mKfTOXgr2R6mXT0ENea3U_j_7CHhV2blJ6nzhgE8UuOpug58oQ-tTqkdWOIMmsaXck2treSzw56cbC8j38pemKwl38ynLmNzkRlEVsB8YObD2dilYU6nvJ9trl3s0encXTDzKyakAh2gF8Gayz1t3qNNld71_ZzacvsR2j01KTGmwvBmlewIcg6A6d24A_6gFbWE250ZPRV8WBPe-zrwauSCwN3q1_zgfhLvkzlG1wW-Th5eBIzj2jj2jimYaQ-5nzLrDvO4QslnPncXR1MJ6nWbkntWcqwPPfAOhri6If90c1sywb8ZQ4DTtkuNyIrfc8kG3l5imjMQvY60EwSg3VTl9dfg1Gjq5vWiJfyErR1GHhYoLc_hifiNKVEMEGuTvYzMlrllPDotRo5TfhB5Q1_lSfUHL1SVdjPMFI3F6KAEu5VCfQnvI0yAYiIDI-y13HjCPp_lgBga9gNRhCHdIj_1j3yhCj3hYYfJDIOxMt9PFAIa3alaZWdMx-DvDHyLluO6HTF9xrclrODed3cNyO8Y2OaoZav9s66HwHuo0WuRIRtAs8DTzMR-Hpx1ugY5-zxSDdOzZM5LcYr2rYyL7-XkElMnWqCHFrB8kLlCCW1xH7rfER0sY2WKsqz51oyz3iADlz9lrfc-eWSUhHe8F84pVfq2Dz-ShhAUeqOos0Sq9f9AOlf4xFDtryv5k_yV1e1qJ8fYxHtK83-RzQc4xnztec8GVMJlQJvfCG65BfBc3K0kViOwGHA5GrPOEwAec1ToZVEa1s70rU5DmanpgOt4-NLGFn0barpCAkhazutGdfYWkcjW_6BN3wLUXGnHaLteRDb_qUrwp3YRPFuKaxnRq7MsR-KK-qtB7qbqkjJxyE7rXHPaJOP6iufKotoLd6N2T6f6jyXrfOCKi35GbnMpavmhrkBGYvoCMpR7Bd2MxynQGysijQNi4RY_BuyfPHqllRZCsMmu7onaNNRL3fTKiDwRDcdbvBHKKgDzz1Y6EI5XpDJWoKv69s8mKMzGrgVXJHWDUBPJxZOw1wRylUr-i4pTX2DVyaN4sCkxjCJNJkETwJUGV-gJqUpkxmJOHDGRTwdyeW5kulutP-PTTj8Gyb1WOX37yXoByzVnpBDMWaIhiWVGNbD8XiDPviAkVaz9biOmki6F1iQtRcmYop1DfREEDJ_POvhrpLS_0YORA_Pn9-Q_2VdfXJbcJdDf64BJOj4qpE5t1rZngoOwSzEHexANB0LR2AB0IKxja4kpTRefJ_-RY-pxoJXXy5K_yi-mxMi0FawxhqJxEhqGYqUglr_E6vOJuh3LjIh48FTHaL5ZOYjbyBCjFZ-6hYxfHA9Mg5u7ZP66taqXZlooamBwxyokgV-_EVzSwyyT278Qa_w5dMGvn259jWoeMKy8yn5RLlQn_ow8rSm7nta-fFMEXyRYc6mGQwge2YFKqQ6Cvd_zXmNKJO7TcWt0WbCa-pTeSPYKE37AUG2EE6gX1FVuuFAwTGBpujE19Qr2THqadkxSXM25XMTs570QhTnZuetVwYvajofe73XdhCTu59nWVNC148YOlBVFB1rnvcEEjNmYcnz_zJaPlg95qeaN32I2RcS6QLkPlYfUgHn8rrW0LYJIubU1EL9D1uUpz1bbNQ-GbSBHvFYYk3SAf5IZ0lnzWVu1WZzSGkYmJm3d-s_jLEKJYatmZlmQ-TKToGIzQKYV_UKR7g==",
+              "summary": []
+            },
+            {
+              "id": "msg_015d23d1ae5499b4016ad214edc17087d2b7a83c8316fb078c",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Gulnisa grades at 09:40."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "medium",
+            "mode": "standard",
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 87,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 425,
+            "output_tokens_details": {
+              "reasoning_tokens": 384
+            },
+            "total_tokens": 512
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:13:33 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the jade clerk in Hotan.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Gulnisa and the time 09:40.\nDo
+        not replace Gulnisa with a pronoun."},{"role":"user","content":"Board: Gulnisa
+        grades pebble HOT-2026-1016-J2 at 09:40. When does Gulnisa grade?"}],"stream":false,"temperature":0.2,"reasoning":{"max_tokens":1024}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:13:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792152814-eSUOJJ3SblUqKzDnC68P
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b6fa6f98c55c5c-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n\n         \n{\"id\":\"gen-1792152814-eSUOJJ3SblUqKzDnC68P\",\"object\":\"chat.completion\",\"created\":1792152814,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"Gulnisa
+        grades pebble HOT-2026-1016-J2 at 09:40.\",\"refusal\":null,\"reasoning\":\"We
+        need to answer in one short sentence from the board only. Must include the
+        name Gulnisa and the time 09:40. Do not replace Gulnisa with a pronoun. So
+        answer: \\\"Gulnisa grades pebble HOT-2026-1016-J2 at 09:40.\\\" That's a
+        short sentence, includes name and time. Should be exactly that. No extra words.
+        Ensure it's one sentence.\",\"reasoning_details\":[{\"type\":\"reasoning.text\",\"text\":\"We
+        need to answer in one short sentence from the board only. Must include the
+        name Gulnisa and the time 09:40. Do not replace Gulnisa with a pronoun. So
+        answer: \\\"Gulnisa grades pebble HOT-2026-1016-J2 at 09:40.\\\" That's a
+        short sentence, includes name and time. Should be exactly that. No extra words.
+        Ensure it's one sentence.\",\"format\":\"unknown\",\"index\":0}]}}],\"usage\":{\"prompt_tokens\":103,\"completion_tokens\":133,\"total_tokens\":236,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":100,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 12:13:39 GMT
+recorded_with: VCR 6.4.0

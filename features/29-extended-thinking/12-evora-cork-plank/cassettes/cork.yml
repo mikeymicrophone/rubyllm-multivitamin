@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Inês
+        grades plank EVO-2026-1016-C2 at 12:30. When does Inês grade?"}],"instructions":"You
+        are the cork clerk in Évora.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Inês and the time 12:30.\nDo not
+        replace Inês with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"medium","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:15:52 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fdad0e985d29-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '5732'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999669'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 9ms
+      X-Request-Id:
+      - req_e86db92e7b434084b715a038389fd8ef
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0562f4c002f0300c016ad21572d11087d2bc357c9c2da5d990",
+          "object": "response",
+          "created_at": 1792152946,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152952,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the cork clerk in \u00c9vora.\nAnswer in one short sentence from the board only.\nThe sentence must include the name In\u00eas and the time 12:30.\nDo not replace In\u00eas with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_0562f4c002f0300c016ad21573327c87d285ada4192e04fedc",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hV4YCiUFy1wsK68AH2_TIo0onJPm9klj6x2wfyLHMsmQfm_O_LSavmQhIqST9r9sSoEqLsU7DhmncKm84re-MlDnHXBe-ThhSgvrRW2kGDWjYzfdKooLLgxUY7M_UuS6c_VsvAGuOwYicd32ItGIQsuA_aUt6MbtRkWmYX659LEUS002-e8cgPr1RTkkm_C8B90Cu52K-xm9446qxFt72PWwYWfTot7aT0eZWUQ6ZAz1Fh_CaOC-9crgfM__o5i53aWvKKCfgOwcwMeXJ7UzxRe870kp1E0qGZCqCkms4WZy2aEgkwmjlMCZMSUd06kbSg94nW_WyVnlam8_Czv2XJuB9MygsB3d8VoZ3a31W_ML1UjPHzWWQbUoYB8RJs1StcosUSIwKRHY4FCwY_Wp7xtW2A4_s04yE2AspOwy9mDKiOSkmrKp_d5fWJAoVCTu3v_0tO3HPWKNg0g1YZAb11kr7TWJ2zAjM9jDInkAR53UWDA3gE83u2pt0yYrkoQDVLMBMB-vc8xLruo27Px97A_KC23VCfQsJip3T4Kwn7wIRmRL8Bn8m8LQpyUu1z5egroEofurue2lFXSieGDWRXE3R0JJFipu9Q_UEhfJbpht3-WDQZ5Lp7ka9-tjPotyDgU3Xdt9h21p8f5iF7zOqAKzP8mRtaKk6gxCyrsgNTg2JrtNuWQM2DEaBC97xSyTgCTLW8WzJsqPoCtwws-9nY_LcTXAr_bmyVSa3U5HT5epGi7H0rdoYDu-LcQkprB7rd_ZQAIM0U5Q_wfxRJjLrnkVBfXnZjG7GTtQsu1secuUS2320DF0iiR3RErrY53tuOxEtxcOy9JSsgsxXMG2hlVpXHe7pT02Pmr4yYMWZrjLW_VGCs5p-uGX5cP6K1lTnds3DyItoZQFDiisoGCv_r19YYXC7nVEZ2WFYGrJ6X_Lz_3nf80Bew1qKY2Rb8L3AuTQLkz-7WcQvjWoTLwbMdpB3KrjBG1T79aHrGKcuO8P6q78eYGmBewfaR1mMBeoJxSuFi4i3ug_j7JZ4W_BLP2OodHVTFuAobPy4sXV3SUi48Ang0ebQGSWggeJlBPbBORtTh3Au_2ZpWlML2YBiVqZIPPafeDTvIS3hm0c8JNvIvTqUlRoqNWjAEj1w6oAb0D7C40lTqC1udK-pknmRp930XBf9fgZ6QYWnRSf7uIWj-8mwiBhmAAEmY4W_L0YfkYfqPqdgXNIpo-I7Nw_p-j8_qnGNmPd0UloRP-O64KyYOr1yfeIZoXEmK6KxvG9jsUHl6Iz1Rtcm5hp37MwcNO4H6_1dFWWjzGu2VWqnmlrgdw0t54ZAe7WBBsb7-RwK3HFrMbwA44PBwvVg-C_rIRrTFWVB1LUfRgRLHcoK2lOo8dfMo3sDpaIVd0KSnOLyZ9_UCH-b_YzOCJj9wMaL4JU7o8Ar6E9rL7USlBbeI1OTsYrwnbla9wq9EgRvUYO_KThQtREfVLdW2JR7OwG4MXqA6aWx8fpHMxLFJhWrtqE2haJR65IlrQ4Rz5OuK8DaYUPPretwZR2Oe5ox--0rLoImmjZExQ-Bb343VUYn1ko-IYGuIZFUxv_EyiQRbns6t30CWEiLvY-bsE262xD9vlNz-ZIKZmk0M60xl8OKFqGxHUR6EoOeOUSD2X6pyIQv-9eAyMNEpkq-BX0oCwTof17doQJrWSbCVVhuyjAJdaIlDQZcIC73fP2fm-hNSH-zRDJ7RsO6-HrvZjuaNzLHdReSAd1XDm7l1xNlHSOq65NO7As9_Gy3VOl0S5mQn1xHqoqsONGHJQEijUqgpeAhs9OZOIuy6yvZcc3xCAjW6y2lnfU67a3nZ-5XwfCqot5tGjEVrGGBfb4G-QTwH-QwPzcX7oJjlYIa2fmY65qNdrkqI1Fib8WMnDTvW5W8iTFKmTXx-vVrGulA0Gd1L2B2c_07uoGbX4uKQjeKNmc0BQ0RQ814x1gV30jiNIr-q4Up9UO6MtklApL9a9nEuvecILG-1avZN3KE4xL3dmzXfQMwq3fHCOe9wozwP4nElnX_s1Cy4RDhbYmxyRfsH4f-6bHZoT4-aH1_zteCb755XMAmKQu8_70zfTmsAsra9BblhxN_oBHptJI-2y4tlIXND-sgVieN6coyPXWxbb-nG_uTcbuC9eENScbaOJ9VjY6OP2qk6CInVX85DkX5OOa8RtoQx1SrGA-MfIH0Jb8pyX7yEr7Qy2Cm5DfqrMdYN0dTz7YaKpYXL7GUUm-F2ixOn8jIBskwnqKdQt9CECz9h27iEcV5uotapt4H86r0M51Om8ODHhoVqE3ByLoGA_Hp7fGkq0tW3CQ97JRCreyEY_0zTeHD4KVDe8rTxTDxFEYbqtsownHFacKmt9m2O-dEprXtu-3mckCv0FnHEaZxYrn4_ykLorzuuXQ6YGCSOVr7pOaj2iw9w7n2YTPjlSQ_eATGiBrEQDbyiCD6wpjbTBBMbk0cha72xOrrQn6Cm2S8I5T2NgP8W9-1DO5woL0vUKF9ICQJE2v8jerR3TDiX66pK-0L7dDiqrEATZvK5YMg-gkw7b33rgAH1LZaYWSIV7re6Sify41hbzW6KcgmEk0DNpBO_lANeh0to6q5m8bDVqSFLxKPvf7ywlKVDAPWqXJeA25WSV-Sa6Fg4v6v8YV2uTNoZu3wWpsAaLndBbuHu5QichOR6yd-FneTW1rsUjKPsQ8CjE5mYlFFg3Ll9nw2-jqwpGvfzrdcb-P1Cv3d_SJPoMl3j5Jbqpjtq9q9rhK31Acp8t2ja3PRQhSfNSv6KEyKpefyKTVeYII4q55bRJdv1WOR2bZPt9IjT2YzRKLOx_VyQtmr7UXIyEIZswCCIJlCqLEoaBS3qIMyzW9aYl7DiM6OTioCBLXuwYVK525kbjXtpQ4WEDfSM50oCFf5N3o8b6rrHKQMzGUAYB-V9zvZ8w7c4RuNYfvqcJEqf1HaJEIaky-HkjqOKQsjRMhRRQo_zo6-Nk9DXb0rs71eRD_CYwBJjJYSgQbuwOBcnAu7UCZ1hWt1uk6JXHyZGYI2oKOycFoy7SQ9HKiMVIgwGR__d2hyTVRznDpj4cUqTZp0DWBRp9M2pA13cjwT4k3jiLR5M3G1nKdN4F9mA2_J2Ao4qErGOnkahvxrKvtLJw1LcWjDlC183A8QBvOoE_P29EKs85nkNwLokHCVkPfsJOr8mU1M_12MFdV8mlhX65rmodbKQo8gyhofkku_UGaT4ir6tpoSN6DDmcbsqmj3KWguk8a_e_g4XZNc8KGHiykI7v5TeQIi7JV1TH-_kR9ox55Lnd9Gw0CNnTwBkerJi5MkVBUmYcs9e8381dfKMvnCJS1h-Yvcb-V6eft-wiT_WxwHd9__X4ByGAm64zldrqalPuNMWqv4TTSReiuvi2UCDqOaWVVAtKZs5fFx3a_68GoM1rK9-QqBIdjHZJHe42UeS9ASaXYxOnl52lUENw9BKjuQwSBLqqwOmqhhPmKHThzxs3a8Ro1GCDG1n0NE2l7QQUPjk51EzhJIqqmOUSk72UvXbSLgSMs98z_Rv2hP7NLjWzHAffiAOBe6fNI80aR7rMl3PCLzxKEaMSCL1XYG4aM24SX09ztcFoiFHQ2qnsRWqoVpO6w4-TS80IO0qpE8iwnPdq-uCgef-EnmgrvfP66IHEolbglIRcKYQ1K1aFKattEwtcUUtrG1s5pmWJysPjlEs-t5j1VSu9cucdD80CKO-bi2kR1YVYIsN-RZN2dyNnm0FlQskYF-3MojBwKwdNnVOz4ZdV0Bz5zPemrg5lzXKVrzoMOuF9u66j-3mOpIsjdJ7VYyhgmKDqr5cI913Yf50aPJ7jY8dExOCbtk4mzUaqP4FrllLsQcY11wZ4GRjM-IMlZr3KBX-YiabhA5aS7QhrNNd9Surnxd2T_fB7UoiJCwh7pMPvL3HLjE5FqA1ECY8GHYmz_46JBCvvStQv9h2ZaTKrUSzEKOMwcsv8YuRQSfQ18GHZgSydgTIknHvdvgjy8h8FF8ujqaDVakytS8KAOxtOYY8kHZcSQ9IbPdZmNF-HkmK0VYhOxCRBwkVxd0jmpGOjUap0YAcsjSVsG6yundNGKzU0EPpLDz37JSyvW9_wDfibn-r6PA5IPGy6ovD0qLfm9OTNfJQ83uyUQvqnmlkeiWPxSPPMMpZq7k2GkZzviqqwThdR-a0L6IOJjWySABwen0Pudn4wPlhKHq-1F_1NrEE5BdKVZ6zjchYqhcm92JmihG1WGUnJZ_6QpB5XQOR_NCSpY77t5RpgBdRRrkX6My92mFb9e1fyc4GRWm9kkfA1M4VnMUTeGdhw6hIkWfcG8pNXf-Yl-haZJBB0SwQMmP4tyO6vRg76Gv_9xmRPZaKECo4kawuGkFkcja7s-doGh_HvIpG4B4n2zLK2Ux02zOKugLPad2RuWS6E12ZlS0mNLpxuj_rj3catpydRxUSNbsSWgukNzLXX6uKLzV6adtH-v3MJwgYnpoPzZZE2lS-dr6szRjLmkpLCNcFPWBEocL3hxJPBdBUOyATJLAsze0SvWCuVmjVyT_B7Os-KU_dtjOFIrfieT-mNa9_85eZf8HbJRIhAE_cRf-32N288smDUz-ZCYCExxJImSgorB2b11qY4E9jbuJKMTGKJxRlSlR16Nrurnr9rvgPGaVV-cJpbHAlanCHGuqldcpM-tk0Tg9bdDs4xb3_R-Ep1wOWTwsIU7OZDxZPETD2OStU3HzwRobE8LtXLv4WHGJyD03bC0gIKtjog13hEiZhuTJFkQM-cZCxyXrhkuxyr3a0uoKPfMmDRBruUUK6ASDXo7UF2K88Sz0wJO8JIpLNDxRWIZT5_mpvb1TxXTdeBPPHp_HSxpiTpQ6VUoZCGAfnVZtut9wG0bZXFoL8uAQsxbLVVDM0gat0QJor4nj15vILSbqiQll9DxQBV6KWyyZ6NFCQDcaDp9FuxvvgEOQXDGLOXYwFzGNkw0xIKTakipqqNyPR3ywtAtc2K0zwFRJ1pLvIJVIEfPT1jLNX0tAzwNu-AGqrt021dCcGwUdT1Ru7t8a-ewWt9DleyyrrNuCJF7f6RLCbvjQwe2NZFhmNVcS9pYY9lZHeTdIn05-Ux7xOW_YdSZvCaXa6BhOaKnZYxXI2qZj2dRN6g2JvI4ng9lvZQ_wchQFewpqMihnIKIgMjFqztThr50kczDplkfQOsgcR16F5k7qLHXrljQjAYR-9RqLrrwTEadm9-fUG4-fKdZmrIEIMYb_Qio_40KqseuZXJvNazV_sYl0-qRc__8Vzuu67yju5sXXnlYe6e9z_Ch41RW-5cV-DHsBSA9AkpETI-RNDYObV9w-xwKyYCBx5xzSjhtp8jwOO62Il8ENy5RHkIe_CWStpFfD9nuruYyv7mQ8xtVDqhvUA_xjAX9kREEvE9rucnioharE2dENKQfJsZgcoFTXZjlTPBEq9F8qwTnv3Y9sJkMuYisBRTLEQnLj1kj-9yoTUK8gf9gx_DYVNFl_ylrdDGY8iIFiRR23jQrhMv6Itn3xOFhITpssEUA5Aj1lReuEBktICEYoPM6b7mb8WHjwyW9jhQJDbIXCH2y9ApcpJXcyiZHmy3BmwU3TUxbDtDKMeFexjVHCbAAkglDr3_3QKg3U6NVmbmOxq57uqguAKTOWka3r_lRTrHVBPy5XhYyihuHOGGV2mb7jThKyHdRCDBGZLAxLX-QdbPCxFqY_azOKRKWGLmcVGUa-vKIDvdWJQe9XTGlRExXOcwpwwdqU-nKrh8aLR92Pz93xWzOhmnKva4lcXRJAbyWmLMMpV_WtOeOu7AMdyjguaF4qR2t5IUyQHCAWYg4IkP1wPHjsycGFUX2l2httf-XHSg4FJTGg0Sd103qw1RWEU1uLYkgOCrkiAR0V-X6XACNhVAxPonndiyeCK6AbGHYYkG-BgXPHz6v1oMYlOag9_lRQSMU6QkpFbxdlk_WXQ-YUNbgjSWp3dbivrxcscyom3N8E56IH6dITYZL3fbxrDPAoi7X5E0yjqO73Wuwsl0EvpYgIS_9FTO8E6wHkPXY8klIr1fF31adzOHl-alCm5UcwMe4GfcQFZcAWEO5S23oIGafvhV7DSSH7-vE47VVG2n2tUuuUoz9x1BLJZjAEbr_o0w-r14o5YJTngd5ivFcpitYksdASKkJpSMlqhdKNAmMQE6j6BcWBrDXc48uE5JAcYgZ67hMmO2G-iNy3oB0APvq4UAAjlyhY5k6jLpI2VdHaU92r-K_EXJ63WWlnjJCRNRxgiO8gOjTwLngwGcPGVvshV6SmQJMxHARIIjOy_csy3KSAbRIFeMy1n4X41BmD39TObIv7yPwkXAiRoDPCmWtHs505_YYvZzWy1PCUNUlmPT7AW7FHjZtMh99uewdhILHEnMsht7fVDrGfkphdq_U93HZoeJRx1vaTC-8uNsGFe2MfpwQwiw_1hHOsj1NSa-ro81CVbvn6-Q7LbR1C7DXlCdbeJKmg0VQRPisA2YFCLHDI0lpJ117_jwL77swJdCC2LywSdIF_8QvoXFGG49ru6zAndnb9bMOqn97lVy4XKE53urCQt3vezAocgJmUfel4u87hG9ktd3GTbiTjCyqKDxRTBM251GEfcWnQ_58LuKiZvR7OIuW67T72UDv5DnqSSsAMcv0RlgqTYV6L7mc9x3_5kbCjW8Yp_VjleERM8vwF3BpS4M3EEvo7u1ju8vAMqPeEWOwx_9cCW0ev7VpBo8IRxhWOMxOi6nRx1iEWPeens0xhKYUjf_F8I6_5qfq50984Sd8J6InVshhTRMPuymo-wr7l74WsBaFe8F6KZ5OqF1qdHBqpuWnCmm9n1TfEf-huuM6aabq2xLJ9w_RLp2PvllncycqOlSyMgdLvw3mV-dM4_Iah-WJVEA4sY0X--j6JPcnuClLDHbcXlSOiCeFZNstfGXWZrKwkV3Utx8hejzkQHFIw6o7yccMiQm1Ws4kHqPU_Au0lZFqDCVptNcHWHzzo7aXzBhc1K0l2ULvhpAeLL0oBXuvqhhO6lJw06UP3rHIFh7xg0H-JfXhor3KNJyGqRVzbLPM8GYo3Lu5vdFBr7N14a8lUURgMMSw7vUVLAShEIlImJSNJ_9aXo25Nl4O2aBAMJgtmD5YGJkJZAMShkXzct23DIxM0nv8A9WpEVyhnAekSEMALP2UfubLNFuP-MU9Rzcb-05GBv4R5IXedPTJXnybvs1NRodtg==",
+              "summary": []
+            },
+            {
+              "id": "msg_0562f4c002f0300c016ad21578628c87d2803fdc5fa62d48f3",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "In\u00eas grades plank EVO-2026-1016-C2 at 12:30."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "medium",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 82,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 548,
+            "output_tokens_details": {
+              "reasoning_tokens": 512
+            },
+            "total_tokens": 630
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:15:52 GMT
+recorded_with: VCR 6.4.0

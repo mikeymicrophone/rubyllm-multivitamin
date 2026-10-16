@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-5-nano","input":[{"role":"user","content":"Board: Lalrin
+        weaves puan AIZ-2026-1016-P4 at 10:15. When does Lalrin weave?"}],"instructions":"You
+        are the puan clerk in Aizawl.\nAnswer in one short sentence from the board
+        only.\nThe sentence must include the name Lalrin and the time 10:15.\nDo not
+        replace Lalrin with a pronoun.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"reasoning":{"effort":"medium","summary":"auto"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 12:14:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6fbd15d658f57-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '8147'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999603'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 11ms
+      X-Request-Id:
+      - req_f045f77f8eeb4299ad416106d4bd3764
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_071b5f5f71f501b5016ad21526ae0c87d2aa3f60945add4c33",
+          "object": "response",
+          "created_at": 1792152870,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792152878,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the puan clerk in Aizawl.\nAnswer in one short sentence from the board only.\nThe sentence must include the name Lalrin and the time 10:15.\nDo not replace Lalrin with a pronoun.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-5-nano-2025-08-07",
+          "moderation": null,
+          "output": [
+            {
+              "id": "rs_071b5f5f71f501b5016ad21527207487d2a17b707a9cb68a40",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "gAAAAABq0hUu041rJvv5Nrx2aLPeMVdVdUaU1Pj5IKEIVTgigSTuZpPmnyF68IJABxEmZIHKD4Lyx8gkUP4MZDWzPaA5AVliGCqkucZWNHKykkQukqM-l8_v1Guh0cqyROcSoEbgrv0JNvf2gve62A4sbJvfWw6W01sMENGls6jKbSsIoiUz4cjn85-YStiTN6YfQWb-hiER24Ic1v8Mj19QhAanmv7CScpAGnAyF2SJfneg3v_2v_weFuuLfFHvVKA8FfD3TELD63XncmaFjJ9_rMRsZe0QBr8ymmz68BXXTEAq3eBc3Pzqpu9pRofMTduLQnVfXILXD9H99bBoSyUcLIvMUl8Y_pDlExmFzzrC4jJPu_A0Dop1AE62QcXZoHZHrb3uTvXVmcXu9WjErknvo4oZtqb7ZvDvhKqeKSlMhIraqyVUxjtwXfWgfD7XPw42zk0i7fMSR1QaJfaXHscaC-cZVdJk8JR8xOoi5MGP-iThDmyoHhlP3ZPAnFrmCGexoGLw_zfEi7yZvTNQSuJTkxRWf35AS4Pajh53llMzxFJi5zo9pkEEp0Xze8FOseQ_UI3p-VzKuar5xORe11cUWEmdvUGu8PIOAK7boyEkImi3EUMysYnXXUl7p8Fy17-QPIxxWVwrbyhe4CQrqFamP5ask10g-127Cqsjs2M0j3mYJD6j-sScg-So6Lahq3QMgF2K3Vgwz5hOXfMwZqp9h3so9QbSqIbYHfk54Ea62Xbn9DK_egYSBOqtoIeLxQ5pZ3hCmfrPod5IcnJiWtQqn3sZJILaaldIfXHgBzrCxpJ_2eJioaY0Ttax4E5zmfbxyLc31SSfyl5YwQCM_yoCrf7zNBkdGNn_taqJdYYxQCh0bdKNb7SZDwHlbd-PuuLU-B0gJIaWmgIcVBfwAIjG7KCfNgD83a0blVbGs-29eZvM8JBBagOoloBjzYjfAx86FhlY1tiLXQbvhOpiJHtNxCnAJNQGGQuUqT7IJArbVEQnk9Ucvz8AV_9psAb8h8X2DvLUR1maxHZSRIEQ3MCS13mjzgv8rrcEOS-b-Cd4k7AGaHDzakYTMiOs9pfhvBz3jED38KcMMkNKGWsRYZGv1PH4faDy7MZjmg2GXXLzk9vxGRCS7ImbNL25K4wY6Cd678qmChOql3CFQ9GedoX9MtCMMUdmOSBsEHxdbWSVDQ-uwOp6b8B-imGeLcaAyeHr-7ntWf9ekVhLgEXkiSiRfhvAv0y4xbgOmfEkfRXzWLAAxD3eBNvoUC794VL0ljSC_TrXO0bIOFjSEba-7_tudFPiyuWmf-6HZJxONfJdcd6m9nI8EuMWkckfu_aZfGogjKT-kcGQ51cNgF9wvUYKqyrMoT8yW7-k-yjpx1wJ6CbRb3izSVVD_-HfgJXicQb_-U-2SlAelSSJLyUkuAiPQxQtGTjFk66-WEWcoSgB0MzLKOBYbcylv2Sau_OS7cIN9Hivo-IGwliJL0l_-SFH3ZWhbhV8hvdHDErKSKEZBL1OkExzQXjwJcr9jIywU2Az_hF3lyNA6BfsY1UFTx3tNtzGUFHGdq4IW_Hqpb7bgDzgl-b7FOHZhcFt5PA0NZ1Zinyj-pN0iq1r-Kzw6Gk4JOPqVGebr5o7wk3OEVBGJIHRpQRR7erl0IcwkfNYLWsdSdeKsgMBkHT7Kn9mzefVm4mpr9jnCTF3qDkzB9AQtBKXOTJpK87NKXMh9k5K8MOkW-Omk1ICIqymewpqlnlYQEB5_1qyzqbPtG8S1JjWcus7D7snorwCEYvv78f5F5J6IwFUw37k-UPTdF9ORsYu-oq5yOf55sa8emhUH5db_XVjhZbQ9S0vJqzMJOTaifWcP5NvE_kB1tczIp95DM-gVObqcAAI9uR_m4l_kzDTAiL3AoJ5gtEEqhmPA2ePy0VIF8LYThMWAedARSsRftuww4-_gvEJEJOoyhJj6AnTcVKIztJlmG099rFhUdd6U7T0aoAvJtbiAXz0k_mvHDx1--6RVeKI5mLwZU1biPKdTtITQoaaK31VT69rCZcrgmM7pZbYvlDmOFgoSwROOvHdu7uEWpP7oabelZA8RoQPXmJj6N6B9C1jnEiwILRAN8NVdE-Jp7M69lQ2uwQc6d-JX9bgeac6QCeowaQ96KEnZVW1-w-8z0AI62MjWT92mZ6kqd0UbGoAbDSjLr_tgdOB90bHHevGWkM8bNGAMQJWePaAfthYAqPCgPPlVNjqcTnXv_NaSPYt1o3QxZqFGOc23CpuoX2xAUa9of0r6h5kDF4d9WXInj8RL4GBWTm1Hp5QspLJzm3IftGz-sEtg2hSz-53KfH9z040LJKNhQB36CVzMzbCzTkJgc3pIgZ6XPEQklKCFEQQ0GtCSA-3ytnehGrDTcqHdLU6p4rjJ1mPlwXRP3pPFICTF96ZeAUtIvQSmBkxG1pA_HCnnubdfvrh0fP_2FKBl-tcG5hsgU1RZ6O5KTE3e7RmGuURB5nLokImEQfMxNTOxvaHFZcuct4_LrhMCKyGIjj4ovlZ_zYwxjtYiNy9FeeNL4Ud_rWwipLvKDAPn4Rt6d6aRCOk_uI4aMAkHFJdFCLFPR8kwBU2Ge6eRqn5qJwrDt0EgHl_8T25VQ4BTUqKNH_AnsfSXrDKF6ZzwHewDR_os_yOX--yyR5jrR4LLB23IOOBbdxfDw-3h2ZLhIonBP_OXqo7jcqVNN9m_4QXzjWhjO6LTIvxCuJQOlPwktOC0hh4yi0GJX0Qj9IelFteyr4cL83-NT73bQCbjDIfJGca_aQxEJxHtgdBGy576J4aqPw8iZTpYyym5l5dnRG2eeKYXS64feOmZETaDe3BhpWRvgGtyNZAigi6s4aJrvX-jmjAkWo5jXOqmd5rol9nQfNYAqf1Vsi_z8AMob7P7uoyeJWZEkvsvTBFo-VESyh4xloB3oRFTJOp6BYHTcB4-VkO18uwiDd2yJhJgxgwsXiRqlagVM0qy-RuDUFwDf7j8CmXsSCayhaoDsR5Qjo742Rx0dz6qkiBqDI3d-qPr2L42SR6uX2s1PL0MCFc70aQLm_bqCPN7ESd8sO_mK_vEFcfe0ir1fWxIzaWH6iAoo64oLI2T2ZrZvpxzn9CvqZPUoUAkFKDiD4ASwFypCFtrr97fkO19ZIToCylaIL-hYT5hMbQbc5_PYDPSVgiDuONuwYOc5lEGADhlPa5aIB2t4mIaUSruUKl38P7N6-NhLc8e0AD8t36WfvxN9lo4Syxd7zR4F33cUyEfl3tIskmAAtzKlgc9whGPljt67WbUKRVCH4XVGxWY2HPvnwi_ENsPzwjUs4akiSfSpQIKmTwURKXcXTSWJB4Xd5_EUYxhBKKZRWqu6e3sQAMrPxFiUnDQh7Xk2as_fpgwiFVBuzCuHS2BfAWKoxH7OprpeB-30hZApTm0NofwUwJgUzr0vTmmV68xmQIVReTQzBlDfSCqKacH9WfDc9Bahiw-0Ch6RiBk8n87tJO5qF-8StAEW751VoZ6tmvLGbOwxRqbXm5Akqh2iq13pTYyBUuIAR97zLfkBA4KjzMXKYKiepjB9dS6tsN2mpQ9pMVCBvyGgalnxQAeBxdx25NnZsKCzPZNdr4OP8bRA9tA9st_hyPVolf5p4lfxD14oBrqzzRLXO20-Rp2lVUhAscTfoEfyAjt4yBz3oN7RKLB9CqaALCkox4N59FnmR4Q3EwKxSUqm2zcu7wc2QU2Yeoe2STd-Jja_7l-UvYlyT8rO_3uYfsMOCb-OVQF2IUBoxVNAOtHEYy1RdSb7_c0hrY6bsHXyUxAiLB3TUC8bhxznRbgcVictk3OPU81MzvCO2XvoarbGS2aLUnhGdTdpZWDD24Q5NXmYytXX1rFiDo5KEa8LEUfguIgCs2-xQutieIJ3o-6spK6GJ3sHecXK7B66XzbT4ZgFihjF1HS6rPC27BKXge7CjB3tSt<OPENAI_API_KEY>",
+              "summary": []
+            },
+            {
+              "id": "msg_071b5f5f71f501b5016ad2152ead6087d2b1d8ccb33923bc52",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Lalrin weaves puan AIZ-2026-1016-P4 at 10:15."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": "current_turn",
+            "effort": "medium",
+            "mode": "standard",
+            "summary": "detailed"
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 1.0,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 87,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 614,
+            "output_tokens_details": {
+              "reasoning_tokens": 576
+            },
+            "total_tokens": 701
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 12:14:38 GMT
+recorded_with: VCR 6.4.0
