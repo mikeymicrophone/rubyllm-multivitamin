@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Fontomfrom
+        card posted Wednesday 14 October 2026 at the Centre for National Culture,
+        Kumasi.\nCentre page: https://www.ghana.gov.gh/\nCall 3 strokes, silent 27
+        counts. The atumpan is tight.\nDictate that pattern for the incoming ensemble."}],"instructions":"You
+        are the fontomfrom clerk at the Centre for National Culture in Kumasi.\nDictate
+        the card in two short sentences.\nName the three-stroke call and the 27-count
+        silence.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 02:33:46 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b3a91bbb692889-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '566'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999871'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 3ms
+      X-Request-Id:
+      - req_89a70c7f27e84cc0b630ed17a3925cf4
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |+
+        event: response.created
+        data: {"type":"response.created","response":{"id":"resp_086c8a1fed665ed3016ad18d09ad4087d29d24e48359417ad1","object":"response","created_at":1792118025,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fontomfrom clerk at the Centre for National Culture in Kumasi.\nDictate the card in two short sentences.\nName the three-stroke call and the 27-count silence.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+
+        event: response.in_progress
+        data: {"type":"response.in_progress","response":{"id":"resp_086c8a1fed665ed3016ad18d09ad4087d29d24e48359417ad1","object":"response","created_at":1792118025,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fontomfrom clerk at the Centre for National Culture in Kumasi.\nDictate the card in two short sentences.\nName the three-stroke call and the 27-count silence.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+
+        event: response.output_item.added
+        data: {"type":"response.output_item.added","item":{"id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+
+        event: response.content_part.added
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"gDq1Fxfs41nHg","output_index":0,"sequence_number":4}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" three","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"AblH9ycx69","output_index":0,"sequence_number":5}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"-st","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"FIsEp97Bp9dtJ","output_index":0,"sequence_number":6}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"roke","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"ldNBrvKsa72Z","output_index":0,"sequence_number":7}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" call","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"4T8eA6Kr9xs","output_index":0,"sequence_number":8}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"4RT4T2urGIJ50","output_index":0,"sequence_number":9}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" called","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"eNiGsZ9LF","output_index":0,"sequence_number":10}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" \"","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"tx0AqdRuulmkVN","output_index":0,"sequence_number":11}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"Font","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"EDlFGx4NZPO6","output_index":0,"sequence_number":12}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"om","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"bCW8mlG4tvtl37","output_index":0,"sequence_number":13}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"from","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"nWbiSVmCDUIc","output_index":0,"sequence_number":14}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".\"","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"8ePsAu760ighTk","output_index":0,"sequence_number":15}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" After","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"XmYJ38QZsf","output_index":0,"sequence_number":16}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"OyIpXdnOSsVw","output_index":0,"sequence_number":17}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" call","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"eaba3pp4GeI","output_index":0,"sequence_number":18}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":",","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"i4r78oyHrxT6zZm","output_index":0,"sequence_number":19}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" observe","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"SRLSXpkX","output_index":0,"sequence_number":20}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" a","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"nVWuz21QH7x5aY","output_index":0,"sequence_number":21}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" silence","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"IYBvW8uV","output_index":0,"sequence_number":22}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" lasting","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"Zoyktw0G","output_index":0,"sequence_number":23}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"SZU2zpxVfqKPJu9","output_index":0,"sequence_number":24}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"27","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"EN37fr44Dz0uQT","output_index":0,"sequence_number":25}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" counts","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"o22MmzX2r","output_index":0,"sequence_number":26}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"hGhclyKwtXpX3Sl","output_index":0,"sequence_number":27}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" The","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"j2U7xN8uXcN5","output_index":0,"sequence_number":28}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" at","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"e80Olmv2ZE290","output_index":0,"sequence_number":29}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ump","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"fTx8qlml9Lo33","output_index":0,"sequence_number":30}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"an","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"VcAKatg1HnaDHj","output_index":0,"sequence_number":31}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" drum","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"hkVGXrEfNpu","output_index":0,"sequence_number":32}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" should","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"3tyRYBmVM","output_index":0,"sequence_number":33}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" be","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"d9rkaLMsMUAUh","output_index":0,"sequence_number":34}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" played","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"seExQsH0H","output_index":0,"sequence_number":35}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" tightly","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"8FOHJg8P","output_index":0,"sequence_number":36}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" throughout","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"BM58W","output_index":0,"sequence_number":37}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"yGUzTJ78g2o2","output_index":0,"sequence_number":38}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" pattern","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"e07oZLjM","output_index":0,"sequence_number":39}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"obfuscation":"32VfLM86obSonL2","output_index":0,"sequence_number":40}
+
+        event: response.output_text.done
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","logprobs":[],"output_index":0,"sequence_number":41,"text":"The three-stroke call is called \"Fontomfrom.\" After the call, observe a silence lasting 27 counts. The atumpan drum should be played tightly throughout the pattern."}
+
+        event: response.content_part.done
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"The three-stroke call is called \"Fontomfrom.\" After the call, observe a silence lasting 27 counts. The atumpan drum should be played tightly throughout the pattern."},"sequence_number":42}
+
+        event: response.output_item.done
+        data: {"type":"response.output_item.done","item":{"id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The three-stroke call is called \"Fontomfrom.\" After the call, observe a silence lasting 27 counts. The atumpan drum should be played tightly throughout the pattern."}],"role":"assistant"},"output_index":0,"sequence_number":43}
+
+        event: response.completed
+        data: {"type":"response.completed","response":{"id":"resp_086c8a1fed665ed3016ad18d09ad4087d29d24e48359417ad1","object":"response","created_at":1792118025,"status":"completed","access_programs":null,"background":false,"completed_at":1792118026,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fontomfrom clerk at the Centre for National Culture in Kumasi.\nDictate the card in two short sentences.\nName the three-stroke call and the 27-count silence.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_086c8a1fed665ed3016ad18d0a391c87d2a6b5d442523d30a1","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"The three-stroke call is called \"Fontomfrom.\" After the call, observe a silence lasting 27 counts. The atumpan drum should be played tightly throughout the pattern."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":110,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":38,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":148},"user":null,"metadata":{}},"sequence_number":44}
+
+  recorded_at: Fri, 16 Oct 2026 02:33:46 GMT
+recorded_with: VCR 6.4.0
+...

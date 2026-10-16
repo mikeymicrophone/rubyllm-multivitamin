@@ -13,7 +13,7 @@ class PersistedMendozaMalbecPressLaterTest < Minitest::Test
     end
 
     assert_includes result.brief, "28"
-    assert_match(/press 3|Press 3/i, result.brief)
+    assert_match(/press(?:es)?\s*3/i, result.brief)
     assert_equal 2, result.count_after_later
     assert_equal 1, result.user_count_after_later
     assert_equal 0, result.assistant_after_later
