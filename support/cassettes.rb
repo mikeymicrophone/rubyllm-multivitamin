@@ -24,6 +24,7 @@ module Multivitamin
       XAI_API_KEY
       MISTRAL_API_KEY
       COHERE_API_KEY
+      GPUSTACK_API_KEY
       DEEPSEEK_API_KEY
       PERPLEXITY_API_KEY
       MCP_BEARER_TOKEN
@@ -118,9 +119,10 @@ module Multivitamin
 
         abort "LIVE=1 LIVE_PROVIDER=openrouter needs OPENROUTER_API_KEY in the environment. Never commit it."
       when ""
-        return unless ENV["OPENROUTER_API_KEY"].to_s.empty? && ENV["OPENAI_API_KEY"].to_s.empty?
+        provider_keys = %w[OPENROUTER_API_KEY OPENAI_API_KEY COHERE_API_KEY XAI_API_KEY ANTHROPIC_API_KEY GPUSTACK_API_KEY]
+        return if provider_keys.any? { |name| !ENV[name].to_s.empty? && ENV[name] != PLACEHOLDER_KEY }
 
-        abort "LIVE=1 needs OPENROUTER_API_KEY or OPENAI_API_KEY in the environment. Never commit it."
+        abort "LIVE=1 needs a provider API key in the environment. Never commit it."
       else
         abort "LIVE_PROVIDER must be openai or openrouter."
       end
@@ -251,6 +253,14 @@ module Multivitamin
       return "<MCP_CLIENT_SECRET>" if token.match?(/\Abasic\s/i) || token.include?("<MCP_CLIENT_SECRET>")
       return "<MCP_BEARER_TOKEN>" if token.include?("<MCP_BEARER_TOKEN>")
       return "<MCP_OAUTH_ACCESS_TOKEN>" if token.include?("<MCP_OAUTH_ACCESS_TOKEN>")
+
+      %w[COHERE_API_KEY XAI_API_KEY ANTHROPIC_API_KEY GPUSTACK_API_KEY].each do |name|
+        placeholder = "<#{name}>"
+        return placeholder if token.include?(placeholder)
+
+        value = ENV[name].to_s
+        return placeholder if value.length > 8 && value != PLACEHOLDER_KEY && token.include?(value)
+      end
 
       openai = ENV["OPENAI_API_KEY"].to_s
       openrouter = ENV["OPENROUTER_API_KEY"].to_s

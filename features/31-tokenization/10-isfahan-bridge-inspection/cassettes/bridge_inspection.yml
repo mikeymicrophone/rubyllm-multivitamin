@@ -1,0 +1,53 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Si-o-se-pol
+        board: Leila photographs arch ISF-11 at 07:45. Which arch is assigned to Leila?"}],"instructions":"You
+        are the Isfahan bridge inspection clerk. Keep arch references verbatim."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":78}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses/input_tokens
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Si-o-se-pol
+        board: Leila photographs arch ISF-11 at 07:45. Which arch is assigned to Leila?"}],"instructions":"You
+        are the Isfahan bridge inspection clerk. Keep arch references verbatim."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"input_tokens":78}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

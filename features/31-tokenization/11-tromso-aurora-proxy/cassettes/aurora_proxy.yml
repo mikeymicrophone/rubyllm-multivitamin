@@ -1,0 +1,28 @@
+# Hand-authored fixture; not a live recording.
+# Request bodies captured from the RubyLLM 2.1.1 encoder with WebMock blocking network.
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8080/model/proxy/7/tokenize
+    body:
+      encoding: UTF-8
+      string: '{"model":"qwen2.5-7b-instruct","prompt":"Tromsø aurora board: Sigrid
+        closes lens TRO-3 at 23:40; cloud cover 7/8."}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <GPUSTACK_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":31,"max_model_len":32768,"tokens":[51,927,127,3899,360,44216,5032,25,634,24327,6241,1356,13,1200,51,2242,12,18,520,220,1419,25,1272,26,5937,2616,220,22,14,23,13]}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

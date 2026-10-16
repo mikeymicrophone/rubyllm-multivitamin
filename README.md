@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 351 |
+| Bottled | 364 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,9 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 351 of 429 are
-bottled. Features 1–21, 23, 24, and 26–29 are full. Features 22, 25,
-and 30–33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 364 of 429 are
+bottled. Features 1–21, 23, 24, 26–29, and 31 are full. Features 22, 25,
+30, 32, and 33 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -82,7 +82,12 @@ an ask follows the ERB; six slots raise or assert locally and have no
 cassette. Extended thinking recorded OpenAI `gpt-5-nano` (effort and
 `display: :summarized`) and OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`
 (toggle, budget, and `with_thinking(false)`); `gpt-4.1-mini` raises
-before HTTP on the off control. The other bottled cassettes are OpenRouter.
+before HTTP on the off control. [Tokenization](features/31-tokenization/) uses
+hand-authored fixtures for Cohere and xAI tokenizers, OpenAI Responses and
+Anthropic request counting, and a GPUStack model proxy. Their requests were
+captured from the RubyLLM 2.1.1 encoder with network blocked; responses and
+token values are illustrative, not live measurements. Its unsupported-operation
+slot makes no HTTP call. The other bottled cassettes are OpenRouter.
 
 ## Run the examples
 
@@ -172,6 +177,7 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Reranking (recorded) | `voyageai/rerank-2.5-lite` on OpenRouter | `voyageai/rerank-2.5` on OpenRouter; OpenAI has no rerank API. `LIVE_PROVIDER` does not retarget rerank |
 | Files (recorded) | no `:free` Files API | bottled on OpenAI Files (`purpose: "user_data"` or `"batch"`) plus `gpt-4.1-mini` when a chat reads the file. `LIVE_PROVIDER` does not retarget Files |
 | Prompt caching (recorded) | OpenAI `gpt-4.1-mini` with empty `with_caching` and `with_caching(key:)` | That slug rejects `prompt_cache_options` and `prompt_cache_breakpoint`. `ttl: "1h"` 400s as invalid (only `30m` is listed). Gemini `CachedContent` needs `GEMINI_API_KEY` |
+| Tokenization (hand-authored) | Cohere `command-r-08-2024`, xAI `grok-4.3`, GPUStack `qwen2.5-7b-instruct` for IDs; OpenAI `gpt-4.1-mini` and Anthropic `claude-sonnet-4-6` for request counts | no live or free-model availability check; see [Tokenization](features/31-tokenization/) |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise
@@ -255,7 +261,7 @@ hold the cassette player and the model slugs, not the story.
 28. [Prompt rendering](features/28-prompt-rendering/) — 13 of 13 bottled
 29. [Extended thinking](features/29-extended-thinking/) — 13 of 13 bottled
 30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 0 of 13 bottled
-31. [Tokenization](features/31-tokenization/) — 0 of 13 bottled
+31. [Tokenization](features/31-tokenization/) — 13 of 13 bottled
 32. [Hosted research](features/32-hosted-research/) — 0 of 13 bottled
 33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled
 
