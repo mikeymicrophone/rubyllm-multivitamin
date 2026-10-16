@@ -11,27 +11,27 @@ Official reference: [Chat](https://rubyllm.com/chat/) (system prompts, transcrip
 ## Free models
 
 Recorded on OpenAI `gpt-4.1-mini` after OpenRouter
-`nvidia/nemotron-3-super-120b-a12b:free` answered `Rate limit exceeded:
-free-models-per-day` on 14 October 2026. `LIVE_PROVIDER=openrouter`
-records the free slug when the daily cap allows. Fallbacks:
+`nvidia/nemotron-3-super-120b-a12b:free` inverted a Yes/No standing
+order on 16 October 2026. `LIVE_PROVIDER=openrouter` records the free
+slug when the daily cap allows. Fallbacks:
 `liquid/lfm-2.5-2.6b:free`, then `poolside/laguna-s-2.1:free`. The free
 slug accepts `temperature`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson kelp-ledge standing orders](01-point-wilson-clerk-orders/) — available
-02. [Cape Disappointment horn rule appended](02-cape-disappointment-horn-append/) — available
-03. [New Dungeness watch clears instructions](03-new-dungeness-watch-clear/) — available
-04. [Anacortes late-basket follow-up](04-anacortes-basket-follow-up/) — available
-05. [Ediz Hook retracted sounding](05-ediz-hook-retracted-sounding/) — available
-06. [Port Townsend temperature cleared](06-port-townsend-temperature-clear/) — available
-07. [Friday Harbor long slip sheet](07-friday-harbor-slip-sheet/) — available
-08. [Bremerton afternoon relief replaces orders](08-bremerton-afternoon-relief/) — available
-09. [Smith Island message roles](09-smith-island-message-roles/) — available
-10. [Neah Bay seeded ladder card](10-neah-bay-seeded-ladder/) — available
-11. [Mukilteo range-light mistake left in](11-mukilteo-left-mistake/) — available
-12. [Juan de Fuca overnight log compacted](12-juan-de-fuca-log-compact/) — available
-13. [Admiralty Inlet watch reset](13-admiralty-inlet-watch-reset/) — available
+01. [Lyon Jacquard standing orders](01-lyon-jacquard-orders/) — available
+02. [Coimbra fado humidity rule appended](02-coimbra-fado-append/) — available
+03. [Padua wax cabinet clears instructions](03-padua-wax-clear/) — available
+04. [Kuching late-rack follow-up](04-kuching-pepper-follow-up/) — available
+05. [Tsukuba Faraday-cup retraction](05-tsukuba-cup-retract/) — available
+06. [Hong Kong steamer temperature cleared](06-hong-kong-steamer-temp/) — available
+07. [Vienna pit-part sheet](07-vienna-pit-sheet/) — available
+08. [Amman mosaic afternoon relief replaces orders](08-amman-mosaic-relief/) — available
+09. [Hobart hydrometer message roles](09-hobart-hydrometer-roles/) — available
+10. [Trondheim seeded bellows card](10-trondheim-bellows-seed/) — available
+11. [Busan sprocket mistake left in](11-busan-sprocket-mistake/) — available
+12. [Kanazawa gold-leaf log compacted](12-kanazawa-gold-compact/) — available
+13. [Macau fuse-house shift reset](13-macau-fuse-reset/) — available
 
 ## What each scenario adds
 
@@ -40,10 +40,10 @@ slug accepts `temperature`.
 | 01 | One `with_instructions`, and the first `chat.messages` entry is `:system` |
 | 02 | `append: true` produces two system messages |
 | 03 | `with_instructions(nil)` and the next request has no `instructions` field |
-| 04 | The second question does not repeat the cook card; the answer still uses it |
-| 05 | Assign `messages` so a fouled sounding is gone from the next request body |
+| 04 | The second question does not repeat the drying card; the answer still uses it |
+| 05 | Assign `messages` so a fouled Faraday cup is gone from the next request body |
 | 06 | First request has `temperature`, the request after `with_temperature(nil)` does not |
-| 07 | The system message stays short while the user message carries the slip sheet |
+| 07 | The system message stays short while the user message carries the pit sheet |
 | 08 | Replacing instructions changes the system text on the second request |
 | 09 | `messages.map(&:role)` across system, user, assistant |
 | 10 | `add_message` seeds last watch; the correction is a user turn |

@@ -46,9 +46,9 @@ Embedding text cassettes were recorded on OpenAI `text-embedding-3-small`.
 The Smith Island barometer card was recorded on OpenRouter
 `google/gemini-embedding-2`. Image generation was recorded on OpenAI
 `gpt-image-1-mini`. Models-and-providers chats and the
-instructions-and-history cassettes were recorded on OpenAI `gpt-4.1-mini`
-(and `gpt-4o-mini` for the mid-chat switch) after the free OpenRouter slugs
-hit the daily cap. The registry `refresh` cassette is the published catalog
+instructions-and-history cassettes were re-recorded on 16 October 2026 on
+OpenAI `gpt-4.1-mini` after the free OpenRouter slug inverted a Yes/No
+standing order. The registry `refresh` cassette is the published catalog
 on rubyllm.com. Configuration and contexts were re-recorded on 16 October 2026 on OpenRouter
 `nvidia/nemotron-3-super-120b-a12b:free` (and `liquid/lfm-2.5-2.6b:free` for
 the second tenant) after the 8 PM ET reset; the Copán stela context embed
