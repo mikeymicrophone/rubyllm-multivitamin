@@ -542,17 +542,17 @@ Shown in [Trondheim seeded bellows card](features/11-instructions-and-history/10
 
 **What to do.** Read `tokens.reported_cost` beside `cost.total`. Build a `Tokens` with only the counts when you want a registry estimate. Rescue nothing: `nil` is the missing-price signal.
 
-Shown in [Ballard Locks salmon-count reported price](features/12-tokens-and-cost/07-ballard-locks-salmon-count/) and [Roche Harbor customs-float unpriced clerk](features/12-tokens-and-cost/10-roche-harbor-customs-float/).
+Shown in [Puri ratha-spoke reported price](features/12-tokens-and-cost/07-puri-ratha-spoke/) and [Lahore truck-art unpriced clerk](features/12-tokens-and-cost/10-lahore-truck-art-clerk/).
 
 ### OpenRouter reports cache buckets as zero, not omitted
 
-**What happens.** The first Agate Pass request sends `with_caching(ttl: "5m")`. The response still includes `prompt_tokens_details.cached_tokens` 0 and `cache_write_tokens` 0. `tokens.cache_read` and `tokens.cache_write` are `0`. They are not `nil`. `tokens.thinking` is greater than 0.
+**What happens.** The first Osh apricot-dry request sends `with_caching(ttl: "5m")`. The response still includes `prompt_tokens_details.cached_tokens` 0 and `cache_write_tokens` 0. `tokens.cache_read` and `tokens.cache_write` are `0`. They are not `nil`. `tokens.thinking` is greater than 0.
 
 **Why it matters.** `if tokens.cache_read` is false for both nil and 0 in some writings, but `nil?` is the omission check. On this slug a first pass is a reported miss, not an omitted field.
 
 **What to do.** Assert the integer the cassette actually stored. Do not coerce with `to_i` to hide a missing bucket; this recording happens to report zero.
 
-Shown in [Agate Pass tidal-race cache and thinking](features/12-tokens-and-cost/06-agate-pass-tidal-race/).
+Shown in [Osh apricot-dry cache and thinking](features/12-tokens-and-cost/06-osh-apricot-dry/).
 
 ### A cancelled stream can price a parser-default cache_write of zero
 
@@ -562,17 +562,17 @@ Shown in [Agate Pass tidal-race cache and thinking](features/12-tokens-and-cost/
 
 **What to do.** Read `chat.usage_entries` for cancelled work. Treat `cache_write` 0 with nil input as "usage never arrived," not as a free successful call.
 
-Shown in [Turn Point current-halt cancelled usage](features/12-tokens-and-cost/12-turn-point-current-halt/).
+Shown in [Kano indigo-halt cancelled usage](features/12-tokens-and-cost/12-kano-indigo-halt/).
 
 ### An unknown tool keyword becomes a tool-role error, then a retry
 
-**What happens.** `posted_kelp_card` declares no parameters. The model still called it with `skiff`. `execute` raises through RubyLLM as a tool message whose content is `{"error":"Invalid tool arguments: unknown keyword: skiff"}`. The next request sends that error and the model calls again with `{}`. That second tool message is the harvest card. `chat.tokens` includes both attempts. The spoken answer still has the sack count.
+**What happens.** `posted_gara_card` declares no parameters. The model still called it with `yardage`. `execute` raises through RubyLLM as a tool message whose content is `{"error":"Invalid tool arguments: unknown keyword: yardage"}`. The next request sends that error and the model calls again with `{}`. That second tool message is the dye card. `chat.tokens` includes both attempts. The spoken answer still has the yardage.
 
 **Why it matters.** A test that takes the first `:tool` message as the card gets the error JSON. The extra attempt is on the chat ledger.
 
 **What to do.** Read every tool message. Expect `chat.tokens.input` to exceed the final answer's input when a bad call was retried.
 
-Shown in [Cattle Point bull-kelp harvest tools](features/12-tokens-and-cost/11-cattle-point-bull-kelp/).
+Shown in [Freetown gara-cloth harvest tools](features/12-tokens-and-cost/11-freetown-gara-cloth/).
 
 
 ## Error handling

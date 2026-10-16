@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the spoke clerk at the ratha yard in Puri.\nAnswer in two short sentences.\nUse
+        only the count board in the question.\nName 86 spokes and ratha 1.\nDo not
+        invent an axle figure."},{"role":"user","content":"Puri ratha-yard count board,
+        Friday 16 October 2026, 07:15.\nTemple notes: https://www.shreejagannatha.in/\nRatha
+        1, morning window 06:00 to 07:00: 86 spokes, 12 iron tyres, 0 cracked axles.\nThe
+        yard is holding the cart Gundicha for a 07:30 roll to the sand.\nHow many
+        spokes on ratha 1, and are cracked axles zero?"}],"stream":false,"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:26:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121179-usuixbEfzdgOTjWdqzjA
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f61c9eb4c57f-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        CiAgICAgICAgIAp7ImlkIjoiZ2VuLTE3OTIxMjExNzktdXN1aXhiRWZ6ZGdPVGpXZHF6akEiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24iLCJjcmVhdGVkIjoxNzkyMTIxMTc5LCJtb2RlbCI6Im52aWRpYS9uZW1vdHJvbi0zLXN1cGVyLTEyMGItYTEyYjpmcmVlIiwicHJvdmlkZXIiOiJOdmlkaWEiLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInNlcnZpY2VfdGllciI6bnVsbCwiY2hvaWNlcyI6W3siaW5kZXgiOjAsImxvZ3Byb2JzIjpudWxsLCJmaW5pc2hfcmVhc29uIjoic3RvcCIsIm5hdGl2ZV9maW5pc2hfcmVhc29uIjoic3RvcCIsIm1lc3NhZ2UiOnsicm9sZSI6ImFzc2lzdGFudCIsImNvbnRlbnQiOiJSYXRoYeKArzEgaGFzIDg2IHNwb2tlcy4gIFxuQ3JhY2tlZCBheGxlcyBhcmUgemVyby4iLCJyZWZ1c2FsIjpudWxsLCJyZWFzb25pbmciOiJXZSBuZWVkIHRvIGFuc3dlciBpbiB0d28gc2hvcnQgc2VudGVuY2VzLiBVc2Ugb25seSB0aGUgY291bnQgYm9hcmQgaW4gdGhlIHF1ZXN0aW9uLiBOYW1lIDg2IHNwb2tlcyBhbmQgcmF0aGEgMS4gRG8gbm90IGludmVudCBhbiBheGxlIGZpZ3VyZS4gU28gd2UgbXVzdCBhbnN3ZXI6IFwiUmF0aGEgMSBoYXMgODYgc3Bva2VzLlwiIEFuZCBcIkNyYWNrZWQgYXhsZXMgYXJlIHplcm8uXCIgVHdvIHNob3J0IHNlbnRlbmNlcy4gRW5zdXJlIHdlIGRvbid0IGFkZCBleHRyYSBpbmZvLiBVc2Ugb25seSB0aGUgY291bnQgYm9hcmQuIFNvIGFuc3dlciBleGFjdGx5LiIsInJlYXNvbmluZ19kZXRhaWxzIjpbeyJ0eXBlIjoicmVhc29uaW5nLnRleHQiLCJ0ZXh0IjoiV2UgbmVlZCB0byBhbnN3ZXIgaW4gdHdvIHNob3J0IHNlbnRlbmNlcy4gVXNlIG9ubHkgdGhlIGNvdW50IGJvYXJkIGluIHRoZSBxdWVzdGlvbi4gTmFtZSA4NiBzcG9rZXMgYW5kIHJhdGhhIDEuIERvIG5vdCBpbnZlbnQgYW4gYXhsZSBmaWd1cmUuIFNvIHdlIG11c3QgYW5zd2VyOiBcIlJhdGhhIDEgaGFzIDg2IHNwb2tlcy5cIiBBbmQgXCJDcmFja2VkIGF4bGVzIGFyZSB6ZXJvLlwiIFR3byBzaG9ydCBzZW50ZW5jZXMuIEVuc3VyZSB3ZSBkb24ndCBhZGQgZXh0cmEgaW5mby4gVXNlIG9ubHkgdGhlIGNvdW50IGJvYXJkLiBTbyBhbnN3ZXIgZXhhY3RseS4iLCJmb3JtYXQiOiJ1bmtub3duIiwiaW5kZXgiOjB9XX19XSwidXNhZ2UiOnsicHJvbXB0X3Rva2VucyI6MTgwLCJjb21wbGV0aW9uX3Rva2VucyI6MTA3LCJ0b3RhbF90b2tlbnMiOjI4NywiY29zdCI6MCwiaXNfYnlvayI6ZmFsc2UsInByb21wdF90b2tlbnNfZGV0YWlscyI6eyJjYWNoZWRfdG9rZW5zIjowLCJjYWNoZV93cml0ZV90b2tlbnMiOjAsImF1ZGlvX3Rva2VucyI6MCwidmlkZW9fdG9rZW5zIjowfSwiY29zdF9kZXRhaWxzIjp7InVwc3RyZWFtX2luZmVyZW5jZV9jb3N0IjowLCJ1cHN0cmVhbV9pbmZlcmVuY2VfcHJvbXB0X2Nvc3QiOjAsInVwc3RyZWFtX2luZmVyZW5jZV9jb21wbGV0aW9uc19jb3N0IjowfSwiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6eyJyZWFzb25pbmdfdG9rZW5zIjo4NCwiaW1hZ2VfdG9rZW5zIjowLCJhdWRpb190b2tlbnMiOjB9fX0=
+  recorded_at: Fri, 16 Oct 2026 03:26:21 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the gara clerk at the Cotton Tree dye yard in Freetown.\nCall posted_gara_card
+        once. Then answer in two short sentences.\nInclude the yardage and the cart
+        name from the card.\nDo not invent a pound figure."},{"role":"user","content":"Morning
+        dye at the Cotton Tree yard, Freetown, Friday 16 October 2026.\nCity notes:
+        https://www.fcc.gov.sl/\nCraft board: https://www.visitsierraleone.org/\nThe
+        cart is waiting off the Cotton Tree for the bed count and the yardage.\nHow
+        many yards, and which cart is alongside?"}],"stream":false,"temperature":0.2,"tools":[{"type":"function","function":{"name":"posted_gara_card","description":"Reads
+        the gara-cloth dye card posted at the Cotton Tree yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}],"tool_choice":{"type":"function","function":{"name":"posted_gara_card"}},"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:26:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121216-Cvp1wZGhxhMV3Chqd2D9
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f7008904f28b-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792121216-Cvp1wZGhxhMV3Chqd2D9\",\"object\":\"chat.completion\",\"created\":1792121216,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"native_finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"content\":null,\"refusal\":null,\"reasoning\":null,\"tool_calls\":[{\"type\":\"function\",\"index\":0,\"id\":\"call-b85ab5f7-42d7-4c02-9aee-0a60a660b475\",\"function\":{\"name\":\"posted_gara_card\",\"arguments\":\"{\\\"yardage\\\":\\\"12\\\",\\\"cart_name\\\":\\\"Blue
+        Cart\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":394,\"completion_tokens\":39,\"total_tokens\":433,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 03:26:57 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the gara clerk at the Cotton Tree dye yard in Freetown.\nCall posted_gara_card
+        once. Then answer in two short sentences.\nInclude the yardage and the cart
+        name from the card.\nDo not invent a pound figure."},{"role":"user","content":"Morning
+        dye at the Cotton Tree yard, Freetown, Friday 16 October 2026.\nCity notes:
+        https://www.fcc.gov.sl/\nCraft board: https://www.visitsierraleone.org/\nThe
+        cart is waiting off the Cotton Tree for the bed count and the yardage.\nHow
+        many yards, and which cart is alongside?"},{"role":"assistant","content":"","tool_calls":[{"id":"call-b85ab5f7-42d7-4c02-9aee-0a60a660b475","type":"function","function":{"name":"posted_gara_card","arguments":"{\"yardage\":\"12\",\"cart_name\":\"Blue
+        Cart\"}"}}]},{"role":"tool","content":"{\"error\":\"Invalid tool arguments:
+        unknown keyword: yardage\"}","tool_call_id":"call-b85ab5f7-42d7-4c02-9aee-0a60a660b475"}],"stream":false,"temperature":0.2,"tools":[{"type":"function","function":{"name":"posted_gara_card","description":"Reads
+        the gara-cloth dye card posted at the Cotton Tree yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}],"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:26:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121217-OCr7S5Zm1lbmZR3C5cDY
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f7090f83265c-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792121217-OCr7S5Zm1lbmZR3C5cDY\",\"object\":\"chat.completion\",\"created\":1792121217,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"tool_calls\",\"native_finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"content\":null,\"refusal\":null,\"reasoning\":null,\"tool_calls\":[{\"type\":\"function\",\"index\":0,\"id\":\"call-8a583a06-8e4c-40f0-85d9-bfdbcf17ec50\",\"function\":{\"name\":\"posted_gara_card\",\"arguments\":\"{}\"}}]}}],\"usage\":{\"prompt_tokens\":465,\"completion_tokens\":18,\"total_tokens\":483,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 03:26:58 GMT
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
+        are the gara clerk at the Cotton Tree dye yard in Freetown.\nCall posted_gara_card
+        once. Then answer in two short sentences.\nInclude the yardage and the cart
+        name from the card.\nDo not invent a pound figure."},{"role":"user","content":"Morning
+        dye at the Cotton Tree yard, Freetown, Friday 16 October 2026.\nCity notes:
+        https://www.fcc.gov.sl/\nCraft board: https://www.visitsierraleone.org/\nThe
+        cart is waiting off the Cotton Tree for the bed count and the yardage.\nHow
+        many yards, and which cart is alongside?"},{"role":"assistant","content":"","tool_calls":[{"id":"call-b85ab5f7-42d7-4c02-9aee-0a60a660b475","type":"function","function":{"name":"posted_gara_card","arguments":"{\"yardage\":\"12\",\"cart_name\":\"Blue
+        Cart\"}"}}]},{"role":"tool","content":"{\"error\":\"Invalid tool arguments:
+        unknown keyword: yardage\"}","tool_call_id":"call-b85ab5f7-42d7-4c02-9aee-0a60a660b475"},{"role":"assistant","content":"","tool_calls":[{"id":"call-8a583a06-8e4c-40f0-85d9-bfdbcf17ec50","type":"function","function":{"name":"posted_gara_card","arguments":"{}"}}]},{"role":"tool","content":"Cotton
+        Tree gara-cloth card for Friday 16 October 2026.\nBed CT-South, 14 yards,
+        380 pounds of cloth, cart Lumley alongside at 07:10.","tool_call_id":"call-8a583a06-8e4c-40f0-85d9-bfdbcf17ec50"}],"stream":false,"temperature":0.2,"tools":[{"type":"function","function":{"name":"posted_gara_card","description":"Reads
+        the gara-cloth dye card posted at the Cotton Tree yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}],"reasoning":{"enabled":false}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:26:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Generation-Id:
+      - gen-1792121218-YAXI8pL5Emb7ZEzKtFK9
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b3f70ddb41d225-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: "\n         \n{\"id\":\"gen-1792121218-YAXI8pL5Emb7ZEzKtFK9\",\"object\":\"chat.completion\",\"created\":1792121218,\"model\":\"nvidia/nemotron-3-super-120b-a12b:free\",\"provider\":\"Nvidia\",\"system_fingerprint\":null,\"service_tier\":null,\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"content\":\"14
+        yards, cart Lumley alongside.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":549,\"completion_tokens\":10,\"total_tokens\":559,\"cost\":0,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0,\"upstream_inference_prompt_cost\":0,\"upstream_inference_completions_cost\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+  recorded_at: Fri, 16 Oct 2026 03:26:58 GMT
+recorded_with: VCR 6.4.0
