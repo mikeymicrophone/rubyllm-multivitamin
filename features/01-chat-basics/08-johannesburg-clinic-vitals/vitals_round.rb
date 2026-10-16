@@ -3,14 +3,11 @@
 # Chat basics · 08 · Johannesburg clinic vitals round
 #
 # Teaches:
-# - stopped? is how the sister knows the round finished.
+# - An instance owns the round's chat; a Data record carries its stopped? flag.
 # - The check is the finish reason, not a search through the prose for "stop".
 # - A factual clipboard is a single ask with instructions to copy, not forecast.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module JohannesburgClinicVitals
   # Sister Nomsa at the Alexandra municipal clinic reads the clipboard back.
@@ -36,21 +33,20 @@ module JohannesburgClinicVitals
       Read the round back for the log.
     TEXT
 
-    Result = Struct.new(
-      :round,
-      :stopped,
-      :finish_reason,
-      :roles,
-      keyword_init: true
-    )
+    Result = Data.define(:round, :stopped, :finish_reason, :roles)
 
-    def self.conduct
-      configure
+    attr_reader :chat
 
-      chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_instructions(INSTRUCTIONS)
-      chat.with_temperature(0.2)
+    def self.conduct = new.conduct
 
+    def initialize
+      self.class.configure
+      @chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
+                     .with_instructions(INSTRUCTIONS)
+                     .with_temperature(0.2)
+    end
+
+    def conduct
       reply = chat.ask(ROUND_QUESTION)
 
       Result.new(
@@ -61,22 +57,13 @@ module JohannesburgClinicVitals
       )
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "vitals_round") do
-    result = JohannesburgClinicVitals::VitalsRound.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "vitals_round") do
+    JohannesburgClinicVitals::VitalsRound.conduct
   end
 
   puts result.round

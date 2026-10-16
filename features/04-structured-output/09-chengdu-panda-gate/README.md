@@ -4,6 +4,7 @@ The enclosure clerk at the Chengdu Research Base records the gate, tells the kee
 
 **What it teaches**
 
+- A table of schema/question pairs drives the turns with `map`, including the `nil` schema for prose.
 - `with_schema` stays on the chat until you replace it.
 - `with_schema(nil)` drops `text.format`. The next request has no `json_schema`.
 - The first JSON answer is still in `input` on that prose turn. This cassette's second request contains `18.4`.

@@ -23,6 +23,7 @@ class SittingDeskTest < Minitest::Test
     assert_equal :tool, result.roles.last
     assert_equal :assistant, result.roles[-2]
     refute result.settled
+    assert_equal %w[posted_sitting_board posted_bell_card relief_handoff], result.called_boards
 
     bodies = YAML.load_file(CASSETTE).fetch("http_interactions").map { |interaction| interaction.dig("request", "body", "string") }
     assert_includes bodies.fetch(0), "posted_sitting_board"

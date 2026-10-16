@@ -8,10 +8,7 @@
 # - with_model switches the model on a chat that already has turns,
 #   and the earlier probe question stays in the transcript.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module TallinnReadinessProbe
   # SRE Kadri is on the SEPA settlement pod in Tallinn. She checks the
@@ -93,22 +90,13 @@ module TallinnReadinessProbe
       RubyLLM.chat(model: model, provider: :openai)
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "probe_check") do
-    result = TallinnReadinessProbe::ProbeCheck.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "probe_check") do
+    TallinnReadinessProbe::ProbeCheck.conduct
   end
 
   puts "gpt-4.1-mini (#{result.mini_model_id}):"

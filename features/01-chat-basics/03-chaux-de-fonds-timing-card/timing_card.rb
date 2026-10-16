@@ -6,11 +6,9 @@
 # - with_temperature set very low, because a timing card must not be embellished.
 # - with_instructions tells the watchmaker to stay on the card.
 # - A short reply is still a full RubyLLM::Message.
+# - Fluent configuration and an immutable Data value keep the slate compact.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module ChauxDeFondsChronometer
   # The watchmaker copies the posted timing card onto the bench slate.
@@ -37,20 +35,14 @@ module ChauxDeFondsChronometer
       Write the three-line slate.
     TEXT
 
-    Result = Struct.new(
-      :card,
-      :temperature,
-      :finish_reason,
-      :roles,
-      keyword_init: true
-    )
+    Result = Data.define(:card, :temperature, :finish_reason, :roles)
 
     def self.conduct
       configure
 
       chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-      chat.with_instructions(INSTRUCTIONS)
-      chat.with_temperature(0.0)
+                   .with_instructions(INSTRUCTIONS)
+                   .with_temperature(0.0)
 
       reply = chat.ask(CARD_QUESTION)
 
@@ -62,22 +54,13 @@ module ChauxDeFondsChronometer
       )
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "timing_card") do
-    result = ChauxDeFondsChronometer::TimingCard.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "timing_card") do
+    ChauxDeFondsChronometer::TimingCard.conduct
   end
 
   puts result.card

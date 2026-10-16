@@ -6,12 +6,10 @@
 # - A manual schema can set name:. That name is what the request sends.
 #   The default, when name and title are both absent, is "response".
 # - Boolean fields stay booleans.
+# - A module_function entry point uses a fluent chat and a plain schema hash.
 
 require "json"
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module SuvaKavaChecklist
   CHECKLIST_SCHEMA = {
@@ -46,7 +44,9 @@ module SuvaKavaChecklist
     }
   }.freeze
 
-  class ServingChecklist
+  module ServingChecklist
+    module_function
+
     INSTRUCTIONS = <<~TEXT.strip
       You are the mata ni vanua at a kava circle in Suva.
       Fill KavaServingChecklist from the order.
@@ -66,15 +66,12 @@ module SuvaKavaChecklist
 
     Result = Struct.new(:parsed, :roles, :finish, :input_tokens, :cost, keyword_init: true)
 
-    def self.conduct
+    def conduct
       configure
 
-      chat = open_chat
-      chat.with_instructions(INSTRUCTIONS)
-      chat.with_temperature(0.2)
+      chat = open_chat.with_instructions(INSTRUCTIONS).with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
-      chat.with_schema(CHECKLIST_SCHEMA)
-      answer = chat.ask(ORDER)
+      answer = chat.with_schema(CHECKLIST_SCHEMA).ask(ORDER)
 
       Result.new(
         parsed: answer.parsed,
@@ -85,26 +82,15 @@ module SuvaKavaChecklist
       )
     end
 
-    def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-    end
+    def open_chat = RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "kava_checklist") do
-    result = SuvaKavaChecklist::ServingChecklist.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "kava_checklist") do
+    SuvaKavaChecklist::ServingChecklist.conduct
   end
 
   puts JSON.generate(result.parsed)

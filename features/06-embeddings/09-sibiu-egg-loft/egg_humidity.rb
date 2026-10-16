@@ -5,11 +5,10 @@
 # Teaches:
 # - A loft sentence and its paraphrase outrank an unrelated eave note.
 # - One batch holds the query, the paraphrase, and the eave.
+# - A curried method supplies the query vector to both cosine reductions.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
+require_relative "../../../support/vectors"
 
 module SibiuEggLoft
   # The workshop keeper in the Upper Town ranks a humidity question
@@ -34,44 +33,25 @@ module SibiuEggLoft
       configure
       embedding = RubyLLM.embed(NOTES, **Multivitamin::Models.embed(provider: :openai))
       query, paraphrase, crane = embedding.vectors
+      score_against_query = Multivitamin::Vectors.method(:cosine).curry[query]
+      paraphrase_score, eave_score = [paraphrase, crane].map(&score_against_query)
 
       Result.new(
-        paraphrase_score: cosine(query, paraphrase),
-        crane_score: cosine(query, crane),
+        paraphrase_score: paraphrase_score,
+        crane_score: eave_score,
         model_id: embedding.model,
         input_tokens: embedding.tokens.input,
         cost: embedding.cost.total
       )
     end
 
-    def self.cosine(left, right)
-      dot = 0.0
-      na = 0.0
-      nb = 0.0
-      left.each_index do |index|
-        dot += left[index] * right[index]
-        na += left[index] * left[index]
-        nb += right[index] * right[index]
-      end
-      dot / (Math.sqrt(na) * Math.sqrt(nb))
-    end
-
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "egg_humidity") do
-    result = SibiuEggLoft::EggHumidity.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "egg_humidity") do
+    SibiuEggLoft::EggHumidity.conduct
   end
 
   puts "loft #{result.paraphrase_score.round(4)} eave #{result.crane_score.round(4)}"

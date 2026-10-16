@@ -5,13 +5,28 @@
 # Teaches:
 # - Ordered steps stay in order when a chunk ends mid-sentence.
 # - The message returned after streaming is the assistant turn.
+# - Message callbacks bracket a stream collected by a named lambda.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module AngkorStoneJoin
+  class InspectionTape
+    attr_reader :pieces, :events
+
+    def initialize
+      @pieces = []
+      @events = []
+    end
+
+    def start = events << :started
+    def finish(message) = events << message.role
+
+    def append(chunk)
+      text = chunk.content.to_s
+      pieces << text unless text.empty?
+    end
+  end
+
   # The conservator at Angkor Wat calls the stone-join inspection in the
   # order the card lists it: laterite core, sandstone facing, iron cramps,
   # lime mortar.
@@ -41,6 +56,7 @@ module AngkorStoneJoin
       :roles,
       :finish_reason,
       :stopped,
+      :events,
       keyword_init: true
     )
 
@@ -52,20 +68,21 @@ module AngkorStoneJoin
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
 
-      pieces = []
-      message = chat.ask(CARD_QUESTION) do |chunk|
-        piece = chunk.content.to_s
-        pieces << piece unless piece.empty?
-      end
+      tape = InspectionTape.new
+      chat.before_message(&tape.method(:start))
+      chat.after_message(&tape.method(:finish))
+      printer = ->(chunk) { tape.append(chunk) }
+      message = chat.ask(CARD_QUESTION, &printer)
 
       Result.new(
         speech: message.content,
-        pieces: pieces,
+        pieces: tape.pieces,
         same_message: chat.messages.last.equal?(message),
         role: message.role,
         roles: chat.messages.map(&:role),
         finish_reason: message.finish_reason,
-        stopped: message.stopped?
+        stopped: message.stopped?,
+        events: tape.events
       )
     end
 
@@ -73,22 +90,13 @@ module AngkorStoneJoin
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "stone_join") do
-    result = AngkorStoneJoin::StoneJoin.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "stone_join") do
+    AngkorStoneJoin::StoneJoin.conduct
   end
 
   puts result.speech

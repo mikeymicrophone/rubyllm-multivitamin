@@ -4,6 +4,7 @@ The mata ni vanua in Suva turns a serving order for the Vunisa circle into a che
 
 **What it teaches**
 
+- Module functions and a fluent chat pipeline apply the plain-hash schema.
 - A manual schema's `name:` is the name on `text.format`. It replaces the default `response`.
 - `boolean` fields come back as `true` or `false`, not as the words yes and no.
 - Steps are an array of objects, and each object sets `additionalProperties: false`.

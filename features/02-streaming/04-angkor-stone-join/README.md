@@ -8,6 +8,7 @@ stream.
 
 **What it teaches**
 
+- `before_message` and `after_message` bracket the stream (the 2.1.1 replacements for `on_new_message` and `on_end_message`). Bound methods record lifecycle events; a named lambda collects chunks into an instance-owned tape.
 - Ordered steps survive a flush mid-sentence. Read them from the joined
   `content`, not from any one chunk.
 - `ask` returns the assistant `Message`. That object is `chat.messages.last`.

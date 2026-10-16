@@ -4,6 +4,7 @@ Sister Nomsa at the Alexandra municipal clinic reads the morning clipboard back 
 
 **What it teaches**
 
+- An instance owns the chat. An immutable `Data` result carries the message's `stopped?` flag.
 - `ask` returns the round as a `RubyLLM::Message`.
 - `stopped?` is true when `finish_reason` is `:stop` and the message did not stop to call a tool.
 - The clipboard facts (pulse, temperature, blood pressure, oxygen) are in `content`. The completion check does not depend on those words.

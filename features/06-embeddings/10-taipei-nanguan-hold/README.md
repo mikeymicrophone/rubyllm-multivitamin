@@ -7,6 +7,7 @@ soundboard is named first.
 
 **What it teaches**
 
+- Immutable `Data` notes and rankings pair with vectors through `zip`; a lazy map scores the pairs before sorting.
 - One batch holds the query and the corpus.
 - The clerk names the winning title, not an index.
 - Scores are sorted descending. The test locks the winner and the order of

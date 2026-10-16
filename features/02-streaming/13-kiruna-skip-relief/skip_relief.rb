@@ -8,10 +8,7 @@
 #   tool runs.
 # - After the tool, the spoken relief can be cancelled on a later chunk.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module KirunaSkipRelief
   # The posted skip card is not in the question. The relief has to read it
@@ -98,22 +95,13 @@ module KirunaSkipRelief
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "skip_relief") do
-    result = KirunaSkipRelief::SkipRelief.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "skip_relief") do
+    KirunaSkipRelief::SkipRelief.conduct
   end
 
   puts result.spoken.join

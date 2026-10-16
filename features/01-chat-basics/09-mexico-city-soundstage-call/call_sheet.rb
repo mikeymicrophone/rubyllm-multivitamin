@@ -6,11 +6,9 @@
 # - Reusing a chat keeps the call sheet, so a short follow-up still works.
 # - A fresh chat that only hears the follow-up does not have the sheet.
 # - The same question string is a different job once the transcript changes.
+# - A RubyLLM.context isolates configuration; OpenRouter receives a seed override.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module MexicoCitySoundstage
   # The second AD at Estudios Churubusco answers "And the Patio unit?" twice:
@@ -50,17 +48,14 @@ module MexicoCitySoundstage
     )
 
     def self.conduct
-      configure
-
-      reused = open_chat
-      reused.with_instructions(INSTRUCTIONS)
-      reused.with_temperature(0.2)
+      studio = RubyLLM.context do |config|
+        Multivitamin::Runtime.apply(config, provider: :openrouter)
+      end
+      reused = open_chat(studio)
       monzon = reused.ask(SHEET_QUESTION)
       patio_same = reused.ask(PATIO_QUESTION)
 
-      fresh = open_chat
-      fresh.with_instructions(INSTRUCTIONS)
-      fresh.with_temperature(0.2)
+      fresh = open_chat(studio)
       patio_fresh = fresh.ask(PATIO_QUESTION)
 
       Result.new(
@@ -76,26 +71,21 @@ module MexicoCitySoundstage
       )
     end
 
-    def self.open_chat
-      RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
-    end
-
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
+    def self.open_chat(studio)
+      options = Multivitamin::Models.chat(provider: :openrouter)
+      model, provider = options.values_at(:model, :provider)
+      chat = studio.chat(model:, provider:, assume_model_exists: provider == :openrouter)
+                   .with_instructions(INSTRUCTIONS)
+                   .with_temperature(0.2)
+      chat.with_provider_options(seed: 1014) if provider == :openrouter
+      Multivitamin::Models.quiet_thinking(chat, provider: :openrouter)
     end
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "call_sheet") do
-    result = MexicoCitySoundstage::CallSheet.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "call_sheet") do
+    MexicoCitySoundstage::CallSheet.conduct
   end
 
   puts result.monzon

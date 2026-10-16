@@ -3,23 +3,19 @@
 # Tools · 05 · Accra kente loom desk
 #
 # Teaches:
-# - with_tools adds. A second with_tools keeps the first tool.
+# - with_tools accepts classes and stateful instances together.
+# - parameters do declares the argument schema with the Schematist DSL.
 # - choice: :required makes the model call a tool and leaves which tool
 #   to the model.
 # - The remaining warp is not in the question. The reed-sett tool is a decoy.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module AccraKenteLoom
   class ReedSett < RubyLLM::Tool
     description "Reads the reed sett on the Bonwire loom. Not the remaining warp length."
 
-    def self.tool_name
-      "reed_sett"
-    end
+    def self.tool_name = "reed_sett"
 
     def execute
       "Bonwire reed sett at 14:00 is 11.2 ends per centimetre."
@@ -29,20 +25,25 @@ module AccraKenteLoom
   class ClothLength < RubyLLM::Tool
     description "Reads the remaining warp length of a numbered kente cloth at Bonwire"
 
-    def self.tool_name
-      "cloth_length"
+    def self.tool_name = "cloth_length"
+
+    parameters do
+      integer :cloth, description: "Cloth number on the Bonwire loom"
     end
 
-    parameter :cloth, type: :integer, description: "Cloth number on the Bonwire loom", required: true
+    def initialize(cards:)
+      super()
+      @cards = cards
+    end
 
     def execute(cloth:)
-      return "Cloth 7 at Bonwire has 54 cm of remaining warp." if cloth.to_i == 7
-
-      "No length card for cloth #{cloth}."
+      @cards.fetch(cloth.to_i) { "No length card for cloth #{cloth}." }
     end
   end
 
   class LoomDesk
+    LENGTH_CARDS = { 7 => "Cloth 7 at Bonwire has 54 cm of remaining warp." }.freeze
+
     INSTRUCTIONS = <<~TEXT.strip
       You are the loom clerk at Bonwire, outside Accra.
       Call only the tool that answers the question. Do not call reed_sett when the question is about remaining warp.
@@ -79,8 +80,7 @@ module AccraKenteLoom
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
-      chat.with_tools(ReedSett)
-      chat.with_tools(ClothLength)
+      chat.with_tools(ReedSett, ClothLength.new(cards: LENGTH_CARDS))
       chat
     end
 
@@ -88,22 +88,13 @@ module AccraKenteLoom
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "loom_desk") do
-    result = AccraKenteLoom::LoomDesk.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "loom_desk") do
+    AccraKenteLoom::LoomDesk.conduct
   end
 
   puts result.answer

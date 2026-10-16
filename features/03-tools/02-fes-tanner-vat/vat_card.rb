@@ -7,11 +7,9 @@
 #   when the tool does not declare parameter.
 # - call returns { error: } for a missing or unknown keyword. execute
 #   does not run, and nothing is raised.
+# - Stored procs observe the completed tool call and its result.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module FesTannerVat
   # The tanner names a vat. The tool's schema is inferred from execute.
@@ -59,15 +57,19 @@ module FesTannerVat
       chat.with_tools(VatCard)
       chat.with_tool_options(choice: VatCard)
 
+      arguments = nil
+      tool_content = nil
+      note_arguments = proc { |call| arguments = call.arguments }
+      note_contents = proc { |contents| tool_content = contents }
+      chat.before_tool_call(&note_arguments)
+      chat.after_tool_result(&note_contents)
       answer = chat.ask(VAT_QUESTION)
-      tool_call = chat.messages.find(&:tool_call?)&.tool_calls&.values&.first
-      tool_message = chat.messages.find { |message| message.role == :tool }
 
       Result.new(
         answer: answer.content,
         roles: chat.messages.map(&:role),
-        tool_content: tool_message&.content,
-        arguments: tool_call&.arguments
+        tool_content: tool_content,
+        arguments: arguments
       )
     end
 
@@ -75,22 +77,13 @@ module FesTannerVat
       RubyLLM.chat(**Multivitamin::Models.chat(provider: :openai))
     end
 
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 180
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
-      end
-    end
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai, timeout: 180)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "vat_card") do
-    result = FesTannerVat::VatLookup.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "vat_card") do
+    FesTannerVat::VatLookup.conduct
   end
 
   puts result.answer

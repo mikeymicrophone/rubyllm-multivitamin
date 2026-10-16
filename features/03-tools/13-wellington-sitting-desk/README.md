@@ -8,6 +8,7 @@ speak again.
 
 **What it teaches**
 
+- `before_tool_call` audits board selection (the 2.1.1 replacement for `on_tool_call`). A lexical integer refinement formats the relief-chit time without changing `Integer` globally.
 - Three tools are registered. `choice: :required` makes the model call
   one. The question decides which board.
 - The time `10:12` and the ring `3 seconds` are only on those tools.

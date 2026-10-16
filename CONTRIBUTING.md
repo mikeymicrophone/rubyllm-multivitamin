@@ -2,7 +2,44 @@
 
 Every scenario in this catalog follows the same conventions. The reference
 scenario, [Chat basics · 01 · Bengaluru inverter board](features/01-chat-basics/01-bengaluru-inverter-board/),
-follows all of them; copy its shape when you add a new one.
+follows all of them; use its naming and packaging conventions while varying
+the Ruby and RubyLLM idioms between scenarios.
+
+## Idioms checklist
+
+Review the thirteen siblings together before adding a scenario. The scenario
+code is the product; tests support it. Choose idioms that help express the job,
+and name them in the script's header and its README.
+
+- [ ] Give the new example a different shape from its nearest siblings:
+  an instance that owns a chat, module functions, a fluent pipeline, a table of
+  turns, or an explicit conversation loop.
+- [ ] Rotate Ruby constructs: immutable `Data.define` records and customized
+  records, `case/in` with destructuring or find patterns, endless methods,
+  lambdas, `proc`, and `method(:name)` passed with `&`.
+- [ ] Use collection idioms where they clarify the work: `zip`/`sum`,
+  `filter_map`, `each_with_object`, `then`, numbered block parameters, and
+  enumerators or `lazy` pipelines. Use a refinement for a scoped extension
+  rather than changing a core class globally.
+- [ ] Vary RubyLLM setup and interaction: explicit model/provider keywords,
+  more than one provider, `RubyLLM.context`, callbacks, class and instance
+  tools registered together, block-declared tool schemas, and deliberate
+  loop control. Keep the feature's lesson visible.
+- [ ] Check names against the pinned gem. In 2.1.1, use `before_message` /
+  `after_message` for the old `on_new_message` / `on_end_message`,
+  `before_tool_call` / `after_tool_result` for `on_tool_call` / `on_tool_result`,
+  `with_provider_options` for `with_params`, and `parameters do` for `params do`.
+  `halt` was removed: `ask_later`, `generate`, then `run_tools` can stop at the
+  tool result without requesting another assistant turn. Do not add aliases
+  that suggest removed APIs still belong to RubyLLM.
+- [ ] Reuse `support/runtime.rb` for transport configuration and
+  `support/vectors.rb` for cosine similarity. Keep prompts, names, domain
+  logic, and lesson-specific chat options inside the scenario folder.
+- [ ] Preserve the scenario's business, characters, and places. Update
+  documentation and cassette requests when the wire actually changes;
+  identify hand-authored fixtures and never describe them as live recordings.
+- [ ] Run only touched features' tests during editing, then one quiet full
+  suite run that reports the summary and any failures.
 
 ## The rules
 

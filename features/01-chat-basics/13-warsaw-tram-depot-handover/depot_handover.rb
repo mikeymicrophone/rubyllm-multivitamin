@@ -7,11 +7,9 @@
 #   that needs both, then the readers a relief actually checks.
 # - roles, finish_reason, and tokens come off the messages.
 # - The follow-up input is larger because the first turn is sent again.
+# - each_with_object builds the handover from named turns and token readers.
 
-require "logger"
-require "ruby_llm"
-require_relative "../../../support/cassettes"
-require_relative "../../../support/models"
+require_relative "../../../support/runtime"
 
 module WarsawTramDepot
   # The outgoing dispatcher at Zajezdnia Mokotów hands over the night
@@ -61,38 +59,25 @@ module WarsawTramDepot
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
 
-      brief = chat.ask(BOARDS_QUESTION)
-      locker = chat.ask(LOCKER_QUESTION)
-
-      Result.new(
-        brief: brief.content,
-        locker: locker.content,
-        roles: chat.messages.map(&:role),
-        brief_finish: brief.finish_reason,
-        locker_finish: locker.finish_reason,
-        brief_input_tokens: brief.tokens.input,
-        brief_output_tokens: brief.tokens.output,
-        locker_input_tokens: locker.tokens.input,
-        locker_output_tokens: locker.tokens.output
-      )
-    end
-
-    def self.configure
-      RubyLLM.configure do |config|
-        Multivitamin::Models.configure(config, provider: :openai)
-        config.max_retries = 0
-        config.request_timeout = 120
-        config.model_registry_file = File.expand_path("../../../tmp/ruby_llm_models.json", __dir__)
-        config.logger = Logger.new(File::NULL) unless ENV["RUBYLLM_DEBUG"] == "true"
+      turns = { brief: chat.ask(BOARDS_QUESTION), locker: chat.ask(LOCKER_QUESTION) }
+      handover = turns.each_with_object({}) do |(name, message), slate|
+        slate[name] = message.content
+        slate[:"#{name}_finish"] = message.finish_reason
+        %i[input output].each do |direction|
+          slate[:"#{name}_#{direction}_tokens"] = message.tokens.public_send(direction)
+        end
       end
+
+      Result.new(**handover, roles: chat.map(&:role))
     end
+
+    def self.configure = Multivitamin::Runtime.configure(provider: :openai)
   end
 end
 
 if $PROGRAM_NAME == __FILE__
-  result = nil
-  Multivitamin::Cassettes.play(__dir__, "depot_handover") do
-    result = WarsawTramDepot::DepotHandover.conduct
+  result = Multivitamin::Cassettes.play(__dir__, "depot_handover") do
+    WarsawTramDepot::DepotHandover.conduct
   end
 
   puts result.brief

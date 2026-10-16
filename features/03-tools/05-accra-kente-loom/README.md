@@ -7,7 +7,8 @@ decoy reed sett.
 
 **What it teaches**
 
-- `with_tools` adds. A second `with_tools` keeps the first tool.
+- `with_tools(ReedSett, ClothLength.new(cards: ...))` registers a class and an instance together. The instance holds the length cards.
+- `parameters do` declares the cloth number using the Schematist DSL (the 2.1.1 form of older `params do` examples).
 - `choice: :required` makes the model call a tool and leaves which tool
   to the model.
 - The remaining warp `54 cm` is not in the question. The reed-sett tool
@@ -17,7 +18,7 @@ decoy reed sett.
 
 | File | Role |
 | --- | --- |
-| [`loom_desk.rb`](loom_desk.rb) | Registers both tools in sequence and asks about cloth 7 |
+| [`loom_desk.rb`](loom_desk.rb) | Registers both tools together and asks about cloth 7 |
 | [`loom_desk_test.rb`](loom_desk_test.rb) | Checks the registered set and replays the cassette |
 | [`cassettes/loom_desk.yml`](cassettes/loom_desk.yml) | Live OpenAI recording of `gpt-4.1-mini` |
 
@@ -29,7 +30,7 @@ From the repository root, with the gems installed:
 bundle exec ruby features/03-tools/05-accra-kente-loom/loom_desk_test.rb
 ```
 
-The test replays the cassette. No API key is required. Tests that call the tool class directly do not need the network.
+The test replays the cassette. Its recorded request schemas were adjusted to the block DSL, which omits the redundant nested `strict` field; the recorded replies are unchanged. No API key is required. Tests that call the tool class directly do not need the network.
 
 Re-record it on OpenAI:
 
