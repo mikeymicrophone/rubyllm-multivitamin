@@ -10,23 +10,23 @@ Official reference: [Rails integration](https://rubyllm.com/rails/) and [persist
 
 ## Free models
 
-The scripts call `Multivitamin::Models.chat(provider: :openai)` and record `gpt-4.1-mini`. The free OpenRouter slug `nvidia/nemotron-3-super-120b-a12b:free` answered `Rate limit exceeded: free-models-per-day` on 14 October 2026. `LIVE_PROVIDER=openrouter` records that slug when the daily cap allows. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 14 October 2026.
+The scripts call `Multivitamin::Models.chat(provider: :openai)` and record `gpt-4.1-mini`. A live OpenRouter probe of `liquid/lfm-2.5-2.6b:free` on 16 October 2026 returned HTTP 200 with empty content. `LIVE_PROVIDER=openrouter` records `nvidia/nemotron-3-super-120b-a12b:free` when the daily cap allows. Fallback: `liquid/lfm-2.5-2.6b:free`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson watch log](01-point-wilson-watch-log/) — available
-02. [New Dungeness lens log](02-new-dungeness-lens-log/) — available
-03. [Point Wilson tide plate](03-point-wilson-tide-plate/) — available
-04. [Cape Disappointment blast stream](04-cape-disappointment-blast-stream/) — available
-05. [Friday Harbor berth tool](05-friday-harbor-berth-tool/) — available
-06. [Smith Island weather clerk](06-smith-island-weather-clerk/) — available
-07. [Ediz Hook buoy usage](07-ediz-hook-buoy-usage/) — available
-08. [Port Townsend slip later](08-port-townsend-slip-later/) — available
-09. [Neah Bay pilot slug](09-neah-bay-pilot-slug/) — available
-10. [Bremerton empty gate](10-bremerton-empty-gate/) — available
-11. [Port Angeles net transcripts](11-port-angeles-net-transcripts/) — available
-12. [Juan de Fuca cancel log](12-juan-de-fuca-cancel-log/) — available
-13. [Admiralty Inlet watch desk](13-admiralty-inlet-watch-desk/) — available
+01. [Ibadan school-farm log](01-ibadan-school-farm-log/) — available
+02. [Varanasi zari-spool log](02-varanasi-zari-spool-log/) — available
+03. [Oaxaca alebrije-firing plate](03-oaxaca-alebrije-plate/) — available
+04. [Kumasi fontomfrom stream](04-kumasi-fontomfrom-stream/) — available
+05. [Medellín escalator-bay tool](05-medellin-escalator-bay/) — available
+06. [Harare mbira-key clerk](06-harare-mbira-clerk/) — available
+07. [Dar es Salaam farebox usage](07-dar-es-salaam-farebox-usage/) — available
+08. [Mendoza malbec-press later](08-mendoza-malbec-press-later/) — available
+09. [Colombo gem-parcel slug](09-colombo-gem-parcel-slug/) — available
+10. [Gaborone diamond-tray empty](10-gaborone-diamond-tray/) — available
+11. [Lucknow chikan tickets](11-lucknow-chikan-tickets/) — available
+12. [Antofagasta flash-furnace cancel](12-antofagasta-furnace-cancel/) — available
+13. [Tegucigalpa marimba desk](13-tegucigalpa-marimba-desk/) — available
 
 ## What each scenario adds
 
@@ -42,7 +42,7 @@ The scripts call `Multivitamin::Models.chat(provider: :openai)` and record `gpt-
 | 08 | `ask_later` persists the user; `complete` fills the assistant |
 | 09 | `assume_model_exists` writes `RubyLLM::ActiveRecord::Model` for a slug missing from the registry |
 | 10 | Empty assistant content is allowed; a presence validation is not |
-| 11 | `acts_as_chat messages: :llm_messages` while the loft tickets stay separate |
+| 11 | `acts_as_chat messages: :llm_messages` while the stitch tickets stay separate |
 | 12 | `cancel` sets the cancelled column, raises `CancelledError`, and destroys the blank assistant |
 | 13 | Capstone: log, tool, model row, usage, and a second ask |
 
