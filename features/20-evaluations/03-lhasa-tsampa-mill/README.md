@@ -7,7 +7,7 @@ extra millers through the yard gate before 09:15. `perform` returns the Chat.
 
 - `perform` may run two `ask`s and return the `Chat`.
 - The grader sees every message, not only the last sentence.
-- `trial.result.messages` keeps the five-role transcript.
+- `trial.result.messages` keeps the five-role transcript. `trial.output` is the last turn.
 
 **Files**
 

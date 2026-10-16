@@ -5,7 +5,7 @@ The draft clerk at a Yazd windcatcher house files the 10:20 draw for Shirin.
 
 **What it teaches**
 
-- `report.save` writes a JSON file with `tokens` and `cost`.
+- `report.save` writes a JSON file with `tokens.input_tokens` and `cost`.
 - `report.tokens` sums the clerk and the grader.
 - The saved `id` matches `report.id`.
 

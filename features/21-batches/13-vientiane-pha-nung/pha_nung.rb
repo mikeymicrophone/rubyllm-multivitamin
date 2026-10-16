@@ -49,15 +49,15 @@ module VientianePhaNung
       ]
       submitted = RubyLLM.batch(chats)
       found = RubyLLM::Batch.find(submitted.id, provider: :openai)
-      found.refresh
-      slots = found.messages
+      submitted.refresh
+      slots = submitted.messages
       Result.new(
         submitted_id: submitted.id,
         found_id: found.id,
-        status: found.status,
-        complete: found.complete?,
+        status: submitted.status,
+        complete: submitted.complete?,
         message_slots: slots.size,
-        statuses: found.statuses
+        statuses: submitted.statuses
       )
     end
 

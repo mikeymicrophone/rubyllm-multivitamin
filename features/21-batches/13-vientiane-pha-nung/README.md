@@ -6,7 +6,7 @@ the batch, finds it by id, and refreshes once.
 **What it teaches**
 
 - A desk can stage two chats, submit, find, and refresh once.
-- `statuses` is empty until results arrive; `messages` keeps one slot per chat.
+- `Batch.find` returns the id. `messages` keeps one slot per chat on the submitted batch, which still holds the chats. A find without a store has no chat list, so empty results become zero slots.
 
 **Files**
 

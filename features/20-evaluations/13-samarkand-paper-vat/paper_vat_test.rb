@@ -15,7 +15,7 @@ class SamarkandPaperVatTest < Minitest::Test
     names = result.report.trials.first.evaluations.map(&:name)
     assert_equal %i[correctness names_the_vat], names
     assert_operator result.report.tokens.input, :>, 0
-    assert_equal result.report.tokens.input, result.saved.dig("tokens", "input")
+    assert_equal result.report.tokens.input, result.saved.dig("tokens", "input_tokens")
     assert_match(/27/, result.report.trials.first.output.to_s)
     assert_match(/Dilshod/, result.report.trials.first.output.to_s)
     assert_match(/14:40/, result.report.trials.last.output.to_s)

@@ -929,6 +929,79 @@ Shown in [Lilliwaup concurrency threads](features/19-tool-approval-and-loop-cont
 
 Shown in [Seabeck Rails approval job](features/19-tool-approval-and-loop-control/12-seabeck-rails-approval-job/).
 
+## Evaluations
+
+### trial.output is only the last turn when perform returns the Chat
+
+**What happens.** The Lhasa mill `perform` asks the sack count, then the gate, and returns the `Chat`. `trial.result.messages` is `[:system, :user, :assistant, :user, :assistant]`. `trial.output` is the second assistant sentence about 09:15. It does not contain `1,080`.
+
+**Why it matters.** A test that matches the first-turn figure on `trial.output` fails even though the grader saw both turns and `passed?` is true.
+
+**What to do.** Read the first figure from `trial.result.messages`. Treat `trial.output` as the last spoken answer.
+
+Shown in [Lhasa tsampa-mill multi-turn](features/20-evaluations/03-lhasa-tsampa-mill/).
+
+### report.save writes input_tokens, not tokens.input
+
+**What happens.** `report.tokens.input` is a positive integer (405 on the Yazd draft, 987 on the Samarkand vat). `report.save` writes `tokens.to_h`, whose key is `input_tokens`. `JSON.parse(...)["tokens"]["input"]` is `nil`.
+
+**Why it matters.** A ledger that copies `tokens.input` out of the JSON file stores a blank count.
+
+**What to do.** Read `tokens.input_tokens` from the saved hash, or keep using `report.tokens.input` on the live object.
+
+Shown in [Yazd windcatcher JSON report tokens](features/20-evaluations/09-yazd-windcatcher-draft/) and [Samarkand paper-vat desk capstone](features/20-evaluations/13-samarkand-paper-vat/).
+
+### evaluator false leaves evaluations empty
+
+**What happens.** Recife sets `evaluator false` and grades with `assertions`. The trial `passed?`, `assertion_count` is at least 3, `evaluations` is empty, and `trial.output` is not equal to `trial.test_case.expected_output` even though both name Moacir.
+
+**Why it matters.** Code that assumes every passing trial has a `:correctness` evaluation will see none.
+
+**What to do.** When the grader is off, assert on `assertion_count` and `assertion_failure`. Compare `output` to `expected_output` yourself.
+
+Shown in [Recife frevo-ribbon expected versus output](features/20-evaluations/10-recife-frevo-ribbon/).
+
+## Batches
+
+### Batch.find without a store has no chat list
+
+**What happens.** `RubyLLM.batch` on two Vientiane chats keeps `chats.size == 2`. `Batch.find(id, provider: :openai)` without `batch_store` returns a batch whose `chats` is `nil`. Calling `messages` on that found object while the provider still has no output file returns `[]`, not `[nil, nil]`. The same `messages` call on the submitted batch returns two nil slots.
+
+**Why it matters.** A job that finds by id and reads `messages.size` thinks the batch is empty.
+
+**What to do.** Persist through `ruby_llm_batches`, or keep the submitted `Batch` when you need slot counts. Use `find` for the id and a fresh status.
+
+Shown in [Vientiane pha-nung desk capstone](features/21-batches/13-vientiane-pha-nung/) and [Galle lace-bobbin pending nil slots](features/21-batches/03-galle-lace-bobbin/).
+
+### OpenAI cancel returns cancelling, not cancelled
+
+**What happens.** Rabat `cancel` immediately after submit sets `raw_status` to `cancelling`. `status` stays `:pending`. `cancelled?` is false. `succeeded?` is false. `cancelled?` becomes true only when the provider reaches the terminal `cancelled` status.
+
+**Why it matters.** A desk that waits on `cancelled?` after `cancel` will keep polling.
+
+**What to do.** Match `/cancel/i` on `raw_status` for the request, and poll `refresh` if you need the terminal flag.
+
+Shown in [Rabat zellige-tile cancel](features/21-batches/08-rabat-zellige-tile/).
+
+### with_headers never enters the batch JSONL
+
+**What happens.** Split sets `with_headers("X-Workshop-Shift" => "dawn-cut")`. `chat.headers` still has that pair. `chat.render` keys are `model`, `input`, `instructions`, `stream`, `store`, `include`, `temperature`. The uploaded JSONL and the cassette do not contain `X-Workshop-Shift` or `dawn-cut`.
+
+**Why it matters.** A workshop header that a live `complete` would send is dropped on `RubyLLM.batch`.
+
+**What to do.** Do not rely on `with_headers` for batch turns. Put workshop metadata in the staged message if the provider must see it.
+
+Shown in [Split limestone-block headers dropped](features/21-batches/12-split-limestone-block/).
+
+### cost.total is nil while the batch is pending
+
+**What happens.** Luxor submits one vase card and calls `refresh` once. `complete?` is false, `status` is `:pending`, and `cost.total` is `nil`. `tokens.input` is also `nil`.
+
+**Why it matters.** A ledger that reads `cost.total` on submit writes a blank line, not a zero.
+
+**What to do.** Read cost after `complete?` is true. Treat `nil` as “not finished,” not as free.
+
+Shown in [Luxor alabaster-vase cost until complete](features/21-batches/07-luxor-alabaster-vase/).
 ## Moderation
 
 ### A clean hail still has category_scores keys

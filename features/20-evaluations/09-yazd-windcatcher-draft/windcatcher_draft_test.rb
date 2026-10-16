@@ -12,7 +12,7 @@ class YazdWindcatcherDraftTest < Minitest::Test
 
     assert_equal true, result.report.passed?
     assert_operator result.report.tokens.input, :>, 0
-    assert_equal result.report.tokens.input, result.saved.dig("tokens", "input")
+    assert_equal result.report.tokens.input, result.saved.dig("tokens", "input_tokens")
     assert_equal result.report.id, result.saved.fetch("id")
     assert_match(/10:20/, result.report.trials.first.output.to_s)
     assert_match(/Shirin/, result.report.trials.first.output.to_s)

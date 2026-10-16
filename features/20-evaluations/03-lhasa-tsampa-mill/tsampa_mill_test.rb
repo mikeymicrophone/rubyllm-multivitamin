@@ -14,8 +14,9 @@ class LhasaTsampaMillTest < Minitest::Test
     trial = report.trials.first
     assert_instance_of RubyLLM::Chat, trial.result
     assert_equal %i[system user assistant user assistant], trial.result.messages.map(&:role)
-    assert_match(/1,?080/, trial.output.to_s)
-    assert_match(/09:15|9:15/, trial.output.to_s)
+    spoken = trial.result.messages.select { |message| message.role == :assistant }.map(&:content).join(" ")
+    assert_match(/1,?080/, spoken)
+    assert_match(/09:15|9:15/, spoken)
   end
 
   def test_cassette_does_not_carry_a_live_key
