@@ -1,0 +1,353 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Zagreb licitar
+        pickup card, Wednesday 14 October 2026.\nWorkshop page: https://www.licitar.hr/\nCity
+        page: https://www.zagreb.hr/\nPosted school pickup 10:15 to 10:30 for Ivana''s
+        class, forty red hearts for the school fair.\nWalk-in counter closed 10:00
+        to 10:40 so that box can be handed over.\nThe class needs the box from 10:15
+        to 10:30.\nDoes the posted pickup cover Ivana''s 10:15 to 10:30 window?"}],"instructions":"You
+        are the counter clerk at a licitar workshop in Zagreb.\nAnswer in two short
+        sentences.\nThe first sentence starts with Yes or No.\nUse only the pickup
+        card in this chat.\nDo not invent times.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:55:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b3709f08c97d5c-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '731'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999808'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 5ms
+      X-Request-Id:
+      - req_9f45f626ee564de0a19345695a6ac447
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0b93c38c9178987e016ad183ffec6c87d28dbfb9d76c1cec12",
+          "object": "response",
+          "created_at": 1792115711,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792115712,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the counter clerk at a licitar workshop in Zagreb.\nAnswer in two short sentences.\nThe first sentence starts with Yes or No.\nUse only the pickup card in this chat.\nDo not invent times.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0b93c38c9178987e016ad184004d8487d2b4b23cb92fece2b8",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yes, the posted school pickup from 10:15 to 10:30 covers Ivana's class window. No, the walk-in counter is closed during that time for box handover."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 173,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 40,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 213
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 01:55:12 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-mini","input":[{"role":"user","content":"Zagreb licitar
+        pickup card, Wednesday 14 October 2026.\nWorkshop page: https://www.licitar.hr/\nCity
+        page: https://www.zagreb.hr/\nPosted school pickup 10:15 to 10:30 for Ivana''s
+        class, forty red hearts for the school fair.\nWalk-in counter closed 10:00
+        to 10:40 so that box can be handed over.\nThe class needs the box from 10:15
+        to 10:30.\nDoes the posted pickup cover Ivana''s 10:15 to 10:30 window?"},{"role":"assistant","content":[{"type":"output_text","text":"Yes,
+        the posted school pickup from 10:15 to 10:30 covers Ivana''s class window.
+        No, the walk-in counter is closed during that time for box handover."}]},{"role":"user","content":"Grandmother
+        Ana has to be at the Dolac stall by 10:35 for her mid-morning coffee. If she
+        waits at the walk-in counter, does she still sit through the 10:40 reopen?"}],"instructions":"You
+        are the counter clerk at a licitar workshop in Zagreb.\nAnswer in two short
+        sentences.\nThe first sentence starts with Yes or No.\nUse only the pickup
+        card in this chat.\nDo not invent times.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 01:55:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b370a468795666-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '1427'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '1999717'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 8ms
+      X-Request-Id:
+      - req_916f06271cf0476ba2c9c079ed437afb
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0af04818b1a81994016ad18400cfe887d2b5102c118ac1dd24",
+          "object": "response",
+          "created_at": 1792115712,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792115714,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the counter clerk at a licitar workshop in Zagreb.\nAnswer in two short sentences.\nThe first sentence starts with Yes or No.\nUse only the pickup card in this chat.\nDo not invent times.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4o-mini-2024-07-18",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0af04818b1a81994016ad18401b46487d2922a036269bc1578",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Yes, if Grandmother Ana waits at the walk-in counter, she will sit through the 10:40 reopen. No, she won't make it to the Dolac stall by 10:35."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": null,
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 264,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 42,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 306
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 01:55:14 GMT
+recorded_with: VCR 6.4.0
