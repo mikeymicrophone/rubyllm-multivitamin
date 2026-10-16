@@ -1,0 +1,457 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Nino
+        seals jar KUT-2026-1016-Q6 at 16:20. When does Nino seal?"}],"instructions":"You
+        are the qvevri clerk in Kutaisi.\nKutaisi qvevri standing order 1: pit 1 holds
+        jar KUT-2026-1016-Q1, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 2: pit 2 holds jar KUT-2026-1016-Q2, seal with
+        beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order
+        3: pit 3 holds jar KUT-2026-1016-Q3, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 4: pit 4 holds jar KUT-2026-1016-Q4,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 5: pit 5 holds jar KUT-2026-1016-Q5, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 6: pit 6 holds jar KUT-2026-1016-Q6,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 7: pit 7 holds jar KUT-2026-1016-Q7, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 8: pit 8 holds jar KUT-2026-1016-Q8,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 9: pit 9 holds jar KUT-2026-1016-Q9, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 10: pit 10 holds jar KUT-2026-1016-Q10,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 11: pit 11 holds jar KUT-2026-1016-Q11, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 12: pit 12 holds jar
+        KUT-2026-1016-Q12, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 13: pit 13 holds jar KUT-2026-1016-Q13, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 14: pit 14 holds jar KUT-2026-1016-Q14, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 15: pit 15 holds jar
+        KUT-2026-1016-Q15, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 16: pit 16 holds jar KUT-2026-1016-Q16, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 17: pit 17 holds jar KUT-2026-1016-Q17, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 18: pit 18 holds jar
+        KUT-2026-1016-Q18, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 19: pit 19 holds jar KUT-2026-1016-Q19, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 20: pit 20 holds jar KUT-2026-1016-Q20, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 21: pit 21 holds jar
+        KUT-2026-1016-Q21, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 22: pit 22 holds jar KUT-2026-1016-Q22, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 23: pit 23 holds jar KUT-2026-1016-Q23, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 24: pit 24 holds jar
+        KUT-2026-1016-Q24, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 25: pit 25 holds jar KUT-2026-1016-Q25, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 26: pit 26 holds jar KUT-2026-1016-Q26, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 27: pit 27 holds jar
+        KUT-2026-1016-Q27, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 28: pit 28 holds jar KUT-2026-1016-Q28, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 29: pit 29 holds jar KUT-2026-1016-Q29, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 30: pit 30 holds jar
+        KUT-2026-1016-Q30, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 31: pit 31 holds jar KUT-2026-1016-Q31, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 32: pit 32 holds jar KUT-2026-1016-Q32, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 33: pit 33 holds jar
+        KUT-2026-1016-Q33, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 34: pit 34 holds jar KUT-2026-1016-Q34, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 35: pit 35 holds jar KUT-2026-1016-Q35, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 36: pit 36 holds jar
+        KUT-2026-1016-Q36, seal with beeswax, do not mix Rkatsiteli with Saperavi.\nAnswer
+        in one short sentence from the board only.\nName Nino and 16:20.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_key":"kutaisi-qvevri-2026-1016"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:21:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6ae368e711877-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '667'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1997548'
+      X-Ratelimit-Reset-Requests:
+      - 24ms
+      X-Ratelimit-Reset-Tokens:
+      - 73ms
+      X-Request-Id:
+      - req_c7506f90e45e47ab99ef4775ad9b48bd
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_0230f441f701120c016ad208bc019887d2b7b023580032ec1f",
+          "object": "response",
+          "created_at": 1792149692,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149692,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the qvevri clerk in Kutaisi.\nKutaisi qvevri standing order 1: pit 1 holds jar KUT-2026-1016-Q1, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 2: pit 2 holds jar KUT-2026-1016-Q2, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 3: pit 3 holds jar KUT-2026-1016-Q3, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 4: pit 4 holds jar KUT-2026-1016-Q4, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 5: pit 5 holds jar KUT-2026-1016-Q5, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 6: pit 6 holds jar KUT-2026-1016-Q6, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 7: pit 7 holds jar KUT-2026-1016-Q7, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 8: pit 8 holds jar KUT-2026-1016-Q8, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 9: pit 9 holds jar KUT-2026-1016-Q9, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 10: pit 10 holds jar KUT-2026-1016-Q10, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 11: pit 11 holds jar KUT-2026-1016-Q11, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 12: pit 12 holds jar KUT-2026-1016-Q12, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 13: pit 13 holds jar KUT-2026-1016-Q13, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 14: pit 14 holds jar KUT-2026-1016-Q14, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 15: pit 15 holds jar KUT-2026-1016-Q15, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 16: pit 16 holds jar KUT-2026-1016-Q16, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 17: pit 17 holds jar KUT-2026-1016-Q17, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 18: pit 18 holds jar KUT-2026-1016-Q18, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 19: pit 19 holds jar KUT-2026-1016-Q19, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 20: pit 20 holds jar KUT-2026-1016-Q20, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 21: pit 21 holds jar KUT-2026-1016-Q21, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 22: pit 22 holds jar KUT-2026-1016-Q22, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 23: pit 23 holds jar KUT-2026-1016-Q23, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 24: pit 24 holds jar KUT-2026-1016-Q24, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 25: pit 25 holds jar KUT-2026-1016-Q25, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 26: pit 26 holds jar KUT-2026-1016-Q26, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 27: pit 27 holds jar KUT-2026-1016-Q27, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 28: pit 28 holds jar KUT-2026-1016-Q28, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 29: pit 29 holds jar KUT-2026-1016-Q29, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 30: pit 30 holds jar KUT-2026-1016-Q30, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 31: pit 31 holds jar KUT-2026-1016-Q31, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 32: pit 32 holds jar KUT-2026-1016-Q32, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 33: pit 33 holds jar KUT-2026-1016-Q33, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 34: pit 34 holds jar KUT-2026-1016-Q34, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 35: pit 35 holds jar KUT-2026-1016-Q35, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 36: pit 36 holds jar KUT-2026-1016-Q36, seal with beeswax, do not mix Rkatsiteli with Saperavi.\nAnswer in one short sentence from the board only.\nName Nino and 16:20.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_0230f441f701120c016ad208bc712887d2bcd436a940b4cc2b",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "Nino seals jar KUT-2026-1016-Q6 at 16:20."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": "kutaisi-qvevri-2026-1016",
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1654,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 21,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1675
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:21:32 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Board: Nino
+        seals jar KUT-2026-1016-Q6 at 16:20. When does Nino seal?"},{"role":"assistant","content":[{"type":"output_text","text":"Nino
+        seals jar KUT-2026-1016-Q6 at 16:20."}]},{"role":"user","content":"Does the
+        standing order allow mixing Rkatsiteli with Saperavi? Answer No or Yes."}],"instructions":"You
+        are the qvevri clerk in Kutaisi.\nKutaisi qvevri standing order 1: pit 1 holds
+        jar KUT-2026-1016-Q1, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 2: pit 2 holds jar KUT-2026-1016-Q2, seal with
+        beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order
+        3: pit 3 holds jar KUT-2026-1016-Q3, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 4: pit 4 holds jar KUT-2026-1016-Q4,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 5: pit 5 holds jar KUT-2026-1016-Q5, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 6: pit 6 holds jar KUT-2026-1016-Q6,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 7: pit 7 holds jar KUT-2026-1016-Q7, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 8: pit 8 holds jar KUT-2026-1016-Q8,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 9: pit 9 holds jar KUT-2026-1016-Q9, seal with beeswax, do not mix Rkatsiteli
+        with Saperavi. Kutaisi qvevri standing order 10: pit 10 holds jar KUT-2026-1016-Q10,
+        seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 11: pit 11 holds jar KUT-2026-1016-Q11, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 12: pit 12 holds jar
+        KUT-2026-1016-Q12, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 13: pit 13 holds jar KUT-2026-1016-Q13, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 14: pit 14 holds jar KUT-2026-1016-Q14, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 15: pit 15 holds jar
+        KUT-2026-1016-Q15, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 16: pit 16 holds jar KUT-2026-1016-Q16, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 17: pit 17 holds jar KUT-2026-1016-Q17, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 18: pit 18 holds jar
+        KUT-2026-1016-Q18, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 19: pit 19 holds jar KUT-2026-1016-Q19, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 20: pit 20 holds jar KUT-2026-1016-Q20, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 21: pit 21 holds jar
+        KUT-2026-1016-Q21, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 22: pit 22 holds jar KUT-2026-1016-Q22, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 23: pit 23 holds jar KUT-2026-1016-Q23, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 24: pit 24 holds jar
+        KUT-2026-1016-Q24, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 25: pit 25 holds jar KUT-2026-1016-Q25, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 26: pit 26 holds jar KUT-2026-1016-Q26, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 27: pit 27 holds jar
+        KUT-2026-1016-Q27, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 28: pit 28 holds jar KUT-2026-1016-Q28, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 29: pit 29 holds jar KUT-2026-1016-Q29, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 30: pit 30 holds jar
+        KUT-2026-1016-Q30, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 31: pit 31 holds jar KUT-2026-1016-Q31, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 32: pit 32 holds jar KUT-2026-1016-Q32, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 33: pit 33 holds jar
+        KUT-2026-1016-Q33, seal with beeswax, do not mix Rkatsiteli with Saperavi.
+        Kutaisi qvevri standing order 34: pit 34 holds jar KUT-2026-1016-Q34, seal
+        with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing
+        order 35: pit 35 holds jar KUT-2026-1016-Q35, seal with beeswax, do not mix
+        Rkatsiteli with Saperavi. Kutaisi qvevri standing order 36: pit 36 holds jar
+        KUT-2026-1016-Q36, seal with beeswax, do not mix Rkatsiteli with Saperavi.\nAnswer
+        in one short sentence from the board only.\nName Nino and 16:20.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_key":"kutaisi-qvevri-2026-1016"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:21:33 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6ae3b7d2a5886-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '497'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '2000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4998'
+      X-Ratelimit-Remaining-Tokens:
+      - '1996307'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Ratelimit-Reset-Tokens:
+      - 110ms
+      X-Request-Id:
+      - req_5de3d4e6e05f48eab7999f49880b1b09
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "resp_039c6fefe7f9f668016ad208bcd0a887d2bb1f842e6916ee3a",
+          "object": "response",
+          "created_at": 1792149692,
+          "status": "completed",
+          "access_programs": null,
+          "background": false,
+          "billing": {
+            "payer": "openai"
+          },
+          "completed_at": 1792149693,
+          "error": null,
+          "frequency_penalty": 0.0,
+          "incomplete_details": null,
+          "instructions": "You are the qvevri clerk in Kutaisi.\nKutaisi qvevri standing order 1: pit 1 holds jar KUT-2026-1016-Q1, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 2: pit 2 holds jar KUT-2026-1016-Q2, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 3: pit 3 holds jar KUT-2026-1016-Q3, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 4: pit 4 holds jar KUT-2026-1016-Q4, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 5: pit 5 holds jar KUT-2026-1016-Q5, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 6: pit 6 holds jar KUT-2026-1016-Q6, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 7: pit 7 holds jar KUT-2026-1016-Q7, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 8: pit 8 holds jar KUT-2026-1016-Q8, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 9: pit 9 holds jar KUT-2026-1016-Q9, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 10: pit 10 holds jar KUT-2026-1016-Q10, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 11: pit 11 holds jar KUT-2026-1016-Q11, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 12: pit 12 holds jar KUT-2026-1016-Q12, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 13: pit 13 holds jar KUT-2026-1016-Q13, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 14: pit 14 holds jar KUT-2026-1016-Q14, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 15: pit 15 holds jar KUT-2026-1016-Q15, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 16: pit 16 holds jar KUT-2026-1016-Q16, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 17: pit 17 holds jar KUT-2026-1016-Q17, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 18: pit 18 holds jar KUT-2026-1016-Q18, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 19: pit 19 holds jar KUT-2026-1016-Q19, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 20: pit 20 holds jar KUT-2026-1016-Q20, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 21: pit 21 holds jar KUT-2026-1016-Q21, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 22: pit 22 holds jar KUT-2026-1016-Q22, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 23: pit 23 holds jar KUT-2026-1016-Q23, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 24: pit 24 holds jar KUT-2026-1016-Q24, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 25: pit 25 holds jar KUT-2026-1016-Q25, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 26: pit 26 holds jar KUT-2026-1016-Q26, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 27: pit 27 holds jar KUT-2026-1016-Q27, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 28: pit 28 holds jar KUT-2026-1016-Q28, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 29: pit 29 holds jar KUT-2026-1016-Q29, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 30: pit 30 holds jar KUT-2026-1016-Q30, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 31: pit 31 holds jar KUT-2026-1016-Q31, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 32: pit 32 holds jar KUT-2026-1016-Q32, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 33: pit 33 holds jar KUT-2026-1016-Q33, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 34: pit 34 holds jar KUT-2026-1016-Q34, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 35: pit 35 holds jar KUT-2026-1016-Q35, seal with beeswax, do not mix Rkatsiteli with Saperavi. Kutaisi qvevri standing order 36: pit 36 holds jar KUT-2026-1016-Q36, seal with beeswax, do not mix Rkatsiteli with Saperavi.\nAnswer in one short sentence from the board only.\nName Nino and 16:20.",
+          "max_output_tokens": null,
+          "max_tool_calls": null,
+          "model": "gpt-4.1-mini-2025-04-14",
+          "moderation": null,
+          "output": [
+            {
+              "id": "msg_039c6fefe7f9f668016ad208bd35fc87d293b669774d3fca6f",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "No."
+                }
+              ],
+              "role": "assistant"
+            }
+          ],
+          "parallel_tool_calls": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "prompt_cache_key": "kutaisi-qvevri-2026-1016",
+          "prompt_cache_retention": "in_memory",
+          "reasoning": {
+            "context": null,
+            "effort": null,
+            "summary": null
+          },
+          "safety_identifier": null,
+          "service_tier": "default",
+          "store": false,
+          "temperature": 0.2,
+          "text": {
+            "format": {
+              "type": "text"
+            },
+            "verbosity": "medium"
+          },
+          "tool_choice": "auto",
+          "tool_usage": {
+            "image_gen": {
+              "input_tokens": 0,
+              "input_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "output_tokens": 0,
+              "output_tokens_details": {
+                "image_tokens": 0,
+                "text_tokens": 0
+              },
+              "total_tokens": 0
+            },
+            "web_search": {
+              "num_requests": 0
+            }
+          },
+          "tools": [],
+          "top_logprobs": 0,
+          "top_p": 1.0,
+          "truncation": "disabled",
+          "usage": {
+            "input_tokens": 1702,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 1536
+            },
+            "output_tokens": 3,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1705
+          },
+          "user": null,
+          "metadata": {}
+        }
+  recorded_at: Fri, 16 Oct 2026 11:21:33 GMT
+recorded_with: VCR 6.4.0

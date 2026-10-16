@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"system","content":[{"type":"input_text","text":"You
+        are the core clerk in Stavanger.\nStavanger core standing order 1: tray 1
+        holds core SVG-2026-1016-C1, fridge at 4 C. Stavanger core standing order
+        2: tray 2 holds core SVG-2026-1016-C2, fridge at 4 C. Stavanger core standing
+        order 3: tray 3 holds core SVG-2026-1016-C3, fridge at 4 C. Stavanger core
+        standing order 4: tray 4 holds core SVG-2026-1016-C4, fridge at 4 C. Stavanger
+        core standing order 5: tray 5 holds core SVG-2026-1016-C5, fridge at 4 C.
+        Stavanger core standing order 6: tray 6 holds core SVG-2026-1016-C6, fridge
+        at 4 C. Stavanger core standing order 7: tray 7 holds core SVG-2026-1016-C7,
+        fridge at 4 C. Stavanger core standing order 8: tray 8 holds core SVG-2026-1016-C8,
+        fridge at 4 C. Stavanger core standing order 9: tray 9 holds core SVG-2026-1016-C9,
+        fridge at 4 C. Stavanger core standing order 10: tray 10 holds core SVG-2026-1016-C10,
+        fridge at 4 C. Stavanger core standing order 11: tray 11 holds core SVG-2026-1016-C11,
+        fridge at 4 C. Stavanger core standing order 12: tray 12 holds core SVG-2026-1016-C12,
+        fridge at 4 C. Stavanger core standing order 13: tray 13 holds core SVG-2026-1016-C13,
+        fridge at 4 C. Stavanger core standing order 14: tray 14 holds core SVG-2026-1016-C14,
+        fridge at 4 C. Stavanger core standing order 15: tray 15 holds core SVG-2026-1016-C15,
+        fridge at 4 C. Stavanger core standing order 16: tray 16 holds core SVG-2026-1016-C16,
+        fridge at 4 C. Stavanger core standing order 17: tray 17 holds core SVG-2026-1016-C17,
+        fridge at 4 C. Stavanger core standing order 18: tray 18 holds core SVG-2026-1016-C18,
+        fridge at 4 C. Stavanger core standing order 19: tray 19 holds core SVG-2026-1016-C19,
+        fridge at 4 C. Stavanger core standing order 20: tray 20 holds core SVG-2026-1016-C20,
+        fridge at 4 C. Stavanger core standing order 21: tray 21 holds core SVG-2026-1016-C21,
+        fridge at 4 C. Stavanger core standing order 22: tray 22 holds core SVG-2026-1016-C22,
+        fridge at 4 C. Stavanger core standing order 23: tray 23 holds core SVG-2026-1016-C23,
+        fridge at 4 C. Stavanger core standing order 24: tray 24 holds core SVG-2026-1016-C24,
+        fridge at 4 C.\nAnswer in one short sentence from the tray card only.\nName
+        Sigrid and 06:50.","prompt_cache_breakpoint":{"mode":"explicit"}}]},{"role":"user","content":"Tray
+        card: Sigrid logs core SVG-2026-1016-C4 at 06:50. When does Sigrid log?"}],"stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:21:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '202'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6ae089a145d04-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '27'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_c7b3b83fdb3248c991fa7bf486685ae5
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "prompt_cache_breakpoint is not supported on this model",
+            "type": "invalid_request_error",
+            "param": "prompt_cache_breakpoint",
+            "code": "invalid_parameter"
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 11:21:24 GMT
+recorded_with: VCR 6.4.0

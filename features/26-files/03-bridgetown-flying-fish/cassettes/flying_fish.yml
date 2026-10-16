@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"fish-card.pdf\"\r\nContent-Length: 723\r\nContent-Type:
+        application/pdf\r\nContent-Transfer-Encoding: binary\r\n\r\n%PDF-1.1\n1 0
+        obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids
+        [3 0 R] /Count 1 >>\nendobj\n3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox
+        [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>\nendobj\n4
+        0 obj\n<< /Length 180 >>\nstream\nBT /F1 12 Tf 24 720 Td\n(Bridgetown flying-fish
+        card, Friday 16 October 2026.) Tj\n0 -16 Td (Lot BGI-2026-1016-F1, 30 fish,
+        fry at 11:10.) Tj\n0 -16 Td (Do not invent a count.) Tj\nET\nendstream\nendobj\n5
+        0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\nxref\n0
+        6\n0000000000 65535 f \n0000000009 00000 n \n0000000058 00000 n \n0000000115
+        00000 n \n0000000241 00000 n \n0000000471 00000 n \ntrailer<< /Size 6 /Root
+        1 0 R >>\nstartxref\n541\n%%EOF\n\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"purpose\"\r\n\r\nuser_data\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"expires_after[anchor]\"\r\n\r\ncreated_at\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        form-data; name=\"expires_after[seconds]\"\r\n\r\n86400\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
+      Content-Length:
+      - '1411'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:16:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      X-Request-Id:
+      - req_00ae2265e31e4eb790d768efd59dfb81
+      Openai-Processing-Ms:
+      - '382'
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b6a7681968a616-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "object": "file",
+          "id": "file-XUYc7Bg8mspWfco88tSgz5",
+          "purpose": "user_data",
+          "filename": "fish-card.pdf",
+          "bytes": 723,
+          "created_at": 1792149413,
+          "expires_at": 1792235813,
+          "status": "processed",
+          "status_details": null
+        }
+  recorded_at: Fri, 16 Oct 2026 11:16:53 GMT
+recorded_with: VCR 6.4.0

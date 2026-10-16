@@ -1056,6 +1056,90 @@ Shown in [Lautoka sugar crush](features/24-reranking/04-lautoka-sugar-crush/), [
 
 Shown in [Nadi ginger shed](features/24-reranking/10-nadi-ginger-shed/) and [Kampala bark cloth](features/24-reranking/11-kampala-bark-cloth/).
 
+## Files
+
+### A small PDF stays file_data even with automatic uploads on
+
+**What happens.** OpenAI's inline limit is 50 MiB. The Lae copra sheet is 759 bytes. `auto_upload_large_files` is true. `ask(..., with: sheet)` still sends `file_data` on the Responses POST. There is no Files POST. The Mérida hammock card with the flag off is the same shape: one Responses call, no `/files`.
+
+**Why it matters.** A mill that always looks for a `file-` id after `with:` will think the upload failed. The bytes went inline.
+
+**What to do.** Treat `file_data` as the small-card path. Call `RubyLLM.upload` when you need a stored id.
+
+Shown in [Lae copra sheet](features/26-files/05-lae-copra-sheet/) and [Mérida hammock loom](features/26-files/06-merida-hammock-loom/).
+
+### OpenAI will not download user_data; a batch jsonl will
+
+**What happens.** `RubyLLM.download` of a `purpose: "user_data"` (or `"assistants"`) file is HTTP 400: `Not allowed to download files of purpose: user_data`. `UploadedFile.find` still returns the id and filename. A `purpose: "batch"` jsonl downloads as the original bytes, including the mill copy (`GNT-2026-1016-L6` on the Ghent lot).
+
+**Why it matters.** `find` then `download` looks like a round-trip. On OpenAI it is only a round-trip for batch files.
+
+**What to do.** Keep the mill copy locally when the purpose is `user_data`. Download only `batch` files, or rescue `BadRequestError`.
+
+Shown in [Valparaíso funicular](features/26-files/04-valparaiso-funicular/), [Ghent bobbin lace](features/26-files/11-ghent-bobbin-lace/), and [Salta empanada press](features/26-files/13-salta-empanada-press/).
+
+### Omitting purpose: is an HTTP 400, not ArgumentError
+
+**What happens.** `RubyLLM.upload(note, provider: :openai)` without `purpose:` posts the file. OpenAI answers HTTP 400: `'purpose' is a required property`. That is `RubyLLM::BadRequestError`. Vertex `gs://` needs a project this catalog does not have.
+
+**Why it matters.** A rescue of `ArgumentError` for a missing keyword never sees this call. The socket already opened.
+
+**What to do.** Pass `purpose:`. Rescue `BadRequestError` when a desk still omits it.
+
+Shown in [Sokoto calabash ridge](features/26-files/10-sokoto-calabash-ridge/).
+
+## Prompt caching
+
+### Empty with_caching sends no prompt_cache_options
+
+**What happens.** `chat.with_caching` with no arguments turns automatic caching on. The Kairouan, Palembang, Basel, Tampere, and Wrocław requests have no `prompt_cache_options` and no `prompt_cache_key`. `with_caching(key:)` on the Leh shawl sends `"prompt_cache_key":"leh-pashmina-2026-1016"` and still omits `prompt_cache_options`. `with_caching(nil)` raises `ArgumentError` before HTTP. `with_caching(false)` on the Meknes chest sends neither field.
+
+**Why it matters.** A cassette assertion that looks for `prompt_cache_options` on every cached chat fails on the automatic path. `key:` is not an options object.
+
+**What to do.** Assert `prompt_cache_key` when you passed `key:`. Treat empty `with_caching` as automatic. Pass `false`, not `nil`, to turn it off.
+
+Shown in [Kairouan chechia felt](features/27-prompt-caching/01-kairouan-chechia-felt/), [Leh pashmina key](features/27-prompt-caching/05-leh-pashmina-key/), and [Meknes thuya chest](features/27-prompt-caching/04-meknes-thuya-chest/).
+
+### gpt-4.1-mini rejects ttl and mode, then rejects the advertised 30m
+
+**What happens.** `with_caching(ttl: "1h")` on `gpt-4.1-mini` is HTTP 400: `Invalid value: '1h'. Supported values are: '30m'.` `ttl: "5m"` is the same shape. `ttl: "30m"` and `mode: "implicit"` then 400 as `prompt_cache_options is not supported on this model`. The enum check runs before the model-support check.
+
+**Why it matters.** A mill that switches to `30m` after the first 400 still fails. The listed value is not a supported option on this slug.
+
+**What to do.** Use empty `with_caching` or `key:` on `gpt-4.1-mini`. Rescue `BadRequestError` when a desk still sends `ttl:` or `mode:`.
+
+Shown in [Dubrovnik wall stone](features/27-prompt-caching/02-dubrovnik-wall-stone/) and [Puno totora reed](features/27-prompt-caching/09-puno-totora-reed/).
+
+### cache_until_here is a breakpoint this slug will not take
+
+**What happens.** `cache_until_here` on the Stavanger core puts `prompt_cache_breakpoint` on the system item. `gpt-4.1-mini` answers HTTP 400: `prompt_cache_breakpoint is not supported on this model`. On the Cotonou fare log, Rails still stores `cache_until_here` and `cache_ttl` `"1h"` on the system row. `with_caching(false)` keeps the breakpoint off the wire, so the zémidjan ask succeeds.
+
+**Why it matters.** Persisting the column and sending the mark are not the same step. A job that always marks instructions will 400 on this cheap slug.
+
+**What to do.** Store the flag on Rails. Turn caching off for the ask when the model rejects breakpoints.
+
+Shown in [Stavanger oil core](features/27-prompt-caching/03-stavanger-oil-core/) and [Cotonou zémidjan fare](features/27-prompt-caching/08-cotonou-zemidjan-fare/).
+
+### RubyLLM.cache is not with_caching
+
+**What happens.** `RubyLLM.cache` on OpenAI `gpt-4.1-mini` raises `RubyLLM::Error`: `OpenAI doesn't support explicit content caching`. There is no HTTP call and no cassette. That path is Gemini/Vertex `CachedContent` (`renew`, `delete`, `find`).
+
+**Why it matters.** `with_caching(id: cache)` and `RubyLLM.cache` look like the OpenAI named-key path. They are not. `with_caching(key:)` is.
+
+**What to do.** Use `with_caching(key:)` on OpenAI. Rescue `RubyLLM::Error` when a desk still calls `RubyLLM.cache`.
+
+Shown in [Bukhara suzani cache](features/27-prompt-caching/06-bukhara-suzani-cache/) and [Leh pashmina key](features/27-prompt-caching/05-leh-pashmina-key/).
+
+### cache_read is an Integer; cache_write_by_ttl is nil
+
+**What happens.** Palembang's second ask reports `cache_read` 0 and `cache_write` 0. Basel's short prefix reports `cache_read` 0 and 63 input tokens. Kutaisi's second ask with `prompt_cache_key` reports `cache_read` 1536. Wrocław's `cache_write_by_ttl` is `nil`, not `{}`. OpenAI does not split writes by lifetime.
+
+**Why it matters.** `if tokens.cache_read` is false for 0. A test that expects a Hash split fails on OpenAI. A miss and a hit are both Integers.
+
+**What to do.** Assert `kind_of Integer` and `>= 0`. Treat `nil` as the missing Anthropic split.
+
+Shown in [Palembang songket](features/27-prompt-caching/07-palembang-songket/), [Basel Fasnacht lantern](features/27-prompt-caching/10-basel-fasnacht-lantern/), [Wrocław Nadodrze neon](features/27-prompt-caching/12-wroclaw-nadodrze-neon/), and [Kutaisi qvevri clay](features/27-prompt-caching/13-kutaisi-qvevri-clay/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

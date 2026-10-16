@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Reed card:
+        Yma binds lot PNO-2026-1016-T7 at 04:10. When does Yma bind?"}],"instructions":"You
+        are the reed clerk in Puno.\nPuno totora standing order 1: bundle 1 holds
+        lot PNO-2026-1016-T1. Puno totora standing order 2: bundle 2 holds lot PNO-2026-1016-T2.
+        Puno totora standing order 3: bundle 3 holds lot PNO-2026-1016-T3. Puno totora
+        standing order 4: bundle 4 holds lot PNO-2026-1016-T4. Puno totora standing
+        order 5: bundle 5 holds lot PNO-2026-1016-T5. Puno totora standing order 6:
+        bundle 6 holds lot PNO-2026-1016-T6. Puno totora standing order 7: bundle
+        7 holds lot PNO-2026-1016-T7. Puno totora standing order 8: bundle 8 holds
+        lot PNO-2026-1016-T8. Puno totora standing order 9: bundle 9 holds lot PNO-2026-1016-T9.
+        Puno totora standing order 10: bundle 10 holds lot PNO-2026-1016-T10. Puno
+        totora standing order 11: bundle 11 holds lot PNO-2026-1016-T11. Puno totora
+        standing order 12: bundle 12 holds lot PNO-2026-1016-T12. Puno totora standing
+        order 13: bundle 13 holds lot PNO-2026-1016-T13. Puno totora standing order
+        14: bundle 14 holds lot PNO-2026-1016-T14. Puno totora standing order 15:
+        bundle 15 holds lot PNO-2026-1016-T15. Puno totora standing order 16: bundle
+        16 holds lot PNO-2026-1016-T16. Puno totora standing order 17: bundle 17 holds
+        lot PNO-2026-1016-T17. Puno totora standing order 18: bundle 18 holds lot
+        PNO-2026-1016-T18. Puno totora standing order 19: bundle 19 holds lot PNO-2026-1016-T19.
+        Puno totora standing order 20: bundle 20 holds lot PNO-2026-1016-T20. Puno
+        totora standing order 21: bundle 21 holds lot PNO-2026-1016-T21. Puno totora
+        standing order 22: bundle 22 holds lot PNO-2026-1016-T22. Puno totora standing
+        order 23: bundle 23 holds lot PNO-2026-1016-T23. Puno totora standing order
+        24: bundle 24 holds lot PNO-2026-1016-T24.\nAnswer in one short sentence from
+        the card only.\nName Yma and 04:10.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"prompt_cache_options":{"mode":"implicit"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 11:55:24 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '196'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b6dfd37ab4579a-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '60'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_cabf320b4b9342238a8c4593838ed1ab
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "prompt_cache_options is not supported on this model",
+            "type": "invalid_request_error",
+            "param": "prompt_cache_options",
+            "code": "invalid_parameter"
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 11:55:24 GMT
+recorded_with: VCR 6.4.0

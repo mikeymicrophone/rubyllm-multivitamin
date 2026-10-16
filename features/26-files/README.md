@@ -4,34 +4,42 @@
 
 Official reference: [Files](https://rubyllm.com/files/).
 
-## RubyLLM 2.1.1 entry points
+## Models
 
-- `RubyLLM.upload("report.pdf", provider: :anthropic)`
-- `chat.ask "Summarize", with: file`
-- `RubyLLM::UploadedFile.find(id, provider:)`
-- `RubyLLM.download(file.id, provider:).save`
-- `purpose:`, `expires_in:`, `filename:`
-- `config.auto_upload_large_files`
+This catalog records OpenAI Files with `purpose: "user_data"` or `"batch"`, and `gpt-4.1-mini` when a chat reads the file. Anthropic, Gemini, Vertex, Mistral, and DeepSeek need keys or buckets this catalog does not have. OpenAI's inline PDF limit is 50 MiB, so a small mill card stays `file_data` even with automatic uploads on. OpenAI will not download `purpose: "user_data"` or `"assistants"`; a `batch` jsonl will. Checked 16 October 2026.
 
-## Providers that can record it
+## Examples (13 of 13 bottled)
 
-OpenAI and Azure (purpose required). Anthropic (upload; download only of server-created files). Gemini (48h expiry). Mistral (`visibility:`). Vertex AI and Bedrock (bucket `uri:`). xAI, Cohere datasets, ElevenLabs media assets. OpenRouter uploads exist; downloads of your uploads are not offered. This catalog's cheap record path is OpenAI `purpose: "user_data"` plus `gpt-4.1-mini` for the chat that reads the file.
+01. [Timbuktu salt ledger](01-timbuktu-salt-ledger/) — available
+02. [Nelson hops kiln](02-nelson-hops-kiln/) — available
+03. [Bridgetown flying fish](03-bridgetown-flying-fish/) — available
+04. [Valparaíso funicular](04-valparaiso-funicular/) — available
+05. [Lae copra sheet](05-lae-copra-sheet/) — available
+06. [Mérida hammock loom](06-merida-hammock-loom/) — available
+07. [Ayacucho retablo lot](07-ayacucho-retablo-lot/) — available
+08. [Canberra mint blank](08-canberra-mint-blank/) — available
+09. [Perth sandalwood chip](09-perth-sandalwood-chip/) — available
+10. [Sokoto calabash ridge](10-sokoto-calabash-ridge/) — available
+11. [Ghent bobbin lace](11-ghent-bobbin-lace/) — available
+12. [Medan durian lot](12-medan-durian-lot/) — available
+13. [Salta empanada press](13-salta-empanada-press/) — available
 
-## Examples (0 of 13 bottled)
+## What each scenario adds
 
-01. Useless Bay upload then ask — planned
-02. Double Bluff purpose batch jsonl — planned
-03. Hood Head expires_in a day — planned
-04. Tala Point find and download — planned
-05. Termination Point auto-upload PDF — planned
-06. Port Ludlow auto_upload false — planned
-07. Dabob Bay Anthropic reuse — planned
-08. Quilcene Gemini 48h — planned
-09. Dosewallips IO filename: — planned
-10. Duckabush Vertex gs:// uri — planned
-11. Hamma Hamma generated CSV download — planned
-12. Lilliwaup DeepSeek image download refused — planned
-13. Skokomish file desk capstone — planned
+| Slot | What it adds |
+| --- | --- |
+| 01 | Upload PDF, then `ask` with the `UploadedFile` |
+| 02 | `purpose: "batch"` jsonl, no batch job |
+| 03 | `expires_in:` one day |
+| 04 | `find` works; `user_data` download is HTTP 400 |
+| 05 | Auto-upload on, small PDF stays inline |
+| 06 | `auto_upload_large_files = false` |
+| 07 | One upload, two asks |
+| 08 | One-hour expiry, `expired?` false |
+| 09 | IO plus `filename:` |
+| 10 | Missing `purpose:` HTTP 400 |
+| 11 | `purpose: "batch"` jsonl download keeps the mill copy |
+| 12 | CSV `user_data` upload and `find` |
+| 13 | Capstone: upload, find, ask, `user_data` download 400 |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
