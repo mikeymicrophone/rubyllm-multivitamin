@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/moderations
+    body:
+      encoding: UTF-8
+      string: '{"model":"omni-moderation-latest","input":[{"type":"text","text":"Boiling-pan
+        card at a Georgetown demerara house, Friday 16 October 2026.\nGuyana tourism:
+        https://www.guyanatourism.com/.\nPan 2 at 118 C, strike expected at 14:10.
+        Pan 3 holds molasses.\nCaption for the afternoon board."},{"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAwCAIAAABhdOiYAAAAVklEQVR42u3QQQkAAAgEsMtlWkMZyAb+hcESLNPFIQoECRIkSJAgQYIQJEiQIEGCBAlCkCBBggQJEiQIQYIECRIkSJAgQQgSJEiQIEGCBCFIkCBBgn5YrQw9wyEgnfUAAAAASUVORK5CYII="}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:39:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_9b6ff027c2f24d38a97382b1c5d951b3
+      Openai-Processing-Ms:
+      - '558'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b6711baa83dac4-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "modr-8929",
+          "model": "omni-moderation-latest",
+          "results": [
+            {
+              "flagged": false,
+              "categories": {
+                "harassment": false,
+                "harassment/threatening": false,
+                "sexual": false,
+                "hate": false,
+                "hate/threatening": false,
+                "illicit": false,
+                "illicit/violent": false,
+                "self-harm/intent": false,
+                "self-harm/instructions": false,
+                "self-harm": false,
+                "sexual/minors": false,
+                "violence": false,
+                "violence/graphic": false
+              },
+              "category_scores": {
+                "harassment": 3.8831109868779005e-6,
+                "harassment/threatening": 6.339210403977636e-7,
+                "sexual": 1.9525885208642222e-6,
+                "hate": 2.796930302582677e-6,
+                "hate/threatening": 1.2878952156558146e-7,
+                "illicit": 6.85431721163334e-7,
+                "illicit/violent": 1.3007128466476034e-6,
+                "self-harm/intent": 5.594337713435001e-7,
+                "self-harm/instructions": 9.422445939071362e-8,
+                "self-harm": 1.1125607488784412e-6,
+                "sexual/minors": 8.059446204294678e-8,
+                "violence": 2.5071593847983196e-6,
+                "violence/graphic": 8.398072034951531e-7
+              },
+              "category_applied_input_types": {
+                "harassment": [
+                  "text"
+                ],
+                "harassment/threatening": [
+                  "text"
+                ],
+                "sexual": [
+                  "text",
+                  "image"
+                ],
+                "hate": [
+                  "text"
+                ],
+                "hate/threatening": [
+                  "text"
+                ],
+                "illicit": [
+                  "text"
+                ],
+                "illicit/violent": [
+                  "text"
+                ],
+                "self-harm/intent": [
+                  "text",
+                  "image"
+                ],
+                "self-harm/instructions": [
+                  "text",
+                  "image"
+                ],
+                "self-harm": [
+                  "text",
+                  "image"
+                ],
+                "sexual/minors": [
+                  "text"
+                ],
+                "violence": [
+                  "text",
+                  "image"
+                ],
+                "violence/graphic": [
+                  "text",
+                  "image"
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Fri, 16 Oct 2026 10:39:49 GMT
+recorded_with: VCR 6.4.0

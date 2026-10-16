@@ -4,34 +4,42 @@
 
 Official reference: [Moderation](https://rubyllm.com/moderation/).
 
-## RubyLLM 2.1.1 entry points
+## Models
 
-- `RubyLLM.moderate "I love programming in Ruby."`
-- `flagged?`, `flagged_categories`, `category_scores`
-- `RubyLLM.moderate(["a", "b"])` and `moderation.results`
-- `moderate(with: "profile.png")`
-- `model: "mistral-moderation-2603"`
-- `provider: :bedrock` guardrails
+OpenRouter has no separate moderation operation in 2.1.1. This catalog records OpenAI `omni-moderation-latest`, and pins `omni-moderation-2024-09-26` when a slot needs a dated id. Pre-chat briefs use `gpt-4.1-mini`. Mistral and Bedrock need keys this catalog does not have. Checked 16 October 2026.
 
-## Providers that can record it
+## Examples (13 of 13 bottled)
 
-OpenAI `omni-moderation-latest` (text and image). Mistral `mistral-moderation-2603`. Bedrock guardrails. OpenRouter has no separate moderation operation in 2.1.1. Anthropic, Gemini, xAI, and Cohere are dashes on the coverage grid. This catalog's cheap record path is OpenAI omni-moderation. A free OpenRouter chat slug is the wrong API.
+01. [Tamale groundnut paste](01-tamale-groundnut-paste/) — available
+02. [Bulawayo township board](02-bulawayo-township-board/) — available
+03. [Cusco potato lot](03-cusco-potato-lot/) — available
+04. [Avarua tivaevae square](04-avarua-tivaevae-square/) — available
+05. [Durban bunny chow](05-durban-bunny-chow/) — available
+06. [Guadalajara jarabe studio](06-guadalajara-jarabe-studio/) — available
+07. [Georgetown demerara pan](07-georgetown-demerara-pan/) — available
+08. [Alice Springs didgeridoo](08-alice-springs-didgeridoo/) — available
+09. [Lilongwe maize crib](09-lilongwe-maize-crib/) — available
+10. [Arusha booking desk](10-arusha-booking-desk/) — available
+11. [Recife frevo atelier](11-recife-frevo-atelier/) — available
+12. [Gqeberha cycad nursery](12-gqeberha-cycad-nursery/) — available
+13. [Apia siapo print](13-apia-siapo-print/) — available
 
-## Examples (0 of 13 bottled)
+## What each scenario adds
 
-01. Dosewallips clean hail — planned
-02. Duckabush flagged categories — planned
-03. Hamma Hamma several comments — planned
-04. Lilliwaup profile photo — planned
-05. Skokomish Mistral model — planned
-06. Union Bedrock guardrail — planned
-07. Tahuya image plus caption — planned
-08. Dewatto WAV raises — planned
-09. Seabeck empty scores — planned
-10. Bangor pre-chat screen — planned
-11. Keyport Rails photo job — planned
-12. Poulsbo raw assessments — planned
-13. Liberty Bay review desk capstone — planned
+| Slot | What it adds |
+| --- | --- |
+| 01 | Clean hail, `flagged?` false |
+| 02 | Flagged slip, `flagged_categories` names violence |
+| 03 | Array of comments, one Result each |
+| 04 | `with:` image, no caption |
+| 05 | `model:` pins `omni-moderation-2024-09-26` |
+| 06 | Context `default_moderation_model`, global default stays latest |
+| 07 | Caption plus image |
+| 08 | WAV raises `UnsupportedAttachmentError` before HTTP |
+| 09 | Clean hail still has `category_scores` keys |
+| 10 | Screen, then `chat.ask` on a clean card |
+| 11 | Rails-style job writes `needs_review` |
+| 12 | `raw` keeps OpenAI assessments |
+| 13 | Capstone: skip the flagged slip, brief the clean one |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

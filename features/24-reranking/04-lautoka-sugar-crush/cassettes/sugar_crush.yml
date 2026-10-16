@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/rerank
+    body:
+      encoding: UTF-8
+      string: '{"model":"voyageai/rerank-2.5-lite","query":"Which mill card is the
+        overnight crush at Lautoka mill 2?","documents":["Labasa mill is offline for
+        the weekend shut.","Lautoka mill 2 overnight crush, 22:00 to 05:30, mill 2
+        only.","Rarawai juice heaters, not a crush.","Lautoka bagasse pile, not a
+        mill card."]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:40:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b67192ce0ed6f9-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"rerank-2.5-lite","results":[{"index":1,"relevance_score":0.8955636024475098,"document":{"text":"Lautoka
+        mill 2 overnight crush, 22:00 to 05:30, mill 2 only."}},{"index":3,"relevance_score":0.5575972199440002,"document":{"text":"Lautoka
+        bagasse pile, not a mill card."}},{"index":2,"relevance_score":0.4004933834075928,"document":{"text":"Rarawai
+        juice heaters, not a crush."}},{"index":0,"relevance_score":0.32990702986717224,"document":{"text":"Labasa
+        mill is offline for the weekend shut."}}],"usage":{"total_tokens":104,"cost":0.00000208},"provider":"VoyageAI
+        by MongoDB","id":"gen-rerank-1792147208-Cvr6mDICChDpAwFiWfAJ"}'
+  recorded_at: Fri, 16 Oct 2026 10:40:08 GMT
+recorded_with: VCR 6.4.0

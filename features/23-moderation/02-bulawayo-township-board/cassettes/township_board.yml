@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/moderations
+    body:
+      encoding: UTF-8
+      string: '{"model":"omni-moderation-latest","input":"Classifieds slip posted
+        at the Makokoba township board, Bulawayo,\nFriday 16 October 2026.\nCity notes:
+        https://www.bulawayo.gov.zw/.\nStall 4 comment: I am going to kill the stall
+        clerk if stall 4 is\ngone at dawn. Do not take that stall from me.\nHold this
+        slip. Do not pin it."}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:39:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_988df8ee3a804c0fb02da2dbd981b2bc
+      Openai-Processing-Ms:
+      - '80'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b670f5ff59dd0c-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "modr-3969",
+          "model": "omni-moderation-latest",
+          "results": [
+            {
+              "flagged": true,
+              "categories": {
+                "harassment": false,
+                "harassment/threatening": false,
+                "sexual": false,
+                "hate": false,
+                "hate/threatening": false,
+                "illicit": false,
+                "illicit/violent": false,
+                "self-harm/intent": false,
+                "self-harm/instructions": false,
+                "self-harm": false,
+                "sexual/minors": false,
+                "violence": true,
+                "violence/graphic": false
+              },
+              "category_scores": {
+                "harassment": 0.14279048007173137,
+                "harassment/threatening": 0.28720762330745847,
+                "sexual": 0.00004955359475635505,
+                "hate": 0.0012432677041108568,
+                "hate/threatening": 0.003421918777656154,
+                "illicit": 0.028626629654202748,
+                "illicit/violent": 0.01955698048474647,
+                "self-harm/intent": 0.00023316533255432313,
+                "self-harm/instructions": 2.0785170435063726e-6,
+                "self-harm": 0.00046040712342594554,
+                "sexual/minors": 2.840974294610978e-6,
+                "violence": 0.8553302431563982,
+                "violence/graphic": 0.00004802972318863164
+              },
+              "category_applied_input_types": {
+                "harassment": [
+                  "text"
+                ],
+                "harassment/threatening": [
+                  "text"
+                ],
+                "sexual": [
+                  "text"
+                ],
+                "hate": [
+                  "text"
+                ],
+                "hate/threatening": [
+                  "text"
+                ],
+                "illicit": [
+                  "text"
+                ],
+                "illicit/violent": [
+                  "text"
+                ],
+                "self-harm/intent": [
+                  "text"
+                ],
+                "self-harm/instructions": [
+                  "text"
+                ],
+                "self-harm": [
+                  "text"
+                ],
+                "sexual/minors": [
+                  "text"
+                ],
+                "violence": [
+                  "text"
+                ],
+                "violence/graphic": [
+                  "text"
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Fri, 16 Oct 2026 10:39:43 GMT
+recorded_with: VCR 6.4.0

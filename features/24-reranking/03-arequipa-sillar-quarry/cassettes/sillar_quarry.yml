@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/rerank
+    body:
+      encoding: UTF-8
+      string: '{"model":"voyageai/rerank-2.5-lite","query":"Which bay holds the white
+        sillar for the cathedral lintel?","documents":["Bay A, cream offcuts, too
+        thin for the cathedral lintel.","Bay B, pink facing, held for a courtyard
+        wall.","Bay C, white sillar for the cathedral lintel, 14 blocks, Arequipa.","Bay
+        D, mixed ashlar, not graded."]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:40:07 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b6718d2de6149e-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"rerank-2.5-lite","results":[{"index":2,"relevance_score":0.9330917596817017,"document":{"text":"Bay
+        C, white sillar for the cathedral lintel, 14 blocks, Arequipa."}},{"index":0,"relevance_score":0.7698376774787903,"document":{"text":"Bay
+        A, cream offcuts, too thin for the cathedral lintel."}},{"index":3,"relevance_score":0.5320187211036682,"document":{"text":"Bay
+        D, mixed ashlar, not graded."}},{"index":1,"relevance_score":0.5095708966255188,"document":{"text":"Bay
+        B, pink facing, held for a courtyard wall."}}],"usage":{"total_tokens":94,"cost":0.00000188},"provider":"VoyageAI
+        by MongoDB","id":"gen-rerank-1792147207-XxetFTDwInUxS8apZpOi"}'
+  recorded_at: Fri, 16 Oct 2026 10:40:07 GMT
+recorded_with: VCR 6.4.0

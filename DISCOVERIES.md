@@ -929,6 +929,60 @@ Shown in [Lilliwaup concurrency threads](features/19-tool-approval-and-loop-cont
 
 Shown in [Seabeck Rails approval job](features/19-tool-approval-and-loop-control/12-seabeck-rails-approval-job/).
 
+## Moderation
+
+### A clean hail still has category_scores keys
+
+**What happens.** `RubyLLM.moderate` on a Tamale mill hail or a Lilongwe crib notice returns `flagged?` false and an empty `flagged_categories` list. `category_scores` is not empty. OpenAI fills every family (`harassment`, `violence`, `sexual/minors`, and the rest) with a near-zero score. `raw["results"][0]` still has `category_scores` and `category_applied_input_types`.
+
+**Why it matters.** Treating empty scores as "the provider did not score this hail" is true for Bedrock guardrails and false for OpenAI omni-moderation. A desk that only prints `category_scores.keys` will think a clean card was assessed for every family.
+
+**What to do.** Read `flagged?` and `flagged_categories` for the decision. Read scores when you need a threshold. Do not treat a populated scores hash as a flag.
+
+Shown in [Tamale groundnut paste](features/23-moderation/01-tamale-groundnut-paste/), [Lilongwe maize crib](features/23-moderation/09-lilongwe-maize-crib/), and [Gqeberha cycad nursery](features/23-moderation/12-gqeberha-cycad-nursery/).
+
+### A WAV raises UnsupportedAttachmentError before any Moderations POST
+
+**What happens.** `moderate(with: rehearsal-tape.wav)` raises `RubyLLM::UnsupportedAttachmentError`. The message names `audio/wav`. No HTTP call is sent. There is no cassette file.
+
+**Why it matters.** Image screening is on the same `with:` keyword. An audio take looks like the same API until the protocol rejects it locally.
+
+**What to do.** Only pass images. Rescue `UnsupportedAttachmentError` when the loft still files WAV.
+
+Shown in [Alice Springs didgeridoo](features/23-moderation/08-alice-springs-didgeridoo/).
+
+### A context pin leaves the global default_moderation_model alone
+
+**What happens.** A Guadalajara `RubyLLM.context` with `default_moderation_model = "omni-moderation-2024-09-26"` screens the jarabe card on that id. `RubyLLM.config.default_moderation_model` is still `omni-moderation-latest` after the call. The request body names the pinned id, not `latest`.
+
+**Why it matters.** Passing `model:` and setting the context default are not the same as mutating the process default.
+
+**What to do.** Pin on a context when only one desk should use last winter's id.
+
+Shown in [Guadalajara jarabe studio](features/23-moderation/06-guadalajara-jarabe-studio/) and [Durban bunny chow](features/23-moderation/05-durban-bunny-chow/).
+
+## Reranking
+
+### OpenRouter Voyage reports tokens; the ranked model id drops the voyageai/ prefix
+
+**What happens.** `RubyLLM.rerank` on `voyageai/rerank-2.5-lite` posts that slug to `https://openrouter.ai/api/v1/rerank`. The `Rerank#model` reader comes back as `rerank-2.5-lite` (and `rerank-2.5` for the full slug). `tokens.input` was 86 and `cost.total` was `1.72e-06` on the Port Louis sega set. `top_n:` is in the request body and the document list is still the full array.
+
+**Why it matters.** A test that matches the request slug against `ranked.model` fails. Cohere's docs say tokens can be nil because they bill per search unit; Voyage on OpenRouter did report usage.
+
+**What to do.** Assert the request body for the OpenRouter slug. Read `tokens.input` when you need the ledger. Treat a nil count as legal for other providers.
+
+Shown in [Lautoka sugar crush](features/24-reranking/04-lautoka-sugar-crush/), [Jos plateau strawberry](features/24-reranking/05-jos-plateau-strawberry/), [Cali salsa plaza](features/24-reranking/02-cali-salsa-plaza/), and [Port Louis sega tokens](features/24-reranking/09-port-louis-sega-tokens/).
+
+### An empty document list 400s; a missing model: never leaves the desk
+
+**What happens.** `RubyLLM.rerank(query, documents)` without `model:` raises `ArgumentError` (`missing keyword: :model`) before HTTP. There is no cassette. `RubyLLM.rerank(query, [], model: ...)` does POST. OpenRouter Voyage answers HTTP 400 with a Zod-style `too_small` error: documents must have at least one item. That is `RubyLLM::BadRequestError`.
+
+**Why it matters.** Empty input and a missing model look similar at the mill and are not the same exception.
+
+**What to do.** Rescue `ArgumentError` for a missing `model:`. Rescue `BadRequestError` for an empty list, or refuse to call rerank when there are no candidates.
+
+Shown in [Nadi ginger shed](features/24-reranking/10-nadi-ginger-shed/) and [Kampala bark cloth](features/24-reranking/11-kampala-bark-cloth/).
+
 ## Running the examples
 
 ### A non-ASCII SSE body is stored as YAML !binary

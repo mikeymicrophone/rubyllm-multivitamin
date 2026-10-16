@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/moderations
+    body:
+      encoding: UTF-8
+      string: '{"model":"omni-moderation-latest","input":[{"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAwCAIAAABhdOiYAAAAVklEQVR42u3QQQkAAAgEsAtmEvMazAb+hcESLNPFIQoECRIkSJAgQYIQJEiQIEGCBAlCkCBBggQJEiQIQYIECRIkSJAgQQgSJEiQIEGCBCFIkCBBgn5YSBxVaew/LXMAAAAASUVORK5CYII="}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:39:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - micharisma
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      X-Request-Id:
+      - req_eae7ad052c354a74a6486110006b5884
+      Openai-Processing-Ms:
+      - '377'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Cf-Ray:
+      - a4b671016a4c0949-IAD
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "modr-4670",
+          "model": "omni-moderation-latest",
+          "results": [
+            {
+              "flagged": false,
+              "categories": {
+                "harassment": false,
+                "harassment/threatening": false,
+                "sexual": false,
+                "hate": false,
+                "hate/threatening": false,
+                "illicit": false,
+                "illicit/violent": false,
+                "self-harm/intent": false,
+                "self-harm/instructions": false,
+                "self-harm": false,
+                "sexual/minors": false,
+                "violence": false,
+                "violence/graphic": false
+              },
+              "category_scores": {
+                "harassment": 0.0,
+                "harassment/threatening": 0.0,
+                "sexual": 0.00011160142598430911,
+                "hate": 0.0,
+                "hate/threatening": 0.0,
+                "illicit": 0.0,
+                "illicit/violent": 0.0,
+                "self-harm/intent": 2.586743108135441e-6,
+                "self-harm/instructions": 1.3211958228877664e-6,
+                "self-harm": 0.000011866796497892348,
+                "sexual/minors": 0.0,
+                "violence": 0.0005347894011802569,
+                "violence/graphic": 7.843789122138342e-6
+              },
+              "category_applied_input_types": {
+                "harassment": [],
+                "harassment/threatening": [],
+                "sexual": [
+                  "image"
+                ],
+                "hate": [],
+                "hate/threatening": [],
+                "illicit": [],
+                "illicit/violent": [],
+                "self-harm/intent": [
+                  "image"
+                ],
+                "self-harm/instructions": [
+                  "image"
+                ],
+                "self-harm": [
+                  "image"
+                ],
+                "sexual/minors": [],
+                "violence": [
+                  "image"
+                ],
+                "violence/graphic": [
+                  "image"
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Fri, 16 Oct 2026 10:39:45 GMT
+recorded_with: VCR 6.4.0

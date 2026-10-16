@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 247 |
+| Bottled | 273 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,8 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 247 of 429 are
-bottled. Features 1–19 are full. Features 20–33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 273 of 429 are
+bottled. Features 1–19, 23, and 24 are full. Features 20–22 and 25–33
+have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -64,8 +65,13 @@ onto worldwide desks. Agents recorded OpenAI
 (and `gpt-4o-mini` for the Port Angeles mid-run switch). Neah Bay records
 `openai/gpt-4.1-mini` on OpenRouter so the cassette keeps `X-OpenRouter-Title`.
 Friday Harbor and Bremerton record unlisted-OpenRouter 400s; Friday Harbor
-hops to OpenAI when `on:` lists `BadRequestError`. The other
-bottled cassettes are OpenRouter.
+hops to OpenAI when `on:` lists `BadRequestError`. Moderation recorded
+OpenAI `omni-moderation-latest` (and `omni-moderation-2024-09-26` for the
+pinned Durban and Guadalajara cards); pre-chat briefs used `gpt-4.1-mini`.
+Reranking recorded OpenRouter `voyageai/rerank-2.5-lite` (and
+`voyageai/rerank-2.5` for the Jos strawberry bed); the Dunedin mill also
+records OpenAI `text-embedding-3-small`, and Salvador and Rotorua briefs
+use `gpt-4.1-mini`. The other bottled cassettes are OpenRouter.
 
 ## Run the examples
 
@@ -147,6 +153,8 @@ random, so the catalog pins a slug instead. That keeps a cassette stable.
 | Audio transcription (recorded) | no `:free` transcription slug used | bottled on OpenAI `gpt-transcribe`, `whisper-1`, and `gpt-4o-transcribe-diarize` |
 | Text to speech (recorded) | no `:free` speech model that day | bottled on OpenAI `tts-1`; `LIVE_PROVIDER` does not retarget speech |
 | Provider tools and citations (recorded) | no `:free` hosted-tool slug used | bottled on OpenAI `gpt-4.1-mini`; `:web_fetch` raises before HTTP on Responses |
+| Moderation (recorded) | no OpenRouter moderation operation | bottled on OpenAI `omni-moderation-latest`; pin `omni-moderation-2024-09-26` with `model:` or a context. `LIVE_PROVIDER` does not retarget moderation |
+| Reranking (recorded) | `voyageai/rerank-2.5-lite` on OpenRouter | `voyageai/rerank-2.5` on OpenRouter; OpenAI has no rerank API. `LIVE_PROVIDER` does not retarget rerank |
 
 `nvidia/nemotron-3.5-content-safety:free` accepts images and does not advertise
 tools. Do not use it for a tool example. Gemma's free models advertise
@@ -222,8 +230,8 @@ hold the cassette player and the model slugs, not the story.
 20. [Evaluations](features/20-evaluations/) — 0 of 13 bottled
 21. [Batches](features/21-batches/) — 0 of 13 bottled
 22. [Video generation](features/22-video-generation/) — 0 of 13 bottled
-23. [Moderation](features/23-moderation/) — 0 of 13 bottled
-24. [Reranking](features/24-reranking/) — 0 of 13 bottled
+23. [Moderation](features/23-moderation/) — 13 of 13 bottled
+24. [Reranking](features/24-reranking/) — 13 of 13 bottled
 25. [Document OCR](features/25-document-ocr/) — 0 of 13 bottled
 26. [Files](features/26-files/) — 0 of 13 bottled
 27. [Prompt caching](features/27-prompt-caching/) — 0 of 13 bottled

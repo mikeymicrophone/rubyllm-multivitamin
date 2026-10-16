@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://openrouter.ai/api/v1/rerank
+    body:
+      encoding: UTF-8
+      string: '{"model":"voyageai/rerank-2.5-lite","query":"¿Cuál bloque es el fino
+        de toquilla para el sombrero de gala?","documents":["Block A, coarse toquilla,
+        market hats only.","Block C, bloque fino de toquilla para el sombrero de gala,
+        40 copas, Cuenca.","Block D, dyed brim offcuts, not gala.","English card:
+        Panama-style brim mill, not Cuenca toquilla."]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENROUTER_API_KEY>
+      Http-Referer:
+      - https://github.com/mikeymicrophone/rubyllm-multivitamin
+      X-Openrouter-Title:
+      - RubyLLM Multivitamin
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 10:40:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Generation-Id,X-Provider-Name,request-id,cf-ray
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - a4b6719d09e21625-IAD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"model":"rerank-2.5-lite","results":[{"index":1,"relevance_score":0.9359652400016785,"document":{"text":"Block
+        C, bloque fino de toquilla para el sombrero de gala, 40 copas, Cuenca."}},{"index":2,"relevance_score":0.6127782464027405,"document":{"text":"Block
+        D, dyed brim offcuts, not gala."}},{"index":0,"relevance_score":0.5698705911636353,"document":{"text":"Block
+        A, coarse toquilla, market hats only."}},{"index":3,"relevance_score":0.38617053627967834,"document":{"text":"English
+        card: Panama-style brim mill, not Cuenca toquilla."}}],"usage":{"total_tokens":124,"cost":0.00000248},"provider":"VoyageAI
+        by MongoDB","id":"gen-rerank-1792147209-cQ67Pclqsp4iwy1dLGRH"}'
+  recorded_at: Fri, 16 Oct 2026 10:40:09 GMT
+recorded_with: VCR 6.4.0
