@@ -16,3 +16,5 @@ gem "webrick", "~> 1.8"
 # full Rails application. See features/10-rails-integration/.
 gem "activerecord", "~> 8.0"
 gem "sqlite3", "~> 2.6"
+# Durable jobs and ActiveJob::Continuable require Rails 8.1 or newer.
+gem "activejob", "~> 8.1"

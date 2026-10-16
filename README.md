@@ -10,7 +10,7 @@ Thirteen samples of healthy code for each feature of the
 | Servings per feature | 13 |
 | Features | 33 |
 | Scenarios | 429 |
-| Bottled | 364 |
+| Bottled | 377 |
 | Active ingredient | RubyLLM 2.1.1 |
 | Default run | cassettes |
 
@@ -30,9 +30,9 @@ different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The catalog is 33 features, 13 scenarios each, 429 slots. 364 of 429 are
-bottled. Features 1–21, 23, 24, 26–29, and 32 are full. Features 22, 25,
-30, 31, and 33 have stub READMEs.
+The catalog is 33 features, 13 scenarios each, 429 slots. 377 of 429 are
+bottled. Features 1–21, 23, 24, 26–30, and 32 are full. Features 22, 25,
+31, and 33 have stub READMEs.
 MCP client chats were recorded on OpenAI `gpt-4.1-mini`, except Juan de Fuca
 deferred tool search which used `gpt-5.4-mini`. Audio transcription was
 recorded on OpenAI `gpt-transcribe`, `whisper-1`, and
@@ -82,7 +82,13 @@ an ask follows the ERB; six slots raise or assert locally and have no
 cassette. Extended thinking recorded OpenAI `gpt-5-nano` (effort and
 `display: :summarized`) and OpenRouter `nvidia/nemotron-3-super-120b-a12b:free`
 (toggle, budget, and `with_thinking(false)`); `gpt-4.1-mini` raises
-before HTTP on the off control. Hosted research uses hand-authored Vertex AI
+before HTTP on the off control. Durable agents and Rails uses twelve
+hand-authored cassettes (OpenAI
+`gpt-4.1-mini`, plus the Wellington OpenRouter batch and Svalbard MCP
+fixtures); the Rapa Nui cancellation stops before HTTP. These fixtures
+were built offline from the pinned encoder, not recorded live. See
+[Durable agents and Rails](features/30-durable-agents-and-rails/) for
+provenance and re-recording instructions. Hosted research uses hand-authored Vertex AI
 Interactions cassettes in twelve scenarios with `deep-research-preview-04-2026`;
 the approval/options slot raises locally.
 These are offline scaffolding, not live recordings; see
@@ -97,7 +103,8 @@ bundle exec rake test
 ```
 
 `rake test` runs every bottled example against the cassette in its own
-folder. Nothing calls a provider. No API key is required. Ruby 3.2 or newer.
+folder. Nothing calls a provider. No API key is required. Ruby 3.2 or newer;
+the durable jobs use ActiveJob 8.1+.
 
 Run one example on its own:
 
@@ -263,7 +270,7 @@ hold the cassette player and the model slugs, not the story.
 27. [Prompt caching](features/27-prompt-caching/) — 13 of 13 bottled
 28. [Prompt rendering](features/28-prompt-rendering/) — 13 of 13 bottled
 29. [Extended thinking](features/29-extended-thinking/) — 13 of 13 bottled
-30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 0 of 13 bottled
+30. [Durable agents and Rails](features/30-durable-agents-and-rails/) — 13 of 13 bottled
 31. [Tokenization](features/31-tokenization/) — 0 of 13 bottled
 32. [Hosted research](features/32-hosted-research/) — 13 of 13 bottled
 33. [OpenTelemetry](features/33-opentelemetry/) — 0 of 13 bottled

@@ -1,0 +1,72 @@
+# Hand-authored fixture; requests captured from RubyLLM 2.1.1's encoder.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Mwangaza
+        is ready at the dhow steps. Request the 17:40 permit."}],"instructions":"You
+        keep Stone Town harbour permits in Zanzibar. Call issue_permit for Mwangaza,
+        then state its permit number and time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"issue_permit","description":"Issue
+        a Stone Town dhow loading permit after harbour approval","parameters":{"type":"object","properties":{"dhow":{"type":"string","description":"Dhow
+        name on the harbour board"}},"required":["dhow"],"additionalProperties":false},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_04_1","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"function_call","id":"fc_04_1_0","call_id":"call_04_1_0","name":"issue_permit","arguments":"{\"dhow\":\"Mwangaza\"}","status":"completed"}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Mwangaza
+        is ready at the dhow steps. Request the 17:40 permit."},{"type":"function_call","call_id":"call_04_1_0","name":"issue_permit","arguments":"{\"dhow\":\"Mwangaza\"}"},{"type":"function_call_output","call_id":"call_04_1_0","output":"Stone
+        Town permit ZNZ-41 issued to Mwangaza for 17:40."}],"instructions":"You keep
+        Stone Town harbour permits in Zanzibar. Call issue_permit for Mwangaza, then
+        state its permit number and time.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"issue_permit","description":"Issue
+        a Stone Town dhow loading permit after harbour approval","parameters":{"type":"object","properties":{"dhow":{"type":"string","description":"Dhow
+        name on the harbour board"}},"required":["dhow"],"additionalProperties":false},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_04_2","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"message","id":"msg_2","role":"assistant","status":"completed","content":[{"type":"output_text","text":"Mwangaza
+        has Stone Town permit ZNZ-41 for 17:40.","annotations":[]}]}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0

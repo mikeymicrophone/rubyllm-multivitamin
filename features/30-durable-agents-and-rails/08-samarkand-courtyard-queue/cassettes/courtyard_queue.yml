@@ -1,0 +1,37 @@
+# Hand-authored fixture; requests captured from RubyLLM 2.1.1's encoder.
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com:443/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Registan
+        morning board: read the roster and request opening for Aziza''s crew."}],"instructions":"You
+        keep Samarkand''s Registan courtyard. Call read_roster and open_courtyard
+        together. After approval report Aziza''s entry.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"read_roster","description":"Read
+        the Registan courtyard conservation roster","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false},{"type":"function","name":"open_courtyard","description":"Open
+        the Registan courtyard for the conservation crew","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"resp_08_1","object":"response","created_at":1792152000,"status":"completed","error":null,"incomplete_details":null,"model":"gpt-4.1-mini","output":[{"type":"function_call","id":"fc_08_1_0","call_id":"call_08_1_0","name":"read_roster","arguments":"{}","status":"completed"},{"type":"function_call","id":"fc_08_1_1","call_id":"call_08_1_1","name":"open_courtyard","arguments":"{}","status":"completed"}],"usage":{"input_tokens":118,"output_tokens":24,"total_tokens":142,"input_tokens_details":{"cached_tokens":0},"output_tokens_details":{"reasoning_tokens":0}}}'
+  recorded_at: Fri, 16 Oct 2026 12:00:00 GMT
+recorded_with: VCR 6.4.0
