@@ -7,11 +7,11 @@ http_interactions:
       encoding: UTF-8
       string: "-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
         form-data; name=\"file\"; filename=\"ruby_llm_batch.jsonl\"\r\nContent-Length:
-        496\r\nContent-Type: application/jsonl\r\nContent-Transfer-Encoding: binary\r\n\r\n{\"custom_id\":\"0\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Cali
-        salsa-shoe loft card, Friday 16 October 2026.\\n15 pairs on the east last.
-        Camila nails the next heel.\\nHow many pairs, and who nails the heel?\"}],\"instructions\":\"You
-        are the last clerk at the salsa-shoe loft in Cali.\\nAnswer in one short sentence
-        from the card only.\\nName 15 pairs and Camila.\",\"store\":false,\"include\":[\"reasoning.encrypted_content\"],\"temperature\":0.2}}\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
+        495\r\nContent-Type: application/jsonl\r\nContent-Transfer-Encoding: binary\r\n\r\n{\"custom_id\":\"0\",\"method\":\"POST\",\"url\":\"/v1/responses\",\"body\":{\"model\":\"gpt-4.1-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Vigevano
+        shoe-last loft card, Friday 16 October 2026.\\n15 pairs on the east last.
+        Giada nails the next heel.\\nHow many pairs, and who nails the heel?\"}],\"instructions\":\"You
+        are the last clerk at the shoe loft in Vigevano.\\nAnswer in one short sentence
+        from the card only.\\nName 15 pairs and Giada.\",\"store\":false,\"include\":[\"reasoning.encrypted_content\"],\"temperature\":0.2}}\r\n-------------RubyMultipartPost-multivitamin000000000000000000\r\nContent-Disposition:
         form-data; name=\"purpose\"\r\n\r\nbatch\r\n-------------RubyMultipartPost-multivitamin000000000000000000--\r\n"
     headers:
       User-Agent:
@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost-multivitamin000000000000000000
       Content-Length:
-      - '915'
+      - '914'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -32,7 +32,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Oct 2026 10:41:11 GMT
+      - Fri, 16 Oct 2026 11:07:58 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -42,9 +42,9 @@ http_interactions:
       Server:
       - cloudflare
       X-Request-Id:
-      - req_151ed28720574549b5bb1393e6f130b8
+      - req_0c02ab9b9e5d414692158d15b1c750be
       Openai-Processing-Ms:
-      - '335'
+      - '202'
       Openai-Version:
       - '2020-10-01'
       Openai-Organization:
@@ -64,7 +64,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Cf-Ray:
-      - a4b6731cfb996cf9-IAD
+      - a4b69a55fbdb379e-IAD
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -72,22 +72,22 @@ http_interactions:
       string: |
         {
           "object": "file",
-          "id": "file-83MBGemryVPAKXtLZmGjq5",
+          "id": "file-T83ZfKUDufMESacDgA7GZH",
           "purpose": "batch",
           "filename": "ruby_llm_batch.jsonl",
-          "bytes": 496,
-          "created_at": 1792147271,
-          "expires_at": 1794739271,
+          "bytes": 495,
+          "created_at": 1792148877,
+          "expires_at": 1794740877,
           "status": "processed",
           "status_details": null
         }
-  recorded_at: Fri, 16 Oct 2026 10:41:11 GMT
+  recorded_at: Fri, 16 Oct 2026 11:07:58 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/batches
     body:
       encoding: UTF-8
-      string: '{"input_file_id":"file-83MBGemryVPAKXtLZmGjq5","endpoint":"/v1/responses","completion_window":"24h"}'
+      string: '{"input_file_id":"file-T83ZfKUDufMESacDgA7GZH","endpoint":"/v1/responses","completion_window":"24h"}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -105,7 +105,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Oct 2026 10:41:11 GMT
+      - Fri, 16 Oct 2026 11:07:58 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -121,9 +121,9 @@ http_interactions:
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       X-Request-Id:
-      - req_31cd7e54a72d4062acb3b22f0285dde9
+      - req_a42e8d9be57e44439cc81edfbe8114fb
       Openai-Processing-Ms:
-      - '120'
+      - '93'
       X-Openai-Proxy-Wasm:
       - v0.1
       Access-Control-Expose-Headers:
@@ -136,26 +136,26 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Cf-Ray:
-      - a4b6731fbf00a9d0-IAD
+      - a4b69a57ea44b560-IAD
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "batch_6ad1ff47b86881908af414daa9b56502",
+          "id": "batch_6ad2058e23e88190ab79595dae3c407a",
           "object": "batch",
           "endpoint": "/v1/responses",
           "model": null,
           "errors": null,
-          "input_file_id": "file-83MBGemryVPAKXtLZmGjq5",
+          "input_file_id": "file-T83ZfKUDufMESacDgA7GZH",
           "completion_window": "24h",
           "status": "validating",
           "output_file_id": null,
           "error_file_id": null,
-          "created_at": 1792147271,
+          "created_at": 1792148878,
           "in_progress_at": null,
-          "expires_at": 1792233671,
+          "expires_at": 1792235278,
           "finalizing_at": null,
           "completed_at": null,
           "failed_at": null,
@@ -180,5 +180,5 @@ http_interactions:
           },
           "metadata": null
         }
-  recorded_at: Fri, 16 Oct 2026 10:41:11 GMT
+  recorded_at: Fri, 16 Oct 2026 11:07:58 GMT
 recorded_with: VCR 6.4.0

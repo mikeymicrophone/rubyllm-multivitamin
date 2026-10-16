@@ -1,4 +1,0 @@
-cases:
-  - name: cord_count
-    inputs: Morning quipu at Qorikancha. How many cords, and which cart is alongside?
-    expected_output: The posted card has 14 cords. Cart Inti is alongside.

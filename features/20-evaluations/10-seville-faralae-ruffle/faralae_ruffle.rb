@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Evaluations · 10 · Recife frevo-ribbon expected versus output
+# Evaluations · 10 · Seville faralae-ruffle expected versus output
 #
 # Teaches:
 # - evaluator false skips the chat grader and runs only Ruby assertions.
@@ -12,21 +12,21 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module RecifeFrevoRibbon
-  class RibbonCount < RubyLLM::Evaluation
-    dataset File.expand_path("frevo_ribbon.yml", __dir__)
+module SevilleFaralaeRuffle
+  class RuffleCount < RubyLLM::Evaluation
+    dataset File.expand_path("faralae_ruffle.yml", __dir__)
     evaluator false
 
     INSTRUCTIONS = <<~TEXT.strip
-      You are the ribbon clerk at the frevo loft in Recife.
+      You are the ruffle clerk at the faralae loft in Seville.
       Answer in one short sentence from the card only.
-      Name 36 ribbons and Moacir.
+      Name 36 ruffles and Rafaela.
     TEXT
 
     def perform(input)
       card = <<~TEXT.strip
-        Recife frevo loft card, Friday 16 October 2026.
-        36 ribbons on the carnival table. Moacir ties the next sash.
+        Seville faralae loft card, Friday 16 October 2026.
+        36 ruffles on the carnival table. Rafaela pins the next bata.
         #{input}
       TEXT
       chat = self.class.open_chat
@@ -36,9 +36,9 @@ module RecifeFrevoRibbon
     end
 
     def assertions
-      assert_match(/Moacir/, output.to_s)
+      assert_match(/Rafaela/, output.to_s)
       assert_match(/36/, output.to_s)
-      assert_match(/Moacir/, expected_output.to_s)
+      assert_match(/Rafaela/, expected_output.to_s)
     end
 
     def self.conduct
@@ -61,14 +61,13 @@ module RecifeFrevoRibbon
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat
     end
-
   end
 end
 
 if $PROGRAM_NAME == __FILE__
   report = nil
-  Multivitamin::Cassettes.play(__dir__, "frevo_ribbon") do
-    report = RecifeFrevoRibbon::RibbonCount.conduct
+  Multivitamin::Cassettes.play(__dir__, "faralae_ruffle") do
+    report = SevilleFaralaeRuffle::RuffleCount.conduct
   end
   puts report
 end

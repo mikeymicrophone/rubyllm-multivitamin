@@ -1,4 +1,0 @@
-cases:
-  - name: ribbon_count
-    inputs: How many frevo ribbons sit on the carnival table, and who ties the next sash?
-    expected_output: The carnival table holds 36 frevo ribbons. Moacir ties the next sash.

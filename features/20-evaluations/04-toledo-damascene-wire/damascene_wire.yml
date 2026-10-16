@@ -1,0 +1,4 @@
+cases:
+  - name: wire_count
+    inputs: Morning damascene at the Toledo yard. How many wires, and which cart is alongside?
+    expected_output: The posted card has 14 wires. Cart Inés is alongside.

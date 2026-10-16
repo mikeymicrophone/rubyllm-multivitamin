@@ -953,13 +953,13 @@ Shown in [Yazd windcatcher JSON report tokens](features/20-evaluations/09-yazd-w
 
 ### evaluator false leaves evaluations empty
 
-**What happens.** Recife sets `evaluator false` and grades with `assertions`. The trial `passed?`, `assertion_count` is at least 3, `evaluations` is empty, and `trial.output` is not equal to `trial.test_case.expected_output` even though both name Moacir.
+**What happens.** Seville sets `evaluator false` and grades with `assertions`. The trial `passed?`, `assertion_count` is at least 3, `evaluations` is empty, and `trial.output` is not equal to `trial.test_case.expected_output` even though both name Rafaela.
 
 **Why it matters.** Code that assumes every passing trial has a `:correctness` evaluation will see none.
 
 **What to do.** When the grader is off, assert on `assertion_count` and `assertion_failure`. Compare `output` to `expected_output` yourself.
 
-Shown in [Recife frevo-ribbon expected versus output](features/20-evaluations/10-recife-frevo-ribbon/).
+Shown in [Seville faralae-ruffle expected versus output](features/20-evaluations/10-seville-faralae-ruffle/).
 
 ## Batches
 

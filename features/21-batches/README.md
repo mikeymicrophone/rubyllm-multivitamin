@@ -31,13 +31,13 @@ have no batch access.
 01. [Asmara berbere-mill staged briefs](01-asmara-berbere-mill/) — available
 02. [Plovdiv rose-attar Batch.find](02-plovdiv-rose-attar/) — available
 03. [Galle lace-bobbin pending nil slots](03-galle-lace-bobbin/) — available
-04. [Tamale calabash-bowl tool then rebatch](04-tamale-calabash-bowl/) — available
+04. [Faenza maiolica-bowl tool then rebatch](04-faenza-maiolica-bowl/) — available
 05. [Ushuaia lenga-bark embed_later](05-ushuaia-lenga-bark/) — available
 06. [Berat wood-lattice mix raises](06-berat-wood-lattice/) — available
 07. [Luxor alabaster-vase cost until complete](07-luxor-alabaster-vase/) — available
 08. [Rabat zellige-tile cancel](08-rabat-zellige-tile/) — available
 09. [Chisinau sunflower-press one-model rule](09-chisinau-sunflower-press/) — available
-10. [Cali salsa-shoe Rails batch table](10-cali-salsa-shoe/) — available
+10. [Vigevano shoe-last Rails batch table](10-vigevano-shoe-last/) — available
 11. [Ohrid pearl-nacre poll job](11-ohrid-pearl-nacre/) — available
 12. [Split limestone-block headers dropped](12-split-limestone-block/) — available
 13. [Vientiane pha-nung desk capstone](13-vientiane-pha-nung/) — available

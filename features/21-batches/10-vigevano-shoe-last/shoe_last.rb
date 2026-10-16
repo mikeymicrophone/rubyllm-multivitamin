@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Batches · 10 · Cali salsa-shoe Rails batch table
+# Batches · 10 · Vigevano shoe-last Rails batch table
 #
 # Teaches:
 # - ruby_llm_batches stores provider_batch_id after RubyLLM.batch.
@@ -12,31 +12,31 @@ require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 require_relative "../../../support/active_record"
 
-module CaliSalsaShoe
+module VigevanoShoeLast
   class LastLog < ActiveRecord::Base
-    self.table_name = "cali_last_logs"
+    self.table_name = "vigevano_last_logs"
     acts_as_chat messages: :last_entries,
-                 message_class: "CaliSalsaShoe::LastEntry",
-                 messages_foreign_key: :cali_last_log_id
+                 message_class: "VigevanoShoeLast::LastEntry",
+                 messages_foreign_key: :vigevano_last_log_id
   end
 
   class LastEntry < ActiveRecord::Base
-    self.table_name = "cali_last_entries"
+    self.table_name = "vigevano_last_entries"
     acts_as_message chat: :last_log,
-                    chat_class: "CaliSalsaShoe::LastLog",
-                    chat_foreign_key: :cali_last_log_id
+                    chat_class: "VigevanoShoeLast::LastLog",
+                    chat_foreign_key: :vigevano_last_log_id
   end
 
   class ShoeBatch
     INSTRUCTIONS = <<~TEXT.strip
-      You are the last clerk at the salsa-shoe loft in Cali.
+      You are the last clerk at the shoe loft in Vigevano.
       Answer in one short sentence from the card only.
-      Name 15 pairs and Camila.
+      Name 15 pairs and Giada.
     TEXT
 
     CARD = <<~TEXT.strip
-      Cali salsa-shoe loft card, Friday 16 October 2026.
-      15 pairs on the east last. Camila nails the next heel.
+      Vigevano shoe-last loft card, Friday 16 October 2026.
+      15 pairs on the east last. Giada nails the next heel.
       How many pairs, and who nails the heel?
     TEXT
 
@@ -62,9 +62,9 @@ module CaliSalsaShoe
 
     def self.boot
       Multivitamin::ActiveRecordBoot.prepare!(
-        chat_table: :cali_last_logs,
-        message_table: :cali_last_entries,
-        message_foreign_key: :cali_last_log_id
+        chat_table: :vigevano_last_logs,
+        message_table: :vigevano_last_entries,
+        message_foreign_key: :vigevano_last_log_id
       )
       choice = Multivitamin::Models.chat(provider: :openai)
       Multivitamin::ActiveRecordBoot.seed_model(model_id: choice[:model], provider: choice[:provider])
@@ -89,14 +89,13 @@ module CaliSalsaShoe
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat
     end
-
   end
 end
 
 if $PROGRAM_NAME == __FILE__
   result = nil
-  Multivitamin::Cassettes.play(__dir__, "salsa_shoe") do
-    result = CaliSalsaShoe::ShoeBatch.conduct
+  Multivitamin::Cassettes.play(__dir__, "shoe_last") do
+    result = VigevanoShoeLast::ShoeBatch.conduct
   end
   puts "id=#{result.batch_id} row=#{result.row_id} chats=#{result.chat_ids.inspect}"
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Batches · 04 · Tamale calabash-bowl tool then rebatch
+# Batches · 04 · Faenza maiolica-bowl tool then rebatch
 #
 # Teaches:
 # - A chat must be awaiting the model before it can enter a batch.
@@ -11,17 +11,17 @@ require "ruby_llm"
 require_relative "../../../support/cassettes"
 require_relative "../../../support/models"
 
-module TamaleCalabashBowl
-  class PostedCalabashCard < RubyLLM::Tool
-    description "Reads the calabash bowl card posted at the Tamale yard"
+module FaenzaMaiolicaBowl
+  class PostedMaiolicaCard < RubyLLM::Tool
+    description "Reads the maiolica bowl card posted at the Faenza yard"
 
     def self.tool_name
-      "posted_calabash_card"
+      "posted_maiolica_card"
     end
 
     CARD = <<~TEXT.strip
-      Tamale calabash yard card for Friday 16 October 2026.
-      Bench TM-4, 9 bowls, cart Kojo alongside at 06:50.
+      Faenza maiolica yard card for Friday 16 October 2026.
+      Bench FZ-4, 9 bowls, cart Chiara alongside at 06:50.
     TEXT
 
     def execute
@@ -31,13 +31,13 @@ module TamaleCalabashBowl
 
   class BowlBatch
     INSTRUCTIONS = <<~TEXT.strip
-      You are the bowl clerk at the calabash yard in Tamale.
-      Call posted_calabash_card once when you need the card.
-      Then answer in two short sentences. Name 9 bowls and Kojo.
+      You are the bowl clerk at the maiolica yard in Faenza.
+      Call posted_maiolica_card once when you need the card.
+      Then answer in two short sentences. Name 9 bowls and Chiara.
     TEXT
 
     FIRST = <<~TEXT.strip
-      Morning calabash at the Tamale yard. How many bowls, and which cart is alongside?
+      Morning maiolica at the Faenza yard. How many bowls, and which cart is alongside?
     TEXT
 
     FOLLOW = <<~TEXT.strip
@@ -51,8 +51,8 @@ module TamaleCalabashBowl
       chat = open_chat
       chat.with_instructions(INSTRUCTIONS)
       chat.with_temperature(0.2)
-      chat.with_tools(PostedCalabashCard)
-      chat.with_tool_options(choice: PostedCalabashCard)
+      chat.with_tools(PostedMaiolicaCard)
+      chat.with_tool_options(choice: PostedMaiolicaCard)
       chat.ask(FIRST)
       tool_roles = chat.messages.map(&:role)
       chat.ask_later(FOLLOW)
@@ -78,14 +78,13 @@ module TamaleCalabashBowl
       Multivitamin::Models.quiet_thinking(chat, provider: :openai)
       chat
     end
-
   end
 end
 
 if $PROGRAM_NAME == __FILE__
   result = nil
-  Multivitamin::Cassettes.play(__dir__, "calabash_bowl") do
-    result = TamaleCalabashBowl::BowlBatch.conduct
+  Multivitamin::Cassettes.play(__dir__, "maiolica_bowl") do
+    result = FaenzaMaiolicaBowl::BowlBatch.conduct
   end
   puts "roles=#{result.tool_roles.join(",")} id=#{result.batch_id} awaiting=#{result.awaiting}"
 end

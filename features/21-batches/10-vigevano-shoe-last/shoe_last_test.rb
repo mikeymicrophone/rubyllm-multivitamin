@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
-require_relative "salsa_shoe"
+require_relative "shoe_last"
 
-class CaliSalsaShoeTest < Minitest::Test
+class VigevanoShoeLastTest < Minitest::Test
   def test_the_rails_batch_row_stores_the_last_log
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "salsa_shoe") do
-      result = CaliSalsaShoe::ShoeBatch.conduct
+    Multivitamin::Cassettes.play(__dir__, "shoe_last") do
+      result = VigevanoShoeLast::ShoeBatch.conduct
     end
 
     refute_nil result.row_id
@@ -18,7 +18,7 @@ class CaliSalsaShoeTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    cassette = File.read(File.expand_path("cassettes/salsa_shoe.yml", __dir__))
+    cassette = File.read(File.expand_path("cassettes/shoe_last.yml", __dir__))
 
     refute_match(/sk-or-v1-[A-Za-z0-9_\-]{8,}/, cassette)
     refute_match(/sk-(?:proj-)?[A-Za-z0-9_\-]{12,}/, cassette)

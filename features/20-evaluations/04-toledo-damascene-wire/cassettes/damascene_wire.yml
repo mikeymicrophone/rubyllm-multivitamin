@@ -6,11 +6,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
-        quipu at Qorikancha. How many cords, and which cart is alongside?"}],"instructions":"You
-        are the quipu clerk at Qorikancha in Cusco.\nCall posted_quipu_card once.
-        Then answer in two short sentences.\nInclude the cord count and the cart name
-        from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_quipu_card","description":"Reads
-        the quipu cord card posted at Qorikancha","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"posted_quipu_card"}}'
+        damascene at the Toledo yard. How many wires, and which cart is alongside?"}],"instructions":"You
+        are the wire clerk at the damascene yard in Toledo.\nCall posted_damascene_card
+        once. Then answer in two short sentences.\nInclude the wire count and the
+        cart name from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_damascene_card","description":"Reads
+        the damascene wire card posted at the Toledo yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"posted_damascene_card"}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -28,7 +28,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Oct 2026 10:40:13 GMT
+      - Fri, 16 Oct 2026 11:07:51 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -36,7 +36,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4b671adda54d6ac-IAD
+      - a4b69a26eef5d6a9-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -52,7 +52,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '642'
+      - '820'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -64,45 +64,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999667'
+      - '1999662'
       X-Ratelimit-Reset-Requests:
       - 12ms
       X-Ratelimit-Reset-Tokens:
-      - 9ms
+      - 10ms
       X-Request-Id:
-      - req_a8dca247dd3847b2b469dc86507118e9
+      - req_4a10078717d144259489cd4bdfd733a2
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_0ddef049288248e1016ad1ff0cc08c87d288f50e0713c96e93",
+          "id": "resp_054820e0c1b1c96c016ad20586633487d2bffd54be0710ef95",
           "object": "response",
-          "created_at": 1792147212,
+          "created_at": 1792148870,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792147213,
+          "completed_at": 1792148871,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
-          "instructions": "You are the quipu clerk at Qorikancha in Cusco.\nCall posted_quipu_card once. Then answer in two short sentences.\nInclude the cord count and the cart name from the card.",
+          "instructions": "You are the wire clerk at the damascene yard in Toledo.\nCall posted_damascene_card once. Then answer in two short sentences.\nInclude the wire count and the cart name from the card.",
           "max_output_tokens": null,
           "max_tool_calls": null,
           "model": "gpt-4.1-mini-2025-04-14",
           "moderation": null,
           "output": [
             {
-              "id": "fc_0ddef049288248e1016ad1ff0d126887d28d8b3faf504eac49",
+              "id": "fc_054820e0c1b1c96c016ad205871a9887d2877d5b857fd29703",
               "type": "function_call",
               "status": "completed",
               "arguments": "{}",
-              "call_id": "call_g4fZSfrC1lg08H2OB8TQLnvY",
-              "name": "posted_quipu_card"
+              "call_id": "call_nc5fgZUsEAksBk0eNncLFIn2",
+              "name": "posted_damascene_card"
             }
           ],
           "parallel_tool_calls": true,
@@ -127,7 +127,7 @@ http_interactions:
           },
           "tool_choice": {
             "type": "function",
-            "name": "posted_quipu_card"
+            "name": "posted_damascene_card"
           },
           "tool_usage": {
             "image_gen": {
@@ -150,8 +150,8 @@ http_interactions:
           "tools": [
             {
               "type": "function",
-              "description": "Reads the quipu cord card posted at Qorikancha",
-              "name": "posted_quipu_card",
+              "description": "Reads the damascene wire card posted at the Toledo yard",
+              "name": "posted_damascene_card",
               "output_schema": null,
               "parameters": {
                 "type": "object",
@@ -167,7 +167,7 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 116,
+            "input_tokens": 121,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
@@ -176,24 +176,24 @@ http_interactions:
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 118
+            "total_tokens": 123
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Fri, 16 Oct 2026 10:40:13 GMT
+  recorded_at: Fri, 16 Oct 2026 11:07:51 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
       string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
-        quipu at Qorikancha. How many cords, and which cart is alongside?"},{"type":"function_call","call_id":"call_g4fZSfrC1lg08H2OB8TQLnvY","name":"posted_quipu_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_g4fZSfrC1lg08H2OB8TQLnvY","output":"Qorikancha
-        quipu card for Friday 16 October 2026.\nBed QK-South, 14 cords, cart Inti
-        alongside at 07:10."}],"instructions":"You are the quipu clerk at Qorikancha
-        in Cusco.\nCall posted_quipu_card once. Then answer in two short sentences.\nInclude
-        the cord count and the cart name from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_quipu_card","description":"Reads
-        the quipu cord card posted at Qorikancha","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+        damascene at the Toledo yard. How many wires, and which cart is alongside?"},{"type":"function_call","call_id":"call_nc5fgZUsEAksBk0eNncLFIn2","name":"posted_damascene_card","arguments":"{}"},{"type":"function_call_output","call_id":"call_nc5fgZUsEAksBk0eNncLFIn2","output":"Toledo
+        damascene card for Friday 16 October 2026.\nBed TD-South, 14 wires, cart Inés
+        alongside at 07:10."}],"instructions":"You are the wire clerk at the damascene
+        yard in Toledo.\nCall posted_damascene_card once. Then answer in two short
+        sentences.\nInclude the wire count and the cart name from the card.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"posted_damascene_card","description":"Reads
+        the damascene wire card posted at the Toledo yard","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -211,7 +211,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Oct 2026 10:40:14 GMT
+      - Fri, 16 Oct 2026 11:07:52 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -219,7 +219,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4b671b2af7fd629-IAD
+      - a4b69a2d5f51f270-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -235,7 +235,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '843'
+      - '825'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -245,42 +245,42 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '2000000'
       X-Ratelimit-Remaining-Requests:
-      - '4998'
+      - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999287'
+      - '1999615'
       X-Ratelimit-Reset-Requests:
-      - 24ms
+      - 12ms
       X-Ratelimit-Reset-Tokens:
-      - 21ms
+      - 11ms
       X-Request-Id:
-      - req_8b71aa1a4d8c470fa6d3a233ffe4d647
+      - req_6fded96303b54bfda6c1daf500cd3e6d
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_0b396c7e236ae77f016ad1ff0d4ab087d289a63c3c31b94747",
+          "id": "resp_0e323015cf77baf6016ad2058754f887d2bd4382ecf5e0111c",
           "object": "response",
-          "created_at": 1792147213,
+          "created_at": 1792148871,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792147214,
+          "completed_at": 1792148872,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
-          "instructions": "You are the quipu clerk at Qorikancha in Cusco.\nCall posted_quipu_card once. Then answer in two short sentences.\nInclude the cord count and the cart name from the card.",
+          "instructions": "You are the wire clerk at the damascene yard in Toledo.\nCall posted_damascene_card once. Then answer in two short sentences.\nInclude the wire count and the cart name from the card.",
           "max_output_tokens": null,
           "max_tool_calls": null,
           "model": "gpt-4.1-mini-2025-04-14",
           "moderation": null,
           "output": [
             {
-              "id": "msg_0b396c7e236ae77f016ad1ff0dd62887d2b88520aaff51297b",
+              "id": "msg_0e323015cf77baf6016ad20587ef6087d2947be4a44456d478",
               "type": "message",
               "status": "completed",
               "content": [
@@ -288,7 +288,7 @@ http_interactions:
                   "type": "output_text",
                   "annotations": [],
                   "logprobs": [],
-                  "text": "The morning quipu at Qorikancha has 14 cords. The cart alongside is Inti."
+                  "text": "There are 14 wires on the Toledo damascene card. The cart alongside is named In\u00e9s."
                 }
               ],
               "role": "assistant"
@@ -336,8 +336,8 @@ http_interactions:
           "tools": [
             {
               "type": "function",
-              "description": "Reads the quipu cord card posted at Qorikancha",
-              "name": "posted_quipu_card",
+              "description": "Reads the damascene wire card posted at the Toledo yard",
+              "name": "posted_damascene_card",
               "output_schema": null,
               "parameters": {
                 "type": "object",
@@ -353,7 +353,7 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 162,
+            "input_tokens": 167,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
@@ -362,21 +362,21 @@ http_interactions:
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 185
+            "total_tokens": 190
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Fri, 16 Oct 2026 10:40:14 GMT
+  recorded_at: Fri, 16 Oct 2026 11:07:52 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
       string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"{\"inputs\":\"Morning
-        quipu at Qorikancha. How many cords, and which cart is alongside?\",\"metadata\":{},\"expected_output\":\"The
-        posted card has 14 cords. Cart Inti is alongside.\",\"actual\":{\"role\":\"assistant\",\"content\":\"The
-        morning quipu at Qorikancha has 14 cords. The cart alongside is Inti.\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"finish_reason\":\"stop\",\"tool_calls\":null,\"tool_call_id\":null,\"citations\":[],\"server_tool_calls\":[],\"attachments\":[]}}"}],"instructions":"Evaluate
+        damascene at the Toledo yard. How many wires, and which cart is alongside?\",\"metadata\":{},\"expected_output\":\"The
+        posted card has 14 wires. Cart Inés is alongside.\",\"actual\":{\"role\":\"assistant\",\"content\":\"There
+        are 14 wires on the Toledo damascene card. The cart alongside is named Inés.\",\"model\":\"gpt-4.1-mini-2025-04-14\",\"finish_reason\":\"stop\",\"tool_calls\":null,\"tool_call_id\":null,\"citations\":[],\"server_tool_calls\":[],\"attachments\":[]}}"}],"instructions":"Evaluate
         the supplied evidence against each criterion independently.\ninputs is what
         the application received; actual is what it returned.\nexpected_output is
         the reference answer, when supplied.\nAccept equivalent correct answers; do
@@ -405,7 +405,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Oct 2026 10:40:15 GMT
+      - Fri, 16 Oct 2026 11:07:52 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -413,7 +413,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4b671b8a9211727-IAD
+      - a4b69a334c1a061c-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -429,7 +429,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '791'
+      - '631'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -439,31 +439,31 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '2000000'
       X-Ratelimit-Remaining-Requests:
-      - '4997'
+      - '4998'
       X-Ratelimit-Remaining-Tokens:
-      - '1998930'
+      - '1999258'
       X-Ratelimit-Reset-Requests:
-      - 36ms
+      - 24ms
       X-Ratelimit-Reset-Tokens:
-      - 32ms
+      - 22ms
       X-Request-Id:
-      - req_7cbc95d9c476448c8f08d654408d2e29
+      - req_d39faf9f332140c897d3a32c3a52bffb
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_053aba6fd74afff9016ad1ff0e46e887d2b49894d8bba2bd3f",
+          "id": "resp_00aafa44b640006c016ad205884c4887d2a6a0cf4520dfcc58",
           "object": "response",
-          "created_at": 1792147214,
+          "created_at": 1792148872,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792147215,
+          "completed_at": 1792148872,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
@@ -474,7 +474,7 @@ http_interactions:
           "moderation": null,
           "output": [
             {
-              "id": "msg_053aba6fd74afff9016ad1ff0ea02c87d2914ee693786c7544",
+              "id": "msg_00aafa44b640006c016ad2058892f087d2b777a8f5974b35a3",
               "type": "message",
               "status": "completed",
               "content": [
@@ -482,7 +482,7 @@ http_interactions:
                   "type": "output_text",
                   "annotations": [],
                   "logprobs": [],
-                  "text": "{\"correctness\":{\"verdict\":\"pass\",\"reason\":\"The actual answer correctly states that the morning quipu at Qorikancha has 14 cords and that the cart alongside is Inti, matching the expected output in meaning and detail.\"}}"
+                  "text": "{\"correctness\":{\"verdict\":\"pass\",\"reason\":\"The actual answer matches the expected output in meaning: it correctly states there are 14 wires and that the cart alongside is named In\u00e9s.\"}}"
                 }
               ],
               "role": "assistant"
@@ -570,14 +570,14 @@ http_interactions:
               "cache_write_tokens": 0,
               "cached_tokens": 0
             },
-            "output_tokens": 50,
+            "output_tokens": 41,
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 366
+            "total_tokens": 357
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Fri, 16 Oct 2026 10:40:15 GMT
+  recorded_at: Fri, 16 Oct 2026 11:07:52 GMT
 recorded_with: VCR 6.4.0

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
-require_relative "calabash_bowl"
+require_relative "maiolica_bowl"
 
-class TamaleCalabashBowlTest < Minitest::Test
+class FaenzaMaiolicaBowlTest < Minitest::Test
   def test_the_tool_round_then_the_follow_up_enters_a_batch
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "calabash_bowl") do
-      result = TamaleCalabashBowl::BowlBatch.conduct
+    Multivitamin::Cassettes.play(__dir__, "maiolica_bowl") do
+      result = FaenzaMaiolicaBowl::BowlBatch.conduct
     end
 
     assert_includes result.tool_roles, :tool
@@ -17,7 +17,7 @@ class TamaleCalabashBowlTest < Minitest::Test
   end
 
   def test_cassette_does_not_carry_a_live_key
-    cassette = File.read(File.expand_path("cassettes/calabash_bowl.yml", __dir__))
+    cassette = File.read(File.expand_path("cassettes/maiolica_bowl.yml", __dir__))
 
     refute_match(/sk-or-v1-[A-Za-z0-9_\-]{8,}/, cassette)
     refute_match(/sk-(?:proj-)?[A-Za-z0-9_\-]{12,}/, cassette)

@@ -31,13 +31,13 @@ not speak the grader schema reliably.
 01. [Marrakech argan return window](01-marrakech-argan-window/) — available
 02. [Chiang Rai miang-leaf structured inputs](02-chiang-rai-miang-leaf/) — available
 03. [Lhasa tsampa-mill multi-turn](03-lhasa-tsampa-mill/) — available
-04. [Cusco quipu-knot tool](04-cusco-quipu-knot/) — available
+04. [Toledo damascene-wire tool](04-toledo-damascene-wire/) — available
 05. [Brno puppet-string custom evaluator](05-brno-puppet-string/) — available
 06. [Tabriz carpet-knot Judge grader](06-tabriz-carpet-knot/) — available
 07. [Guayaquil toquilla-brim Minitest helper](07-guayaquil-toquilla-brim/) — available
 08. [Mopti banco-brick Rake task](08-mopti-banco-brick/) — available
 09. [Yazd windcatcher JSON report tokens](09-yazd-windcatcher-draft/) — available
-10. [Recife frevo-ribbon expected versus output](10-recife-frevo-ribbon/) — available
+10. [Seville faralae-ruffle expected versus output](10-seville-faralae-ruffle/) — available
 11. [Lomé wax-print progress callback](11-lome-wax-print-block/) — available
 12. [Bujumbura drum-skin failing case](12-bujumbura-drum-skin/) — available
 13. [Samarkand paper-vat desk capstone](13-samarkand-paper-vat/) — available
