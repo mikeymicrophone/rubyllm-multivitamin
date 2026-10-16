@@ -1,0 +1,727 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/embeddings
+    body:
+      encoding: UTF-8
+      string: '{"model":"text-embedding-3-small","input":"Szeged paprika dryer log,
+        Tisza mill, season 2026.\nCity notes: https://www.szegedvaros.hu/.\nPass 1
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 2 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 3 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 4 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 5 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 6 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 7 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 8 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 9 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 10 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 11 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        12 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 13 at
+        the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 14 at the
+        Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 15 at the Szeged
+        mill: 60.6 C, humidity 2 percent, grade eros.\nPass 16 at the Szeged mill:
+        60.5 C, humidity 0 percent, grade nemes.\nPass 17 at the Szeged mill: 60.4
+        C, humidity 1 percent, grade kalocsa.\nPass 18 at the Szeged mill: 60.3 C,
+        humidity 2 percent, grade csemege.\nPass 19 at the Szeged mill: 60.2 C, humidity
+        0 percent, grade eros.\nPass 20 at the Szeged mill: 60.1 C, humidity 1 percent,
+        grade nemes.\nPass 21 at the Szeged mill: 62.0 C, humidity 2 percent, grade
+        kalocsa.\nPass 22 at the Szeged mill: 61.9 C, humidity 0 percent, grade csemege.\nPass
+        23 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass 24 at
+        the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 25 at the
+        Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 26 at the Szeged
+        mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 27 at the Szeged mill:
+        61.4 C, humidity 2 percent, grade eros.\nPass 28 at the Szeged mill: 61.3
+        C, humidity 0 percent, grade nemes.\nPass 29 at the Szeged mill: 61.2 C, humidity
+        1 percent, grade kalocsa.\nPass 30 at the Szeged mill: 61.1 C, humidity 2
+        percent, grade csemege.\nPass 31 at the Szeged mill: 61.0 C, humidity 0 percent,
+        grade eros.\nPass 32 at the Szeged mill: 60.9 C, humidity 1 percent, grade
+        nemes.\nPass 33 at the Szeged mill: 60.8 C, humidity 2 percent, grade kalocsa.\nPass
+        34 at the Szeged mill: 60.7 C, humidity 0 percent, grade csemege.\nPass 35
+        at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass 36 at the
+        Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 37 at the Szeged
+        mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 38 at the Szeged mill:
+        60.3 C, humidity 1 percent, grade csemege.\nPass 39 at the Szeged mill: 60.2
+        C, humidity 2 percent, grade eros.\nPass 40 at the Szeged mill: 60.1 C, humidity
+        0 percent, grade nemes.\nPass 41 at the Szeged mill: 62.0 C, humidity 1 percent,
+        grade kalocsa.\nPass 42 at the Szeged mill: 61.9 C, humidity 2 percent, grade
+        csemege.\nPass 43 at the Szeged mill: 61.8 C, humidity 0 percent, grade eros.\nPass
+        44 at the Szeged mill: 61.7 C, humidity 1 percent, grade nemes.\nPass 45 at
+        the Szeged mill: 61.6 C, humidity 2 percent, grade kalocsa.\nPass 46 at the
+        Szeged mill: 61.5 C, humidity 0 percent, grade csemege.\nPass 47 at the Szeged
+        mill: 61.4 C, humidity 1 percent, grade eros.\nPass 48 at the Szeged mill:
+        61.3 C, humidity 2 percent, grade nemes.\nPass 49 at the Szeged mill: 61.2
+        C, humidity 0 percent, grade kalocsa.\nPass 50 at the Szeged mill: 61.1 C,
+        humidity 1 percent, grade csemege.\nPass 51 at the Szeged mill: 61.0 C, humidity
+        2 percent, grade eros.\nPass 52 at the Szeged mill: 60.9 C, humidity 0 percent,
+        grade nemes.\nPass 53 at the Szeged mill: 60.8 C, humidity 1 percent, grade
+        kalocsa.\nPass 54 at the Szeged mill: 60.7 C, humidity 2 percent, grade csemege.\nPass
+        55 at the Szeged mill: 60.6 C, humidity 0 percent, grade eros.\nPass 56 at
+        the Szeged mill: 60.5 C, humidity 1 percent, grade nemes.\nPass 57 at the
+        Szeged mill: 60.4 C, humidity 2 percent, grade kalocsa.\nPass 58 at the Szeged
+        mill: 60.3 C, humidity 0 percent, grade csemege.\nPass 59 at the Szeged mill:
+        60.2 C, humidity 1 percent, grade eros.\nPass 60 at the Szeged mill: 60.1
+        C, humidity 2 percent, grade nemes.\nPass 61 at the Szeged mill: 62.0 C, humidity
+        0 percent, grade kalocsa.\nPass 62 at the Szeged mill: 61.9 C, humidity 1
+        percent, grade csemege.\nPass 63 at the Szeged mill: 61.8 C, humidity 2 percent,
+        grade eros.\nPass 64 at the Szeged mill: 61.7 C, humidity 0 percent, grade
+        nemes.\nPass 65 at the Szeged mill: 61.6 C, humidity 1 percent, grade kalocsa.\nPass
+        66 at the Szeged mill: 61.5 C, humidity 2 percent, grade csemege.\nPass 67
+        at the Szeged mill: 61.4 C, humidity 0 percent, grade eros.\nPass 68 at the
+        Szeged mill: 61.3 C, humidity 1 percent, grade nemes.\nPass 69 at the Szeged
+        mill: 61.2 C, humidity 2 percent, grade kalocsa.\nPass 70 at the Szeged mill:
+        61.1 C, humidity 0 percent, grade csemege.\nPass 71 at the Szeged mill: 61.0
+        C, humidity 1 percent, grade eros.\nPass 72 at the Szeged mill: 60.9 C, humidity
+        2 percent, grade nemes.\nPass 73 at the Szeged mill: 60.8 C, humidity 0 percent,
+        grade kalocsa.\nPass 74 at the Szeged mill: 60.7 C, humidity 1 percent, grade
+        csemege.\nPass 75 at the Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass
+        76 at the Szeged mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 77 at
+        the Szeged mill: 60.4 C, humidity 1 percent, grade kalocsa.\nPass 78 at the
+        Szeged mill: 60.3 C, humidity 2 percent, grade csemege.\nPass 79 at the Szeged
+        mill: 60.2 C, humidity 0 percent, grade eros.\nPass 80 at the Szeged mill:
+        60.1 C, humidity 1 percent, grade nemes.\nPass 81 at the Szeged mill: 62.0
+        C, humidity 2 percent, grade kalocsa.\nPass 82 at the Szeged mill: 61.9 C,
+        humidity 0 percent, grade csemege.\nPass 83 at the Szeged mill: 61.8 C, humidity
+        1 percent, grade eros.\nPass 84 at the Szeged mill: 61.7 C, humidity 2 percent,
+        grade nemes.\nPass 85 at the Szeged mill: 61.6 C, humidity 0 percent, grade
+        kalocsa.\nPass 86 at the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass
+        87 at the Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 88 at
+        the Szeged mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 89 at the
+        Szeged mill: 61.2 C, humidity 1 percent, grade kalocsa.\nPass 90 at the Szeged
+        mill: 61.1 C, humidity 2 percent, grade csemege.\nPass 91 at the Szeged mill:
+        61.0 C, humidity 0 percent, grade eros.\nPass 92 at the Szeged mill: 60.9
+        C, humidity 1 percent, grade nemes.\nPass 93 at the Szeged mill: 60.8 C, humidity
+        2 percent, grade kalocsa.\nPass 94 at the Szeged mill: 60.7 C, humidity 0
+        percent, grade csemege.\nPass 95 at the Szeged mill: 60.6 C, humidity 1 percent,
+        grade eros.\nPass 96 at the Szeged mill: 60.5 C, humidity 2 percent, grade
+        nemes.\nPass 97 at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass
+        98 at the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 99
+        at the Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 100 at the
+        Szeged mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 101 at the Szeged
+        mill: 62.0 C, humidity 1 percent, grade kalocsa.\nPass 102 at the Szeged mill:
+        61.9 C, humidity 2 percent, grade csemege.\nPass 103 at the Szeged mill: 61.8
+        C, humidity 0 percent, grade eros.\nPass 104 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 105 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 106 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 107 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        108 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 109
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 110 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 111 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 112 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 113 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 114 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 115 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 116 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 117 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 118 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 119 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        120 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 121
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 122 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 123 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 124 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 125 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 126 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 127 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 128 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 129 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 130 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 131 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        132 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 133
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 134 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 135 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 136 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 137 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 138 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 139 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 140 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 141 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 142 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 143 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        144 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 145
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 146 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 147 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 148 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 149 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 150 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 151 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 152 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 153 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 154 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 155 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        156 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 157
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 158 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 159 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 160 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 161 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 162 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 163 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 164 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 165 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 166 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 167 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        168 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 169
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 170 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 171 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 172 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 173 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 174 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 175 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 176 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 177 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 178 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 179 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        180 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 181
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 182 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 183 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 184 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 185 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 186 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 187 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 188 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 189 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 190 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 191 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        192 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 193
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 194 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 195 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 196 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 197 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 198 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 199 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 200 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 201 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 202 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 203 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        204 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 205
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 206 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 207 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 208 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 209 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 210 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 211 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 212 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 213 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 214 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 215 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        216 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 217
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 218 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 219 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 220 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 221 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 222 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 223 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 224 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 225 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 226 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 227 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        228 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 229
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 230 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 231 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 232 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 233 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 234 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 235 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 236 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 237 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 238 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 239 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        240 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 241
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 242 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 243 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 244 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 245 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 246 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 247 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 248 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 249 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 250 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 251 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        252 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 253
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 254 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 255 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 256 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 257 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 258 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 259 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 260 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 261 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 262 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 263 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        264 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 265
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 266 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 267 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 268 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 269 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 270 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 271 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 272 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 273 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 274 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 275 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        276 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 277
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 278 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 279 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 280 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 281 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 282 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 283 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 284 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 285 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 286 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 287 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        288 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 289
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 290 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 291 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 292 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 293 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 294 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 295 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 296 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 297 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 298 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 299 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        300 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 301
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 302 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 303 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 304 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 305 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 306 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 307 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 308 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 309 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 310 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 311 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        312 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 313
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 314 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 315 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 316 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 317 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 318 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 319 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 320 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 321 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 322 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 323 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        324 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 325
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 326 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 327 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 328 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 329 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 330 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 331 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 332 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 333 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 334 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 335 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        336 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 337
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 338 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 339 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 340 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 341 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 342 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 343 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 344 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 345 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 346 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 347 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        348 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 349
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 350 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 351 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 352 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 353 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 354 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 355 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 356 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 357 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 358 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 359 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        360 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 361
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 362 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 363 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 364 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 365 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 366 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 367 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 368 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 369 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 370 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 371 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        372 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 373
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 374 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 375 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 376 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 377 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 378 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 379 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 380 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 381 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 382 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 383 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        384 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 385
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 386 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 387 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 388 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 389 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 390 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 391 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 392 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 393 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 394 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 395 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        396 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 397
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 398 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 399 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 400 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 401 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 402 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 403 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 404 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 405 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 406 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 407 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        408 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 409
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 410 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 411 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 412 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 413 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 414 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 415 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 416 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 417 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 418 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 419 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        420 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 421
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 422 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 423 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 424 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 425 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 426 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 427 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 428 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 429 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 430 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 431 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        432 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 433
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 434 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 435 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 436 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 437 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 438 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 439 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 440 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 441 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 442 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 443 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        444 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 445
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 446 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 447 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 448 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 449 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 450 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 451 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 452 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 453 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 454 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 455 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        456 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 457
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 458 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 459 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 460 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 461 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 462 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 463 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 464 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 465 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 466 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 467 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        468 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 469
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 470 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 471 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 472 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 473 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 474 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 475 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 476 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 477 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 478 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 479 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        480 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 481
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 482 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 483 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 484 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 485 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 486 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 487 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 488 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 489 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 490 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 491 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        492 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 493
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 494 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 495 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 496 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 497 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 498 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 499 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 500 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 501 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 502 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 503 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        504 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 505
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 506 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 507 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 508 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 509 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 510 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 511 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 512 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 513 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 514 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 515 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        516 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 517
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 518 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 519 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 520 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 521 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 522 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 523 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 524 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 525 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 526 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 527 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        528 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 529
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 530 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 531 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 532 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 533 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 534 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 535 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 536 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 537 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 538 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 539 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        540 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 541
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 542 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 543 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 544 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 545 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 546 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 547 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 548 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 549 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 550 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 551 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        552 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 553
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 554 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 555 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 556 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 557 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 558 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 559 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 560 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 561 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 562 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 563 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        564 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 565
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 566 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 567 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 568 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 569 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 570 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 571 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 572 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 573 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 574 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 575 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        576 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 577
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 578 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 579 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 580 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 581 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 582 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 583 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 584 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 585 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 586 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 587 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        588 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 589
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 590 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 591 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 592 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 593 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 594 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 595 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 596 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 597 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 598 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 599 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        600 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 601
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 602 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 603 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 604 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 605 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 606 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 607 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 608 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 609 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 610 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 611 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        612 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 613
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 614 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 615 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 616 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 617 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 618 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 619 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 620 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 621 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 622 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 623 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        624 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 625
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 626 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 627 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 628 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 629 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 630 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 631 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 632 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 633 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 634 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 635 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        636 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 637
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 638 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 639 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 640 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes.\nPass 641 at the Szeged mill:
+        62.0 C, humidity 1 percent, grade kalocsa.\nPass 642 at the Szeged mill: 61.9
+        C, humidity 2 percent, grade csemege.\nPass 643 at the Szeged mill: 61.8 C,
+        humidity 0 percent, grade eros.\nPass 644 at the Szeged mill: 61.7 C, humidity
+        1 percent, grade nemes.\nPass 645 at the Szeged mill: 61.6 C, humidity 2 percent,
+        grade kalocsa.\nPass 646 at the Szeged mill: 61.5 C, humidity 0 percent, grade
+        csemege.\nPass 647 at the Szeged mill: 61.4 C, humidity 1 percent, grade eros.\nPass
+        648 at the Szeged mill: 61.3 C, humidity 2 percent, grade nemes.\nPass 649
+        at the Szeged mill: 61.2 C, humidity 0 percent, grade kalocsa.\nPass 650 at
+        the Szeged mill: 61.1 C, humidity 1 percent, grade csemege.\nPass 651 at the
+        Szeged mill: 61.0 C, humidity 2 percent, grade eros.\nPass 652 at the Szeged
+        mill: 60.9 C, humidity 0 percent, grade nemes.\nPass 653 at the Szeged mill:
+        60.8 C, humidity 1 percent, grade kalocsa.\nPass 654 at the Szeged mill: 60.7
+        C, humidity 2 percent, grade csemege.\nPass 655 at the Szeged mill: 60.6 C,
+        humidity 0 percent, grade eros.\nPass 656 at the Szeged mill: 60.5 C, humidity
+        1 percent, grade nemes.\nPass 657 at the Szeged mill: 60.4 C, humidity 2 percent,
+        grade kalocsa.\nPass 658 at the Szeged mill: 60.3 C, humidity 0 percent, grade
+        csemege.\nPass 659 at the Szeged mill: 60.2 C, humidity 1 percent, grade eros.\nPass
+        660 at the Szeged mill: 60.1 C, humidity 2 percent, grade nemes.\nPass 661
+        at the Szeged mill: 62.0 C, humidity 0 percent, grade kalocsa.\nPass 662 at
+        the Szeged mill: 61.9 C, humidity 1 percent, grade csemege.\nPass 663 at the
+        Szeged mill: 61.8 C, humidity 2 percent, grade eros.\nPass 664 at the Szeged
+        mill: 61.7 C, humidity 0 percent, grade nemes.\nPass 665 at the Szeged mill:
+        61.6 C, humidity 1 percent, grade kalocsa.\nPass 666 at the Szeged mill: 61.5
+        C, humidity 2 percent, grade csemege.\nPass 667 at the Szeged mill: 61.4 C,
+        humidity 0 percent, grade eros.\nPass 668 at the Szeged mill: 61.3 C, humidity
+        1 percent, grade nemes.\nPass 669 at the Szeged mill: 61.2 C, humidity 2 percent,
+        grade kalocsa.\nPass 670 at the Szeged mill: 61.1 C, humidity 0 percent, grade
+        csemege.\nPass 671 at the Szeged mill: 61.0 C, humidity 1 percent, grade eros.\nPass
+        672 at the Szeged mill: 60.9 C, humidity 2 percent, grade nemes.\nPass 673
+        at the Szeged mill: 60.8 C, humidity 0 percent, grade kalocsa.\nPass 674 at
+        the Szeged mill: 60.7 C, humidity 1 percent, grade csemege.\nPass 675 at the
+        Szeged mill: 60.6 C, humidity 2 percent, grade eros.\nPass 676 at the Szeged
+        mill: 60.5 C, humidity 0 percent, grade nemes.\nPass 677 at the Szeged mill:
+        60.4 C, humidity 1 percent, grade kalocsa.\nPass 678 at the Szeged mill: 60.3
+        C, humidity 2 percent, grade csemege.\nPass 679 at the Szeged mill: 60.2 C,
+        humidity 0 percent, grade eros.\nPass 680 at the Szeged mill: 60.1 C, humidity
+        1 percent, grade nemes.\nPass 681 at the Szeged mill: 62.0 C, humidity 2 percent,
+        grade kalocsa.\nPass 682 at the Szeged mill: 61.9 C, humidity 0 percent, grade
+        csemege.\nPass 683 at the Szeged mill: 61.8 C, humidity 1 percent, grade eros.\nPass
+        684 at the Szeged mill: 61.7 C, humidity 2 percent, grade nemes.\nPass 685
+        at the Szeged mill: 61.6 C, humidity 0 percent, grade kalocsa.\nPass 686 at
+        the Szeged mill: 61.5 C, humidity 1 percent, grade csemege.\nPass 687 at the
+        Szeged mill: 61.4 C, humidity 2 percent, grade eros.\nPass 688 at the Szeged
+        mill: 61.3 C, humidity 0 percent, grade nemes.\nPass 689 at the Szeged mill:
+        61.2 C, humidity 1 percent, grade kalocsa.\nPass 690 at the Szeged mill: 61.1
+        C, humidity 2 percent, grade csemege.\nPass 691 at the Szeged mill: 61.0 C,
+        humidity 0 percent, grade eros.\nPass 692 at the Szeged mill: 60.9 C, humidity
+        1 percent, grade nemes.\nPass 693 at the Szeged mill: 60.8 C, humidity 2 percent,
+        grade kalocsa.\nPass 694 at the Szeged mill: 60.7 C, humidity 0 percent, grade
+        csemege.\nPass 695 at the Szeged mill: 60.6 C, humidity 1 percent, grade eros.\nPass
+        696 at the Szeged mill: 60.5 C, humidity 2 percent, grade nemes.\nPass 697
+        at the Szeged mill: 60.4 C, humidity 0 percent, grade kalocsa.\nPass 698 at
+        the Szeged mill: 60.3 C, humidity 1 percent, grade csemege.\nPass 699 at the
+        Szeged mill: 60.2 C, humidity 2 percent, grade eros.\nPass 700 at the Szeged
+        mill: 60.1 C, humidity 0 percent, grade nemes."}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:28:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '167'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b3f97cfce081bd-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '15'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      X-Ratelimit-Limit-Requests:
+      - '5000'
+      X-Ratelimit-Limit-Tokens:
+      - '1000000'
+      X-Ratelimit-Remaining-Requests:
+      - '4999'
+      X-Ratelimit-Remaining-Tokens:
+      - '987623'
+      X-Ratelimit-Reset-Requests:
+      - 12ms
+      X-Ratelimit-Reset-Tokens:
+      - 742ms
+      X-Request-Id:
+      - req_87b07677594b4803a3e0fe61dc6c371b
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid 'input': maximum context length is 8192 tokens.",
+            "type": "invalid_request_error",
+            "param": null,
+            "code": null
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 03:28:38 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/responses
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Silk-frame
+        lantern card, Hue, Friday 16 October 2026.\nFestival notes: https://vietnam.travel/.\nWard:
+        Gia Hoi.\nHung: 186.\nThe card has no spare-wick count."}],"instructions":"You
+        are the festival clerk in Hue.\nFill LanternCount from the card. Copy the
+        ward and the hung count.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"text":{"format":{"type":"json_schema","name":"LanternCount","schema":{"type":"object","properties":{"ward":{"type":"string","description":"Ward
+        or street the count names"},"hung":{"type":"integer","description":"Silk-frame
+        lanterns already hung"},"spare_wicks":{"type":"integer","description":"Spare
+        wicks, only when the card has one"}},"required":["ward","hung"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.4
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 16 Oct 2026 03:28:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '325'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - a4b3f97cf8a5dce4-IAD
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Expose-Headers:
+      - CF-Ray
+      - CF-Ray
+      - X-Request-ID
+      Openai-Organization:
+      - micharisma
+      Openai-Processing-Ms:
+      - '76'
+      Openai-Project:
+      - proj_bmo1DBlSvLRmxEEkxIPDKeJa
+      Openai-Version:
+      - '2020-10-01'
+      X-Request-Id:
+      - req_3849e78572b84c379aa51b0ef4640e7f
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "error": {
+            "message": "Invalid schema for response_format 'LanternCount': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Missing 'spare_wicks'.",
+            "type": "invalid_request_error",
+            "param": "text.format.schema",
+            "code": "invalid_json_schema"
+          }
+        }
+  recorded_at: Fri, 16 Oct 2026 03:28:38 GMT
+recorded_with: VCR 6.4.0

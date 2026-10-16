@@ -579,33 +579,33 @@ Shown in [Freetown gara-cloth harvest tools](features/12-tokens-and-cost/11-free
 
 ### BadRequestError is not a default fallback
 
-**What happens.** `with_fallbacks` to `gpt-4.1-mini` on an unlisted OpenRouter slug (`hein-bank-shoal-unlisted`, `assume_model_exists: true`) raises `RubyLLM::BadRequestError` (HTTP 400, `not a valid model ID`). The spare model is not tried. `BadRequestError` is not in `RubyLLM::Fallback::DEFAULT_ERRORS`. The same slug with `on: [RubyLLM::BadRequestError]` falls through to OpenAI and returns the sounding.
+**What happens.** `with_fallbacks` to `gpt-4.1-mini` on an unlisted OpenRouter slug (`papeete-ukulele-unlisted`, `assume_model_exists: true`) raises `RubyLLM::BadRequestError` (HTTP 400, `not a valid model ID`). The spare model is not tried. `BadRequestError` is not in `RubyLLM::Fallback::DEFAULT_ERRORS`. The same slug with `on: [RubyLLM::BadRequestError]` falls through to OpenAI and returns the koa board.
 
 **Why it matters.** A desk that assumes any provider error hops to the spare model stays on the 400.
 
 **What to do.** Leave the default list for rate limits, server errors, unavailable, overloaded, timeouts, and connection failures. Pass `on:` when a 400 should hop.
 
-Shown in [Hein Bank model fallback](features/13-error-handling/06-hein-bank-model-fallback/).
+Shown in [Papeete ukulele shop](features/13-error-handling/06-papeete-ukulele-shop/).
 
 ### An embedding 400 for context length has no request_shape
 
-**What happens.** `RubyLLM.embed` of a 700-cast Partridge Bank log on `text-embedding-3-small` raises `RubyLLM::ContextLengthExceededError`. Status is 400. The message is `Invalid 'input': maximum context length is 8192 tokens.` `request_shape` is nil. Faraday does not retry that class. The cassette is one POST.
+**What happens.** `RubyLLM.embed` of a 700-pass Szeged paprika dryer log on `text-embedding-3-small` raises `RubyLLM::ContextLengthExceededError`. Status is 400. The message is `Invalid 'input': maximum context length is 8192 tokens.` `request_shape` is nil. Faraday does not retry that class. The cassette is one POST.
 
 **Why it matters.** Rescuing only `BadRequestError` misses the overflow. Logging `request_shape.to_h` on every `RubyLLM::Error` stores nil for embeddings.
 
 **What to do.** Rescue `ContextLengthExceededError` for a pasted log that will not fit. Do not expect a shape on an embedding error.
 
-Shown in [Partridge Bank logbook](features/13-error-handling/07-partridge-bank-logbook/).
+Shown in [Szeged paprika mill](features/13-error-handling/07-szeged-paprika-mill/).
 
 ### OpenRouter's daily free-model cap is RateLimitError
 
-**What happens.** `poolside/laguna-s-2.1:free` answered HTTP 429 with `Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day`. That is `RubyLLM::RateLimitError`. `max_retries` 0 kept the cassette to one call.
+**What happens.** `poolside/laguna-s-2.1:free` answered HTTP 429 with `Provider returned error` and metadata that the slug `is temporarily rate-limited upstream` (`limit_source: upstream_provider_shared_pool`). That is `RubyLLM::RateLimitError`. `max_retries` 0 kept the cassette to one call.
 
-**Why it matters.** The same class covers the daily cap and the shorter upstream-pool 429s. A watch that only matches `Retry-After` will miss this body: the Iceberg Point cassette has no `Retry-After` header.
+**Why it matters.** The same class covers the daily `free-models-per-day` cap and these shorter upstream-pool 429s. A watch that only matches `Retry-After` will miss this body: the Rotterdam gouda-warehouse cassette has no `Retry-After` header.
 
-**What to do.** Rescue `RateLimitError`. Read the message for `free-models-per-day` when the desk needs to know which cap it hit.
+**What to do.** Rescue `RateLimitError`. Read the Faraday body for `free-models-per-day` or `upstream` when the desk needs to know which cap it hit.
 
-Shown in [Iceberg Point rate limit](features/13-error-handling/04-iceberg-point-rate-limit/).
+Shown in [Rotterdam gouda warehouse](features/13-error-handling/04-rotterdam-gouda-warehouse/).
 
 ### A context keeps a dead-circuit base off the global config
 
@@ -615,7 +615,7 @@ Shown in [Iceberg Point rate limit](features/13-error-handling/04-iceberg-point-
 
 **What to do.** Put a dead-circuit `openrouter_api_base` on a context. Assert the global base is not a loopback address when the example finishes.
 
-Shown in [Point No Point retries](features/13-error-handling/11-point-no-point-retries/) and [Foulweather Bluff fallback hooks](features/13-error-handling/12-foulweather-bluff-fallback-hooks/).
+Shown in [Gdansk amber lathe](features/13-error-handling/11-gdansk-amber-lathe/) and [Noumea nickel matte](features/13-error-handling/12-noumea-nickel-matte/).
 
 ## Agents
 

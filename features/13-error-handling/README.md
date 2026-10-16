@@ -10,23 +10,23 @@ Official reference: [Error handling](https://rubyllm.com/error-handling/).
 
 ## Models
 
-`ConfigurationError`, `ModelNotFoundError`, `UnsupportedAttachmentError`, and the Point No Point timeout need no provider cassette. HTTP errors are live recordings: a 401 on a rejected OpenRouter key, a 429 on a free OpenRouter slug, a 400 on a broken OpenAI schema, and a 400 context overflow on `text-embedding-3-small`. Tool errors, cancellation, fallbacks that reach a working model, and the Restoration Point desk use OpenAI `gpt-4.1-mini`. Free-model 429s come and go with the shared pool and the daily `free-models-per-day` cap (reset 8 PM ET). Fallback slug when the first free model is gone: `liquid/lfm-2.5-2.6b:free`. Primary catalog chat slug: `nvidia/nemotron-3-super-120b-a12b:free`. Checked 15 October 2026.
+`ConfigurationError`, `ModelNotFoundError`, `UnsupportedAttachmentError`, and the Gdansk amber-lathe timeout need no provider cassette. HTTP errors are live recordings: a 401 on a rejected OpenRouter key, a 429 on a free OpenRouter slug, a 400 on a broken OpenAI schema, and a 400 context overflow on `text-embedding-3-small`. Tool errors, cancellation, fallbacks that reach a working model, and the Willemstad peel desk use OpenAI `gpt-4.1-mini`. Free-model 429s come and go with the shared pool and the daily `free-models-per-day` cap (reset 8 PM ET). Fallback slug when the first free model is gone: `liquid/lfm-2.5-2.6b:free`. Primary catalog chat slug: `nvidia/nemotron-3-super-120b-a12b:free`. Checked 16 October 2026.
 
 ## Examples (13 of 13 bottled)
 
-01. [Turn Point missing key](01-turn-point-missing-key/) — available
-02. [Patos Island unknown model](02-patos-island-unknown-model/) — available
-03. [Cattle Point rejected key](03-cattle-point-rejected-key/) — available
-04. [Iceberg Point rate limit](04-iceberg-point-rate-limit/) — available
-05. [Protection Island request shape](05-protection-island-request-shape/) — available
-06. [Hein Bank model fallback](06-hein-bank-model-fallback/) — available
-07. [Partridge Bank logbook](07-partridge-bank-logbook/) — available
-08. [Slip Point unsupported tape](08-slip-point-unsupported-tape/) — available
-09. [West Point gauge error](09-west-point-gauge-error/) — available
-10. [Browns Point cancelled brief](10-browns-point-cancelled-brief/) — available
-11. [Point No Point retries](11-point-no-point-retries/) — available
-12. [Foulweather Bluff fallback hooks](12-foulweather-bluff-fallback-hooks/) — available
-13. [Restoration Point error desk](13-restoration-point-error-desk/) — available
+01. [Oranjestad aloe vat](01-oranjestad-aloe-vat/) — available
+02. [Fukuoka yatai burner](02-fukuoka-yatai-burner/) — available
+03. [Doha falcon mews](03-doha-falcon-mews/) — available
+04. [Rotterdam gouda warehouse](04-rotterdam-gouda-warehouse/) — available
+05. [Hue imperial lantern](05-hue-imperial-lantern/) — available
+06. [Papeete ukulele shop](06-papeete-ukulele-shop/) — available
+07. [Szeged paprika mill](07-szeged-paprika-mill/) — available
+08. [Mechelen carillon](08-mechelen-carillon/) — available
+09. [Salalah frankincense scale](09-salalah-frankincense-scale/) — available
+10. [Napier art deco](10-napier-art-deco/) — available
+11. [Gdansk amber lathe](11-gdansk-amber-lathe/) — available
+12. [Noumea nickel matte](12-noumea-nickel-matte/) — available
+13. [Willemstad curaçao peel](13-willemstad-curacao-peel/) — available
 
 ## What each scenario adds
 
@@ -36,7 +36,7 @@ Official reference: [Error handling](https://rubyllm.com/error-handling/).
 | 02 | `ModelNotFoundError` from `find`, not from a guessed id |
 | 03 | Cassette status 401 becomes `UnauthorizedError`; the shape omits the ledger |
 | 04 | Status 429 becomes `RateLimitError`; `max_retries` 0 so the cassette stays one call |
-| 05 | `BadRequestError#request_shape` has roles and sizes, not the auklet counts |
+| 05 | `BadRequestError#request_shape` has roles and sizes, not the lantern counts |
 | 06 | `with_fallbacks` skips a 400 until `on:` lists `BadRequestError` |
 | 07 | `ContextLengthExceededError` on an embedding; `request_shape` is nil |
 | 08 | `UnsupportedAttachmentError` before any request, so `request_shape` is nil |
