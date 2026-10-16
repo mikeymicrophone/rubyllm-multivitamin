@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "minitest/mock"
 require_relative "mint_blank"
 
 class CanberraMintBlankExpiryTest < Minitest::Test
@@ -8,8 +9,13 @@ class CanberraMintBlankExpiryTest < Minitest::Test
 
   def test_the_blank_is_not_expired_yet
     result = nil
-    Multivitamin::Cassettes.play(__dir__, "mint_blank") do
-      result = CanberraMintBlank::MintBlank.conduct
+    # The recorded upload expires at a fixed moment (2026-10-16 17:37 UTC).
+    # Pin the clock to half an hour before that so the test keeps passing.
+    recorded_open = Time.at(1_792_153_023 - 1800)
+    Time.stub(:now, recorded_open) do
+      Multivitamin::Cassettes.play(__dir__, "mint_blank") do
+        result = CanberraMintBlank::MintBlank.conduct
+      end
     end
 
     assert_match(/\Afile-/, result.file_id)
