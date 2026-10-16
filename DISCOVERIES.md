@@ -377,13 +377,13 @@ Shown in [Vilnius stamp size refusal](features/07-image-generation/12-vilnius-st
 
 ### assume_model_exists still looks up the registry first
 
-**What happens.** `assume_model_exists: true` without `provider:` raises `ArgumentError` (`Provider must be specified if assume_model_exists is true`) before any HTTP call. With a provider, a slug the bundled registry lacks (`commencement-bay-grain-clerk-unlisted`) becomes a synthetic `RubyLLM::Model`: capabilities `function_calling`, `streaming`, `vision`, `structured_output`, `metadata[:warning]` `Assuming model exists, capabilities may not be accurate`, `supports?(:reasoning)` false, `context_window` nil. The same flag on `gpt-4.1-mini`, which `find` already knows, keeps the registry entry: no warning, context window 1_047_576, and the real capability list, which includes `vision` and does not include `streaming`.
+**What happens.** `assume_model_exists: true` without `provider:` raises `ArgumentError` (`Provider must be specified if assume_model_exists is true`) before any HTTP call. With a provider, a slug the bundled registry lacks (`leon-sesame-lote-unlisted`) becomes a synthetic `RubyLLM::Model`: capabilities `function_calling`, `streaming`, `vision`, `structured_output`, `metadata[:warning]` `Assuming model exists, capabilities may not be accurate`, `supports?(:reasoning)` false, `context_window` nil. The same flag on `gpt-4.1-mini`, which `find` already knows, keeps the registry entry: no warning, context window 1_047_576, and the real capability list, which includes `vision` and does not include `streaming`.
 
 **Why it matters.** The model-resolution guide describes assume as skipping the lookup and building a synthetic model. On RubyLLM 2.1.1 the lookup still runs. A watch that reads `metadata[:warning]` or assumes vision is present will see that only when `find` actually missed.
 
 **What to do.** Name `provider:` whenever you assume. Read `context_window` and `supports?` off `chat.model` after construction if the real capabilities matter. Use a slug `find` cannot see when you need the synthetic object.
 
-Shown in [Commencement Bay grain elevator](features/08-models-and-providers/04-commencement-bay-grain-elevator/).
+Shown in [León sesame lote](features/08-models-and-providers/04-leon-sesame-lote/).
 
 ### Bare find of an alias can keep the short id
 
@@ -393,7 +393,7 @@ Shown in [Commencement Bay grain elevator](features/08-models-and-providers/04-c
 
 **What to do.** Pass `provider:` when the dated or vendor-prefixed id is the one you need to log.
 
-Shown in [Lime Kiln whale-watch radio alias](features/08-models-and-providers/03-lime-kiln-whale-watch/).
+Shown in [Mindelo morna alias](features/08-models-and-providers/03-mindelo-morna-alias/).
 
 ### The Responses API returns a dated snapshot id
 
@@ -403,27 +403,27 @@ Shown in [Lime Kiln whale-watch radio alias](features/08-models-and-providers/03
 
 **What to do.** Assert the request body for the id you sent. Treat `message.model` as the snapshot the provider served. Read `chat.model.id` for the id the chat is aimed at.
 
-Shown in [Hood Canal Bridge opening switch](features/08-models-and-providers/05-hood-canal-bridge-opening/).
+Shown in [Zagreb licitar pickup switch](features/08-models-and-providers/05-zagreb-licitar-pickup/).
 
 ### ModelNotFoundError is not a RubyLLM::Error
 
-**What happens.** `find("skagit-bay-light-22")` raises `RubyLLM::ModelNotFoundError`. That class's superclass is `StandardError`. A `rescue RubyLLM::Error` around the same call does not catch it. The message names `RubyLLM.models.refresh`. The lookup does not open a socket.
+**What happens.** `find("sialkot-stitch-lot-22")` raises `RubyLLM::ModelNotFoundError`. That class's superclass is `StandardError`. A `rescue RubyLLM::Error` around the same call does not catch it. The message names `RubyLLM.models.refresh`. The lookup does not open a socket.
 
-**Why it matters.** A tender who only rescues `RubyLLM::Error` lets a dropped light-list id through. A missing-model lookup does not refresh on its own.
+**Why it matters.** A desk that only rescues `RubyLLM::Error` lets a dropped stitch-lot id through. A missing-model lookup does not refresh on its own.
 
 **What to do.** Rescue `ModelNotFoundError` on its own. Call `refresh` only when the application decides the catalog is stale.
 
-Shown in [Skagit Bay missing light](features/08-models-and-providers/11-skagit-bay-missing-light/).
+Shown in [Sialkot missing stitch lot](features/08-models-and-providers/11-sialkot-missing-lot/).
 
 ### Models#find is not Enumerable#find
 
 **What happens.** `RubyLLM.models.by_family("claude-sonnet")` is a `Models` object. Calling `.find { |model| model.provider == "anthropic" }` raises `ArgumentError` (`wrong number of arguments (given 0, expected 1)`). `Models#find` looks up an id. `.all.find` with a block is the Enumerable finder and returns an Anthropic entry.
 
-**Why it matters.** A family filter that looks like any other Ruby collection will raise at the watch desk instead of returning the clerk.
+**Why it matters.** A family filter that looks like any other Ruby collection will raise at the herbarium desk instead of returning the clerk.
 
 **What to do.** Use `.all.find`, `.detect` on the array from `.all`, or `find("claude-sonnet-4-5", provider: :anthropic)` for an id lookup.
 
-Shown in [Sucia Island sonnet family](features/08-models-and-providers/12-sucia-island-sonnet-family/).
+Shown in [Uppsala Linnaeus family](features/08-models-and-providers/12-uppsala-linnaeus-family/).
 
 
 ## Configuration and contexts

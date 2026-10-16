@@ -12,26 +12,25 @@ Listing the bundled registry needs no key and no cassette file. A live
 `refresh` fetches `https://rubyllm.com/models.json` and needs no provider
 key. Chat examples in this feature were recorded on OpenAI `gpt-4.1-mini`
 (and `gpt-4o-mini` for the mid-chat switch) after OpenRouter
-`nvidia/nemotron-3-super-120b-a12b:free` answered `Rate limit exceeded:
-free-models-per-day` on 14 October 2026. `LIVE_PROVIDER=openrouter`
-records the free slug when the daily cap allows. Fallback:
-`liquid/lfm-2.5-2.6b:free`.
+`nvidia/nemotron-3-super-120b-a12b:free` answered a live probe but
+inverted a numeric card. `LIVE_PROVIDER=openrouter` records the free
+slug when the daily cap allows. Fallback: `liquid/lfm-2.5-2.6b:free`.
 
 ## Examples (13 of 13 bottled)
 
-01. [Port Gamble mill float clerk board](01-port-gamble-mill-float/) — available
-02. [Deception Pass current-table clerk](02-deception-pass-current-table/) — available
-03. [Lime Kiln whale-watch radio alias](03-lime-kiln-whale-watch/) — available
-04. [Commencement Bay grain elevator assume exists](04-commencement-bay-grain-elevator/) — available
-05. [Hood Canal Bridge opening switch](05-hood-canal-bridge-opening/) — available
-06. [Everett jetty vision filter](06-everett-jetty-vision/) — available
-07. [Budd Inlet oyster-lease catalogs](07-budd-inlet-oyster-leases/) — available
-08. [Blake Island chartlet price](08-blake-island-chartlet-price/) — available
-09. [Colvos Passage provider preference](09-colvos-passage-provider/) — available
-10. [Alki Point light-list refresh](10-alki-point-light-list/) — available
-11. [Skagit Bay missing light](11-skagit-bay-missing-light/) — available
-12. [Sucia Island sonnet family](12-sucia-island-sonnet-family/) — available
-13. [Marrowstone Point tide-staff capstone](13-marrowstone-point-tide-staff/) — available
+01. [Valencia Fallas commission board](01-valencia-fallas-board/) — available
+02. [Maun flood-gauge clerk](02-maun-flood-gauge/) — available
+03. [Mindelo morna alias](03-mindelo-morna-alias/) — available
+04. [León sesame lote assume exists](04-leon-sesame-lote/) — available
+05. [Zagreb licitar pickup switch](05-zagreb-licitar-pickup/) — available
+06. [Chamonix serac vision filter](06-chamonix-serac-vision/) — available
+07. [Bobo-Dioulasso shea-kernel catalogs](07-bobo-shea-catalogs/) — available
+08. [Meteora icon price](08-meteora-icon-price/) — available
+09. [Nairobi ticket-radio preference](09-nairobi-ticket-radio/) — available
+10. [AlUla inscription-list refresh](10-alula-inscription-list/) — available
+11. [Sialkot missing stitch lot](11-sialkot-missing-lot/) — available
+12. [Uppsala Linnaeus family](12-uppsala-linnaeus-family/) — available
+13. [Maseru oxygen-run capstone](13-maseru-oxygen-run/) — available
 
 ## What each scenario adds
 
@@ -49,6 +48,6 @@ records the free slug when the daily cap allows. Fallback:
 | 10 | `refresh` records the published catalog GET |
 | 11 | Rescue `ModelNotFoundError` and do not refresh just to recover |
 | 12 | `by_family` narrows a family without a substring scrape of every id |
-| 13 | Capstone: capability filter, assume the free slug, one tide-staff question |
+| 13 | Capstone: capability filter, assume the free slug, one fill-card question |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
