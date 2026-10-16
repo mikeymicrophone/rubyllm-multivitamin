@@ -599,11 +599,11 @@ Shown in [Szeged paprika mill](features/13-error-handling/07-szeged-paprika-mill
 
 ### OpenRouter's daily free-model cap is RateLimitError
 
-**What happens.** `poolside/laguna-s-2.1:free` answered HTTP 429 with `Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day`. That is `RubyLLM::RateLimitError`. `max_retries` 0 kept the cassette to one call.
+**What happens.** `poolside/laguna-s-2.1:free` answered HTTP 429 with `Provider returned error` and metadata that the slug `is temporarily rate-limited upstream` (`limit_source: upstream_provider_shared_pool`). That is `RubyLLM::RateLimitError`. `max_retries` 0 kept the cassette to one call.
 
-**Why it matters.** The same class covers the daily cap and the shorter upstream-pool 429s. A watch that only matches `Retry-After` will miss this body: the Rotterdam gouda-warehouse cassette has no `Retry-After` header.
+**Why it matters.** The same class covers the daily `free-models-per-day` cap and these shorter upstream-pool 429s. A watch that only matches `Retry-After` will miss this body: the Rotterdam gouda-warehouse cassette has no `Retry-After` header.
 
-**What to do.** Rescue `RateLimitError`. Read the message for `free-models-per-day` when the desk needs to know which cap it hit.
+**What to do.** Rescue `RateLimitError`. Read the Faraday body for `free-models-per-day` or `upstream` when the desk needs to know which cap it hit.
 
 Shown in [Rotterdam gouda warehouse](features/13-error-handling/04-rotterdam-gouda-warehouse/).
 

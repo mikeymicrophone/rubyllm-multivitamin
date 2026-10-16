@@ -9,9 +9,11 @@ Faraday does not retry: `max_retries` is 0, so the cassette is one POST.
 - Status 429 becomes `RubyLLM::RateLimitError`.
 - `max_retries` 0 keeps the cassette to one call. Faraday would otherwise
   repeat a 429 whose `Retry-After` fits `retry_max_interval`.
-- OpenRouter's daily cap message is `Rate limit exceeded:
-  free-models-per-day`. That is still `RateLimitError`.
-- `Error#response` holds the status and the body.
+- OpenRouter's upstream-pool 429 (`temporarily rate-limited upstream`)
+  is still `RateLimitError`. The daily `free-models-per-day` cap uses
+  the same class.
+- `Error#response` holds the status and the body. The cassette has no
+  `Retry-After` header.
 
 **Files**
 

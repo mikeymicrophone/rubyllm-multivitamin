@@ -25,7 +25,7 @@ module PapeeteUkuleleShop
       You are the bench clerk at a Papeete ukulele shop.
       Answer in two short sentences.
       Use only the board in the question.
-      Name 8 and east.
+      Write the digit 8 and the word east.
     TEXT
 
     CAST_QUESTION = <<~TEXT.strip

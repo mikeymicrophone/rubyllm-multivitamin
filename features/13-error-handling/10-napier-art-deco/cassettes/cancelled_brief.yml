@@ -5,14 +5,14 @@ http_interactions:
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Visibility
-        card posted at Browns Point, Thursday 15 October 2026.\nPark page: https://www.metroparkstacoma.org/place/browns-point-lighthouse-park/.\nFirst
-        fact: visibility 0.6 mile in coal smoke from the tideflats.\nSecond fact:
-        horn running, blast 3 seconds.\nThird fact: the seiner Cape Flattery is holding
-        off the sandspit.\nFourth fact: the Browns Point float is closed to the watch
-        boat.\nRead the four facts."}],"instructions":"You are the fog clerk at Browns
-        Point Light on Commencement Bay.\nRead the visibility card in four short sentences,
-        one fact each.\nUse only the card.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Conservation
+        card posted in Napier, Friday 16 October 2026.\nTrust notes: https://www.artdeconapier.com/.\nFirst
+        fact: Emerson Street veranda tiles, 0.6 mm spall on the third bay.\nSecond
+        fact: ASB Bank sunburst still original gilt.\nThird fact: Daily Telegraph
+        Building plaster closed to the public.\nFourth fact: Masonic Hotel cornice
+        scaffold until Monday.\nRead the four facts."}],"instructions":"You are the
+        facade clerk in Napier, on the Art Deco walk.\nRead the conservation card
+        in four short sentences, one fact each.\nUse only the card.","stream":true,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -30,7 +30,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:35 GMT
+      - Fri, 16 Oct 2026 03:28:59 GMT
       Content-Type:
       - text/event-stream; charset=utf-8
       Transfer-Encoding:
@@ -38,7 +38,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4ab167fdcfe9b2e-IAD
+      - a4b3fa00ca9198aa-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -54,7 +54,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '593'
+      - '394'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -66,207 +66,237 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999837'
+      - '1999847'
       X-Ratelimit-Reset-Requests:
       - 12ms
       X-Ratelimit-Reset-Tokens:
       - 4ms
       X-Request-Id:
-      - req_164062366a204e889a7e75debb4fd1f0
+      - req_a89d48bda84b49518bbd19e2ef078825
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |+
         event: response.created
-        data: {"type":"response.created","response":{"id":"resp_0df258f913ea6852016ad02de6703087d29a41a2dcb7625860","object":"response","created_at":1792028134,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fog clerk at Browns Point Light on Commencement Bay.\nRead the visibility card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
+        data: {"type":"response.created","response":{"id":"resp_03bc3320073f2330016ad199fb151087d2b3d7fffec291aa85","object":"response","created_at":1792121339,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the facade clerk in Napier, on the Art Deco walk.\nRead the conservation card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":0}
 
         event: response.in_progress
-        data: {"type":"response.in_progress","response":{"id":"resp_0df258f913ea6852016ad02de6703087d29a41a2dcb7625860","object":"response","created_at":1792028134,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fog clerk at Browns Point Light on Commencement Bay.\nRead the visibility card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
+        data: {"type":"response.in_progress","response":{"id":"resp_03bc3320073f2330016ad199fb151087d2b3d7fffec291aa85","object":"response","created_at":1792121339,"status":"in_progress","access_programs":null,"background":false,"completed_at":null,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the facade clerk in Napier, on the Art Deco walk.\nRead the conservation card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"auto","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":null,"user":null,"metadata":{}},"sequence_number":1}
 
         event: response.output_item.added
-        data: {"type":"response.output_item.added","item":{"id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
+        data: {"type":"response.output_item.added","item":{"id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","type":"message","status":"in_progress","content":[],"role":"assistant"},"output_index":0,"sequence_number":2}
 
         event: response.content_part.added
-        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
+        data: {"type":"response.content_part.added","content_index":0,"item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":""},"sequence_number":3}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"Visibility","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"DIDhqg","output_index":0,"sequence_number":4}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"1","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"grDATU24tA8grkJ","output_index":0,"sequence_number":4}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"y7HxvHxJzVtOu","output_index":0,"sequence_number":5}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"xCRA9yoiREj9UyN","output_index":0,"sequence_number":5}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"7MbM6Rme1yuzPbY","output_index":0,"sequence_number":6}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Emerson","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"Kj1ZgFlY","output_index":0,"sequence_number":6}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"HoGwIdoaN4Z201C","output_index":0,"sequence_number":7}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Street","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"V9je9QZr7","output_index":0,"sequence_number":7}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"jWNtFRF17DYRQGp","output_index":0,"sequence_number":8}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" veranda","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"K7QUx7ek","output_index":0,"sequence_number":8}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"Npv4mtEd5YWh2R8","output_index":0,"sequence_number":9}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" tiles","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"hVdelvrJzS","output_index":0,"sequence_number":9}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" mile","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"fmgC9G1DhP2","output_index":0,"sequence_number":10}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" have","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"t59fW3jzZD0","output_index":0,"sequence_number":10}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" in","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"OoveV2xSZEx6y","output_index":0,"sequence_number":11}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" a","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"Rg3Y1i524k1Mns","output_index":0,"sequence_number":11}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" coal","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"rkN2jFWhfCy","output_index":0,"sequence_number":12}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"PLi7rKdL0oXg8SR","output_index":0,"sequence_number":12}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" smoke","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"iw4O79BgKP","output_index":0,"sequence_number":13}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"0","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"7VPHjo6qliv7dgA","output_index":0,"sequence_number":13}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" from","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"8lBxOMuXxqs","output_index":0,"sequence_number":14}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"TJjnThE27lV4766","output_index":0,"sequence_number":14}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"voIt5B0bC96b","output_index":0,"sequence_number":15}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"6","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"LQJ9OVOTivVM0yu","output_index":0,"sequence_number":15}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" tide","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"seShaVSBBBF","output_index":0,"sequence_number":16}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" mm","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"tmnUzJ9tt2xzs","output_index":0,"sequence_number":16}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"fl","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"cJBU8HwMCao1NQ","output_index":0,"sequence_number":17}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" sp","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"yeMR6fDuLz2HJ","output_index":0,"sequence_number":17}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"ats","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"kJsHiyEbSnroB","output_index":0,"sequence_number":18}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"all","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"EfYhixaz23QUU","output_index":0,"sequence_number":18}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"SzhjlYZKRAj707j","output_index":0,"sequence_number":19}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" on","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"xdg0pgnkveyLn","output_index":0,"sequence_number":19}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"Kd5SXwnhj44eU","output_index":0,"sequence_number":20}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"wzYKD0bgqoQU","output_index":0,"sequence_number":20}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"gVIqoL7d3Ry2O","output_index":0,"sequence_number":21}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" third","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"El2wh0cC1g","output_index":0,"sequence_number":21}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" horn","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"eTlFJvrhevC","output_index":0,"sequence_number":22}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" bay","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"qsNF6elaw3Zh","output_index":0,"sequence_number":22}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"7UG0VgwOX5r0F","output_index":0,"sequence_number":23}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"xrtRjycslW421NC","output_index":0,"sequence_number":23}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" running","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"Tmi9f5f1","output_index":0,"sequence_number":24}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"18VvQzzUKuMei","output_index":0,"sequence_number":24}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" with","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"8oFJ8P2Q0KY","output_index":0,"sequence_number":25}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"2","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"OP0NjbG0mqGKHTS","output_index":0,"sequence_number":25}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" a","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"pUwSF5dB46EHEx","output_index":0,"sequence_number":26}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"rDOzI1nnrOmdzbn","output_index":0,"sequence_number":26}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" blast","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"6nPDV2Ln1y","output_index":0,"sequence_number":27}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" The","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"9S8h8ZKHX0uL","output_index":0,"sequence_number":27}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" of","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"yTG6OXMxs4WhJ","output_index":0,"sequence_number":28}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" AS","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"MzCixNH9PNU4v","output_index":0,"sequence_number":28}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" ","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"VKEqTTjilcqOHzU","output_index":0,"sequence_number":29}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"B","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"F9wsbiylRWkHHdu","output_index":0,"sequence_number":29}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"3","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"qLhyxDp7npClDRS","output_index":0,"sequence_number":30}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Bank","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"LgVvysqR44m","output_index":0,"sequence_number":30}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" seconds","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"OBY1f0fV","output_index":0,"sequence_number":31}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" sun","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"TRoWCq0cgAUz","output_index":0,"sequence_number":31}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"Iy2LLwxu3F4eRR0","output_index":0,"sequence_number":32}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"burst","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"U9tvObjasl7","output_index":0,"sequence_number":32}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"CPkOSuMS08BHS","output_index":0,"sequence_number":33}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"kjudO9zDB69yr","output_index":0,"sequence_number":33}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"O1hwyO4ezMxcy","output_index":0,"sequence_number":34}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" still","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"0I04SfcrOb","output_index":0,"sequence_number":34}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" seiner","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"prwTtBpKn","output_index":0,"sequence_number":35}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" original","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"9mbnIfr","output_index":0,"sequence_number":35}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" Cape","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"EjtvNf9hZF8","output_index":0,"sequence_number":36}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" gilt","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"xBQj2iD5feF","output_index":0,"sequence_number":36}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" Fl","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"SUmNiv9L7BZs4","output_index":0,"sequence_number":37}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"NohNO1b0NA879KN","output_index":0,"sequence_number":37}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"attery","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"pc8Hm6a3B3","output_index":0,"sequence_number":38}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"11nM9Dqkhcqtb","output_index":0,"sequence_number":38}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"wNWVU7brCzC2g","output_index":0,"sequence_number":39}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"3","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"7J3gKYdXALfBonl","output_index":0,"sequence_number":39}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" holding","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"G5ySKVKJ","output_index":0,"sequence_number":40}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"dUUVu31Ub5B42LM","output_index":0,"sequence_number":40}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" off","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"3taFkVwS861v","output_index":0,"sequence_number":41}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" The","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"LNrJdYWpEVAc","output_index":0,"sequence_number":41}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"9f8txyUdRUdB","output_index":0,"sequence_number":42}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Daily","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"qUmdZNU2nW","output_index":0,"sequence_number":42}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" sand","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"jPyGoYyspkc","output_index":0,"sequence_number":43}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Telegraph","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"bPRIQ2","output_index":0,"sequence_number":43}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"sp","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"SrAI8MnC9umey2","output_index":0,"sequence_number":44}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Building","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"r3VpK9i","output_index":0,"sequence_number":44}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"it","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"5jNrNBZydfB2GC","output_index":0,"sequence_number":45}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" plaster","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"SIqEqpqN","output_index":0,"sequence_number":45}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"xyEmMt1iH0jb2je","output_index":0,"sequence_number":46}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"NK9i9s3Uzylqj","output_index":0,"sequence_number":46}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"NH3z44rLyGFhr","output_index":0,"sequence_number":47}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" closed","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"4TrktMX0a","output_index":0,"sequence_number":47}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":"The","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"A71rW4Xq4KKdE","output_index":0,"sequence_number":48}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" to","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"fbQia0pHn1ukM","output_index":0,"sequence_number":48}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" Browns","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"ZiYGqehXO","output_index":0,"sequence_number":49}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"rXlNMU2cFsMv","output_index":0,"sequence_number":49}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" Point","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"esxAFmKBZD","output_index":0,"sequence_number":50}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" public","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"quYi1PLpG","output_index":0,"sequence_number":50}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" float","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"mjHYQ479FM","output_index":0,"sequence_number":51}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"1CpeDqjkIubaYPW","output_index":0,"sequence_number":51}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" is","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"CWw2qlHpjZtPY","output_index":0,"sequence_number":52}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"  \n","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"sy6pYqnREVXWw","output_index":0,"sequence_number":52}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" closed","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"RGU0N9Rsz","output_index":0,"sequence_number":53}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"4","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"JVMVVmyGM2GSWXY","output_index":0,"sequence_number":53}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" to","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"cpdtJuQbJPJm7","output_index":0,"sequence_number":54}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"wT1nhJMFKYA1E3b","output_index":0,"sequence_number":54}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" the","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"QETLYMQxRbq4","output_index":0,"sequence_number":55}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" The","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"lBmPPPydsGwY","output_index":0,"sequence_number":55}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" watch","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"oCaNqvVJSo","output_index":0,"sequence_number":56}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" M","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"jqk01lejsjeFx6","output_index":0,"sequence_number":56}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":" boat","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"kOHqhaVbQIv","output_index":0,"sequence_number":57}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"asonic","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"M0mJ0QLBqF","output_index":0,"sequence_number":57}
 
         event: response.output_text.delta
-        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"obfuscation":"3iE6cz2U4SU9boI","output_index":0,"sequence_number":58}
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Hotel","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"kpjoPX6BOT","output_index":0,"sequence_number":58}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" corn","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"TMYHIq0a6PB","output_index":0,"sequence_number":59}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":"ice","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"enPAdJVU6DTnO","output_index":0,"sequence_number":60}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" scaffold","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"dIyuYGP","output_index":0,"sequence_number":61}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" will","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"74iCFjSGzlF","output_index":0,"sequence_number":62}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" be","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"2TWwkE8AwSODa","output_index":0,"sequence_number":63}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" in","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"P0EYpY2nV70Ek","output_index":0,"sequence_number":64}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" place","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"UBPMxyRPlj","output_index":0,"sequence_number":65}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" until","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"rTNdSFTCA5","output_index":0,"sequence_number":66}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":" Monday","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"cF3fKYq55","output_index":0,"sequence_number":67}
+
+        event: response.output_text.delta
+        data: {"type":"response.output_text.delta","content_index":0,"delta":".","item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"obfuscation":"CVJMck3aVp3x3rJ","output_index":0,"sequence_number":68}
 
         event: response.output_text.done
-        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","logprobs":[],"output_index":0,"sequence_number":59,"text":"Visibility is 0.6 mile in coal smoke from the tideflats.  \nThe horn is running with a blast of 3 seconds.  \nThe seiner Cape Flattery is holding off the sandspit.  \nThe Browns Point float is closed to the watch boat."}
+        data: {"type":"response.output_text.done","content_index":0,"item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","logprobs":[],"output_index":0,"sequence_number":69,"text":"1. Emerson Street veranda tiles have a 0.6 mm spall on the third bay.  \n2. The ASB Bank sunburst is still original gilt.  \n3. The Daily Telegraph Building plaster is closed to the public.  \n4. The Masonic Hotel cornice scaffold will be in place until Monday."}
 
         event: response.content_part.done
-        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"Visibility is 0.6 mile in coal smoke from the tideflats.  \nThe horn is running with a blast of 3 seconds.  \nThe seiner Cape Flattery is holding off the sandspit.  \nThe Browns Point float is closed to the watch boat."},"sequence_number":60}
+        data: {"type":"response.content_part.done","content_index":0,"item_id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","output_index":0,"part":{"type":"output_text","annotations":[],"logprobs":[],"text":"1. Emerson Street veranda tiles have a 0.6 mm spall on the third bay.  \n2. The ASB Bank sunburst is still original gilt.  \n3. The Daily Telegraph Building plaster is closed to the public.  \n4. The Masonic Hotel cornice scaffold will be in place until Monday."},"sequence_number":70}
 
         event: response.output_item.done
-        data: {"type":"response.output_item.done","item":{"id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Visibility is 0.6 mile in coal smoke from the tideflats.  \nThe horn is running with a blast of 3 seconds.  \nThe seiner Cape Flattery is holding off the sandspit.  \nThe Browns Point float is closed to the watch boat."}],"role":"assistant"},"output_index":0,"sequence_number":61}
+        data: {"type":"response.output_item.done","item":{"id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"1. Emerson Street veranda tiles have a 0.6 mm spall on the third bay.  \n2. The ASB Bank sunburst is still original gilt.  \n3. The Daily Telegraph Building plaster is closed to the public.  \n4. The Masonic Hotel cornice scaffold will be in place until Monday."}],"role":"assistant"},"output_index":0,"sequence_number":71}
 
         event: response.completed
-        data: {"type":"response.completed","response":{"id":"resp_0df258f913ea6852016ad02de6703087d29a41a2dcb7625860","object":"response","created_at":1792028134,"status":"completed","access_programs":null,"background":false,"completed_at":1792028135,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the fog clerk at Browns Point Light on Commencement Bay.\nRead the visibility card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_0df258f913ea6852016ad02de7015887d281db6e5f08fa63ca","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"Visibility is 0.6 mile in coal smoke from the tideflats.  \nThe horn is running with a blast of 3 seconds.  \nThe seiner Cape Flattery is holding off the sandspit.  \nThe Browns Point float is closed to the watch boat."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":144,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":56,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":200},"user":null,"metadata":{}},"sequence_number":62}
+        data: {"type":"response.completed","response":{"id":"resp_03bc3320073f2330016ad199fb151087d2b3d7fffec291aa85","object":"response","created_at":1792121339,"status":"completed","access_programs":null,"background":false,"completed_at":1792121339,"error":null,"frequency_penalty":0.0,"incomplete_details":null,"instructions":"You are the facade clerk in Napier, on the Art Deco walk.\nRead the conservation card in four short sentences, one fact each.\nUse only the card.","max_output_tokens":null,"max_tool_calls":null,"model":"gpt-4.1-mini-2025-04-14","moderation":null,"output":[{"id":"msg_03bc3320073f2330016ad199fb75d087d2818b38f376d03eca","type":"message","status":"completed","content":[{"type":"output_text","annotations":[],"logprobs":[],"text":"1. Emerson Street veranda tiles have a 0.6 mm spall on the third bay.  \n2. The ASB Bank sunburst is still original gilt.  \n3. The Daily Telegraph Building plaster is closed to the public.  \n4. The Masonic Hotel cornice scaffold will be in place until Monday."}],"role":"assistant"}],"parallel_tool_calls":true,"presence_penalty":0.0,"previous_response_id":null,"prompt_cache_key":null,"prompt_cache_retention":"in_memory","reasoning":{"context":null,"effort":null,"summary":null},"safety_identifier":null,"service_tier":"default","store":false,"temperature":0.2,"text":{"format":{"type":"text"},"verbosity":"medium"},"tool_choice":"auto","tool_usage":{"image_gen":{"input_tokens":0,"input_tokens_details":{"image_tokens":0,"text_tokens":0},"output_tokens":0,"output_tokens_details":{"image_tokens":0,"text_tokens":0},"total_tokens":0},"web_search":{"num_requests":0}},"tools":[],"top_logprobs":0,"top_p":1.0,"truncation":"disabled","usage":{"input_tokens":134,"input_tokens_details":{"cache_write_tokens":0,"cached_tokens":0},"output_tokens":66,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":200},"user":null,"metadata":{}},"sequence_number":72}
 
-  recorded_at: Thu, 15 Oct 2026 01:35:35 GMT
+  recorded_at: Fri, 16 Oct 2026 03:28:59 GMT
 recorded_with: VCR 6.4.0
 ...

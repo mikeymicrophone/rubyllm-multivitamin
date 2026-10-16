@@ -6,13 +6,13 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
-        watch at West Point, Thursday 15 October 2026.\nStation page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9447130\nThe
-        seiner Cape Flattery is standing off the Shilshole entrance.\nWhat is the
-        height on the West Point gauge?"}],"instructions":"You are the tide clerk
-        at West Point, Shilshole Bay.\nCall west_point_gauge once. Then answer in
-        two short sentences.\nIf the gauge is offline, tell the watch to leadline
-        and quote 04:10.\nDo not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"west_point_gauge","description":"Reads
-        the NOAA tide gauge at West Point, Shilshole Bay","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"west_point_gauge"}}'
+        watch in Salalah, Friday 16 October 2026.\nLand of Frankincense: https://whc.unesco.org/en/list/1010.\nSorter
+        Layla is holding a Hojari lot at the loft door.\nWhat is the weight on the
+        Salalah beam-scale?"}],"instructions":"You are the loft clerk in a Salalah
+        frankincense warehouse.\nCall salalah_beam_scale once. Then answer in two
+        short sentences.\nIf the scale is offline, tell the sorter to use the hand-beam
+        and quote 04:10.\nDo not invent a lot weight.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"salalah_beam_scale","description":"Reads
+        the beam-scale in a Salalah frankincense loft","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"salalah_beam_scale"}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -30,7 +30,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:35 GMT
+      - Fri, 16 Oct 2026 03:28:47 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -38,7 +38,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4ab167fdc85ec0a-IAD
+      - a4b3f9b45dc67bb6-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -54,7 +54,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '1465'
+      - '781'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -64,47 +64,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '2000000'
       X-Ratelimit-Remaining-Requests:
-      - '4998'
+      - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999390'
+      - '1999609'
       X-Ratelimit-Reset-Requests:
-      - 24ms
+      - 12ms
       X-Ratelimit-Reset-Tokens:
-      - 18ms
+      - 11ms
       X-Request-Id:
-      - req_426f9c2058b64127b4d14a4fd9cb0d47
+      - req_e53f723721784149acf16a015f29ad56
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_03fc4cec62754574016ad02de6702887d29599023b99f73339",
+          "id": "resp_019c317d6c35b0a6016ad199eed5cc87d29c20c7ad815561ab",
           "object": "response",
-          "created_at": 1792028134,
+          "created_at": 1792121326,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792028135,
+          "completed_at": 1792121327,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
-          "instructions": "You are the tide clerk at West Point, Shilshole Bay.\nCall west_point_gauge once. Then answer in two short sentences.\nIf the gauge is offline, tell the watch to leadline and quote 04:10.\nDo not invent a tide height.",
+          "instructions": "You are the loft clerk in a Salalah frankincense warehouse.\nCall salalah_beam_scale once. Then answer in two short sentences.\nIf the scale is offline, tell the sorter to use the hand-beam and quote 04:10.\nDo not invent a lot weight.",
           "max_output_tokens": null,
           "max_tool_calls": null,
           "model": "gpt-4.1-mini-2025-04-14",
           "moderation": null,
           "output": [
             {
-              "id": "fc_03fc4cec62754574016ad02de7c70087d2af30e020bf83e3bb",
+              "id": "fc_019c317d6c35b0a6016ad199ef898887d29eafef11dc7d9d15",
               "type": "function_call",
               "status": "completed",
               "arguments": "{}",
-              "call_id": "call_4G0UGEgeUKwl8pMPWf6VQhBS",
-              "name": "west_point_gauge"
+              "call_id": "call_1XYqNDhcBPpyZMBua8JuiYZj",
+              "name": "salalah_beam_scale"
             }
           ],
           "parallel_tool_calls": true,
@@ -129,7 +129,7 @@ http_interactions:
           },
           "tool_choice": {
             "type": "function",
-            "name": "west_point_gauge"
+            "name": "salalah_beam_scale"
           },
           "tool_usage": {
             "image_gen": {
@@ -152,8 +152,8 @@ http_interactions:
           "tools": [
             {
               "type": "function",
-              "description": "Reads the NOAA tide gauge at West Point, Shilshole Bay",
-              "name": "west_point_gauge",
+              "description": "Reads the beam-scale in a Salalah frankincense loft",
+              "name": "salalah_beam_scale",
               "output_schema": null,
               "parameters": {
                 "type": "object",
@@ -169,7 +169,7 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 175,
+            "input_tokens": 174,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
@@ -178,26 +178,26 @@ http_interactions:
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 177
+            "total_tokens": 176
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Thu, 15 Oct 2026 01:35:35 GMT
+  recorded_at: Fri, 16 Oct 2026 03:28:47 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
       string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Morning
-        watch at West Point, Thursday 15 October 2026.\nStation page: https://tidesandcurrents.noaa.gov/stationhome.html?id=9447130\nThe
-        seiner Cape Flattery is standing off the Shilshole entrance.\nWhat is the
-        height on the West Point gauge?"},{"type":"function_call","call_id":"call_4G0UGEgeUKwl8pMPWf6VQhBS","name":"west_point_gauge","arguments":"{}"},{"type":"function_call_output","call_id":"call_4G0UGEgeUKwl8pMPWf6VQhBS","output":"{\"error\":\"West
-        Point gauge offline since 04:10. Leadline the Shilshole entrance.\"}"}],"instructions":"You
-        are the tide clerk at West Point, Shilshole Bay.\nCall west_point_gauge once.
-        Then answer in two short sentences.\nIf the gauge is offline, tell the watch
-        to leadline and quote 04:10.\nDo not invent a tide height.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"west_point_gauge","description":"Reads
-        the NOAA tide gauge at West Point, Shilshole Bay","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
+        watch in Salalah, Friday 16 October 2026.\nLand of Frankincense: https://whc.unesco.org/en/list/1010.\nSorter
+        Layla is holding a Hojari lot at the loft door.\nWhat is the weight on the
+        Salalah beam-scale?"},{"type":"function_call","call_id":"call_1XYqNDhcBPpyZMBua8JuiYZj","name":"salalah_beam_scale","arguments":"{}"},{"type":"function_call_output","call_id":"call_1XYqNDhcBPpyZMBua8JuiYZj","output":"{\"error\":\"Salalah
+        beam-scale offline since 04:10. Weigh the Hojari lot on the hand-beam.\"}"}],"instructions":"You
+        are the loft clerk in a Salalah frankincense warehouse.\nCall salalah_beam_scale
+        once. Then answer in two short sentences.\nIf the scale is offline, tell the
+        sorter to use the hand-beam and quote 04:10.\nDo not invent a lot weight.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2,"tools":[{"type":"function","name":"salalah_beam_scale","description":"Reads
+        the beam-scale in a Salalah frankincense loft","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}]}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -215,7 +215,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:36 GMT
+      - Fri, 16 Oct 2026 03:28:48 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -223,7 +223,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4ab1689ce8e08c5-IAD
+      - a4b3f9b9daa8d6d3-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -239,7 +239,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '573'
+      - '779'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -251,40 +251,40 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999575'
+      - '1999571'
       X-Ratelimit-Reset-Requests:
       - 12ms
       X-Ratelimit-Reset-Tokens:
       - 12ms
       X-Request-Id:
-      - req_b1ce5051a72b4156af3e1f3a4f0a9e27
+      - req_429244f0e9b641169b394676e054ba2e
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_02bc8500f770344d016ad02de80cf887d2a9e279bbef143ff8",
+          "id": "resp_0936db68b5b03978016ad199efc59487d292847c09ba53ec8f",
           "object": "response",
-          "created_at": 1792028136,
+          "created_at": 1792121327,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792028136,
+          "completed_at": 1792121328,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
-          "instructions": "You are the tide clerk at West Point, Shilshole Bay.\nCall west_point_gauge once. Then answer in two short sentences.\nIf the gauge is offline, tell the watch to leadline and quote 04:10.\nDo not invent a tide height.",
+          "instructions": "You are the loft clerk in a Salalah frankincense warehouse.\nCall salalah_beam_scale once. Then answer in two short sentences.\nIf the scale is offline, tell the sorter to use the hand-beam and quote 04:10.\nDo not invent a lot weight.",
           "max_output_tokens": null,
           "max_tool_calls": null,
           "model": "gpt-4.1-mini-2025-04-14",
           "moderation": null,
           "output": [
             {
-              "id": "msg_02bc8500f770344d016ad02de85fa887d28a3efe4e492bab8c",
+              "id": "msg_0936db68b5b03978016ad199f05ffc87d282206848f8007ac2",
               "type": "message",
               "status": "completed",
               "content": [
@@ -292,7 +292,7 @@ http_interactions:
                   "type": "output_text",
                   "annotations": [],
                   "logprobs": [],
-                  "text": "The West Point gauge is currently offline since 04:10. Please leadline the Shilshole entrance for tide height."
+                  "text": "The Salalah beam-scale is offline since 04:10. Please use the hand-beam to weigh the Hojari lot."
                 }
               ],
               "role": "assistant"
@@ -340,8 +340,8 @@ http_interactions:
           "tools": [
             {
               "type": "function",
-              "description": "Reads the NOAA tide gauge at West Point, Shilshole Bay",
-              "name": "west_point_gauge",
+              "description": "Reads the beam-scale in a Salalah frankincense loft",
+              "name": "salalah_beam_scale",
               "output_schema": null,
               "parameters": {
                 "type": "object",
@@ -357,29 +357,29 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 208,
+            "input_tokens": 212,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
             },
-            "output_tokens": 28,
+            "output_tokens": 29,
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 236
+            "total_tokens": 241
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Thu, 15 Oct 2026 01:35:36 GMT
+  recorded_at: Fri, 16 Oct 2026 03:28:48 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Is the gauge-house
-        lamp lit?"}],"stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"gauge_house_lamp","description":"Reads
-        whether the West Point gauge-house lamp is lit","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"gauge_house_lamp"}}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Is the scale-house
+        lamp lit?"}],"stream":false,"store":false,"include":["reasoning.encrypted_content"],"tools":[{"type":"function","name":"scale_house_lamp","description":"Reads
+        whether the Salalah scale-house lamp is lit","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true},"strict":false}],"tool_choice":{"type":"function","name":"scale_house_lamp"}}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -397,7 +397,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:37 GMT
+      - Fri, 16 Oct 2026 03:28:49 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -405,7 +405,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4ab168e0a3fef60-IAD
+      - a4b3f9bfaa18d63d-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -421,7 +421,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '1118'
+      - '694'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -433,29 +433,29 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '4998'
       X-Ratelimit-Remaining-Tokens:
-      - '1999274'
+      - '1999270'
       X-Ratelimit-Reset-Requests:
       - 24ms
       X-Ratelimit-Reset-Tokens:
       - 21ms
       X-Request-Id:
-      - req_7148d3b4a0b64918aa794f691e084ac7
+      - req_28fa342c5cf345ecb2a708c54f392f5e
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_0c0ec9ba630e6c9e016ad02de8bc7c87d286fad928ca878baa",
+          "id": "resp_0df7a60c98cc1730016ad199f0b2e487d2bcf8085aa8c82f4c",
           "object": "response",
-          "created_at": 1792028136,
+          "created_at": 1792121328,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792028137,
+          "completed_at": 1792121329,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
@@ -466,12 +466,12 @@ http_interactions:
           "moderation": null,
           "output": [
             {
-              "id": "fc_0c0ec9ba630e6c9e016ad02de9be0087d28bc2fa3701382b82",
+              "id": "fc_0df7a60c98cc1730016ad199f147c887d2b4ccf161b204f55e",
               "type": "function_call",
               "status": "completed",
               "arguments": "{}",
-              "call_id": "call_tZr7PoMCgwwXB9LHWHW7lOgS",
-              "name": "gauge_house_lamp"
+              "call_id": "call_rZY7CwixE34w9hvYSM3jTS6N",
+              "name": "scale_house_lamp"
             }
           ],
           "parallel_tool_calls": true,
@@ -496,7 +496,7 @@ http_interactions:
           },
           "tool_choice": {
             "type": "function",
-            "name": "gauge_house_lamp"
+            "name": "scale_house_lamp"
           },
           "tool_usage": {
             "image_gen": {
@@ -519,8 +519,8 @@ http_interactions:
           "tools": [
             {
               "type": "function",
-              "description": "Reads whether the West Point gauge-house lamp is lit",
-              "name": "gauge_house_lamp",
+              "description": "Reads whether the Salalah scale-house lamp is lit",
+              "name": "scale_house_lamp",
               "output_schema": null,
               "parameters": {
                 "type": "object",
@@ -536,7 +536,7 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 57,
+            "input_tokens": 56,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
@@ -545,10 +545,10 @@ http_interactions:
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 59
+            "total_tokens": 58
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Thu, 15 Oct 2026 01:35:37 GMT
+  recorded_at: Fri, 16 Oct 2026 03:28:49 GMT
 recorded_with: VCR 6.4.0

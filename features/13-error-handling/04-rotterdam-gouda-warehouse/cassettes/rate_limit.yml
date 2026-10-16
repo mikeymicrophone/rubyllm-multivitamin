@@ -6,11 +6,12 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"model":"poolside/laguna-s-2.1:free","messages":[{"role":"system","content":"You
-        are the fog clerk at Iceberg Point on Lopez Island.\nAnswer in one short sentence.\nUse
-        only the visibility card in the question.\nName 0.4 mile and the horn."},{"role":"user","content":"Visibility
-        card posted at Iceberg Point, Thursday 15 October 2026.\nSan Juan Islands
-        notes: https://www.nps.gov/sajh/.\nVisibility 0.4 mile in rain and smoke.\nDiaphone
-        running, blast 3 seconds.\nWhat is the visibility, and is the horn running?"}],"stream":false,"temperature":0.2,"max_tokens":64}'
+        are the ripening clerk at a Rotterdam gouda warehouse.\nAnswer in one short
+        sentence.\nUse only the humidity card in the question.\nName 0.4 and the fans."},{"role":"user","content":"Humidity
+        card posted at the Rotterdam gouda warehouse, Friday 16 October 2026.\nCity
+        notes: https://www.rotterdam.info/en/.\nHumidity 0.4 percent above the 88
+        percent target.\nAisle fans running on the west rack of 14-month wheels.\nWhat
+        is the humidity drift, and are the fans running?"}],"stream":false,"temperature":0.2,"max_tokens":64}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -32,7 +33,7 @@ http_interactions:
       message: Too Many Requests
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:36:11 GMT
+      - Fri, 16 Oct 2026 03:28:59 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -44,13 +45,7 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       X-Generation-Id:
-      - gen-1792028171-YlbpZfWNBGI0rt9VVrWY
-      X-Ratelimit-Limit:
-      - '50'
-      X-Ratelimit-Remaining:
-      - '0'
-      X-Ratelimit-Reset:
-      - '1792108800000'
+      - gen-1792121339-fombRT05sw9ERyPDgY9s
       Permissions-Policy:
       - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
         "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
@@ -61,12 +56,13 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4ab17659cea453d-ATL
+      - a4b3fa00be09173c-IAD
     body:
       encoding: UTF-8
-      string: '{"error":{"message":"Rate limit exceeded: free-models-per-day. Add
-        10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","X-RateLimit-Reset":"1792108800000"},"limit_source":"openrouter_free_tier_daily","remedy_hint":"Wait
-        for the daily reset (see X-RateLimit-Reset), or purchase credits to raise
-        your free-model daily limit.","provider_name":null}},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
-  recorded_at: Thu, 15 Oct 2026 01:36:11 GMT
+      string: '{"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"poolside/laguna-s-2.1:free
+        is temporarily rate-limited upstream. Please retry shortly, or add your own
+        key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"Poolside","is_byok":false,"limit_source":"upstream_provider_shared_pool","remedy_hint":"Retry
+        shortly, add your own provider key (https://openrouter.ai/settings/integrations),
+        or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"}},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
+  recorded_at: Fri, 16 Oct 2026 03:28:59 GMT
 recorded_with: VCR 6.4.0

@@ -6,12 +6,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"model":"nvidia/nemotron-3-super-120b-a12b:free","messages":[{"role":"system","content":"You
-        are the kelp watch at Cattle Point Light on San Juan Island.\nAnswer in two
-        short sentences.\nUse only the kelp ledger in the question.\nName Salmon Bank
-        and 2.4 knots."},{"role":"user","content":"Kelp ledger posted at Cattle Point,
-        Thursday 15 October 2026.\nLight station notes: https://www.nps.gov/sajh/.\nEbb
-        past Salmon Bank 2.4 knots at 07:20.\nBull kelp on the reef south of the light,
-        do not cut inside.\nWhen is the ebb at Salmon Bank?"}],"stream":false,"temperature":0.2}'
+        are the mews clerk at a Doha falcon hospital.\nAnswer in two short sentences.\nUse
+        only the mews ledger in the question.\nName Najma and 0.92 kg."},{"role":"user","content":"Mews
+        ledger posted in Doha, Friday 16 October 2026.\nVisit Qatar: https://www.visitqatar.qa/.\nSaker
+        Najma 0.92 kg at 07:20, left jess loose.\nDo not fly her until the jess is
+        re-tied.\nWhen does Najma weigh 0.92 kg?"}],"stream":false,"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -33,7 +32,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:28 GMT
+      - Fri, 16 Oct 2026 03:28:37 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -54,9 +53,9 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4ab165a08926586-ATL
+      - a4b3f97d0d61d6e8-IAD
     body:
       encoding: UTF-8
       string: '{"error":{"message":"User not found.","code":401}}'
-  recorded_at: Thu, 15 Oct 2026 01:35:28 GMT
+  recorded_at: Fri, 16 Oct 2026 03:28:37 GMT
 recorded_with: VCR 6.4.0

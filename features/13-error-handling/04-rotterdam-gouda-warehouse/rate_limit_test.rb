@@ -15,7 +15,7 @@ class RotterdamGoudaWarehouseLimitTest < Minitest::Test
 
     assert_instance_of RubyLLM::RateLimitError, result.error
     assert_equal 429, result.status
-    assert_includes result.error.message, "free-models-per-day"
+    assert_match(/rate-limited|free-models-per-day/i, result.body)
     assert_includes result.body, "429"
     assert_equal 1, interactions.length
     assert_equal 429, interactions.fetch(0).dig("response", "status", "code")

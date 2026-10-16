@@ -5,13 +5,13 @@ http_interactions:
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"hein-bank-shoal-unlisted","messages":[{"role":"system","content":"You
-        are the sounding clerk over Hein Bank, south of San Juan Island.\nAnswer in
-        two short sentences.\nUse only the cast in the question.\nName 8 fathoms and
-        the ebb."},{"role":"user","content":"Sounding cast over Hein Bank, Thursday
-        15 October 2026.\nChart catalog: https://www.nauticalcharts.noaa.gov/.\nLeast
-        depth 8 fathoms, sand and shell.\nEbb 1.6 knots, setting west.\nWhat is the
-        least depth, and which way does the ebb set?"}],"stream":false,"temperature":0.2}'
+      string: '{"model":"papeete-ukulele-unlisted","messages":[{"role":"system","content":"You
+        are the bench clerk at a Papeete ukulele shop.\nAnswer in two short sentences.\nUse
+        only the board in the question.\nWrite the digit 8 and the word east."},{"role":"user","content":"Koa
+        board posted at the Papeete ukulele shop, Friday 16 October 2026.\nTahiti
+        tourisme: https://www.tahiti-tourisme.com/.\nEight matched koa billets on
+        the east bench, ready for soprano bowls.\nThe west rack holds unfinished tenors.\nHow
+        many matched billets, and which bench holds them?"}],"stream":false,"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -33,7 +33,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:42 GMT
+      - Fri, 16 Oct 2026 03:29:11 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -45,7 +45,7 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       X-Generation-Id:
-      - gen-1792028142-aTSztyJoLSf3GeOyu9Gr
+      - gen-1792121351-4jGbgjNhUD4Hns2mIVlp
       Permissions-Policy:
       - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
         "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
@@ -56,24 +56,24 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4ab16b02d7e34d5-ATL
+      - a4b3fa4cddc1d6a7-IAD
     body:
       encoding: UTF-8
-      string: '{"error":{"message":"hein-bank-shoal-unlisted is not a valid model
+      string: '{"error":{"message":"papeete-ukulele-unlisted is not a valid model
         ID","code":400},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
-  recorded_at: Thu, 15 Oct 2026 01:35:42 GMT
+  recorded_at: Fri, 16 Oct 2026 03:29:11 GMT
 - request:
     method: post
     uri: https://openrouter.ai/api/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"hein-bank-shoal-unlisted","messages":[{"role":"system","content":"You
-        are the sounding clerk over Hein Bank, south of San Juan Island.\nAnswer in
-        two short sentences.\nUse only the cast in the question.\nName 8 fathoms and
-        the ebb."},{"role":"user","content":"Sounding cast over Hein Bank, Thursday
-        15 October 2026.\nChart catalog: https://www.nauticalcharts.noaa.gov/.\nLeast
-        depth 8 fathoms, sand and shell.\nEbb 1.6 knots, setting west.\nWhat is the
-        least depth, and which way does the ebb set?"}],"stream":false,"temperature":0.2}'
+      string: '{"model":"papeete-ukulele-unlisted","messages":[{"role":"system","content":"You
+        are the bench clerk at a Papeete ukulele shop.\nAnswer in two short sentences.\nUse
+        only the board in the question.\nWrite the digit 8 and the word east."},{"role":"user","content":"Koa
+        board posted at the Papeete ukulele shop, Friday 16 October 2026.\nTahiti
+        tourisme: https://www.tahiti-tourisme.com/.\nEight matched koa billets on
+        the east bench, ready for soprano bowls.\nThe west rack holds unfinished tenors.\nHow
+        many matched billets, and which bench holds them?"}],"stream":false,"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -95,7 +95,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:42 GMT
+      - Fri, 16 Oct 2026 03:29:11 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -107,7 +107,7 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Generation-Id,X-Provider-Name,request-id,cf-ray
       X-Generation-Id:
-      - gen-1792028142-ANtYFem8QFXc0V8x29TT
+      - gen-1792121351-pY4QY6aEnTPiMyRgowHk
       Permissions-Policy:
       - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
         "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
@@ -118,23 +118,24 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - a4ab16b0fecb4baa-ATL
+      - a4b3fa4d2ded1ff4-IAD
     body:
       encoding: UTF-8
-      string: '{"error":{"message":"hein-bank-shoal-unlisted is not a valid model
+      string: '{"error":{"message":"papeete-ukulele-unlisted is not a valid model
         ID","code":400},"user_id":"user_2j72lKxAyYOX0Qq3SgzuoX13HI4"}'
-  recorded_at: Thu, 15 Oct 2026 01:35:42 GMT
+  recorded_at: Fri, 16 Oct 2026 03:29:11 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/responses
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Sounding
-        cast over Hein Bank, Thursday 15 October 2026.\nChart catalog: https://www.nauticalcharts.noaa.gov/.\nLeast
-        depth 8 fathoms, sand and shell.\nEbb 1.6 knots, setting west.\nWhat is the
-        least depth, and which way does the ebb set?"}],"instructions":"You are the
-        sounding clerk over Hein Bank, south of San Juan Island.\nAnswer in two short
-        sentences.\nUse only the cast in the question.\nName 8 fathoms and the ebb.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
+      string: '{"model":"gpt-4.1-mini","input":[{"role":"user","content":"Koa board
+        posted at the Papeete ukulele shop, Friday 16 October 2026.\nTahiti tourisme:
+        https://www.tahiti-tourisme.com/.\nEight matched koa billets on the east bench,
+        ready for soprano bowls.\nThe west rack holds unfinished tenors.\nHow many
+        matched billets, and which bench holds them?"}],"instructions":"You are the
+        bench clerk at a Papeete ukulele shop.\nAnswer in two short sentences.\nUse
+        only the board in the question.\nWrite the digit 8 and the word east.","stream":false,"store":false,"include":["reasoning.encrypted_content"],"temperature":0.2}'
     headers:
       User-Agent:
       - Faraday v2.14.4
@@ -152,7 +153,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Oct 2026 01:35:43 GMT
+      - Fri, 16 Oct 2026 03:29:12 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -160,7 +161,7 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - a4ab16b15fbe37bb-IAD
+      - a4b3fa4d8bd9c488-IAD
       Cf-Cache-Status:
       - DYNAMIC
       Server:
@@ -176,7 +177,7 @@ http_interactions:
       Openai-Organization:
       - micharisma
       Openai-Processing-Ms:
-      - '1159'
+      - '868'
       Openai-Project:
       - proj_bmo1DBlSvLRmxEEkxIPDKeJa
       Openai-Version:
@@ -186,42 +187,42 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '2000000'
       X-Ratelimit-Remaining-Requests:
-      - '4998'
+      - '4999'
       X-Ratelimit-Remaining-Tokens:
-      - '1999718'
+      - '1999863'
       X-Ratelimit-Reset-Requests:
-      - 24ms
+      - 12ms
       X-Ratelimit-Reset-Tokens:
-      - 8ms
+      - 4ms
       X-Request-Id:
-      - req_e6c26242d7bf439ea856bbbb35492550
+      - req_cd4e07fb58864d0d8bf9fc103ea29e53
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "resp_0b51f61ab145c8a2016ad02dee5fa887d29e037f7007425a78",
+          "id": "resp_0353654209ecc85a016ad19a07635c87d2a280ba6f42d1d8d6",
           "object": "response",
-          "created_at": 1792028142,
+          "created_at": 1792121351,
           "status": "completed",
           "access_programs": null,
           "background": false,
           "billing": {
             "payer": "openai"
           },
-          "completed_at": 1792028143,
+          "completed_at": 1792121352,
           "error": null,
           "frequency_penalty": 0.0,
           "incomplete_details": null,
-          "instructions": "You are the sounding clerk over Hein Bank, south of San Juan Island.\nAnswer in two short sentences.\nUse only the cast in the question.\nName 8 fathoms and the ebb.",
+          "instructions": "You are the bench clerk at a Papeete ukulele shop.\nAnswer in two short sentences.\nUse only the board in the question.\nWrite the digit 8 and the word east.",
           "max_output_tokens": null,
           "max_tool_calls": null,
           "model": "gpt-4.1-mini-2025-04-14",
           "moderation": null,
           "output": [
             {
-              "id": "msg_0b51f61ab145c8a2016ad02def402487d29449e304dfcc98b2",
+              "id": "msg_0353654209ecc85a016ad19a0807b887d294487ace6e7be342",
               "type": "message",
               "status": "completed",
               "content": [
@@ -229,7 +230,7 @@ http_interactions:
                   "type": "output_text",
                   "annotations": [],
                   "logprobs": [],
-                  "text": "The least depth is 8 fathoms. The ebb sets west."
+                  "text": "There are 8 matched koa billets on the east bench."
                 }
               ],
               "role": "assistant"
@@ -279,19 +280,19 @@ http_interactions:
           "top_p": 1.0,
           "truncation": "disabled",
           "usage": {
-            "input_tokens": 114,
+            "input_tokens": 118,
             "input_tokens_details": {
               "cache_write_tokens": 0,
               "cached_tokens": 0
             },
-            "output_tokens": 15,
+            "output_tokens": 13,
             "output_tokens_details": {
               "reasoning_tokens": 0
             },
-            "total_tokens": 129
+            "total_tokens": 131
           },
           "user": null,
           "metadata": {}
         }
-  recorded_at: Thu, 15 Oct 2026 01:35:43 GMT
+  recorded_at: Fri, 16 Oct 2026 03:29:12 GMT
 recorded_with: VCR 6.4.0
