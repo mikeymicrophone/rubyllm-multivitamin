@@ -8,23 +8,23 @@ Official reference: [Tokens and costs](https://rubyllm.com/cost-and-usage-tracki
 
 ## Free models
 
-`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Slot 04 fell back to OpenAI `gpt-4.1-mini` after `free-models-per-day`. Fallback: `liquid/lfm-2.5-2.6b:free`. Checked 15 October 2026.
+`nvidia/nemotron-3-super-120b-a12b:free`. OpenRouter reports `usage.cost`, so `cost.total` is the reported number (often `0`) rather than a registry estimate. Fallback: `liquid/lfm-2.5-2.6b:free`. Slot 04 can fall back to OpenAI `gpt-4.1-mini` via `LIVE_PROVIDER=openai` if the free slug hits `free-models-per-day`. Checked 16 October 2026.
 
 ## Examples (13 of 13 bottled)
 
-01. [Point Wilson kelp-ledge token tally](01-point-wilson-kelp-ledge-tokens/) — available
-02. [Foulweather Bluff fog-signal zero](02-foulweather-bluff-fog-signal/) — available
-03. [Protection Island auklet-watch totals](03-protection-island-auklet-watch/) — available
-04. [Sequim Bay geoduck raft versus hail](04-sequim-bay-geoduck-raft/) — available
-05. [Point No Point current-gate cap](05-point-no-point-current-gate/) — available
-06. [Agate Pass tidal-race cache and thinking](06-agate-pass-tidal-race/) — available
-07. [Ballard Locks salmon-count reported price](07-ballard-locks-salmon-count/) — available
-08. [Bush Point flood-table stream usage](08-bush-point-flood-table/) — available
-09. [Penn Cove mussel-raft tenant tallies](09-penn-cove-mussel-raft/) — available
-10. [Roche Harbor customs-float unpriced clerk](10-roche-harbor-customs-float/) — available
-11. [Cattle Point bull-kelp harvest tools](11-cattle-point-bull-kelp/) — available
-12. [Turn Point current-halt cancelled usage](12-turn-point-current-halt/) — available
-13. [Haro Strait watch ledger](13-haro-strait-watch-ledger/) — available
+01. [Pokhara Sarangkot launch tokens](01-pokhara-sarangkot-tokens/) — available
+02. [Ouarzazate kasbah flicker zero](02-ouarzazate-flicker-zero/) — available
+03. [Bahir Dar teff-mill totals](03-bahir-dar-teff-mill/) — available
+04. [Manaus açaí lot versus hail](04-manaus-acai-lot/) — available
+05. [Quetzaltenango ash-gate cap](05-quetzaltenango-ash-gate/) — available
+06. [Osh apricot-dry cache and thinking](06-osh-apricot-dry/) — available
+07. [Puri ratha-spoke reported price](07-puri-ratha-spoke/) — available
+08. [Cartagena tinto stream usage](08-cartagena-tinto-stream/) — available
+09. [Cochabamba market tenant tallies](09-cochabamba-market-tenants/) — available
+10. [Lahore truck-art unpriced clerk](10-lahore-truck-art-clerk/) — available
+11. [Freetown gara-cloth harvest tools](11-freetown-gara-cloth/) — available
+12. [Kano indigo-halt cancelled usage](12-kano-indigo-halt/) — available
+13. [Dushanbe tanbur ledger](13-dushanbe-tanbur-ledger/) — available
 
 ## What each scenario adds
 
